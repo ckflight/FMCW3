@@ -1,0 +1,8 @@
+verilog xil_defaultlib -i "../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef" --include "../../../ipstatic" \
+"../../../../XC7A100T_Microblaze.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_clk_wiz.v" \
+"../../../../XC7A100T_Microblaze.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

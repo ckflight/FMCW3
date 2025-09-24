@@ -1,0 +1,9 @@
+xpm_cdc.sv,systemverilog,xpm,../ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+xpm_fifo.sv,systemverilog,xpm,../ip/xpm/xpm_fifo/hdl/xpm_fifo.sv,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+xpm_memory.sv,systemverilog,xpm,../ip/xpm/xpm_memory/hdl/xpm_memory.sv,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+xpm_VCOMP.vhd,vhdl,xpm,../ip/xpm/xpm_VCOMP.vhd,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+fifo_generator_vlog_beh.v,verilog,fifo_generator_v13_2_13,../../../ipstatic/simulation/fifo_generator_vlog_beh.v,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+fifo_generator_v13_2_rfs.vhd,vhdl,fifo_generator_v13_2_13,../../../ipstatic/hdl/fifo_generator_v13_2_rfs.vhd,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+fifo_generator_v13_2_rfs.v,verilog,fifo_generator_v13_2_13,../../../ipstatic/hdl/fifo_generator_v13_2_rfs.v,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+fifo_generator_0.v,verilog,xil_defaultlib,../../../../XC7A100T_Microblaze.gen/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v,incdir="../../../../../../../../../../../tools/Xilinx/2025.1/data/rsb/busdef"
+glbl.v,Verilog,xil_defaultlib,glbl.v

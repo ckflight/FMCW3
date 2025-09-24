@@ -1,0 +1,7 @@
+vhdl xil_defaultlib  \
+"../../../../XC7A100T_Microblaze.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.vhd" \
+"../../../../XC7A100T_Microblaze.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.vhd" \
+"../../../../XC7A100T_Microblaze.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.vhd" \
+
+# Do not sort compile order
+nosort
