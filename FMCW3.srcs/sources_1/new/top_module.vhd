@@ -15,7 +15,7 @@ entity top_module is
         ADF_TXDATA   : out std_logic;
         ADF_CLK      : out std_logic;   -- SPI CLK
         ADF_DATA     : out std_logic;   -- SPI MOSI
-        ADF_DONE     : in std_logic;  
+        ADF_DONE     : in std_logic;    -- DNP Mosfet connection. Not used
         ADF_LE       : out std_logic;   -- Chip Enable / Select for SPI device 
         ADF_MUXOUT   : in std_logic;    -- Read rampDel length high pulse on this pin to know ramp start and end
 
