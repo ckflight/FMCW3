@@ -142,7 +142,17 @@ architecture Behavioral of top_module is
     signal s_tx_full     : std_logic;
     signal s_rx_empty    : std_logic;
     
+    -- External Pins
+    signal s_pa_en      : std_logic := '0';
+    
 begin 
+    
+    MIX_EN <= '1';
+    
+    EXT1 <= (others => '0');
+    EXT2 <= (others => '0');
+    
+    PA_EN <= s_pa_en;
     
     s_adf_muxout <= ADF_MUXOUT; -- high pulse on this pin when ramp starts
        
