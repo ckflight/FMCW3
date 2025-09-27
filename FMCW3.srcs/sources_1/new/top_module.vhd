@@ -11,8 +11,8 @@ entity top_module is
         RESET        : in std_logic; -- idle high, active low
 
         -- ADF4158
-        ADF_CE       : out std_logic;  -- (low before write and high after write, high before read) Controlled by pin0 of 16 bit gpio out of microblaze
-        ADF_TXDATA   : out std_logic;
+        ADF_CE       : out std_logic;   -- Controlled by pin0 of 16 bit gpio out of microblaze and written 1 in microblaze to enable device once
+        ADF_TXDATA   : out std_logic;   -- not used = 0
         ADF_CLK      : out std_logic;   -- SPI CLK
         ADF_DATA     : out std_logic;   -- SPI MOSI
         ADF_DONE     : in std_logic;    -- DNP Mosfet connection. Not used
@@ -170,7 +170,7 @@ begin
         clk_100MHz                      => SYSCLK,
         gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
         reset_rtl_0                     => RESET,           -- Board's reset is active low
-        spi0_cs(0)                      => s_spi0_cs,       -- spi cs
+        spi0_cs(0)                      => s_spi0_cs,       -- spi cs not used, gpio is used to drive cs pin
         spi0_miso                       => s_spi0_miso,     -- spi miso not used
         spi0_mosi                       => ADF_DATA,        -- spi mosi
         spi0_sck                        => ADF_CLK,         -- spi clk
