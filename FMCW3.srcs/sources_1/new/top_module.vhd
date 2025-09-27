@@ -121,9 +121,10 @@ architecture Behavioral of top_module is
     signal s_uart_rtl_0_rxd   : STD_LOGIC;
     signal s_uart_rtl_0_txd   : STD_LOGIC;
     
-    signal s_spi0_miso        : STD_LOGIC; -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
-    signal s_adf_muxout     : std_logic;
-            
+    signal s_spi0_miso          : STD_LOGIC; -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
+    signal s_adf_muxout         : std_logic;
+    signal s_spi0_cs            : STD_LOGIC; -- LE pin will be controlled with gpio so this spi's cs will only be connected to internal signal for now
+        
     
     -- ADC signals
     signal s_adc_enable  : std_logic := '0';                      -- enable sampling
@@ -159,6 +160,7 @@ begin
     s_adf_muxout <= ADF_MUXOUT; -- high pulse on this pin when ramp starts
     
     ADF_CE <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
+    ADF_LE <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
        
     -- In general logic
     -- Microblaze will configure adf4158 with spi.
@@ -168,7 +170,7 @@ begin
         clk_100MHz                      => SYSCLK,
         gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
         reset_rtl_0                     => RESET,           -- Board's reset is active low
-        spi0_cs(0)                      => ADF_LE,          -- spi cs
+        spi0_cs(0)                      => s_spi0_cs,       -- spi cs
         spi0_miso                       => s_spi0_miso,     -- spi miso not used
         spi0_mosi                       => ADF_DATA,        -- spi mosi
         spi0_sck                        => ADF_CLK,         -- spi clk
