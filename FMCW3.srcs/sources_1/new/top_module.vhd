@@ -11,12 +11,12 @@ entity top_module is
         RESET        : in std_logic; -- idle high, active low
 
         -- ADF4158
-        ADF_CE       : out std_logic_vector ( 0 to 0 ); --Chip Enable / Select for SPI device
+        ADF_CE       : out std_logic;  -- (low before write and high after write, high before read) Controlled by pin0 of 16 bit gpio out of microblaze
         ADF_TXDATA   : out std_logic;
         ADF_CLK      : out std_logic;   -- SPI CLK
         ADF_DATA     : out std_logic;   -- SPI MOSI
         ADF_DONE     : in std_logic;  
-        ADF_LE       : out std_logic;   -- (low before write and high after write, high before read)
+        ADF_LE       : out std_logic;   -- Chip Enable / Select for SPI device 
         ADF_MUXOUT   : in std_logic;    -- Read rampDel length high pulse on this pin to know ramp start and end
 
         -- LTC2292 ADC
@@ -117,9 +117,9 @@ architecture Behavioral of top_module is
     end component usb_sync;
     
     -- Microblaze signals
-    signal gpio_rtl_0_tri_o : STD_LOGIC_VECTOR ( 15 downto 0 );
-    signal uart_rtl_0_rxd   : STD_LOGIC;
-    signal uart_rtl_0_txd   : STD_LOGIC;
+    signal s_gpio_rtl_0_tri_o : STD_LOGIC_VECTOR ( 15 downto 0 );
+    signal s_uart_rtl_0_rxd   : STD_LOGIC;
+    signal s_uart_rtl_0_txd   : STD_LOGIC;
     
     signal s_spi0_miso        : STD_LOGIC; -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
     signal s_adf_muxout     : std_logic;
@@ -154,7 +154,11 @@ begin
     
     PA_EN <= s_pa_en;
     
+    ADF_TXDATA <= '0'; -- not used. this is for data modulation
+    
     s_adf_muxout <= ADF_MUXOUT; -- high pulse on this pin when ramp starts
+    
+    ADF_CE <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
        
     -- In general logic
     -- Microblaze will configure adf4158 with spi.
@@ -162,14 +166,14 @@ begin
     microblaze_i: component microblaze_wrapper
     port map (
         clk_100MHz                      => SYSCLK,
-        gpio_rtl_0_tri_o(15 downto 0)   => gpio_rtl_0_tri_o(15 downto 0),
+        gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
         reset_rtl_0                     => RESET,           -- Board's reset is active low
-        spi0_cs(0)                      => ADF_CE(0),       -- spi cs
+        spi0_cs(0)                      => ADF_LE,          -- spi cs
         spi0_miso                       => s_spi0_miso,     -- spi miso not used
         spi0_mosi                       => ADF_DATA,        -- spi mosi
         spi0_sck                        => ADF_CLK,         -- spi clk
-        uart_rtl_0_rxd                  => uart_rtl_0_rxd,
-        uart_rtl_0_txd                  => uart_rtl_0_txd
+        uart_rtl_0_rxd                  => s_uart_rtl_0_rxd,
+        uart_rtl_0_txd                  => s_uart_rtl_0_txd
     );
     
     -- Drive ADC OE/SHDN pins for normal operation
