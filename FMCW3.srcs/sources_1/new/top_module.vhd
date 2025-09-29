@@ -116,6 +116,24 @@ architecture Behavioral of top_module is
     );
     end component usb_sync;
     
+    component config is
+    port (
+        clk          : in  std_logic;
+        reset        : in  std_logic;
+        
+        -- USB interface (from usb_sync)
+        readdata     : in  std_logic_vector(7 downto 0);
+        rx_empty     : in  std_logic;
+        read_n       : out std_logic;
+        chipselect   : out std_logic;
+        
+        -- Config outputs
+        config_done  : out std_logic;
+        config_data  : out std_logic_vector(7 downto 0)  -- optional: last valid byte or FIFO write
+    );
+    end component;
+
+    
     -- Microblaze signals
     signal s_gpio_rtl_0_tri_o : STD_LOGIC_VECTOR ( 15 downto 0 );
     signal s_uart_rtl_0_rxd   : STD_LOGIC;
@@ -146,13 +164,41 @@ architecture Behavioral of top_module is
     -- External Pins
     signal s_pa_en      : std_logic := '0';
     
+    -- CONFIG signals
+    signal s_config_done : std_logic;   
+    signal s_config_data : std_logic_vector(7 downto 0);
+
+    
 begin 
+
+    -- GENERAL CODE FLOW UPTO NOW:
+    
+    -- adc.vhd:
+    -- ADC will be sampled and the samples are forwareded to FIR module which will be implemented inside of adc.vhd module. 
+    -- ADC samples with enable = '1' so it will be controlled by control.vhd with this signal. 
+    
+    -- config.vhd:
+    -- It will control usb_sync.vhd rx pins to receive configuration bytes from python with specific start and end bytes to check correct package.
+    -- After reception it will write these bytes to a fifo for microblaze to take it. Also it will make config_done = '1' for control.vhd to know.
+    
+    -- control.vhd:
+    -- It will check MUXOUT input signal to sample during ramp and usb tx during gap.
+    -- It will control adc.vhd with its enable pin to start sampling. 
+    -- It will con 
+
+    -- STATIC PIN DEFINITIONS    
+    
+    -- Drive ADC OE/SHDN pins for normal operation
+    ADC_OE   <= "00"; -- both channels enabled
+    ADC_SHDN <= "00"; -- normal operation
     
     MIX_EN <= '1';
     
+    -- Not used for now
     EXT1 <= (others => '0');
     EXT2 <= (others => '0');
     
+        
     PA_EN <= s_pa_en;
     
     ADF_TXDATA <= '0'; -- not used. this is for data modulation
@@ -161,6 +207,7 @@ begin
     
     ADF_CE <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
     ADF_LE <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
+    
        
     -- In general logic
     -- Microblaze will configure adf4158 with spi.
@@ -178,9 +225,7 @@ begin
         uart_rtl_0_txd                  => s_uart_rtl_0_txd
     );
     
-    -- Drive ADC OE/SHDN pins for normal operation
-    ADC_OE   <= "00"; -- both channels enabled
-    ADC_SHDN <= "00"; -- normal operation
+
 
     -- Only DATA_A 12 bit line is connected to fpga
     -- ADC is used in mux mode where it outputs both channel in order.
@@ -214,13 +259,13 @@ begin
     port map (
         clk         => SYSCLK,
         reset_n     => RESET,
-        read_n      => s_read_n,
-        write_n     => s_write_n,
-        chipselect  => s_chipselect,
-        readdata    => s_readdata,
-        writedata   => s_writedata,
-        tx_full     => s_tx_full,
-        rx_empty    => s_rx_empty,
+        read_n      => s_read_n,        -- 0 to read from rx fifo of usb_sync
+        write_n     => s_write_n,       -- 0 to write to tx fifo of usb_sync
+        chipselect  => s_chipselect,    -- 1 to selectchip for both read and write    
+        readdata    => s_readdata,      -- read data 8 bit
+        writedata   => s_writedata,     -- write data 8 bit
+        tx_full     => s_tx_full,       -- is full flag
+        rx_empty    => s_rx_empty,      -- is empty flag
     
         -- FT2232 Bus Signals
         usb_clock   => USB_CLKOUT,
@@ -228,8 +273,25 @@ begin
         usb_rd_n    => USB_RD,
         usb_wr_n    => USB_WR,
         usb_oe_n    => USB_OE,
-        usb_rxf_n   => USB_RXF,
-        usb_txe_n   => USB_TXE
+        usb_rxf_n   => USB_RXF,         -- input signal to indicate rx data over usb
+        usb_txe_n   => USB_TXE          -- input signal to indicate usb is available for tx
     );
+
+    config_i : component config
+    port map (
+        clk         => SYSCLK,
+        reset       => RESET,
+        
+        -- USB side
+        readdata    => s_readdata,      -- 0 to read from rx fifo of usb_sync
+        rx_empty    => s_rx_empty,      -- is rx fifo empty
+        read_n      => s_read_n,        -- rx data 8 bit
+        chipselect  => s_chipselect,    -- chipselect 1    
+        
+        -- Outputs
+        config_done => s_config_done,   -- config is done to let control.vhd know it can start sampling and tx
+        config_data => s_config_data    -- this might not be used if i put uart tx inside
+    );
+
 
 end Behavioral;

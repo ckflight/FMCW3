@@ -3,7 +3,24 @@
 -- Designer: Wes Pope
 -- License: Public Domain
  
+-- Receiving from USB → FPGA/CPU
+    -- USB sends a byte.
+    -- FT2232H signals usb_rxf_n = 0.
+    -- Module automatically writes the byte into RX FIFO.
+--CPU just reads:
+    -- Assert chipselect = 1
+    -- Pull read_n = 0
+    -- Read readdata → the byte received from USB
  
+
+--Sending from FPGA/CPU → USB   
+    -- CPU wants to send a byte:
+    -- Put byte on writedata
+    -- Assert chipselect = 1
+    -- Pull write_n = 0      
+    -- Module automatically writes the byte into TX FIFO.
+    -- Module monitors FT2232H (usb_txe_n) and automatically sends the byte over USB.
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
