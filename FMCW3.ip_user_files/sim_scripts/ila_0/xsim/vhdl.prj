@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../FMCW3.gen/sources_1/ip/ila_0/sim/ila_0.vhd" \
+
+# Do not sort compile order
+nosort

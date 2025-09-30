@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a15tiftg256-1L" LaunchTime="1759232108" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a15tiftg256-1L" LaunchTime="1759234558" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
   <File Type="PA-TCL" Name="top_module.tcl"/>
   <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
   <File Type="RDS-RDS" Name="top_module.vds"/>
@@ -99,4 +99,5 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
 </GenRun>

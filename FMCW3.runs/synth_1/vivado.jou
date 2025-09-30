@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Sep 30 14:35:24 2025
-# Process ID         : 9168
+# Start of session at: Tue Sep 30 15:16:01 2025
+# Process ID         : 10956
 # Current directory  : C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1
 # Command line       : vivado.exe -log top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
 # Log file           : C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/top_module.vds
@@ -19,6 +19,6 @@
 # Host memory        : 17083 MB
 # Swap memory        : 2550 MB
 # Total Virtual      : 19633 MB
-# Available Virtual  : 9160 MB
+# Available Virtual  : 7850 MB
 #-----------------------------------------------------------
 source top_module.tcl -notrace

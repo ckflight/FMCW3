@@ -8,16 +8,16 @@
   **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
   **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
   **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Tue Sep 30 14:35:24 2025
+  **** Start of session at: Tue Sep 30 15:16:01 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top_module.tcl -notrace
-create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 511.301 ; gain = 213.367
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 510.645 ; gain = 212.270
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 543.090 ; gain = 31.789
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 542.855 ; gain = 32.211
 Command: read_checkpoint -auto_incremental -incremental C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/utils_1/imports/synth_1/top_module.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/utils_1/imports/synth_1/top_module.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -30,59 +30,490 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7748
+INFO: [Synth 8-7075] Helper process launched with PID 1900
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1255.945 ; gain = 494.809
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1281.734 ; gain = 494.152
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top_module' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:65]
-INFO: [Synth 8-3491] module 'microblaze_wrapper' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:15' bound to instance 'microblaze_i' of component 'microblaze_wrapper' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:215]
+INFO: [Synth 8-3491] module 'microblaze_wrapper' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:15' bound to instance 'microblaze_i' of component 'microblaze_wrapper' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:223]
 INFO: [Synth 8-638] synthesizing module 'microblaze_wrapper' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:29]
 INFO: [Synth 8-3491] module 'microblaze' declared at 'c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:531' bound to instance 'microblaze_i' of component 'microblaze' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:44]
 INFO: [Synth 8-638] synthesizing module 'microblaze' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:549]
-INFO: [Synth 8-3491] module 'microblaze_axi_gpio_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_0' of component 'microblaze_axi_gpio_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1012]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_gpio_0_0_stub.vhdl:39]
-INFO: [Synth 8-3491] module 'microblaze_axi_quad_spi_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_quad_spi_0_0_stub.vhdl:6' bound to instance 'axi_quad_spi_0' of component 'microblaze_axi_quad_spi_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1036]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_quad_spi_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_quad_spi_0_0_stub.vhdl:51]
-INFO: [Synth 8-3491] module 'microblaze_axi_smc_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'microblaze_axi_smc_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1072]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_smc_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_smc_0_stub.vhdl:115]
-INFO: [Synth 8-3491] module 'microblaze_axi_timer_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_timer_0_0_stub.vhdl:6' bound to instance 'axi_timer_0' of component 'microblaze_axi_timer_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1172]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_timer_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_timer_0_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'microblaze_axi_uartlite_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'microblaze_axi_uartlite_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1201]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_uartlite_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:40]
-INFO: [Synth 8-3491] module 'microblaze_mdm_1_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_mdm_1_1_stub.vhdl:6' bound to instance 'mdm_1' of component 'microblaze_mdm_1_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1226]
-INFO: [Synth 8-638] synthesizing module 'microblaze_mdm_1_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_mdm_1_1_stub.vhdl:28]
-INFO: [Synth 8-3491] module 'microblaze_microblaze_0_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_microblaze_0_1_stub.vhdl:6' bound to instance 'microblaze_0' of component 'microblaze_microblaze_0_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1239]
-INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_microblaze_0_1_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'microblaze_axi_gpio_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_0' of component 'microblaze_axi_gpio_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1012]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_gpio_0_0_stub.vhdl:39]
+INFO: [Synth 8-3491] module 'microblaze_axi_quad_spi_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_quad_spi_0_0_stub.vhdl:6' bound to instance 'axi_quad_spi_0' of component 'microblaze_axi_quad_spi_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1036]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_quad_spi_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_quad_spi_0_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'microblaze_axi_smc_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'microblaze_axi_smc_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1072]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_smc_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_smc_0_stub.vhdl:115]
+INFO: [Synth 8-3491] module 'microblaze_axi_timer_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_timer_0_0_stub.vhdl:6' bound to instance 'axi_timer_0' of component 'microblaze_axi_timer_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1172]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_timer_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_timer_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'microblaze_axi_uartlite_0_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:6' bound to instance 'axi_uartlite_0' of component 'microblaze_axi_uartlite_0_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1201]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_uartlite_0_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:40]
+INFO: [Synth 8-3491] module 'microblaze_mdm_1_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_mdm_1_1_stub.vhdl:6' bound to instance 'mdm_1' of component 'microblaze_mdm_1_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1226]
+INFO: [Synth 8-638] synthesizing module 'microblaze_mdm_1_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_mdm_1_1_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'microblaze_microblaze_0_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_microblaze_0_1_stub.vhdl:6' bound to instance 'microblaze_0' of component 'microblaze_microblaze_0_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1239]
+INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_microblaze_0_1_stub.vhdl:70]
 INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_HPR3PZ' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:41]
-INFO: [Synth 8-3491] module 'microblaze_dlmb_bram_if_cntlr_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'microblaze_dlmb_bram_if_cntlr_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:213]
-INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_bram_if_cntlr_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'microblaze_dlmb_v10_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_v10_1_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'microblaze_dlmb_v10_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:267]
-INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_v10_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_v10_1_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'microblaze_ilmb_bram_if_cntlr_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'microblaze_ilmb_bram_if_cntlr_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:295]
-INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_bram_if_cntlr_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'microblaze_ilmb_v10_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_v10_1_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'microblaze_ilmb_v10_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:349]
-INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_v10_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_v10_1_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'microblaze_lmb_bram_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_lmb_bram_1_stub.vhdl:6' bound to instance 'lmb_bram' of component 'microblaze_lmb_bram_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:377]
-INFO: [Synth 8-638] synthesizing module 'microblaze_lmb_bram_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_lmb_bram_1_stub.vhdl:34]
+INFO: [Synth 8-3491] module 'microblaze_dlmb_bram_if_cntlr_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:6' bound to instance 'dlmb_bram_if_cntlr' of component 'microblaze_dlmb_bram_if_cntlr_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:213]
+INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_bram_if_cntlr_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'microblaze_dlmb_v10_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_v10_1_stub.vhdl:6' bound to instance 'dlmb_v10' of component 'microblaze_dlmb_v10_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:267]
+INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_v10_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_dlmb_v10_1_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'microblaze_ilmb_bram_if_cntlr_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:6' bound to instance 'ilmb_bram_if_cntlr' of component 'microblaze_ilmb_bram_if_cntlr_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:295]
+INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_bram_if_cntlr_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'microblaze_ilmb_v10_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_v10_1_stub.vhdl:6' bound to instance 'ilmb_v10' of component 'microblaze_ilmb_v10_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:349]
+INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_v10_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_ilmb_v10_1_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'microblaze_lmb_bram_1' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_lmb_bram_1_stub.vhdl:6' bound to instance 'lmb_bram' of component 'microblaze_lmb_bram_1' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:377]
+INFO: [Synth 8-638] synthesizing module 'microblaze_lmb_bram_1' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_lmb_bram_1_stub.vhdl:34]
 INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_HPR3PZ' (0#1) [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:41]
-INFO: [Synth 8-3491] module 'microblaze_rst_clk_100MHz_100M_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_rst_clk_100MHz_100M_0_stub.vhdl:6' bound to instance 'rst_clk_100MHz_100M' of component 'microblaze_rst_clk_100MHz_100M_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1318]
-INFO: [Synth 8-638] synthesizing module 'microblaze_rst_clk_100MHz_100M_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-9168-DESKTOP-BEUFM6D/realtime/microblaze_rst_clk_100MHz_100M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'microblaze_rst_clk_100MHz_100M_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_rst_clk_100MHz_100M_0_stub.vhdl:6' bound to instance 'rst_clk_100MHz_100M' of component 'microblaze_rst_clk_100MHz_100M_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:1318]
+INFO: [Synth 8-638] synthesizing module 'microblaze_rst_clk_100MHz_100M_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/microblaze_rst_clk_100MHz_100M_0_stub.vhdl:28]
 INFO: [Synth 8-256] done synthesizing module 'microblaze' (0#1) [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/synth/microblaze.vhd:549]
 INFO: [Synth 8-256] done synthesizing module 'microblaze_wrapper' (0#1) [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:29]
-WARNING: [Synth 8-5640] Port 'valid' is missing in component declaration [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:81]
-INFO: [Synth 8-3491] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' bound to instance 'adc_i' of component 'adc' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:243]
-ERROR: [Synth 8-3493] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' does not have matching formal port for component port 'rst' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:243]
-ERROR: [Synth 8-3493] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' does not have matching formal port for component port 'enable' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:243]
-ERROR: [Synth 8-3493] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' does not have matching formal port for component port 'adc_of' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:243]
-ERROR: [Synth 8-3493] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' does not have matching formal port for component port 'of_a' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:243]
-ERROR: [Synth 8-3493] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' does not have matching formal port for component port 'of_b' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:243]
-ERROR: [Synth 8-285] failed synthesizing module 'top_module' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:65]
+INFO: [Synth 8-3491] module 'adc' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:6' bound to instance 'adc_i' of component 'adc' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:252]
+INFO: [Synth 8-638] synthesizing module 'adc' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:16]
+INFO: [Synth 8-3491] module 'fir_compiler_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/fir_compiler_0_stub.vhdl:6' bound to instance 'fir' of component 'fir_compiler_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/fir_compiler_0_stub.vhdl:24]
+INFO: [Synth 8-256] done synthesizing module 'adc' (0#1) [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd:16]
+INFO: [Synth 8-3491] module 'usb_sync' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd:29' bound to instance 'usb_sync_i' of component 'usb_sync' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:263]
+INFO: [Synth 8-638] synthesizing module 'usb_sync' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd:54]
+INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/fifo_generator_0_stub.vhdl:6' bound to instance 'rx_dcfifo' of component 'fifo_generator_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'fifo_generator_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/fifo_generator_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/fifo_generator_0_stub.vhdl:6' bound to instance 'tx_dcfifo' of component 'fifo_generator_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd:116]
+INFO: [Synth 8-256] done synthesizing module 'usb_sync' (0#1) [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd:54]
+	Parameter PACKET_SIZE bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'config' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/config.vhd:10' bound to instance 'config_i' of component 'config' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:285]
+INFO: [Synth 8-638] synthesizing module '\config ' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/config.vhd:26]
+	Parameter PACKET_SIZE bound to: 64 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/config.vhd:45]
+INFO: [Synth 8-256] done synthesizing module '\config ' (0#1) [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/config.vhd:26]
+INFO: [Synth 8-3491] module 'ila_0' declared at 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/ila_0_stub.vhdl:6' bound to instance 'ila_0_i' of component 'ila_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:300]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/.Xil/Vivado-10956-DESKTOP-BEUFM6D/realtime/ila_0_stub.vhdl:23]
+INFO: [Synth 8-256] done synthesizing module 'top_module' (0#1) [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:65]
+WARNING: [Synth 8-6014] Unused sequential element rx_empty_prev_reg was removed.  [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd:202]
+WARNING: [Synth 8-3848] Net LED1 in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:39]
+WARNING: [Synth 8-3848] Net SD_CLK in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:54]
+WARNING: [Synth 8-3848] Net SPI_CS in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:58]
+WARNING: [Synth 8-3848] Net SPI_MOSI in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:59]
+WARNING: [Synth 8-3848] Net s_spi0_miso in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:146]
+WARNING: [Synth 8-3848] Net s_uart_rtl_0_rxd in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:143]
+WARNING: [Synth 8-3848] Net s_write_n in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:159]
+WARNING: [Synth 8-3848] Net s_writedata in module/entity top_module does not have driver. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd:162]
+WARNING: [Synth 8-3917] design top_module has port ADF_TXDATA driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_OE[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_OE[0] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_SHDN[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_SHDN[0] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port USB_SIWUA driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port PA_EN driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port MIX_EN driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port EXT1[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[4] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[3] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[2] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[0] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[4] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[3] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[2] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[0] driven by constant 0
+WARNING: [Synth 8-7129] Port LED1 in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_CLK in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SPI_CS in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SPI_MOSI in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[3] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[2] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[1] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[0] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_CMD in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADF_DONE in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADF_MUXOUT in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADC_OF[1] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADC_OF[0] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port USB_SUSPEND in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_CARD_DETECT in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SPI_MISO in module top_module is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1371.766 ; gain = 610.629
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1404.078 ; gain = 616.496
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1404.078 ; gain = 616.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1404.078 ; gain = 616.496
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1404.078 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_gpio_0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_gpio_0'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_uartlite_0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_uartlite_0'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_0/microblaze_axi_timer_0_0/microblaze_axi_timer_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_timer_0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_0/microblaze_axi_timer_0_0/microblaze_axi_timer_0_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_timer_0'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1/microblaze_microblaze_0_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1/microblaze_microblaze_0_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1/microblaze_dlmb_v10_1/microblaze_ilmb_v10_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1/microblaze_dlmb_v10_1/microblaze_ilmb_v10_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_1/microblaze_ilmb_v10_1/microblaze_ilmb_v10_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_1/microblaze_ilmb_v10_1/microblaze_ilmb_v10_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_1/microblaze_dlmb_bram_if_cntlr_1/microblaze_dlmb_bram_if_cntlr_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_1/microblaze_dlmb_bram_if_cntlr_1/microblaze_dlmb_bram_if_cntlr_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_lmb_bram_1/microblaze_lmb_bram_1/microblaze_lmb_bram_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_lmb_bram_1/microblaze_lmb_bram_1/microblaze_lmb_bram_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_1/microblaze_mdm_1_1/microblaze_mdm_1_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/mdm_1'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_1/microblaze_mdm_1_1/microblaze_mdm_1_1_in_context.xdc] for cell 'microblaze_i/microblaze_i/mdm_1'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/rst_clk_100MHz_100M'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/rst_clk_100MHz_100M'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/microblaze_axi_smc_0/microblaze_axi_smc_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_smc'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/microblaze_axi_smc_0/microblaze_axi_smc_0_in_context.xdc] for cell 'microblaze_i/microblaze_i/axi_smc'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'usb_sync_i/rx_dcfifo'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'usb_sync_i/rx_dcfifo'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'usb_sync_i/tx_dcfifo'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'usb_sync_i/tx_dcfifo'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'adc_i/g_fir.fir'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0/fir_compiler_0_in_context.xdc] for cell 'adc_i/g_fir.fir'
+Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila_0_i'
+Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila_0_i'
+Parsing XDC File [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc]
+CRITICAL WARNING: [Common 17-165] Too many positional options when parsing 'ft2232h', please type 'create_clock -help' for usage info. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc:5]
+WARNING: [Vivado 12-507] No nets matched 'USB_CLKOUT_IBUF'. [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc:7]
+Finished Parsing XDC File [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_module_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1412.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1412.129 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'microblaze_i/microblaze_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1417.926 ; gain = 630.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a15tiftg256-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1417.926 ; gain = 630.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+WARNING: set_property IS_IP_OOC_CELL could not find object (constraint file  c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc, line 3).
+WARNING: set_property KEEP_HIERARCHY could not find object (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1417.926 ; gain = 630.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1417.926 ; gain = 630.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
++---Registers : 
+	              512 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 45 (col length:60)
+BRAMs: 50 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design top_module has port ADF_TXDATA driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_OE[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_OE[0] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_SHDN[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port ADC_SHDN[0] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port USB_SIWUA driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port PA_EN driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port MIX_EN driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port EXT1[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[4] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[3] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[2] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT1[0] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[4] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[3] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[2] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[1] driven by constant 0
+WARNING: [Synth 8-3917] design top_module has port EXT2[0] driven by constant 0
+WARNING: [Synth 8-7129] Port LED1 in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_CLK in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SPI_CS in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SPI_MOSI in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[3] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[2] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[1] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_DATA[0] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_CMD in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADF_DONE in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADF_MUXOUT in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADC_OF[1] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADC_OF[0] in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port USB_SUSPEND in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SD_CARD_DETECT in module top_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SPI_MISO in module top_module is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1461.566 ; gain = 673.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.488 ; gain = 802.906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1610.238 ; gain = 822.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1620.367 ; gain = 832.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe0_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe1_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe2_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin s_probe3_inferred:in0[0] to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------------------+----------+
+|      |BlackBox name                    |Instances |
++------+---------------------------------+----------+
+|1     |ila_0                            |         1|
+|2     |fir_compiler_0                   |         1|
+|3     |microblaze_axi_gpio_0_0          |         1|
+|4     |microblaze_axi_quad_spi_0_0      |         1|
+|5     |microblaze_axi_smc_0             |         1|
+|6     |microblaze_axi_timer_0_0         |         1|
+|7     |microblaze_axi_uartlite_0_0      |         1|
+|8     |microblaze_mdm_1_1               |         1|
+|9     |microblaze_microblaze_0_1        |         1|
+|10    |microblaze_rst_clk_100MHz_100M_0 |         1|
+|11    |microblaze_dlmb_bram_if_cntlr_1  |         1|
+|12    |microblaze_dlmb_v10_1            |         1|
+|13    |microblaze_ilmb_bram_if_cntlr_1  |         1|
+|14    |microblaze_ilmb_v10_1            |         1|
+|15    |microblaze_lmb_bram_1            |         1|
+|16    |fifo_generator_0                 |         2|
++------+---------------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------------+------+
+|      |Cell                                  |Count |
++------+--------------------------------------+------+
+|1     |fifo_generator_0_bbox                 |     2|
+|3     |fir_compiler_0_bbox                   |     1|
+|4     |ila_0_bbox                            |     1|
+|5     |microblaze_axi_gpio_0_0_bbox          |     1|
+|6     |microblaze_axi_quad_spi_0_0_bbox      |     1|
+|7     |microblaze_axi_smc_0_bbox             |     1|
+|8     |microblaze_axi_timer_0_0_bbox         |     1|
+|9     |microblaze_axi_uartlite_0_0_bbox      |     1|
+|10    |microblaze_dlmb_bram_if_cntlr_1_bbox  |     1|
+|11    |microblaze_dlmb_v10_1_bbox            |     1|
+|12    |microblaze_ilmb_bram_if_cntlr_1_bbox  |     1|
+|13    |microblaze_ilmb_v10_1_bbox            |     1|
+|14    |microblaze_lmb_bram_1_bbox            |     1|
+|15    |microblaze_mdm_1_1_bbox               |     1|
+|16    |microblaze_microblaze_0_1_bbox        |     1|
+|17    |microblaze_rst_clk_100MHz_100M_0_bbox |     1|
+|18    |BUFG                                  |     2|
+|19    |LUT1                                  |    63|
+|20    |LUT2                                  |     5|
+|21    |LUT3                                  |     7|
+|22    |LUT4                                  |    11|
+|23    |LUT5                                  |     5|
+|24    |LUT6                                  |     3|
+|25    |FDCE                                  |     8|
+|26    |FDPE                                  |     1|
+|27    |FDRE                                  |    30|
+|28    |IBUF                                  |    17|
+|29    |IOBUF                                 |     8|
+|30    |OBUF                                  |    27|
+|31    |OBUFT                                 |     4|
++------+--------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 99 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1835.949 ; gain = 1034.520
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1835.949 ; gain = 1048.367
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1845.117 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1848.777 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+Synth Design complete | Checksum: ba50b884
 INFO: [Common 17-83] Releasing license: Synthesis
-49 Infos, 1 Warnings, 0 Critical Warnings and 7 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Tue Sep 30 14:36:05 2025...
+77 Infos, 147 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:51 . Memory (MB): peak = 1848.777 ; gain = 1254.254
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1848.777 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/synth_1/top_module.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 30 15:17:13 2025...

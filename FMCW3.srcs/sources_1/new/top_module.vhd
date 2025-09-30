@@ -79,16 +79,12 @@ architecture Behavioral of top_module is
     end component microblaze_wrapper;
     
     component adc is
-    port (
-        clk       : in  std_logic;                       -- 40 MHz ADC clock
-        rst       : in  std_logic;
-        enable    : in  std_logic;                      -- sampling enable from top module
-        adc_data  : in  std_logic_vector(11 downto 0);  -- ADC multiplexed bus
-        adc_of    : in  std_logic_vector(1 downto 0);   -- overflow/underflow per channel
-        data_a    : out std_logic_vector(15 downto 0);  -- signed channel A
-        data_b    : out std_logic_vector(15 downto 0);  -- signed channel B
-        of_a      : out std_logic;                       -- overflow A
-        of_b      : out std_logic                        -- overflow B
+    Port( 
+        clk : in STD_LOGIC;
+        adc_data : in STD_LOGIC_VECTOR (11 downto 0);
+        data_a : out STD_LOGIC_VECTOR (15 downto 0);
+        data_b : out STD_LOGIC_VECTOR (15 downto 0);
+        valid : out STD_LOGIC
     );
     end component adc;
     
@@ -117,22 +113,30 @@ architecture Behavioral of top_module is
     end component usb_sync;
     
     component config is
-    port (
-        clk          : in  std_logic;
-        reset        : in  std_logic;
-        
-        -- USB interface (from usb_sync)
-        readdata     : in  std_logic_vector(7 downto 0);
-        rx_empty     : in  std_logic;
-        read_n       : out std_logic;
-        chipselect   : out std_logic;
-        
-        -- Config outputs
-        config_done  : out std_logic;
-        config_data  : out std_logic_vector(7 downto 0)  -- optional: last valid byte or FIFO write
-    );
+        generic (
+            PACKET_SIZE : integer := 64  -- must match the entity
+        );
+        port (
+            clk          : in  std_logic;
+            rst          : in  std_logic;
+            usb_rx_empty : in  std_logic;
+            usb_readdata : in  std_logic_vector(7 downto 0);
+            chipselect   : out std_logic;
+            read_n       : out std_logic;
+            config_done  : out std_logic;
+            data_out     : out std_logic_vector(PACKET_SIZE*8-1 downto 0)
+        );
     end component;
 
+    component ila_0
+    PORT (
+        clk : IN STD_LOGIC;                
+        probe0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        probe1 : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+        probe2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        probe3 : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
+    );
+    end component;
     
     -- Microblaze signals
     signal s_gpio_rtl_0_tri_o : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -145,12 +149,10 @@ architecture Behavioral of top_module is
         
     
     -- ADC signals
-    signal s_adc_enable  : std_logic := '0';                      -- enable sampling
-    signal s_data_a_out  : std_logic_vector(15 downto 0);         -- channel A data
-    signal s_data_b_out  : std_logic_vector(15 downto 0);         -- channel B data
-    signal s_of_a_out    : std_logic;                              -- channel A overflow
-    signal s_of_b_out    : std_logic;                              -- channel B overflow
-    
+    signal s_adc_a_out  : std_logic_vector(15 downto 0);         -- channel A data
+    signal s_adc_b_out  : std_logic_vector(15 downto 0);         -- channel B data
+    signal s_adc_valid  : std_logic;        -- FIR output valid pulse
+
     
     -- USB_SYNC signals
     signal s_read_n      : std_logic;
@@ -166,8 +168,13 @@ architecture Behavioral of top_module is
     
     -- CONFIG signals
     signal s_config_done : std_logic;   
-    signal s_config_data : std_logic_vector(7 downto 0);
+    signal s_config_data : std_logic_vector(511 downto 0);
 
+    -- ILA Probe signals
+    signal s_probe0 : std_logic_vector(7 DOWNTO 0);
+    signal s_probe1 : std_logic_vector(11 DOWNTO 0);
+    signal s_probe2 : std_logic_vector(31 DOWNTO 0);
+    signal s_probe3 : std_logic_vector(9 DOWNTO 0);
     
 begin 
 
@@ -189,6 +196,7 @@ begin
     -- STATIC PIN DEFINITIONS    
     
     -- Drive ADC OE/SHDN pins for normal operation
+    -- Control.vhd will drive these
     ADC_OE   <= "00"; -- both channels enabled
     ADC_SHDN <= "00"; -- normal operation
     
@@ -240,17 +248,14 @@ begin
     -- Drive adc_oe <= "11" and adc_shdn <= "11"
     -- ADC outputs go high-Z or sleep → FPGA can safely process or transfer data
 
+    -- ADC instantiation
     adc_i : component adc
     port map (
         clk      => SYSCLK,
-        rst      => RESET,
-        enable   => s_adc_enable,
         adc_data => ADC_DATA,
-        adc_of   => ADC_OF,
-        data_a   => s_data_a_out,
-        data_b   => s_data_b_out,
-        of_a     => s_of_a_out,
-        of_b     => s_of_b_out
+        data_a   => s_adc_a_out,
+        data_b   => s_adc_b_out,
+        valid    => s_adc_valid
     );
     
     USB_SIWUA <= '1'; -- when 1 not used
@@ -278,20 +283,27 @@ begin
     );
 
     config_i : component config
+    generic map (
+        PACKET_SIZE => 64
+    )
     port map (
-        clk         => SYSCLK,
-        reset       => RESET,
-        
-        -- USB side
-        readdata    => s_readdata,      -- 0 to read from rx fifo of usb_sync
-        rx_empty    => s_rx_empty,      -- is rx fifo empty
-        read_n      => s_read_n,        -- rx data 8 bit
-        chipselect  => s_chipselect,    -- chipselect 1    
-        
-        -- Outputs
-        config_done => s_config_done,   -- config is done to let control.vhd know it can start sampling and tx
-        config_data => s_config_data    -- this might not be used if i put uart tx inside
+        clk          => SYSCLK,
+        rst          => RESET,        -- top-level reset signal
+        usb_rx_empty => s_rx_empty,
+        usb_readdata => s_readdata,
+        chipselect   => s_chipselect,
+        read_n       => s_read_n,
+        config_done  => s_config_done,
+        data_out     => s_config_data
     );
 
+    ila_0_i : ila_0
+    port map (
+        clk    => SYSCLK,
+        probe0 => s_probe0,
+        probe1 => s_probe1,
+        probe2 => s_probe2,
+        probe3 => s_probe3
+    );
 
 end Behavioral;
