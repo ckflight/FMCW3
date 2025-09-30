@@ -45,4 +45,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_
 # IP: bd/microblaze/ip/microblaze_axi_smc_0/microblaze_axi_smc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_smc_0 || ORIG_REF_NAME==microblaze_axi_smc_0} -quiet] -quiet
 
-# XDC: /home/ck/Desktop/FMCW3/FMCW3.gen/sources_1/bd/microblaze/microblaze_ooc.xdc
+# XDC: c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/bd/microblaze/microblaze_ooc.xdc

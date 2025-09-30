@@ -63,7 +63,7 @@ begin
     fir_a <= fir_data_out(31 downto 16);
     fir_b <= fir_data_out(15 downto 0);
     
-    -- Fir filter is used
+    -- If fir filter is selected.
     g_fir : if generate_fir generate
     fir : fir_compiler_0
     PORT MAP (

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="fifo_generator_0_synth_1" LaunchPart="xc7a15tiftg256-1L" LaunchTime="1758729101">
-  <File Type="RDS-DCP" Name="fifo_generator_0.dcp"/>
-  <File Type="RDS-RDS" Name="fifo_generator_0.vds"/>
   <File Type="REPORTS-TCL" Name="fifo_generator_0_reports.tcl"/>
-  <File Type="PA-TCL" Name="fifo_generator_0.tcl"/>
   <File Type="RDS-UTIL" Name="fifo_generator_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="fifo_generator_0_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="fifo_generator_0.tcl"/>
+  <File Type="RDS-RDS" Name="fifo_generator_0.vds"/>
+  <File Type="RDS-DCP" Name="fifo_generator_0.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fifo_generator_0" RelGenDir="$PGENDIR/fifo_generator_0">
     <File Path="$PSRCDIR/sources_1/ip/fifo_generator_0/fifo_generator_0.xci">
       <FileInfo>

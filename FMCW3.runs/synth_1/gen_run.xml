@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a15tiftg256-1L" LaunchTime="1758729384" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="top_module_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="top_module.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="top_module_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="top_module_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_module_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="top_module.vds"/>
-  <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="top_module_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a15tiftg256-1L" LaunchTime="1759232108" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
   <File Type="PA-TCL" Name="top_module.tcl"/>
+  <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_module.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_module_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="top_module_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_module_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_module.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_module_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_module_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/microblaze/microblaze.bd">
@@ -19,6 +19,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/adc.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/config.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -37,6 +43,19 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/top_module.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/control.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../coe_analyze/fir20.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -79,4 +98,5 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
 </GenRun>
