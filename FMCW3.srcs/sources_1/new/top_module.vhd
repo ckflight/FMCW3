@@ -127,6 +127,28 @@ architecture Behavioral of top_module is
             data_out     : out std_logic_vector(PACKET_SIZE*8-1 downto 0)
         );
     end component;
+    
+    component control is
+    generic (
+        MAX_SAMPLES : integer := 2048  -- number of decimated samples per ramp
+    );
+    port (
+        clk          : in  std_logic;               -- system clock
+        rst          : in  std_logic;               -- active high reset
+        muxout       : in  std_logic;               -- high during ramp
+        adc_data_a   : in  std_logic_vector(15 downto 0);
+        adc_data_b   : in  std_logic_vector(15 downto 0);
+        adc_valid    : in  std_logic;
+        adc_oe       : out std_logic_vector(1 downto 0);
+        adc_shdn     : out std_logic_vector(1 downto 0);
+        pa_en        : out std_logic;
+        usb_write_n  : out std_logic;
+        usb_chipselect : out std_logic;
+        usb_writedata : out std_logic_vector(7 downto 0);
+        usb_tx_full   : in  std_logic
+    );  
+    end component;
+
 
     component ila_0
     PORT (
@@ -162,13 +184,19 @@ architecture Behavioral of top_module is
     signal s_writedata   : std_logic_vector (7 downto 0);
     signal s_tx_full     : std_logic;
     signal s_rx_empty    : std_logic;
-    
-    -- External Pins
-    signal s_pa_en      : std_logic := '0';
-    
+        
     -- CONFIG signals
     signal s_config_done : std_logic;   
     signal s_config_data : std_logic_vector(511 downto 0);
+
+    -- Signals for control
+    signal s_adc_oe       : std_logic_vector(1 downto 0);
+    signal s_adc_shdn     : std_logic_vector(1 downto 0);
+    signal s_pa_en_ctrl   : std_logic;
+    signal s_usb_write_n  : std_logic;
+    signal s_usb_chipselect : std_logic;
+    signal s_usb_writedata : std_logic_vector(7 downto 0);
+    
 
     -- ILA Probe signals
     signal s_probe0 : std_logic_vector(7 DOWNTO 0);
@@ -181,12 +209,12 @@ begin
     -- GENERAL CODE FLOW UPTO NOW:
     
     -- adc.vhd:
-    -- ADC will be sampled and the samples are forwareded to FIR module which will be implemented inside of adc.vhd module. 
-    -- ADC samples with enable = '1' so it will be controlled by control.vhd with this signal. 
+    -- ADC will be sampled and the samples are forwareded to FIR module (LPF with 20 downsampling) which is implemented in adc.vhd module. 
+    -- ADC samples with ADC_OE and ADC_SHDN so these signals will be controlled by control.vhd according to the state of muxout input 
     
     -- config.vhd:
     -- It will control usb_sync.vhd rx pins to receive configuration bytes from python with specific start and end bytes to check correct package.
-    -- After reception it will write these bytes to a fifo for microblaze to take it. Also it will make config_done = '1' for control.vhd to know.
+    -- After reception it will write these bytes to a fifo for microblaze to take it (or uart tx). Also it will make config_done = '1' for control.vhd to know.
     
     -- control.vhd:
     -- It will check MUXOUT input signal to sample during ramp and usb tx during gap.
@@ -196,19 +224,15 @@ begin
     -- STATIC PIN DEFINITIONS    
     
     -- Drive ADC OE/SHDN pins for normal operation
-    -- Control.vhd will drive these
-    ADC_OE   <= "00"; -- both channels enabled
-    ADC_SHDN <= "00"; -- normal operation
+    -- ADC_OE   <= "00"; -- both channels enabled
+    -- ADC_SHDN <= "00"; -- normal operation
     
     MIX_EN <= '1';
     
     -- Not used for now
     EXT1 <= (others => '0');
     EXT2 <= (others => '0');
-    
         
-    PA_EN <= s_pa_en;
-    
     ADF_TXDATA <= '0'; -- not used. this is for data modulation
     
     s_adf_muxout <= ADF_MUXOUT; -- high pulse on this pin when ramp starts
@@ -216,6 +240,10 @@ begin
     ADF_CE <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
     ADF_LE <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
     
+    -- Connect outputs to top-level pins
+    ADC_OE   <= s_adc_oe;
+    ADC_SHDN <= s_adc_shdn;
+    PA_EN    <= s_pa_en_ctrl;
        
     -- In general logic
     -- Microblaze will configure adf4158 with spi.
@@ -233,8 +261,6 @@ begin
         uart_rtl_0_txd                  => s_uart_rtl_0_txd
     );
     
-
-
     -- Only DATA_A 12 bit line is connected to fpga
     -- ADC is used in mux mode where it outputs both channel in order.
     -- Rising edge channel a data, falling edge channel b data
@@ -265,10 +291,10 @@ begin
         clk         => SYSCLK,
         reset_n     => RESET,
         read_n      => s_read_n,        -- 0 to read from rx fifo of usb_sync
-        write_n     => s_write_n,       -- 0 to write to tx fifo of usb_sync
-        chipselect  => s_chipselect,    -- 1 to selectchip for both read and write    
+        write_n     => s_usb_write_n,       -- 0 to write to tx fifo of usb_sync
+        chipselect  => s_usb_chipselect,    -- 1 to selectchip for both read and write    
         readdata    => s_readdata,      -- read data 8 bit
-        writedata   => s_writedata,     -- write data 8 bit
+        writedata   => s_usb_writedata,     -- write data 8 bit
         tx_full     => s_tx_full,       -- is full flag
         rx_empty    => s_rx_empty,      -- is empty flag
     
@@ -295,6 +321,27 @@ begin
         read_n       => s_read_n,
         config_done  => s_config_done,
         data_out     => s_config_data
+    );
+    
+    -- Control FSM instantiation    
+    control_i : control
+    generic map (
+        MAX_SAMPLES => 2048  -- adjust according to ramp length
+    )
+    port map (
+        clk            => SYSCLK,
+        rst            => RESET,
+        muxout         => s_adf_muxout,     -- ADF4158 MUXOUT input
+        adc_data_a     => s_adc_a_out,
+        adc_data_b     => s_adc_b_out,
+        adc_valid      => s_adc_valid,
+        adc_oe        => s_adc_oe,
+        adc_shdn      => s_adc_shdn,
+        pa_en         => s_pa_en_ctrl,
+        usb_write_n   => s_usb_write_n,
+        usb_chipselect=> s_usb_chipselect,
+        usb_writedata => s_usb_writedata,
+        usb_tx_full   => s_tx_full
     );
 
     ila_0_i : ila_0
