@@ -166,7 +166,6 @@ architecture Behavioral of top_module is
     signal s_uart_rtl_0_txd   : STD_LOGIC;
     
     signal s_spi0_miso          : STD_LOGIC; -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
-    signal s_adf_muxout         : std_logic;
     signal s_spi0_cs            : STD_LOGIC; -- LE pin will be controlled with gpio so this spi's cs will only be connected to internal signal for now
         
     
@@ -175,7 +174,6 @@ architecture Behavioral of top_module is
     signal s_adc_b_out  : std_logic_vector(15 downto 0);         -- channel B data
     signal s_adc_valid  : std_logic;        -- FIR output valid pulse
 
-    
     -- USB_SYNC signals
     signal s_read_n      : std_logic;
     signal s_write_n     : std_logic;
@@ -196,13 +194,16 @@ architecture Behavioral of top_module is
     signal s_usb_write_n  : std_logic;
     signal s_usb_chipselect : std_logic;
     signal s_usb_writedata : std_logic_vector(7 downto 0);
-    
 
     -- ILA Probe signals
     signal s_probe0 : std_logic_vector(7 DOWNTO 0);
     signal s_probe1 : std_logic_vector(11 DOWNTO 0);
     signal s_probe2 : std_logic_vector(31 DOWNTO 0);
     signal s_probe3 : std_logic_vector(9 DOWNTO 0);
+    
+    signal muxout_sync : std_logic;
+    signal muxout_sync_d : std_logic;
+
     
 begin 
 
@@ -234,9 +235,7 @@ begin
     EXT2 <= (others => '0');
         
     ADF_TXDATA <= '0'; -- not used. this is for data modulation
-    
-    s_adf_muxout <= ADF_MUXOUT; -- high pulse on this pin when ramp starts
-    
+        
     ADF_CE <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
     ADF_LE <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
     
@@ -244,6 +243,14 @@ begin
     ADC_OE   <= s_adc_oe;
     ADC_SHDN <= s_adc_shdn;
     PA_EN    <= s_pa_en_ctrl;
+       
+    process(SYSCLK)
+    begin
+        if rising_edge(SYSCLK) then
+            muxout_sync_d <= ADF_MUXOUT;
+            muxout_sync <= muxout_sync_d;
+        end if;
+    end process;    
        
     -- In general logic
     -- Microblaze will configure adf4158 with spi.
@@ -331,7 +338,7 @@ begin
     port map (
         clk            => SYSCLK,
         rst            => RESET,
-        muxout         => s_adf_muxout,     -- ADF4158 MUXOUT input
+        muxout         => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
         adc_data_a     => s_adc_a_out,
         adc_data_b     => s_adc_b_out,
         adc_valid      => s_adc_valid,
