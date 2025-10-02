@@ -13,7 +13,7 @@ entity config is
     );
     Port (
         clk          : in  std_logic;
-        rst          : in  std_logic;
+        reset        : in  std_logic;
         usb_rx_empty : in  std_logic;
         usb_readdata : in  std_logic_vector(7 downto 0);
         chipselect   : out std_logic;
@@ -32,9 +32,9 @@ architecture Behavioral of config is
 
 begin
 
-    config_proc: process(clk, rst)
+    config_proc: process(clk, reset)
     begin
-        if rst = '1' then
+        if reset = '1' then
             state        <= IDLE;
             byte_counter <= 0;
             tmp_data     <= (others => '0');
