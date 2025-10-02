@@ -165,8 +165,8 @@ architecture Behavioral of top_module is
     signal s_uart_rtl_0_rxd   : STD_LOGIC;
     signal s_uart_rtl_0_txd   : STD_LOGIC;
     
-    signal s_spi0_miso          : STD_LOGIC; -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
-    signal s_spi0_cs            : STD_LOGIC; -- LE pin will be controlled with gpio so this spi's cs will only be connected to internal signal for now
+    signal s_spi0_miso          : STD_LOGIC := 'Z';  -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
+    signal s_spi0_cs            : STD_LOGIC;        -- LE pin will be controlled with gpio so this spi's cs will only be connected to internal signal for now
         
     -- ADC signals
     signal s_adc_a_out  : std_logic_vector(15 downto 0);         -- channel A data
@@ -246,13 +246,10 @@ begin
     ADC_SHDN <= s_control_adc_shdn;
     PA_EN    <= s_control_pa_en;
        
-    -- shared signals into usb_sync
-    s_read_n      <= s_config_usb_read_n when s_config_done = '0' else '1';  -- only config reads
+    -- connect chipselect according to if config is done or not.
+    -- if config is done then usb control can start using usb
     s_chipselect  <= s_config_usb_chipselect when s_config_done = '0' else s_control_usb_chipselect;
-    
-    s_write_n     <= s_control_usb_write_n;  -- only control writes
-    s_writedata   <= s_control_usb_writedata;   
-       
+           
     process(SYSCLK)
     begin
         if rising_edge(SYSCLK) then
