@@ -92,7 +92,7 @@ architecture Behavioral of top_module is
     port (
         -- Bus signals
         clk         : in std_logic;
-        reset_n     : in std_logic;
+        reset       : in std_logic;
         read_n      : in std_logic;
         write_n     : in std_logic;
         chipselect  : in std_logic;
@@ -168,7 +168,6 @@ architecture Behavioral of top_module is
     signal s_spi0_miso          : STD_LOGIC; -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
     signal s_spi0_cs            : STD_LOGIC; -- LE pin will be controlled with gpio so this spi's cs will only be connected to internal signal for now
         
-    
     -- ADC signals
     signal s_adc_a_out  : std_logic_vector(15 downto 0);         -- channel A data
     signal s_adc_b_out  : std_logic_vector(15 downto 0);         -- channel B data
@@ -184,16 +183,19 @@ architecture Behavioral of top_module is
     signal s_rx_empty    : std_logic;
         
     -- CONFIG signals
-    signal s_config_done : std_logic;   
-    signal s_config_data : std_logic_vector(511 downto 0);
+    signal s_config_done            : std_logic;   
+    signal s_config_data            : std_logic_vector(511 downto 0);
+    signal s_config_usb_readdata    : std_logic_vector(7 downto 0);
+    signal s_config_usb_chipselect  : std_logic;
+    signal s_config_usb_read_n      : std_logic;
 
     -- Signals for control
-    signal s_adc_oe       : std_logic_vector(1 downto 0);
-    signal s_adc_shdn     : std_logic_vector(1 downto 0);
-    signal s_pa_en_ctrl   : std_logic;
-    signal s_usb_write_n  : std_logic;
-    signal s_usb_chipselect : std_logic;
-    signal s_usb_writedata : std_logic_vector(7 downto 0);
+    signal s_control_adc_oe         : std_logic_vector(1 downto 0);
+    signal s_control_adc_shdn       : std_logic_vector(1 downto 0);
+    signal s_control_pa_en          : std_logic;
+    signal s_control_usb_write_n    : std_logic;
+    signal s_control_usb_chipselect : std_logic;
+    signal s_control_usb_writedata  : std_logic_vector(7 downto 0);
 
     -- ILA Probe signals
     signal s_probe0 : std_logic_vector(7 DOWNTO 0);
@@ -240,9 +242,16 @@ begin
     ADF_LE <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
     
     -- Connect outputs to top-level pins
-    ADC_OE   <= s_adc_oe;
-    ADC_SHDN <= s_adc_shdn;
-    PA_EN    <= s_pa_en_ctrl;
+    ADC_OE   <= s_control_adc_oe;
+    ADC_SHDN <= s_control_adc_shdn;
+    PA_EN    <= s_control_pa_en;
+       
+    -- shared signals into usb_sync
+    s_read_n      <= s_config_usb_read_n when s_config_done = '0' else '1';  -- only config reads
+    s_chipselect  <= s_config_usb_chipselect when s_config_done = '0' else s_control_usb_chipselect;
+    
+    s_write_n     <= s_control_usb_write_n;  -- only control writes
+    s_writedata   <= s_control_usb_writedata;   
        
     process(SYSCLK)
     begin
@@ -296,14 +305,14 @@ begin
     usb_sync_i : component usb_sync
     port map (
         clk         => SYSCLK,
-        reset_n     => RESET,
-        read_n      => s_read_n,        -- 0 to read from rx fifo of usb_sync
-        write_n     => s_usb_write_n,       -- 0 to write to tx fifo of usb_sync
-        chipselect  => s_usb_chipselect,    -- 1 to selectchip for both read and write    
-        readdata    => s_readdata,      -- read data 8 bit
-        writedata   => s_usb_writedata,     -- write data 8 bit
-        tx_full     => s_tx_full,       -- is full flag
-        rx_empty    => s_rx_empty,      -- is empty flag
+        reset       => RESET,
+        read_n      => s_read_n,                -- 0 to read from rx fifo of usb_sync
+        write_n     => s_write_n,               -- 0 to write to tx fifo of usb_sync
+        chipselect  => s_chipselect,            -- 1 to selectchip for both read and write    
+        readdata    => s_config_usb_readdata,   -- read data 8 bit
+        writedata   => s_control_usb_writedata, -- write data 8 bit
+        tx_full     => s_tx_full,               -- is full flag
+        rx_empty    => s_rx_empty,              -- is empty flag
     
         -- FT2232 Bus Signals
         usb_clock   => USB_CLKOUT,
@@ -323,9 +332,9 @@ begin
         clk          => SYSCLK,
         rst          => RESET,        -- top-level reset signal
         usb_rx_empty => s_rx_empty,
-        usb_readdata => s_readdata,
-        chipselect   => s_chipselect,
-        read_n       => s_read_n,
+        usb_readdata => s_config_usb_readdata,
+        chipselect   => s_config_usb_chipselect,
+        read_n       => s_config_usb_read_n,
         config_done  => s_config_done,
         data_out     => s_config_data
     );
@@ -342,13 +351,13 @@ begin
         adc_data_a     => s_adc_a_out,
         adc_data_b     => s_adc_b_out,
         adc_valid      => s_adc_valid,
-        adc_oe        => s_adc_oe,
-        adc_shdn      => s_adc_shdn,
-        pa_en         => s_pa_en_ctrl,
-        usb_write_n   => s_usb_write_n,
-        usb_chipselect=> s_usb_chipselect,
-        usb_writedata => s_usb_writedata,
-        usb_tx_full   => s_tx_full
+        adc_oe         => s_control_adc_oe,
+        adc_shdn       => s_control_adc_shdn,
+        pa_en          => s_control_pa_en,
+        usb_write_n    => s_control_usb_write_n,
+        usb_chipselect => s_control_usb_chipselect,
+        usb_writedata  => s_control_usb_writedata,
+        usb_tx_full    => s_tx_full
     );
 
     ila_0_i : ila_0
