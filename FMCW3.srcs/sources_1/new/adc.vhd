@@ -5,11 +5,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity adc is
     Port( 
-        clk : in STD_LOGIC;
-        adc_data : in STD_LOGIC_VECTOR (11 downto 0);
-        data_a : out STD_LOGIC_VECTOR (15 downto 0);
-        data_b : out STD_LOGIC_VECTOR (15 downto 0);
-        valid : out STD_LOGIC
+        clk         : in STD_LOGIC;
+        adc_data    : in STD_LOGIC_VECTOR (11 downto 0);
+        data_a      : out STD_LOGIC_VECTOR (15 downto 0);
+        data_b      : out STD_LOGIC_VECTOR (15 downto 0);
+        valid       : out STD_LOGIC
     );
 end adc;
 
@@ -20,18 +20,23 @@ architecture Behavioral of adc is
 
     COMPONENT fir_compiler_0
     PORT (
-        aclk : IN STD_LOGIC;
-        s_axis_data_tvalid : IN STD_LOGIC;
-        s_axis_data_tready : OUT STD_LOGIC;
-        s_axis_data_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-        m_axis_data_tvalid : OUT STD_LOGIC;
-        m_axis_data_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+        aclk                : IN STD_LOGIC;
+        s_axis_data_tvalid  : IN STD_LOGIC;
+        s_axis_data_tready  : OUT STD_LOGIC;
+        s_axis_data_tdata   : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        m_axis_data_tvalid  : OUT STD_LOGIC;
+        m_axis_data_tdata   : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
         );
     END COMPONENT;
     
-    signal fir_data_in_valid : std_logic := '1';
-    signal fir_ready : std_logic;
-    signal fir_data_in, fir_data_out : std_logic_vector(31 downto 0);
+    signal fir1_data_in_valid            : std_logic := '1';
+    signal fir2_data_in_valid            : std_logic := '1';
+    
+    signal fir1_ready                    : std_logic;
+    signal fir2_ready                    : std_logic;
+    
+    signal fir1_data_in, fir1_data_out   : std_logic_vector(16 downto 0);
+    signal fir2_data_in, fir2_data_out   : std_logic_vector(16 downto 0);
     
     signal fir_a, fir_b : std_logic_vector(15 downto 0);
     
@@ -59,28 +64,44 @@ begin
         end if;        
     end process;
     
-    fir_data_in <= "0000"&data_a_buffer&"0000"&data_b_buffer;
-    fir_a <= fir_data_out(31 downto 16);
-    fir_b <= fir_data_out(15 downto 0);
+    fir1_data_in <= "0000"&data_a_buffer;
+    fir2_data_in <= "0000"&data_b_buffer;
+    
+    fir_a <= fir1_data_out;
+    fir_b <= fir2_data_out;
     
     -- If fir filter is selected.
     g_fir : if generate_fir generate
-    fir : fir_compiler_0
+    
+    fir1 : fir_compiler_0
     PORT MAP (
         aclk => clk,
-        s_axis_data_tvalid => fir_data_in_valid,
-        s_axis_data_tready => fir_ready,
-        s_axis_data_tdata => fir_data_in,
-        m_axis_data_tvalid => valid,
-        m_axis_data_tdata => fir_data_out
-    );                 
+        s_axis_data_tvalid  => fir1_data_in_valid,
+        s_axis_data_tready  => fir1_ready,
+        s_axis_data_tdata   => fir1_data_in,
+        m_axis_data_tvalid  => valid,
+        m_axis_data_tdata   => fir1_data_out
+    );  
+    
+    fir2 : fir_compiler_0
+    PORT MAP (
+        aclk => clk,
+        s_axis_data_tvalid  => fir2_data_in_valid,
+        s_axis_data_tready  => fir2_ready,
+        s_axis_data_tdata   => fir2_data_in,
+        m_axis_data_tvalid  => valid,
+        m_axis_data_tdata   => fir2_data_out
+    );                  
+    
+    
     end generate;
     
     -- If fir is not selected then valid pulse is generated at every 41 cycles
     -- ADC is still sampled with 40msps but 1msps valid is generated
     g_not_fir : if not generate_fir generate
     
-        fir_data_out <= fir_data_in;
+        fir1_data_out <= fir1_data_in;
+        fir2_data_out <= fir2_data_in;
         
         process(clk)
         variable count : unsigned(7 downto 0) := (others => '0');
