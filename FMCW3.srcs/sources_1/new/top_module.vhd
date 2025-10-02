@@ -64,6 +64,9 @@ end top_module;
 
 architecture Behavioral of top_module is
 
+    -- In general logic
+    -- Microblaze will configure adf4158 with spi.
+    -- Then vhdl code will run logic according to the state of muxout pulse (READBACK TO MUXOUT is set on spi config for this)
     component microblaze_wrapper is
     port (
         gpio_rtl_0_tri_o    : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -118,7 +121,7 @@ architecture Behavioral of top_module is
         );
         port (
             clk          : in  std_logic;
-            rst          : in  std_logic;
+            reset        : in  std_logic;
             usb_rx_empty : in  std_logic;
             usb_readdata : in  std_logic_vector(7 downto 0);
             chipselect   : out std_logic;
@@ -134,7 +137,7 @@ architecture Behavioral of top_module is
     );
     port (
         clk          : in  std_logic;               -- system clock
-        rst          : in  std_logic;               -- active high reset
+        reset        : in  std_logic;               -- active high reset
         muxout       : in  std_logic;               -- high during ramp
         adc_data_a   : in  std_logic_vector(15 downto 0);
         adc_data_b   : in  std_logic_vector(15 downto 0);
@@ -174,11 +177,7 @@ architecture Behavioral of top_module is
     signal s_adc_valid  : std_logic;        -- FIR output valid pulse
 
     -- USB_SYNC signals
-    signal s_read_n      : std_logic;
-    signal s_write_n     : std_logic;
     signal s_chipselect  : std_logic;
-    signal s_readdata    : std_logic_vector (7 downto 0);
-    signal s_writedata   : std_logic_vector (7 downto 0);
     signal s_tx_full     : std_logic;
     signal s_rx_empty    : std_logic;
         
@@ -190,9 +189,6 @@ architecture Behavioral of top_module is
     signal s_config_usb_read_n      : std_logic;
 
     -- Signals for control
-    signal s_control_adc_oe         : std_logic_vector(1 downto 0);
-    signal s_control_adc_shdn       : std_logic_vector(1 downto 0);
-    signal s_control_pa_en          : std_logic;
     signal s_control_usb_write_n    : std_logic;
     signal s_control_usb_chipselect : std_logic;
     signal s_control_usb_writedata  : std_logic_vector(7 downto 0);
@@ -205,7 +201,6 @@ architecture Behavioral of top_module is
     
     signal muxout_sync : std_logic;
     signal muxout_sync_d : std_logic;
-
     
 begin 
 
@@ -238,17 +233,12 @@ begin
         
     ADF_TXDATA <= '0'; -- not used. this is for data modulation
         
-    ADF_CE <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
-    ADF_LE <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
+    ADF_CE      <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
+    ADF_LE      <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
     
-    -- Connect outputs to top-level pins
-    ADC_OE   <= s_control_adc_oe;
-    ADC_SHDN <= s_control_adc_shdn;
-    PA_EN    <= s_control_pa_en;
-       
     -- connect chipselect according to if config is done or not.
     -- if config is done then usb control can start using usb
-    s_chipselect  <= s_config_usb_chipselect when s_config_done = '0' else s_control_usb_chipselect;
+    s_chipselect <= s_config_usb_chipselect when s_config_done = '0' else s_control_usb_chipselect;
            
     process(SYSCLK)
     begin
@@ -258,9 +248,6 @@ begin
         end if;
     end process;    
        
-    -- In general logic
-    -- Microblaze will configure adf4158 with spi.
-    -- Then vhdl code will run logic according to the state of muxout pulse (READBACK TO MUXOUT is set on spi config for this)
     microblaze_i: component microblaze_wrapper
     port map (
         clk_100MHz                      => SYSCLK,
@@ -303,8 +290,8 @@ begin
     port map (
         clk         => SYSCLK,
         reset       => RESET,
-        read_n      => s_read_n,                -- 0 to read from rx fifo of usb_sync
-        write_n     => s_write_n,               -- 0 to write to tx fifo of usb_sync
+        read_n      => s_config_usb_read_n,     -- 0 to read from rx fifo of usb_sync (config reads usb to get python script's setup parameters)
+        write_n     => s_control_usb_write_n,   -- 0 to write to tx fifo of usb_sync (control writes usb to send adc data to python)
         chipselect  => s_chipselect,            -- 1 to selectchip for both read and write    
         readdata    => s_config_usb_readdata,   -- read data 8 bit
         writedata   => s_control_usb_writedata, -- write data 8 bit
@@ -327,7 +314,7 @@ begin
     )
     port map (
         clk          => SYSCLK,
-        rst          => RESET,        -- top-level reset signal
+        reset        => RESET,        -- top-level reset signal
         usb_rx_empty => s_rx_empty,
         usb_readdata => s_config_usb_readdata,
         chipselect   => s_config_usb_chipselect,
@@ -343,14 +330,14 @@ begin
     )
     port map (
         clk            => SYSCLK,
-        rst            => RESET,
+        reset          => RESET,
         muxout         => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
         adc_data_a     => s_adc_a_out,
         adc_data_b     => s_adc_b_out,
         adc_valid      => s_adc_valid,
-        adc_oe         => s_control_adc_oe,
-        adc_shdn       => s_control_adc_shdn,
-        pa_en          => s_control_pa_en,
+        adc_oe         => ADC_OE,
+        adc_shdn       => ADC_SHDN,
+        pa_en          => PA_EN,
         usb_write_n    => s_control_usb_write_n,
         usb_chipselect => s_control_usb_chipselect,
         usb_writedata  => s_control_usb_writedata,
