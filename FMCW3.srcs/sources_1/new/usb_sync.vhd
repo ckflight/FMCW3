@@ -30,7 +30,7 @@ entity usb_sync is
     port (
 		-- Bus signals
 		clk           : in std_logic;
-		reset_n       : in std_logic;
+		reset         : in std_logic;
 		read_n        : in std_logic;
 		write_n       : in std_logic;
 		chipselect    : in std_logic;
@@ -190,10 +190,10 @@ architecture rtl of usb_sync is
 	rd_sig <= '1' when chipselect = '1' and read_n = '0' else '0';
  
 	-- Handle FIFOs to Bus
-	process (clk, reset_n)
+	process (clk, reset)
 	begin
  
-		if reset_n = '0' then
+		if reset = '0' then
  
 			rx_fifo_rddone <= '0';
  
