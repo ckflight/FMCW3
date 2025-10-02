@@ -40,9 +40,9 @@ begin
     -- Stimulus for adc_data (Channel A on rising, Channel B on falling)
     stim_process : process
         variable chA : unsigned(11 downto 0) := (others => '0');
-        variable chB : unsigned(11 downto 0) := (others => '1');
+        variable chB : unsigned(11 downto 0) := (others => '0');
     begin
-        for i in 0 to 100 loop
+        for i in 0 to 1000 loop
             -- Rising edge → Channel A sample
             wait until rising_edge(clk);
             adc_data <= std_logic_vector(chA);
