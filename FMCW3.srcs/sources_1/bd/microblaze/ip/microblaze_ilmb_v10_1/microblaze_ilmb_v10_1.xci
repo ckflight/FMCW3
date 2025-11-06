@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "microblaze_ilmb_v10_1",
-    "cell_name": "microblaze_0_local_memory/ilmb_v10",
+    "cell_name": "ilmb_v10",
     "component_reference": "xilinx.com:ip:lmb_v10:3.0",
     "ip_revision": "15",
     "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_1",
@@ -26,14 +26,14 @@
         "ARCHITECTURE": [ { "value": "artix7" } ],
         "BASE_BOARD_PART": [ { "value": "" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
-        "DEVICE": [ { "value": "xc7a15ti" } ],
+        "DEVICE": [ { "value": "xc7a35t" } ],
         "PACKAGE": [ { "value": "ftg256" } ],
         "PREFHDL": [ { "value": "VHDL" } ],
         "SILICON_REVISION": [ { "value": "" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-1L" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
         "STATIC_POWER": [ { "value": "" } ],
-        "TEMPERATURE_GRADE": [ { "value": "I" } ]
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],

@@ -47,7 +47,7 @@
       },
       "model_parameters": {
         "C_FAMILY": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
-        "C_DEVICE": [ { "value": "xc7a15ti", "resolve_type": "generated", "usage": "all" } ],
+        "C_DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
         "C_JTAG_CHAIN": [ { "value": "2", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_USE_BSCAN": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_BSCANID": [ { "value": "76547328", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -84,14 +84,14 @@
         "ARCHITECTURE": [ { "value": "artix7" } ],
         "BASE_BOARD_PART": [ { "value": "" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
-        "DEVICE": [ { "value": "xc7a15ti" } ],
+        "DEVICE": [ { "value": "xc7a35t" } ],
         "PACKAGE": [ { "value": "ftg256" } ],
         "PREFHDL": [ { "value": "VHDL" } ],
         "SILICON_REVISION": [ { "value": "" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-1L" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
         "STATIC_POWER": [ { "value": "" } ],
-        "TEMPERATURE_GRADE": [ { "value": "I" } ]
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
