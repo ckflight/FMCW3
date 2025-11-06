@@ -1,6 +1,91 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Thu Nov  6 20:27:39 2025
+| Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_microblaze_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_microblaze_0_1 (xilinx.com:ip:microblaze:11.0 (Rev. 15)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_BASE_VECTORS to value 0x0000000000000000 (source 'default')
+Set parameter C_M_AXI_DP_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_DC_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_IP_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_IC_ADDR_WIDTH to value 32 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Thu Nov  6 20:27:39 2025
+| Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_axi_smc_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of microblaze_axi_smc_0 (xilinx.com:ip:smartconnect:1.0 (Rev. 27)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+microblaze_axi_smc_0 may have connection or interface changes.
+
+
+3. Customization warnings
+-------------------------
+
+Parameter 'ASSOCIATED_BUSIF' is no longer present on the upgraded IP 'microblaze_axi_smc_0', and cannot be set to 'M00_AXI:M01_AXI:M02_AXI:M03_AXI:M04_AXI:M05_AXI:S00_AXI'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:smartconnect:1.0 -user_name microblaze_axi_smc_0
+set_property -dict "\
+  CONFIG.ADVANCED_PROPERTIES {0} \
+  CONFIG.Component_Name {microblaze_axi_smc_0} \
+  CONFIG.HAS_ARESETN {1} \
+  CONFIG.NUM_CLKS {1} \
+  CONFIG.NUM_MI {6} \
+  CONFIG.NUM_SI {1} " [get_ips microblaze_axi_smc_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
 | Date         : Fri Oct 24 12:10:00 2025
 | Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

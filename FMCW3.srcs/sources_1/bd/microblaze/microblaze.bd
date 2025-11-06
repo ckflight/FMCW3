@@ -1165,11 +1165,11 @@
           "axi_intc_0/s_axi_aclk",
           "axi_quad_spi_0/ext_spi_clk",
           "axi_quad_spi_0/s_axi_aclk",
-          "axi_smc/aclk",
           "axi_timer_0/s_axi_aclk",
           "axi_uartlite_0/s_axi_aclk",
-          "microblaze_0/Clk",
-          "rst_clk_100MHz_100M/slowest_sync_clk"
+          "rst_clk_100MHz_100M/slowest_sync_clk",
+          "axi_smc/aclk",
+          "microblaze_0/Clk"
         ]
       },
       "reset_rtl_0_1": {
@@ -1197,9 +1197,9 @@
           "axi_gpio_0/s_axi_aresetn",
           "axi_intc_0/s_axi_aresetn",
           "axi_quad_spi_0/s_axi_aresetn",
-          "axi_smc/aresetn",
           "axi_timer_0/s_axi_aresetn",
-          "axi_uartlite_0/s_axi_aresetn"
+          "axi_uartlite_0/s_axi_aresetn",
+          "axi_smc/aresetn"
         ]
       },
       "xlconcat_0_dout": {
