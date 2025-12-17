@@ -1,7 +1,6 @@
 set_property -dict { PACKAGE_PIN N11   IOSTANDARD LVCMOS33 } [get_ports { sysclk }];
 create_clock -add -name sysclk -period 25.00 -waveform {0 12.5} [get_ports {sysclk}]; # 40 MHz main clock
 
-#set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { usb_clkout }]; # not clock capable created problem after mmcm clock wizard
 set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { usb_clkout }]; # clock capable pin p not n
 create_clock -add -name usb_clkout -period 16.667 -waveform {0.000 8.333} [get_ports {usb_clkout}]; # 60 MHz main clock
 
@@ -50,7 +49,7 @@ set_property -dict { PACKAGE_PIN D16   IOSTANDARD LVCMOS33 } [get_ports { usb_da
 set_property -dict { PACKAGE_PIN D15   IOSTANDARD LVCMOS33 } [get_ports { usb_data[7] }];
 set_property -dict { PACKAGE_PIN B16   IOSTANDARD LVCMOS33 } [get_ports { usb_rxf }];
 set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { usb_txe }];
-set_property -dict { PACKAGE_PIN B14   IOSTANDARD LVCMOS33 } [get_ports { usb_rd }];
+set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { usb_rd }];
 set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { usb_wr }];
 set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33 } [get_ports { usb_siwua }];
 set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }];
