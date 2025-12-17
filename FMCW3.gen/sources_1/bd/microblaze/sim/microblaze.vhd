@@ -1,9 +1,9 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Wed Sep 24 18:51:38 2025
---Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
+--Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+--Date        : Wed Dec 17 14:10:25 2025
+--Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 --Command     : generate_target microblaze.bd
 --Design      : microblaze
 --Purpose     : IP block netlist
@@ -208,7 +208,7 @@ architecture STRUCTURE of microblaze_0_local_memory_imp_HPR3PZ is
   attribute BMM_INFO_ADDRESS_SPACE : string;
   attribute BMM_INFO_ADDRESS_SPACE of dlmb_bram_if_cntlr : label is "byte  0x00000000 32 > microblaze microblaze_0_local_memory/lmb_bram";
   attribute KEEP_HIERARCHY : string;
-  attribute KEEP_HIERARCHY of dlmb_bram_if_cntlr : label is "yes";
+  attribute KEEP_HIERARCHY of dlmb_bram_if_cntlr : label is "YES";
 begin
 dlmb_bram_if_cntlr: component microblaze_dlmb_bram_if_cntlr_1
      port map (
@@ -530,6 +530,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity microblaze is
   port (
+    AXI_STR_RXD_0_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    AXI_STR_RXD_0_tlast : in STD_LOGIC;
+    AXI_STR_RXD_0_tready : out STD_LOGIC;
+    AXI_STR_RXD_0_tvalid : in STD_LOGIC;
+    AXI_STR_TXD_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    AXI_STR_TXD_0_tlast : out STD_LOGIC;
+    AXI_STR_TXD_0_tready : in STD_LOGIC;
+    AXI_STR_TXD_0_tvalid : out STD_LOGIC;
     clk_100MHz : in STD_LOGIC;
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     reset_rtl_0 : in STD_LOGIC;
@@ -541,7 +549,7 @@ entity microblaze is
     uart_rtl_0_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of microblaze : entity is "microblaze,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=microblaze,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=13,da_board_cnt=13,da_clkrst_cnt=2,da_mb_cnt=6,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of microblaze : entity is "microblaze,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=microblaze,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=17,da_board_cnt=13,da_clkrst_cnt=2,da_mb_cnt=6,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of microblaze : entity is "microblaze.hwdef";
 end microblaze;
@@ -847,9 +855,115 @@ architecture STRUCTURE of microblaze is
     M03_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M03_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M03_AXI_rvalid : in STD_LOGIC;
-    M03_AXI_rready : out STD_LOGIC
+    M03_AXI_rready : out STD_LOGIC;
+    M04_AXI_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M04_AXI_awvalid : out STD_LOGIC;
+    M04_AXI_awready : in STD_LOGIC;
+    M04_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M04_AXI_wvalid : out STD_LOGIC;
+    M04_AXI_wready : in STD_LOGIC;
+    M04_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M04_AXI_bvalid : in STD_LOGIC;
+    M04_AXI_bready : out STD_LOGIC;
+    M04_AXI_araddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M04_AXI_arvalid : out STD_LOGIC;
+    M04_AXI_arready : in STD_LOGIC;
+    M04_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M04_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M04_AXI_rvalid : in STD_LOGIC;
+    M04_AXI_rready : out STD_LOGIC;
+    M05_AXI_awaddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    M05_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M05_AXI_awvalid : out STD_LOGIC;
+    M05_AXI_awready : in STD_LOGIC;
+    M05_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M05_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M05_AXI_wvalid : out STD_LOGIC;
+    M05_AXI_wready : in STD_LOGIC;
+    M05_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M05_AXI_bvalid : in STD_LOGIC;
+    M05_AXI_bready : out STD_LOGIC;
+    M05_AXI_araddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    M05_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M05_AXI_arvalid : out STD_LOGIC;
+    M05_AXI_arready : in STD_LOGIC;
+    M05_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M05_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M05_AXI_rvalid : in STD_LOGIC;
+    M05_AXI_rready : out STD_LOGIC
   );
   end component microblaze_axi_smc_0;
+  component microblaze_axi_intc_0_0 is
+  port (
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    intr : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    irq : out STD_LOGIC
+  );
+  end component microblaze_axi_intc_0_0;
+  component microblaze_axi_fifo_mm_s_0_1 is
+  port (
+    interrupt : out STD_LOGIC;
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    mm2s_prmry_reset_out_n : out STD_LOGIC;
+    axi_str_txd_tvalid : out STD_LOGIC;
+    axi_str_txd_tready : in STD_LOGIC;
+    axi_str_txd_tlast : out STD_LOGIC;
+    axi_str_txd_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s2mm_prmry_reset_out_n : out STD_LOGIC;
+    axi_str_rxd_tvalid : in STD_LOGIC;
+    axi_str_rxd_tready : out STD_LOGIC;
+    axi_str_rxd_tlast : in STD_LOGIC;
+    axi_str_rxd_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component microblaze_axi_fifo_mm_s_0_1;
+  component microblaze_xlconcat_0_0 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 1 downto 0 )
+  );
+  end component microblaze_xlconcat_0_0;
+  signal axi_fifo_mm_s_0_interrupt : STD_LOGIC;
+  signal axi_intc_0_interrupt_INTERRUPT : STD_LOGIC;
   signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
@@ -918,6 +1032,41 @@ architecture STRUCTURE of microblaze is
   signal axi_smc_M03_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M03_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M04_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M04_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M04_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M04_AXI_AWADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M04_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M04_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M04_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M04_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M04_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M04_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M04_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M04_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M04_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M04_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M04_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M04_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M04_AXI_WVALID : STD_LOGIC;
+  signal axi_smc_M05_AXI_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal axi_smc_M05_AXI_ARREADY : STD_LOGIC;
+  signal axi_smc_M05_AXI_ARVALID : STD_LOGIC;
+  signal axi_smc_M05_AXI_AWADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal axi_smc_M05_AXI_AWREADY : STD_LOGIC;
+  signal axi_smc_M05_AXI_AWVALID : STD_LOGIC;
+  signal axi_smc_M05_AXI_BREADY : STD_LOGIC;
+  signal axi_smc_M05_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M05_AXI_BVALID : STD_LOGIC;
+  signal axi_smc_M05_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M05_AXI_RREADY : STD_LOGIC;
+  signal axi_smc_M05_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal axi_smc_M05_AXI_RVALID : STD_LOGIC;
+  signal axi_smc_M05_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axi_smc_M05_AXI_WREADY : STD_LOGIC;
+  signal axi_smc_M05_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal axi_smc_M05_AXI_WVALID : STD_LOGIC;
+  signal axi_timer_0_interrupt : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal microblaze_0_M_AXI_DP_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -969,6 +1118,9 @@ architecture STRUCTURE of microblaze is
   signal rst_clk_100MHz_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_100MHz_100M_mb_reset : STD_LOGIC;
   signal rst_clk_100MHz_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_axi_fifo_mm_s_0_mm2s_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
+  signal NLW_axi_fifo_mm_s_0_s2mm_prmry_reset_out_n_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_gpio_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_quad_spi_0_io0_t_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_quad_spi_0_io1_o_UNCONNECTED : STD_LOGIC;
@@ -984,9 +1136,12 @@ architecture STRUCTURE of microblaze is
   signal NLW_axi_smc_M02_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M03_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_smc_M03_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M04_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M04_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M05_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axi_smc_M05_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axi_timer_0_generateout0_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_timer_0_generateout1_UNCONNECTED : STD_LOGIC;
-  signal NLW_axi_timer_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_timer_0_pwm0_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
@@ -995,20 +1150,65 @@ architecture STRUCTURE of microblaze is
   attribute BMM_INFO_PROCESSOR : string;
   attribute BMM_INFO_PROCESSOR of microblaze_0 : label is "microblaze-le > microblaze microblaze_0_local_memory/dlmb_bram_if_cntlr";
   attribute KEEP_HIERARCHY : string;
-  attribute KEEP_HIERARCHY of microblaze_0 : label is "yes";
+  attribute KEEP_HIERARCHY of microblaze_0 : label is "YES";
   attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of AXI_STR_RXD_0_tlast : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD_0 TLAST";
+  attribute X_INTERFACE_INFO of AXI_STR_RXD_0_tready : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD_0 TREADY";
+  attribute X_INTERFACE_INFO of AXI_STR_RXD_0_tvalid : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD_0 TVALID";
+  attribute X_INTERFACE_INFO of AXI_STR_TXD_0_tlast : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD_0 TLAST";
+  attribute X_INTERFACE_INFO of AXI_STR_TXD_0_tready : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD_0 TREADY";
+  attribute X_INTERFACE_INFO of AXI_STR_TXD_0_tvalid : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD_0 TVALID";
   attribute X_INTERFACE_INFO of clk_100MHz : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_100MHZ CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clk_100MHz : signal is "XIL_INTERFACENAME CLK.CLK_100MHZ, CLK_DOMAIN microblaze_clk_100MHz, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_PARAMETER of clk_100MHz : signal is "XIL_INTERFACENAME CLK.CLK_100MHZ, ASSOCIATED_BUSIF AXI_STR_RXD_0:AXI_STR_TXD_0, CLK_DOMAIN microblaze_clk_100MHz, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
   attribute X_INTERFACE_INFO of reset_rtl_0 : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST";
   attribute X_INTERFACE_PARAMETER of reset_rtl_0 : signal is "XIL_INTERFACENAME RST.RESET_RTL_0, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of uart_rtl_0_rxd : signal is "xilinx.com:interface:uart:1.0 uart_rtl_0 RxD";
   attribute X_INTERFACE_MODE : string;
   attribute X_INTERFACE_MODE of uart_rtl_0_rxd : signal is "Master";
   attribute X_INTERFACE_INFO of uart_rtl_0_txd : signal is "xilinx.com:interface:uart:1.0 uart_rtl_0 TxD";
+  attribute X_INTERFACE_INFO of AXI_STR_RXD_0_tdata : signal is "xilinx.com:interface:axis:1.0 AXI_STR_RXD_0 TDATA";
+  attribute X_INTERFACE_MODE of AXI_STR_RXD_0_tdata : signal is "Slave";
+  attribute X_INTERFACE_PARAMETER of AXI_STR_RXD_0_tdata : signal is "XIL_INTERFACENAME AXI_STR_RXD_0, CLK_DOMAIN microblaze_clk_100MHz, FREQ_HZ 100000000, HAS_TKEEP 0, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.0, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of AXI_STR_TXD_0_tdata : signal is "xilinx.com:interface:axis:1.0 AXI_STR_TXD_0 TDATA";
+  attribute X_INTERFACE_MODE of AXI_STR_TXD_0_tdata : signal is "Master";
+  attribute X_INTERFACE_PARAMETER of AXI_STR_TXD_0_tdata : signal is "XIL_INTERFACENAME AXI_STR_TXD_0, CLK_DOMAIN microblaze_clk_100MHz, FREQ_HZ 100000000, HAS_TKEEP 0, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.0, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0";
   attribute X_INTERFACE_INFO of gpio_rtl_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_0 TRI_O";
   attribute X_INTERFACE_MODE of gpio_rtl_0_tri_o : signal is "Master";
 begin
+axi_fifo_mm_s_0: component microblaze_axi_fifo_mm_s_0_1
+     port map (
+      axi_str_rxd_tdata(31 downto 0) => AXI_STR_RXD_0_tdata(31 downto 0),
+      axi_str_rxd_tlast => AXI_STR_RXD_0_tlast,
+      axi_str_rxd_tready => AXI_STR_RXD_0_tready,
+      axi_str_rxd_tvalid => AXI_STR_RXD_0_tvalid,
+      axi_str_txd_tdata(31 downto 0) => AXI_STR_TXD_0_tdata(31 downto 0),
+      axi_str_txd_tlast => AXI_STR_TXD_0_tlast,
+      axi_str_txd_tready => AXI_STR_TXD_0_tready,
+      axi_str_txd_tvalid => AXI_STR_TXD_0_tvalid,
+      interrupt => axi_fifo_mm_s_0_interrupt,
+      mm2s_prmry_reset_out_n => NLW_axi_fifo_mm_s_0_mm2s_prmry_reset_out_n_UNCONNECTED,
+      s2mm_prmry_reset_out_n => NLW_axi_fifo_mm_s_0_s2mm_prmry_reset_out_n_UNCONNECTED,
+      s_axi_aclk => clk_100MHz,
+      s_axi_araddr(31 downto 0) => axi_smc_M04_AXI_ARADDR(31 downto 0),
+      s_axi_aresetn => rst_clk_100MHz_100M_peripheral_aresetn(0),
+      s_axi_arready => axi_smc_M04_AXI_ARREADY,
+      s_axi_arvalid => axi_smc_M04_AXI_ARVALID,
+      s_axi_awaddr(31 downto 0) => axi_smc_M04_AXI_AWADDR(31 downto 0),
+      s_axi_awready => axi_smc_M04_AXI_AWREADY,
+      s_axi_awvalid => axi_smc_M04_AXI_AWVALID,
+      s_axi_bready => axi_smc_M04_AXI_BREADY,
+      s_axi_bresp(1 downto 0) => axi_smc_M04_AXI_BRESP(1 downto 0),
+      s_axi_bvalid => axi_smc_M04_AXI_BVALID,
+      s_axi_rdata(31 downto 0) => axi_smc_M04_AXI_RDATA(31 downto 0),
+      s_axi_rready => axi_smc_M04_AXI_RREADY,
+      s_axi_rresp(1 downto 0) => axi_smc_M04_AXI_RRESP(1 downto 0),
+      s_axi_rvalid => axi_smc_M04_AXI_RVALID,
+      s_axi_wdata(31 downto 0) => axi_smc_M04_AXI_WDATA(31 downto 0),
+      s_axi_wready => axi_smc_M04_AXI_WREADY,
+      s_axi_wstrb(3 downto 0) => axi_smc_M04_AXI_WSTRB(3 downto 0),
+      s_axi_wvalid => axi_smc_M04_AXI_WVALID
+    );
 axi_gpio_0: component microblaze_axi_gpio_0_0
      port map (
       gpio_io_o(15 downto 0) => gpio_rtl_0_tri_o(15 downto 0),
@@ -1032,6 +1232,30 @@ axi_gpio_0: component microblaze_axi_gpio_0_0
       s_axi_wready => axi_smc_M00_AXI_WREADY,
       s_axi_wstrb(3 downto 0) => axi_smc_M00_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => axi_smc_M00_AXI_WVALID
+    );
+axi_intc_0: component microblaze_axi_intc_0_0
+     port map (
+      intr(1 downto 0) => xlconcat_0_dout(1 downto 0),
+      irq => axi_intc_0_interrupt_INTERRUPT,
+      s_axi_aclk => clk_100MHz,
+      s_axi_araddr(8 downto 0) => axi_smc_M05_AXI_ARADDR(8 downto 0),
+      s_axi_aresetn => rst_clk_100MHz_100M_peripheral_aresetn(0),
+      s_axi_arready => axi_smc_M05_AXI_ARREADY,
+      s_axi_arvalid => axi_smc_M05_AXI_ARVALID,
+      s_axi_awaddr(8 downto 0) => axi_smc_M05_AXI_AWADDR(8 downto 0),
+      s_axi_awready => axi_smc_M05_AXI_AWREADY,
+      s_axi_awvalid => axi_smc_M05_AXI_AWVALID,
+      s_axi_bready => axi_smc_M05_AXI_BREADY,
+      s_axi_bresp(1 downto 0) => axi_smc_M05_AXI_BRESP(1 downto 0),
+      s_axi_bvalid => axi_smc_M05_AXI_BVALID,
+      s_axi_rdata(31 downto 0) => axi_smc_M05_AXI_RDATA(31 downto 0),
+      s_axi_rready => axi_smc_M05_AXI_RREADY,
+      s_axi_rresp(1 downto 0) => axi_smc_M05_AXI_RRESP(1 downto 0),
+      s_axi_rvalid => axi_smc_M05_AXI_RVALID,
+      s_axi_wdata(31 downto 0) => axi_smc_M05_AXI_WDATA(31 downto 0),
+      s_axi_wready => axi_smc_M05_AXI_WREADY,
+      s_axi_wstrb(3 downto 0) => axi_smc_M05_AXI_WSTRB(3 downto 0),
+      s_axi_wvalid => axi_smc_M05_AXI_WVALID
     );
 axi_quad_spi_0: component microblaze_axi_quad_spi_0_0
      port map (
@@ -1147,6 +1371,44 @@ axi_smc: component microblaze_axi_smc_0
       M03_AXI_wready => axi_smc_M03_AXI_WREADY,
       M03_AXI_wstrb(3 downto 0) => axi_smc_M03_AXI_WSTRB(3 downto 0),
       M03_AXI_wvalid => axi_smc_M03_AXI_WVALID,
+      M04_AXI_araddr(31 downto 0) => axi_smc_M04_AXI_ARADDR(31 downto 0),
+      M04_AXI_arprot(2 downto 0) => NLW_axi_smc_M04_AXI_arprot_UNCONNECTED(2 downto 0),
+      M04_AXI_arready => axi_smc_M04_AXI_ARREADY,
+      M04_AXI_arvalid => axi_smc_M04_AXI_ARVALID,
+      M04_AXI_awaddr(31 downto 0) => axi_smc_M04_AXI_AWADDR(31 downto 0),
+      M04_AXI_awprot(2 downto 0) => NLW_axi_smc_M04_AXI_awprot_UNCONNECTED(2 downto 0),
+      M04_AXI_awready => axi_smc_M04_AXI_AWREADY,
+      M04_AXI_awvalid => axi_smc_M04_AXI_AWVALID,
+      M04_AXI_bready => axi_smc_M04_AXI_BREADY,
+      M04_AXI_bresp(1 downto 0) => axi_smc_M04_AXI_BRESP(1 downto 0),
+      M04_AXI_bvalid => axi_smc_M04_AXI_BVALID,
+      M04_AXI_rdata(31 downto 0) => axi_smc_M04_AXI_RDATA(31 downto 0),
+      M04_AXI_rready => axi_smc_M04_AXI_RREADY,
+      M04_AXI_rresp(1 downto 0) => axi_smc_M04_AXI_RRESP(1 downto 0),
+      M04_AXI_rvalid => axi_smc_M04_AXI_RVALID,
+      M04_AXI_wdata(31 downto 0) => axi_smc_M04_AXI_WDATA(31 downto 0),
+      M04_AXI_wready => axi_smc_M04_AXI_WREADY,
+      M04_AXI_wstrb(3 downto 0) => axi_smc_M04_AXI_WSTRB(3 downto 0),
+      M04_AXI_wvalid => axi_smc_M04_AXI_WVALID,
+      M05_AXI_araddr(8 downto 0) => axi_smc_M05_AXI_ARADDR(8 downto 0),
+      M05_AXI_arprot(2 downto 0) => NLW_axi_smc_M05_AXI_arprot_UNCONNECTED(2 downto 0),
+      M05_AXI_arready => axi_smc_M05_AXI_ARREADY,
+      M05_AXI_arvalid => axi_smc_M05_AXI_ARVALID,
+      M05_AXI_awaddr(8 downto 0) => axi_smc_M05_AXI_AWADDR(8 downto 0),
+      M05_AXI_awprot(2 downto 0) => NLW_axi_smc_M05_AXI_awprot_UNCONNECTED(2 downto 0),
+      M05_AXI_awready => axi_smc_M05_AXI_AWREADY,
+      M05_AXI_awvalid => axi_smc_M05_AXI_AWVALID,
+      M05_AXI_bready => axi_smc_M05_AXI_BREADY,
+      M05_AXI_bresp(1 downto 0) => axi_smc_M05_AXI_BRESP(1 downto 0),
+      M05_AXI_bvalid => axi_smc_M05_AXI_BVALID,
+      M05_AXI_rdata(31 downto 0) => axi_smc_M05_AXI_RDATA(31 downto 0),
+      M05_AXI_rready => axi_smc_M05_AXI_RREADY,
+      M05_AXI_rresp(1 downto 0) => axi_smc_M05_AXI_RRESP(1 downto 0),
+      M05_AXI_rvalid => axi_smc_M05_AXI_RVALID,
+      M05_AXI_wdata(31 downto 0) => axi_smc_M05_AXI_WDATA(31 downto 0),
+      M05_AXI_wready => axi_smc_M05_AXI_WREADY,
+      M05_AXI_wstrb(3 downto 0) => axi_smc_M05_AXI_WSTRB(3 downto 0),
+      M05_AXI_wvalid => axi_smc_M05_AXI_WVALID,
       S00_AXI_araddr(31 downto 0) => microblaze_0_M_AXI_DP_ARADDR(31 downto 0),
       S00_AXI_arprot(2 downto 0) => microblaze_0_M_AXI_DP_ARPROT(2 downto 0),
       S00_AXI_arready => microblaze_0_M_AXI_DP_ARREADY,
@@ -1176,7 +1438,7 @@ axi_timer_0: component microblaze_axi_timer_0_0
       freeze => '0',
       generateout0 => NLW_axi_timer_0_generateout0_UNCONNECTED,
       generateout1 => NLW_axi_timer_0_generateout1_UNCONNECTED,
-      interrupt => NLW_axi_timer_0_interrupt_UNCONNECTED,
+      interrupt => axi_timer_0_interrupt,
       pwm0 => NLW_axi_timer_0_pwm0_UNCONNECTED,
       s_axi_aclk => clk_100MHz,
       s_axi_araddr(4 downto 0) => axi_smc_M02_AXI_ARADDR(4 downto 0),
@@ -1265,7 +1527,7 @@ microblaze_0: component microblaze_microblaze_0_1
       I_AS => microblaze_0_ilmb_1_ADDRSTROBE,
       Instr(0 to 31) => microblaze_0_ilmb_1_READDBUS(0 to 31),
       Instr_Addr(0 to 31) => microblaze_0_ilmb_1_ABUS(0 to 31),
-      Interrupt => '0',
+      Interrupt => axi_intc_0_interrupt_INTERRUPT,
       Interrupt_Ack(0 to 1) => NLW_microblaze_0_Interrupt_Ack_UNCONNECTED(0 to 1),
       Interrupt_Address(0 to 31) => B"00000000000000000000000000000000",
       M_AXI_DP_ARADDR(31 downto 0) => microblaze_0_M_AXI_DP_ARADDR(31 downto 0),
@@ -1327,5 +1589,11 @@ rst_clk_100MHz_100M: component microblaze_rst_clk_100MHz_100M_0
       peripheral_aresetn(0) => rst_clk_100MHz_100M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_clk_100MHz_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => clk_100MHz
+    );
+xlconcat_0: component microblaze_xlconcat_0_0
+     port map (
+      In0(0) => axi_fifo_mm_s_0_interrupt,
+      In1(0) => axi_timer_0_interrupt,
+      dout(1 downto 0) => xlconcat_0_dout(1 downto 0)
     );
 end STRUCTURE;

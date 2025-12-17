@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:32 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_mdm_1_1 -prefix
---               microblaze_mdm_1_1_ microblaze_mdm_1_1_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:20:22 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_1/microblaze_mdm_1_1_sim_netlist.vhdl
 -- Design      : microblaze_mdm_1_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -23,22 +23,24 @@ entity microblaze_mdm_1_1_MB_BSCANE2 is
     \Use_E2.BSCANE2_I_1\ : out STD_LOGIC;
     I0 : out STD_LOGIC;
     Dbg_Update_0 : out STD_LOGIC;
+    \Use_Serial_Unified_Completion.Data_Read_Status.count\ : out STD_LOGIC;
     \Use_E2.BSCANE2_I_2\ : out STD_LOGIC;
     \Use_E2.BSCANE2_I_3\ : out STD_LOGIC;
-    \Use_E2.BSCANE2_I_4\ : out STD_LOGIC;
     AR : out STD_LOGIC_VECTOR ( 0 to 0 );
     Dbg_TDO_0_0 : out STD_LOGIC;
+    \Use_E2.BSCANE2_I_4\ : out STD_LOGIC;
     \Use_E2.BSCANE2_I_5\ : out STD_LOGIC;
-    \Use_E2.BSCANE2_I_6\ : out STD_LOGIC;
-    \Use_E2.BSCANE2_I_7\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \Use_E2.BSCANE2_I_6\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     tdo : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun1__0\ : in STD_LOGIC;
-    completion_status131_out : in STD_LOGIC;
+    completion_status130_out : in STD_LOGIC;
     Dbg_TDO_0 : in STD_LOGIC;
     \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \shift_Count_reg[0]\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[15]\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MB_BSCANE2 : entity is "MB_BSCANE2";
 end microblaze_mdm_1_1_MB_BSCANE2;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MB_BSCANE2 is
@@ -68,7 +70,7 @@ begin
     )
         port map (
       I0 => \^use_e2.bscane2_i_1\,
-      O => \Use_E2.BSCANE2_I_4\
+      O => \Use_E2.BSCANE2_I_3\
     );
 \Use_BSCAN.TDI_Shifter[3]_i_2\: unisim.vcomponents.LUT1
     generic map(
@@ -104,7 +106,7 @@ begin
       I0 => \^use_e2.bscane2_i_1\,
       I1 => \^use_e2.bscane2_i_0\,
       I2 => \Use_Serial_Unified_Completion.mb_data_overrun1__0\,
-      O => \Use_E2.BSCANE2_I_2\
+      O => \Use_Serial_Unified_Completion.Data_Read_Status.count\
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count[5]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -113,7 +115,7 @@ begin
         port map (
       I0 => \^use_e2.bscane2_i_0\,
       I1 => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\(0),
-      O => \Use_E2.BSCANE2_I_5\
+      O => \Use_E2.BSCANE2_I_4\
     );
 \Use_Serial_Unified_Completion.completion_status[15]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -122,8 +124,8 @@ begin
         port map (
       I0 => \^use_e2.bscane2_i_1\,
       I1 => \^use_e2.bscane2_i_0\,
-      I2 => completion_status131_out,
-      O => \Use_E2.BSCANE2_I_3\
+      I2 => completion_status130_out,
+      O => \Use_E2.BSCANE2_I_2\
     );
 \Use_Serial_Unified_Completion.completion_status[15]_i_2\: unisim.vcomponents.LUT2
     generic map(
@@ -132,7 +134,7 @@ begin
         port map (
       I0 => \^use_e2.bscane2_i_0\,
       I1 => \Use_Serial_Unified_Completion.completion_status_reg[15]\,
-      O => \Use_E2.BSCANE2_I_7\(0)
+      O => \Use_E2.BSCANE2_I_6\(0)
     );
 \Use_Serial_Unified_Completion.mb_instr_overrun_i_2\: unisim.vcomponents.LUT2
     generic map(
@@ -150,7 +152,7 @@ begin
         port map (
       I0 => \^use_e2.bscane2_i_1\,
       I1 => \shift_Count_reg[0]\,
-      O => \Use_E2.BSCANE2_I_6\
+      O => \Use_E2.BSCANE2_I_5\
     );
 end STRUCTURE;
 library IEEE;
@@ -162,6 +164,8 @@ entity microblaze_mdm_1_1_MB_BUFG is
     Dbg_Clk_0 : out STD_LOGIC;
     DRCK : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MB_BUFG : entity is "MB_BUFG";
 end microblaze_mdm_1_1_MB_BUFG;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MB_BUFG is
@@ -187,13 +191,13 @@ entity microblaze_mdm_1_1_MB_FDC_1 is
     CE : out STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun1__0\ : out STD_LOGIC;
     \Using_FPGA.Native_0\ : out STD_LOGIC;
-    \Use_Serial_Unified_Completion.mb_instr_overrun137_out\ : out STD_LOGIC;
+    \Use_Serial_Unified_Completion.mb_instr_overrun136_out\ : out STD_LOGIC;
     command_10 : out STD_LOGIC;
     p_1_in : out STD_LOGIC_VECTOR ( 9 downto 0 );
     \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13]\ : out STD_LOGIC;
     \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14]\ : out STD_LOGIC;
     \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15]\ : out STD_LOGIC;
-    sample_1 : out STD_LOGIC;
+    \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\ : out STD_LOGIC;
     \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]\ : out STD_LOGIC;
     \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0\ : out STD_LOGIC;
     Dbg_TDO_0_0 : out STD_LOGIC;
@@ -207,19 +211,12 @@ entity microblaze_mdm_1_1_MB_FDC_1 is
     command : in STD_LOGIC_VECTOR ( 0 to 7 );
     \Use_Serial_Unified_Completion.completion_status_reg[0]\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun_reg\ : in STD_LOGIC;
-    \Using_FPGA.Native_1\ : in STD_LOGIC;
-    \Using_FPGA.Native_2\ : in STD_LOGIC;
-    \Using_FPGA.Native_3\ : in STD_LOGIC;
-    \Using_FPGA.Native_4\ : in STD_LOGIC;
-    \Using_FPGA.Native_5\ : in STD_LOGIC;
-    \Using_FPGA.Native_6\ : in STD_LOGIC;
-    Debug_SYS_Rst_i_reg : in STD_LOGIC;
-    p_0_in : in STD_LOGIC;
+    tdi_shifter : in STD_LOGIC_VECTOR ( 0 to 7 );
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_0\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_1\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_instr_error_reg\ : in STD_LOGIC;
     sync : in STD_LOGIC;
-    \Use_Serial_Unified_Completion.mb_instr_error_reg_0\ : in STD_LOGIC;
+    p_0_in : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SEL : in STD_LOGIC;
     completion_status : in STD_LOGIC_VECTOR ( 10 downto 0 );
@@ -233,15 +230,17 @@ entity microblaze_mdm_1_1_MB_FDC_1 is
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_instr_overrun\ : in STD_LOGIC;
-    \Use_Serial_Unified_Completion.mb_instr_error_reg_1\ : in STD_LOGIC;
+    \Use_Serial_Unified_Completion.mb_instr_error_reg_0\ : in STD_LOGIC;
     Dbg_TDO_0 : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_2\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_3\ : in STD_LOGIC;
     \completion_block0__10\ : in STD_LOGIC;
-    completion_ctrl : in STD_LOGIC;
+    completion_ctrl : in STD_LOGIC_VECTOR ( 0 to 0 );
     Dbg_Rst_0 : in STD_LOGIC;
     Debug_SYS_Rst : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MB_FDC_1 : entity is "MB_FDC_1";
 end microblaze_mdm_1_1_MB_FDC_1;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MB_FDC_1 is
@@ -251,7 +250,7 @@ architecture STRUCTURE of microblaze_mdm_1_1_MB_FDC_1 is
   signal \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_3_n_0\ : STD_LOGIC;
   signal \^use_serial_unified_completion.mb_data_overrun1__0\ : STD_LOGIC;
-  signal \^use_serial_unified_completion.mb_instr_overrun137_out\ : STD_LOGIC;
+  signal \^use_serial_unified_completion.mb_instr_overrun136_out\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.mb_instr_overrun1__0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.mb_instr_overrun_i_5_n_0\ : STD_LOGIC;
@@ -288,7 +287,7 @@ begin
   D <= \^d\;
   \Use_BSCAN.command_reg[6]\ <= \^use_bscan.command_reg[6]\;
   \Use_Serial_Unified_Completion.mb_data_overrun1__0\ <= \^use_serial_unified_completion.mb_data_overrun1__0\;
-  \Use_Serial_Unified_Completion.mb_instr_overrun137_out\ <= \^use_serial_unified_completion.mb_instr_overrun137_out\;
+  \Use_Serial_Unified_Completion.mb_instr_overrun136_out\ <= \^use_serial_unified_completion.mb_instr_overrun136_out\;
   \Using_FPGA.Native_0\ <= \^using_fpga.native_0\;
 \Dbg_Reg_En_0[0]_INST_0\: unisim.vcomponents.LUT3
     generic map(
@@ -384,7 +383,7 @@ Debug_Rst_i_i_1: unisim.vcomponents.LUT6
       INIT => X"FFFBFFFF00080000"
     )
         port map (
-      I0 => p_0_in,
+      I0 => tdi_shifter(0),
       I1 => \^using_fpga.native_0\,
       I2 => command(6),
       I3 => command(2),
@@ -397,7 +396,7 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
       INIT => X"FFFBFFFF00080000"
     )
         port map (
-      I0 => Debug_SYS_Rst_i_reg,
+      I0 => tdi_shifter(1),
       I1 => \^using_fpga.native_0\,
       I2 => command(6),
       I3 => command(2),
@@ -438,7 +437,7 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2_n_0\,
-      O => sample_1
+      O => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\
     );
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1[15]_i_2\: unisim.vcomponents.LUT6
     generic map(
@@ -486,7 +485,7 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
       I3 => \^using_fpga.native_0\,
       I4 => \Use_Serial_Unified_Completion.mb_data_overrun_reg_0\,
       I5 => \Use_Serial_Unified_Completion.mb_data_overrun_reg_1\,
-      O => \^use_serial_unified_completion.mb_instr_overrun137_out\
+      O => \^use_serial_unified_completion.mb_instr_overrun136_out\
     );
 \Use_Serial_Unified_Completion.completion_block_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -495,7 +494,7 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => \Use_Serial_Unified_Completion.mb_data_overrun_reg\,
       I1 => \completion_block0__10\,
-      I2 => completion_ctrl,
+      I2 => completion_ctrl(0),
       I3 => completion_ctrl0,
       I4 => \^use_bscan.command_reg[6]\,
       I5 => \Use_Serial_Unified_Completion.completion_block_reg_0\,
@@ -680,10 +679,10 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => \Use_Serial_Unified_Completion.mb_instr_overrun_reg\,
       I1 => \Use_Serial_Unified_Completion.mb_instr_overrun1__0\,
-      I2 => \^use_serial_unified_completion.mb_instr_overrun137_out\,
+      I2 => \^use_serial_unified_completion.mb_instr_overrun136_out\,
       I3 => \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0\,
       I4 => \Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0\,
-      I5 => \Use_Serial_Unified_Completion.mb_instr_error_reg_1\,
+      I5 => \Use_Serial_Unified_Completion.mb_instr_error_reg_0\,
       O => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]_0\
     );
 \Use_Serial_Unified_Completion.mb_instr_overrun_i_1\: unisim.vcomponents.LUT6
@@ -693,7 +692,7 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => \Use_Serial_Unified_Completion.mb_instr_overrun_reg\,
       I1 => \Use_Serial_Unified_Completion.mb_instr_overrun1__0\,
-      I2 => \^use_serial_unified_completion.mb_instr_overrun137_out\,
+      I2 => \^use_serial_unified_completion.mb_instr_overrun136_out\,
       I3 => \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0\,
       I4 => \Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0\,
       I5 => \Use_Serial_Unified_Completion.mb_instr_overrun\,
@@ -709,7 +708,7 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
       I2 => \Use_Serial_Unified_Completion.mb_instr_overrun_i_5_n_0\,
       I3 => \Use_Serial_Unified_Completion.mb_instr_error_reg\,
       I4 => sync,
-      I5 => \Use_Serial_Unified_Completion.mb_instr_error_reg_0\,
+      I5 => p_0_in,
       O => \Use_Serial_Unified_Completion.mb_instr_overrun1__0\
     );
 \Use_Serial_Unified_Completion.mb_instr_overrun_i_4\: unisim.vcomponents.LUT6
@@ -767,10 +766,10 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \Using_FPGA.Native_i_2_n_0\,
-      I1 => \Using_FPGA.Native_1\,
-      I2 => \Using_FPGA.Native_2\,
-      I3 => \Using_FPGA.Native_3\,
-      I4 => \Using_FPGA.Native_4\,
+      I1 => tdi_shifter(4),
+      I2 => tdi_shifter(5),
+      I3 => tdi_shifter(7),
+      I4 => tdi_shifter(6),
       O => CE
     );
 \Using_FPGA.Native_i_1__0\: unisim.vcomponents.LUT1
@@ -786,10 +785,10 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
       INIT => X"0000002000000000"
     )
         port map (
-      I0 => \Using_FPGA.Native_5\,
-      I1 => \Using_FPGA.Native_6\,
-      I2 => Debug_SYS_Rst_i_reg,
-      I3 => p_0_in,
+      I0 => tdi_shifter(2),
+      I1 => tdi_shifter(3),
+      I2 => tdi_shifter(1),
+      I3 => tdi_shifter(0),
       I4 => \Use_Serial_Unified_Completion.completion_block_reg_0\,
       I5 => Q_0,
       O => \Using_FPGA.Native_i_2_n_0\
@@ -812,9 +811,9 @@ Debug_SYS_Rst_i_i_1: unisim.vcomponents.LUT6
       INIT => X"B8"
     )
         port map (
-      I0 => p_0_in,
+      I0 => tdi_shifter(0),
       I1 => completion_ctrl0,
-      I2 => completion_ctrl,
+      I2 => completion_ctrl(0),
       O => \tdi_shifter_reg[0]_0\
     );
 end STRUCTURE;
@@ -835,6 +834,8 @@ entity microblaze_mdm_1_1_MB_FDRE_1 is
     Dbg_Shift_0_3 : in STD_LOGIC;
     Dbg_Shift_0_4 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MB_FDRE_1 : entity is "MB_FDRE_1";
 end microblaze_mdm_1_1_MB_FDRE_1;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MB_FDRE_1 is
@@ -880,6 +881,8 @@ entity microblaze_mdm_1_1_MB_LUT1 is
     Ext_JTAG_TDI : out STD_LOGIC;
     I0 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MB_LUT1 : entity is "MB_LUT1";
 end microblaze_mdm_1_1_MB_LUT1;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MB_LUT1 is
@@ -923,6 +926,8 @@ entity microblaze_mdm_1_1_MB_SRL16E is
     \Use_E2.BSCANE2_I_i_4_0\ : in STD_LOGIC;
     config_TDO_2 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MB_SRL16E : entity is "MB_SRL16E";
 end microblaze_mdm_1_1_MB_SRL16E;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MB_SRL16E is
@@ -1161,12 +1166,14 @@ entity microblaze_mdm_1_1_JTAG_CONTROL is
     Dbg_TDO_0 : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0\ : in STD_LOGIC;
     Ext_JTAG_TDI : in STD_LOGIC;
+    \Use_Serial_Unified_Completion.Data_Read_Status.count\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\ : in STD_LOGIC;
-    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_2\ : in STD_LOGIC;
     \shift_Count_reg[0]_1\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[10]_0\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[15]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_JTAG_CONTROL : entity is "JTAG_CONTROL";
 end microblaze_mdm_1_1_JTAG_CONTROL;
 
 architecture STRUCTURE of microblaze_mdm_1_1_JTAG_CONTROL is
@@ -1202,6 +1209,10 @@ architecture STRUCTURE of microblaze_mdm_1_1_JTAG_CONTROL is
   signal \Use_E2.BSCANE2_I_i_6_n_0\ : STD_LOGIC;
   signal \Use_E2.BSCANE2_I_i_7_n_0\ : STD_LOGIC;
   signal \Use_ID_SRL16E.SRL16E_ID_1_n_0\ : STD_LOGIC;
+  signal \Use_Serial_Unified_Completion.Completion_Status_Register.sample\ : STD_LOGIC_VECTOR ( 15 downto 13 );
+  attribute async_reg : string;
+  attribute async_reg of \Use_Serial_Unified_Completion.Completion_Status_Register.sample\ : signal is "true";
+  signal \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\ : STD_LOGIC;
   signal \^use_serial_unified_completion.completion_status_register.sample_1_reg[15]_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10]\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[11]\ : STD_LOGIC;
@@ -1214,10 +1225,10 @@ architecture STRUCTURE of microblaze_mdm_1_1_JTAG_CONTROL is
   signal \Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1_n_0\ : STD_LOGIC;
+  signal \Use_Serial_Unified_Completion.Data_Read_Status.count__0\ : STD_LOGIC_VECTOR ( 0 to 4 );
   signal \^use_serial_unified_completion.data_read_status.count_reg[5]_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1_n_0\ : STD_LOGIC;
-  signal \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[0]\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1]\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.completion_block_i_3_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.completion_block_i_4_n_0\ : STD_LOGIC;
@@ -1232,21 +1243,16 @@ architecture STRUCTURE of microblaze_mdm_1_1_JTAG_CONTROL is
   signal \Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.mb_instr_error_reg_n_0\ : STD_LOGIC;
   signal \Use_Serial_Unified_Completion.mb_instr_overrun\ : STD_LOGIC;
-  signal \Use_Serial_Unified_Completion.mb_instr_overrun137_out\ : STD_LOGIC;
+  signal \Use_Serial_Unified_Completion.mb_instr_overrun136_out\ : STD_LOGIC;
   signal command : STD_LOGIC_VECTOR ( 0 to 7 );
   signal command_1 : STD_LOGIC_VECTOR ( 0 to 7 );
   signal command_10 : STD_LOGIC;
   signal \completion_block0__10\ : STD_LOGIC;
-  signal completion_ctrl : STD_LOGIC;
+  signal completion_ctrl : STD_LOGIC_VECTOR ( 0 to 0 );
   signal completion_status : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal config_TDO_2 : STD_LOGIC;
-  signal count : STD_LOGIC_VECTOR ( 0 to 4 );
   signal p_0_in : STD_LOGIC;
   signal p_1_in : STD_LOGIC_VECTOR ( 14 downto 0 );
-  signal sample : STD_LOGIC_VECTOR ( 15 downto 13 );
-  attribute async_reg : string;
-  attribute async_reg of sample : signal is "true";
-  signal sample_1 : STD_LOGIC;
   signal sel_n : STD_LOGIC;
   signal sel_n0 : STD_LOGIC;
   signal \shift_Count[1]_i_1_n_0\ : STD_LOGIC;
@@ -1256,14 +1262,8 @@ architecture STRUCTURE of microblaze_mdm_1_1_JTAG_CONTROL is
   signal \^shift_count_reg[0]_0\ : STD_LOGIC;
   signal \shift_Count_reg_n_0_[4]\ : STD_LOGIC;
   signal sync : STD_LOGIC;
+  signal tdi_shifter : STD_LOGIC_VECTOR ( 0 to 7 );
   signal tdi_shifter0 : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[1]\ : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[2]\ : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[3]\ : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[4]\ : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[5]\ : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[6]\ : STD_LOGIC;
-  signal \tdi_shifter_reg_n_0_[7]\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \Use_E2.BSCANE2_I_i_3\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \Use_E2.BSCANE2_I_i_6\ : label is "soft_lutpair13";
@@ -1368,11 +1368,11 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       Dbg_TDO_0_0 => \Use_BSCAN.FDC_I_n_32\,
       Debug_Rst_i_reg => Debug_SYS_Rst_i_i_2_n_0,
       Debug_SYS_Rst => \^debug_sys_rst\,
-      Debug_SYS_Rst_i_reg => \tdi_shifter_reg_n_0_[1]\,
       Q(3 downto 0) => Q(3 downto 0),
       SEL => SEL,
       \Use_BSCAN.command_reg[6]\ => \Use_BSCAN.command_reg[6]_0\,
       \Use_E2.BSCANE2_I\ => \Use_BSCAN.FDC_I_n_33\,
+      \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\ => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
       \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[13]\ => \Use_BSCAN.FDC_I_n_26\,
       \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14]\ => \Use_BSCAN.FDC_I_n_27\,
       \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15]\ => \Use_BSCAN.FDC_I_n_28\,
@@ -1393,30 +1393,23 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       \Use_Serial_Unified_Completion.mb_data_overrun_reg_2\ => \Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0\,
       \Use_Serial_Unified_Completion.mb_data_overrun_reg_3\ => \Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0\,
       \Use_Serial_Unified_Completion.mb_instr_error_reg\ => Dbg_Shift_0_INST_0_i_1_n_0,
-      \Use_Serial_Unified_Completion.mb_instr_error_reg_0\ => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[0]\,
-      \Use_Serial_Unified_Completion.mb_instr_error_reg_1\ => \Use_Serial_Unified_Completion.mb_instr_error_reg_n_0\,
+      \Use_Serial_Unified_Completion.mb_instr_error_reg_0\ => \Use_Serial_Unified_Completion.mb_instr_error_reg_n_0\,
       \Use_Serial_Unified_Completion.mb_instr_overrun\ => \Use_Serial_Unified_Completion.mb_instr_overrun\,
-      \Use_Serial_Unified_Completion.mb_instr_overrun137_out\ => \Use_Serial_Unified_Completion.mb_instr_overrun137_out\,
+      \Use_Serial_Unified_Completion.mb_instr_overrun136_out\ => \Use_Serial_Unified_Completion.mb_instr_overrun136_out\,
       \Use_Serial_Unified_Completion.mb_instr_overrun_reg\ => \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0\,
       \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0\ => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1]\,
       \Using_FPGA.Native_0\ => \Use_BSCAN.FDC_I_n_13\,
-      \Using_FPGA.Native_1\ => \tdi_shifter_reg_n_0_[4]\,
-      \Using_FPGA.Native_2\ => \tdi_shifter_reg_n_0_[5]\,
-      \Using_FPGA.Native_3\ => \tdi_shifter_reg_n_0_[7]\,
-      \Using_FPGA.Native_4\ => \tdi_shifter_reg_n_0_[6]\,
-      \Using_FPGA.Native_5\ => \tdi_shifter_reg_n_0_[2]\,
-      \Using_FPGA.Native_6\ => \tdi_shifter_reg_n_0_[3]\,
       command(0 to 7) => command(0 to 7),
       command_10 => command_10,
       \completion_block0__10\ => \completion_block0__10\,
-      completion_ctrl => completion_ctrl,
+      completion_ctrl(0) => completion_ctrl(0),
       completion_status(10 downto 0) => completion_status(10 downto 0),
-      \out\(2 downto 0) => sample(15 downto 13),
+      \out\(2 downto 0) => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(15 downto 13),
       p_0_in => p_0_in,
       p_1_in(9 downto 0) => p_1_in(9 downto 0),
-      sample_1 => sample_1,
       sel_n => sel_n,
       sync => sync,
+      tdi_shifter(0 to 7) => tdi_shifter(0 to 7),
       \tdi_shifter_reg[0]\ => \Use_BSCAN.FDC_I_n_34\,
       \tdi_shifter_reg[0]_0\ => \Use_BSCAN.FDC_I_n_36\,
       \tdi_shifter_reg[1]\ => \Use_BSCAN.FDC_I_n_35\
@@ -1662,7 +1655,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => sample_1,
+      CE => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
       D => \Use_Serial_Unified_Completion.mb_instr_overrun\,
       Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10]\,
       R => '0'
@@ -1670,7 +1663,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => sample_1,
+      CE => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
       D => \Use_Serial_Unified_Completion.mb_instr_error_reg_n_0\,
       Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[11]\,
       R => '0'
@@ -1678,7 +1671,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[12]\: unisim.vcomponents.FDRE
      port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => sample_1,
+      CE => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
       D => \Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0\,
       Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[12]\,
       R => '0'
@@ -1686,24 +1679,24 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => sample_1,
-      D => sample(13),
+      CE => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
+      D => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(13),
       Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[13]\,
       R => '0'
     );
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[14]\: unisim.vcomponents.FDRE
      port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => sample_1,
-      D => sample(14),
+      CE => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
+      D => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(14),
       Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[14]\,
       R => '0'
     );
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]\: unisim.vcomponents.FDRE
      port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => sample_1,
-      D => sample(15),
+      CE => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1\,
+      D => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(15),
       Q => \^use_serial_unified_completion.completion_status_register.sample_1_reg[15]_0\,
       R => '0'
     );
@@ -1712,7 +1705,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => '1',
       D => \Use_BSCAN.FDC_I_n_26\,
-      Q => sample(13),
+      Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(13),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[14]\: unisim.vcomponents.FDRE
@@ -1720,7 +1713,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => '1',
       D => \Use_BSCAN.FDC_I_n_27\,
-      Q => sample(14),
+      Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(14),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Completion_Status_Register.sample_reg[15]\: unisim.vcomponents.FDRE
@@ -1728,7 +1721,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => '1',
       D => \Use_BSCAN.FDC_I_n_28\,
-      Q => sample(15),
+      Q => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(15),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2\: unisim.vcomponents.LUT4
@@ -1736,9 +1729,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       INIT => X"0078"
     )
         port map (
-      I0 => count(1),
+      I0 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(1),
       I1 => \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_4_n_0\,
-      I2 => count(0),
+      I2 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(0),
       I3 => sel_n_reg_0,
       O => \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2_n_0\
     );
@@ -1747,10 +1740,10 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       INIT => X"8000"
     )
         port map (
-      I0 => count(2),
-      I1 => count(4),
+      I0 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(2),
+      I1 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
       I2 => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
-      I3 => count(3),
+      I3 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(3),
       O => \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_4_n_0\
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1\: unisim.vcomponents.LUT6
@@ -1758,11 +1751,11 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       INIT => X"000000007FFF8000"
     )
         port map (
-      I0 => count(2),
-      I1 => count(4),
+      I0 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(2),
+      I1 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
       I2 => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
-      I3 => count(3),
-      I4 => count(1),
+      I3 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(3),
+      I4 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(1),
       I5 => sel_n_reg_0,
       O => \Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1_n_0\
     );
@@ -1771,10 +1764,10 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       INIT => X"00007F80"
     )
         port map (
-      I0 => count(3),
+      I0 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(3),
       I1 => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
-      I2 => count(4),
-      I3 => count(2),
+      I2 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
+      I3 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(2),
       I4 => sel_n_reg_0,
       O => \Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1_n_0\
     );
@@ -1783,9 +1776,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       INIT => X"0078"
     )
         port map (
-      I0 => count(4),
+      I0 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
       I1 => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
-      I2 => count(3),
+      I2 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(3),
       I3 => sel_n_reg_0,
       O => \Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1_n_0\
     );
@@ -1795,7 +1788,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
-      I1 => count(4),
+      I1 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
       I2 => sel_n_reg_0,
       O => \Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1_n_0\
     );
@@ -1805,9 +1798,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
+      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
       D => \Use_Serial_Unified_Completion.Data_Read_Status.count[0]_i_2_n_0\,
-      Q => count(0),
+      Q => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(0),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[1]\: unisim.vcomponents.FDRE
@@ -1816,9 +1809,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
+      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
       D => \Use_Serial_Unified_Completion.Data_Read_Status.count[1]_i_1_n_0\,
-      Q => count(1),
+      Q => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(1),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[2]\: unisim.vcomponents.FDRE
@@ -1827,9 +1820,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
+      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
       D => \Use_Serial_Unified_Completion.Data_Read_Status.count[2]_i_1_n_0\,
-      Q => count(2),
+      Q => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(2),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[3]\: unisim.vcomponents.FDRE
@@ -1838,9 +1831,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
+      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
       D => \Use_Serial_Unified_Completion.Data_Read_Status.count[3]_i_1_n_0\,
-      Q => count(3),
+      Q => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(3),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[4]\: unisim.vcomponents.FDRE
@@ -1849,9 +1842,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
+      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
       D => \Use_Serial_Unified_Completion.Data_Read_Status.count[4]_i_1_n_0\,
-      Q => count(4),
+      Q => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
       R => '0'
     );
 \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\: unisim.vcomponents.FDRE
@@ -1860,8 +1853,8 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
-      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
-      D => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_2\,
+      CE => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
+      D => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
       Q => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
       R => '0'
     );
@@ -1873,9 +1866,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       I0 => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1]\,
       I1 => Dbg_Shift_0_0,
       I2 => sync,
-      I3 => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[0]\,
+      I3 => p_0_in,
       I4 => sel_n_reg_0,
-      I5 => \Use_Serial_Unified_Completion.mb_instr_overrun137_out\,
+      I5 => \Use_Serial_Unified_Completion.mb_instr_overrun136_out\,
       O => \Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1_n_0\
     );
 \Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1\: unisim.vcomponents.LUT6
@@ -1885,9 +1878,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       I0 => Dbg_Shift_0_0,
       I1 => sync,
-      I2 => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[0]\,
+      I2 => p_0_in,
       I3 => sel_n_reg_0,
-      I4 => \Use_Serial_Unified_Completion.mb_instr_overrun137_out\,
+      I4 => \Use_Serial_Unified_Completion.mb_instr_overrun136_out\,
       I5 => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[1]\,
       O => \Use_Serial_Unified_Completion.Write_Instr_Status.count[1]_i_1_n_0\
     );
@@ -1899,7 +1892,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => '1',
       D => \Use_Serial_Unified_Completion.Write_Instr_Status.count[0]_i_1_n_0\,
-      Q => \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg_n_0_[0]\,
+      Q => p_0_in,
       R => '0'
     );
 \Use_Serial_Unified_Completion.Write_Instr_Status.count_reg[1]\: unisim.vcomponents.FDRE
@@ -1920,9 +1913,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \Use_Serial_Unified_Completion.completion_block_i_3_n_0\,
       I1 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[13]\,
-      I2 => sample(13),
+      I2 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(13),
       I3 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[14]\,
-      I4 => sample(14),
+      I4 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(14),
       I5 => \Use_Serial_Unified_Completion.completion_block_i_4_n_0\,
       O => \completion_block0__10\
     );
@@ -1932,7 +1925,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \^use_serial_unified_completion.completion_status_register.sample_1_reg[15]_0\,
-      I1 => sample(15),
+      I1 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample\(15),
       I2 => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg_n_0_[10]\,
       I3 => \Use_Serial_Unified_Completion.mb_instr_overrun\,
       O => \Use_Serial_Unified_Completion.completion_block_i_3_n_0\
@@ -2248,8 +2241,8 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0\,
       I1 => \^use_serial_unified_completion.data_read_status.count_reg[5]_0\,
-      I2 => count(4),
-      I3 => count(3),
+      I2 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(4),
+      I3 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(3),
       O => \Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0\
     );
 \Use_Serial_Unified_Completion.mb_data_overrun_i_3\: unisim.vcomponents.LUT4
@@ -2258,9 +2251,9 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => Dbg_Shift_0_0,
-      I1 => count(0),
-      I2 => count(1),
-      I3 => count(2),
+      I1 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(0),
+      I2 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(1),
+      I3 => \Use_Serial_Unified_Completion.Data_Read_Status.count__0\(2),
       O => \Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0\
     );
 \Use_Serial_Unified_Completion.mb_data_overrun_reg\: unisim.vcomponents.FDRE
@@ -2303,7 +2296,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => p_0_in,
+      D => tdi_shifter(0),
       Q => command_1(0),
       R => '0'
     );
@@ -2314,7 +2307,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[1]\,
+      D => tdi_shifter(1),
       Q => command_1(1),
       R => '0'
     );
@@ -2325,7 +2318,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[2]\,
+      D => tdi_shifter(2),
       Q => command_1(2),
       R => '0'
     );
@@ -2336,7 +2329,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[3]\,
+      D => tdi_shifter(3),
       Q => command_1(3),
       R => '0'
     );
@@ -2347,7 +2340,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[4]\,
+      D => tdi_shifter(4),
       Q => command_1(4),
       R => '0'
     );
@@ -2358,7 +2351,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[5]\,
+      D => tdi_shifter(5),
       Q => command_1(5),
       R => '0'
     );
@@ -2369,7 +2362,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[6]\,
+      D => tdi_shifter(6),
       Q => command_1(6),
       R => '0'
     );
@@ -2380,7 +2373,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
         port map (
       C => CLK,
       CE => command_10,
-      D => \tdi_shifter_reg_n_0_[7]\,
+      D => tdi_shifter(7),
       Q => command_1(7),
       R => '0'
     );
@@ -2392,7 +2385,7 @@ Debug_SYS_Rst_i_reg: unisim.vcomponents.FDRE
       C => CLK,
       CE => '1',
       D => \Use_BSCAN.FDC_I_n_36\,
-      Q => completion_ctrl,
+      Q => completion_ctrl(0),
       R => '0'
     );
 sel_n_i_1: unisim.vcomponents.LUT5
@@ -2553,7 +2546,7 @@ sel_n_reg: unisim.vcomponents.FDPE
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
       D => Ext_JTAG_TDI,
-      Q => p_0_in,
+      Q => tdi_shifter(0),
       R => '0'
     );
 \tdi_shifter_reg[1]\: unisim.vcomponents.FDRE
@@ -2563,8 +2556,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => p_0_in,
-      Q => \tdi_shifter_reg_n_0_[1]\,
+      D => tdi_shifter(0),
+      Q => tdi_shifter(1),
       R => '0'
     );
 \tdi_shifter_reg[2]\: unisim.vcomponents.FDRE
@@ -2574,8 +2567,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => \tdi_shifter_reg_n_0_[1]\,
-      Q => \tdi_shifter_reg_n_0_[2]\,
+      D => tdi_shifter(1),
+      Q => tdi_shifter(2),
       R => '0'
     );
 \tdi_shifter_reg[3]\: unisim.vcomponents.FDRE
@@ -2585,8 +2578,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => \tdi_shifter_reg_n_0_[2]\,
-      Q => \tdi_shifter_reg_n_0_[3]\,
+      D => tdi_shifter(2),
+      Q => tdi_shifter(3),
       R => '0'
     );
 \tdi_shifter_reg[4]\: unisim.vcomponents.FDRE
@@ -2596,8 +2589,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => \tdi_shifter_reg_n_0_[3]\,
-      Q => \tdi_shifter_reg_n_0_[4]\,
+      D => tdi_shifter(3),
+      Q => tdi_shifter(4),
       R => '0'
     );
 \tdi_shifter_reg[5]\: unisim.vcomponents.FDRE
@@ -2607,8 +2600,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => \tdi_shifter_reg_n_0_[4]\,
-      Q => \tdi_shifter_reg_n_0_[5]\,
+      D => tdi_shifter(4),
+      Q => tdi_shifter(5),
       R => '0'
     );
 \tdi_shifter_reg[6]\: unisim.vcomponents.FDRE
@@ -2618,8 +2611,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => \tdi_shifter_reg_n_0_[5]\,
-      Q => \tdi_shifter_reg_n_0_[6]\,
+      D => tdi_shifter(5),
+      Q => tdi_shifter(6),
       R => '0'
     );
 \tdi_shifter_reg[7]\: unisim.vcomponents.FDRE
@@ -2629,8 +2622,8 @@ sel_n_reg: unisim.vcomponents.FDPE
         port map (
       C => \Use_unisim.MB_SRL16E_I1\,
       CE => tdi_shifter0,
-      D => \tdi_shifter_reg_n_0_[6]\,
-      Q => \tdi_shifter_reg_n_0_[7]\,
+      D => tdi_shifter(6),
+      Q => tdi_shifter(7),
       R => '0'
     );
 end STRUCTURE;
@@ -2645,7 +2638,7 @@ entity microblaze_mdm_1_1_MDM_Core is
     Dbg_Rst_0 : out STD_LOGIC;
     Dbg_Disable_0 : out STD_LOGIC;
     Dbg_Reg_En_0 : out STD_LOGIC_VECTOR ( 0 to 7 );
-    completion_status131_out : out STD_LOGIC;
+    completion_status130_out : out STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_data_overrun1__0\ : out STD_LOGIC;
     Dbg_Shift_0 : out STD_LOGIC;
     tdo : out STD_LOGIC;
@@ -2661,12 +2654,14 @@ entity microblaze_mdm_1_1_MDM_Core is
     Dbg_TDO_0 : in STD_LOGIC;
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg\ : in STD_LOGIC;
     Ext_JTAG_TDI : in STD_LOGIC;
+    \Use_Serial_Unified_Completion.Data_Read_Status.count\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0\ : in STD_LOGIC;
-    \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\ : in STD_LOGIC;
     \shift_Count_reg[0]_0\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[10]\ : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MDM_Core : entity is "MDM_Core";
 end microblaze_mdm_1_1_MDM_Core;
 
 architecture STRUCTURE of microblaze_mdm_1_1_MDM_Core is
@@ -2709,20 +2704,20 @@ architecture STRUCTURE of microblaze_mdm_1_1_MDM_Core is
   signal \Use_BSCAN.TDI_Shifter0\ : STD_LOGIC;
   signal \Use_E2.BSCANE2_I_i_2_n_0\ : STD_LOGIC;
   attribute SHREG_EXTRACT : string;
-  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[0]\ : label is "yes";
+  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[0]\ : label is "YES";
   attribute srl_bus_name : string;
   attribute srl_bus_name of \Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11\ : label is "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg ";
   attribute srl_name : string;
   attribute srl_name of \Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11\ : label is "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11 ";
-  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[1]\ : label is "yes";
-  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[25]\ : label is "yes";
+  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[1]\ : label is "YES";
+  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[25]\ : label is "YES";
   attribute srl_bus_name of \Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0\ : label is "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg ";
   attribute srl_name of \Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0\ : label is "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0 ";
-  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[2]\ : label is "yes";
-  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[30]\ : label is "yes";
+  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[2]\ : label is "YES";
+  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[30]\ : label is "YES";
   attribute srl_bus_name of \Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2\ : label is "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg ";
   attribute srl_name of \Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2\ : label is "U0/\MDM_Core_I1/Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2 ";
-  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[9]\ : label is "yes";
+  attribute SHREG_EXTRACT of \Use_BSCAN.Config_Reg_reg[9]\ : label is "YES";
 begin
 JTAG_CONTROL_I: entity work.microblaze_mdm_1_1_JTAG_CONTROL
      port map (
@@ -2736,12 +2731,12 @@ JTAG_CONTROL_I: entity work.microblaze_mdm_1_1_JTAG_CONTROL
       Ext_JTAG_TDI => Ext_JTAG_TDI,
       Q(3 downto 0) => \Use_BSCAN.PORT_Selector\(3 downto 0),
       SEL => SEL,
-      \Use_BSCAN.command_reg[6]_0\ => completion_status131_out,
+      \Use_BSCAN.command_reg[6]_0\ => completion_status130_out,
       \Use_E2.BSCANE2_I\ => \Use_E2.BSCANE2_I_i_2_n_0\,
       \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]_0\ => \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]\,
+      \Use_Serial_Unified_Completion.Data_Read_Status.count\ => \Use_Serial_Unified_Completion.Data_Read_Status.count\,
       \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0\ => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\(0),
       \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\ => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0\,
-      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_2\ => \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\,
       \Use_Serial_Unified_Completion.completion_status_reg[10]_0\ => \Use_Serial_Unified_Completion.completion_status_reg[10]\,
       \Use_Serial_Unified_Completion.completion_status_reg[15]_0\(0) => \Use_Serial_Unified_Completion.completion_status_reg[15]\(0),
       \Use_Serial_Unified_Completion.mb_data_overrun1__0\ => \Use_Serial_Unified_Completion.mb_data_overrun1__0\,
@@ -4773,7 +4768,7 @@ entity microblaze_mdm_1_1_MDM is
   attribute C_DEBUG_INTERFACE : integer;
   attribute C_DEBUG_INTERFACE of microblaze_mdm_1_1_MDM : entity is 0;
   attribute C_DEVICE : string;
-  attribute C_DEVICE of microblaze_mdm_1_1_MDM : entity is "xc7a15ti";
+  attribute C_DEVICE of microblaze_mdm_1_1_MDM : entity is "xc7a35t";
   attribute C_EXT_TRIG_RESET_VALUE : string;
   attribute C_EXT_TRIG_RESET_VALUE of microblaze_mdm_1_1_MDM : entity is "20'b11110001001000110100";
   attribute C_FAMILY : string;
@@ -4824,6 +4819,8 @@ entity microblaze_mdm_1_1_MDM is
   attribute C_USE_CROSS_TRIGGER of microblaze_mdm_1_1_MDM : entity is 0;
   attribute C_USE_UART : integer;
   attribute C_USE_UART of microblaze_mdm_1_1_MDM : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_1_MDM : entity is "MDM";
   attribute bscan_debug_core : string;
   attribute bscan_debug_core of microblaze_mdm_1_1_MDM : entity is "FALSE";
   attribute dont_touch : string;
@@ -4838,8 +4835,9 @@ architecture STRUCTURE of microblaze_mdm_1_1_MDM is
   signal \^dbg_update_0\ : STD_LOGIC;
   signal \^ext_jtag_tdi\ : STD_LOGIC;
   signal Functional_Reset : STD_LOGIC;
+  signal \JTAG_CONTROL_I/Use_Serial_Unified_Completion.Data_Read_Status.count\ : STD_LOGIC;
   signal \JTAG_CONTROL_I/Use_Serial_Unified_Completion.mb_data_overrun1__0\ : STD_LOGIC;
-  signal \JTAG_CONTROL_I/completion_status131_out\ : STD_LOGIC;
+  signal \JTAG_CONTROL_I/completion_status130_out\ : STD_LOGIC;
   signal MDM_Core_I1_n_0 : STD_LOGIC;
   signal MDM_Core_I1_n_16 : STD_LOGIC;
   signal SEL : STD_LOGIC;
@@ -4848,10 +4846,9 @@ architecture STRUCTURE of microblaze_mdm_1_1_MDM is
   signal \Use_E2.BSCAN_I_n_11\ : STD_LOGIC;
   signal \Use_E2.BSCAN_I_n_12\ : STD_LOGIC;
   signal \Use_E2.BSCAN_I_n_3\ : STD_LOGIC;
-  signal \Use_E2.BSCAN_I_n_6\ : STD_LOGIC;
   signal \Use_E2.BSCAN_I_n_7\ : STD_LOGIC;
   signal \Use_E2.BSCAN_I_n_8\ : STD_LOGIC;
-  signal count : STD_LOGIC_VECTOR ( 5 to 5 );
+  signal \Use_Serial_Unified_Completion.Data_Read_Status.count\ : STD_LOGIC_VECTOR ( 5 to 5 );
   signal p_1_in : STD_LOGIC_VECTOR ( 15 to 15 );
   signal tdo : STD_LOGIC;
   attribute bscan_debug_interface : string;
@@ -10520,15 +10517,15 @@ MDM_Core_I1: entity work.microblaze_mdm_1_1_MDM_Core
       SEL => SEL,
       \Use_BSCAN.Config_Reg_reg[30]_0\ => \Use_E2.BSCAN_I_n_8\,
       \Use_Serial_Unified_Completion.Completion_Status_Register.sample_1_reg[15]\ => MDM_Core_I1_n_16,
-      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\(0) => count(5),
-      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0\ => \Use_E2.BSCAN_I_n_6\,
-      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_1\ => \Use_E2.BSCAN_I_n_11\,
+      \Use_Serial_Unified_Completion.Data_Read_Status.count\ => \JTAG_CONTROL_I/Use_Serial_Unified_Completion.Data_Read_Status.count\,
+      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\(0) => \Use_Serial_Unified_Completion.Data_Read_Status.count\(5),
+      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]_0\ => \Use_E2.BSCAN_I_n_11\,
       \Use_Serial_Unified_Completion.completion_status_reg[10]\ => \Use_E2.BSCAN_I_n_7\,
       \Use_Serial_Unified_Completion.completion_status_reg[15]\(0) => p_1_in(15),
       \Use_Serial_Unified_Completion.mb_data_overrun1__0\ => \JTAG_CONTROL_I/Use_Serial_Unified_Completion.mb_data_overrun1__0\,
       \Use_Serial_Unified_Completion.mb_instr_overrun_reg\ => \Use_E2.BSCAN_I_n_10\,
       \Use_unisim.MB_SRL16E_I1\ => \^dbg_clk_0\,
-      completion_status131_out => \JTAG_CONTROL_I/completion_status131_out\,
+      completion_status130_out => \JTAG_CONTROL_I/completion_status130_out\,
       sel_n_reg => \^dbg_capture_0\,
       \shift_Count_reg[0]\ => MDM_Core_I1_n_0,
       \shift_Count_reg[0]_0\ => \Use_E2.BSCAN_I_n_12\,
@@ -10550,16 +10547,16 @@ MDM_Core_I1: entity work.microblaze_mdm_1_1_MDM_Core
       SEL => SEL,
       \Use_E2.BSCANE2_I_0\ => \^dbg_capture_0\,
       \Use_E2.BSCANE2_I_1\ => \Use_E2.BSCAN_I_n_3\,
-      \Use_E2.BSCANE2_I_2\ => \Use_E2.BSCAN_I_n_6\,
-      \Use_E2.BSCANE2_I_3\ => \Use_E2.BSCAN_I_n_7\,
-      \Use_E2.BSCANE2_I_4\ => \Use_E2.BSCAN_I_n_8\,
-      \Use_E2.BSCANE2_I_5\ => \Use_E2.BSCAN_I_n_11\,
-      \Use_E2.BSCANE2_I_6\ => \Use_E2.BSCAN_I_n_12\,
-      \Use_E2.BSCANE2_I_7\(0) => p_1_in(15),
-      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\(0) => count(5),
+      \Use_E2.BSCANE2_I_2\ => \Use_E2.BSCAN_I_n_7\,
+      \Use_E2.BSCANE2_I_3\ => \Use_E2.BSCAN_I_n_8\,
+      \Use_E2.BSCANE2_I_4\ => \Use_E2.BSCAN_I_n_11\,
+      \Use_E2.BSCANE2_I_5\ => \Use_E2.BSCAN_I_n_12\,
+      \Use_E2.BSCANE2_I_6\(0) => p_1_in(15),
+      \Use_Serial_Unified_Completion.Data_Read_Status.count\ => \JTAG_CONTROL_I/Use_Serial_Unified_Completion.Data_Read_Status.count\,
+      \Use_Serial_Unified_Completion.Data_Read_Status.count_reg[5]\(0) => \Use_Serial_Unified_Completion.Data_Read_Status.count\(5),
       \Use_Serial_Unified_Completion.completion_status_reg[15]\ => MDM_Core_I1_n_16,
       \Use_Serial_Unified_Completion.mb_data_overrun1__0\ => \JTAG_CONTROL_I/Use_Serial_Unified_Completion.mb_data_overrun1__0\,
-      completion_status131_out => \JTAG_CONTROL_I/completion_status131_out\,
+      completion_status130_out => \JTAG_CONTROL_I/completion_status130_out\,
       \shift_Count_reg[0]\ => MDM_Core_I1_n_0,
       tdo => tdo
     );
@@ -10593,7 +10590,7 @@ entity microblaze_mdm_1_1 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_mdm_1_1 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of microblaze_mdm_1_1 : entity is "MDM,Vivado 2025.1";
+  attribute x_core_info of microblaze_mdm_1_1 : entity is "MDM,Vivado 2025.2";
 end microblaze_mdm_1_1;
 
 architecture STRUCTURE of microblaze_mdm_1_1 is
@@ -11495,7 +11492,7 @@ architecture STRUCTURE of microblaze_mdm_1_1 is
   attribute C_DEBUG_INTERFACE : integer;
   attribute C_DEBUG_INTERFACE of U0 : label is 0;
   attribute C_DEVICE : string;
-  attribute C_DEVICE of U0 : label is "xc7a15ti";
+  attribute C_DEVICE of U0 : label is "xc7a35t";
   attribute C_EXT_TRIG_RESET_VALUE : string;
   attribute C_EXT_TRIG_RESET_VALUE of U0 : label is "20'b11110001001000110100";
   attribute C_FAMILY : string;

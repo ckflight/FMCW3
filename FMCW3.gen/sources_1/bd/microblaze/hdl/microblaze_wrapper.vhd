@@ -1,9 +1,9 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
---Date        : Sat Sep 13 20:48:09 2025
---Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
+--Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+--Date        : Wed Dec 17 14:10:25 2025
+--Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 --Command     : generate_target microblaze_wrapper.bd
 --Design      : microblaze_wrapper
 --Purpose     : IP block netlist
@@ -14,6 +14,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_wrapper is
   port (
+    AXI_STR_RXD_0_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    AXI_STR_RXD_0_tlast : in STD_LOGIC;
+    AXI_STR_RXD_0_tready : out STD_LOGIC;
+    AXI_STR_RXD_0_tvalid : in STD_LOGIC;
+    AXI_STR_TXD_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    AXI_STR_TXD_0_tlast : out STD_LOGIC;
+    AXI_STR_TXD_0_tready : in STD_LOGIC;
+    AXI_STR_TXD_0_tvalid : out STD_LOGIC;
     clk_100MHz : in STD_LOGIC;
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     reset_rtl_0 : in STD_LOGIC;
@@ -32,6 +40,14 @@ architecture STRUCTURE of microblaze_wrapper is
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     uart_rtl_0_rxd : in STD_LOGIC;
     uart_rtl_0_txd : out STD_LOGIC;
+    AXI_STR_RXD_0_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    AXI_STR_RXD_0_tlast : in STD_LOGIC;
+    AXI_STR_RXD_0_tready : out STD_LOGIC;
+    AXI_STR_RXD_0_tvalid : in STD_LOGIC;
+    AXI_STR_TXD_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    AXI_STR_TXD_0_tlast : out STD_LOGIC;
+    AXI_STR_TXD_0_tready : in STD_LOGIC;
+    AXI_STR_TXD_0_tvalid : out STD_LOGIC;
     reset_rtl_0 : in STD_LOGIC;
     spi0_mosi : out STD_LOGIC;
     spi0_miso : in STD_LOGIC;
@@ -43,6 +59,14 @@ architecture STRUCTURE of microblaze_wrapper is
 begin
 microblaze_i: component microblaze
      port map (
+      AXI_STR_RXD_0_tdata(31 downto 0) => AXI_STR_RXD_0_tdata(31 downto 0),
+      AXI_STR_RXD_0_tlast => AXI_STR_RXD_0_tlast,
+      AXI_STR_RXD_0_tready => AXI_STR_RXD_0_tready,
+      AXI_STR_RXD_0_tvalid => AXI_STR_RXD_0_tvalid,
+      AXI_STR_TXD_0_tdata(31 downto 0) => AXI_STR_TXD_0_tdata(31 downto 0),
+      AXI_STR_TXD_0_tlast => AXI_STR_TXD_0_tlast,
+      AXI_STR_TXD_0_tready => AXI_STR_TXD_0_tready,
+      AXI_STR_TXD_0_tvalid => AXI_STR_TXD_0_tvalid,
       clk_100MHz => clk_100MHz,
       gpio_rtl_0_tri_o(15 downto 0) => gpio_rtl_0_tri_o(15 downto 0),
       reset_rtl_0 => reset_rtl_0,

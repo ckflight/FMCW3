@@ -7,7 +7,7 @@
       "name": "microblaze",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1",
+      "tool_version": "2025.2",
       "validated": "true"
     },
     "design_tree": {
@@ -288,7 +288,7 @@
       },
       "axi_quad_spi_0": {
         "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
-        "ip_revision": "34",
+        "ip_revision": "35",
         "xci_name": "microblaze_axi_quad_spi_0_0",
         "xci_path": "ip\\microblaze_axi_quad_spi_0_0\\microblaze_axi_quad_spi_0_0.xci",
         "inst_hier_path": "axi_quad_spi_0",
@@ -325,7 +325,7 @@
       },
       "microblaze_0": {
         "vlnv": "xilinx.com:ip:microblaze:11.0",
-        "ip_revision": "15",
+        "ip_revision": "16",
         "xci_name": "microblaze_microblaze_0_1",
         "xci_path": "ip\\microblaze_microblaze_0_1\\microblaze_microblaze_0_1.xci",
         "inst_hier_path": "microblaze_0",
@@ -488,7 +488,7 @@
         "components": {
           "dlmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "ip_revision": "15",
+            "ip_revision": "16",
             "xci_name": "microblaze_dlmb_v10_1",
             "xci_path": "ip\\microblaze_dlmb_v10_1\\microblaze_dlmb_v10_1.xci",
             "inst_hier_path": "microblaze_0_local_memory/dlmb_v10",
@@ -523,7 +523,7 @@
           },
           "ilmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "ip_revision": "15",
+            "ip_revision": "16",
             "xci_name": "microblaze_ilmb_v10_1",
             "xci_path": "ip\\microblaze_ilmb_v10_1\\microblaze_ilmb_v10_1.xci",
             "inst_hier_path": "microblaze_0_local_memory/ilmb_v10",
@@ -558,7 +558,7 @@
           },
           "dlmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
-            "ip_revision": "26",
+            "ip_revision": "27",
             "xci_name": "microblaze_dlmb_bram_if_cntlr_1",
             "xci_path": "ip\\microblaze_dlmb_bram_if_cntlr_1\\microblaze_dlmb_bram_if_cntlr_1.xci",
             "inst_hier_path": "microblaze_0_local_memory/dlmb_bram_if_cntlr",
@@ -591,7 +591,7 @@
           },
           "ilmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
-            "ip_revision": "26",
+            "ip_revision": "27",
             "xci_name": "microblaze_ilmb_bram_if_cntlr_1",
             "xci_path": "ip\\microblaze_ilmb_bram_if_cntlr_1\\microblaze_ilmb_bram_if_cntlr_1.xci",
             "inst_hier_path": "microblaze_0_local_memory/ilmb_bram_if_cntlr",
@@ -614,7 +614,7 @@
           },
           "lmb_bram": {
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-            "ip_revision": "11",
+            "ip_revision": "12",
             "xci_name": "microblaze_lmb_bram_1",
             "xci_path": "ip\\microblaze_lmb_bram_1\\microblaze_lmb_bram_1.xci",
             "inst_hier_path": "microblaze_0_local_memory/lmb_bram",
@@ -705,7 +705,7 @@
       },
       "mdm_1": {
         "vlnv": "xilinx.com:ip:mdm:3.2",
-        "ip_revision": "28",
+        "ip_revision": "29",
         "xci_name": "microblaze_mdm_1_1",
         "xci_path": "ip\\microblaze_mdm_1_1\\microblaze_mdm_1_1.xci",
         "inst_hier_path": "mdm_1",
@@ -721,7 +721,7 @@
       },
       "axi_smc": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
-        "ip_revision": "27",
+        "ip_revision": "28",
         "xci_name": "microblaze_axi_smc_0",
         "xci_path": "ip\\microblaze_axi_smc_0\\microblaze_axi_smc_0.xci",
         "inst_hier_path": "axi_smc",
@@ -956,7 +956,7 @@
       },
       "axi_intc_0": {
         "vlnv": "xilinx.com:ip:axi_intc:4.1",
-        "ip_revision": "21",
+        "ip_revision": "22",
         "xci_name": "microblaze_axi_intc_0_0",
         "xci_path": "ip\\microblaze_axi_intc_0_0\\microblaze_axi_intc_0_0.xci",
         "inst_hier_path": "axi_intc_0",
@@ -1162,12 +1162,12 @@
           "microblaze_0_local_memory/clk_100MHz",
           "axi_fifo_mm_s_0/s_axi_aclk",
           "axi_gpio_0/s_axi_aclk",
-          "axi_intc_0/s_axi_aclk",
-          "axi_quad_spi_0/ext_spi_clk",
-          "axi_quad_spi_0/s_axi_aclk",
           "axi_timer_0/s_axi_aclk",
           "axi_uartlite_0/s_axi_aclk",
           "rst_clk_100MHz_100M/slowest_sync_clk",
+          "axi_intc_0/s_axi_aclk",
+          "axi_quad_spi_0/ext_spi_clk",
+          "axi_quad_spi_0/s_axi_aclk",
           "axi_smc/aclk",
           "microblaze_0/Clk"
         ]
@@ -1195,10 +1195,10 @@
           "rst_clk_100MHz_100M/peripheral_aresetn",
           "axi_fifo_mm_s_0/s_axi_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "axi_intc_0/s_axi_aresetn",
-          "axi_quad_spi_0/s_axi_aresetn",
           "axi_timer_0/s_axi_aresetn",
           "axi_uartlite_0/s_axi_aresetn",
+          "axi_intc_0/s_axi_aresetn",
+          "axi_quad_spi_0/s_axi_aresetn",
           "axi_smc/aresetn"
         ]
       },

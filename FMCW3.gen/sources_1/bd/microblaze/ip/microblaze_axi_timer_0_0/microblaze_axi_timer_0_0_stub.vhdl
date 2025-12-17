@@ -1,14 +1,14 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:32 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode synth_stub -rename_top microblaze_axi_timer_0_0 -prefix
---               microblaze_axi_timer_0_0_ microblaze_axi_timer_0_0_stub.vhdl
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:15:35 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_0/microblaze_axi_timer_0_0_stub.vhdl
 -- Design      : microblaze_axi_timer_0_0
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -46,7 +46,7 @@ entity microblaze_axi_timer_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of microblaze_axi_timer_0_0 : entity is "microblaze_axi_timer_0_0,axi_timer,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of microblaze_axi_timer_0_0 : entity is "microblaze_axi_timer_0_0,axi_timer,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_timer,x_ipVersion=2.0,x_ipCoreRevision=37,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_COUNT_WIDTH=32,C_ONE_TIMER_ONLY=0,C_TRIG0_ASSERT=1,C_TRIG1_ASSERT=1,C_GEN0_ASSERT=1,C_GEN1_ASSERT=1,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=5}";
+  attribute core_generation_info of microblaze_axi_timer_0_0 : entity is "microblaze_axi_timer_0_0,axi_timer,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_timer,x_ipVersion=2.0,x_ipCoreRevision=37,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_COUNT_WIDTH=32,C_ONE_TIMER_ONLY=0,C_TRIG0_ASSERT=1,C_TRIG1_ASSERT=1,C_GEN0_ASSERT=1,C_GEN1_ASSERT=1,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=5}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_axi_timer_0_0 : entity is "yes";
 end microblaze_axi_timer_0_0;
@@ -88,6 +88,6 @@ architecture stub of microblaze_axi_timer_0_0 is
   attribute x_interface_info of s_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI RVALID";
   attribute x_interface_info of s_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S_AXI RREADY";
   attribute x_core_info : string;
-  attribute x_core_info of stub : architecture is "axi_timer,Vivado 2025.1";
+  attribute x_core_info of stub : architecture is "axi_timer,Vivado 2025.2";
 begin
 end;

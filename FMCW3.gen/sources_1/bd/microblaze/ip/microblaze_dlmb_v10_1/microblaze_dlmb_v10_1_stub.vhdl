@@ -1,14 +1,14 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:30 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode synth_stub -rename_top microblaze_dlmb_v10_1 -prefix
---               microblaze_dlmb_v10_1_ microblaze_ilmb_v10_1_stub.vhdl
--- Design      : microblaze_ilmb_v10_1
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:14:58 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1/microblaze_dlmb_v10_1_stub.vhdl
+-- Design      : microblaze_dlmb_v10_1
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -43,9 +43,9 @@ entity microblaze_dlmb_v10_1 is
   );
 
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of microblaze_dlmb_v10_1 : entity is "microblaze_ilmb_v10_1,lmb_v10,{}";
+  attribute CHECK_LICENSE_TYPE of microblaze_dlmb_v10_1 : entity is "microblaze_dlmb_v10_1,lmb_v10,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of microblaze_dlmb_v10_1 : entity is "microblaze_ilmb_v10_1,lmb_v10,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=15,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_EXT_RESET_HIGH=1}";
+  attribute core_generation_info of microblaze_dlmb_v10_1 : entity is "microblaze_dlmb_v10_1,lmb_v10,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=16,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_LMB_HAS_PROT=0,C_EXT_RESET_HIGH=1}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_dlmb_v10_1 : entity is "yes";
 end microblaze_dlmb_v10_1;
@@ -65,8 +65,8 @@ architecture stub of microblaze_dlmb_v10_1 is
   attribute x_interface_mode of SYS_Rst : signal is "slave RST.SYS_Rst";
   attribute x_interface_parameter of SYS_Rst : signal is "XIL_INTERFACENAME RST.SYS_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0";
   attribute x_interface_info of LMB_Rst : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST";
-  attribute x_interface_mode of LMB_Rst : signal is "mirroredMaster LMB_M";
-  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD";
+  attribute x_interface_mode of LMB_Rst : signal is "mirroredSlave LMB_Sl_0, mirroredMaster LMB_M";
+  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0";
   attribute x_interface_info of M_ABus : signal is "xilinx.com:interface:lmb:1.0 LMB_M ABUS";
   attribute x_interface_info of M_ReadStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_M READSTROBE";
   attribute x_interface_info of M_WriteStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_M WRITESTROBE";
@@ -90,6 +90,6 @@ architecture stub of microblaze_dlmb_v10_1 is
   attribute x_interface_info of LMB_CE : signal is "xilinx.com:interface:lmb:1.0 LMB_M CE";
   attribute x_interface_info of LMB_BE : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 BE";
   attribute x_core_info : string;
-  attribute x_core_info of stub : architecture is "lmb_v10,Vivado 2025.1";
+  attribute x_core_info of stub : architecture is "lmb_v10,Vivado 2025.2";
 begin
 end;

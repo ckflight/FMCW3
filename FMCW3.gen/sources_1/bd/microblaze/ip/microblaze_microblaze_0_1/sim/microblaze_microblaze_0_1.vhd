@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:microblaze:11.0
--- IP Revision: 15
+-- IP Revision: 16
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY microblaze_v11_0_15;
-USE microblaze_v11_0_15.MicroBlaze;
+LIBRARY microblaze_v11_0_16;
+USE microblaze_v11_0_16.MicroBlaze;
 
 ENTITY microblaze_microblaze_0_1 IS
   PORT (
@@ -157,9 +157,11 @@ ARCHITECTURE microblaze_microblaze_0_1_arch OF microblaze_microblaze_0_1 IS
       C_M_AXI_I_BUS_EXCEPTION : INTEGER;
       C_D_LMB : INTEGER;
       C_D_LMB_PROTOCOL : INTEGER;
+      C_D_LMB_HAS_PROT : INTEGER;
       C_D_AXI : INTEGER;
       C_I_LMB : INTEGER;
       C_I_LMB_PROTOCOL : INTEGER;
+      C_I_LMB_HAS_PROT : INTEGER;
       C_I_AXI : INTEGER;
       G_TEMPLATE_LIST : INTEGER;
       C_USE_MSR_INSTR : INTEGER;
@@ -330,6 +332,7 @@ ARCHITECTURE microblaze_microblaze_0_1_arch OF microblaze_microblaze_0_1 IS
       LOCKSTEP_Master_Out : OUT STD_LOGIC_VECTOR(0 TO 4095);
       LOCKSTEP_Out : OUT STD_LOGIC_VECTOR(0 TO 4095);
       Instr_Addr : OUT STD_LOGIC_VECTOR(0 TO 31);
+      Instr_Prot : OUT STD_LOGIC_VECTOR(0 TO 1);
       Instr : IN STD_LOGIC_VECTOR(0 TO 31);
       IFetch : OUT STD_LOGIC;
       I_AS : OUT STD_LOGIC;
@@ -375,6 +378,7 @@ ARCHITECTURE microblaze_microblaze_0_1_arch OF microblaze_microblaze_0_1 IS
       M_AXI_IP_RVALID : IN STD_LOGIC;
       M_AXI_IP_RREADY : OUT STD_LOGIC;
       Data_Addr : OUT STD_LOGIC_VECTOR(0 TO 31);
+      Data_Prot : OUT STD_LOGIC_VECTOR(0 TO 1);
       Data_Read : IN STD_LOGIC_VECTOR(0 TO 31);
       Data_Write : OUT STD_LOGIC_VECTOR(0 TO 31);
       D_AS : OUT STD_LOGIC;
@@ -756,7 +760,7 @@ ARCHITECTURE microblaze_microblaze_0_1_arch OF microblaze_microblaze_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF D_AS: SIGNAL IS "xilinx.com:interface:lmb:1.0 DLMB ADDRSTROBE";
   ATTRIBUTE X_INTERFACE_INFO OF Data_Addr: SIGNAL IS "xilinx.com:interface:lmb:1.0 DLMB ABUS";
   ATTRIBUTE X_INTERFACE_MODE OF Data_Addr: SIGNAL IS "master DLMB";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Data_Addr: SIGNAL IS "XIL_INTERFACENAME DLMB, ADDR_WIDTH 32, DATA_WIDTH 32, PROTOCOL STANDARD, READ_WRITE_MODE READ_WRITE";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF Data_Addr: SIGNAL IS "XIL_INTERFACENAME DLMB, ADDR_WIDTH 32, DATA_WIDTH 32, PROTOCOL STANDARD, HAS_PROT 0, READ_WRITE_MODE READ_WRITE";
   ATTRIBUTE X_INTERFACE_INFO OF Data_Read: SIGNAL IS "xilinx.com:interface:lmb:1.0 DLMB READDBUS";
   ATTRIBUTE X_INTERFACE_INFO OF Data_Write: SIGNAL IS "xilinx.com:interface:lmb:1.0 DLMB WRITEDBUS";
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Capture: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 DEBUG CAPTURE";
@@ -778,7 +782,7 @@ ARCHITECTURE microblaze_microblaze_0_1_arch OF microblaze_microblaze_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF Instr: SIGNAL IS "xilinx.com:interface:lmb:1.0 ILMB READDBUS";
   ATTRIBUTE X_INTERFACE_INFO OF Instr_Addr: SIGNAL IS "xilinx.com:interface:lmb:1.0 ILMB ABUS";
   ATTRIBUTE X_INTERFACE_MODE OF Instr_Addr: SIGNAL IS "master ILMB";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF Instr_Addr: SIGNAL IS "XIL_INTERFACENAME ILMB, ADDR_WIDTH 32, DATA_WIDTH 32, PROTOCOL STANDARD, READ_WRITE_MODE READ_ONLY";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF Instr_Addr: SIGNAL IS "XIL_INTERFACENAME ILMB, ADDR_WIDTH 32, DATA_WIDTH 32, PROTOCOL STANDARD, HAS_PROT 0, READ_WRITE_MODE READ_ONLY";
   ATTRIBUTE X_INTERFACE_INFO OF Interrupt: SIGNAL IS "xilinx.com:interface:mbinterrupt:1.0 INTERRUPT INTERRUPT";
   ATTRIBUTE X_INTERFACE_MODE OF Interrupt: SIGNAL IS "slave INTERRUPT";
   ATTRIBUTE X_INTERFACE_PARAMETER OF Interrupt: SIGNAL IS "XIL_INTERFACENAME INTERRUPT, SENSITIVITY LEVEL_HIGH, LOW_LATENCY 0";
@@ -829,7 +833,7 @@ BEGIN
       C_TEMPORAL_DEPTH => 0,
       C_ENDIANNESS => 1,
       C_FAMILY => "artix7",
-      C_PART => "xc7a15tiftg256-1l",
+      C_PART => "xc7a35tftg256-1",
       C_DATA_SIZE => 32,
       C_LMB_DATA_SIZE => 32,
       C_INSTR_SIZE => 32,
@@ -853,17 +857,19 @@ BEGIN
       C_M_AXI_I_BUS_EXCEPTION => 0,
       C_D_LMB => 1,
       C_D_LMB_PROTOCOL => 0,
+      C_D_LMB_HAS_PROT => 0,
       C_D_AXI => 1,
       C_I_LMB => 1,
       C_I_LMB_PROTOCOL => 0,
+      C_I_LMB_HAS_PROT => 0,
       C_I_AXI => 0,
       G_TEMPLATE_LIST => 8,
       C_USE_MSR_INSTR => 1,
       C_USE_PCMP_INSTR => 1,
       C_USE_BARREL => 1,
-      C_USE_DIV => 0,
+      C_USE_DIV => 1,
       C_USE_HW_MUL => 1,
-      C_USE_FPU => 0,
+      C_USE_FPU => 1,
       C_USE_REORDER_INSTR => 0,
       C_UNALIGNED_EXCEPTIONS => 0,
       C_ILL_OPCODE_EXCEPTION => 0,
@@ -874,7 +880,7 @@ BEGIN
       C_FSL_EXCEPTION => 0,
       C_USE_STACK_PROTECTION => 0,
       C_IMPRECISE_EXCEPTIONS => 0,
-      C_USE_INTERRUPT => 0,
+      C_USE_INTERRUPT => 1,
       C_USE_EXT_BRK => 0,
       C_USE_EXT_NM_BRK => 0,
       C_USE_NON_SECURE => 0,
@@ -895,7 +901,7 @@ BEGIN
       C_OPCODE_0x0_ILLEGAL => 0,
       C_DEBUG_ENABLED => 1,
       C_DEBUG_INTERFACE => 0,
-      C_NUMBER_OF_PC_BRK => 1,
+      C_NUMBER_OF_PC_BRK => 8,
       C_NUMBER_OF_RD_ADDR_BRK => 0,
       C_NUMBER_OF_WR_ADDR_BRK => 0,
       C_DEBUG_EVENT_COUNTERS => 5,

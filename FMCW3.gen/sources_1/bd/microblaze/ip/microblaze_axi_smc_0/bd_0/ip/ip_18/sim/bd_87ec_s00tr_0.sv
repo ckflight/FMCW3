@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_transaction_regulator:1.0
-// IP Revision: 11
+// IP Revision: 12
 
 `timescale 1ns/1ps
 
@@ -313,7 +313,7 @@ input wire m_axi_rvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  sc_transaction_regulator_v1_0_11_top #(
+  sc_transaction_regulator_v1_0_12_top #(
     .C_FAMILY("artix7"),
     .C_IS_CASCADED(0),
     .C_ENABLE_PIPELINING(1'H1),
@@ -321,7 +321,7 @@ output wire m_axi_rready;
     .C_NUM_WRITE_THREADS(1),
     .C_MEP_IDENTIFIER_WIDTH(1),
     .C_MEP_IDENTIFIER(1),
-    .C_SEP_ROUTE_WIDTH(2),
+    .C_SEP_ROUTE_WIDTH(3),
     .C_RDATA_WIDTH(32),
     .C_WDATA_WIDTH(32),
     .C_S_ID_WIDTH(0),

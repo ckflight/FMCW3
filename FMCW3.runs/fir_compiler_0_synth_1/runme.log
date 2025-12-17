@@ -4,33 +4,34 @@
 
 
 
-****** Vivado v2025.1 (64-bit)
-  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
-  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
-  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Fri Oct 24 12:10:37 2025
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Dec 17 14:16:20 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source fir_compiler_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 511.246 ; gain = 211.625
-Command: synth_design -top fir_compiler_0 -part xc7a15tiftg256-1L -incremental_mode off -mode out_of_context
+create_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 576.266 ; gain = 219.316
+Command: synth_design -top fir_compiler_0 -part xc7a35tftg256-1 -incremental_mode off -mode out_of_context
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a15ti'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a15ti'
-INFO: [Device 21-403] Loading part xc7a15tiftg256-1L
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10208
+INFO: [Synth 8-7075] Helper process launched with PID 12344
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1202.562 ; gain = 491.922
+Starting RTL Elaboration : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 1312.645 ; gain = 537.629
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:70]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
 	Parameter C_COMPONENT_NAME bound to: fir_compiler_0 - type: string 
 	Parameter C_COEF_FILE bound to: fir_compiler_0.mif - type: string 
 	Parameter C_COEF_FILE_LINES bound to: 60 - type: integer 
+	Parameter C_DATA_COEFFICIENT_TYPE bound to: 0 - type: integer 
 	Parameter C_FILTER_TYPE bound to: 1 - type: integer 
 	Parameter C_INTERP_RATE bound to: 1 - type: integer 
 	Parameter C_DECIM_RATE bound to: 20 - type: integer 
@@ -96,160 +97,160 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/CK/Desktop/FP
 	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
 	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
 	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'fir_compiler_v7_2_24' declared at 'c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:72908' bound to instance 'U0' of component 'fir_compiler_v7_2_24' [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:202]
-INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (0#1) [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:70]
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized22 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized22 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized21 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized21 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized20 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized20 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port WE in module delay__parameterized19 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay__parameterized19 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized19 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized19 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay__parameterized19 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port WE in module delay__parameterized18 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay__parameterized18 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized18 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized18 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay__parameterized18 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PRE_ADDSUB in module calc__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PRE_ADD_BYPASS in module calc__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CED in module calc__parameterized0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port WE in module delay__parameterized17 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay__parameterized17 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized17 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized17 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay__parameterized17 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][57] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][56] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][55] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][54] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][53] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][52] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][51] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][50] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][49] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[fab][48] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][62] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][61] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][60] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][59] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][58] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][57] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][56] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][55] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][54] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][53] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][52] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][51] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][50] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][49] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port POUT[casc][48] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][57] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][56] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][55] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][54] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][53] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][52] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][51] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][50] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][49] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][48] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][47] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][46] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][45] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][44] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][43] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][42] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][41] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][40] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][39] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][38] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][37] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][36] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][35] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][34] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][33] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][32] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][31] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][30] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][29] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][28] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][27] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][26] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][25] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][24] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][23] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][22] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][21] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][20] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][19] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][18] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][17] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][16] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][15] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][14] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][13] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][12] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][11] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][10] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][9] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][8] in module add_accum is either unconnected or has no load
-WARNING: [Synth 8-7129] Port PIN[fab][7] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_26' declared at 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:73330' bound to instance 'U0' of component 'fir_compiler_v7_2_26' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:203]
+INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (0#1) [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:70]
+INFO: [Synth 8-7129] Port SCLR in module delay__parameterized22 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized22 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR in module delay__parameterized21 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized21 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR in module delay__parameterized20 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized20 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WE in module delay__parameterized19 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CE in module delay__parameterized19 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR in module delay__parameterized19 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized19 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CLK in module delay__parameterized19 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WE in module delay__parameterized18 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CE in module delay__parameterized18 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR in module delay__parameterized18 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized18 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CLK in module delay__parameterized18 is either unconnected or has no load
+INFO: [Synth 8-7129] Port PAT_DET_IM in module calc__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port PAT_DET_B_IM in module calc__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port PRE_ADDSUB in module calc__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port PRE_ADD_BYPASS in module calc__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CED in module calc__parameterized0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port WE in module delay__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CE in module delay__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR in module delay__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port SCLR_ALT in module delay__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port CLK in module delay__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][115] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][114] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][113] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][112] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][111] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][110] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][109] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][108] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][107] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][106] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][105] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][104] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][103] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][102] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][101] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][100] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][99] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][98] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][97] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][96] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][95] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][94] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][93] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][92] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][91] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][90] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][89] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][88] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][87] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][86] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][85] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][84] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][83] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][82] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][81] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][80] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][79] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][78] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][77] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][76] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][75] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][74] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][73] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][72] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][71] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][70] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][69] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][68] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][67] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][66] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][65] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][64] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][63] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][62] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][61] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][60] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][59] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][58] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][57] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][56] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][55] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][54] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][53] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][52] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][51] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][50] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][49] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[fab][48] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[casc][115] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[casc][114] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[casc][113] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[casc][112] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[casc][111] in module add_accum is either unconnected or has no load
+INFO: [Synth 8-7129] Port POUT[casc][110] in module add_accum is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished RTL Elaboration : Time (s): cpu = 00:01:03 ; elapsed = 00:01:27 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:27 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:04 ; elapsed = 00:01:27 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 1472.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.646 . Memory (MB): peak = 1579.094 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
-Parsing XDC File [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1472.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1579.094 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 1472.445 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.753 . Memory (MB): peak = 1579.094 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished Constraint Validation : Time (s): cpu = 00:01:42 ; elapsed = 00:02:23 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a15tiftg256-1L
+Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:42 ; elapsed = 00:02:23 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:42 ; elapsed = 00:02:23 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:44 ; elapsed = 00:02:25 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -261,35 +262,34 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 45 (col length:60)
-BRAMs: 50 (col length: RAMB18 60 RAMB36 30)
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1472.445 ; gain = 761.805
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:02:40 . Memory (MB): peak = 1579.094 ; gain = 804.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1563.965 ; gain = 853.324
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:26 ; elapsed = 00:03:15 . Memory (MB): peak = 1688.094 ; gain = 913.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1568.688 ; gain = 858.047
+Finished Timing Optimization : Time (s): cpu = 00:02:27 ; elapsed = 00:03:16 . Memory (MB): peak = 1691.785 ; gain = 916.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 1597.309 ; gain = 886.668
+Finished Technology Mapping : Time (s): cpu = 00:02:28 ; elapsed = 00:03:17 . Memory (MB): peak = 1720.383 ; gain = 945.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -307,37 +307,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished IO Insertion : Time (s): cpu = 00:02:40 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:40 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:41 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:41 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:41 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:41 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -378,33 +378,33 @@ Report Cell Usage:
 |13    |FDSE     |     3|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:41 ; elapsed = 00:03:29 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:13 . Memory (MB): peak = 1809.527 ; gain = 1098.887
-Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1809.527 ; gain = 1098.887
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:23 ; elapsed = 00:03:06 . Memory (MB): peak = 1947.703 ; gain = 1172.688
+Synthesis Optimization Complete : Time (s): cpu = 00:02:41 ; elapsed = 00:03:30 . Memory (MB): peak = 1947.703 ; gain = 1172.688
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1809.527 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1947.703 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1814.875 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1951.281 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 6 instances were transformed.
   RAM64M => RAM64M (RAMD64E(x4)): 5 instances
   RAM64X1D => RAM64X1D (RAMD64E(x2)): 1 instance 
 
-Synth Design complete | Checksum: ec039d21
+Synth Design complete | Checksum: f9574b2d
 INFO: [Common 17-83] Releasing license: Synthesis
-21 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+121 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 1814.875 ; gain = 1292.430
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1814.875 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/fir_compiler_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fir_compiler_0, cache-ID = 4d6ab0b1035415df
+synth_design: Time (s): cpu = 00:02:52 ; elapsed = 00:03:47 . Memory (MB): peak = 1951.281 ; gain = 1363.719
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1951.281 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/fir_compiler_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fir_compiler_0, cache-ID = a26e1a89aee581ab
 INFO: [Coretcl 2-1174] Renamed 38 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1814.875 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/fir_compiler_0.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1951.281 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/fir_compiler_0_synth_1/fir_compiler_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file fir_compiler_0_utilization_synth.rpt -pb fir_compiler_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Oct 24 12:12:23 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 17 14:21:03 2025...

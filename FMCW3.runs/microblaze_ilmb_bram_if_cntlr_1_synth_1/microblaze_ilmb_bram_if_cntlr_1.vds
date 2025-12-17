@@ -1,0 +1,399 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Dec 17 14:13:26 2025
+# Process ID         : 3432
+# Current directory  : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1
+# Command line       : vivado.exe -log microblaze_ilmb_bram_if_cntlr_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_ilmb_bram_if_cntlr_1.tcl
+# Log file           : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1/microblaze_ilmb_bram_if_cntlr_1.vds
+# Journal file       : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1\vivado.jou
+# Running On         : DESKTOP-BEUFM6D
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+# CPU Frequency      : 2295 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17083 MB
+# Swap memory        : 12322 MB
+# Total Virtual      : 29406 MB
+# Available Virtual  : 5114 MB
+#-----------------------------------------------------------
+source microblaze_ilmb_bram_if_cntlr_1.tcl -notrace
+create_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 575.520 ; gain = 218.863
+Command: synth_design -top microblaze_ilmb_bram_if_cntlr_1 -part xc7a35tftg256-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13200
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 1316.551 ; gain = 539.922
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_bram_if_cntlr_1' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/synth/microblaze_ilmb_bram_if_cntlr_1.vhd:84]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_HIGHADDR bound to: 64'b0000000000000000000000000000000000000000000000000111111111111111 
+	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_NUM_LMB bound to: 1 - type: integer 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK1 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK2 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK3 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK4 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK5 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK6 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK7 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_PROT_CFG bound to: 8'b11111111 
+	Parameter C_PROT_CFG1 bound to: 8'b11111111 
+	Parameter C_PROT_CFG2 bound to: 8'b11111111 
+	Parameter C_PROT_CFG3 bound to: 8'b11111111 
+	Parameter C_PROT_CFG4 bound to: 8'b11111111 
+	Parameter C_PROT_CFG5 bound to: 8'b11111111 
+	Parameter C_PROT_CFG6 bound to: 8'b11111111 
+	Parameter C_PROT_CFG7 bound to: 8'b11111111 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_LMB_HAS_PROT bound to: 0 - type: integer 
+	Parameter C_ARBITRATION bound to: 0 - type: integer 
+	Parameter C_ECC bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 0 - type: integer 
+	Parameter C_FAULT_INJECT bound to: 0 - type: integer 
+	Parameter C_CE_FAILING_REGISTERS bound to: 0 - type: integer 
+	Parameter C_UE_FAILING_REGISTERS bound to: 0 - type: integer 
+	Parameter C_ECC_STATUS_REGISTERS bound to: 0 - type: integer 
+	Parameter C_ECC_ONOFF_REGISTER bound to: 0 - type: integer 
+	Parameter C_ECC_ONOFF_RESET_VALUE bound to: 1 - type: integer 
+	Parameter C_CE_COUNTER_WIDTH bound to: 0 - type: integer 
+	Parameter C_WRITE_ACCESS bound to: 2 - type: integer 
+	Parameter C_BRAM_AWIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_CTRL_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_CTRL_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_bram_if_cntlr' declared at 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5107' bound to instance 'U0' of component 'lmb_bram_if_cntlr' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/synth/microblaze_ilmb_bram_if_cntlr_1.vhd:298]
+INFO: [Synth 8-638] synthesizing module 'lmb_bram_if_cntlr' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5306]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_BASEADDR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK1 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK2 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK3 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK4 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK5 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK6 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_MASK7 bound to: 64'b0000000000000000000000000000000000000000100000000000000000000000 
+	Parameter C_PROT_CFG bound to: 8'b11111111 
+	Parameter C_PROT_CFG1 bound to: 8'b11111111 
+	Parameter C_PROT_CFG2 bound to: 8'b11111111 
+	Parameter C_PROT_CFG3 bound to: 8'b11111111 
+	Parameter C_PROT_CFG4 bound to: 8'b11111111 
+	Parameter C_PROT_CFG5 bound to: 8'b11111111 
+	Parameter C_PROT_CFG6 bound to: 8'b11111111 
+	Parameter C_PROT_CFG7 bound to: 8'b11111111 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_ECC_WIDTH bound to: 7 - type: integer 
+	Parameter C_ECC bound to: 0 - type: integer 
+	Parameter C_NUM_LMB bound to: 1 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_LMB_HAS_PROT bound to: 0 - type: integer 
+	Parameter C_ARBITRATION bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_mux' declared at 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4145' bound to instance 'lmb_mux_I' of component 'lmb_mux' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5657]
+INFO: [Synth 8-638] synthesizing module 'lmb_mux' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4309]
+	Parameter C_AW bound to: 32 - type: integer 
+	Parameter C_BAR bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_MASK bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-3491] module 'pselect_mask' declared at 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3470' bound to instance 'pselect_mask_lmb' of component 'pselect_mask' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4435]
+INFO: [Synth 8-638] synthesizing module 'pselect_mask' [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'pselect_mask' (0#1) [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:3485]
+INFO: [Synth 8-256] done synthesizing module 'lmb_mux' (0#1) [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:4309]
+INFO: [Synth 8-256] done synthesizing module 'lmb_bram_if_cntlr' (0#1) [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/7cd0/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd:5306]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_ilmb_bram_if_cntlr_1' (0#1) [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/synth/microblaze_ilmb_bram_if_cntlr_1.vhd:84]
+INFO: [Synth 8-7129] Port A[0] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[1] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[2] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[3] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[4] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[5] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[6] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[7] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[8] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[9] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[10] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[11] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[12] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[13] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[14] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[15] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[16] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[17] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[18] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[19] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[20] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[21] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[22] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[23] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[24] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[25] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[26] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[27] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[28] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[29] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[30] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[31] in module pselect_mask is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB_Clk in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB_Rst in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[0] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[1] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[2] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[3] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[4] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[5] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[6] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[7] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[8] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[9] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[10] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[11] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[12] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[13] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[14] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[15] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[16] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[17] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[18] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[19] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[20] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[21] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[22] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[23] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[24] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[25] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[26] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[27] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[28] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[29] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[30] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_ABus[31] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_Prot[0] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_Prot[1] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[0] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[1] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[2] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[3] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[4] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[5] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[6] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[7] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[8] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[9] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[10] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[11] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[12] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[13] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[14] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[15] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[16] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[17] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[18] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[19] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[20] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[21] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[22] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[23] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[24] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[25] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[26] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[27] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[28] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[29] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[30] in module lmb_mux is either unconnected or has no load
+INFO: [Synth 8-7129] Port LMB1_WriteDBus[31] in module lmb_mux is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 1444.656 ; gain = 668.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 1444.656 ; gain = 668.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:49 . Memory (MB): peak = 1444.656 ; gain = 668.027
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 1444.656 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1_ooc.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1486.254 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.158 . Memory (MB): peak = 1486.285 ; gain = 0.031
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:04 ; elapsed = 00:01:30 . Memory (MB): peak = 1486.285 ; gain = 709.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:04 ; elapsed = 00:01:30 . Memory (MB): peak = 1486.285 ; gain = 709.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:04 ; elapsed = 00:01:30 . Memory (MB): peak = 1486.285 ; gain = 709.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:04 ; elapsed = 00:01:31 . Memory (MB): peak = 1486.285 ; gain = 709.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:45 . Memory (MB): peak = 1486.285 ; gain = 709.656
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:34 ; elapsed = 00:02:12 . Memory (MB): peak = 1637.730 ; gain = 861.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:02:12 . Memory (MB): peak = 1637.805 ; gain = 861.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:34 ; elapsed = 00:02:12 . Memory (MB): peak = 1648.008 ; gain = 871.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     6|
+|3     |FDRE |     2|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:52 ; elapsed = 00:02:37 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:13 ; elapsed = 00:02:27 . Memory (MB): peak = 1897.363 ; gain = 1079.105
+Synthesis Optimization Complete : Time (s): cpu = 00:01:53 ; elapsed = 00:02:38 . Memory (MB): peak = 1897.363 ; gain = 1120.734
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1900.613 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1902.719 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 1fa189a9
+INFO: [Common 17-83] Releasing license: Synthesis
+125 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:05 ; elapsed = 00:02:59 . Memory (MB): peak = 1902.719 ; gain = 1314.730
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1902.719 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1/microblaze_ilmb_bram_if_cntlr_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP microblaze_ilmb_bram_if_cntlr_1, cache-ID = 8446305a66eb7043
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1902.719 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_ilmb_bram_if_cntlr_1_synth_1/microblaze_ilmb_bram_if_cntlr_1.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file microblaze_ilmb_bram_if_cntlr_1_utilization_synth.rpt -pb microblaze_ilmb_bram_if_cntlr_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 17 14:17:08 2025...

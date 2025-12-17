@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Dec 17 14:29:01 2025
+# Process ID         : 12168
+# Current directory  : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_axi_fifo_mm_s_0_1_synth_1
+# Command line       : vivado.exe -log microblaze_axi_fifo_mm_s_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_axi_fifo_mm_s_0_1.tcl
+# Log file           : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_axi_fifo_mm_s_0_1_synth_1/microblaze_axi_fifo_mm_s_0_1.vds
+# Journal file       : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/microblaze_axi_fifo_mm_s_0_1_synth_1\vivado.jou
+# Running On         : DESKTOP-BEUFM6D
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+# CPU Frequency      : 2295 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17083 MB
+# Swap memory        : 2550 MB
+# Total Virtual      : 19633 MB
+# Available Virtual  : 6371 MB
+#-----------------------------------------------------------
+source microblaze_axi_fifo_mm_s_0_1.tcl -notrace

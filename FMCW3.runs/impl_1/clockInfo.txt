@@ -1,9 +1,9 @@
 -------------------------------------
-| Tool Version : Vivado v.2025.1
-| Date         : Fri Oct 24 13:23:10 2025
+| Tool Version : Vivado v.2025.2
+| Date         : Wed Dec 17 14:38:31 2025
 | Host         : DESKTOP-BEUFM6D
 | Design       : design_1
-| Device       : xc7a15ti-ftg256-1L-I-
+| Device       : xc7a35t-ftg256-1--
 -------------------------------------
 
 For more information on clockInfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US

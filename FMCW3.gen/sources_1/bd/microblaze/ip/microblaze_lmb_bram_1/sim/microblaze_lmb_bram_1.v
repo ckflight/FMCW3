@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:blk_mem_gen:8.4
-// IP Revision: 11
+// IP Revision: 12
 
 `timescale 1ns/1ps
 
@@ -107,7 +107,7 @@ output wire [31 : 0] doutb;
 output wire rsta_busy;
 output wire rstb_busy;
 
-  blk_mem_gen_v8_4_11 #(
+  blk_mem_gen_v8_4_12 #(
     .C_FAMILY("artix7"),
     .C_XDEVICEFAMILY("artix7"),
     .C_ELABORATION_DIR("./"),
@@ -182,7 +182,7 @@ output wire rstb_busy;
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_COUNT_36K_BRAM("8"),
     .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     19.3686 mW")
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     20.388 mW")
   ) inst (
     .clka(clka),
     .rsta(rsta),

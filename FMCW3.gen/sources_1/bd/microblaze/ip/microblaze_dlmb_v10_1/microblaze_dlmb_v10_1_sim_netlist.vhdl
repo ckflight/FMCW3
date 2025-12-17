@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:30 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_dlmb_v10_1 -prefix
---               microblaze_dlmb_v10_1_ microblaze_ilmb_v10_1_sim_netlist.vhdl
--- Design      : microblaze_ilmb_v10_1
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:14:58 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1/microblaze_dlmb_v10_1_sim_netlist.vhdl
+-- Design      : microblaze_dlmb_v10_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -21,6 +21,7 @@ entity microblaze_dlmb_v10_1_lmb_v10 is
     SYS_Rst : in STD_LOGIC;
     LMB_Rst : out STD_LOGIC;
     M_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    M_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     M_ReadStrobe : in STD_LOGIC;
     M_WriteStrobe : in STD_LOGIC;
     M_AddrStrobe : in STD_LOGIC;
@@ -32,6 +33,7 @@ entity microblaze_dlmb_v10_1_lmb_v10 is
     Sl_UE : in STD_LOGIC_VECTOR ( 0 to 0 );
     Sl_CE : in STD_LOGIC_VECTOR ( 0 to 0 );
     LMB_ABus : out STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB_Prot : out STD_LOGIC_VECTOR ( 0 to 1 );
     LMB_ReadStrobe : out STD_LOGIC;
     LMB_WriteStrobe : out STD_LOGIC;
     LMB_AddrStrobe : out STD_LOGIC;
@@ -49,13 +51,18 @@ entity microblaze_dlmb_v10_1_lmb_v10 is
   attribute C_LMB_AWIDTH of microblaze_dlmb_v10_1_lmb_v10 : entity is 32;
   attribute C_LMB_DWIDTH : integer;
   attribute C_LMB_DWIDTH of microblaze_dlmb_v10_1_lmb_v10 : entity is 32;
+  attribute C_LMB_HAS_PROT : integer;
+  attribute C_LMB_HAS_PROT of microblaze_dlmb_v10_1_lmb_v10 : entity is 0;
   attribute C_LMB_NUM_SLAVES : integer;
   attribute C_LMB_NUM_SLAVES of microblaze_dlmb_v10_1_lmb_v10 : entity is 1;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of microblaze_dlmb_v10_1_lmb_v10 : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_dlmb_v10_1_lmb_v10 : entity is "lmb_v10";
 end microblaze_dlmb_v10_1_lmb_v10;
 
 architecture STRUCTURE of microblaze_dlmb_v10_1_lmb_v10 is
+  signal \<const0>\ : STD_LOGIC;
   signal \^m_abus\ : STD_LOGIC_VECTOR ( 0 to 31 );
   signal \^m_addrstrobe\ : STD_LOGIC;
   signal \^m_be\ : STD_LOGIC_VECTOR ( 0 to 3 );
@@ -78,6 +85,8 @@ begin
   LMB_AddrStrobe <= \^m_addrstrobe\;
   LMB_BE(0 to 3) <= \^m_be\(0 to 3);
   LMB_CE <= \^sl_ce\(0);
+  LMB_Prot(0) <= \<const0>\;
+  LMB_Prot(1) <= \<const0>\;
   LMB_ReadDBus(0 to 31) <= \^sl_dbus\(0 to 31);
   LMB_ReadStrobe <= \^m_readstrobe\;
   LMB_Ready <= \^sl_ready\(0);
@@ -96,6 +105,10 @@ begin
   \^sl_ready\(0) <= Sl_Ready(0);
   \^sl_ue\(0) <= Sl_UE(0);
   \^sl_wait\(0) <= Sl_Wait(0);
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 POR_FF_I: unisim.vcomponents.FDSE
     generic map(
       INIT => '1'
@@ -143,20 +156,23 @@ entity microblaze_dlmb_v10_1 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of microblaze_dlmb_v10_1 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of microblaze_dlmb_v10_1 : entity is "microblaze_ilmb_v10_1,lmb_v10,{}";
+  attribute CHECK_LICENSE_TYPE of microblaze_dlmb_v10_1 : entity is "microblaze_dlmb_v10_1,lmb_v10,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_dlmb_v10_1 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of microblaze_dlmb_v10_1 : entity is "lmb_v10,Vivado 2025.1";
+  attribute x_core_info of microblaze_dlmb_v10_1 : entity is "lmb_v10,Vivado 2025.2";
 end microblaze_dlmb_v10_1;
 
 architecture STRUCTURE of microblaze_dlmb_v10_1 is
+  signal NLW_U0_LMB_Prot_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
   attribute C_EXT_RESET_HIGH : integer;
   attribute C_EXT_RESET_HIGH of U0 : label is 1;
   attribute C_LMB_AWIDTH : integer;
   attribute C_LMB_AWIDTH of U0 : label is 32;
   attribute C_LMB_DWIDTH : integer;
   attribute C_LMB_DWIDTH of U0 : label is 32;
+  attribute C_LMB_HAS_PROT : integer;
+  attribute C_LMB_HAS_PROT of U0 : label is 0;
   attribute C_LMB_NUM_SLAVES : integer;
   attribute C_LMB_NUM_SLAVES of U0 : label is 1;
   attribute C_LMB_PROTOCOL : integer;
@@ -172,8 +188,8 @@ architecture STRUCTURE of microblaze_dlmb_v10_1 is
   attribute x_interface_info of LMB_ReadStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READSTROBE";
   attribute x_interface_info of LMB_Ready : signal is "xilinx.com:interface:lmb:1.0 LMB_M READY";
   attribute x_interface_info of LMB_Rst : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST";
-  attribute x_interface_mode of LMB_Rst : signal is "mirroredMaster LMB_M";
-  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD";
+  attribute x_interface_mode of LMB_Rst : signal is "mirroredSlave LMB_Sl_0, mirroredMaster LMB_M";
+  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0";
   attribute x_interface_info of LMB_UE : signal is "xilinx.com:interface:lmb:1.0 LMB_M UE";
   attribute x_interface_info of LMB_Wait : signal is "xilinx.com:interface:lmb:1.0 LMB_M WAIT";
   attribute x_interface_info of LMB_WriteStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITESTROBE";
@@ -203,6 +219,7 @@ U0: entity work.microblaze_dlmb_v10_1_lmb_v10
       LMB_BE(0 to 3) => LMB_BE(0 to 3),
       LMB_CE => LMB_CE,
       LMB_Clk => LMB_Clk,
+      LMB_Prot(0 to 1) => NLW_U0_LMB_Prot_UNCONNECTED(0 to 1),
       LMB_ReadDBus(0 to 31) => LMB_ReadDBus(0 to 31),
       LMB_ReadStrobe => LMB_ReadStrobe,
       LMB_Ready => LMB_Ready,
@@ -215,6 +232,7 @@ U0: entity work.microblaze_dlmb_v10_1_lmb_v10
       M_AddrStrobe => M_AddrStrobe,
       M_BE(0 to 3) => M_BE(0 to 3),
       M_DBus(0 to 31) => M_DBus(0 to 31),
+      M_Prot(0 to 1) => B"00",
       M_ReadStrobe => M_ReadStrobe,
       M_WriteStrobe => M_WriteStrobe,
       SYS_Rst => SYS_Rst,

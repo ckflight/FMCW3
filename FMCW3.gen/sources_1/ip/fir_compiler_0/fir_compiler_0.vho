@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 -- IP VLNV: xilinx.com:ip:fir_compiler:7.2
--- IP Revision: 24
+-- IP Revision: 26
 
 -- The following code must appear in the VHDL architecture header.
 

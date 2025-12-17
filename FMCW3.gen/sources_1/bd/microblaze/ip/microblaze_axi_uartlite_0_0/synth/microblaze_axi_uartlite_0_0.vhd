@@ -123,11 +123,11 @@ ARCHITECTURE microblaze_axi_uartlite_0_0_arch OF microblaze_axi_uartlite_0_0 IS
     );
   END COMPONENT axi_uartlite;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF microblaze_axi_uartlite_0_0_arch: ARCHITECTURE IS "axi_uartlite,Vivado 2025.1";
+  ATTRIBUTE X_CORE_INFO OF microblaze_axi_uartlite_0_0_arch: ARCHITECTURE IS "axi_uartlite,Vivado 2025.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF microblaze_axi_uartlite_0_0_arch : ARCHITECTURE IS "microblaze_axi_uartlite_0_0,axi_uartlite,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF microblaze_axi_uartlite_0_0_arch: ARCHITECTURE IS "microblaze_axi_uartlite_0_0,axi_uartlite,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_uartlite,x_ipVersion=2.0,x_ipCoreRevision=39,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_S_AXI_ACLK_FREQ_HZ=100000000,C_S_AXI_ADDR_WIDTH=4,C_S_AXI_DATA_WIDTH=32,C_BAUDRATE=115200,C_DATA_BITS=8,C_USE_PARITY=0,C_ODD_PARITY=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF microblaze_axi_uartlite_0_0_arch: ARCHITECTURE IS "microblaze_axi_uartlite_0_0,axi_uartlite,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_uartlite,x_ipVersion=2.0,x_ipCoreRevision=39,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_S_AXI_ACLK_FREQ_HZ=100000000,C_S_AXI_ADDR_WIDTH=4,C_S_AXI_DATA_WIDTH=32,C_BAUDRATE=115200,C_DATA_BITS=8,C_USE_PARITY=0,C_ODD_PARITY=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_node:1.0
-// IP Revision: 18
+// IP Revision: 19
 
 `timescale 1ns/1ps
 
@@ -80,13 +80,13 @@ input wire s_sc_aclk;
 input wire s_sc_aresetn;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC REQ" *)
 (* X_INTERFACE_MODE = "slave" *)
-input wire [3 : 0] s_sc_req;
+input wire [5 : 0] s_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC INFO" *)
-input wire [3 : 0] s_sc_info;
+input wire [5 : 0] s_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC SEND" *)
-input wire [3 : 0] s_sc_send;
+input wire [5 : 0] s_sc_send;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC RECV" *)
-output wire [3 : 0] s_sc_recv;
+output wire [5 : 0] s_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC PAYLD" *)
 input wire [6 : 0] s_sc_payld;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_sc_aclk CLK" *)
@@ -109,7 +109,7 @@ output wire [0 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC PAYLD" *)
 output wire [6 : 0] m_sc_payld;
 
-  sc_node_v1_0_18_top #(
+  sc_node_v1_0_19_top #(
     .C_FAMILY("artix7"),
     .C_FIFO_IP(0),
     .C_DISABLE_IP(0),
@@ -118,13 +118,13 @@ output wire [6 : 0] m_sc_payld;
     .C_FIFO_OUTPUT_REG(1),
     .C_ENABLE_PIPELINING(8'H01),
     .C_SYNCHRONIZATION_STAGES(3),
-    .C_NUM_SI(4),
+    .C_NUM_SI(6),
     .C_NUM_MI(1),
     .C_CHANNEL(4),
     .C_PAYLD_WIDTH(7),
-    .C_S_NUM_BYTES_ARRAY(128'H00000004000000040000000400000004),
+    .C_S_NUM_BYTES_ARRAY(192'H000000040000000400000004000000040000000400000004),
     .C_M_NUM_BYTES_ARRAY(32'H00000004),
-    .C_PRIORITY_ARB_ARRAY(4'B0000),
+    .C_PRIORITY_ARB_ARRAY(6'B000000),
     .C_USER_BITS_PER_BYTE(0),
     .C_ARBITER_MODE(1),
     .C_SC_ROUTE_WIDTH(3),

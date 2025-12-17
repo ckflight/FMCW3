@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_switchboard:1.0
-// IP Revision: 8
+// IP Revision: 9
 
-(* X_CORE_INFO = "sc_switchboard_v1_0_8_top,Vivado 2025.1" *)
-(* CHECK_LICENSE_TYPE = "bd_87ec_arinsw_0,sc_switchboard_v1_0_8_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_87ec_arinsw_0,sc_switchboard_v1_0_8_top,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_switchboard,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_PAYLD_WIDTH=143,K_MAX_INFO_WIDTH=1,C_S_PIPELINES=0,C_M_PIPELINES=0,C_S_LATENCY=0,C_NUM_SI=1,C_NUM_MI=1,C_TESTING_MODE=0,C_CONNECTIVITY=0b1}" *)
+(* X_CORE_INFO = "sc_switchboard_v1_0_9_top,Vivado 2025.2" *)
+(* CHECK_LICENSE_TYPE = "bd_87ec_arinsw_0,sc_switchboard_v1_0_9_top,{}" *)
+(* CORE_GENERATION_INFO = "bd_87ec_arinsw_0,sc_switchboard_v1_0_9_top,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_switchboard,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_PAYLD_WIDTH=145,K_MAX_INFO_WIDTH=1,C_S_PIPELINES=0,C_M_PIPELINES=0,C_S_LATENCY=0,C_NUM_SI=1,C_NUM_MI=1,C_TESTING_MODE=0,C_CONNECTIVITY=0b1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_87ec_arinsw_0 (
   aclk,
@@ -86,7 +86,7 @@ input wire [0 : 0] s_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S00_SC INFO" *)
 input wire [0 : 0] s_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S00_SC PAYLD" *)
-input wire [142 : 0] s_sc_payld;
+input wire [144 : 0] s_sc_payld;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S00_SC RECV" *)
 output wire [0 : 0] s_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M00_SC RECV" *)
@@ -99,10 +99,10 @@ output wire [0 : 0] m_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M00_SC INFO" *)
 output wire [0 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M00_SC PAYLD" *)
-output wire [142 : 0] m_sc_payld;
+output wire [144 : 0] m_sc_payld;
 
-  sc_switchboard_v1_0_8_top #(
-    .C_PAYLD_WIDTH(143),
+  sc_switchboard_v1_0_9_top #(
+    .C_PAYLD_WIDTH(145),
     .K_MAX_INFO_WIDTH(1),
     .C_S_PIPELINES(0),
     .C_M_PIPELINES(0),

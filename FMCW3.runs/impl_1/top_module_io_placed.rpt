@@ -1,12 +1,12 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date                      : Fri Oct 24 13:23:51 2025
+| Tool Version              : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date                      : Wed Dec 17 14:41:41 2025
 | Host                      : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_module_io_placed.rpt
 | Design                    : top_module
-| Device                    : xc7a15ti
-| Speed File                : -1L
+| Device                    : xc7a35t
+| Speed File                : -1
 | Package                   : ftg256
 | Package Version           : FINAL 2013-12-20
 | Package Pin Delay Version : VERS. 2.0 2013-12-20

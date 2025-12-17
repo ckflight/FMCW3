@@ -1,1 +1,1 @@
-Â6No compile time benefit to using incremental synthesis
+ÂjNo compile time benfit as the reference checkpoint is from an old version of Vivado. Synthesis will re-run

@@ -1,112 +1,19 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Sat Sep 13 20:48:30 2025
-// Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
-// Command     : write_verilog -force -mode funcsim -rename_top microblaze_dlmb_v10_1 -prefix
-//               microblaze_dlmb_v10_1_ microblaze_ilmb_v10_1_sim_netlist.v
-// Design      : microblaze_ilmb_v10_1
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Wed Dec 17 14:14:58 2025
+// Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1/microblaze_dlmb_v10_1_sim_netlist.v
+// Design      : microblaze_dlmb_v10_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a15tiftg256-1L
+// Device      : xc7a35tftg256-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* C_EXT_RESET_HIGH = "1" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
-(* C_LMB_NUM_SLAVES = "1" *) (* C_LMB_PROTOCOL = "0" *) 
-module microblaze_dlmb_v10_1_lmb_v10
-   (LMB_Clk,
-    SYS_Rst,
-    LMB_Rst,
-    M_ABus,
-    M_ReadStrobe,
-    M_WriteStrobe,
-    M_AddrStrobe,
-    M_DBus,
-    M_BE,
-    Sl_DBus,
-    Sl_Ready,
-    Sl_Wait,
-    Sl_UE,
-    Sl_CE,
-    LMB_ABus,
-    LMB_ReadStrobe,
-    LMB_WriteStrobe,
-    LMB_AddrStrobe,
-    LMB_ReadDBus,
-    LMB_WriteDBus,
-    LMB_Ready,
-    LMB_Wait,
-    LMB_UE,
-    LMB_CE,
-    LMB_BE);
-  input LMB_Clk;
-  input SYS_Rst;
-  output LMB_Rst;
-  input [0:31]M_ABus;
-  input M_ReadStrobe;
-  input M_WriteStrobe;
-  input M_AddrStrobe;
-  input [0:31]M_DBus;
-  input [0:3]M_BE;
-  input [0:31]Sl_DBus;
-  input [0:0]Sl_Ready;
-  input [0:0]Sl_Wait;
-  input [0:0]Sl_UE;
-  input [0:0]Sl_CE;
-  output [0:31]LMB_ABus;
-  output LMB_ReadStrobe;
-  output LMB_WriteStrobe;
-  output LMB_AddrStrobe;
-  output [0:31]LMB_ReadDBus;
-  output [0:31]LMB_WriteDBus;
-  output LMB_Ready;
-  output LMB_Wait;
-  output LMB_UE;
-  output LMB_CE;
-  output [0:3]LMB_BE;
-
-  wire LMB_Clk;
-  wire LMB_Rst;
-  wire [0:31]M_ABus;
-  wire M_AddrStrobe;
-  wire [0:3]M_BE;
-  wire [0:31]M_DBus;
-  wire M_ReadStrobe;
-  wire M_WriteStrobe;
-  wire SYS_Rst;
-  wire [0:0]Sl_CE;
-  wire [0:31]Sl_DBus;
-  wire [0:0]Sl_Ready;
-  wire [0:0]Sl_UE;
-  wire [0:0]Sl_Wait;
-
-  assign LMB_ABus[0:31] = M_ABus;
-  assign LMB_AddrStrobe = M_AddrStrobe;
-  assign LMB_BE[0:3] = M_BE;
-  assign LMB_CE = Sl_CE;
-  assign LMB_ReadDBus[0:31] = Sl_DBus;
-  assign LMB_ReadStrobe = M_ReadStrobe;
-  assign LMB_Ready = Sl_Ready;
-  assign LMB_UE = Sl_UE;
-  assign LMB_Wait = Sl_Wait;
-  assign LMB_WriteDBus[0:31] = M_DBus;
-  assign LMB_WriteStrobe = M_WriteStrobe;
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  (* XILINX_LEGACY_PRIM = "FDS" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:CE" *) 
-  FDSE #(
-    .INIT(1'b1)) 
-    POR_FF_I
-       (.C(LMB_Clk),
-        .CE(1'b1),
-        .D(1'b0),
-        .Q(LMB_Rst),
-        .S(SYS_Rst));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "microblaze_ilmb_v10_1,lmb_v10,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_v10,Vivado 2025.1" *) 
+(* CHECK_LICENSE_TYPE = "microblaze_dlmb_v10_1,lmb_v10,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_v10,Vivado 2025.2" *) 
 (* NotValidForBitStream *)
 module microblaze_dlmb_v10_1
    (LMB_Clk,
@@ -136,7 +43,7 @@ module microblaze_dlmb_v10_1
     LMB_BE);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_mode = "slave CLK.LMB_Clk" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF LMB_Sl_0:LMB_Sl_1:LMB_Sl_2:LMB_Sl_3:LMB_Sl_4:LMB_Sl_5:LMB_Sl_6:LMB_Sl_7:LMB_Sl_8:LMB_Sl_9:LMB_Sl_10:LMB_Sl_11:LMB_Sl_12:LMB_Sl_13:LMB_Sl_14:LMB_Sl_15:LMB_M, ASSOCIATED_RESET SYS_Rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_clk_100MHz, INSERT_VIP 0" *) input LMB_Clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.SYS_Rst RST" *) (* x_interface_mode = "slave RST.SYS_Rst" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.SYS_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input SYS_Rst;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST" *) (* x_interface_mode = "mirroredMaster LMB_M" *) (* x_interface_parameter = "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD" *) output LMB_Rst;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST" *) (* x_interface_mode = "mirroredSlave LMB_Sl_0, mirroredMaster LMB_M" *) (* x_interface_parameter = "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0" *) output LMB_Rst;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M ABUS" *) input [0:31]M_ABus;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READSTROBE" *) input M_ReadStrobe;
   (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WRITESTROBE" *) input M_WriteStrobe;
@@ -185,10 +92,12 @@ module microblaze_dlmb_v10_1
   wire [0:0]Sl_Ready;
   wire [0:0]Sl_UE;
   wire [0:0]Sl_Wait;
+  wire [0:1]NLW_U0_LMB_Prot_UNCONNECTED;
 
   (* C_EXT_RESET_HIGH = "1" *) 
   (* C_LMB_AWIDTH = "32" *) 
   (* C_LMB_DWIDTH = "32" *) 
+  (* C_LMB_HAS_PROT = "0" *) 
   (* C_LMB_NUM_SLAVES = "1" *) 
   (* C_LMB_PROTOCOL = "0" *) 
   microblaze_dlmb_v10_1_lmb_v10 U0
@@ -197,6 +106,7 @@ module microblaze_dlmb_v10_1
         .LMB_BE(LMB_BE),
         .LMB_CE(LMB_CE),
         .LMB_Clk(LMB_Clk),
+        .LMB_Prot(NLW_U0_LMB_Prot_UNCONNECTED[0:1]),
         .LMB_ReadDBus(LMB_ReadDBus),
         .LMB_ReadStrobe(LMB_ReadStrobe),
         .LMB_Ready(LMB_Ready),
@@ -209,6 +119,7 @@ module microblaze_dlmb_v10_1
         .M_AddrStrobe(M_AddrStrobe),
         .M_BE(M_BE),
         .M_DBus(M_DBus),
+        .M_Prot({1'b0,1'b0}),
         .M_ReadStrobe(M_ReadStrobe),
         .M_WriteStrobe(M_WriteStrobe),
         .SYS_Rst(SYS_Rst),
@@ -217,6 +128,109 @@ module microblaze_dlmb_v10_1
         .Sl_Ready(Sl_Ready),
         .Sl_UE(Sl_UE),
         .Sl_Wait(Sl_Wait));
+endmodule
+
+(* C_EXT_RESET_HIGH = "1" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
+(* C_LMB_HAS_PROT = "0" *) (* C_LMB_NUM_SLAVES = "1" *) (* C_LMB_PROTOCOL = "0" *) 
+(* ORIG_REF_NAME = "lmb_v10" *) 
+module microblaze_dlmb_v10_1_lmb_v10
+   (LMB_Clk,
+    SYS_Rst,
+    LMB_Rst,
+    M_ABus,
+    M_Prot,
+    M_ReadStrobe,
+    M_WriteStrobe,
+    M_AddrStrobe,
+    M_DBus,
+    M_BE,
+    Sl_DBus,
+    Sl_Ready,
+    Sl_Wait,
+    Sl_UE,
+    Sl_CE,
+    LMB_ABus,
+    LMB_Prot,
+    LMB_ReadStrobe,
+    LMB_WriteStrobe,
+    LMB_AddrStrobe,
+    LMB_ReadDBus,
+    LMB_WriteDBus,
+    LMB_Ready,
+    LMB_Wait,
+    LMB_UE,
+    LMB_CE,
+    LMB_BE);
+  input LMB_Clk;
+  input SYS_Rst;
+  output LMB_Rst;
+  input [0:31]M_ABus;
+  input [0:1]M_Prot;
+  input M_ReadStrobe;
+  input M_WriteStrobe;
+  input M_AddrStrobe;
+  input [0:31]M_DBus;
+  input [0:3]M_BE;
+  input [0:31]Sl_DBus;
+  input [0:0]Sl_Ready;
+  input [0:0]Sl_Wait;
+  input [0:0]Sl_UE;
+  input [0:0]Sl_CE;
+  output [0:31]LMB_ABus;
+  output [0:1]LMB_Prot;
+  output LMB_ReadStrobe;
+  output LMB_WriteStrobe;
+  output LMB_AddrStrobe;
+  output [0:31]LMB_ReadDBus;
+  output [0:31]LMB_WriteDBus;
+  output LMB_Ready;
+  output LMB_Wait;
+  output LMB_UE;
+  output LMB_CE;
+  output [0:3]LMB_BE;
+
+  wire \<const0> ;
+  wire LMB_Clk;
+  wire LMB_Rst;
+  wire [0:31]M_ABus;
+  wire M_AddrStrobe;
+  wire [0:3]M_BE;
+  wire [0:31]M_DBus;
+  wire M_ReadStrobe;
+  wire M_WriteStrobe;
+  wire SYS_Rst;
+  wire [0:0]Sl_CE;
+  wire [0:31]Sl_DBus;
+  wire [0:0]Sl_Ready;
+  wire [0:0]Sl_UE;
+  wire [0:0]Sl_Wait;
+
+  assign LMB_ABus[0:31] = M_ABus;
+  assign LMB_AddrStrobe = M_AddrStrobe;
+  assign LMB_BE[0:3] = M_BE;
+  assign LMB_CE = Sl_CE;
+  assign LMB_Prot[0] = \<const0> ;
+  assign LMB_Prot[1] = \<const0> ;
+  assign LMB_ReadDBus[0:31] = Sl_DBus;
+  assign LMB_ReadStrobe = M_ReadStrobe;
+  assign LMB_Ready = Sl_Ready;
+  assign LMB_UE = Sl_UE;
+  assign LMB_Wait = Sl_Wait;
+  assign LMB_WriteDBus[0:31] = M_DBus;
+  assign LMB_WriteStrobe = M_WriteStrobe;
+  GND GND
+       (.G(\<const0> ));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  (* XILINX_LEGACY_PRIM = "FDS" *) 
+  (* XILINX_TRANSFORM_PINMAP = "VCC:CE" *) 
+  FDSE #(
+    .INIT(1'b1)) 
+    POR_FF_I
+       (.C(LMB_Clk),
+        .CE(1'b1),
+        .D(1'b0),
+        .Q(LMB_Rst),
+        .S(SYS_Rst));
 endmodule
 `ifndef GLBL
 `define GLBL

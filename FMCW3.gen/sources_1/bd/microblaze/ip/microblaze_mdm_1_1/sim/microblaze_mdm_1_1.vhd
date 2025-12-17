@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:mdm:3.2
--- IP Revision: 28
+-- IP Revision: 29
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY mdm_v3_2_28;
-USE mdm_v3_2_28.MDM;
+LIBRARY mdm_v3_2_29;
+USE mdm_v3_2_29.MDM;
 
 ENTITY microblaze_mdm_1_1 IS
   PORT (
@@ -1652,7 +1652,7 @@ BEGIN
   U0 : MDM
     GENERIC MAP (
       C_FAMILY => "artix7",
-      C_DEVICE => "xc7a15ti",
+      C_DEVICE => "xc7a35t",
       C_JTAG_CHAIN => 2,
       C_USE_BSCAN => 0,
       C_BSCANID => 76547328,

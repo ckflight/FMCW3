@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:lmb_bram_if_cntlr:4.0
--- IP Revision: 26
+-- IP Revision: 27
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY lmb_bram_if_cntlr_v4_0_26;
-USE lmb_bram_if_cntlr_v4_0_26.lmb_bram_if_cntlr;
+LIBRARY lmb_bram_if_cntlr_v4_0_27;
+USE lmb_bram_if_cntlr_v4_0_27.lmb_bram_if_cntlr;
 
 ENTITY microblaze_ilmb_bram_if_cntlr_1 IS
   PORT (
@@ -98,9 +98,18 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       C_MASK5 : STD_LOGIC_VECTOR;
       C_MASK6 : STD_LOGIC_VECTOR;
       C_MASK7 : STD_LOGIC_VECTOR;
+      C_PROT_CFG : STD_LOGIC_VECTOR;
+      C_PROT_CFG1 : STD_LOGIC_VECTOR;
+      C_PROT_CFG2 : STD_LOGIC_VECTOR;
+      C_PROT_CFG3 : STD_LOGIC_VECTOR;
+      C_PROT_CFG4 : STD_LOGIC_VECTOR;
+      C_PROT_CFG5 : STD_LOGIC_VECTOR;
+      C_PROT_CFG6 : STD_LOGIC_VECTOR;
+      C_PROT_CFG7 : STD_LOGIC_VECTOR;
       C_LMB_AWIDTH : INTEGER;
       C_LMB_DWIDTH : INTEGER;
       C_LMB_PROTOCOL : INTEGER;
+      C_LMB_HAS_PROT : INTEGER;
       C_ARBITRATION : INTEGER;
       C_ECC : INTEGER;
       C_INTERCONNECT : INTEGER;
@@ -120,6 +129,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       LMB_Clk : IN STD_LOGIC;
       LMB_Rst : IN STD_LOGIC;
       LMB_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB_AddrStrobe : IN STD_LOGIC;
       LMB_ReadStrobe : IN STD_LOGIC;
@@ -131,6 +141,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl_UE : OUT STD_LOGIC;
       Sl_CE : OUT STD_LOGIC;
       LMB1_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB1_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB1_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB1_AddrStrobe : IN STD_LOGIC;
       LMB1_ReadStrobe : IN STD_LOGIC;
@@ -142,6 +153,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl1_UE : OUT STD_LOGIC;
       Sl1_CE : OUT STD_LOGIC;
       LMB2_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB2_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB2_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB2_AddrStrobe : IN STD_LOGIC;
       LMB2_ReadStrobe : IN STD_LOGIC;
@@ -153,6 +165,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl2_UE : OUT STD_LOGIC;
       Sl2_CE : OUT STD_LOGIC;
       LMB3_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB3_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB3_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB3_AddrStrobe : IN STD_LOGIC;
       LMB3_ReadStrobe : IN STD_LOGIC;
@@ -164,6 +177,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl3_UE : OUT STD_LOGIC;
       Sl3_CE : OUT STD_LOGIC;
       LMB4_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB4_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB4_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB4_AddrStrobe : IN STD_LOGIC;
       LMB4_ReadStrobe : IN STD_LOGIC;
@@ -175,6 +189,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl4_UE : OUT STD_LOGIC;
       Sl4_CE : OUT STD_LOGIC;
       LMB5_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB5_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB5_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB5_AddrStrobe : IN STD_LOGIC;
       LMB5_ReadStrobe : IN STD_LOGIC;
@@ -186,6 +201,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl5_UE : OUT STD_LOGIC;
       Sl5_CE : OUT STD_LOGIC;
       LMB6_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB6_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB6_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB6_AddrStrobe : IN STD_LOGIC;
       LMB6_ReadStrobe : IN STD_LOGIC;
@@ -197,6 +213,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
       Sl6_UE : OUT STD_LOGIC;
       Sl6_CE : OUT STD_LOGIC;
       LMB7_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      LMB7_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       LMB7_WriteDBus : IN STD_LOGIC_VECTOR(0 TO 31);
       LMB7_AddrStrobe : IN STD_LOGIC;
       LMB7_ReadStrobe : IN STD_LOGIC;
@@ -252,7 +269,7 @@ ARCHITECTURE microblaze_ilmb_bram_if_cntlr_1_arch OF microblaze_ilmb_bram_if_cnt
   ATTRIBUTE X_INTERFACE_INFO OF BRAM_WEN_A: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_PORT WE";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_ABus: SIGNAL IS "xilinx.com:interface:lmb:1.0 SLMB ABUS";
   ATTRIBUTE X_INTERFACE_MODE OF LMB_ABus: SIGNAL IS "slave SLMB";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF LMB_ABus: SIGNAL IS "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF LMB_ABus: SIGNAL IS "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_AddrStrobe: SIGNAL IS "xilinx.com:interface:lmb:1.0 SLMB ADDRSTROBE";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_BE: SIGNAL IS "xilinx.com:interface:lmb:1.0 SLMB BE";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_Clk: SIGNAL IS "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK";
@@ -284,9 +301,18 @@ BEGIN
       C_MASK5 => X"0000000000800000",
       C_MASK6 => X"0000000000800000",
       C_MASK7 => X"0000000000800000",
+      C_PROT_CFG => X"FF",
+      C_PROT_CFG1 => X"FF",
+      C_PROT_CFG2 => X"FF",
+      C_PROT_CFG3 => X"FF",
+      C_PROT_CFG4 => X"FF",
+      C_PROT_CFG5 => X"FF",
+      C_PROT_CFG6 => X"FF",
+      C_PROT_CFG7 => X"FF",
       C_LMB_AWIDTH => 32,
       C_LMB_DWIDTH => 32,
       C_LMB_PROTOCOL => 0,
+      C_LMB_HAS_PROT => 0,
       C_ARBITRATION => 0,
       C_ECC => 0,
       C_INTERCONNECT => 0,
@@ -306,6 +332,7 @@ BEGIN
       LMB_Clk => LMB_Clk,
       LMB_Rst => LMB_Rst,
       LMB_ABus => LMB_ABus,
+      LMB_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB_WriteDBus => LMB_WriteDBus,
       LMB_AddrStrobe => LMB_AddrStrobe,
       LMB_ReadStrobe => LMB_ReadStrobe,
@@ -317,42 +344,49 @@ BEGIN
       Sl_UE => Sl_UE,
       Sl_CE => Sl_CE,
       LMB1_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB1_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB1_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB1_AddrStrobe => '0',
       LMB1_ReadStrobe => '0',
       LMB1_WriteStrobe => '0',
       LMB1_BE => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       LMB2_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB2_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB2_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB2_AddrStrobe => '0',
       LMB2_ReadStrobe => '0',
       LMB2_WriteStrobe => '0',
       LMB2_BE => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       LMB3_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB3_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB3_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB3_AddrStrobe => '0',
       LMB3_ReadStrobe => '0',
       LMB3_WriteStrobe => '0',
       LMB3_BE => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       LMB4_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB4_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB4_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB4_AddrStrobe => '0',
       LMB4_ReadStrobe => '0',
       LMB4_WriteStrobe => '0',
       LMB4_BE => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       LMB5_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB5_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB5_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB5_AddrStrobe => '0',
       LMB5_ReadStrobe => '0',
       LMB5_WriteStrobe => '0',
       LMB5_BE => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       LMB6_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB6_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB6_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB6_AddrStrobe => '0',
       LMB6_ReadStrobe => '0',
       LMB6_WriteStrobe => '0',
       LMB6_BE => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 4)),
       LMB7_ABus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      LMB7_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       LMB7_WriteDBus => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
       LMB7_AddrStrobe => '0',
       LMB7_ReadStrobe => '0',

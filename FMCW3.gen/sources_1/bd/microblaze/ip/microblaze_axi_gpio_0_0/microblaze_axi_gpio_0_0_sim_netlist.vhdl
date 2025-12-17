@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:31 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_axi_gpio_0_0 -prefix
---               microblaze_axi_gpio_0_0_ microblaze_axi_gpio_0_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:15:06 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_sim_netlist.vhdl
 -- Design      : microblaze_axi_gpio_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -69,6 +69,8 @@ entity microblaze_axi_gpio_0_0_address_decoder is
     ip2bus_wrack_i_D1 : in STD_LOGIC;
     s_axi_awready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_address_decoder : entity is "address_decoder";
 end microblaze_axi_gpio_0_0_address_decoder;
 
 architecture STRUCTURE of microblaze_axi_gpio_0_0_address_decoder is
@@ -1250,6 +1252,8 @@ entity microblaze_axi_gpio_0_0_interrupt_control is
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0\ : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_interrupt_control : entity is "interrupt_control";
 end microblaze_axi_gpio_0_0_interrupt_control;
 
 architecture STRUCTURE of microblaze_axi_gpio_0_0_interrupt_control is
@@ -1373,6 +1377,8 @@ entity microblaze_axi_gpio_0_0_xpm_cdc_array_single is
   attribute DEST_SYNC_FF of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is "xpm_cdc_array_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -1384,7 +1390,7 @@ entity microblaze_axi_gpio_0_0_xpm_cdc_array_single is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is "true";
+  attribute keep_hierarchy of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of microblaze_axi_gpio_0_0_xpm_cdc_array_single : entity is "ARRAY_SINGLE";
 end microblaze_axi_gpio_0_0_xpm_cdc_array_single;
@@ -2281,6 +2287,8 @@ entity microblaze_axi_gpio_0_0_GPIO_Core is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_GPIO_Core : entity is "GPIO_Core";
 end microblaze_axi_gpio_0_0_GPIO_Core;
 
 architecture STRUCTURE of microblaze_axi_gpio_0_0_GPIO_Core is
@@ -3221,6 +3229,8 @@ entity microblaze_axi_gpio_0_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_slave_attachment : entity is "slave_attachment";
 end microblaze_axi_gpio_0_0_slave_attachment;
 
 architecture STRUCTURE of microblaze_axi_gpio_0_0_slave_attachment is
@@ -3247,10 +3257,10 @@ architecture STRUCTURE of microblaze_axi_gpio_0_0_slave_attachment is
   signal p_5_in : STD_LOGIC;
   signal plusOp : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal rst_i_1_n_0 : STD_LOGIC;
-  signal s_axi_bresp_i : STD_LOGIC;
+  signal s_axi_bresp_i : STD_LOGIC_VECTOR ( 0 to 0 );
   signal s_axi_bvalid_i_i_1_n_0 : STD_LOGIC;
   signal \^s_axi_bvalid_i_reg_0\ : STD_LOGIC;
-  signal s_axi_rresp_i : STD_LOGIC;
+  signal s_axi_rresp_i : STD_LOGIC_VECTOR ( 0 to 0 );
   signal s_axi_rvalid_i_i_1_n_0 : STD_LOGIC;
   signal \^s_axi_rvalid_i_reg_0\ : STD_LOGIC;
   signal s_axi_wdata_0_sn_1 : STD_LOGIC;
@@ -3310,7 +3320,7 @@ begin
       I0 => s_axi_arvalid,
       I1 => \FSM_onehot_state_reg_n_0_[0]\,
       I2 => \^ip2bus_rdack_i_d1_reg\,
-      I3 => s_axi_rresp_i,
+      I3 => s_axi_rresp_i(0),
       O => \FSM_onehot_state[1]_i_1_n_0\
     );
 \FSM_onehot_state[2]_i_1\: unisim.vcomponents.LUT6
@@ -3323,7 +3333,7 @@ begin
       I2 => s_axi_arvalid,
       I3 => \FSM_onehot_state_reg_n_0_[0]\,
       I4 => \^ip2bus_wrack_i_d1_reg\,
-      I5 => s_axi_bresp_i,
+      I5 => s_axi_bresp_i(0),
       O => \FSM_onehot_state[2]_i_1_n_0\
     );
 \FSM_onehot_state[3]_i_1\: unisim.vcomponents.LUT6
@@ -3332,8 +3342,8 @@ begin
     )
         port map (
       I0 => \^ip2bus_wrack_i_d1_reg\,
-      I1 => s_axi_bresp_i,
-      I2 => s_axi_rresp_i,
+      I1 => s_axi_bresp_i(0),
+      I2 => s_axi_rresp_i(0),
       I3 => \^ip2bus_rdack_i_d1_reg\,
       I4 => \FSM_onehot_state_reg_n_0_[3]\,
       I5 => \state1__2\,
@@ -3369,7 +3379,7 @@ begin
       C => s_axi_aclk,
       CE => '1',
       D => \FSM_onehot_state[1]_i_1_n_0\,
-      Q => s_axi_rresp_i,
+      Q => s_axi_rresp_i(0),
       R => \^sr\(0)
     );
 \FSM_onehot_state_reg[2]\: unisim.vcomponents.FDRE
@@ -3380,7 +3390,7 @@ begin
       C => s_axi_aclk,
       CE => '1',
       D => \FSM_onehot_state[2]_i_1_n_0\,
-      Q => s_axi_bresp_i,
+      Q => s_axi_bresp_i(0),
       R => \^sr\(0)
     );
 \FSM_onehot_state_reg[3]\: unisim.vcomponents.FDRE
@@ -3789,7 +3799,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(0),
       Q => s_axi_rdata(0),
       R => \^sr\(0)
@@ -3800,7 +3810,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(10),
       Q => s_axi_rdata(10),
       R => \^sr\(0)
@@ -3811,7 +3821,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(11),
       Q => s_axi_rdata(11),
       R => \^sr\(0)
@@ -3822,7 +3832,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(12),
       Q => s_axi_rdata(12),
       R => \^sr\(0)
@@ -3833,7 +3843,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(13),
       Q => s_axi_rdata(13),
       R => \^sr\(0)
@@ -3844,7 +3854,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(14),
       Q => s_axi_rdata(14),
       R => \^sr\(0)
@@ -3855,7 +3865,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(15),
       Q => s_axi_rdata(15),
       R => \^sr\(0)
@@ -3866,7 +3876,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(1),
       Q => s_axi_rdata(1),
       R => \^sr\(0)
@@ -3877,7 +3887,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(2),
       Q => s_axi_rdata(2),
       R => \^sr\(0)
@@ -3888,7 +3898,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(16),
       Q => s_axi_rdata(16),
       R => \^sr\(0)
@@ -3899,7 +3909,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(17),
       Q => s_axi_rdata(17),
       R => \^sr\(0)
@@ -3910,7 +3920,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(3),
       Q => s_axi_rdata(3),
       R => \^sr\(0)
@@ -3921,7 +3931,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(4),
       Q => s_axi_rdata(4),
       R => \^sr\(0)
@@ -3932,7 +3942,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(5),
       Q => s_axi_rdata(5),
       R => \^sr\(0)
@@ -3943,7 +3953,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(6),
       Q => s_axi_rdata(6),
       R => \^sr\(0)
@@ -3954,7 +3964,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(7),
       Q => s_axi_rdata(7),
       R => \^sr\(0)
@@ -3965,7 +3975,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(8),
       Q => s_axi_rdata(8),
       R => \^sr\(0)
@@ -3976,7 +3986,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => Q(9),
       Q => s_axi_rdata(9),
       R => \^sr\(0)
@@ -4150,6 +4160,8 @@ entity microblaze_axi_gpio_0_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end microblaze_axi_gpio_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of microblaze_axi_gpio_0_0_axi_lite_ipif is
@@ -4287,6 +4299,8 @@ entity microblaze_axi_gpio_0_0_axi_gpio is
   attribute C_TRI_DEFAULT of microblaze_axi_gpio_0_0_axi_gpio : entity is "32'b11111111111111111111111111111111";
   attribute C_TRI_DEFAULT_2 : string;
   attribute C_TRI_DEFAULT_2 of microblaze_axi_gpio_0_0_axi_gpio : entity is "32'b11111111111111111111111111111111";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_gpio_0_0_axi_gpio : entity is "axi_gpio";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_axi_gpio_0_0_axi_gpio : entity is "yes";
   attribute ip_group : string;
@@ -4883,7 +4897,7 @@ entity microblaze_axi_gpio_0_0 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_axi_gpio_0_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of microblaze_axi_gpio_0_0 : entity is "axi_gpio,Vivado 2025.1";
+  attribute x_core_info of microblaze_axi_gpio_0_0 : entity is "axi_gpio,Vivado 2025.2";
 end microblaze_axi_gpio_0_0;
 
 architecture STRUCTURE of microblaze_axi_gpio_0_0 is

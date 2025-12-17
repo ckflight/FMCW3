@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:31 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_ilmb_bram_if_cntlr_1 -prefix
---               microblaze_ilmb_bram_if_cntlr_1_ microblaze_ilmb_bram_if_cntlr_1_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:17:08 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1_sim_netlist.vhdl
 -- Design      : microblaze_ilmb_bram_if_cntlr_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -20,6 +20,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     LMB_Clk : in STD_LOGIC;
     LMB_Rst : in STD_LOGIC;
     LMB_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB_AddrStrobe : in STD_LOGIC;
     LMB_ReadStrobe : in STD_LOGIC;
@@ -31,6 +32,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl_UE : out STD_LOGIC;
     Sl_CE : out STD_LOGIC;
     LMB1_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB1_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB1_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB1_AddrStrobe : in STD_LOGIC;
     LMB1_ReadStrobe : in STD_LOGIC;
@@ -42,6 +44,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl1_UE : out STD_LOGIC;
     Sl1_CE : out STD_LOGIC;
     LMB2_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB2_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB2_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB2_AddrStrobe : in STD_LOGIC;
     LMB2_ReadStrobe : in STD_LOGIC;
@@ -53,6 +56,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl2_UE : out STD_LOGIC;
     Sl2_CE : out STD_LOGIC;
     LMB3_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB3_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB3_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB3_AddrStrobe : in STD_LOGIC;
     LMB3_ReadStrobe : in STD_LOGIC;
@@ -64,6 +68,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl3_UE : out STD_LOGIC;
     Sl3_CE : out STD_LOGIC;
     LMB4_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB4_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB4_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB4_AddrStrobe : in STD_LOGIC;
     LMB4_ReadStrobe : in STD_LOGIC;
@@ -75,6 +80,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl4_UE : out STD_LOGIC;
     Sl4_CE : out STD_LOGIC;
     LMB5_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB5_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB5_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB5_AddrStrobe : in STD_LOGIC;
     LMB5_ReadStrobe : in STD_LOGIC;
@@ -86,6 +92,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl5_UE : out STD_LOGIC;
     Sl5_CE : out STD_LOGIC;
     LMB6_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB6_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB6_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB6_AddrStrobe : in STD_LOGIC;
     LMB6_ReadStrobe : in STD_LOGIC;
@@ -97,6 +104,7 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
     Sl6_UE : out STD_LOGIC;
     Sl6_CE : out STD_LOGIC;
     LMB7_ABus : in STD_LOGIC_VECTOR ( 0 to 31 );
+    LMB7_Prot : in STD_LOGIC_VECTOR ( 0 to 1 );
     LMB7_WriteDBus : in STD_LOGIC_VECTOR ( 0 to 31 );
     LMB7_AddrStrobe : in STD_LOGIC;
     LMB7_ReadStrobe : in STD_LOGIC;
@@ -167,6 +175,8 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
   attribute C_LMB_AWIDTH of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 32;
   attribute C_LMB_DWIDTH : integer;
   attribute C_LMB_DWIDTH of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 32;
+  attribute C_LMB_HAS_PROT : integer;
+  attribute C_LMB_HAS_PROT of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 0;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 0;
   attribute C_MASK : string;
@@ -187,6 +197,22 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
   attribute C_MASK7 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_NUM_LMB : integer;
   attribute C_NUM_LMB of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 1;
+  attribute C_PROT_CFG : string;
+  attribute C_PROT_CFG of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG1 : string;
+  attribute C_PROT_CFG1 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG2 : string;
+  attribute C_PROT_CFG2 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG3 : string;
+  attribute C_PROT_CFG3 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG4 : string;
+  attribute C_PROT_CFG4 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG5 : string;
+  attribute C_PROT_CFG5 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG6 : string;
+  attribute C_PROT_CFG6 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
+  attribute C_PROT_CFG7 : string;
+  attribute C_PROT_CFG7 of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "8'b11111111";
   attribute C_S_AXI_CTRL_ADDR_WIDTH : integer;
   attribute C_S_AXI_CTRL_ADDR_WIDTH of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 32;
   attribute C_S_AXI_CTRL_BASEADDR : string;
@@ -199,6 +225,8 @@ entity microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
   attribute C_UE_FAILING_REGISTERS of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
   attribute C_WRITE_ACCESS of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is 2;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr : entity is "lmb_bram_if_cntlr";
 end microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr;
 
 architecture STRUCTURE of microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr is
@@ -608,8 +636,8 @@ Sl_Ready_INST_0: unisim.vcomponents.LUT2
       INIT => X"8"
     )
         port map (
-      I0 => lmb_as,
-      I1 => Sl_Rdy,
+      I0 => Sl_Rdy,
+      I1 => lmb_as,
       O => Sl_Ready
     );
 end STRUCTURE;
@@ -647,7 +675,7 @@ entity microblaze_ilmb_bram_if_cntlr_1 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_ilmb_bram_if_cntlr_1 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of microblaze_ilmb_bram_if_cntlr_1 : entity is "lmb_bram_if_cntlr,Vivado 2025.1";
+  attribute x_core_info of microblaze_ilmb_bram_if_cntlr_1 : entity is "lmb_bram_if_cntlr,Vivado 2025.2";
 end microblaze_ilmb_bram_if_cntlr_1;
 
 architecture STRUCTURE of microblaze_ilmb_bram_if_cntlr_1 is
@@ -732,6 +760,8 @@ architecture STRUCTURE of microblaze_ilmb_bram_if_cntlr_1 is
   attribute C_LMB_AWIDTH of U0 : label is 32;
   attribute C_LMB_DWIDTH : integer;
   attribute C_LMB_DWIDTH of U0 : label is 32;
+  attribute C_LMB_HAS_PROT : integer;
+  attribute C_LMB_HAS_PROT of U0 : label is 0;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of U0 : label is 0;
   attribute C_MASK : string;
@@ -752,6 +782,22 @@ architecture STRUCTURE of microblaze_ilmb_bram_if_cntlr_1 is
   attribute C_MASK7 of U0 : label is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_NUM_LMB : integer;
   attribute C_NUM_LMB of U0 : label is 1;
+  attribute C_PROT_CFG : string;
+  attribute C_PROT_CFG of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG1 : string;
+  attribute C_PROT_CFG1 of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG2 : string;
+  attribute C_PROT_CFG2 of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG3 : string;
+  attribute C_PROT_CFG3 of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG4 : string;
+  attribute C_PROT_CFG4 of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG5 : string;
+  attribute C_PROT_CFG5 of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG6 : string;
+  attribute C_PROT_CFG6 of U0 : label is "8'b11111111";
+  attribute C_PROT_CFG7 : string;
+  attribute C_PROT_CFG7 of U0 : label is "8'b11111111";
   attribute C_S_AXI_CTRL_ADDR_WIDTH : integer;
   attribute C_S_AXI_CTRL_ADDR_WIDTH of U0 : label is 32;
   attribute C_S_AXI_CTRL_BASEADDR : string;
@@ -791,7 +837,7 @@ architecture STRUCTURE of microblaze_ilmb_bram_if_cntlr_1 is
   attribute x_interface_info of BRAM_WEN_A : signal is "xilinx.com:interface:bram:1.0 BRAM_PORT WE";
   attribute x_interface_info of LMB_ABus : signal is "xilinx.com:interface:lmb:1.0 SLMB ABUS";
   attribute x_interface_mode of LMB_ABus : signal is "slave SLMB";
-  attribute x_interface_parameter of LMB_ABus : signal is "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD";
+  attribute x_interface_parameter of LMB_ABus : signal is "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0";
   attribute x_interface_info of LMB_BE : signal is "xilinx.com:interface:lmb:1.0 SLMB BE";
   attribute x_interface_info of LMB_WriteDBus : signal is "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS";
   attribute x_interface_info of Sl_DBus : signal is "xilinx.com:interface:lmb:1.0 SLMB READDBUS";
@@ -818,42 +864,49 @@ U0: entity work.microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr
       LMB1_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB1_AddrStrobe => '0',
       LMB1_BE(0 to 3) => B"0000",
+      LMB1_Prot(0 to 1) => B"00",
       LMB1_ReadStrobe => '0',
       LMB1_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB1_WriteStrobe => '0',
       LMB2_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB2_AddrStrobe => '0',
       LMB2_BE(0 to 3) => B"0000",
+      LMB2_Prot(0 to 1) => B"00",
       LMB2_ReadStrobe => '0',
       LMB2_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB2_WriteStrobe => '0',
       LMB3_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB3_AddrStrobe => '0',
       LMB3_BE(0 to 3) => B"0000",
+      LMB3_Prot(0 to 1) => B"00",
       LMB3_ReadStrobe => '0',
       LMB3_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB3_WriteStrobe => '0',
       LMB4_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB4_AddrStrobe => '0',
       LMB4_BE(0 to 3) => B"0000",
+      LMB4_Prot(0 to 1) => B"00",
       LMB4_ReadStrobe => '0',
       LMB4_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB4_WriteStrobe => '0',
       LMB5_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB5_AddrStrobe => '0',
       LMB5_BE(0 to 3) => B"0000",
+      LMB5_Prot(0 to 1) => B"00",
       LMB5_ReadStrobe => '0',
       LMB5_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB5_WriteStrobe => '0',
       LMB6_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB6_AddrStrobe => '0',
       LMB6_BE(0 to 3) => B"0000",
+      LMB6_Prot(0 to 1) => B"00",
       LMB6_ReadStrobe => '0',
       LMB6_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB6_WriteStrobe => '0',
       LMB7_ABus(0 to 31) => B"00000000000000000000000000000000",
       LMB7_AddrStrobe => '0',
       LMB7_BE(0 to 3) => B"0000",
+      LMB7_Prot(0 to 1) => B"00",
       LMB7_ReadStrobe => '0',
       LMB7_WriteDBus(0 to 31) => B"00000000000000000000000000000000",
       LMB7_WriteStrobe => '0',
@@ -861,6 +914,7 @@ U0: entity work.microblaze_ilmb_bram_if_cntlr_1_lmb_bram_if_cntlr
       LMB_AddrStrobe => LMB_AddrStrobe,
       LMB_BE(0 to 3) => LMB_BE(0 to 3),
       LMB_Clk => LMB_Clk,
+      LMB_Prot(0 to 1) => B"00",
       LMB_ReadStrobe => '0',
       LMB_Rst => LMB_Rst,
       LMB_WriteDBus(0 to 31) => LMB_WriteDBus(0 to 31),

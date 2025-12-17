@@ -1,30 +1,21 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Sat Sep 13 20:48:31 2025
-// Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
-// Command     : write_verilog -force -mode funcsim -rename_top microblaze_dlmb_bram_if_cntlr_1 -prefix
-//               microblaze_dlmb_bram_if_cntlr_1_ microblaze_dlmb_bram_if_cntlr_1_sim_netlist.v
+// Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+// Date        : Wed Dec 17 14:19:23 2025
+// Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_1/microblaze_dlmb_bram_if_cntlr_1_sim_netlist.v
 // Design      : microblaze_dlmb_bram_if_cntlr_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a15tiftg256-1L
+// Device      : xc7a35tftg256-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* C_ARBITRATION = "0" *) (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_BRAM_AWIDTH = "32" *) 
-(* C_CE_COUNTER_WIDTH = "0" *) (* C_CE_FAILING_REGISTERS = "0" *) (* C_ECC = "0" *) 
-(* C_ECC_ONOFF_REGISTER = "0" *) (* C_ECC_ONOFF_RESET_VALUE = "1" *) (* C_ECC_STATUS_REGISTERS = "0" *) 
-(* C_FAMILY = "artix7" *) (* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000111111111111111" *) 
-(* C_INTERCONNECT = "0" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
-(* C_LMB_PROTOCOL = "0" *) (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) (* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-(* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-(* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-(* C_NUM_LMB = "1" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
-(* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) (* C_UE_FAILING_REGISTERS = "0" *) 
-(* C_WRITE_ACCESS = "2" *) 
-module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
+(* CHECK_LICENSE_TYPE = "microblaze_dlmb_bram_if_cntlr_1,lmb_bram_if_cntlr,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_bram_if_cntlr,Vivado 2025.2" *) 
+(* NotValidForBitStream *)
+module microblaze_dlmb_bram_if_cntlr_1
    (LMB_Clk,
     LMB_Rst,
     LMB_ABus,
@@ -38,7 +29,308 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl_Wait,
     Sl_UE,
     Sl_CE,
+    BRAM_Rst_A,
+    BRAM_Clk_A,
+    BRAM_Addr_A,
+    BRAM_EN_A,
+    BRAM_WEN_A,
+    BRAM_Dout_A,
+    BRAM_Din_A);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_mode = "slave CLK.LMB_Clk" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF SLMB:SLMB1:SLMB2:SLMB3:SLMB4:SLMB5:SLMB6:SLMB7, ASSOCIATED_RESET LMB_Rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_clk_100MHz, INSERT_VIP 0" *) input LMB_Clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.LMB_Rst RST" *) (* x_interface_mode = "slave RST.LMB_Rst" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.LMB_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input LMB_Rst;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ABUS" *) (* x_interface_mode = "slave SLMB" *) (* x_interface_parameter = "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0" *) input [0:31]LMB_ABus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS" *) input [0:31]LMB_WriteDBus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ADDRSTROBE" *) input LMB_AddrStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READSTROBE" *) input LMB_ReadStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WRITESTROBE" *) input LMB_WriteStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB BE" *) input [0:3]LMB_BE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READDBUS" *) output [0:31]Sl_DBus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READY" *) output Sl_Ready;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WAIT" *) output Sl_Wait;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB UE" *) output Sl_UE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB CE" *) output Sl_CE;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT RST" *) (* x_interface_mode = "master BRAM_PORT" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 32768, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output BRAM_Rst_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT CLK" *) output BRAM_Clk_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT ADDR" *) output [0:31]BRAM_Addr_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT EN" *) output BRAM_EN_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT WE" *) output [0:3]BRAM_WEN_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT DIN" *) output [0:31]BRAM_Dout_A;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT DOUT" *) input [0:31]BRAM_Din_A;
+
+  wire \<const0> ;
+  wire [0:31]BRAM_Addr_A;
+  wire BRAM_Clk_A;
+  wire [0:31]BRAM_Din_A;
+  wire [0:31]BRAM_Dout_A;
+  wire BRAM_EN_A;
+  wire [0:3]BRAM_WEN_A;
+  wire [0:31]LMB_ABus;
+  wire LMB_AddrStrobe;
+  wire [0:3]LMB_BE;
+  wire LMB_Clk;
+  wire LMB_Rst;
+  wire [0:31]LMB_WriteDBus;
+  wire LMB_WriteStrobe;
+  wire [0:31]Sl_DBus;
+  wire Sl_Ready;
+  wire NLW_U0_BRAM_Rst_A_UNCONNECTED;
+  wire NLW_U0_CE_UNCONNECTED;
+  wire NLW_U0_Interrupt_UNCONNECTED;
+  wire NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED;
+  wire NLW_U0_S_AXI_CTRL_AWREADY_UNCONNECTED;
+  wire NLW_U0_S_AXI_CTRL_BVALID_UNCONNECTED;
+  wire NLW_U0_S_AXI_CTRL_RVALID_UNCONNECTED;
+  wire NLW_U0_S_AXI_CTRL_WREADY_UNCONNECTED;
+  wire NLW_U0_Sl1_CE_UNCONNECTED;
+  wire NLW_U0_Sl1_Ready_UNCONNECTED;
+  wire NLW_U0_Sl1_UE_UNCONNECTED;
+  wire NLW_U0_Sl1_Wait_UNCONNECTED;
+  wire NLW_U0_Sl2_CE_UNCONNECTED;
+  wire NLW_U0_Sl2_Ready_UNCONNECTED;
+  wire NLW_U0_Sl2_UE_UNCONNECTED;
+  wire NLW_U0_Sl2_Wait_UNCONNECTED;
+  wire NLW_U0_Sl3_CE_UNCONNECTED;
+  wire NLW_U0_Sl3_Ready_UNCONNECTED;
+  wire NLW_U0_Sl3_UE_UNCONNECTED;
+  wire NLW_U0_Sl3_Wait_UNCONNECTED;
+  wire NLW_U0_Sl4_CE_UNCONNECTED;
+  wire NLW_U0_Sl4_Ready_UNCONNECTED;
+  wire NLW_U0_Sl4_UE_UNCONNECTED;
+  wire NLW_U0_Sl4_Wait_UNCONNECTED;
+  wire NLW_U0_Sl5_CE_UNCONNECTED;
+  wire NLW_U0_Sl5_Ready_UNCONNECTED;
+  wire NLW_U0_Sl5_UE_UNCONNECTED;
+  wire NLW_U0_Sl5_Wait_UNCONNECTED;
+  wire NLW_U0_Sl6_CE_UNCONNECTED;
+  wire NLW_U0_Sl6_Ready_UNCONNECTED;
+  wire NLW_U0_Sl6_UE_UNCONNECTED;
+  wire NLW_U0_Sl6_Wait_UNCONNECTED;
+  wire NLW_U0_Sl7_CE_UNCONNECTED;
+  wire NLW_U0_Sl7_Ready_UNCONNECTED;
+  wire NLW_U0_Sl7_UE_UNCONNECTED;
+  wire NLW_U0_Sl7_Wait_UNCONNECTED;
+  wire NLW_U0_Sl_CE_UNCONNECTED;
+  wire NLW_U0_Sl_UE_UNCONNECTED;
+  wire NLW_U0_Sl_Wait_UNCONNECTED;
+  wire NLW_U0_UE_UNCONNECTED;
+  wire [1:0]NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED;
+  wire [31:0]NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED;
+  wire [1:0]NLW_U0_S_AXI_CTRL_RRESP_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl1_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl2_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl3_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl4_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl5_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl6_DBus_UNCONNECTED;
+  wire [0:31]NLW_U0_Sl7_DBus_UNCONNECTED;
+
+  assign BRAM_Rst_A = \<const0> ;
+  assign Sl_CE = \<const0> ;
+  assign Sl_UE = \<const0> ;
+  assign Sl_Wait = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+  (* C_ARBITRATION = "0" *) 
+  (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
+  (* C_BRAM_AWIDTH = "32" *) 
+  (* C_CE_COUNTER_WIDTH = "0" *) 
+  (* C_CE_FAILING_REGISTERS = "0" *) 
+  (* C_ECC = "0" *) 
+  (* C_ECC_ONOFF_REGISTER = "0" *) 
+  (* C_ECC_ONOFF_RESET_VALUE = "1" *) 
+  (* C_ECC_STATUS_REGISTERS = "0" *) 
+  (* C_FAMILY = "artix7" *) 
+  (* C_FAULT_INJECT = "0" *) 
+  (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000111111111111111" *) 
+  (* C_INTERCONNECT = "0" *) 
+  (* C_LMB_AWIDTH = "32" *) 
+  (* C_LMB_DWIDTH = "32" *) 
+  (* C_LMB_HAS_PROT = "0" *) 
+  (* C_LMB_PROTOCOL = "0" *) 
+  (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
+  (* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+  (* C_NUM_LMB = "1" *) 
+  (* C_PROT_CFG = "8'b11111111" *) 
+  (* C_PROT_CFG1 = "8'b11111111" *) 
+  (* C_PROT_CFG2 = "8'b11111111" *) 
+  (* C_PROT_CFG3 = "8'b11111111" *) 
+  (* C_PROT_CFG4 = "8'b11111111" *) 
+  (* C_PROT_CFG5 = "8'b11111111" *) 
+  (* C_PROT_CFG6 = "8'b11111111" *) 
+  (* C_PROT_CFG7 = "8'b11111111" *) 
+  (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) 
+  (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
+  (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) 
+  (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) 
+  (* C_UE_FAILING_REGISTERS = "0" *) 
+  (* C_WRITE_ACCESS = "2" *) 
+  microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr U0
+       (.BRAM_Addr_A(BRAM_Addr_A),
+        .BRAM_Clk_A(BRAM_Clk_A),
+        .BRAM_Din_A(BRAM_Din_A),
+        .BRAM_Dout_A(BRAM_Dout_A),
+        .BRAM_EN_A(BRAM_EN_A),
+        .BRAM_Rst_A(NLW_U0_BRAM_Rst_A_UNCONNECTED),
+        .BRAM_WEN_A(BRAM_WEN_A),
+        .CE(NLW_U0_CE_UNCONNECTED),
+        .Interrupt(NLW_U0_Interrupt_UNCONNECTED),
+        .LMB1_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB1_AddrStrobe(1'b0),
+        .LMB1_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB1_Prot({1'b0,1'b0}),
+        .LMB1_ReadStrobe(1'b0),
+        .LMB1_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB1_WriteStrobe(1'b0),
+        .LMB2_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB2_AddrStrobe(1'b0),
+        .LMB2_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB2_Prot({1'b0,1'b0}),
+        .LMB2_ReadStrobe(1'b0),
+        .LMB2_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB2_WriteStrobe(1'b0),
+        .LMB3_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB3_AddrStrobe(1'b0),
+        .LMB3_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB3_Prot({1'b0,1'b0}),
+        .LMB3_ReadStrobe(1'b0),
+        .LMB3_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB3_WriteStrobe(1'b0),
+        .LMB4_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB4_AddrStrobe(1'b0),
+        .LMB4_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB4_Prot({1'b0,1'b0}),
+        .LMB4_ReadStrobe(1'b0),
+        .LMB4_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB4_WriteStrobe(1'b0),
+        .LMB5_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB5_AddrStrobe(1'b0),
+        .LMB5_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB5_Prot({1'b0,1'b0}),
+        .LMB5_ReadStrobe(1'b0),
+        .LMB5_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB5_WriteStrobe(1'b0),
+        .LMB6_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB6_AddrStrobe(1'b0),
+        .LMB6_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB6_Prot({1'b0,1'b0}),
+        .LMB6_ReadStrobe(1'b0),
+        .LMB6_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB6_WriteStrobe(1'b0),
+        .LMB7_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB7_AddrStrobe(1'b0),
+        .LMB7_BE({1'b0,1'b0,1'b0,1'b0}),
+        .LMB7_Prot({1'b0,1'b0}),
+        .LMB7_ReadStrobe(1'b0),
+        .LMB7_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .LMB7_WriteStrobe(1'b0),
+        .LMB_ABus(LMB_ABus),
+        .LMB_AddrStrobe(LMB_AddrStrobe),
+        .LMB_BE(LMB_BE),
+        .LMB_Clk(LMB_Clk),
+        .LMB_Prot({1'b0,1'b0}),
+        .LMB_ReadStrobe(1'b0),
+        .LMB_Rst(LMB_Rst),
+        .LMB_WriteDBus(LMB_WriteDBus),
+        .LMB_WriteStrobe(LMB_WriteStrobe),
+        .S_AXI_CTRL_ACLK(1'b0),
+        .S_AXI_CTRL_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_CTRL_ARESETN(1'b0),
+        .S_AXI_CTRL_ARREADY(NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED),
+        .S_AXI_CTRL_ARVALID(1'b0),
+        .S_AXI_CTRL_AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_CTRL_AWREADY(NLW_U0_S_AXI_CTRL_AWREADY_UNCONNECTED),
+        .S_AXI_CTRL_AWVALID(1'b0),
+        .S_AXI_CTRL_BREADY(1'b0),
+        .S_AXI_CTRL_BRESP(NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED[1:0]),
+        .S_AXI_CTRL_BVALID(NLW_U0_S_AXI_CTRL_BVALID_UNCONNECTED),
+        .S_AXI_CTRL_RDATA(NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED[31:0]),
+        .S_AXI_CTRL_RREADY(1'b0),
+        .S_AXI_CTRL_RRESP(NLW_U0_S_AXI_CTRL_RRESP_UNCONNECTED[1:0]),
+        .S_AXI_CTRL_RVALID(NLW_U0_S_AXI_CTRL_RVALID_UNCONNECTED),
+        .S_AXI_CTRL_WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_CTRL_WREADY(NLW_U0_S_AXI_CTRL_WREADY_UNCONNECTED),
+        .S_AXI_CTRL_WSTRB({1'b0,1'b0,1'b0,1'b0}),
+        .S_AXI_CTRL_WVALID(1'b0),
+        .Sl1_CE(NLW_U0_Sl1_CE_UNCONNECTED),
+        .Sl1_DBus(NLW_U0_Sl1_DBus_UNCONNECTED[0:31]),
+        .Sl1_Ready(NLW_U0_Sl1_Ready_UNCONNECTED),
+        .Sl1_UE(NLW_U0_Sl1_UE_UNCONNECTED),
+        .Sl1_Wait(NLW_U0_Sl1_Wait_UNCONNECTED),
+        .Sl2_CE(NLW_U0_Sl2_CE_UNCONNECTED),
+        .Sl2_DBus(NLW_U0_Sl2_DBus_UNCONNECTED[0:31]),
+        .Sl2_Ready(NLW_U0_Sl2_Ready_UNCONNECTED),
+        .Sl2_UE(NLW_U0_Sl2_UE_UNCONNECTED),
+        .Sl2_Wait(NLW_U0_Sl2_Wait_UNCONNECTED),
+        .Sl3_CE(NLW_U0_Sl3_CE_UNCONNECTED),
+        .Sl3_DBus(NLW_U0_Sl3_DBus_UNCONNECTED[0:31]),
+        .Sl3_Ready(NLW_U0_Sl3_Ready_UNCONNECTED),
+        .Sl3_UE(NLW_U0_Sl3_UE_UNCONNECTED),
+        .Sl3_Wait(NLW_U0_Sl3_Wait_UNCONNECTED),
+        .Sl4_CE(NLW_U0_Sl4_CE_UNCONNECTED),
+        .Sl4_DBus(NLW_U0_Sl4_DBus_UNCONNECTED[0:31]),
+        .Sl4_Ready(NLW_U0_Sl4_Ready_UNCONNECTED),
+        .Sl4_UE(NLW_U0_Sl4_UE_UNCONNECTED),
+        .Sl4_Wait(NLW_U0_Sl4_Wait_UNCONNECTED),
+        .Sl5_CE(NLW_U0_Sl5_CE_UNCONNECTED),
+        .Sl5_DBus(NLW_U0_Sl5_DBus_UNCONNECTED[0:31]),
+        .Sl5_Ready(NLW_U0_Sl5_Ready_UNCONNECTED),
+        .Sl5_UE(NLW_U0_Sl5_UE_UNCONNECTED),
+        .Sl5_Wait(NLW_U0_Sl5_Wait_UNCONNECTED),
+        .Sl6_CE(NLW_U0_Sl6_CE_UNCONNECTED),
+        .Sl6_DBus(NLW_U0_Sl6_DBus_UNCONNECTED[0:31]),
+        .Sl6_Ready(NLW_U0_Sl6_Ready_UNCONNECTED),
+        .Sl6_UE(NLW_U0_Sl6_UE_UNCONNECTED),
+        .Sl6_Wait(NLW_U0_Sl6_Wait_UNCONNECTED),
+        .Sl7_CE(NLW_U0_Sl7_CE_UNCONNECTED),
+        .Sl7_DBus(NLW_U0_Sl7_DBus_UNCONNECTED[0:31]),
+        .Sl7_Ready(NLW_U0_Sl7_Ready_UNCONNECTED),
+        .Sl7_UE(NLW_U0_Sl7_UE_UNCONNECTED),
+        .Sl7_Wait(NLW_U0_Sl7_Wait_UNCONNECTED),
+        .Sl_CE(NLW_U0_Sl_CE_UNCONNECTED),
+        .Sl_DBus(Sl_DBus),
+        .Sl_Ready(Sl_Ready),
+        .Sl_UE(NLW_U0_Sl_UE_UNCONNECTED),
+        .Sl_Wait(NLW_U0_Sl_Wait_UNCONNECTED),
+        .UE(NLW_U0_UE_UNCONNECTED));
+endmodule
+
+(* C_ARBITRATION = "0" *) (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_BRAM_AWIDTH = "32" *) 
+(* C_CE_COUNTER_WIDTH = "0" *) (* C_CE_FAILING_REGISTERS = "0" *) (* C_ECC = "0" *) 
+(* C_ECC_ONOFF_REGISTER = "0" *) (* C_ECC_ONOFF_RESET_VALUE = "1" *) (* C_ECC_STATUS_REGISTERS = "0" *) 
+(* C_FAMILY = "artix7" *) (* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000111111111111111" *) 
+(* C_INTERCONNECT = "0" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
+(* C_LMB_HAS_PROT = "0" *) (* C_LMB_PROTOCOL = "0" *) (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
+(* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+(* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+(* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_NUM_LMB = "1" *) (* C_PROT_CFG = "8'b11111111" *) 
+(* C_PROT_CFG1 = "8'b11111111" *) (* C_PROT_CFG2 = "8'b11111111" *) (* C_PROT_CFG3 = "8'b11111111" *) 
+(* C_PROT_CFG4 = "8'b11111111" *) (* C_PROT_CFG5 = "8'b11111111" *) (* C_PROT_CFG6 = "8'b11111111" *) 
+(* C_PROT_CFG7 = "8'b11111111" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
+(* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) (* C_UE_FAILING_REGISTERS = "0" *) 
+(* C_WRITE_ACCESS = "2" *) (* ORIG_REF_NAME = "lmb_bram_if_cntlr" *) 
+module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
+   (LMB_Clk,
+    LMB_Rst,
+    LMB_ABus,
+    LMB_Prot,
+    LMB_WriteDBus,
+    LMB_AddrStrobe,
+    LMB_ReadStrobe,
+    LMB_WriteStrobe,
+    LMB_BE,
+    Sl_DBus,
+    Sl_Ready,
+    Sl_Wait,
+    Sl_UE,
+    Sl_CE,
     LMB1_ABus,
+    LMB1_Prot,
     LMB1_WriteDBus,
     LMB1_AddrStrobe,
     LMB1_ReadStrobe,
@@ -50,6 +342,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl1_UE,
     Sl1_CE,
     LMB2_ABus,
+    LMB2_Prot,
     LMB2_WriteDBus,
     LMB2_AddrStrobe,
     LMB2_ReadStrobe,
@@ -61,6 +354,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl2_UE,
     Sl2_CE,
     LMB3_ABus,
+    LMB3_Prot,
     LMB3_WriteDBus,
     LMB3_AddrStrobe,
     LMB3_ReadStrobe,
@@ -72,6 +366,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl3_UE,
     Sl3_CE,
     LMB4_ABus,
+    LMB4_Prot,
     LMB4_WriteDBus,
     LMB4_AddrStrobe,
     LMB4_ReadStrobe,
@@ -83,6 +378,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl4_UE,
     Sl4_CE,
     LMB5_ABus,
+    LMB5_Prot,
     LMB5_WriteDBus,
     LMB5_AddrStrobe,
     LMB5_ReadStrobe,
@@ -94,6 +390,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl5_UE,
     Sl5_CE,
     LMB6_ABus,
+    LMB6_Prot,
     LMB6_WriteDBus,
     LMB6_AddrStrobe,
     LMB6_ReadStrobe,
@@ -105,6 +402,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
     Sl6_UE,
     Sl6_CE,
     LMB7_ABus,
+    LMB7_Prot,
     LMB7_WriteDBus,
     LMB7_AddrStrobe,
     LMB7_ReadStrobe,
@@ -147,6 +445,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   input LMB_Clk;
   input LMB_Rst;
   input [0:31]LMB_ABus;
+  input [0:1]LMB_Prot;
   input [0:31]LMB_WriteDBus;
   input LMB_AddrStrobe;
   input LMB_ReadStrobe;
@@ -158,6 +457,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl_UE;
   output Sl_CE;
   input [0:31]LMB1_ABus;
+  input [0:1]LMB1_Prot;
   input [0:31]LMB1_WriteDBus;
   input LMB1_AddrStrobe;
   input LMB1_ReadStrobe;
@@ -169,6 +469,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl1_UE;
   output Sl1_CE;
   input [0:31]LMB2_ABus;
+  input [0:1]LMB2_Prot;
   input [0:31]LMB2_WriteDBus;
   input LMB2_AddrStrobe;
   input LMB2_ReadStrobe;
@@ -180,6 +481,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl2_UE;
   output Sl2_CE;
   input [0:31]LMB3_ABus;
+  input [0:1]LMB3_Prot;
   input [0:31]LMB3_WriteDBus;
   input LMB3_AddrStrobe;
   input LMB3_ReadStrobe;
@@ -191,6 +493,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl3_UE;
   output Sl3_CE;
   input [0:31]LMB4_ABus;
+  input [0:1]LMB4_Prot;
   input [0:31]LMB4_WriteDBus;
   input LMB4_AddrStrobe;
   input LMB4_ReadStrobe;
@@ -202,6 +505,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl4_UE;
   output Sl4_CE;
   input [0:31]LMB5_ABus;
+  input [0:1]LMB5_Prot;
   input [0:31]LMB5_WriteDBus;
   input LMB5_AddrStrobe;
   input LMB5_ReadStrobe;
@@ -213,6 +517,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl5_UE;
   output Sl5_CE;
   input [0:31]LMB6_ABus;
+  input [0:1]LMB6_Prot;
   input [0:31]LMB6_WriteDBus;
   input LMB6_AddrStrobe;
   input LMB6_ReadStrobe;
@@ -224,6 +529,7 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   output Sl6_UE;
   output Sl6_CE;
   input [0:31]LMB7_ABus;
+  input [0:1]LMB7_Prot;
   input [0:31]LMB7_WriteDBus;
   input LMB7_AddrStrobe;
   input LMB7_ReadStrobe;
@@ -648,279 +954,9 @@ module microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr
   LUT2 #(
     .INIT(4'h8)) 
     Sl_Ready_INST_0
-       (.I0(lmb_as),
-        .I1(Sl_Rdy),
+       (.I0(Sl_Rdy),
+        .I1(lmb_as),
         .O(Sl_Ready));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "microblaze_dlmb_bram_if_cntlr_1,lmb_bram_if_cntlr,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_bram_if_cntlr,Vivado 2025.1" *) 
-(* NotValidForBitStream *)
-module microblaze_dlmb_bram_if_cntlr_1
-   (LMB_Clk,
-    LMB_Rst,
-    LMB_ABus,
-    LMB_WriteDBus,
-    LMB_AddrStrobe,
-    LMB_ReadStrobe,
-    LMB_WriteStrobe,
-    LMB_BE,
-    Sl_DBus,
-    Sl_Ready,
-    Sl_Wait,
-    Sl_UE,
-    Sl_CE,
-    BRAM_Rst_A,
-    BRAM_Clk_A,
-    BRAM_Addr_A,
-    BRAM_EN_A,
-    BRAM_WEN_A,
-    BRAM_Dout_A,
-    BRAM_Din_A);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_mode = "slave CLK.LMB_Clk" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF SLMB:SLMB1:SLMB2:SLMB3:SLMB4:SLMB5:SLMB6:SLMB7, ASSOCIATED_RESET LMB_Rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_clk_100MHz, INSERT_VIP 0" *) input LMB_Clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.LMB_Rst RST" *) (* x_interface_mode = "slave RST.LMB_Rst" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.LMB_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input LMB_Rst;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ABUS" *) (* x_interface_mode = "slave SLMB" *) (* x_interface_parameter = "XIL_INTERFACENAME SLMB, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD" *) input [0:31]LMB_ABus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS" *) input [0:31]LMB_WriteDBus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB ADDRSTROBE" *) input LMB_AddrStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READSTROBE" *) input LMB_ReadStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WRITESTROBE" *) input LMB_WriteStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB BE" *) input [0:3]LMB_BE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READDBUS" *) output [0:31]Sl_DBus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB READY" *) output Sl_Ready;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB WAIT" *) output Sl_Wait;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB UE" *) output Sl_UE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 SLMB CE" *) output Sl_CE;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT RST" *) (* x_interface_mode = "master BRAM_PORT" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORT, MEM_SIZE 32768, MASTER_TYPE BRAM_CTRL, MEM_WIDTH 32, MEM_ECC NONE, READ_LATENCY 1" *) output BRAM_Rst_A;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT CLK" *) output BRAM_Clk_A;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT ADDR" *) output [0:31]BRAM_Addr_A;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT EN" *) output BRAM_EN_A;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT WE" *) output [0:3]BRAM_WEN_A;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT DIN" *) output [0:31]BRAM_Dout_A;
-  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT DOUT" *) input [0:31]BRAM_Din_A;
-
-  wire \<const0> ;
-  wire [0:31]BRAM_Addr_A;
-  wire BRAM_Clk_A;
-  wire [0:31]BRAM_Din_A;
-  wire [0:31]BRAM_Dout_A;
-  wire BRAM_EN_A;
-  wire [0:3]BRAM_WEN_A;
-  wire [0:31]LMB_ABus;
-  wire LMB_AddrStrobe;
-  wire [0:3]LMB_BE;
-  wire LMB_Clk;
-  wire LMB_Rst;
-  wire [0:31]LMB_WriteDBus;
-  wire LMB_WriteStrobe;
-  wire [0:31]Sl_DBus;
-  wire Sl_Ready;
-  wire NLW_U0_BRAM_Rst_A_UNCONNECTED;
-  wire NLW_U0_CE_UNCONNECTED;
-  wire NLW_U0_Interrupt_UNCONNECTED;
-  wire NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED;
-  wire NLW_U0_S_AXI_CTRL_AWREADY_UNCONNECTED;
-  wire NLW_U0_S_AXI_CTRL_BVALID_UNCONNECTED;
-  wire NLW_U0_S_AXI_CTRL_RVALID_UNCONNECTED;
-  wire NLW_U0_S_AXI_CTRL_WREADY_UNCONNECTED;
-  wire NLW_U0_Sl1_CE_UNCONNECTED;
-  wire NLW_U0_Sl1_Ready_UNCONNECTED;
-  wire NLW_U0_Sl1_UE_UNCONNECTED;
-  wire NLW_U0_Sl1_Wait_UNCONNECTED;
-  wire NLW_U0_Sl2_CE_UNCONNECTED;
-  wire NLW_U0_Sl2_Ready_UNCONNECTED;
-  wire NLW_U0_Sl2_UE_UNCONNECTED;
-  wire NLW_U0_Sl2_Wait_UNCONNECTED;
-  wire NLW_U0_Sl3_CE_UNCONNECTED;
-  wire NLW_U0_Sl3_Ready_UNCONNECTED;
-  wire NLW_U0_Sl3_UE_UNCONNECTED;
-  wire NLW_U0_Sl3_Wait_UNCONNECTED;
-  wire NLW_U0_Sl4_CE_UNCONNECTED;
-  wire NLW_U0_Sl4_Ready_UNCONNECTED;
-  wire NLW_U0_Sl4_UE_UNCONNECTED;
-  wire NLW_U0_Sl4_Wait_UNCONNECTED;
-  wire NLW_U0_Sl5_CE_UNCONNECTED;
-  wire NLW_U0_Sl5_Ready_UNCONNECTED;
-  wire NLW_U0_Sl5_UE_UNCONNECTED;
-  wire NLW_U0_Sl5_Wait_UNCONNECTED;
-  wire NLW_U0_Sl6_CE_UNCONNECTED;
-  wire NLW_U0_Sl6_Ready_UNCONNECTED;
-  wire NLW_U0_Sl6_UE_UNCONNECTED;
-  wire NLW_U0_Sl6_Wait_UNCONNECTED;
-  wire NLW_U0_Sl7_CE_UNCONNECTED;
-  wire NLW_U0_Sl7_Ready_UNCONNECTED;
-  wire NLW_U0_Sl7_UE_UNCONNECTED;
-  wire NLW_U0_Sl7_Wait_UNCONNECTED;
-  wire NLW_U0_Sl_CE_UNCONNECTED;
-  wire NLW_U0_Sl_UE_UNCONNECTED;
-  wire NLW_U0_Sl_Wait_UNCONNECTED;
-  wire NLW_U0_UE_UNCONNECTED;
-  wire [1:0]NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED;
-  wire [31:0]NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED;
-  wire [1:0]NLW_U0_S_AXI_CTRL_RRESP_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl1_DBus_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl2_DBus_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl3_DBus_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl4_DBus_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl5_DBus_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl6_DBus_UNCONNECTED;
-  wire [0:31]NLW_U0_Sl7_DBus_UNCONNECTED;
-
-  assign BRAM_Rst_A = \<const0> ;
-  assign Sl_CE = \<const0> ;
-  assign Sl_UE = \<const0> ;
-  assign Sl_Wait = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
-  (* C_ARBITRATION = "0" *) 
-  (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
-  (* C_BRAM_AWIDTH = "32" *) 
-  (* C_CE_COUNTER_WIDTH = "0" *) 
-  (* C_CE_FAILING_REGISTERS = "0" *) 
-  (* C_ECC = "0" *) 
-  (* C_ECC_ONOFF_REGISTER = "0" *) 
-  (* C_ECC_ONOFF_RESET_VALUE = "1" *) 
-  (* C_ECC_STATUS_REGISTERS = "0" *) 
-  (* C_FAMILY = "artix7" *) 
-  (* C_FAULT_INJECT = "0" *) 
-  (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000000111111111111111" *) 
-  (* C_INTERCONNECT = "0" *) 
-  (* C_LMB_AWIDTH = "32" *) 
-  (* C_LMB_DWIDTH = "32" *) 
-  (* C_LMB_PROTOCOL = "0" *) 
-  (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
-  (* C_MASK1 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_MASK4 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_MASK5 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_MASK6 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_MASK7 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
-  (* C_NUM_LMB = "1" *) 
-  (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) 
-  (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) 
-  (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) 
-  (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) 
-  (* C_UE_FAILING_REGISTERS = "0" *) 
-  (* C_WRITE_ACCESS = "2" *) 
-  microblaze_dlmb_bram_if_cntlr_1_lmb_bram_if_cntlr U0
-       (.BRAM_Addr_A(BRAM_Addr_A),
-        .BRAM_Clk_A(BRAM_Clk_A),
-        .BRAM_Din_A(BRAM_Din_A),
-        .BRAM_Dout_A(BRAM_Dout_A),
-        .BRAM_EN_A(BRAM_EN_A),
-        .BRAM_Rst_A(NLW_U0_BRAM_Rst_A_UNCONNECTED),
-        .BRAM_WEN_A(BRAM_WEN_A),
-        .CE(NLW_U0_CE_UNCONNECTED),
-        .Interrupt(NLW_U0_Interrupt_UNCONNECTED),
-        .LMB1_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB1_AddrStrobe(1'b0),
-        .LMB1_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB1_ReadStrobe(1'b0),
-        .LMB1_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB1_WriteStrobe(1'b0),
-        .LMB2_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB2_AddrStrobe(1'b0),
-        .LMB2_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB2_ReadStrobe(1'b0),
-        .LMB2_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB2_WriteStrobe(1'b0),
-        .LMB3_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB3_AddrStrobe(1'b0),
-        .LMB3_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB3_ReadStrobe(1'b0),
-        .LMB3_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB3_WriteStrobe(1'b0),
-        .LMB4_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB4_AddrStrobe(1'b0),
-        .LMB4_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB4_ReadStrobe(1'b0),
-        .LMB4_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB4_WriteStrobe(1'b0),
-        .LMB5_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB5_AddrStrobe(1'b0),
-        .LMB5_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB5_ReadStrobe(1'b0),
-        .LMB5_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB5_WriteStrobe(1'b0),
-        .LMB6_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB6_AddrStrobe(1'b0),
-        .LMB6_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB6_ReadStrobe(1'b0),
-        .LMB6_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB6_WriteStrobe(1'b0),
-        .LMB7_ABus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB7_AddrStrobe(1'b0),
-        .LMB7_BE({1'b0,1'b0,1'b0,1'b0}),
-        .LMB7_ReadStrobe(1'b0),
-        .LMB7_WriteDBus({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .LMB7_WriteStrobe(1'b0),
-        .LMB_ABus(LMB_ABus),
-        .LMB_AddrStrobe(LMB_AddrStrobe),
-        .LMB_BE(LMB_BE),
-        .LMB_Clk(LMB_Clk),
-        .LMB_ReadStrobe(1'b0),
-        .LMB_Rst(LMB_Rst),
-        .LMB_WriteDBus(LMB_WriteDBus),
-        .LMB_WriteStrobe(LMB_WriteStrobe),
-        .S_AXI_CTRL_ACLK(1'b0),
-        .S_AXI_CTRL_ARADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_CTRL_ARESETN(1'b0),
-        .S_AXI_CTRL_ARREADY(NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED),
-        .S_AXI_CTRL_ARVALID(1'b0),
-        .S_AXI_CTRL_AWADDR({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_CTRL_AWREADY(NLW_U0_S_AXI_CTRL_AWREADY_UNCONNECTED),
-        .S_AXI_CTRL_AWVALID(1'b0),
-        .S_AXI_CTRL_BREADY(1'b0),
-        .S_AXI_CTRL_BRESP(NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED[1:0]),
-        .S_AXI_CTRL_BVALID(NLW_U0_S_AXI_CTRL_BVALID_UNCONNECTED),
-        .S_AXI_CTRL_RDATA(NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED[31:0]),
-        .S_AXI_CTRL_RREADY(1'b0),
-        .S_AXI_CTRL_RRESP(NLW_U0_S_AXI_CTRL_RRESP_UNCONNECTED[1:0]),
-        .S_AXI_CTRL_RVALID(NLW_U0_S_AXI_CTRL_RVALID_UNCONNECTED),
-        .S_AXI_CTRL_WDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_CTRL_WREADY(NLW_U0_S_AXI_CTRL_WREADY_UNCONNECTED),
-        .S_AXI_CTRL_WSTRB({1'b0,1'b0,1'b0,1'b0}),
-        .S_AXI_CTRL_WVALID(1'b0),
-        .Sl1_CE(NLW_U0_Sl1_CE_UNCONNECTED),
-        .Sl1_DBus(NLW_U0_Sl1_DBus_UNCONNECTED[0:31]),
-        .Sl1_Ready(NLW_U0_Sl1_Ready_UNCONNECTED),
-        .Sl1_UE(NLW_U0_Sl1_UE_UNCONNECTED),
-        .Sl1_Wait(NLW_U0_Sl1_Wait_UNCONNECTED),
-        .Sl2_CE(NLW_U0_Sl2_CE_UNCONNECTED),
-        .Sl2_DBus(NLW_U0_Sl2_DBus_UNCONNECTED[0:31]),
-        .Sl2_Ready(NLW_U0_Sl2_Ready_UNCONNECTED),
-        .Sl2_UE(NLW_U0_Sl2_UE_UNCONNECTED),
-        .Sl2_Wait(NLW_U0_Sl2_Wait_UNCONNECTED),
-        .Sl3_CE(NLW_U0_Sl3_CE_UNCONNECTED),
-        .Sl3_DBus(NLW_U0_Sl3_DBus_UNCONNECTED[0:31]),
-        .Sl3_Ready(NLW_U0_Sl3_Ready_UNCONNECTED),
-        .Sl3_UE(NLW_U0_Sl3_UE_UNCONNECTED),
-        .Sl3_Wait(NLW_U0_Sl3_Wait_UNCONNECTED),
-        .Sl4_CE(NLW_U0_Sl4_CE_UNCONNECTED),
-        .Sl4_DBus(NLW_U0_Sl4_DBus_UNCONNECTED[0:31]),
-        .Sl4_Ready(NLW_U0_Sl4_Ready_UNCONNECTED),
-        .Sl4_UE(NLW_U0_Sl4_UE_UNCONNECTED),
-        .Sl4_Wait(NLW_U0_Sl4_Wait_UNCONNECTED),
-        .Sl5_CE(NLW_U0_Sl5_CE_UNCONNECTED),
-        .Sl5_DBus(NLW_U0_Sl5_DBus_UNCONNECTED[0:31]),
-        .Sl5_Ready(NLW_U0_Sl5_Ready_UNCONNECTED),
-        .Sl5_UE(NLW_U0_Sl5_UE_UNCONNECTED),
-        .Sl5_Wait(NLW_U0_Sl5_Wait_UNCONNECTED),
-        .Sl6_CE(NLW_U0_Sl6_CE_UNCONNECTED),
-        .Sl6_DBus(NLW_U0_Sl6_DBus_UNCONNECTED[0:31]),
-        .Sl6_Ready(NLW_U0_Sl6_Ready_UNCONNECTED),
-        .Sl6_UE(NLW_U0_Sl6_UE_UNCONNECTED),
-        .Sl6_Wait(NLW_U0_Sl6_Wait_UNCONNECTED),
-        .Sl7_CE(NLW_U0_Sl7_CE_UNCONNECTED),
-        .Sl7_DBus(NLW_U0_Sl7_DBus_UNCONNECTED[0:31]),
-        .Sl7_Ready(NLW_U0_Sl7_Ready_UNCONNECTED),
-        .Sl7_UE(NLW_U0_Sl7_UE_UNCONNECTED),
-        .Sl7_Wait(NLW_U0_Sl7_Wait_UNCONNECTED),
-        .Sl_CE(NLW_U0_Sl_CE_UNCONNECTED),
-        .Sl_DBus(Sl_DBus),
-        .Sl_Ready(Sl_Ready),
-        .Sl_UE(NLW_U0_Sl_UE_UNCONNECTED),
-        .Sl_Wait(NLW_U0_Sl_Wait_UNCONNECTED),
-        .UE(NLW_U0_UE_UNCONNECTED));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -76,6 +76,7 @@ module clk_wiz_0_clk_wiz
   // Input buffering
   //------------------------------------
 wire clk_in1_clk_wiz_0;
+wire clk_in1_clk_wiz_0_buf;
 wire clk_in2_clk_wiz_0;
   IBUF clkin1_ibufg
    (.O (clk_in1_clk_wiz_0),

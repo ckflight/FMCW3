@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # 
 # Vivado(TM)
@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Xilinx/2025.1/Vitis/bin;C:/Xilinx/2025.1/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.1/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.1/Vivado/bin
+  PATH=C:/Xilinx/2025.2/Vitis/bin;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.2/Vivado/bin
 else
-  PATH=C:/Xilinx/2025.1/Vitis/bin;C:/Xilinx/2025.1/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.1/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.1/Vivado/bin:$PATH
+  PATH=C:/Xilinx/2025.2/Vitis/bin;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.2/Vivado/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/CK/Desktop/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.runs/fir_compiler_0_synth_1'
+HD_PWD='C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/fir_compiler_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

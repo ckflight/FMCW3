@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:lmb_v10:3.0
--- IP Revision: 15
+-- IP Revision: 16
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY lmb_v10_v3_0_15;
-USE lmb_v10_v3_0_15.lmb_v10;
+LIBRARY lmb_v10_v3_0_16;
+USE lmb_v10_v3_0_16.lmb_v10;
 
 ENTITY microblaze_ilmb_v10_1 IS
   PORT (
@@ -95,6 +95,7 @@ ARCHITECTURE microblaze_ilmb_v10_1_arch OF microblaze_ilmb_v10_1 IS
       C_LMB_DWIDTH : INTEGER;
       C_LMB_AWIDTH : INTEGER;
       C_LMB_PROTOCOL : INTEGER;
+      C_LMB_HAS_PROT : INTEGER;
       C_EXT_RESET_HIGH : INTEGER
     );
     PORT (
@@ -102,6 +103,7 @@ ARCHITECTURE microblaze_ilmb_v10_1_arch OF microblaze_ilmb_v10_1 IS
       SYS_Rst : IN STD_LOGIC;
       LMB_Rst : OUT STD_LOGIC;
       M_ABus : IN STD_LOGIC_VECTOR(0 TO 31);
+      M_Prot : IN STD_LOGIC_VECTOR(0 TO 1);
       M_ReadStrobe : IN STD_LOGIC;
       M_WriteStrobe : IN STD_LOGIC;
       M_AddrStrobe : IN STD_LOGIC;
@@ -113,6 +115,7 @@ ARCHITECTURE microblaze_ilmb_v10_1_arch OF microblaze_ilmb_v10_1 IS
       Sl_UE : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       Sl_CE : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       LMB_ABus : OUT STD_LOGIC_VECTOR(0 TO 31);
+      LMB_Prot : OUT STD_LOGIC_VECTOR(0 TO 1);
       LMB_ReadStrobe : OUT STD_LOGIC;
       LMB_WriteStrobe : OUT STD_LOGIC;
       LMB_AddrStrobe : OUT STD_LOGIC;
@@ -126,11 +129,11 @@ ARCHITECTURE microblaze_ilmb_v10_1_arch OF microblaze_ilmb_v10_1 IS
     );
   END COMPONENT lmb_v10;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF microblaze_ilmb_v10_1_arch: ARCHITECTURE IS "lmb_v10,Vivado 2025.1";
+  ATTRIBUTE X_CORE_INFO OF microblaze_ilmb_v10_1_arch: ARCHITECTURE IS "lmb_v10,Vivado 2025.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF microblaze_ilmb_v10_1_arch : ARCHITECTURE IS "microblaze_ilmb_v10_1,lmb_v10,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF microblaze_ilmb_v10_1_arch: ARCHITECTURE IS "microblaze_ilmb_v10_1,lmb_v10,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=15,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_EXT_RESET_HIGH=1}";
+  ATTRIBUTE CORE_GENERATION_INFO OF microblaze_ilmb_v10_1_arch: ARCHITECTURE IS "microblaze_ilmb_v10_1,lmb_v10,{x_ipProduct=Vivado 2025.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=16,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_LMB_HAS_PROT=0,C_EXT_RESET_HIGH=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
@@ -145,8 +148,8 @@ ARCHITECTURE microblaze_ilmb_v10_1_arch OF microblaze_ilmb_v10_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF LMB_ReadStrobe: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READSTROBE";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_Ready: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_M READY";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_Rst: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST";
-  ATTRIBUTE X_INTERFACE_MODE OF LMB_Rst: SIGNAL IS "mirroredMaster LMB_M";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF LMB_Rst: SIGNAL IS "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD";
+  ATTRIBUTE X_INTERFACE_MODE OF LMB_Rst: SIGNAL IS "mirroredSlave LMB_Sl_0, mirroredMaster LMB_M";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF LMB_Rst: SIGNAL IS "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, HAS_PROT 0, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD, HAS_PROT 0";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_UE: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_M UE";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_Wait: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_M WAIT";
   ATTRIBUTE X_INTERFACE_INFO OF LMB_WriteDBus: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITEDBUS";
@@ -172,6 +175,7 @@ BEGIN
       C_LMB_DWIDTH => 32,
       C_LMB_AWIDTH => 32,
       C_LMB_PROTOCOL => 0,
+      C_LMB_HAS_PROT => 0,
       C_EXT_RESET_HIGH => 1
     )
     PORT MAP (
@@ -179,6 +183,7 @@ BEGIN
       SYS_Rst => SYS_Rst,
       LMB_Rst => LMB_Rst,
       M_ABus => M_ABus,
+      M_Prot => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 2)),
       M_ReadStrobe => M_ReadStrobe,
       M_WriteStrobe => M_WriteStrobe,
       M_AddrStrobe => M_AddrStrobe,

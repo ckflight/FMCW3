@@ -4,7 +4,7 @@
     "xci_name": "bd_87ec_rni_0",
     "cell_name": "i_r_node",
     "component_reference": "xilinx.com:ip:sc_node:1.0",
-    "ip_revision": "18",
+    "ip_revision": "19",
     "gen_directory": ".",
     "parameters": {
       "component_parameters": {
@@ -15,7 +15,7 @@
         "FIFO_OUTPUT_REG": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "ENABLE_PIPELINING": [ { "value": "0x01", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "SYNCHRONIZATION_STAGES": [ { "value": "3", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "NUM_SI": [ { "value": "4", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "NUM_SI": [ { "value": "6", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "NUM_MI": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "CHANNEL": [ { "value": "0", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "USER_BITS_PER_BYTE": [ { "value": "0", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -92,13 +92,13 @@
         "C_FIFO_OUTPUT_REG": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ENABLE_PIPELINING": [ { "value": "0x01", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_SYNCHRONIZATION_STAGES": [ { "value": "3", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_NUM_SI": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_NUM_SI": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_NUM_MI": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_CHANNEL": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_PAYLD_WIDTH": [ { "value": "53", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_S_NUM_BYTES_ARRAY": [ { "value": "0x00000004000000040000000400000004", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_S_NUM_BYTES_ARRAY": [ { "value": "0x000000040000000400000004000000040000000400000004", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_M_NUM_BYTES_ARRAY": [ { "value": "0x00000004", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
-        "C_PRIORITY_ARB_ARRAY": [ { "value": "0b0000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_PRIORITY_ARB_ARRAY": [ { "value": "0b000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "C_USER_BITS_PER_BYTE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ARBITER_MODE": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_SC_ROUTE_WIDTH": [ { "value": "3", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -115,26 +115,26 @@
         "C_ACLKEN_CONVERSION": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
-        "ARCHITECTURE": [ { "value": "artix7" } ],
-        "BASE_BOARD_PART": [ { "value": "" } ],
-        "BOARD_CONNECTIONS": [ { "value": "" } ],
-        "DEVICE": [ { "value": "xc7a15ti" } ],
-        "PACKAGE": [ { "value": "ftg256" } ],
-        "PREFHDL": [ { "value": "VHDL" } ],
-        "SILICON_REVISION": [ { "value": "" } ],
-        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-1L" } ],
-        "STATIC_POWER": [ { "value": "" } ],
-        "TEMPERATURE_GRADE": [ { "value": "I" } ]
+        "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
+        "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
+        "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
+        "PREFHDL": [ { "value": "VHDL", "resolve_type": "generated", "usage": "all" } ],
+        "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED", "resolve_type": "generated", "usage": "all" } ],
+        "SPEEDGRADE": [ { "value": "-1", "resolve_type": "generated", "usage": "all" } ],
+        "STATIC_POWER": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "TEMPERATURE_GRADE": [ { "value": "", "resolve_type": "generated", "usage": "all" } ]
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "18" } ],
+        "IPREVISION": [ { "value": "19" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "." } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
-        "SHAREDDIR": [ { "value": "../../../../../../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared" } ],
-        "SWVERSION": [ { "value": "2025.1" } ],
+        "SHAREDDIR": [ { "value": "../../../../../ipshared" } ],
+        "SWVERSION": [ { "value": "2025.2" } ],
         "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
       }
     },
@@ -142,10 +142,10 @@
       "ports": {
         "s_sc_aclk": [ { "direction": "in" } ],
         "s_sc_aresetn": [ { "direction": "in", "driver_value": "0x1" } ],
-        "s_sc_req": [ { "direction": "in", "size_left": "3", "size_right": "0", "driver_value": "0" } ],
-        "s_sc_info": [ { "direction": "in", "size_left": "3", "size_right": "0", "driver_value": "0" } ],
-        "s_sc_send": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
-        "s_sc_recv": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "s_sc_req": [ { "direction": "in", "size_left": "5", "size_right": "0", "driver_value": "0" } ],
+        "s_sc_info": [ { "direction": "in", "size_left": "5", "size_right": "0", "driver_value": "0" } ],
+        "s_sc_send": [ { "direction": "in", "size_left": "5", "size_right": "0" } ],
+        "s_sc_recv": [ { "direction": "out", "size_left": "5", "size_right": "0" } ],
         "s_sc_payld": [ { "direction": "in", "size_left": "52", "size_right": "0" } ],
         "m_sc_aclk": [ { "direction": "in" } ],
         "m_sc_aresetn": [ { "direction": "in", "driver_value": "0x1" } ],
@@ -244,5 +244,6 @@
         }
       }
     }
-  }
+  },
+  "checksum": "4b09ee02"
 }

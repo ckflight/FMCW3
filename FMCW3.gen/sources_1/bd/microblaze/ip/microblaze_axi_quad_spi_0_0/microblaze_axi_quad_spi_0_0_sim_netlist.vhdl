@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Sep 13 20:48:33 2025
--- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_axi_quad_spi_0_0 -prefix
---               microblaze_axi_quad_spi_0_0_ microblaze_axi_quad_spi_0_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+-- Date        : Wed Dec 17 14:16:03 2025
+-- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_sim_netlist.vhdl
 -- Design      : microblaze_axi_quad_spi_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a15tiftg256-1L
+-- Device      : xc7a35tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -239,16 +239,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_16\ is
+entity \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_17\ is
   port (
     ce_expnd_i_5 : out STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[26].ce_out_i_reg[26]\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_16\ : entity is "axi_lite_ipif_v3_0_4_pselect_f";
-end \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_16\;
+  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_17\ : entity is "axi_lite_ipif_v3_0_4_pselect_f";
+end \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_17\;
 
-architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_16\ is
+architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_17\ is
 begin
 CS: unisim.vcomponents.LUT5
     generic map(
@@ -323,16 +323,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_17\ is
+entity \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_18\ is
   port (
     ce_expnd_i_1 : out STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[30].ce_out_i_reg[30]\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_17\ : entity is "axi_lite_ipif_v3_0_4_pselect_f";
-end \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_17\;
+  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_18\ : entity is "axi_lite_ipif_v3_0_4_pselect_f";
+end \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_18\;
 
-architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_17\ is
+architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_18\ is
 begin
 CS: unisim.vcomponents.LUT5
     generic map(
@@ -569,6 +569,8 @@ entity microblaze_axi_quad_spi_0_0_counter_f is
     \icount_out_reg[0]_3\ : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_counter_f : entity is "counter_f";
 end microblaze_axi_quad_spi_0_0_counter_f;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_counter_f is
@@ -712,7 +714,7 @@ entity microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 is
     spicr_3_cpol_to_spi_clk : out STD_LOGIC;
     spicr_4_cpha_to_spi_clk : out STD_LOGIC;
     spicr_9_lsb_to_spi_clk : out STD_LOGIC;
-    register_Data_slvsel_int : out STD_LOGIC;
+    register_Data_slvsel_int : out STD_LOGIC_VECTOR ( 0 to 0 );
     \LOGIC_GENERATION_FDR.drr_Overrun_int_cdc_from_spi_int_2_reg_0\ : out STD_LOGIC;
     \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3_0\ : out STD_LOGIC;
     \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0\ : out STD_LOGIC;
@@ -758,7 +760,7 @@ entity microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 is
     spicr_9_lsb_frm_axi_clk : in STD_LOGIC;
     spicr_bits_7_8_frm_axi_clk : in STD_LOGIC_VECTOR ( 1 downto 0 );
     sr_3_MODF_int : in STD_LOGIC;
-    SPISSR_frm_axi_clk : in STD_LOGIC;
+    SPISSR_frm_axi_clk : in STD_LOGIC_VECTOR ( 0 to 0 );
     D08_out : in STD_LOGIC;
     D04_out : in STD_LOGIC;
     D01_out : in STD_LOGIC;
@@ -819,6 +821,8 @@ entity microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 is
     modf_strobe_int : in STD_LOGIC;
     SPISEL_sync : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 : entity is "cross_clk_sync_fifo_1";
 end microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 is
@@ -844,7 +848,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 is
   signal SPICR_9_LSB_cdc_from_axi_d1 : STD_LOGIC;
   signal SPICR_bits_7_8_cdc_from_axi_d1_0 : STD_LOGIC;
   signal SPICR_bits_7_8_cdc_from_axi_d1_1 : STD_LOGIC;
-  signal SPISSR_cdc_from_axi_d1 : STD_LOGIC;
+  signal SPISSR_cdc_from_axi_d1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal SR_3_modf_cdc_from_axi_d1 : STD_LOGIC;
   signal Tx_FIFO_Empty_SPISR_cdc_from_spi_d1 : STD_LOGIC;
   signal drr_Overrun_int_cdc_from_spi_d1 : STD_LOGIC;
@@ -854,7 +858,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_cross_clk_sync_fifo_1 is
   signal modf_strobe_cdc_from_spi_d1 : STD_LOGIC;
   signal modf_strobe_cdc_from_spi_d2 : STD_LOGIC;
   signal modf_strobe_cdc_from_spi_d3 : STD_LOGIC;
-  signal \^register_data_slvsel_int\ : STD_LOGIC;
+  signal \^register_data_slvsel_int\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal reset_RcFIFO_ptr_cdc_from_axi_d1 : STD_LOGIC;
   signal reset_RcFIFO_ptr_cdc_from_axi_d2 : STD_LOGIC;
   signal s_axi_wdata_1_sn_1 : STD_LOGIC;
@@ -1039,7 +1043,7 @@ begin
   \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0\ <= \^logic_generation_fdr.spisel_pulse_cdc_from_spi_int_2_reg_0\;
   \OTHER_RATIO_GENERATE.serial_dout_int_reg\(0) <= \^other_ratio_generate.serial_dout_int_reg\(0);
   SPICR_2_MST_N_SLV_to_spi_clk <= \^spicr_2_mst_n_slv_to_spi_clk\;
-  register_Data_slvsel_int <= \^register_data_slvsel_int\;
+  register_Data_slvsel_int(0) <= \^register_data_slvsel_int\(0);
   s_axi_wdata_1_sp_1 <= s_axi_wdata_1_sn_1;
   spicr_0_loop_to_spi_clk <= \^spicr_0_loop_to_spi_clk\;
   spicr_1_spe_to_spi_clk <= \^spicr_1_spe_to_spi_clk\;
@@ -1656,8 +1660,8 @@ Allow_Slave_MODF_Strobe_i_1: unisim.vcomponents.LUT3
         port map (
       C => ext_spi_clk,
       CE => '1',
-      D => SPISSR_frm_axi_clk,
-      Q => SPISSR_cdc_from_axi_d1,
+      D => SPISSR_frm_axi_clk(0),
+      Q => SPISSR_cdc_from_axi_d1(0),
       R => Rst_to_spi
     );
 \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2\: unisim.vcomponents.FDRE
@@ -1667,8 +1671,8 @@ Allow_Slave_MODF_Strobe_i_1: unisim.vcomponents.LUT3
         port map (
       C => ext_spi_clk,
       CE => '1',
-      D => SPISSR_cdc_from_axi_d1,
-      Q => \^register_data_slvsel_int\,
+      D => SPISSR_cdc_from_axi_d1(0),
+      Q => \^register_data_slvsel_int\(0),
       R => Rst_to_spi
     );
 \LOGIC_GENERATION_FDR.SR_3_MODF_AX2S_1_CDC\: unisim.vcomponents.FDRE
@@ -1901,7 +1905,7 @@ SPI_TRISTATE_CONTROL_V_i_1: unisim.vcomponents.LUT4
       I0 => spicr_7_ss_to_spi_clk,
       I1 => transfer_start_d1,
       I2 => transfer_start_reg,
-      I3 => \^register_data_slvsel_int\,
+      I3 => \^register_data_slvsel_int\(0),
       I4 => Rst_to_spi,
       O => \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2_0\
     );
@@ -2052,6 +2056,8 @@ entity microblaze_axi_quad_spi_0_0_interrupt_control is
     bus2ip_wrce_int : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_interrupt_control : entity is "interrupt_control";
 end microblaze_axi_quad_spi_0_0_interrupt_control;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_interrupt_control is
@@ -2425,6 +2431,8 @@ entity microblaze_axi_quad_spi_0_0_qspi_cntrl_reg is
     \FIFO_EXISTS.data_Exists_RcFIFO_int_d1\ : in STD_LOGIC;
     \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_qspi_cntrl_reg : entity is "qspi_cntrl_reg";
 end microblaze_axi_quad_spi_0_0_qspi_cntrl_reg;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_cntrl_reg is
@@ -2441,7 +2449,10 @@ begin
   \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0\ <= \^control_reg_3_4_generate[4].spicr_data_int_reg[4]_0\;
   \CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7]_0\ <= \^control_reg_5_9_generate[7].spicr_data_int_reg[7]_0\;
 \CONTROL_REG_1_2_GENERATE[1].SPICR_data_int_reg[1]\: unisim.vcomponents.FDSE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(6),
@@ -2449,7 +2460,10 @@ begin
       S => reset2ip_reset_int
     );
 \CONTROL_REG_1_2_GENERATE[2].SPICR_data_int_reg[2]\: unisim.vcomponents.FDSE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(5),
@@ -2457,7 +2471,10 @@ begin
       S => reset2ip_reset_int
     );
 \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => '1',
       D => \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0\,
@@ -2465,7 +2482,10 @@ begin
       R => '0'
     );
 \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => '1',
       D => \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_2\,
@@ -2473,7 +2493,10 @@ begin
       R => '0'
     );
 \CONTROL_REG_5_9_GENERATE[5].SPICR_data_int_reg[5]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(4),
@@ -2481,7 +2504,10 @@ begin
       R => reset2ip_reset_int
     );
 \CONTROL_REG_5_9_GENERATE[6].SPICR_data_int_reg[6]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(3),
@@ -2489,7 +2515,10 @@ begin
       R => reset2ip_reset_int
     );
 \CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(2),
@@ -2497,7 +2526,10 @@ begin
       R => reset2ip_reset_int
     );
 \CONTROL_REG_5_9_GENERATE[8].SPICR_data_int_reg[8]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(1),
@@ -2505,7 +2537,10 @@ begin
       R => reset2ip_reset_int
     );
 \CONTROL_REG_5_9_GENERATE[9].SPICR_data_int_reg[9]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(0),
@@ -2565,7 +2600,10 @@ begin
       R => reset2ip_reset_int
     );
 \SPICR_data_int_reg[0]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => SPICR_data_int_reg0,
       D => s_axi_wdata(7),
@@ -2616,6 +2654,8 @@ entity microblaze_axi_quad_spi_0_0_qspi_fifo_ifmodule is
     p_4_in : in STD_LOGIC;
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_qspi_fifo_ifmodule : entity is "qspi_fifo_ifmodule";
 end microblaze_axi_quad_spi_0_0_qspi_fifo_ifmodule;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_fifo_ifmodule is
@@ -2762,10 +2802,12 @@ entity microblaze_axi_quad_spi_0_0_qspi_mode_0_module is
     dest_out : in STD_LOGIC;
     almost_full : in STD_LOGIC;
     spicr_0_loop_to_spi_clk : in STD_LOGIC;
-    register_Data_slvsel_int : in STD_LOGIC;
+    register_Data_slvsel_int : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 0 to 0 );
     \OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_qspi_mode_0_module : entity is "qspi_mode_0_module";
 end microblaze_axi_quad_spi_0_0_qspi_mode_0_module;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_mode_0_module is
@@ -3035,7 +3077,7 @@ Allow_Slave_MODF_Strobe_reg: unisim.vcomponents.FDSE
         port map (
       I0 => \FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_2_n_0\,
       I1 => \^spixfer_done_int\,
-      I2 => register_Data_slvsel_int,
+      I2 => register_Data_slvsel_int(0),
       I3 => spi_cntrl_ps(0),
       O => \FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_1_n_0\
     );
@@ -4474,7 +4516,7 @@ SR_5_Tx_comeplete_Empty_reg: unisim.vcomponents.FDRE
         port map (
       I0 => \^spixfer_done_int\,
       I1 => SR_5_Tx_comeplete_Empty,
-      I2 => register_Data_slvsel_int,
+      I2 => register_Data_slvsel_int(0),
       I3 => stop_clock_reg,
       O => \SS_O[0]_i_3_n_0\
     );
@@ -4488,7 +4530,10 @@ SR_5_Tx_comeplete_Empty_reg: unisim.vcomponents.FDRE
       O => \SS_O[0]_i_4_n_0\
     );
 \SS_O_reg[0]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '1'
+    )
+        port map (
       C => ext_spi_clk,
       CE => '1',
       D => \SS_O_reg[0]_0\,
@@ -4569,7 +4614,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_axi_quad_spi_0_0_qspi_status_slave_sel_reg is
   port (
     sr_3_MODF_int : out STD_LOGIC;
-    SPISSR_frm_axi_clk : out STD_LOGIC;
+    SPISSR_frm_axi_clk : out STD_LOGIC_VECTOR ( 0 to 0 );
     modf_reg_0 : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC;
     reset2ip_reset_int : in STD_LOGIC;
@@ -4578,13 +4623,15 @@ entity microblaze_axi_quad_spi_0_0_qspi_status_slave_sel_reg is
     p_3_in : in STD_LOGIC;
     Bus_RNW_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_qspi_status_slave_sel_reg : entity is "qspi_status_slave_sel_reg";
 end microblaze_axi_quad_spi_0_0_qspi_status_slave_sel_reg;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_status_slave_sel_reg is
   signal \SPISSR_WR_GEN[0].SPISSR_Data_reg[0]_i_1_n_0\ : STD_LOGIC;
-  signal \^spissr_frm_axi_clk\ : STD_LOGIC;
+  signal \^spissr_frm_axi_clk\ : STD_LOGIC_VECTOR ( 0 to 0 );
 begin
-  SPISSR_frm_axi_clk <= \^spissr_frm_axi_clk\;
+  SPISSR_frm_axi_clk(0) <= \^spissr_frm_axi_clk\(0);
 \SPISSR_WR_GEN[0].SPISSR_Data_reg[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"FFBF0080"
@@ -4594,15 +4641,18 @@ begin
       I1 => \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0\,
       I2 => p_3_in,
       I3 => Bus_RNW_reg,
-      I4 => \^spissr_frm_axi_clk\,
+      I4 => \^spissr_frm_axi_clk\(0),
       O => \SPISSR_WR_GEN[0].SPISSR_Data_reg[0]_i_1_n_0\
     );
 \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]\: unisim.vcomponents.FDSE
-     port map (
+    generic map(
+      INIT => '1'
+    )
+        port map (
       C => s_axi_aclk,
       CE => '1',
       D => \SPISSR_WR_GEN[0].SPISSR_Data_reg[0]_i_1_n_0\,
-      Q => \^spissr_frm_axi_clk\,
+      Q => \^spissr_frm_axi_clk\(0),
       S => reset2ip_reset_int
     );
 modf_reg: unisim.vcomponents.FDRE
@@ -4628,11 +4678,13 @@ entity microblaze_axi_quad_spi_0_0_reset_sync_module is
     reset2ip_reset_int : in STD_LOGIC;
     ext_spi_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_reset_sync_module : entity is "reset_sync_module";
 end microblaze_axi_quad_spi_0_0_reset_sync_module;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_reset_sync_module is
+  signal Q : STD_LOGIC;
   signal \^rst_to_spi\ : STD_LOGIC;
-  signal Soft_Reset_frm_axi_d1 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \OTHER_RATIO_GENERATE.rx_shft_reg_s[0]_i_2\ : label is "soft_lutpair87";
   attribute ASYNC_REG : boolean;
@@ -4667,7 +4719,7 @@ RESET_SYNC_AX2S_1: unisim.vcomponents.FDRE
       C => ext_spi_clk,
       CE => '1',
       D => reset2ip_reset_int,
-      Q => Soft_Reset_frm_axi_d1,
+      Q => Q,
       R => '0'
     );
 RESET_SYNC_AX2S_2: unisim.vcomponents.FDRE
@@ -4677,7 +4729,7 @@ RESET_SYNC_AX2S_2: unisim.vcomponents.FDRE
         port map (
       C => ext_spi_clk,
       CE => '1',
-      D => Soft_Reset_frm_axi_d1,
+      D => Q,
       Q => \^rst_to_spi\,
       R => '0'
     );
@@ -4714,6 +4766,8 @@ entity microblaze_axi_quad_spi_0_0_soft_reset is
     intr_ip2bus_wrack : in STD_LOGIC;
     ip2Bus_WrAck_intr_reg_hole : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_soft_reset : entity is "soft_reset";
 end microblaze_axi_quad_spi_0_0_soft_reset;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_soft_reset is
@@ -5274,6 +5328,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_cdc_gray is
   attribute DEST_SYNC_FF of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is 2;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is "xpm_cdc_gray";
   attribute REG_OUTPUT : integer;
   attribute REG_OUTPUT of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is 0;
   attribute SIM_ASSERT_CHK : integer;
@@ -5287,7 +5343,7 @@ entity microblaze_axi_quad_spi_0_0_xpm_cdc_gray is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is "true";
+  attribute keep_hierarchy of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of microblaze_axi_quad_spi_0_0_xpm_cdc_gray : entity is "GRAY";
 end microblaze_axi_quad_spi_0_0_xpm_cdc_gray;
@@ -5522,7 +5578,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__1\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__1\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__1\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__1\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__1\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__1\;
@@ -5757,7 +5813,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__2\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__2\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__2\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__2\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__2\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__2\;
@@ -5992,7 +6048,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__3\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__3\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__3\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__3\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__3\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__3\;
@@ -6227,7 +6283,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0\;
@@ -6633,7 +6689,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0__1\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0__1\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0__1\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0__1\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0__1\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized0__1\;
@@ -7039,7 +7095,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1\;
@@ -7327,7 +7383,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1__1\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1__1\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1__1\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1__1\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1__1\ : entity is "GRAY";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_gray__parameterized1__1\;
@@ -7600,6 +7656,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is 2;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -7609,7 +7667,7 @@ entity microblaze_axi_quad_spi_0_0_xpm_cdc_single is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is "true";
+  attribute keep_hierarchy of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of microblaze_axi_quad_spi_0_0_xpm_cdc_single : entity is "SINGLE";
 end microblaze_axi_quad_spi_0_0_xpm_cdc_single;
@@ -7674,7 +7732,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_single__1\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_single__1\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_single__1\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_single__1\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_single__1\ : entity is "SINGLE";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_single__1\;
@@ -7731,6 +7789,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst is
   attribute INIT of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is "0";
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is "xpm_cdc_sync_rst";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is 0;
   attribute VERSION : integer;
@@ -7738,12 +7798,84 @@ entity microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is "true";
+  attribute keep_hierarchy of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst : entity is "SYNC_RST";
 end microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst is
+  signal syncstages_ff : STD_LOGIC_VECTOR ( 1 downto 0 );
+  attribute RTL_KEEP : string;
+  attribute RTL_KEEP of syncstages_ff : signal is "true";
+  attribute async_reg : string;
+  attribute async_reg of syncstages_ff : signal is "true";
+  attribute xpm_cdc of syncstages_ff : signal is "SYNC_RST";
+  attribute ASYNC_REG_boolean : boolean;
+  attribute ASYNC_REG_boolean of \syncstages_ff_reg[0]\ : label is std.standard.true;
+  attribute KEEP : string;
+  attribute KEEP of \syncstages_ff_reg[0]\ : label is "true";
+  attribute XPM_CDC of \syncstages_ff_reg[0]\ : label is "SYNC_RST";
+  attribute ASYNC_REG_boolean of \syncstages_ff_reg[1]\ : label is std.standard.true;
+  attribute KEEP of \syncstages_ff_reg[1]\ : label is "true";
+  attribute XPM_CDC of \syncstages_ff_reg[1]\ : label is "SYNC_RST";
+begin
+  dest_rst <= syncstages_ff(1);
+\syncstages_ff_reg[0]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => dest_clk,
+      CE => '1',
+      D => src_rst,
+      Q => syncstages_ff(0),
+      R => '0'
+    );
+\syncstages_ff_reg[1]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => dest_clk,
+      CE => '1',
+      D => syncstages_ff(0),
+      Q => syncstages_ff(1),
+      R => '0'
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ is
+  port (
+    src_rst : in STD_LOGIC;
+    dest_clk : in STD_LOGIC;
+    dest_rst : out STD_LOGIC
+  );
+  attribute DEF_VAL : string;
+  attribute DEF_VAL of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is "1'b0";
+  attribute DEST_SYNC_FF : integer;
+  attribute DEST_SYNC_FF of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is 2;
+  attribute INIT : string;
+  attribute INIT of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is "0";
+  attribute INIT_SYNC_FF : integer;
+  attribute INIT_SYNC_FF of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is "xpm_cdc_sync_rst";
+  attribute SIM_ASSERT_CHK : integer;
+  attribute SIM_ASSERT_CHK of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is 0;
+  attribute VERSION : integer;
+  attribute VERSION of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is 0;
+  attribute XPM_MODULE : string;
+  attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is "TRUE";
+  attribute keep_hierarchy : string;
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is "soft";
+  attribute xpm_cdc : string;
+  attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ : entity is "SYNC_RST";
+end \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\;
+
+architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\ is
   signal syncstages_ff : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute RTL_KEEP : string;
   attribute RTL_KEEP of syncstages_ff : signal is "true";
@@ -7810,7 +7942,7 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\ : entity is "SYNC_RST";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\;
@@ -7882,84 +8014,12 @@ entity \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\ is
   attribute XPM_MODULE : string;
   attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\ : entity is "TRUE";
   attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\ : entity is "true";
+  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\ : entity is "soft";
   attribute xpm_cdc : string;
   attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\ : entity is "SYNC_RST";
 end \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\;
 
 architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\ is
-  signal syncstages_ff : STD_LOGIC_VECTOR ( 1 downto 0 );
-  attribute RTL_KEEP : string;
-  attribute RTL_KEEP of syncstages_ff : signal is "true";
-  attribute async_reg : string;
-  attribute async_reg of syncstages_ff : signal is "true";
-  attribute xpm_cdc of syncstages_ff : signal is "SYNC_RST";
-  attribute ASYNC_REG_boolean : boolean;
-  attribute ASYNC_REG_boolean of \syncstages_ff_reg[0]\ : label is std.standard.true;
-  attribute KEEP : string;
-  attribute KEEP of \syncstages_ff_reg[0]\ : label is "true";
-  attribute XPM_CDC of \syncstages_ff_reg[0]\ : label is "SYNC_RST";
-  attribute ASYNC_REG_boolean of \syncstages_ff_reg[1]\ : label is std.standard.true;
-  attribute KEEP of \syncstages_ff_reg[1]\ : label is "true";
-  attribute XPM_CDC of \syncstages_ff_reg[1]\ : label is "SYNC_RST";
-begin
-  dest_rst <= syncstages_ff(1);
-\syncstages_ff_reg[0]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => dest_clk,
-      CE => '1',
-      D => src_rst,
-      Q => syncstages_ff(0),
-      R => '0'
-    );
-\syncstages_ff_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => dest_clk,
-      CE => '1',
-      D => syncstages_ff(0),
-      Q => syncstages_ff(1),
-      R => '0'
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ is
-  port (
-    src_rst : in STD_LOGIC;
-    dest_clk : in STD_LOGIC;
-    dest_rst : out STD_LOGIC
-  );
-  attribute DEF_VAL : string;
-  attribute DEF_VAL of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is "1'b0";
-  attribute DEST_SYNC_FF : integer;
-  attribute DEST_SYNC_FF of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is 2;
-  attribute INIT : string;
-  attribute INIT of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is "0";
-  attribute INIT_SYNC_FF : integer;
-  attribute INIT_SYNC_FF of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is "xpm_cdc_sync_rst";
-  attribute SIM_ASSERT_CHK : integer;
-  attribute SIM_ASSERT_CHK of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is 0;
-  attribute VERSION : integer;
-  attribute VERSION of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is 0;
-  attribute XPM_MODULE : string;
-  attribute XPM_MODULE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is "TRUE";
-  attribute keep_hierarchy : string;
-  attribute keep_hierarchy of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is "true";
-  attribute xpm_cdc : string;
-  attribute xpm_cdc of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ : entity is "SYNC_RST";
-end \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\;
-
-architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\ is
   signal syncstages_ff : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute RTL_KEEP : string;
   attribute RTL_KEEP of syncstages_ff : signal is "true";
@@ -8010,6 +8070,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_counter_updn is
     wr_pntr_plus1_pf_carry : in STD_LOGIC;
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_counter_updn : entity is "xpm_counter_updn";
 end microblaze_axi_quad_spi_0_0_xpm_counter_updn;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_counter_updn is
@@ -10151,6 +10213,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_fifo_reg_bit is
     prog_full : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end microblaze_axi_quad_spi_0_0_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_fifo_reg_bit is
@@ -10288,6 +10352,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_fifo_reg_vec is
     D : in STD_LOGIC_VECTOR ( 3 downto 0 );
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_fifo_reg_vec : entity is "xpm_fifo_reg_vec";
 end microblaze_axi_quad_spi_0_0_xpm_fifo_reg_vec;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_fifo_reg_vec is
@@ -11445,6 +11511,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_memory_base is
   attribute MESSAGE_CONTROL of microblaze_axi_quad_spi_0_0_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of microblaze_axi_quad_spi_0_0_xpm_memory_base : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : integer;
   attribute P_ECC_MODE of microblaze_axi_quad_spi_0_0_xpm_memory_base : entity is 0;
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -12458,7 +12526,7 @@ entity microblaze_axi_quad_spi_0_0_address_decoder is
     dout : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[23]\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     spicr_0_loop_frm_axi_clk : in STD_LOGIC;
-    SPISSR_frm_axi_clk : in STD_LOGIC;
+    SPISSR_frm_axi_clk : in STD_LOGIC_VECTOR ( 0 to 0 );
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_3_0\ : in STD_LOGIC;
     rx_fifo_empty_i : in STD_LOGIC;
     ip2Bus_WrAck_core_reg_1 : in STD_LOGIC;
@@ -12502,6 +12570,8 @@ entity microblaze_axi_quad_spi_0_0_address_decoder is
     s_axi_awready : in STD_LOGIC;
     s_axi_awready_0 : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_address_decoder : entity is "address_decoder";
 end microblaze_axi_quad_spi_0_0_address_decoder;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_address_decoder is
@@ -13412,7 +13482,7 @@ Bus_RNW_reg_reg: unisim.vcomponents.FDRE
       I2 => p_7_in,
       I3 => \^bus_rnw_reg_reg_0\,
       I4 => \^p_3_in\,
-      I5 => SPISSR_frm_axi_clk,
+      I5 => SPISSR_frm_axi_clk(0),
       O => \CONTROL_REG_5_9_GENERATE[9].SPICR_data_int_reg[9]\
     );
 \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_5\: unisim.vcomponents.LUT6
@@ -13599,12 +13669,12 @@ Bus_RNW_reg_reg: unisim.vcomponents.FDRE
       \GEN_BKEND_CE_REGISTERS[22].ce_out_i_reg[22]\(4 downto 0) => \GEN_BKEND_CE_REGISTERS[30].ce_out_i_reg[30]_0\(4 downto 0),
       ce_expnd_i_9 => ce_expnd_i_9
     );
-\MEM_DECODE_GEN[2].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I\: entity work.\microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_16\
+\MEM_DECODE_GEN[2].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I\: entity work.\microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized19_17\
      port map (
       \GEN_BKEND_CE_REGISTERS[26].ce_out_i_reg[26]\(4 downto 0) => \GEN_BKEND_CE_REGISTERS[30].ce_out_i_reg[30]_0\(4 downto 0),
       ce_expnd_i_5 => ce_expnd_i_5
     );
-\MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I\: entity work.\microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_17\
+\MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I\: entity work.\microblaze_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_18\
      port map (
       \GEN_BKEND_CE_REGISTERS[30].ce_out_i_reg[30]\(4 downto 0) => \GEN_BKEND_CE_REGISTERS[30].ce_out_i_reg[30]_0\(4 downto 0),
       ce_expnd_i_1 => ce_expnd_i_1
@@ -13846,6 +13916,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_fifo_rst is
     \guf.underflow_i_reg\ : in STD_LOGIC;
     rd_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end microblaze_axi_quad_spi_0_0_xpm_fifo_rst;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_fifo_rst is
@@ -14266,7 +14338,7 @@ begin
       Q => \^wrst_busy\,
       R => '0'
     );
-\gen_rst_ic.wrst_rd_inst\: entity work.\microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__4\
+\gen_rst_ic.wrst_rd_inst\: entity work.\microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\
      port map (
       dest_clk => rd_clk,
       dest_rst => \gen_rst_ic.fifo_wr_rst_rd\,
@@ -14352,7 +14424,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_axi_quad_spi_0_0_xpm_fifo_rst__xdcDup__1\ is
+entity microblaze_axi_quad_spi_0_0_xpm_fifo_rst_16 is
   port (
     \gen_rst_ic.fifo_rd_rst_ic_reg_0\ : out STD_LOGIC;
     wrst_busy : out STD_LOGIC;
@@ -14372,10 +14444,10 @@ entity \microblaze_axi_quad_spi_0_0_xpm_fifo_rst__xdcDup__1\ is
     rd_en : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_axi_quad_spi_0_0_xpm_fifo_rst__xdcDup__1\ : entity is "xpm_fifo_rst";
-end \microblaze_axi_quad_spi_0_0_xpm_fifo_rst__xdcDup__1\;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_fifo_rst_16 : entity is "xpm_fifo_rst";
+end microblaze_axi_quad_spi_0_0_xpm_fifo_rst_16;
 
-architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_xpm_fifo_rst__xdcDup__1\ is
+architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_fifo_rst_16 is
   signal \/i__n_0\ : STD_LOGIC;
   signal \FSM_onehot_gen_rst_ic.curr_wrst_state[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_onehot_gen_rst_ic.curr_wrst_state[1]_i_1_n_0\ : STD_LOGIC;
@@ -14718,7 +14790,7 @@ begin
       Q => \gen_rst_ic.fifo_wr_rst_ic\,
       R => '0'
     );
-\gen_rst_ic.rrst_wr_inst\: entity work.\microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\
+\gen_rst_ic.rrst_wr_inst\: entity work.\microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__1\
      port map (
       dest_clk => wr_clk,
       dest_rst => \gen_rst_ic.fifo_rd_rst_wr_i\,
@@ -14793,7 +14865,7 @@ begin
       Q => \^wrst_busy\,
       R => '0'
     );
-\gen_rst_ic.wrst_rd_inst\: entity work.\microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__2\
+\gen_rst_ic.wrst_rd_inst\: entity work.\microblaze_axi_quad_spi_0_0_xpm_cdc_sync_rst__3\
      port map (
       dest_clk => rd_clk,
       dest_rst => \gen_rst_ic.fifo_wr_rst_rd\,
@@ -14936,7 +15008,7 @@ entity microblaze_axi_quad_spi_0_0_slave_attachment is
     dout : in STD_LOGIC_VECTOR ( 7 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     spicr_0_loop_frm_axi_clk : in STD_LOGIC;
-    SPISSR_frm_axi_clk : in STD_LOGIC;
+    SPISSR_frm_axi_clk : in STD_LOGIC_VECTOR ( 0 to 0 );
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_3\ : in STD_LOGIC;
     rx_fifo_empty_i : in STD_LOGIC;
     ip2Bus_WrAck_core_reg_1 : in STD_LOGIC;
@@ -14982,6 +15054,8 @@ entity microblaze_axi_quad_spi_0_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_slave_attachment : entity is "slave_attachment";
 end microblaze_axi_quad_spi_0_0_slave_attachment;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_slave_attachment is
@@ -15018,11 +15092,11 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_slave_attachment is
   signal \^reset2ip_reset_int\ : STD_LOGIC;
   signal rst_i_1_n_0 : STD_LOGIC;
   signal \^s_axi_bresp\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal s_axi_bresp_i : STD_LOGIC;
+  signal s_axi_bresp_i : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \s_axi_bresp_i[1]_i_1_n_0\ : STD_LOGIC;
   signal s_axi_bvalid_i_i_1_n_0 : STD_LOGIC;
   signal \^s_axi_bvalid_i_reg_0\ : STD_LOGIC;
-  signal s_axi_rresp_i : STD_LOGIC;
+  signal s_axi_rresp_i : STD_LOGIC_VECTOR ( 0 to 0 );
   signal s_axi_rvalid_i_i_1_n_0 : STD_LOGIC;
   signal \^s_axi_rvalid_i_reg_0\ : STD_LOGIC;
   signal start2 : STD_LOGIC;
@@ -15077,7 +15151,7 @@ begin
       I0 => s_axi_arvalid,
       I1 => \FSM_onehot_state_reg_n_0_[0]\,
       I2 => \^legacy_md_wr_rd_ack_gen.ip2bus_rdack_reg\,
-      I3 => s_axi_rresp_i,
+      I3 => s_axi_rresp_i(0),
       O => \FSM_onehot_state[1]_i_1_n_0\
     );
 \FSM_onehot_state[2]_i_1\: unisim.vcomponents.LUT6
@@ -15090,7 +15164,7 @@ begin
       I2 => s_axi_arvalid,
       I3 => \FSM_onehot_state_reg_n_0_[0]\,
       I4 => \^legacy_md_wr_rd_ack_gen.ip2bus_wrack_reg\,
-      I5 => s_axi_bresp_i,
+      I5 => s_axi_bresp_i(0),
       O => \FSM_onehot_state[2]_i_1_n_0\
     );
 \FSM_onehot_state[3]_i_1\: unisim.vcomponents.LUT6
@@ -15099,8 +15173,8 @@ begin
     )
         port map (
       I0 => \^legacy_md_wr_rd_ack_gen.ip2bus_wrack_reg\,
-      I1 => s_axi_bresp_i,
-      I2 => s_axi_rresp_i,
+      I1 => s_axi_bresp_i(0),
+      I2 => s_axi_rresp_i(0),
       I3 => \^legacy_md_wr_rd_ack_gen.ip2bus_rdack_reg\,
       I4 => \FSM_onehot_state_reg_n_0_[3]\,
       I5 => \state1__2\,
@@ -15136,7 +15210,7 @@ begin
       C => s_axi_aclk,
       CE => '1',
       D => \FSM_onehot_state[1]_i_1_n_0\,
-      Q => s_axi_rresp_i,
+      Q => s_axi_rresp_i(0),
       R => \^sr\(0)
     );
 \FSM_onehot_state_reg[2]\: unisim.vcomponents.FDRE
@@ -15147,7 +15221,7 @@ begin
       C => s_axi_aclk,
       CE => '1',
       D => \FSM_onehot_state[2]_i_1_n_0\,
-      Q => s_axi_bresp_i,
+      Q => s_axi_bresp_i(0),
       R => \^sr\(0)
     );
 \FSM_onehot_state_reg[3]\: unisim.vcomponents.FDRE
@@ -15310,7 +15384,7 @@ I_DECODER: entity work.microblaze_axi_quad_spi_0_0_address_decoder
       \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2\ => \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2\,
       Q => start2,
       SPICR_data_int_reg0 => SPICR_data_int_reg0,
-      SPISSR_frm_axi_clk => SPISSR_frm_axi_clk,
+      SPISSR_frm_axi_clk(0) => SPISSR_frm_axi_clk(0),
       Tx_FIFO_Empty_SPISR_to_axi_clk => Tx_FIFO_Empty_SPISR_to_axi_clk,
       Tx_FIFO_Full_int => Tx_FIFO_Full_int,
       almost_full => almost_full,
@@ -15560,7 +15634,10 @@ rst_i_1: unisim.vcomponents.LUT1
       O => rst_i_1_n_0
     );
 rst_reg: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => s_axi_aclk,
       CE => '1',
       D => rst_i_1_n_0,
@@ -15573,7 +15650,7 @@ rst_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => p_1_in(0),
-      I1 => s_axi_bresp_i,
+      I1 => s_axi_bresp_i(0),
       I2 => \^s_axi_bresp\(0),
       O => \s_axi_bresp_i[1]_i_1_n_0\
     );
@@ -15617,7 +15694,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(0),
       Q => s_axi_rdata(0),
       R => \^sr\(0)
@@ -15628,7 +15705,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(1),
       Q => s_axi_rdata(1),
       R => \^sr\(0)
@@ -15639,7 +15716,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(2),
       Q => s_axi_rdata(2),
       R => \^sr\(0)
@@ -15650,7 +15727,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(10),
       Q => s_axi_rdata(10),
       R => \^sr\(0)
@@ -15661,7 +15738,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(3),
       Q => s_axi_rdata(3),
       R => \^sr\(0)
@@ -15672,7 +15749,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(4),
       Q => s_axi_rdata(4),
       R => \^sr\(0)
@@ -15683,7 +15760,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(5),
       Q => s_axi_rdata(5),
       R => \^sr\(0)
@@ -15694,7 +15771,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(6),
       Q => s_axi_rdata(6),
       R => \^sr\(0)
@@ -15705,7 +15782,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(7),
       Q => s_axi_rdata(7),
       R => \^sr\(0)
@@ -15716,7 +15793,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(8),
       Q => s_axi_rdata(8),
       R => \^sr\(0)
@@ -15727,7 +15804,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => \s_axi_rdata_i_reg[31]_0\(9),
       Q => s_axi_rdata(9),
       R => \^sr\(0)
@@ -15738,7 +15815,7 @@ s_axi_bvalid_i_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => s_axi_aclk,
-      CE => s_axi_rresp_i,
+      CE => s_axi_rresp_i(0),
       D => p_1_in(0),
       Q => s_axi_rresp(0),
       R => \^sr\(0)
@@ -15931,6 +16008,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_fifo_base is
   attribute FULL_RESET_VALUE of microblaze_axi_quad_spi_0_0_xpm_fifo_base : entity is 0;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of microblaze_axi_quad_spi_0_0_xpm_fifo_base : entity is "1'b0";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of microblaze_axi_quad_spi_0_0_xpm_fifo_base : entity is 8;
   attribute PE_THRESH_MAX : integer;
@@ -16156,7 +16235,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_fifo_base is
   attribute ECC_TYPE of \gen_sdpram.xpm_memory_base_inst\ : label is "NONE";
   attribute IGNORE_INIT_SYNTH : integer;
   attribute IGNORE_INIT_SYNTH of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
-  attribute KEEP_HIERARCHY of \gen_sdpram.xpm_memory_base_inst\ : label is "soft";
+  attribute KEEP_HIERARCHY of \gen_sdpram.xpm_memory_base_inst\ : label is "SOFT";
   attribute MAX_NUM_CHAR : integer;
   attribute MAX_NUM_CHAR of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute MEMORY_INIT_FILE : string;
@@ -16901,7 +16980,7 @@ wrpp2_inst: entity work.\microblaze_axi_quad_spi_0_0_xpm_counter_updn__parameter
       wr_clk => wr_clk,
       wrst_busy => wrst_busy
     );
-xpm_fifo_rst_inst: entity work.\microblaze_axi_quad_spi_0_0_xpm_fifo_rst__xdcDup__1\
+xpm_fifo_rst_inst: entity work.microblaze_axi_quad_spi_0_0_xpm_fifo_rst_16
      port map (
       E(0) => wr_pntr_plus1_pf_carry,
       Q(1 downto 0) => curr_fwft_state(1 downto 0),
@@ -17237,7 +17316,7 @@ architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_xpm_fifo_base__parameteri
   attribute ECC_TYPE of \gen_sdpram.xpm_memory_base_inst\ : label is "NONE";
   attribute IGNORE_INIT_SYNTH : integer;
   attribute IGNORE_INIT_SYNTH of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
-  attribute KEEP_HIERARCHY of \gen_sdpram.xpm_memory_base_inst\ : label is "soft";
+  attribute KEEP_HIERARCHY of \gen_sdpram.xpm_memory_base_inst\ : label is "SOFT";
   attribute MAX_NUM_CHAR : integer;
   attribute MAX_NUM_CHAR of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute MEMORY_INIT_FILE : string;
@@ -18065,7 +18144,7 @@ entity microblaze_axi_quad_spi_0_0_axi_lite_ipif is
     dout : in STD_LOGIC_VECTOR ( 7 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 8 downto 0 );
     spicr_0_loop_frm_axi_clk : in STD_LOGIC;
-    SPISSR_frm_axi_clk : in STD_LOGIC;
+    SPISSR_frm_axi_clk : in STD_LOGIC_VECTOR ( 0 to 0 );
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_3\ : in STD_LOGIC;
     rx_fifo_empty_i : in STD_LOGIC;
     ip2Bus_WrAck_core_reg_1 : in STD_LOGIC;
@@ -18111,6 +18190,8 @@ entity microblaze_axi_quad_spi_0_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end microblaze_axi_quad_spi_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_axi_lite_ipif is
@@ -18139,7 +18220,7 @@ I_SLAVE_ATTACHMENT: entity work.microblaze_axi_quad_spi_0_0_slave_attachment
       Q(8 downto 0) => Q(8 downto 0),
       SPICR_data_int_reg0 => SPICR_data_int_reg0,
       \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]\ => \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]\,
-      SPISSR_frm_axi_clk => SPISSR_frm_axi_clk,
+      SPISSR_frm_axi_clk(0) => SPISSR_frm_axi_clk(0),
       SR(0) => bus2ip_reset_ipif_inverted,
       Tx_FIFO_Empty_SPISR_to_axi_clk => Tx_FIFO_Empty_SPISR_to_axi_clk,
       Tx_FIFO_Full_int => Tx_FIFO_Full_int,
@@ -18272,6 +18353,8 @@ entity microblaze_axi_quad_spi_0_0_xpm_fifo_async is
   attribute FIFO_WRITE_DEPTH of microblaze_axi_quad_spi_0_0_xpm_fifo_async : entity is 16;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of microblaze_axi_quad_spi_0_0_xpm_fifo_async : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_xpm_fifo_async : entity is "xpm_fifo_async";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of microblaze_axi_quad_spi_0_0_xpm_fifo_async : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -18364,7 +18447,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_xpm_fifo_async is
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is "1'b0";
   attribute KEEP_HIERARCHY : string;
-  attribute KEEP_HIERARCHY of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is "soft";
+  attribute KEEP_HIERARCHY of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is "SOFT";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is 8;
   attribute PE_THRESH_MAX : integer;
@@ -18609,7 +18692,7 @@ architecture STRUCTURE of \microblaze_axi_quad_spi_0_0_xpm_fifo_async__parameter
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is "1'b1";
   attribute KEEP_HIERARCHY : string;
-  attribute KEEP_HIERARCHY of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is "soft";
+  attribute KEEP_HIERARCHY of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is "SOFT";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of \gnuram_async_fifo.xpm_fifo_base_inst\ : label is 8;
   attribute PE_THRESH_MAX : integer;
@@ -18724,7 +18807,7 @@ entity microblaze_axi_quad_spi_0_0_qspi_core_interface is
     spicr_8_tr_inhibit_frm_axi_clk : out STD_LOGIC;
     spicr_9_lsb_frm_axi_clk : out STD_LOGIC;
     sr_3_MODF_int : out STD_LOGIC;
-    SPISSR_frm_axi_clk : out STD_LOGIC;
+    SPISSR_frm_axi_clk : out STD_LOGIC_VECTOR ( 0 to 0 );
     dout : out STD_LOGIC_VECTOR ( 7 downto 0 );
     empty : out STD_LOGIC;
     dest_out : out STD_LOGIC;
@@ -18812,6 +18895,8 @@ entity microblaze_axi_quad_spi_0_0_qspi_core_interface is
     io1_i_sync : in STD_LOGIC;
     io0_i_sync : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_qspi_core_interface : entity is "qspi_core_interface";
 end microblaze_axi_quad_spi_0_0_qspi_core_interface;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_core_interface is
@@ -18886,7 +18971,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_core_interface is
   signal SOFT_RESET_I_n_2 : STD_LOGIC;
   signal SPICR_2_MST_N_SLV_to_spi_clk : STD_LOGIC;
   signal SPISEL_sync : STD_LOGIC;
-  signal \^spissr_frm_axi_clk\ : STD_LOGIC;
+  signal \^spissr_frm_axi_clk\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Slave_MODF_strobe0 : STD_LOGIC;
   signal \^tx_fifo_empty_spisr_to_axi_clk\ : STD_LOGIC;
   signal Tx_FIFO_Full_i : STD_LOGIC;
@@ -18925,7 +19010,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_core_interface is
   signal read_ack_delay_5 : STD_LOGIC;
   signal read_ack_delay_6 : STD_LOGIC;
   signal read_ack_delay_7 : STD_LOGIC;
-  signal register_Data_slvsel_int : STD_LOGIC;
+  signal register_Data_slvsel_int : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst : STD_LOGIC;
   signal rst12_out : STD_LOGIC;
   signal rst_to_spi_int : STD_LOGIC;
@@ -19095,7 +19180,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_qspi_core_interface is
 begin
   \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]\ <= \^gen_ip_irpt_status_reg[0].gen_reg_status.ip_irpt_status_reg_reg[0]\;
   \RESET_FLOPS[15].RST_FLOPS\ <= \^reset_flops[15].rst_flops\;
-  SPISSR_frm_axi_clk <= \^spissr_frm_axi_clk\;
+  SPISSR_frm_axi_clk(0) <= \^spissr_frm_axi_clk\(0);
   Tx_FIFO_Empty_SPISR_to_axi_clk <= \^tx_fifo_empty_spisr_to_axi_clk\;
   Tx_FIFO_Full_int <= \^tx_fifo_full_int\;
   almost_full <= \^almost_full\;
@@ -19213,7 +19298,7 @@ CONTROL_REG_I: entity work.microblaze_axi_quad_spi_0_0_qspi_cntrl_reg
       Rst_to_spi => rst_to_spi_int,
       SPICR_2_MST_N_SLV_to_spi_clk => SPICR_2_MST_N_SLV_to_spi_clk,
       SPISEL_sync => SPISEL_sync,
-      SPISSR_frm_axi_clk => \^spissr_frm_axi_clk\,
+      SPISSR_frm_axi_clk(0) => \^spissr_frm_axi_clk\(0),
       Slave_MODF_strobe0 => Slave_MODF_strobe0,
       Tx_FIFO_Full_i => Tx_FIFO_Full_i,
       Tx_FIFO_Full_int => \^tx_fifo_full_int\,
@@ -19241,7 +19326,7 @@ CONTROL_REG_I: entity work.microblaze_axi_quad_spi_0_0_qspi_cntrl_reg
       p_2_in => p_2_in,
       p_5_in => p_5_in,
       rd_data_count(0) => \FIFO_EXISTS.Rx_FIFO_occ_Reversed\(0),
-      register_Data_slvsel_int => register_Data_slvsel_int,
+      register_Data_slvsel_int(0) => register_Data_slvsel_int(0),
       reset2ip_reset_int => reset2ip_reset_int,
       rst => rst,
       s_axi_aclk => s_axi_aclk,
@@ -19951,7 +20036,7 @@ INTERRUPT_CONTROL_I: entity work.microblaze_axi_quad_spi_0_0_interrupt_control
       io1_t => io1_t,
       modf_strobe_int => modf_strobe_int,
       rd_en => rd_en,
-      register_Data_slvsel_int => register_Data_slvsel_int,
+      register_Data_slvsel_int(0) => register_Data_slvsel_int(0),
       sck_i => sck_i,
       sck_o => sck_o,
       sck_t => sck_t,
@@ -20004,7 +20089,7 @@ SOFT_RESET_I: entity work.microblaze_axi_quad_spi_0_0_soft_reset
      port map (
       Bus_RNW_reg => Bus_RNW_reg,
       \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0\ => \^ip2bus_wrack_core_reg_1\,
-      SPISSR_frm_axi_clk => \^spissr_frm_axi_clk\,
+      SPISSR_frm_axi_clk(0) => \^spissr_frm_axi_clk\(0),
       modf_reg_0 => \FIFO_EXISTS.CLK_CROSS_I_n_17\,
       p_3_in => p_3_in,
       reset2ip_reset_int => reset2ip_reset_int,
@@ -20082,6 +20167,8 @@ entity microblaze_axi_quad_spi_0_0_axi_quad_spi_top is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_axi_quad_spi_top : entity is "axi_quad_spi_top";
 end microblaze_axi_quad_spi_0_0_axi_quad_spi_top;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0_axi_quad_spi_top is
@@ -20141,7 +20228,7 @@ architecture STRUCTURE of microblaze_axi_quad_spi_0_0_axi_quad_spi_top is
   signal \SOFT_RESET_I/reset_trig0\ : STD_LOGIC;
   signal \SOFT_RESET_I/sw_rst_cond\ : STD_LOGIC;
   signal \SOFT_RESET_I/sw_rst_cond_d1\ : STD_LOGIC;
-  signal SPISSR_frm_axi_clk : STD_LOGIC;
+  signal SPISSR_frm_axi_clk : STD_LOGIC_VECTOR ( 0 to 0 );
   signal Tx_FIFO_Empty_SPISR_to_axi_clk : STD_LOGIC;
   signal Tx_FIFO_Full_int : STD_LOGIC;
   signal bus2ip_reset_ipif_inverted : STD_LOGIC;
@@ -20248,7 +20335,7 @@ IO1_I_REG: unisim.vcomponents.FDRE
       Q(0) => \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_65\,
       SPICR_data_int_reg0 => \CONTROL_REG_I/SPICR_data_int_reg0\,
       \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]\ => \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_48\,
-      SPISSR_frm_axi_clk => SPISSR_frm_axi_clk,
+      SPISSR_frm_axi_clk(0) => SPISSR_frm_axi_clk(0),
       Tx_FIFO_Empty_SPISR_to_axi_clk => Tx_FIFO_Empty_SPISR_to_axi_clk,
       Tx_FIFO_Full_int => Tx_FIFO_Full_int,
       almost_full => \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_22\,
@@ -20395,7 +20482,7 @@ IO1_I_REG: unisim.vcomponents.FDRE
       Q(0) => \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_65\,
       \RESET_FLOPS[15].RST_FLOPS\ => \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_48\,
       SPICR_data_int_reg0 => \CONTROL_REG_I/SPICR_data_int_reg0\,
-      SPISSR_frm_axi_clk => SPISSR_frm_axi_clk,
+      SPISSR_frm_axi_clk(0) => SPISSR_frm_axi_clk(0),
       Tx_FIFO_Empty_SPISR_to_axi_clk => Tx_FIFO_Empty_SPISR_to_axi_clk,
       Tx_FIFO_Full_int => Tx_FIFO_Full_int,
       almost_full => \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_22\,
@@ -20654,6 +20741,8 @@ entity microblaze_axi_quad_spi_0_0_axi_quad_spi is
   attribute C_XIP_MODE of microblaze_axi_quad_spi_0_0_axi_quad_spi : entity is 0;
   attribute C_XIP_PERF_MODE : integer;
   attribute C_XIP_PERF_MODE of microblaze_axi_quad_spi_0_0_axi_quad_spi : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_0_axi_quad_spi : entity is "axi_quad_spi";
   attribute dont_touch : string;
   attribute dont_touch of microblaze_axi_quad_spi_0_0_axi_quad_spi : entity is "yes";
   attribute downgradeipidentifiedwarnings : string;
@@ -20861,7 +20950,7 @@ entity microblaze_axi_quad_spi_0_0 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_axi_quad_spi_0_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of microblaze_axi_quad_spi_0_0 : entity is "axi_quad_spi,Vivado 2025.1";
+  attribute x_core_info of microblaze_axi_quad_spi_0_0 : entity is "axi_quad_spi,Vivado 2025.2";
 end microblaze_axi_quad_spi_0_0;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_0 is
