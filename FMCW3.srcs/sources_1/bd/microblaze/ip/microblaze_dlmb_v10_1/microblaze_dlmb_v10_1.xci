@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "microblaze_dlmb_v10_1",
-    "cell_name": "dlmb_v10",
+    "cell_name": "microblaze_0_local_memory/dlmb_v10",
     "component_reference": "xilinx.com:ip:lmb_v10:3.0",
     "ip_revision": "16",
     "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1",
@@ -86,7 +86,7 @@
             "DATA_WIDTH": [ { "value": "32", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "PROTOCOL": [ { "value": "STANDARD", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "HAS_PROT": [ { "value": "0", "value_src": "propagated", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+            "HAS_PROT": [ { "value": "0", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ABUS": [ { "physical_name": "LMB_ABus" } ],
@@ -163,5 +163,5 @@
       }
     }
   },
-  "checksum": "22490f8c"
+  "checksum": "6da3b329"
 }

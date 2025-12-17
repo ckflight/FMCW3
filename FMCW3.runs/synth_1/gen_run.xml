@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1765970938" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1765974264" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
   <File Type="PA-TCL" Name="top_module.tcl"/>
   <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
   <File Type="RDS-RDS" Name="top_module.vds"/>
@@ -117,7 +117,6 @@
   <BlockFileSet Type="BlockSrcs" Name="microblaze_axi_intc_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="microblaze_ilmb_v10_1"/>
   <BlockFileSet Type="BlockSrcs" Name="microblaze_dlmb_bram_if_cntlr_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="microblaze_axi_smc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_0"/>

@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "microblaze_dlmb_bram_if_cntlr_1",
-    "cell_name": "dlmb_bram_if_cntlr",
+    "cell_name": "microblaze_0_local_memory/dlmb_bram_if_cntlr",
     "component_reference": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
     "ip_revision": "27",
     "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_1",
@@ -173,7 +173,7 @@
             "MEM_ECC": [ { "value": "NONE", "value_src": "propagated", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_WRITE_MODE": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "READ_LATENCY": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
+            "MEM_ADDRESS_MODE": [ { "value": "", "value_src": "weak", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ADDR": [ { "physical_name": "BRAM_Addr_A" } ],
@@ -378,5 +378,5 @@
       }
     }
   },
-  "checksum": "c4bb881e"
+  "checksum": "18b12838"
 }

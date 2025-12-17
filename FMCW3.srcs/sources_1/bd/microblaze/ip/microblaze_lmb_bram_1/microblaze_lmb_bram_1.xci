@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "microblaze_lmb_bram_1",
-    "cell_name": "lmb_bram",
+    "cell_name": "microblaze_0_local_memory/lmb_bram",
     "component_reference": "xilinx.com:ip:blk_mem_gen:8.4",
     "ip_revision": "12",
     "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_lmb_bram_1",
@@ -291,5 +291,5 @@
       }
     }
   },
-  "checksum": "f4a9067d"
+  "checksum": "b9fb334e"
 }
