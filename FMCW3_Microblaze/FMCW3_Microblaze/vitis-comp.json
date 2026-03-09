@@ -1,0 +1,62 @@
+{
+  "name": "FMCW3_Microblaze",
+  "type": "PLATFORM",
+  "configuration": {
+    "description": "",
+    "xsa": "/home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/top_module.xsa",
+    "xsaPathInPlatform": "FMCW3_Microblaze/hw/top_module.xsa",
+    "emulationXsa": "",
+    "emulationXsaPathInPlatform": "",
+    "isCustomFSBL": false,
+    "fsblPath": "",
+    "pmufwElf": "",
+    "flow": "EMBEDDED",
+    "processorsMap": {
+      "microblaze_0": "microblaze"
+    },
+    "supportedOS": [
+      "standalone",
+      "freertos",
+      "linux"
+    ],
+    "supportedFamily": "fpga",
+    "stdGenHookList": [
+      {
+        "key": "VITIS_SDT_REPO",
+        "value": ""
+      },
+      {
+        "key": "VITIS_SDT_BOARD_DTS",
+        "value": ""
+      },
+      {
+        "key": "VITIS_SDT_INCLUDE_DTS",
+        "value": ""
+      },
+      {
+        "key": "-dt_overlay",
+        "value": "0"
+      }
+    ],
+    "componentType": "PLATFORM",
+    "domains": [
+      {
+        "name": "standalone_microblaze_0",
+        "displayName": "standalone_microblaze_0",
+        "processor": "microblaze_0",
+        "cpuType": "microblaze",
+        "cpuInstance": "microblaze_0",
+        "os": "standalone",
+        "appTemplate": "empty_application",
+        "isBootDomain": false,
+        "qemuData": "",
+        "qemuArgsFile": "",
+        "pmcQemuArgsFile": "",
+        "isBSPGenReq": false
+      }
+    ],
+    "emptyToolchainConfiguration": []
+  },
+  "useSysrootToolchain": false,
+  "templateFlow": "VITIS"
+}

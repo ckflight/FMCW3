@@ -1,0 +1,8 @@
+create libxil.a
+addlib /home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/uartlite/src/libuartlite.a
+addlib /home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/tmrctr/src/libtmrctr.a
+addlib /home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/spi/src/libspi.a
+addlib /home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/gpio/src/libgpio.a
+addlib /home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/bram/src/libbram.a
+save
+end

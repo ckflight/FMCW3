@@ -1,0 +1,15 @@
+axi_gpio_0:
+- axi_gpio
+- gpio
+axi_quad_spi_0:
+- axi_quad_spi
+- spi
+axi_timer_0:
+- axi_timer
+- tmrctr
+axi_uartlite_0:
+- axi_uartlite
+- uartlite
+microblaze_0_local_memory_dlmb_bram_if_cntlr:
+- lmb_bram_if_cntlr
+- bram

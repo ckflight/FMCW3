@@ -1,0 +1,34 @@
+/dts-v1/;
+#include "pl.dtsi"
+/ {
+	device_id = "7a15ti";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	slrcount = <1>;
+	family = "microblaze";
+	speed_grade = "1L";
+	microblaze_0_local_memory_dlmb_bram_if_cntlr_memory: memory@0 {
+		compatible = "xlnx,lmb-bram-if-cntlr-4.0";
+		xlnx,ip-name = "lmb_bram_if_cntlr";
+		device_type = "memory";
+		memory_type = "memory";
+		reg = <0x00000000 0x8000>;
+	};
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+	aliases {
+		serial0 = &axi_uartlite_0;
+		spi0 = &axi_quad_spi_0;
+	};
+	cpus_microblaze_0: cpus_microblaze@0 {
+		address-map = <0x00000000 &microblaze_0_local_memory_dlmb_bram_if_cntlr_memory 0x00000000 0x8000>, 
+			      <0x00000000 &microblaze_0_local_memory_dlmb_bram_if_cntlr 0x00000000 0x8000>, 
+			      <0x40000000 &axi_gpio_0 0x40000000 0x10000>, 
+			      <0x40600000 &axi_uartlite_0 0x40600000 0x10000>, 
+			      <0x41c00000 &axi_timer_0 0x41c00000 0x10000>, 
+			      <0x44a00000 &axi_quad_spi_0 0x44a00000 0x10000>;
+		#ranges-address-cells = <0x1>;
+		#ranges-size-cells = <0x1>;
+	};
+};

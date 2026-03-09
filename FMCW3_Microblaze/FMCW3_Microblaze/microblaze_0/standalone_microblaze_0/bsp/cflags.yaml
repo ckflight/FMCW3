@@ -1,0 +1,3 @@
+cflags: -mxl-barrel-shift -mlittle-endian -mxl-pattern-compare -mno-xl-reorder -mno-xl-soft-mul
+    -mcpu=v11.0
+libpath: microblazeeb-xilinx-elf/usr/lib/le/bs/p/m/
