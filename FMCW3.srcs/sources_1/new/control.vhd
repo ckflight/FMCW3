@@ -101,12 +101,12 @@ begin
                     
                     -- When microblaze sends high to indicate N seconds of radar op is done, the control logic stays in IDLE state.                    
                     if microblaze_ramp_configured = '1' and config_done = '1' and muxout = '1' and microblaze_sampling_done = '0' then
-                        state <= RAMP;
-                        s_usb_tx_done <= '0';
-                        ramp_done     <= '0';
+                        state           <= RAMP;
+                        s_usb_tx_done   <= '0';
+                        ramp_done       <= '0';
                     
-                    -- microblaze_done signal will not be a pulse.
-                    elsif microblaze_sampling_done = '1' and s_usb_tx_done = '1' then                        
+                    -- microblaze_done signal will not be a pulse it will be constant high so this part is effective until reset
+                    elsif microblaze_sampling_done = '1' and s_usb_tx_done = '1' then
                         state <= WAIT_SOFT_RESET;
                         ramp_done <= '1';
                                        
