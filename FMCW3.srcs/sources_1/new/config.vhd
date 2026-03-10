@@ -76,7 +76,7 @@ begin
                     chipselect   <= '1';
                     read_n       <= '1';
                     
-                    if usb_rx_empty = '0' then
+                    if usb_rx_empty = '0' then -- not empty so read
                         config_st <= st_read;
                     end if;
 

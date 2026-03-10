@@ -57,12 +57,7 @@ entity top_module is
         SD_DATA         : inout std_logic_vector(3 downto 0);
         SD_CMD          : inout std_logic;
         SD_CLK          : out std_logic;
-        SD_CARD_DETECT  : in std_logic;
-
-        -- SPI Flash
-        SPI_CS          : out std_logic;
-        SPI_MOSI        : out std_logic;
-        SPI_MISO        : in std_logic
+        SD_CARD_DETECT  : in std_logic
 
     );
 end top_module;
@@ -333,19 +328,22 @@ begin
     port map (
         clk_100MHz                      => clk_100mhz,
         gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
-        reset_rtl_0                     => reset_n,           -- Board's reset is active low
+        reset_rtl_0                     => reset_n,         -- Board's reset is active low
         spi0_cs(0)                      => s_spi0_cs,       -- spi cs not used, gpio is used to drive cs pin
-        spi0_miso                       => s_spi0_miso,     -- spi miso not used
+        spi0_miso                       => s_spi0_miso,     -- spi miso not used adf does not have output
         spi0_mosi                       => adf_data,        -- spi mosi
         spi0_sck                        => adf_clk,         -- spi clk
         uart_rtl_0_rxd                  => s_uart_rtl_0_rxd,
         uart_rtl_0_txd                  => s_uart_rtl_0_txd,
         
+        -- VHDL --> Microblaze data transfer. Radar's configuration data is received by FT2232H's rx which is controlled by config.vhd
+        -- Received config data is transferred to microblaze for it to configure ADF4158 over spi.
         AXI_STR_RXD_0_tdata(31 downto 0)=> s_AXI_STR_RXD_0_tdata(31 downto 0),
         AXI_STR_RXD_0_tlast             => s_AXI_STR_RXD_0_tlast,
         AXI_STR_RXD_0_tready            => s_AXI_STR_RXD_0_tready,
         AXI_STR_RXD_0_tvalid            => s_AXI_STR_RXD_0_tvalid,
         
+        -- Microblaze --> VHDL data transfer. Not used for now.
         AXI_STR_TXD_0_tdata(31 downto 0)=> s_AXI_STR_TXD_0_tdata(31 downto 0),
         AXI_STR_TXD_0_tlast             => s_AXI_STR_TXD_0_tlast,
         AXI_STR_TXD_0_tready            => s_AXI_STR_TXD_0_tready,
@@ -381,6 +379,7 @@ begin
     port map (
         clk         => clk_40mhz,
         reset_n     => reset_n,
+        
         read_n      => s_config_usb_read_n,     -- 0 to read from rx fifo of usb_sync (config reads usb to get python script's setup parameters)
         write_n     => s_control_usb_write_n,   -- 0 to write to tx fifo of usb_sync (control writes usb to send adc data to python)
         chipselect  => s_chipselect,            -- 1 to selectchip for both read and write    
@@ -404,8 +403,8 @@ begin
         PACKET_SIZE => CONFIG_PACKET_SIZE
     )
     port map (
-        clk_40mhz        => clk_40mhz,
-        clk_100mhz       => clk_100mhz,
+        clk_40mhz        => clk_40mhz,      -- vhdl logic uses this clock such as reading usb data 
+        clk_100mhz       => clk_100mhz,     -- axi bus is driven with this clock since microblaze uses this clock
         reset_n          => reset_n,        -- top-level reset signal
         soft_reset_n     => s_soft_reset_n,
         usb_rx_empty     => s_rx_empty,
@@ -414,11 +413,14 @@ begin
         read_n           => s_config_usb_read_n,
         config_done      => s_config_done,
         
+        -- Microblaze --> VHDL data transfer. Not used for now.
         fifotx_tdata     => s_AXI_STR_TXD_0_tdata,
         fifotx_tlast     => s_AXI_STR_TXD_0_tlast,
         fifotx_tready    => s_AXI_STR_TXD_0_tready,
         fifotx_tvalid    => s_AXI_STR_TXD_0_tvalid,
-                
+        
+        -- VHDL --> Microblaze data transfer. Radar's configuration data is received by FT2232H's rx which is controlled by config.vhd
+        -- Received config data is transferred to microblaze for it to configure ADF4158 over spi.
         fiforx_tdata     => s_AXI_STR_RXD_0_tdata,
         fiforx_tlast     => s_AXI_STR_RXD_0_tlast,
         fiforx_tready    => s_AXI_STR_RXD_0_tready,
