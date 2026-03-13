@@ -268,6 +268,13 @@ begin
 
     -- GENERAL CODE FLOW UPTO NOW:
     
+    -- IMPORTANT NOTE: The radar is not specifically designed to work for high prf which requires ram usage for 256 chirps in cpi.
+    -- Therefore i will first use the radar in normal 1 chirp 1 usb transfer firt. Then i will implement range doppler mode.
+    -- For 4 khz prf it can measure 180 km/h max speed and with 2MHz range it can see 700 meters with 100 MHz chirp bandwidth.
+    -- This creates 256.000 x 32 bit data per cpi for 2 channels for 256 chirps.
+    -- 256 chirp makes 8 km/h velocity resolution, 128 makes 16 km/h resolution 
+    -- So by using only 1 ch and 128 chirps this ram usage becomes 64.000
+        
     -- adc.vhd:
     -- ADC will be sampled and the samples are forwareded to FIR module (LPF with 20 downsampling) which is implemented in adc.vhd module. 
     -- ADC samples with ADC_OE and ADC_SHDN so these signals will be controlled by control.vhd according to the state of muxout input 
@@ -279,7 +286,6 @@ begin
     -- control.vhd:
     -- It will check MUXOUT input signal to sample during ramp and usb tx during gap.
     -- It will control adc.vhd with its enable pin to start sampling. 
-    -- It will con 
 
     -- STATIC PIN DEFINITIONS    
     
