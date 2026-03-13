@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity control is
     generic (
-        MAX_SAMPLES                 : integer := 8192 
+        MAX_SAMPLES                 : integer := 8192 -- 1 ms ramp = 40.000 samples per ch, 1/10 decimation for 2 channel is 8000 samples per 1ms.
     );
     Port (
         clk                         : in  std_logic;
@@ -115,7 +115,7 @@ begin
                 when RAMP =>
                 
                     adc_oe          <= "00";
-                    adc_shdn        <= "00";                    
+                    adc_shdn        <= "00";
                     pa_en           <= '1';
                     usb_chipselect  <= '0';
                     usb_write_n     <= '1';
