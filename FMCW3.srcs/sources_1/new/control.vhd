@@ -175,6 +175,7 @@ begin
                     end if;
 
                 -- USB_TX_PULSE: pulse write_n low for 1 clock
+                -- send data with write_n = 0                
                 when USB_TX_PULSE =>
                    
                     usb_chipselect  <= '1';
