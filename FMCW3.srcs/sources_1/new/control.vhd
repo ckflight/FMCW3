@@ -149,6 +149,7 @@ begin
                     usb_chipselect  <= '1';
                     usb_write_n     <= '1';
                     
+                    -- Send current byte while usb's tx buffer is not full else it will wait in this state
                     if usb_idx < sample_count and usb_tx_full = '0' then
                     
                         -- drive data for next byte
@@ -163,9 +164,10 @@ begin
                     
                         state <= USB_TX_PULSE;
                     
+                    -- End transfer phase since all sampled adc bytes are transffered, go to idle to start for new ramp.
                     elsif usb_idx >= sample_count then
                     
-                        -- usb transfer send all bytes before gap is finished so return to WAIT_SOFT_RESET and wait mb to reset modules.
+                        -- usb transfer send all bytes before gap is finished, return to idle for resampling
                         state <= IDLE;
                         s_usb_tx_done <= '1';      -- <-- Latch USB transfer done here          
                         usb_writedata <= (others => '0');
