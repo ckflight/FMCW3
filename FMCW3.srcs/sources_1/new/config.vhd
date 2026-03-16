@@ -153,9 +153,14 @@ begin
                     fiforx_tvalid <= '1';  -- keep asserted
                     fiforx_tdata  <= (31 downto 8 => '0') & configuration_bytes(fifo_byte_index*8+7 downto fifo_byte_index*8);
                 
-                    if fiforx_tready = '1' then
                         if fifo_byte_index = PACKET_SIZE - 1 then
                             fiforx_tlast <= '1';
+                        else
+                            fiforx_tlast <= '0';
+                        end if;
+                
+                    if fiforx_tready = '1' then
+                        if fifo_byte_index = PACKET_SIZE - 1 then
                             fifo_st <= st_done;
                         else
                             fifo_byte_index <= fifo_byte_index + 1;
