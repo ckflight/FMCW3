@@ -12,6 +12,7 @@
 #include "xparameters.h"
 #include "xstatus.h"
 #include "definitions.h"
+#include "xtmrctr.h"
 
 #include "gpio.h"
 #include "adf4158.h"
@@ -19,22 +20,61 @@
 #define FIFO_BASEADDR       XPAR_XLLFIFO_0_BASEADDR
 #define CONFIG_PACKET_SIZE  128
 
-static XLlFifo Fifo;
+XLlFifo Fifo;
+XTmrCtr TimerInstance;
 
 config_parameters_t config_parameters;
+
+uint32_t start_time = 0, current_time = 0;
 
 int initFifo(void){
 
     xil_printf("FIFO RX test start\r\n");
 
-    XLlFifo_Initialize(&Fifo, FIFO_BASEADDR);
+    if(XLlFifo_Initialize(&Fifo, FIFO_BASEADDR) != XST_SUCCESS){
+        printf("Fifo init failed\r\n");
+        return XST_FAILURE;
+    }
     XLlFifo_IntClear(&Fifo, 0xFFFFFFFF);
 
     return XST_SUCCESS;
 }
 
+int initTimer(void){
+
+   	// Initialize timer
+    if (XTmrCtr_Initialize(&TimerInstance, XPAR_AXI_TIMER_0_BASEADDR) != XST_SUCCESS) {
+        printf("Timer init failed\r\n");
+        return XST_FAILURE;
+    }
+
+    // Reset both halves 
+	XTmrCtr_Reset(&TimerInstance, 0);  // Reset Timer 0 (low 32 bits)
+
+    // Start the timer (starting counter 0 will also increment the cascaded 1)
+    XTmrCtr_Start(&TimerInstance, 0);
+
+    return XST_SUCCESS;
+}
+
+uint32_t read_timer()
+{
+    return XTmrCtr_GetValue(&TimerInstance, 0);
+}
+
+typedef enum{
+    IDLE,
+    START_SAMPLING, // I will send configuration done with fsm as well.
+    CHECK_TIME,
+    FINISH_SAMPLING
+}SAMPLING_STATES_e;
+
+SAMPLING_STATES_e sampling_state = IDLE;
+
 int main(void){
 
+    int status = 0;
+    
     init_platform();
 
     // Init SPI (already in spi.c)
@@ -49,21 +89,20 @@ int main(void){
     // s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
     GPIO_Init();
 
+    GPIO_ClearPin(SAMPLING_DONE);
+    GPIO_ClearPin(RAMP_CONFIGURED);
+    GPIO_ClearPin(SOFTWARE_RESET);
+    
     // Make sure CE low, LE high
     GPIO_ClearPin(ADF_CE_PIN);
     GPIO_SetPin(ADF_LE_PIN);
 
+    status = initTimer();
 
-    int Status;
     uint32_t word;
     uint8_t buffer[CONFIG_PACKET_SIZE];
 
-    Status = initFifo();
-    if (Status != XST_SUCCESS) {
-        xil_printf("FIFO initialization error\r\n");
-        cleanup_platform();
-        return XST_FAILURE;
-    }
+    status = initFifo();
 
     // 128x 32 bit data will be received but for the ease of use 8 bit of it is used as data
     // so last 8 bit is taken
@@ -76,12 +115,50 @@ int main(void){
     // Parse the received bytes here. It will be added a struct pointer to pass
     config_parameters.check_mode = buffer[0]; // example
     config_parameters.sweep_start_frequency = buffer[1] << 8 | buffer[2]; // example
-    
+
+    // total radar operation time will be calculated with parameters here.
+    config_parameters.record_time = buffer[10]; 
+    uint32_t sweep_p_microsec = config_parameters.sweep_time + config_parameters.sweep_delay;
+
+    // I might not need record counter since i will basically count for timer seconds
+    uint32_t record_time_counter = (config_parameters.record_time * 1000.0f) / ((float)sweep_p_microsec / 1000.0f);
+
     // Init rf sythnesizer
     ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters);
 
+    start_time = read_timer();
     while (1) {
 
+        switch(sampling_state){
+            case IDLE:
+                
+                sampling_state = START_SAMPLING;
+                break;
+
+            case START_SAMPLING:
+                
+                
+                break;
+
+            case CHECK_TIME:
+
+                break;
+                
+            case FINISH_SAMPLING:
+
+                break;
+
+            
+        }
+        // add a fsm here to keep restarding the hardware for new record operation.
+        current_time = read_timer() - start_time;
+
+        if(current_time >= config_parameters.record_time * 1000000.0f){
+
+            // record is done
+            
+            
+        }
 
         
     }
