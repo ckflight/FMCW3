@@ -80,6 +80,12 @@ int main(void){
     // Init SPI (already in spi.c)
     SPI_Init();
 
+    // ***************************
+    // Important NOTE: A delay counter with a start signal can be added to top module(EACH MODULE WILL WAIT THIS SIGNAL TO START) 
+    // if gpio init time creates problem to vhdl logic,
+    // if std_logic_vector = (others = '0') is not enough as idle value for sampling done and ramp configured.
+    // ***************************
+    
     // Init GPIO pins
     // 16 bit output gpio is used to set these pins
     // adf_ce                      <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
@@ -88,22 +94,29 @@ int main(void){
     // s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
     // s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
     GPIO_Init();
-
+    
+    // Control.vhd module uses sampling done and ramp configured signals. They need 1 not a pulse.
+    // Software reset is the resetting mechanism for the whole vhdl logic.
     GPIO_ClearPin(SAMPLING_DONE);
     GPIO_ClearPin(RAMP_CONFIGURED);
     GPIO_ClearPin(SOFTWARE_RESET);
     
+    // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
     // Make sure CE low, LE high
     GPIO_ClearPin(ADF_CE_PIN);
     GPIO_SetPin(ADF_LE_PIN);
 
+    // Init timer
     status = initTimer();
 
     uint32_t word;
     uint8_t buffer[CONFIG_PACKET_SIZE];
 
+    // Init fifo. VHDL sends python's configuration data to this fifo.
+    // Microblaze reads this to configure ADF4158 over spi.
     status = initFifo();
 
+    // READ FIFO
     // 128x 32 bit data will be received but for the ease of use 8 bit of it is used as data
     // so last 8 bit is taken
     for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
@@ -112,7 +125,8 @@ int main(void){
         buffer[i] = (uint8_t)(word & 0xFF);
     }
 
-    // Parse the received bytes here. It will be added a struct pointer to pass
+
+    // PARSE RECEIVED BYTES HERE: It will be added to a struct pointer
     config_parameters.check_mode = buffer[0]; // example
     config_parameters.sweep_start_frequency = buffer[1] << 8 | buffer[2]; // example
 
@@ -123,42 +137,48 @@ int main(void){
     // I might not need record counter since i will basically count for timer seconds
     uint32_t record_time_counter = (config_parameters.record_time * 1000.0f) / ((float)sweep_p_microsec / 1000.0f);
 
-    // Init rf sythnesizer
+
+    // Init rf sythnesizer according to the received parameters
     ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters);
 
+    GPIO_SetPin(RAMP_CONFIGURED);
+
     start_time = read_timer();
+    
+    // Once configuration done and ramp is configured control.vhd module starts its fsm for sampling 
+    // in ramp and transferring data during gaps.(Initially, i will not record multi chirp x64 x128 etc.)
+    // So this part should just count the end time for example if user demanded 10 second record,
+    // This while loop should count 10 sec and then should send micrblaze done signal and soft reset.
     while (1) {
 
         switch(sampling_state){
             case IDLE:
                 
-                sampling_state = START_SAMPLING;
+                sampling_state = CHECK_TIME;
                 break;
 
-            case START_SAMPLING:
-                
-                
-                break;
+            case CHECK_TIME:    
 
-            case CHECK_TIME:
+                current_time = read_timer() - start_time;
+
+                if(current_time >= config_parameters.record_time * 1000000.0f){
+
+                    // record is done
+                    sampling_state = FINISH_SAMPLING;
+                }
 
                 break;
                 
             case FINISH_SAMPLING:
 
+                // Decide what to do here. Reset hardware and return to idle for example
+                GPIO_SetPin(SAMPLING_DONE);
+                GPIO_SetPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
                 break;
 
             
         }
-        // add a fsm here to keep restarding the hardware for new record operation.
-        current_time = read_timer() - start_time;
 
-        if(current_time >= config_parameters.record_time * 1000000.0f){
-
-            // record is done
-            
-            
-        }
 
         
     }
