@@ -16,6 +16,7 @@
 
 #include "gpio.h"
 #include "adf4158.h"
+#include "spi.h"
 
 #define FIFO_BASEADDR       XPAR_XLLFIFO_0_BASEADDR
 #define CONFIG_PACKET_SIZE  128
@@ -31,10 +32,7 @@ int initFifo(void){
 
     xil_printf("FIFO RX test start\r\n");
 
-    if(XLlFifo_Initialize(&Fifo, FIFO_BASEADDR) != XST_SUCCESS){
-        printf("Fifo init failed\r\n");
-        return XST_FAILURE;
-    }
+    XLlFifo_Initialize(&Fifo, FIFO_BASEADDR);
     XLlFifo_IntClear(&Fifo, 0xFFFFFFFF);
 
     return XST_SUCCESS;
@@ -64,7 +62,6 @@ uint32_t read_timer()
 
 typedef enum{
     IDLE,
-    START_SAMPLING, // I will send configuration done with fsm as well.
     CHECK_TIME,
     FINISH_SAMPLING
 }SAMPLING_STATES_e;
@@ -175,11 +172,8 @@ int main(void){
                 GPIO_SetPin(SAMPLING_DONE);
                 GPIO_SetPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
                 break;
-
-            
+   
         }
-
-
         
     }
 
