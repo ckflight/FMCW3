@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD3A0FB339BC1EBD3",
+      "boundary_crc": "0x27DD829365A309F7",
       "device": "xc7a35tftg256-1",
       "gen_directory": "../../../../FMCW3.gen/sources_1/bd/microblaze",
       "name": "microblaze",
@@ -11,10 +11,6 @@
       "validated": "true"
     },
     "design_tree": {
-      "axi_gpio_0": "",
-      "axi_quad_spi_0": "",
-      "axi_uartlite_0": "",
-      "axi_timer_0": "",
       "microblaze_0": "",
       "microblaze_0_local_memory": {
         "dlmb_v10": "",
@@ -23,18 +19,27 @@
         "ilmb_bram_if_cntlr": "",
         "lmb_bram": ""
       },
+      "microblaze_0_axi_periph": "",
+      "microblaze_0_axi_intc": "",
+      "microblaze_0_xlconcat": "",
       "mdm_1": "",
-      "rst_clk_100MHz_100M": "",
-      "axi_smc": "",
-      "axi_intc_0": "",
-      "axi_fifo_mm_s_0": "",
-      "xlconcat_0": ""
+      "rst_Clk_100M": "",
+      "axi_gpio_0": "",
+      "axi_quad_spi_0": "",
+      "axi_timer_0": "",
+      "axi_fifo_mm_s_0": ""
     },
     "interface_ports": {
       "gpio_rtl_0": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
         "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
+        "hdl_attributes": {
+          "LOCKED": {
+            "value": "FALSE",
+            "value_src": "default"
+          }
+        },
         "port_maps": {
           "TRI_O": {
             "physical_name": "gpio_rtl_0_tri_o",
@@ -44,98 +49,13 @@
           }
         }
       },
-      "uart_rtl_0": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
-        "vlnv": "xilinx.com:interface:uart_rtl:1.0",
-        "port_maps": {
-          "RxD": {
-            "physical_name": "uart_rtl_0_rxd",
-            "direction": "I"
-          },
-          "TxD": {
-            "physical_name": "uart_rtl_0_txd",
-            "direction": "O"
-          }
-        }
-      },
-      "AXI_STR_RXD_0": {
-        "mode": "Slave",
-        "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
-        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "microblaze_clk_100MHz",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "HAS_TKEEP": {
-            "value": "0"
-          },
-          "HAS_TLAST": {
-            "value": "1"
-          },
-          "HAS_TREADY": {
-            "value": "1"
-          },
-          "HAS_TSTRB": {
-            "value": "0"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "LAYERED_METADATA": {
-            "value": "undef"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          },
-          "TDATA_NUM_BYTES": {
-            "value": "4"
-          },
-          "TDEST_WIDTH": {
-            "value": "0"
-          },
-          "TID_WIDTH": {
-            "value": "0"
-          },
-          "TUSER_WIDTH": {
-            "value": "0"
-          }
-        },
-        "port_maps": {
-          "TDATA": {
-            "physical_name": "AXI_STR_RXD_0_tdata",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "TLAST": {
-            "physical_name": "AXI_STR_RXD_0_tlast",
-            "direction": "I"
-          },
-          "TREADY": {
-            "physical_name": "AXI_STR_RXD_0_tready",
-            "direction": "O"
-          },
-          "TVALID": {
-            "physical_name": "AXI_STR_RXD_0_tvalid",
-            "direction": "I"
-          }
-        }
-      },
       "AXI_STR_TXD_0": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
         "vlnv": "xilinx.com:interface:axis_rtl:1.0",
         "parameters": {
           "CLK_DOMAIN": {
-            "value": "microblaze_clk_100MHz",
+            "value": "microblaze_Clk",
             "value_src": "default"
           },
           "FREQ_HZ": {
@@ -187,6 +107,12 @@
             "value_src": "auto_prop"
           }
         },
+        "hdl_attributes": {
+          "LOCKED": {
+            "value": "FALSE",
+            "value_src": "default"
+          }
+        },
         "port_maps": {
           "TDATA": {
             "physical_name": "AXI_STR_TXD_0_tdata",
@@ -207,45 +133,95 @@
             "direction": "O"
           }
         }
-      }
-    },
-    "ports": {
-      "reset_rtl_0": {
-        "type": "rst",
-        "direction": "I",
+      },
+      "AXI_STR_RXD_0": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "microblaze_Clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "1"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
           "INSERT_VIP": {
             "value": "0",
             "value_src": "default"
           },
-          "POLARITY": {
-            "value": "ACTIVE_LOW"
+          "LAYERED_METADATA": {
+            "value": "undef"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "4"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "0"
+          }
+        },
+        "hdl_attributes": {
+          "LOCKED": {
+            "value": "FALSE",
+            "value_src": "default"
+          }
+        },
+        "port_maps": {
+          "TDATA": {
+            "physical_name": "AXI_STR_RXD_0_tdata",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "TLAST": {
+            "physical_name": "AXI_STR_RXD_0_tlast",
+            "direction": "I"
+          },
+          "TREADY": {
+            "physical_name": "AXI_STR_RXD_0_tready",
+            "direction": "O"
+          },
+          "TVALID": {
+            "physical_name": "AXI_STR_RXD_0_tvalid",
+            "direction": "I"
           }
         }
-      },
-      "spi0_mosi": {
-        "direction": "O"
-      },
-      "spi0_miso": {
-        "direction": "I"
-      },
-      "spi0_sck": {
-        "direction": "O"
-      },
-      "spi0_cs": {
-        "direction": "O",
-        "left": "0",
-        "right": "0"
-      },
-      "clk_100MHz": {
+      }
+    },
+    "ports": {
+      "Clk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
           "ASSOCIATED_BUSIF": {
-            "value": "AXI_STR_RXD_0:AXI_STR_TXD_0"
+            "value": "AXI_STR_TXD_0:AXI_STR_RXD_0",
+            "value_src": "default"
           },
           "CLK_DOMAIN": {
-            "value": "microblaze_clk_100MHz",
+            "value": "microblaze_Clk",
             "value_src": "default"
           },
           "FREQ_HZ": {
@@ -264,76 +240,44 @@
             "value_src": "default"
           }
         }
+      },
+      "reset_rtl_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      },
+      "spi0_miso": {
+        "direction": "I"
+      },
+      "spi0_mosi": {
+        "direction": "O"
+      },
+      "spi0_sck": {
+        "direction": "O"
+      },
+      "spi0_cs": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
       }
     },
     "components": {
-      "axi_gpio_0": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "ip_revision": "37",
-        "xci_name": "microblaze_axi_gpio_0_0",
-        "xci_path": "ip\\microblaze_axi_gpio_0_0\\microblaze_axi_gpio_0_0.xci",
-        "inst_hier_path": "axi_gpio_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "C_ALL_OUTPUTS": {
-            "value": "1"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "16"
-          },
-          "C_INTERRUPT_PRESENT": {
-            "value": "1"
-          }
-        }
-      },
-      "axi_quad_spi_0": {
-        "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
-        "ip_revision": "35",
-        "xci_name": "microblaze_axi_quad_spi_0_0",
-        "xci_path": "ip\\microblaze_axi_quad_spi_0_0\\microblaze_axi_quad_spi_0_0.xci",
-        "inst_hier_path": "axi_quad_spi_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "C_SCK_RATIO": {
-            "value": "8"
-          },
-          "C_USE_STARTUP": {
-            "value": "0"
-          }
-        }
-      },
-      "axi_uartlite_0": {
-        "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
-        "ip_revision": "39",
-        "xci_name": "microblaze_axi_uartlite_0_0",
-        "xci_path": "ip\\microblaze_axi_uartlite_0_0\\microblaze_axi_uartlite_0_0.xci",
-        "inst_hier_path": "axi_uartlite_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "C_BAUDRATE": {
-            "value": "115200"
-          }
-        }
-      },
-      "axi_timer_0": {
-        "vlnv": "xilinx.com:ip:axi_timer:2.0",
-        "ip_revision": "37",
-        "xci_name": "microblaze_axi_timer_0_0",
-        "xci_path": "ip\\microblaze_axi_timer_0_0\\microblaze_axi_timer_0_0.xci",
-        "inst_hier_path": "axi_timer_0",
-        "has_run_ip_tcl": "true"
-      },
       "microblaze_0": {
         "vlnv": "xilinx.com:ip:microblaze:11.0",
         "ip_revision": "16",
-        "xci_name": "microblaze_microblaze_0_1",
-        "xci_path": "ip\\microblaze_microblaze_0_1\\microblaze_microblaze_0_1.xci",
+        "xci_name": "microblaze_microblaze_0_5",
+        "xci_path": "ip\\microblaze_microblaze_0_5\\microblaze_microblaze_0_5.xci",
         "inst_hier_path": "microblaze_0",
         "has_run_ip_tcl": "true",
         "parameters": {
-          "C_AREA_OPTIMIZED": {
-            "value": "1"
-          },
           "C_DEBUG_ENABLED": {
             "value": "1"
           },
@@ -350,28 +294,13 @@
             "value": "1"
           },
           "C_NUMBER_OF_PC_BRK": {
-            "value": "8"
-          },
-          "C_USE_BARREL": {
-            "value": "1"
+            "value": "4"
           },
           "C_USE_DIV": {
             "value": "1"
           },
           "C_USE_FPU": {
             "value": "1"
-          },
-          "C_USE_HW_MUL": {
-            "value": "1"
-          },
-          "C_USE_MSR_INSTR": {
-            "value": "1"
-          },
-          "C_USE_PCMP_INSTR": {
-            "value": "1"
-          },
-          "C_USE_REORDER_INSTR": {
-            "value": "0"
           },
           "G_TEMPLATE_LIST": {
             "value": "8"
@@ -467,16 +396,28 @@
           "DLMB": {
             "mode": "MirroredMaster",
             "vlnv_bus_definition": "xilinx.com:interface:lmb:1.0",
-            "vlnv": "xilinx.com:interface:lmb_rtl:1.0"
+            "vlnv": "xilinx.com:interface:lmb_rtl:1.0",
+            "hdl_attributes": {
+              "LOCKED": {
+                "value": "FALSE",
+                "value_src": "default"
+              }
+            }
           },
           "ILMB": {
             "mode": "MirroredMaster",
             "vlnv_bus_definition": "xilinx.com:interface:lmb:1.0",
-            "vlnv": "xilinx.com:interface:lmb_rtl:1.0"
+            "vlnv": "xilinx.com:interface:lmb_rtl:1.0",
+            "hdl_attributes": {
+              "LOCKED": {
+                "value": "FALSE",
+                "value_src": "default"
+              }
+            }
           }
         },
         "ports": {
-          "clk_100MHz": {
+          "Clk": {
             "type": "clk",
             "direction": "I"
           },
@@ -489,8 +430,8 @@
           "dlmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "16",
-            "xci_name": "microblaze_dlmb_v10_1",
-            "xci_path": "ip\\microblaze_dlmb_v10_1\\microblaze_dlmb_v10_1.xci",
+            "xci_name": "microblaze_dlmb_v10_5",
+            "xci_path": "ip\\microblaze_dlmb_v10_5\\microblaze_dlmb_v10_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/dlmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -524,8 +465,8 @@
           "ilmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "16",
-            "xci_name": "microblaze_ilmb_v10_1",
-            "xci_path": "ip\\microblaze_ilmb_v10_1\\microblaze_ilmb_v10_1.xci",
+            "xci_name": "microblaze_ilmb_v10_5",
+            "xci_path": "ip\\microblaze_ilmb_v10_5\\microblaze_ilmb_v10_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/ilmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -559,8 +500,8 @@
           "dlmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "27",
-            "xci_name": "microblaze_dlmb_bram_if_cntlr_1",
-            "xci_path": "ip\\microblaze_dlmb_bram_if_cntlr_1\\microblaze_dlmb_bram_if_cntlr_1.xci",
+            "xci_name": "microblaze_dlmb_bram_if_cntlr_5",
+            "xci_path": "ip\\microblaze_dlmb_bram_if_cntlr_5\\microblaze_dlmb_bram_if_cntlr_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/dlmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -592,8 +533,8 @@
           "ilmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "27",
-            "xci_name": "microblaze_ilmb_bram_if_cntlr_1",
-            "xci_path": "ip\\microblaze_ilmb_bram_if_cntlr_1\\microblaze_ilmb_bram_if_cntlr_1.xci",
+            "xci_name": "microblaze_ilmb_bram_if_cntlr_5",
+            "xci_path": "ip\\microblaze_ilmb_bram_if_cntlr_5\\microblaze_ilmb_bram_if_cntlr_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/ilmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -615,28 +556,13 @@
           "lmb_bram": {
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
             "ip_revision": "12",
-            "xci_name": "microblaze_lmb_bram_1",
-            "xci_path": "ip\\microblaze_lmb_bram_1\\microblaze_lmb_bram_1.xci",
+            "xci_name": "microblaze_lmb_bram_5",
+            "xci_path": "ip\\microblaze_lmb_bram_5\\microblaze_lmb_bram_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/lmb_bram",
             "has_run_ip_tcl": "true",
             "parameters": {
-              "Enable_B": {
-                "value": "Use_ENB_Pin"
-              },
               "Memory_Type": {
                 "value": "True_Dual_Port_RAM"
-              },
-              "Port_B_Clock": {
-                "value": "100"
-              },
-              "Port_B_Enable_Rate": {
-                "value": "100"
-              },
-              "Port_B_Write_Rate": {
-                "value": "50"
-              },
-              "Use_RSTB_Pin": {
-                "value": "true"
               },
               "use_bram_block": {
                 "value": "BRAM_Controller"
@@ -686,45 +612,29 @@
           "SYS_Rst_1": {
             "ports": [
               "SYS_Rst",
-              "dlmb_bram_if_cntlr/LMB_Rst",
               "dlmb_v10/SYS_Rst",
-              "ilmb_bram_if_cntlr/LMB_Rst",
-              "ilmb_v10/SYS_Rst"
+              "dlmb_bram_if_cntlr/LMB_Rst",
+              "ilmb_v10/SYS_Rst",
+              "ilmb_bram_if_cntlr/LMB_Rst"
             ]
           },
           "microblaze_0_Clk": {
             "ports": [
-              "clk_100MHz",
-              "dlmb_bram_if_cntlr/LMB_Clk",
+              "Clk",
               "dlmb_v10/LMB_Clk",
-              "ilmb_bram_if_cntlr/LMB_Clk",
-              "ilmb_v10/LMB_Clk"
+              "dlmb_bram_if_cntlr/LMB_Clk",
+              "ilmb_v10/LMB_Clk",
+              "ilmb_bram_if_cntlr/LMB_Clk"
             ]
           }
         }
       },
-      "mdm_1": {
-        "vlnv": "xilinx.com:ip:mdm:3.2",
-        "ip_revision": "29",
-        "xci_name": "microblaze_mdm_1_1",
-        "xci_path": "ip\\microblaze_mdm_1_1\\microblaze_mdm_1_1.xci",
-        "inst_hier_path": "mdm_1",
-        "has_run_ip_tcl": "true"
-      },
-      "rst_clk_100MHz_100M": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "ip_revision": "17",
-        "xci_name": "microblaze_rst_clk_100MHz_100M_0",
-        "xci_path": "ip\\microblaze_rst_clk_100MHz_100M_0\\microblaze_rst_clk_100MHz_100M_0.xci",
-        "inst_hier_path": "rst_clk_100MHz_100M",
-        "has_run_ip_tcl": "true"
-      },
-      "axi_smc": {
+      "microblaze_0_axi_periph": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "28",
-        "xci_name": "microblaze_axi_smc_0",
-        "xci_path": "ip\\microblaze_axi_smc_0\\microblaze_axi_smc_0.xci",
-        "inst_hier_path": "axi_smc",
+        "xci_name": "microblaze_microblaze_0_axi_periph_2",
+        "xci_path": "ip\\microblaze_microblaze_0_axi_periph_2\\microblaze_microblaze_0_axi_periph_2.xci",
+        "inst_hier_path": "microblaze_0_axi_periph",
         "has_run_ip_tcl": "true",
         "parameters": {
           "NUM_MI": {
@@ -954,13 +864,18 @@
           }
         }
       },
-      "axi_intc_0": {
+      "microblaze_0_axi_intc": {
         "vlnv": "xilinx.com:ip:axi_intc:4.1",
         "ip_revision": "22",
-        "xci_name": "microblaze_axi_intc_0_0",
-        "xci_path": "ip\\microblaze_axi_intc_0_0\\microblaze_axi_intc_0_0.xci",
-        "inst_hier_path": "axi_intc_0",
+        "xci_name": "microblaze_microblaze_0_axi_intc_2",
+        "xci_path": "ip\\microblaze_microblaze_0_axi_intc_2\\microblaze_microblaze_0_axi_intc_2.xci",
+        "inst_hier_path": "microblaze_0_axi_intc",
         "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_HAS_FAST": {
+            "value": "1"
+          }
+        },
         "interface_ports": {
           "interrupt": {
             "bd_attributes": {
@@ -972,52 +887,94 @@
           }
         }
       },
-      "axi_fifo_mm_s_0": {
-        "vlnv": "xilinx.com:ip:axi_fifo_mm_s:4.3",
-        "ip_revision": "7",
-        "xci_name": "microblaze_axi_fifo_mm_s_0_1",
-        "xci_path": "ip\\microblaze_axi_fifo_mm_s_0_1\\microblaze_axi_fifo_mm_s_0_1.xci",
-        "inst_hier_path": "axi_fifo_mm_s_0",
+      "microblaze_0_xlconcat": {
+        "vlnv": "xilinx.com:inline_hdl:ilconcat:1.0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "1",
+            "value_src": "propagated",
+            "value_mode": "auto"
+          },
+          "IN1_WIDTH": {
+            "value": "1",
+            "value_src": "propagated",
+            "value_mode": "auto"
+          }
+        }
+      },
+      "mdm_1": {
+        "vlnv": "xilinx.com:ip:mdm:3.2",
+        "ip_revision": "29",
+        "xci_name": "microblaze_mdm_1_4",
+        "xci_path": "ip\\microblaze_mdm_1_4\\microblaze_mdm_1_4.xci",
+        "inst_hier_path": "mdm_1",
         "has_run_ip_tcl": "true",
         "parameters": {
-          "C_AXIS_TUSER_WIDTH": {
-            "value": "4"
+          "C_ADDR_SIZE": {
+            "value": "32"
           },
-          "C_DATA_INTERFACE_TYPE": {
-            "value": "0"
+          "C_M_AXI_ADDR_WIDTH": {
+            "value": "32"
           },
-          "C_HAS_AXIS_TDEST": {
-            "value": "false"
-          },
-          "C_HAS_AXIS_TKEEP": {
-            "value": "false"
-          },
-          "C_HAS_AXIS_TSTRB": {
-            "value": "false"
-          },
-          "C_HAS_AXIS_TUSER": {
-            "value": "false"
-          },
-          "C_USE_RX_CUT_THROUGH": {
-            "value": "false"
-          },
-          "C_USE_RX_DATA": {
-            "value": "1"
-          },
-          "C_USE_TX_CTRL": {
-            "value": "0"
-          },
-          "C_USE_TX_DATA": {
+          "C_USE_UART": {
             "value": "1"
           }
         }
       },
-      "xlconcat_0": {
-        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+      "rst_Clk_100M": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "17",
+        "xci_name": "microblaze_rst_Clk_100M_0",
+        "xci_path": "ip\\microblaze_rst_Clk_100M_0\\microblaze_rst_Clk_100M_0.xci",
+        "inst_hier_path": "rst_Clk_100M",
+        "has_run_ip_tcl": "true"
+      },
+      "axi_gpio_0": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "ip_revision": "37",
+        "xci_name": "microblaze_axi_gpio_0_2",
+        "xci_path": "ip\\microblaze_axi_gpio_0_2\\microblaze_axi_gpio_0_2.xci",
+        "inst_hier_path": "axi_gpio_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "axi_quad_spi_0": {
+        "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
+        "ip_revision": "35",
+        "xci_name": "microblaze_axi_quad_spi_0_1",
+        "xci_path": "ip\\microblaze_axi_quad_spi_0_1\\microblaze_axi_quad_spi_0_1.xci",
+        "inst_hier_path": "axi_quad_spi_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_SCK_RATIO": {
+            "value": "8"
+          },
+          "C_USE_STARTUP": {
+            "value": "0"
+          }
+        }
+      },
+      "axi_timer_0": {
+        "vlnv": "xilinx.com:ip:axi_timer:2.0",
+        "ip_revision": "37",
+        "xci_name": "microblaze_axi_timer_0_1",
+        "xci_path": "ip\\microblaze_axi_timer_0_1\\microblaze_axi_timer_0_1.xci",
+        "inst_hier_path": "axi_timer_0",
+        "has_run_ip_tcl": "true"
+      },
+      "axi_fifo_mm_s_0": {
+        "vlnv": "xilinx.com:ip:axi_fifo_mm_s:4.3",
         "ip_revision": "7",
-        "xci_name": "microblaze_xlconcat_0_0",
-        "xci_path": "ip\\microblaze_xlconcat_0_0\\microblaze_xlconcat_0_0.xci",
-        "inst_hier_path": "xlconcat_0",
+        "xci_name": "microblaze_axi_fifo_mm_s_0_2",
+        "xci_path": "ip\\microblaze_axi_fifo_mm_s_0_2\\microblaze_axi_fifo_mm_s_0_2.xci",
+        "inst_hier_path": "axi_fifo_mm_s_0",
         "has_run_ip_tcl": "true"
       }
     },
@@ -1040,58 +997,34 @@
           "axi_gpio_0/GPIO"
         ]
       },
-      "axi_intc_0_interrupt": {
+      "microblaze_0_axi_dp": {
         "interface_ports": [
-          "axi_intc_0/interrupt",
-          "microblaze_0/INTERRUPT"
+          "microblaze_0_axi_periph/S00_AXI",
+          "microblaze_0/M_AXI_DP"
         ]
       },
-      "axi_smc_M00_AXI": {
+      "microblaze_0_axi_periph_M02_AXI": {
         "interface_ports": [
-          "axi_smc/M00_AXI",
+          "microblaze_0_axi_periph/M02_AXI",
           "axi_gpio_0/S_AXI"
         ]
       },
-      "axi_smc_M01_AXI": {
+      "microblaze_0_axi_periph_M03_AXI": {
         "interface_ports": [
-          "axi_smc/M01_AXI",
+          "microblaze_0_axi_periph/M03_AXI",
           "axi_quad_spi_0/AXI_LITE"
         ]
       },
-      "axi_smc_M02_AXI": {
+      "microblaze_0_axi_periph_M04_AXI": {
         "interface_ports": [
-          "axi_smc/M02_AXI",
+          "microblaze_0_axi_periph/M04_AXI",
           "axi_timer_0/S_AXI"
         ]
       },
-      "axi_smc_M03_AXI": {
+      "microblaze_0_axi_periph_M05_AXI": {
         "interface_ports": [
-          "axi_smc/M03_AXI",
-          "axi_uartlite_0/S_AXI"
-        ]
-      },
-      "axi_smc_M04_AXI": {
-        "interface_ports": [
-          "axi_smc/M04_AXI",
+          "microblaze_0_axi_periph/M05_AXI",
           "axi_fifo_mm_s_0/S_AXI"
-        ]
-      },
-      "axi_smc_M05_AXI": {
-        "interface_ports": [
-          "axi_smc/M05_AXI",
-          "axi_intc_0/s_axi"
-        ]
-      },
-      "axi_uartlite_0_UART": {
-        "interface_ports": [
-          "uart_rtl_0",
-          "axi_uartlite_0/UART"
-        ]
-      },
-      "microblaze_0_M_AXI_DP": {
-        "interface_ports": [
-          "microblaze_0/M_AXI_DP",
-          "axi_smc/S00_AXI"
         ]
       },
       "microblaze_0_debug": {
@@ -1111,13 +1044,31 @@
           "microblaze_0/ILMB",
           "microblaze_0_local_memory/ILMB"
         ]
+      },
+      "microblaze_0_intc_axi": {
+        "interface_ports": [
+          "microblaze_0_axi_periph/M00_AXI",
+          "microblaze_0_axi_intc/s_axi"
+        ]
+      },
+      "microblaze_0_interrupt": {
+        "interface_ports": [
+          "microblaze_0_axi_intc/interrupt",
+          "microblaze_0/INTERRUPT"
+        ]
+      },
+      "microblaze_0_mdm_axi": {
+        "interface_ports": [
+          "microblaze_0_axi_periph/M01_AXI",
+          "mdm_1/S_AXI"
+        ]
       }
     },
     "nets": {
       "axi_fifo_mm_s_0_interrupt": {
         "ports": [
           "axi_fifo_mm_s_0/interrupt",
-          "xlconcat_0/In0"
+          "microblaze_0_xlconcat/In0"
         ]
       },
       "axi_quad_spi_0_io0_o": {
@@ -1141,10 +1092,10 @@
       "axi_timer_0_interrupt": {
         "ports": [
           "axi_timer_0/interrupt",
-          "xlconcat_0/In1"
+          "microblaze_0_xlconcat/In1"
         ]
       },
-      "io1_i_1_1": {
+      "io1_i_0_1": {
         "ports": [
           "spi0_miso",
           "axi_quad_spi_0/io1_i"
@@ -1153,59 +1104,61 @@
       "mdm_1_debug_sys_rst": {
         "ports": [
           "mdm_1/Debug_SYS_Rst",
-          "rst_clk_100MHz_100M/mb_debug_sys_rst"
+          "rst_Clk_100M/mb_debug_sys_rst"
         ]
       },
-      "microblaze_0_Clk_1": {
+      "microblaze_0_Clk": {
         "ports": [
-          "clk_100MHz",
-          "microblaze_0_local_memory/clk_100MHz",
-          "axi_fifo_mm_s_0/s_axi_aclk",
+          "Clk",
+          "microblaze_0/Clk",
+          "microblaze_0_axi_periph/aclk",
+          "microblaze_0_axi_intc/s_axi_aclk",
+          "microblaze_0_axi_intc/processor_clk",
+          "microblaze_0_local_memory/Clk",
+          "mdm_1/S_AXI_ACLK",
+          "rst_Clk_100M/slowest_sync_clk",
           "axi_gpio_0/s_axi_aclk",
-          "axi_timer_0/s_axi_aclk",
-          "axi_uartlite_0/s_axi_aclk",
-          "rst_clk_100MHz_100M/slowest_sync_clk",
-          "axi_intc_0/s_axi_aclk",
-          "axi_quad_spi_0/ext_spi_clk",
           "axi_quad_spi_0/s_axi_aclk",
-          "axi_smc/aclk",
-          "microblaze_0/Clk"
+          "axi_timer_0/s_axi_aclk",
+          "axi_quad_spi_0/ext_spi_clk",
+          "axi_fifo_mm_s_0/s_axi_aclk"
+        ]
+      },
+      "microblaze_0_intr": {
+        "ports": [
+          "microblaze_0_xlconcat/dout",
+          "microblaze_0_axi_intc/intr"
         ]
       },
       "reset_rtl_0_1": {
         "ports": [
           "reset_rtl_0",
-          "rst_clk_100MHz_100M/ext_reset_in"
+          "rst_Clk_100M/ext_reset_in"
         ]
       },
-      "rst_clk_100MHz_100M_bus_struct_reset": {
+      "rst_Clk_100M_bus_struct_reset": {
         "ports": [
-          "rst_clk_100MHz_100M/bus_struct_reset",
+          "rst_Clk_100M/bus_struct_reset",
           "microblaze_0_local_memory/SYS_Rst"
         ]
       },
-      "rst_clk_100MHz_100M_mb_reset": {
+      "rst_Clk_100M_mb_reset": {
         "ports": [
-          "rst_clk_100MHz_100M/mb_reset",
-          "microblaze_0/Reset"
+          "rst_Clk_100M/mb_reset",
+          "microblaze_0/Reset",
+          "microblaze_0_axi_intc/processor_rst"
         ]
       },
-      "rst_clk_100MHz_100M_peripheral_aresetn": {
+      "rst_Clk_100M_peripheral_aresetn": {
         "ports": [
-          "rst_clk_100MHz_100M/peripheral_aresetn",
-          "axi_fifo_mm_s_0/s_axi_aresetn",
+          "rst_Clk_100M/peripheral_aresetn",
+          "microblaze_0_axi_periph/aresetn",
+          "mdm_1/S_AXI_ARESETN",
+          "microblaze_0_axi_intc/s_axi_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "axi_timer_0/s_axi_aresetn",
-          "axi_uartlite_0/s_axi_aresetn",
-          "axi_intc_0/s_axi_aresetn",
           "axi_quad_spi_0/s_axi_aresetn",
-          "axi_smc/aresetn"
-        ]
-      },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "axi_intc_0/intr"
+          "axi_timer_0/s_axi_aresetn",
+          "axi_fifo_mm_s_0/s_axi_aresetn"
         ]
       }
     },
@@ -1225,11 +1178,6 @@
                 "offset": "0x40000000",
                 "range": "64K"
               },
-              "SEG_axi_intc_0_Reg": {
-                "address_block": "/axi_intc_0/S_AXI/Reg",
-                "offset": "0x41200000",
-                "range": "64K"
-              },
               "SEG_axi_quad_spi_0_Reg": {
                 "address_block": "/axi_quad_spi_0/AXI_LITE/Reg",
                 "offset": "0x44A00000",
@@ -1241,16 +1189,21 @@
                 "offset": "0x41C00000",
                 "range": "64K"
               },
-              "SEG_axi_uartlite_0_Reg": {
-                "address_block": "/axi_uartlite_0/S_AXI/Reg",
-                "offset": "0x40600000",
-                "range": "64K"
-              },
               "SEG_dlmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
-                "range": "32K",
+                "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
+              },
+              "SEG_mdm_1_Reg": {
+                "address_block": "/mdm_1/S_AXI/Reg",
+                "offset": "0x41400000",
+                "range": "4K"
+              },
+              "SEG_microblaze_0_axi_intc_Reg": {
+                "address_block": "/microblaze_0_axi_intc/S_AXI/Reg",
+                "offset": "0x41200000",
+                "range": "64K"
               }
             }
           },
@@ -1259,7 +1212,7 @@
               "SEG_ilmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
-                "range": "32K",
+                "range": "64K",
                 "offset_high_param": "C_HIGHADDR"
               }
             }

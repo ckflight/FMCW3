@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Mar 25 13:39:45 2026
+# Process ID         : 9860
+# Current directory  : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1
+# Command line       : vivado.exe -log top_module.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_module.tcl -notrace
+# Log file           : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.vdi
+# Journal file       : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-BEUFM6D
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+# CPU Frequency      : 2295 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17083 MB
+# Swap memory        : 2550 MB
+# Total Virtual      : 19633 MB
+# Available Virtual  : 5269 MB
+#-----------------------------------------------------------
+source top_module.tcl -notrace

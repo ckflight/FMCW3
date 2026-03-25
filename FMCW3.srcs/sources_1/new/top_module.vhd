@@ -79,14 +79,14 @@ architecture Behavioral of top_module is
     component microblaze_wrapper is
     port (
         gpio_rtl_0_tri_o        : out STD_LOGIC_VECTOR ( 15 downto 0 );
-        uart_rtl_0_rxd          : in STD_LOGIC;
-        uart_rtl_0_txd          : out STD_LOGIC;
+        --uart_rtl_0_rxd          : in STD_LOGIC;
+        --uart_rtl_0_txd          : out STD_LOGIC;
         reset_rtl_0             : in STD_LOGIC;
         spi0_mosi               : out STD_LOGIC;
         spi0_miso               : in STD_LOGIC;
         spi0_sck                : out STD_LOGIC;
         spi0_cs                 : out STD_LOGIC_VECTOR ( 0 to 0 );
-        clk_100MHz              : in STD_LOGIC;        
+        Clk                     : in STD_LOGIC;        
         
         AXI_STR_TXD_0_tdata     : out STD_LOGIC_VECTOR ( 31 downto 0 );
         AXI_STR_TXD_0_tlast     : out STD_LOGIC;
@@ -332,15 +332,15 @@ begin
        
     microblaze_i: component microblaze_wrapper
     port map (
-        clk_100MHz                      => clk_100mhz,
+        Clk                             => clk_100mhz,
         gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
         reset_rtl_0                     => reset_n,         -- Board's reset is active low
         spi0_cs(0)                      => s_spi0_cs,       -- spi cs not used, gpio is used to drive cs pin
         spi0_miso                       => s_spi0_miso,     -- spi miso not used adf does not have output
         spi0_mosi                       => adf_data,        -- spi mosi
         spi0_sck                        => adf_clk,         -- spi clk
-        uart_rtl_0_rxd                  => s_uart_rtl_0_rxd,
-        uart_rtl_0_txd                  => s_uart_rtl_0_txd,
+        --uart_rtl_0_rxd                  => s_uart_rtl_0_rxd,
+        --uart_rtl_0_txd                  => s_uart_rtl_0_txd,
         
         -- VHDL --> Microblaze data transfer. Radar's configuration data is received by FT2232H's rx which is controlled by config.vhd
         -- Received config data is transferred to microblaze for it to configure ADF4158 over spi.

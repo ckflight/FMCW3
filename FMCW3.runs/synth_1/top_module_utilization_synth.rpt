@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Wed Mar 25 09:40:47 2026
+| Date         : Wed Mar 25 13:39:37 2026
 | Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
 | Design       : top_module
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 5254 |     0 |          0 |     20800 | 25.26 |
-|   LUT as Logic             | 3582 |     0 |          0 |     20800 | 17.22 |
+| Slice LUTs*                | 2316 |     0 |          0 |     20800 | 11.13 |
+|   LUT as Logic             |  644 |     0 |          0 |     20800 |  3.10 |
 |   LUT as Memory            | 1672 |     0 |          0 |      9600 | 17.42 |
 |     LUT as Distributed RAM | 1672 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            | 2364 |     0 |          0 |     41600 |  5.68 |
-|   Register as Flip Flop    | 2364 |     0 |          0 |     41600 |  5.68 |
+| Slice Registers            |  252 |     0 |          0 |     41600 |  0.61 |
+|   Register as Flip Flop    |  252 |     0 |          0 |     41600 |  0.61 |
 |   Register as Latch        |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                   |  392 |     0 |          0 |     16300 |  2.40 |
-| F8 Muxes                   |  192 |     0 |          0 |      8150 |  2.36 |
-| Unique Control Sets        |  310 |       |          0 |      8150 |  3.80 |
+| F7 Muxes                   |  128 |     0 |          0 |     16300 |  0.79 |
+| F8 Muxes                   |   64 |     0 |          0 |      8150 |  0.79 |
+| Unique Control Sets        |   50 |       |          0 |      8150 |  0.61 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -61,10 +61,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 4     |          Yes |           - |          Set |
-| 2254  |          Yes |           - |        Reset |
+| 3     |          Yes |           - |          Set |
+| 145   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 106   |          Yes |       Reset |            - |
+| 104   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -153,22 +153,22 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 2983 |                 LUT |
-| FDCE     | 2254 |        Flop & Latch |
 | RAMD64E  | 1672 |  Distributed Memory |
-| MUXF7    |  392 |               MuxFx |
-| LUT5     |  310 |                 LUT |
-| MUXF8    |  192 |               MuxFx |
-| FDRE     |  106 |        Flop & Latch |
-| LUT2     |  104 |                 LUT |
-| LUT3     |   89 |                 LUT |
-| LUT4     |   75 |                 LUT |
+| LUT6     |  376 |                 LUT |
+| FDCE     |  145 |        Flop & Latch |
+| MUXF7    |  128 |               MuxFx |
+| FDRE     |  104 |        Flop & Latch |
+| LUT3     |   81 |                 LUT |
+| LUT4     |   68 |                 LUT |
+| MUXF8    |   64 |               MuxFx |
 | LUT1     |   63 |                 LUT |
+| LUT2     |   51 |                 LUT |
+| LUT5     |   45 |                 LUT |
 | OBUF     |   27 |                  IO |
 | IBUF     |   25 |                  IO |
 | OBUFT    |   10 |                  IO |
 | CARRY4   |    8 |          CarryLogic |
-| FDPE     |    4 |        Flop & Latch |
+| FDPE     |    3 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -176,31 +176,30 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+----------------------------------+------+
-|             Ref Name             | Used |
-+----------------------------------+------+
-| microblaze_rst_clk_100MHz_100M_0 |    1 |
-| microblaze_microblaze_0_1        |    1 |
-| microblaze_mdm_1_1               |    1 |
-| microblaze_lmb_bram_1            |    1 |
-| microblaze_ilmb_v10_1            |    1 |
-| microblaze_ilmb_bram_if_cntlr_1  |    1 |
-| microblaze_dlmb_v10_1            |    1 |
-| microblaze_dlmb_bram_if_cntlr_1  |    1 |
-| microblaze_axi_uartlite_0_0      |    1 |
-| microblaze_axi_timer_0_0         |    1 |
-| microblaze_axi_smc_0             |    1 |
-| microblaze_axi_quad_spi_0_0      |    1 |
-| microblaze_axi_intc_0_0          |    1 |
-| microblaze_axi_gpio_0_0          |    1 |
-| microblaze_axi_fifo_mm_s_0_1     |    1 |
-| ila_0                            |    1 |
-| fir_compiler_0_HD428             |    1 |
-| fir_compiler_0                   |    1 |
-| fifo_generator_0_HD427           |    1 |
-| fifo_generator_0                 |    1 |
-| clk_wiz_0                        |    1 |
-+----------------------------------+------+
++--------------------------------------+------+
+|               Ref Name               | Used |
++--------------------------------------+------+
+| microblaze_rst_Clk_100M_0            |    1 |
+| microblaze_microblaze_0_axi_periph_2 |    1 |
+| microblaze_microblaze_0_axi_intc_2   |    1 |
+| microblaze_microblaze_0_5            |    1 |
+| microblaze_mdm_1_4                   |    1 |
+| microblaze_lmb_bram_5                |    1 |
+| microblaze_ilmb_v10_5                |    1 |
+| microblaze_ilmb_bram_if_cntlr_5      |    1 |
+| microblaze_dlmb_v10_5                |    1 |
+| microblaze_dlmb_bram_if_cntlr_5      |    1 |
+| microblaze_axi_timer_0_1             |    1 |
+| microblaze_axi_quad_spi_0_1          |    1 |
+| microblaze_axi_gpio_0_2              |    1 |
+| microblaze_axi_fifo_mm_s_0_2         |    1 |
+| ila_0                                |    1 |
+| fir_compiler_0_HD428                 |    1 |
+| fir_compiler_0                       |    1 |
+| fifo_generator_0_HD427               |    1 |
+| fifo_generator_0                     |    1 |
+| clk_wiz_0                            |    1 |
++--------------------------------------+------+
 
 
 9. Instantiated Netlists

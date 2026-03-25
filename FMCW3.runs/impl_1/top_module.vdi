@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Mar 25 09:40:55 2026
-# Process ID         : 8668
+# Start of session at: Wed Mar 25 13:39:45 2026
+# Process ID         : 9860
 # Current directory  : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1
 # Command line       : vivado.exe -log top_module.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_module.tcl -notrace
 # Log file           : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.vdi
@@ -19,14 +19,14 @@
 # Host memory        : 17083 MB
 # Swap memory        : 2550 MB
 # Total Virtual      : 19633 MB
-# Available Virtual  : 11026 MB
+# Available Virtual  : 5269 MB
 #-----------------------------------------------------------
 source top_module.tcl -notrace
-create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 575.543 ; gain = 217.473
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 577.070 ; gain = 223.480
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.2/Vivado/data/ip'.
-add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 645.938 ; gain = 70.395
+add_files: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 644.840 ; gain = 67.770
 Command: link_design -top top_module -part xc7a35tftg256-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
@@ -36,107 +36,104 @@ INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_0.dcp' for cell 'ila_0_i'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0.dcp' for cell 'adc_i/g_fir.fir1'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/fir_compiler_0.dcp' for cell 'adc_i/g_fir.fir2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_1/microblaze_axi_fifo_mm_s_0_1.dcp' for cell 'microblaze_i/microblaze_i/axi_fifo_mm_s_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0.dcp' for cell 'microblaze_i/microblaze_i/axi_gpio_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_intc_0_0/microblaze_axi_intc_0_0.dcp' for cell 'microblaze_i/microblaze_i/axi_intc_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0.dcp' for cell 'microblaze_i/microblaze_i/axi_quad_spi_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/microblaze_axi_smc_0.dcp' for cell 'microblaze_i/microblaze_i/axi_smc'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_0/microblaze_axi_timer_0_0.dcp' for cell 'microblaze_i/microblaze_i/axi_timer_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0.dcp' for cell 'microblaze_i/microblaze_i/axi_uartlite_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_1/microblaze_mdm_1_1.dcp' for cell 'microblaze_i/microblaze_i/mdm_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0.dcp' for cell 'microblaze_i/microblaze_i/rst_clk_100MHz_100M'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_1/microblaze_dlmb_bram_if_cntlr_1.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_1/microblaze_dlmb_v10_1.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_v10'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_1/microblaze_ilmb_bram_if_cntlr_1.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_1/microblaze_ilmb_v10_1.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_v10'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_lmb_bram_1/microblaze_lmb_bram_1.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/lmb_bram'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2/microblaze_axi_fifo_mm_s_0_2.dcp' for cell 'microblaze_i/microblaze_i/axi_fifo_mm_s_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2.dcp' for cell 'microblaze_i/microblaze_i/axi_gpio_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1.dcp' for cell 'microblaze_i/microblaze_i/axi_quad_spi_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1.dcp' for cell 'microblaze_i/microblaze_i/axi_timer_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4.dcp' for cell 'microblaze_i/microblaze_i/mdm_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_axi_intc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/microblaze_microblaze_0_axi_periph_2.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_axi_periph'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_Clk_100M_0/microblaze_rst_Clk_100M_0.dcp' for cell 'microblaze_i/microblaze_i/rst_Clk_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_5/microblaze_dlmb_bram_if_cntlr_5.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_dlmb_v10_5/microblaze_dlmb_v10_5.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/dlmb_v10'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_5/microblaze_ilmb_bram_if_cntlr_5.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_5/microblaze_ilmb_v10_5.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/ilmb_v10'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_lmb_bram_5/microblaze_lmb_bram_5.dcp' for cell 'microblaze_i/microblaze_i/microblaze_0_local_memory/lmb_bram'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp' for cell 'usb_sync_i/rx_dcfifo'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp' for cell 'usb_sync_i/tx_dcfifo'
-Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1006.102 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1770 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1003.215 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1411 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2025.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Chipscope 16-324] Core: ila_0_i UUID: f3f54af1-8a94-5598-9b44-6a65fdd7af22 
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_uartlite_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_uartlite_0_0/microblaze_axi_uartlite_0_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_uartlite_0/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0/U0'
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:7]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:7]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:7]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:7]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:7]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:10]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:10]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:10]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:10]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:10]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:13]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:13]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:13]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:13]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:13]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:16]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:16]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:16]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:16]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:16]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:19]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:19]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:19]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:19]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:19]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:22]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:22]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:22]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:22]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:22]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:25]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:25]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:25]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:25]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:25]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:28]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:28]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:28]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:28]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:28]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:31]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:31]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:31]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:31]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:31]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:34]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:34]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:34]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:34]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:34]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:37]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:37]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:37]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:37]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:37]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:40]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:40]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:40]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:40]
-WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc:40]
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/microblaze_microblaze_0_1.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0_board.xdc] for cell 'microblaze_i/microblaze_i/rst_clk_100MHz_100M/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_clk_100MHz_100M_0/microblaze_rst_clk_100MHz_100M_0_board.xdc] for cell 'microblaze_i/microblaze_i/rst_clk_100MHz_100M/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/bd_0/ip/ip_1/bd_87ec_psr_aclk_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_smc/inst/clk_map/psr_aclk/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/bd_0/ip/ip_1/bd_87ec_psr_aclk_0_board.xdc] for cell 'microblaze_i/microblaze_i/axi_smc/inst/clk_map/psr_aclk/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/smartconnect.xdc] for cell 'microblaze_i/microblaze_i/axi_smc/inst'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_smc_0/smartconnect.xdc] for cell 'microblaze_i/microblaze_i/axi_smc/inst'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_intc_0_0/microblaze_axi_intc_0_0.xdc] for cell 'microblaze_i/microblaze_i/axi_intc_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_intc_0_0/microblaze_axi_intc_0_0.xdc] for cell 'microblaze_i/microblaze_i/axi_intc_0/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0/U0'
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:4]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:7]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:10]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPIP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:13]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-1' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:16]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-2' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:19]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:22]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:25]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-3' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:28]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:31]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:34]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_lower/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:37]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_MUL_I/Use_Single_DSP48E1.dsp_module_upper/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:37]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I2/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:37]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:37]
+WARNING: [Vivado_Tcl 4-2057] Waiver ID 'DPOP-4' object list specifies likely unusable hierarchical instance 'microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Data_Flow_I/mul_unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48E1.DSP48E1_I1'. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc:37]
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_1/bd_9447_psr_aclk_0_board.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_periph/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_1/bd_9447_psr_aclk_0_board.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_periph/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/smartconnect.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_periph/inst'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/smartconnect.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_periph/inst'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_intc/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_intc/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_Clk_100M_0/microblaze_rst_Clk_100M_0_board.xdc] for cell 'microblaze_i/microblaze_i/rst_Clk_100M/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_Clk_100M_0/microblaze_rst_Clk_100M_0_board.xdc] for cell 'microblaze_i/microblaze_i/rst_Clk_100M/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2_board.xdc] for cell 'microblaze_i/microblaze_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2_board.xdc] for cell 'microblaze_i/microblaze_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_board.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_board.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
 Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'adc_i/g_fir.fir1/U0'
 Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'adc_i/g_fir.fir1/U0'
 Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc] for cell 'adc_i/g_fir.fir2/U0'
@@ -146,7 +143,7 @@ Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/
 Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc] for cell 'clk_wiz_0_inst/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc:54]
 INFO: [Timing 38-2] Deriving generated clocks [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc:54]
-get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 1732.332 ; gain = 594.129
+get_clocks: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1726.848 ; gain = 591.211
 Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc] for cell 'clk_wiz_0_inst/inst'
 Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'ila_0_i/U0'
 WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc:31]
@@ -160,12 +157,12 @@ Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_g
 Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc] for cell 'usb_sync_i/tx_dcfifo/U0'
 Parsing XDC File [C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc]
 Finished Parsing XDC File [C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc]
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_clocks.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_0/microblaze_axi_quad_spi_0_0_clocks.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_1/microblaze_mdm_1_1.xdc] for cell 'microblaze_i/microblaze_i/mdm_1/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_1/microblaze_mdm_1_1.xdc] for cell 'microblaze_i/microblaze_i/mdm_1/U0'
-Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_intc_0_0/microblaze_axi_intc_0_0_clocks.xdc] for cell 'microblaze_i/microblaze_i/axi_intc_0/U0'
-Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_intc_0_0/microblaze_axi_intc_0_0_clocks.xdc] for cell 'microblaze_i/microblaze_i/axi_intc_0/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2_clocks.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_intc/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2_clocks.xdc] for cell 'microblaze_i/microblaze_i/microblaze_0_axi_intc/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4.xdc] for cell 'microblaze_i/microblaze_i/mdm_1/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4.xdc] for cell 'microblaze_i/microblaze_i/mdm_1/U0'
+Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_clocks.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
+Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_clocks.xdc] for cell 'microblaze_i/microblaze_i/axi_quad_spi_0/U0'
 Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'usb_sync_i/rx_dcfifo/U0'
 Finished Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'usb_sync_i/rx_dcfifo/U0'
 Parsing XDC File [c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'usb_sync_i/tx_dcfifo/U0'
@@ -218,27 +215,28 @@ WARNING: [XPM_CDC_GRAY: TCL-1000] The source and destination clocks are the same
  1) Manually instantiated XPM_CDC modules: AMD recommends that you remove these modules. 
  2) AMD IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
  [C:/Xilinx/2025.2/Vivado/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl:16]
-INFO: [Project 1-1714] 123 XPM XDC files have been applied to the design.
+INFO: [Project 1-1714] 122 XPM XDC files have been applied to the design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 WARNING: [Constraints 18-5572] Instance microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG has IOB constraint set, However, the instance does not seem to have valid I/O connection to be placed into I/O. The constraint on the instance will be ignored.
 WARNING: [Constraints 18-5572] Instance microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG has IOB constraint set, However, the instance does not seem to have valid I/O connection to be placed into I/O. The constraint on the instance will be ignored.
 Generating merged BMM file for the design top 'top_module'...
-INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_1/data/mb_bootloop_le.elf 
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/data/mb_bootloop_le.elf 
 INFO: [Project 1-1687] 2 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1732.332 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1726.848 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 771 instances were transformed.
+  A total of 803 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 104 instances
   IOBUF => IOBUF (IBUF, OBUFT): 8 instances
   LUT6_2 => LUT6_2 (LUT5, LUT6): 145 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 32 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 68 instances
   RAM64M => RAM64M (RAMD64E(x4)): 442 instances
   RAM64X1D => RAM64X1D (RAMD64E(x2)): 2 instances
 
-38 Infos, 72 Warnings, 0 Critical Warnings and 0 Errors encountered.
+37 Infos, 72 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1732.332 ; gain = 1057.465
+link_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1726.848 ; gain = 1050.574
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -249,13 +247,13 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1732.332 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1726.848 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 2aef559c0
+Ending Cache Timing Information Task | Checksum: 27193c97b
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1732.332 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1726.848 ; gain = 0.000
 
 Starting Logic Optimization Task
 
@@ -267,42 +265,42 @@ Phase 1.1.1 Generate And Synthesize Debug Cores
 INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
 INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = b3d3adff5384cb60.
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2182.891 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 2182.891 ; gain = 0.000
-Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: 33b217cc1
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2178.574 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 2178.574 ; gain = 0.000
+Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:43 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Phase 1.1 Core Generation And Design Setup | Checksum: 33b217cc1
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Phase 1.1 Core Generation And Design Setup | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:43 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Phase 1.2 Setup Constraints And Sort Netlist
-Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 33b217cc1
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:43 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Phase 1 Initialization | Checksum: 33b217cc1
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Phase 1 Initialization | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:43 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Phase 2 Timer Update And Timing Data Collection
 
 Phase 2.1 Detect if minReqCache needed
-Phase 2.1 Detect if minReqCache needed | Checksum: 33b217cc1
+Phase 2.1 Detect if minReqCache needed | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:43 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Phase 2.2 Timer Update
-Phase 2.2 Timer Update | Checksum: 33b217cc1
+Phase 2.2 Timer Update | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:44 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:42 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Phase 2.3 Timing Data Collection
-Phase 2.3 Timing Data Collection | Checksum: 33b217cc1
+Phase 2.3 Timing Data Collection | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:44 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Phase 2 Timer Update And Timing Data Collection | Checksum: 33b217cc1
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:42 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1e59685f1
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:44 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:42 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Phase 3 Retarget
 INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
@@ -311,78 +309,78 @@ INFO: [Opt 31-1566] Pulled 5 inverters resulting in an inversion of 25 pins
 INFO: [Opt 31-138] Pushed 8 inverter(s) to 12 load pin(s).
 CRITICAL WARNING: [Opt 31-430] Found a FDRE that its data pin is undriven. Driver is required to prevent unexpected behavior:microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG
 INFO: [Opt 31-49] Retargeted 24 cell(s).
-Phase 3 Retarget | Checksum: 1f6834988
+Phase 3 Retarget | Checksum: 274eefa7c
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:46 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Retarget | Checksum: 1f6834988
-INFO: [Opt 31-389] Phase Retarget created 203 cells and removed 285 cells
-INFO: [Opt 31-1021] In phase Retarget, 305 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:43 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Retarget | Checksum: 274eefa7c
+INFO: [Opt 31-389] Phase Retarget created 226 cells and removed 326 cells
+INFO: [Opt 31-1021] In phase Retarget, 289 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 Constant propagation
 CRITICAL WARNING: [Opt 31-430] Found a FDRE that its data pin is undriven. Driver is required to prevent unexpected behavior:microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 4 Constant propagation | Checksum: 1ed1365ee
+Phase 4 Constant propagation | Checksum: 232b9a7bc
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:46 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Constant propagation | Checksum: 1ed1365ee
-INFO: [Opt 31-389] Phase Constant propagation created 14 cells and removed 173 cells
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:43 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Constant propagation | Checksum: 232b9a7bc
+INFO: [Opt 31-389] Phase Constant propagation created 26 cells and removed 227 cells
 INFO: [Opt 31-1021] In phase Constant propagation, 270 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 Sweep
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2182.891 ; gain = 0.000
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 2178.574 ; gain = 0.000
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 2182.891 ; gain = 0.000
-Phase 5 Sweep | Checksum: 26739bbb1
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2178.574 ; gain = 0.000
+Phase 5 Sweep | Checksum: 28f59b790
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:50 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Sweep | Checksum: 26739bbb1
-INFO: [Opt 31-389] Phase Sweep created 5 cells and removed 523 cells
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:47 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Sweep | Checksum: 28f59b790
+INFO: [Opt 31-389] Phase Sweep created 5 cells and removed 628 cells
 INFO: [Opt 31-1021] In phase Sweep, 1145 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 6 BUFG optimization
-INFO: [Opt 31-194] Inserted BUFG microblaze_i/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0_BUFG_inst to drive 40 load(s) on clock net microblaze_i/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0_BUFG
+INFO: [Opt 31-194] Inserted BUFG microblaze_i/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0_BUFG_inst to drive 42 load(s) on clock net microblaze_i/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0_BUFG
 INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
-Phase 6 BUFG optimization | Checksum: 2779c55dd
+Phase 6 BUFG optimization | Checksum: 328b3cfc4
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 2182.891 ; gain = 18.922
-BUFG optimization | Checksum: 2779c55dd
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:48 . Memory (MB): peak = 2178.574 ; gain = 18.941
+BUFG optimization | Checksum: 328b3cfc4
 INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
 
 Phase 7 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 7 Shift Register Optimization | Checksum: 1f54e2651
+Phase 7 Shift Register Optimization | Checksum: 256fec1d3
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Shift Register Optimization | Checksum: 1f54e2651
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:48 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Shift Register Optimization | Checksum: 256fec1d3
 INFO: [Opt 31-389] Phase Shift Register Optimization created 1 cells and removed 2 cells
 
 Phase 8 Post Processing Netlist
-Phase 8 Post Processing Netlist | Checksum: 26a97ee58
+Phase 8 Post Processing Netlist | Checksum: 248d2e82b
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Post Processing Netlist | Checksum: 26a97ee58
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:48 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Post Processing Netlist | Checksum: 248d2e82b
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 INFO: [Opt 31-1021] In phase Post Processing Netlist, 315 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 9 Finalization
 
 Phase 9.1 Finalizing Design Cores and Updating Shapes
-Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 21c6e7ca5
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 2a26d36e7
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:52 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:49 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Phase 9.2 Verifying Netlist Connectivity
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2182.891 ; gain = 0.000
-Phase 9.2 Verifying Netlist Connectivity | Checksum: 21c6e7ca5
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 2178.574 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 2a26d36e7
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:52 . Memory (MB): peak = 2182.891 ; gain = 18.922
-Phase 9 Finalization | Checksum: 21c6e7ca5
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:49 . Memory (MB): peak = 2178.574 ; gain = 18.941
+Phase 9 Finalization | Checksum: 2a26d36e7
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:52 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:49 . Memory (MB): peak = 2178.574 ; gain = 18.941
 Opt_design Change Summary
 =========================
 
@@ -390,18 +388,18 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |             203  |             285  |                                            305  |
-|  Constant propagation         |              14  |             173  |                                            270  |
-|  Sweep                        |               5  |             523  |                                           1145  |
+|  Retarget                     |             226  |             326  |                                            289  |
+|  Constant propagation         |              26  |             227  |                                            270  |
+|  Sweep                        |               5  |             628  |                                           1145  |
 |  BUFG optimization            |               1  |               0  |                                              0  |
 |  Shift Register Optimization  |               1  |               2  |                                              0  |
 |  Post Processing Netlist      |               0  |               0  |                                            315  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
-Ending Logic Optimization Task | Checksum: 21c6e7ca5
+Ending Logic Optimization Task | Checksum: 2a26d36e7
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:52 . Memory (MB): peak = 2182.891 ; gain = 18.922
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:49 . Memory (MB): peak = 2178.574 ; gain = 18.941
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -414,47 +412,47 @@ Finished Running Vector-less Activity Propagation
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 2 BRAM(s) out of a total of 19 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 1 BRAM(s) out of a total of 26 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 10 newly gated: 0 Total Ports: 38
-Ending PowerOpt Patch Enables Task | Checksum: 277f3db2b
+Number of BRAM Ports augmented: 10 newly gated: 0 Total Ports: 52
+Ending PowerOpt Patch Enables Task | Checksum: 29826818a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.352 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 277f3db2b
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.316 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 29826818a
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 2204.582 ; gain = 21.691
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 2200.184 ; gain = 21.609
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 277f3db2b
+Ending Final Cleanup Task | Checksum: 29826818a
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-78 Infos, 72 Warnings, 2 Critical Warnings and 0 Errors encountered.
+77 Infos, 72 Warnings, 2 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:14 . Memory (MB): peak = 2204.582 ; gain = 472.250
+opt_design: Time (s): cpu = 00:00:48 ; elapsed = 00:01:10 . Memory (MB): peak = 2200.184 ; gain = 473.336
 INFO: [Vivado 12-24828] Executing command : report_drc -file top_module_drc_opted.rpt -pb top_module_drc_opted.pb -rpx top_module_drc_opted.rpx
 Command: report_drc -file top_module_drc_opted.rpt -pb top_module_drc_opted.pb -rpx top_module_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_drc_opted.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2204.582 ; gain = 0.000
-generate_parallel_reports: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2204.582 ; gain = 0.000
+report_drc: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2200.184 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2200.184 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.120 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.126 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.084 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.111 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.127 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_opt.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2204.582 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Chipscope 16-240] Debug cores have already been implemented
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -466,7 +464,7 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running DRC as a precondition to command place_design
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 10 Warnings
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
 
@@ -475,65 +473,65 @@ Starting Placer Task
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18613d147
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 263bba84b
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 CRITICAL WARNING: [Place 30-73] Invalid constraint on register 'microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO0_I_REG'. It has the property IOB=TRUE, but it is not driving or driven by any IO element.
 CRITICAL WARNING: [Place 30-73] Invalid constraint on register 'microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/IO1_I_REG'. It has the property IOB=TRUE, but it is not driving or driven by any IO element.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 15ffcdd19
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1207c808f
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1aa764c64
+Phase 1.3 Build Placer Netlist Model | Checksum: 1d30404e5
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1aa764c64
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1d30404e5
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1aa764c64
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1d30404e5
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 1a3b2680b
+Phase 2.1 Floorplanning | Checksum: 1e16ac802
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:18 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:18 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 16acbd56e
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 21f6165d7
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 16acbd56e
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 21f6165d7
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2.4 Global Place Phase1
-Phase 2.4 Global Place Phase1 | Checksum: 2115b3f14
+Phase 2.4 Global Place Phase1 | Checksum: 1f2dbcaeb
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:00:51 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:01:22 ; elapsed = 00:00:48 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2.5 Global Place Phase2
 
 Phase 2.5.1 UpdateTiming Before Physical Synthesis
-Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 205772240
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 18ade8a66
 
-Time (s): cpu = 00:01:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:01:30 ; elapsed = 00:00:52 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2.5.2 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 636 LUT instances to create LUTNM shape
-INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-1138] End 1 Pass. Optimized 273 nets or LUTs. Breaked 0 LUT, combined 273 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1035] Found 1 LUTNM shape to break, 593 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 1, total 1, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 260 nets or LUTs. Breaked 1 LUT, combined 259 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -552,7 +550,7 @@ INFO: [Physopt 32-846] No candidate cells for URAM register optimization found i
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -561,7 +559,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |            273  |                   273  |           0  |           1  |  00:00:01  |
+|  LUT Combining                                    |            1  |            259  |                   260  |           0  |           1  |  00:00:01  |
 |  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
@@ -570,69 +568,69 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |            273  |                   273  |           0  |           9  |  00:00:01  |
+|  Total                                            |            1  |            259  |                   260  |           0  |           9  |  00:00:01  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.5.2 Physical Synthesis In Placer | Checksum: 287715ebb
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 173882c84
 
-Time (s): cpu = 00:01:42 ; elapsed = 00:01:00 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 2.5 Global Place Phase2 | Checksum: 27e6bbdb3
+Time (s): cpu = 00:01:39 ; elapsed = 00:00:58 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 2126651b0
 
-Time (s): cpu = 00:01:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 27e6bbdb3
+Time (s): cpu = 00:01:41 ; elapsed = 00:00:59 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 2126651b0
 
-Time (s): cpu = 00:01:45 ; elapsed = 00:01:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:01:41 ; elapsed = 00:00:59 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1e34e9449
+Phase 3.1 Commit Multi Column Macros | Checksum: 22981d8c9
 
-Time (s): cpu = 00:01:52 ; elapsed = 00:01:05 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:01:46 ; elapsed = 00:01:02 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2a20b75ad
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 20b31ef08
 
-Time (s): cpu = 00:02:08 ; elapsed = 00:01:16 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:13 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 2c7b981fa
+Phase 3.3 Area Swap Optimization | Checksum: 27ea3277c
 
-Time (s): cpu = 00:02:09 ; elapsed = 00:01:17 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:13 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 305ced179
+Phase 3.4 Pipeline Register Optimization | Checksum: 2bd2163f9
 
-Time (s): cpu = 00:02:09 ; elapsed = 00:01:17 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:04 ; elapsed = 00:01:13 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 29041c78a
+Phase 3.5 Fast Optimization | Checksum: 27df4e86d
 
-Time (s): cpu = 00:02:23 ; elapsed = 00:01:25 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:21 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 2aadae5e0
+Phase 3.6 Small Shape Detail Placement | Checksum: 27947b593
 
-Time (s): cpu = 00:02:42 ; elapsed = 00:01:42 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:29 ; elapsed = 00:01:34 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 2adbbbf99
+Phase 3.7 Re-assign LUT pins | Checksum: 260cca0b3
 
-Time (s): cpu = 00:02:45 ; elapsed = 00:01:46 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:31 ; elapsed = 00:01:36 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 255903ea0
+Phase 3.8 Pipeline Register Optimization | Checksum: 1e14bb5c3
 
-Time (s): cpu = 00:02:45 ; elapsed = 00:01:46 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:32 ; elapsed = 00:01:37 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 3.9 Fast Optimization
-Phase 3.9 Fast Optimization | Checksum: 26b8ddd83
+Phase 3.9 Fast Optimization | Checksum: 2063b9331
 
-Time (s): cpu = 00:03:05 ; elapsed = 00:01:57 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 26b8ddd83
+Time (s): cpu = 00:02:48 ; elapsed = 00:01:45 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 2063b9331
 
-Time (s): cpu = 00:03:06 ; elapsed = 00:01:57 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:02:48 ; elapsed = 00:01:45 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -640,7 +638,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 15571f9c3
+Post Placement Optimization Initialization | Checksum: 291f26599
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -648,34 +646,33 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.151 | TNS=-0.293 |
-Phase 1 Physical Synthesis Initialization | Checksum: 12795c790
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.175 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1c373be7d
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.950 . Memory (MB): peak = 2204.582 ; gain = 0.000
-INFO: [Place 46-33] Processed net microblaze_i/reset_n, BUFG insertion was skipped due to placement/routing conflicts.
-INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
-Ending Physical Synthesis Task | Checksum: 1cdd233d7
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.874 . Memory (MB): peak = 2200.184 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 2462be939
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: 15571f9c3
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.964 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 291f26599
 
-Time (s): cpu = 00:03:26 ; elapsed = 00:02:10 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:03:05 ; elapsed = 00:01:56 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 4.1.1.2 Post Placement Timing Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.101. For the most accurate timing information please run report_timing.
-Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1757f0e7e
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.506. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1eeb0af7c
 
-Time (s): cpu = 00:04:26 ; elapsed = 00:03:03 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:03:12 ; elapsed = 00:02:03 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
-Time (s): cpu = 00:04:26 ; elapsed = 00:03:03 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 1757f0e7e
+Time (s): cpu = 00:03:12 ; elapsed = 00:02:03 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1eeb0af7c
 
-Time (s): cpu = 00:04:26 ; elapsed = 00:03:03 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:03:12 ; elapsed = 00:02:03 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 1757f0e7e
+Phase 4.2 Post Placement Cleanup | Checksum: 1eeb0af7c
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:03:04 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:03:13 ; elapsed = 00:02:04 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
 
@@ -687,82 +684,82 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |___________|___________________|___________________|
 |      North|                1x1|                2x2|
 |___________|___________________|___________________|
-|      South|                1x1|                2x2|
+|      South|                1x1|                4x4|
 |___________|___________________|___________________|
 |       East|                1x1|                1x1|
 |___________|___________________|___________________|
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: 1757f0e7e
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1eeb0af7c
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:03:04 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 4.3 Placer Reporting | Checksum: 1757f0e7e
+Time (s): cpu = 00:03:13 ; elapsed = 00:02:04 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 1eeb0af7c
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:03:04 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:03:13 ; elapsed = 00:02:04 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:03:04 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 136a767d2
+Time (s): cpu = 00:03:13 ; elapsed = 00:02:04 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 200a8d6bb
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:03:04 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Ending Placer Task | Checksum: 126ca93c7
+Time (s): cpu = 00:03:13 ; elapsed = 00:02:04 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Ending Placer Task | Checksum: 1885af5ab
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:03:04 . Memory (MB): peak = 2204.582 ; gain = 0.000
-123 Infos, 72 Warnings, 4 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:03:13 ; elapsed = 00:02:04 . Memory (MB): peak = 2200.184 ; gain = 0.000
+121 Infos, 72 Warnings, 4 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:04:35 ; elapsed = 00:03:11 . Memory (MB): peak = 2204.582 ; gain = 0.000
+place_design: Time (s): cpu = 00:03:21 ; elapsed = 00:02:12 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
 Running report generation with 2 threads.
 INFO: [Vivado 12-24828] Executing command : report_io -file top_module_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.166 . Memory (MB): peak = 2204.582 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.172 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file top_module_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.213 . Memory (MB): peak = 2204.582 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.195 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_module_utilization_placed.rpt -pb top_module_utilization_placed.pb
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2200.184 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.257 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote PlaceStorage: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:09 ; elapsed = 00:00:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.089 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.187 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_placed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 2204.582 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2200.184 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
 
 Starting Initial Update Timing Task
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 2204.582 ; gain = 0.000
-INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.101 | TNS= 0.000 | 
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2200.184 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.506 | TNS= 0.000 | 
 INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
 INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
 INFO: [Common 17-83] Releasing license: Implementation
-134 Infos, 72 Warnings, 4 Critical Warnings and 0 Errors encountered.
+132 Infos, 72 Warnings, 4 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
-phys_opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2204.582 ; gain = 0.000
+phys_opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2200.184 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.087 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.199 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote PlaceStorage: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2204.582 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:08 ; elapsed = 00:00:02 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.169 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2200.184 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2200.184 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_physopt.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 2204.582 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 2200.184 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -772,48 +769,48 @@ Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
 
 Phase 1 Build RT Design
-Checksum: PlaceDB: 51ce63a6 ConstDB: 0 ShapeSum: 347ad3ca RouteDB: a0815c57
-Post Restoration Checksum: NetGraph: 45a4d221 | NumContArr: 43fa9ab1 | Constraints: c2a8fa9d | Timing: c2a8fa9d
-Phase 1 Build RT Design | Checksum: 20ef1620c
+Checksum: PlaceDB: 77a19e4a ConstDB: 0 ShapeSum: 7037fb0a RouteDB: a0815c57
+Post Restoration Checksum: NetGraph: e931bca9 | NumContArr: e0c816ae | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 34f4bc891
 
-Time (s): cpu = 00:00:50 ; elapsed = 00:00:38 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:38 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2 Router Initialization
 
 Phase 2.1 Fix Topology Constraints
-Phase 2.1 Fix Topology Constraints | Checksum: 20ef1620c
+Phase 2.1 Fix Topology Constraints | Checksum: 34f4bc891
 
-Time (s): cpu = 00:00:50 ; elapsed = 00:00:38 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:38 . Memory (MB): peak = 2200.184 ; gain = 0.000
 
 Phase 2.2 Pre Route Cleanup
-Phase 2.2 Pre Route Cleanup | Checksum: 20ef1620c
+Phase 2.2 Pre Route Cleanup | Checksum: 34f4bc891
 
-Time (s): cpu = 00:00:50 ; elapsed = 00:00:38 . Memory (MB): peak = 2204.582 ; gain = 0.000
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:38 . Memory (MB): peak = 2200.184 ; gain = 0.000
  Number of Nodes with overlaps = 0
 
 Phase 2.3 Update Timing
-Phase 2.3 Update Timing | Checksum: 2733d2a4f
+Phase 2.3 Update Timing | Checksum: 29083ad61
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:00:50 . Memory (MB): peak = 2223.043 ; gain = 18.461
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.111  | TNS=0.000  | WHS=-0.352 | THS=-325.993|
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:48 . Memory (MB): peak = 2208.871 ; gain = 8.688
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.675  | TNS=0.000  | WHS=-0.349 | THS=-296.639|
 
 
 Phase 2.4 Update Timing for Bus Skew
 
 Phase 2.4.1 Update Timing
-Phase 2.4.1 Update Timing | Checksum: 2f98a7475
+Phase 2.4.1 Update Timing | Checksum: 1e164728c
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:01:00 . Memory (MB): peak = 2285.484 ; gain = 80.902
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.111  | TNS=0.000  | WHS=-0.265 | THS=-1.454 |
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:54 . Memory (MB): peak = 2214.211 ; gain = 14.027
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.675  | TNS=0.000  | WHS=-0.145 | THS=-1.314 |
 
-Phase 2.4 Update Timing for Bus Skew | Checksum: 2f85a8bde
+Phase 2.4 Update Timing for Bus Skew | Checksum: 234ff0d89
 
-Time (s): cpu = 00:01:27 ; elapsed = 00:01:00 . Memory (MB): peak = 2285.484 ; gain = 80.902
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:55 . Memory (MB): peak = 2214.211 ; gain = 14.027
 
 Phase 2.5 Soft Constraint Pins - Fast Budgeting
-Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 2f85a8bde
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 234ff0d89
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:00 . Memory (MB): peak = 2313.551 ; gain = 108.969
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:55 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Router Utilization Summary
   Global Vertical Routing Utilization    = 0.00342821 %
@@ -821,116 +818,90 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 16614
+  Number of Failed Nets               = 13735
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 16614
+  Number of Unrouted Nets             = 13735
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 2 Router Initialization | Checksum: 209d99982
+Phase 2 Router Initialization | Checksum: 1eb334f01
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:00 . Memory (MB): peak = 2313.551 ; gain = 108.969
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:55 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 3 Global Routing
-Phase 3 Global Routing | Checksum: 209d99982
+Phase 3 Global Routing | Checksum: 1eb334f01
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:00 . Memory (MB): peak = 2313.551 ; gain = 108.969
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:55 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 4 Initial Routing
 
 Phase 4.1 Initial Net Routing Pass
-Phase 4.1 Initial Net Routing Pass | Checksum: 13ee91581
+Phase 4.1 Initial Net Routing Pass | Checksum: 2eb77e54b
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:01:08 . Memory (MB): peak = 2313.551 ; gain = 108.969
-Phase 4 Initial Routing | Checksum: 13ee91581
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:03 . Memory (MB): peak = 2242.133 ; gain = 41.949
+Phase 4 Initial Routing | Checksum: 2eb77e54b
 
-Time (s): cpu = 00:01:43 ; elapsed = 00:01:08 . Memory (MB): peak = 2313.551 ; gain = 108.969
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:03 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 5 Rip-up And Reroute
 
 Phase 5.1 Global Iteration 0
- Number of Nodes with overlaps = 3005
- Number of Nodes with overlaps = 577
- Number of Nodes with overlaps = 204
- Number of Nodes with overlaps = 47
- Number of Nodes with overlaps = 10
- Number of Nodes with overlaps = 4
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.487 | TNS=-1.152 | WHS=N/A    | THS=N/A    |
-
-Phase 5.1 Global Iteration 0 | Checksum: 22d1e2717
-
-Time (s): cpu = 00:02:32 ; elapsed = 00:01:43 . Memory (MB): peak = 2318.406 ; gain = 113.824
-
-Phase 5.2 Global Iteration 1
- Number of Nodes with overlaps = 195
- Number of Nodes with overlaps = 82
- Number of Nodes with overlaps = 21
- Number of Nodes with overlaps = 9
- Number of Nodes with overlaps = 3
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.099 | TNS=-0.302 | WHS=N/A    | THS=N/A    |
-
-Phase 5.2 Global Iteration 1 | Checksum: 2578fd5e5
-
-Time (s): cpu = 00:02:45 ; elapsed = 00:01:53 . Memory (MB): peak = 2318.449 ; gain = 113.867
-
-Phase 5.3 Global Iteration 2
- Number of Nodes with overlaps = 202
- Number of Nodes with overlaps = 94
- Number of Nodes with overlaps = 26
+ Number of Nodes with overlaps = 1189
+ Number of Nodes with overlaps = 117
+ Number of Nodes with overlaps = 37
+ Number of Nodes with overlaps = 12
  Number of Nodes with overlaps = 7
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.648 | TNS=-0.938 | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.416  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 5.3 Global Iteration 2 | Checksum: 2a4ee8132
+Phase 5.1 Global Iteration 0 | Checksum: 25e2567d7
 
-Time (s): cpu = 00:02:54 ; elapsed = 00:02:00 . Memory (MB): peak = 2318.449 ; gain = 113.867
-Phase 5 Rip-up And Reroute | Checksum: 2a4ee8132
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:23 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
-Time (s): cpu = 00:02:54 ; elapsed = 00:02:00 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.416  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 1ec1c532d
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:01:24 . Memory (MB): peak = 2242.133 ; gain = 41.949
+Phase 5 Rip-up And Reroute | Checksum: 1ec1c532d
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:01:24 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 6 Delay and Skew Optimization
 
 Phase 6.1 Delay CleanUp
+Phase 6.1 Delay CleanUp | Checksum: 1ec1c532d
 
-Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 2005b6668
-
-Time (s): cpu = 00:02:57 ; elapsed = 00:02:01 . Memory (MB): peak = 2318.449 ; gain = 113.867
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.099 | TNS=-0.302 | WHS=N/A    | THS=N/A    |
-
- Number of Nodes with overlaps = 0
-Phase 6.1 Delay CleanUp | Checksum: 2276d600a
-
-Time (s): cpu = 00:02:58 ; elapsed = 00:02:02 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:24 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 6.2 Clock Skew Optimization
-Phase 6.2 Clock Skew Optimization | Checksum: 2276d600a
+Phase 6.2 Clock Skew Optimization | Checksum: 1ec1c532d
 
-Time (s): cpu = 00:02:58 ; elapsed = 00:02:02 . Memory (MB): peak = 2318.449 ; gain = 113.867
-Phase 6 Delay and Skew Optimization | Checksum: 2276d600a
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:24 . Memory (MB): peak = 2242.133 ; gain = 41.949
+Phase 6 Delay and Skew Optimization | Checksum: 1ec1c532d
 
-Time (s): cpu = 00:02:58 ; elapsed = 00:02:02 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:24 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 7 Post Hold Fix
 
 Phase 7.1 Hold Fix Iter
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.099 | TNS=-0.278 | WHS=0.032  | THS=0.000  |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.416  | TNS=0.000  | WHS=0.015  | THS=0.000  |
 
-Phase 7.1 Hold Fix Iter | Checksum: 248b516d0
+Phase 7.1 Hold Fix Iter | Checksum: 1fe05539f
 
-Time (s): cpu = 00:03:01 ; elapsed = 00:02:04 . Memory (MB): peak = 2318.449 ; gain = 113.867
-Phase 7 Post Hold Fix | Checksum: 248b516d0
+Time (s): cpu = 00:02:06 ; elapsed = 00:01:26 . Memory (MB): peak = 2242.133 ; gain = 41.949
+Phase 7 Post Hold Fix | Checksum: 1fe05539f
 
-Time (s): cpu = 00:03:01 ; elapsed = 00:02:04 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:06 ; elapsed = 00:01:26 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 8 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 7.83465 %
-  Global Horizontal Routing Utilization  = 9.68285 %
+  Global Vertical Routing Utilization    = 5.48465 %
+  Global Horizontal Routing Utilization  = 7.0246 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -940,101 +911,70 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
+Phase 8 Route finalize | Checksum: 1fe05539f
 
---GLOBAL Congestion:
-Utilization threshold used for congestion level computation: 0.85
-Congestion Report
-North Dir 1x1 Area, Max Cong = 55.8559%, No Congested Regions.
-South Dir 1x1 Area, Max Cong = 57.6577%, No Congested Regions.
-East Dir 1x1 Area, Max Cong = 75%, No Congested Regions.
-West Dir 1x1 Area, Max Cong = 67.6471%, No Congested Regions.
-
-------------------------------
-Reporting congestion hotspots
-------------------------------
-Direction: North
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-Direction: South
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-Direction: East
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-Direction: West
-----------------
-Congested clusters found at Level 0
-Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
-
-Phase 8 Route finalize | Checksum: 248b516d0
-
-Time (s): cpu = 00:03:01 ; elapsed = 00:02:04 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:06 ; elapsed = 00:01:26 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 9 Verifying routed nets
 
  Verification completed successfully
-Phase 9 Verifying routed nets | Checksum: 248b516d0
+Phase 9 Verifying routed nets | Checksum: 1fe05539f
 
-Time (s): cpu = 00:03:01 ; elapsed = 00:02:04 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:06 ; elapsed = 00:01:26 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 10 Depositing Routes
-Phase 10 Depositing Routes | Checksum: 1e0e9ba39
+Phase 10 Depositing Routes | Checksum: 2e08b3a0f
 
-Time (s): cpu = 00:03:07 ; elapsed = 00:02:09 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:30 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 11 Post Process Routing
-Phase 11 Post Process Routing | Checksum: 1e0e9ba39
+Phase 11 Post Process Routing | Checksum: 2e08b3a0f
 
-Time (s): cpu = 00:03:07 ; elapsed = 00:02:09 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:30 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Phase 12 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.099 | TNS=-0.278 | WHS=0.032  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.416  | TNS=0.000  | WHS=0.015  | THS=0.000  |
 
-WARNING: [Route 35-328] Router estimated timing not met.
-Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
-Phase 12 Post Router Timing | Checksum: 1e0e9ba39
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 12 Post Router Timing | Checksum: 2e08b3a0f
 
-Time (s): cpu = 00:03:07 ; elapsed = 00:02:09 . Memory (MB): peak = 2318.449 ; gain = 113.867
-Total Elapsed time in route_design: 128.951 secs
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:30 . Memory (MB): peak = 2242.133 ; gain = 41.949
+Total Elapsed time in route_design: 90.07 secs
 
 Phase 13 Post-Route Event Processing
-Phase 13 Post-Route Event Processing | Checksum: 173dbd7c7
+Phase 13 Post-Route Event Processing | Checksum: 1e21afa7c
 
-Time (s): cpu = 00:03:07 ; elapsed = 00:02:09 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:30 . Memory (MB): peak = 2242.133 ; gain = 41.949
 INFO: [Route 35-16] Router Completed Successfully
-Ending Routing Task | Checksum: 173dbd7c7
+Ending Routing Task | Checksum: 1e21afa7c
 
-Time (s): cpu = 00:03:07 ; elapsed = 00:02:09 . Memory (MB): peak = 2318.449 ; gain = 113.867
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:30 . Memory (MB): peak = 2242.133 ; gain = 41.949
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-148 Infos, 73 Warnings, 4 Critical Warnings and 0 Errors encountered.
+145 Infos, 72 Warnings, 4 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:03:08 ; elapsed = 00:02:10 . Memory (MB): peak = 2318.449 ; gain = 113.867
+route_design: Time (s): cpu = 00:02:11 ; elapsed = 00:01:31 . Memory (MB): peak = 2242.133 ; gain = 41.949
 INFO: [Vivado 12-24828] Executing command : report_drc -file top_module_drc_routed.rpt -pb top_module_drc_routed.pb -rpx top_module_drc_routed.rpx
 Command: report_drc -file top_module_drc_routed.rpt -pb top_module_drc_routed.pb -rpx top_module_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_drc_routed.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2318.449 ; gain = 0.000
+report_drc: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 2242.133 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_methodology -file top_module_methodology_drc_routed.rpt -pb top_module_methodology_drc_routed.pb -rpx top_module_methodology_drc_routed.rpx
 Command: report_methodology -file top_module_methodology_drc_routed.rpt -pb top_module_methodology_drc_routed.pb -rpx top_module_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
 INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 2318.449 ; gain = 0.000
+report_drc: Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 2242.133 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file top_module_timing_summary_routed.rpt -pb top_module_timing_summary_routed.pb -rpx top_module_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
 WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
-report_timing_summary: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2318.449 ; gain = 0.000
+report_timing_summary: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2242.133 ; gain = 0.000
 INFO: [Vivado 12-24838] Running report commands "report_incremental_reuse, report_route_status" in parallel.
 Running report generation with 2 threads.
 INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file top_module_incremental_reuse_routed.rpt
@@ -1047,36 +987,36 @@ Running Vector-less Activity Propagation...
 Finished Running Vector-less Activity Propagation
 WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
 Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
-165 Infos, 75 Warnings, 5 Critical Warnings and 0 Errors encountered.
+162 Infos, 74 Warnings, 4 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 2318.449 ; gain = 0.000
+report_power: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2242.133 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file top_module_clock_utilization_routed.rpt
 INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file top_module_bus_skew_routed.rpt -pb top_module_bus_skew_routed.pb -rpx top_module_bus_skew_routed.rpx
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-generate_parallel_reports: Time (s): cpu = 00:01:16 ; elapsed = 00:00:48 . Memory (MB): peak = 2318.449 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:01:18 ; elapsed = 00:00:49 . Memory (MB): peak = 2242.133 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2318.449 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2318.449 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.133 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2242.133 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.218 . Memory (MB): peak = 2318.449 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.152 . Memory (MB): peak = 2242.133 ; gain = 0.000
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.598 . Memory (MB): peak = 2318.449 ; gain = 0.000
-Wrote PlaceStorage: Time (s): cpu = 00:00:07 ; elapsed = 00:00:02 . Memory (MB): peak = 2318.449 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.110 . Memory (MB): peak = 2318.449 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2318.449 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:11 ; elapsed = 00:00:03 . Memory (MB): peak = 2318.449 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.413 . Memory (MB): peak = 2242.133 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 2242.133 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 2242.133 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2242.133 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:08 ; elapsed = 00:00:02 . Memory (MB): peak = 2242.133 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module_routed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 2318.449 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 09:50:26 2026...
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 2242.133 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 13:47:39 2026...
 #-----------------------------------------------------------
 # Vivado v2025.2 (64-bit)
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Mar 25 09:55:22 2026
-# Process ID         : 12284
+# Start of session at: Wed Mar 25 13:48:00 2026
+# Process ID         : 12484
 # Current directory  : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1
 # Command line       : vivado.exe -log top_module.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_module.tcl -notrace
 # Log file           : C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.vdi
@@ -1091,53 +1031,54 @@ INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 09:50:26 2026...
 # Host memory        : 17083 MB
 # Swap memory        : 2550 MB
 # Total Virtual      : 19633 MB
-# Available Virtual  : 8758 MB
+# Available Virtual  : 4972 MB
 #-----------------------------------------------------------
 source top_module.tcl -notrace
 Command: open_checkpoint top_module_routed.dcp
 
 Starting open_checkpoint Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.079 . Memory (MB): peak = 368.715 ; gain = 4.824
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.081 . Memory (MB): peak = 370.379 ; gain = 5.809
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 866.516 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1799 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 859.871 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1429 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2025.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.164 . Memory (MB): peak = 1005.484 ; gain = 7.324
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.182 . Memory (MB): peak = 995.379 ; gain = 4.434
 INFO: [Timing 38-478] Restoring timing data from binary archive.
 INFO: [Timing 38-479] Binary timing data restore complete.
 INFO: [Project 1-856] Restoring constraints from binary archive.
 INFO: [Project 1-853] Binary constraint restore complete.
 INFO: [Designutils 20-5722] Start Reading Physical Databases.
 Reading placement.
-Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1643.543 ; gain = 0.000
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1631.086 ; gain = 0.000
 Reading placer database...
-Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1643.543 ; gain = 0.000
-Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1643.543 ; gain = 0.000
-Read placeStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.909 . Memory (MB): peak = 1643.543 ; gain = 0.000
-Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1643.543 ; gain = 0.000
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1631.086 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1631.086 ; gain = 0.000
+Read placeStorage: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1631.086 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1631.086 ; gain = 0.000
 Reading routing.
-Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.433 . Memory (MB): peak = 1643.543 ; gain = 0.000
-Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1643.543 ; gain = 0.000
-Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1643.543 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1660.648 ; gain = 0.000
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.745 . Memory (MB): peak = 1631.086 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1631.086 ; gain = 0.000
+Restored from archive | CPU: 3.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1631.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1638.152 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 797 instances were transformed.
+  A total of 825 instances were transformed.
   (Flop,Flop) => IDDR: 12 instances
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 104 instances
   IOBUF => IOBUF (IBUF, OBUFT): 8 instances
   LUT6_2 => LUT6_2 (LUT5, LUT6): 145 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 32 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 8 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 68 instances
   RAM64M => RAM64M (RAMD64E(x4)): 442 instances
   RAM64X1D => RAM64X1D (RAMD64E(x2)): 2 instances
-  SRLC16E => SRL16E: 8 instances
+  SRLC16E => SRL16E: 4 instances
 
 INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
-open_checkpoint: Time (s): cpu = 00:00:45 ; elapsed = 00:00:43 . Memory (MB): peak = 1668.723 ; gain = 1311.531
+open_checkpoint: Time (s): cpu = 00:00:56 ; elapsed = 00:00:53 . Memory (MB): peak = 1645.434 ; gain = 1290.449
 INFO: [Memdata 28-167] Found XPM memory block microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.TX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the microblaze_i/microblaze_i/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.RX_FIFO_II/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
 INFO: [Memdata 28-208] The XPM instance: <microblaze_i/microblaze_i/axi_fifo_mm_s_0/U0/COMP_IPIC2AXI_S/gtxd.COMP_TXD_FIFO/gfifo_gen.COMP_AXIS_FG_FIFO/COMP_FIFO/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <microblaze_i/microblaze_i/axi_fifo_mm_s_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
@@ -1166,5 +1107,5 @@ INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
 27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:47 ; elapsed = 00:00:33 . Memory (MB): peak = 2242.973 ; gain = 557.434
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 09:56:45 2026...
+write_bitstream: Time (s): cpu = 00:00:59 ; elapsed = 00:00:44 . Memory (MB): peak = 2200.852 ; gain = 538.660
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 13:49:45 2026...

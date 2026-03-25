@@ -1,0 +1,18 @@
+{
+  "name": "FMCW3_App",
+  "type": "HOST",
+  "platform": "FMCW3_Microblaze",
+  "domain": "standalone_microblaze_0",
+  "cpuInstance": "microblaze_0",
+  "cpuType": "microblaze",
+  "os": "standalone",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "standalone_microblaze_0",
+  "useSysrootToolchain": false,
+  "applicationFlow": "EMBEDDED",
+  "template": "hello_world",
+  "templateFlow": "VITIS"
+}

@@ -1,0 +1,18 @@
+vhdl xil_defaultlib  \
+"../../../bd/microblaze/ip/microblaze_microblaze_0_5/sim/microblaze_microblaze_0_5.vhd" \
+"../../../bd/microblaze/ip/microblaze_dlmb_v10_5/sim/microblaze_dlmb_v10_5.vhd" \
+"../../../bd/microblaze/ip/microblaze_ilmb_v10_5/sim/microblaze_ilmb_v10_5.vhd" \
+"../../../bd/microblaze/ip/microblaze_dlmb_bram_if_cntlr_5/sim/microblaze_dlmb_bram_if_cntlr_5.vhd" \
+"../../../bd/microblaze/ip/microblaze_ilmb_bram_if_cntlr_5/sim/microblaze_ilmb_bram_if_cntlr_5.vhd" \
+"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_1/sim/bd_9447_psr_aclk_0.vhd" \
+"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/sim/microblaze_microblaze_0_axi_intc_2.vhd" \
+"../../../bd/microblaze/ip/microblaze_mdm_1_4/sim/microblaze_mdm_1_4.vhd" \
+"../../../bd/microblaze/ip/microblaze_rst_Clk_100M_0/sim/microblaze_rst_Clk_100M_0.vhd" \
+"../../../bd/microblaze/ip/microblaze_axi_gpio_0_2/sim/microblaze_axi_gpio_0_2.vhd" \
+"../../../bd/microblaze/ip/microblaze_axi_quad_spi_0_1/sim/microblaze_axi_quad_spi_0_1.vhd" \
+"../../../bd/microblaze/ip/microblaze_axi_timer_0_1/sim/microblaze_axi_timer_0_1.vhd" \
+"../../../bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2/sim/microblaze_axi_fifo_mm_s_0_2.vhd" \
+"../../../bd/microblaze/sim/microblaze.vhd" \
+
+# Do not sort compile order
+nosort

@@ -120,67 +120,67 @@ begin
         end if;
     end process;
 
-    process(clk_100mhz)
-    begin
-        if rising_edge(clk_100mhz) then
-            config_ready_d    <= config_bytes_ready;
-            config_ready_sync <= config_ready_d;
-        end if;
-    end process;
+--    process(clk_100mhz)
+--    begin
+--        if rising_edge(clk_100mhz) then
+--            config_ready_d    <= config_bytes_ready;
+--            config_ready_sync <= config_ready_d;
+--        end if;
+--    end process;
     
-    process(clk_100mhz, reset_n, soft_reset_n)
-    begin
-        if reset_n = '0' or soft_reset_n = '0' then
-            fifo_st <= st_idle;
-            fifo_byte_index <= 0;
-            fiforx_tlast <= '0';
-            fiforx_tvalid <= '0';
-            fiforx_tdata <= (31 downto 0 => '0');
+--    process(clk_100mhz, reset_n, soft_reset_n)
+--    begin
+--        if reset_n = '0' or soft_reset_n = '0' then
+--            fifo_st <= st_idle;
+--            fifo_byte_index <= 0;
+--            fiforx_tlast <= '0';
+--            fiforx_tvalid <= '0';
+--            fiforx_tdata <= (31 downto 0 => '0');
             
-        elsif rising_edge(clk_100mhz) then
+--        elsif rising_edge(clk_100mhz) then
             
-            case fifo_st is
+--            case fifo_st is
                 
-                when st_idle =>
-                    if config_ready_sync = '1' then
-                        fiforx_tlast <= '0';
-                        fiforx_tvalid <= '0';
-                        fifo_byte_index <= 0;
-                        fifo_st <= st_send;                                                
-                    end if;
+--                when st_idle =>
+--                    if config_ready_sync = '1' then
+--                        fiforx_tlast <= '0';
+--                        fiforx_tvalid <= '0';
+--                        fifo_byte_index <= 0;
+--                        fifo_st <= st_send;                                                
+--                    end if;
                                 
-                when st_send =>
-                    fiforx_tvalid <= '1';  -- keep asserted
-                    fiforx_tdata  <= (31 downto 8 => '0') & configuration_bytes(fifo_byte_index*8+7 downto fifo_byte_index*8);
+--                when st_send =>
+--                    fiforx_tvalid <= '1';  -- keep asserted
+--                    fiforx_tdata  <= (31 downto 8 => '0') & configuration_bytes(fifo_byte_index*8+7 downto fifo_byte_index*8);
                 
-                        if fifo_byte_index = PACKET_SIZE - 1 then
-                            fiforx_tlast <= '1';
-                        else
-                            fiforx_tlast <= '0';
-                        end if;
+--                        if fifo_byte_index = PACKET_SIZE - 1 then
+--                            fiforx_tlast <= '1';
+--                        else
+--                            fiforx_tlast <= '0';
+--                        end if;
                 
-                    if fiforx_tready = '1' then
-                        if fifo_byte_index = PACKET_SIZE - 1 then
-                            fifo_st <= st_done;
-                        else
-                            fifo_byte_index <= fifo_byte_index + 1;
-                        end if;
-                    end if;
+--                    if fiforx_tready = '1' then
+--                        if fifo_byte_index = PACKET_SIZE - 1 then
+--                            fifo_st <= st_done;
+--                        else
+--                            fifo_byte_index <= fifo_byte_index + 1;
+--                        end if;
+--                    end if;
                                 
-                when st_done =>
-                    fiforx_tvalid <= '0';
-                    fiforx_tlast <= '0';
-                    fiforx_tdata <= (31 downto 0 => '0');
-                    --fifo_st <= st_idle; -- reset or soft_reset will make it start again               
+--                when st_done =>
+--                    fiforx_tvalid <= '0';
+--                    fiforx_tlast <= '0';
+--                    fiforx_tdata <= (31 downto 0 => '0');
+--                    --fifo_st <= st_idle; -- reset or soft_reset will make it start again               
                 
-                when others =>
-                    fifo_st <= st_idle;
+--                when others =>
+--                    fifo_st <= st_idle;
             
-            end case;
+--            end case;
         
-        end if;
+--        end if;
     
     
-    end process;
+--    end process;
     
 end Behavioral;

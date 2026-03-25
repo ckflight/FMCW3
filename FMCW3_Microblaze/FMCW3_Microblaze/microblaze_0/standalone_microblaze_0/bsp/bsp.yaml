@@ -59,21 +59,21 @@ os_config:
       name: standalone_stdin
       permission: read_write
       type: string
-      value: axi_uartlite_0
-      default: axi_uartlite_0
+      value: mdm_1
+      default: mdm_1
       options:
       - None
-      - axi_uartlite_0
+      - mdm_1
       description: stdin peripheral
     standalone_stdout:
       name: standalone_stdout
       permission: read_write
       type: string
-      value: axi_uartlite_0
-      default: axi_uartlite_0
+      value: mdm_1
+      default: mdm_1
       options:
       - None
-      - axi_uartlite_0
+      - mdm_1
       description: stdout peripheral
     standalone_ttc_select_cntr:
       name: standalone_ttc_select_cntr
@@ -156,62 +156,30 @@ drv_info:
     driver: llfifo
     ip_name: axi_fifo_mm_s
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\llfifo_v6_0
-    examples:
-      xllfifo_interrupt_example.c: []
-      xllfifo_polling_example.c: []
   axi_gpio_0:
     driver: gpio
     ip_name: axi_gpio
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\gpio_v4_12
-    examples:
-      xgpio_example.c: []
-      xgpio_low_level_example.c: []
-      xgpio_tapp_example.c: []
-  axi_intc_0:
-    driver: intc
-    ip_name: axi_intc
-    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\intc_v3_21
-    examples:
-      xintc_example.c: []
-      xintc_low_level_example.c: []
-      xintc_tapp_example.c: []
   axi_quad_spi_0:
     driver: spi
     ip_name: axi_quad_spi
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\spi_v4_15
-    examples:
-      xspi_polled_example.c: []
-      xspi_slave_polled_example.c: []
-      xspi_low_level_example.c: []
-      xspi_winbond_flash_xip_example.c: []
-      xspi_selftest_example.c: []
-      xspi_stm_flash_example.c: []
   axi_timer_0:
     driver: tmrctr
     ip_name: axi_timer
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\tmrctr_v4_14
-    examples:
-      xtmrctr_selftest_example.c: []
-      xtmrctr_polled_example.c: []
-      xtmrctr_low_level_example.c: []
-      xtmrctr_intr_example.c: []
-      xtmrctr_fast_intr_example.c: []
-      xtmrctr_intr_64bit_example.c: []
-      xtmrctr_pwm_example.c: []
-  axi_uartlite_0:
+  mdm_1:
     driver: uartlite
-    ip_name: axi_uartlite
+    ip_name: mdm
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\uartlite_v3_12
-    examples:
-      xuartlite_low_level_example.c: []
-      xuartlite_polled_example.c: []
-      xuartlite_selftest_example.c: []
+  microblaze_0_axi_intc:
+    driver: intc
+    ip_name: axi_intc
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\intc_v3_21
   microblaze_0_local_memory_dlmb_bram_if_cntlr:
     driver: bram
     ip_name: lmb_bram_if_cntlr
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\bram_v4_13
-    examples:
-      xbram_example.c: []
 lib_info:
   xiltimer:
     path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xiltimer_v2_3

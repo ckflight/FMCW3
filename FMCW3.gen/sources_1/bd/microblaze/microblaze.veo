@@ -54,23 +54,21 @@
 
 // INST_TAG     ------ Begin cut for INSTANTIATION Template ------
 microblaze your_instance_name (
+  .Clk(Clk), // input wire Clk
+  .reset_rtl_0(reset_rtl_0), // input wire reset_rtl_0
   .gpio_rtl_0_tri_o(gpio_rtl_0_tri_o), // output wire [15:0] gpio_rtl_0_tri_o
-  .uart_rtl_0_rxd(uart_rtl_0_rxd), // input wire uart_rtl_0_rxd
-  .uart_rtl_0_txd(uart_rtl_0_txd), // output wire uart_rtl_0_txd
-  .AXI_STR_RXD_0_tdata(AXI_STR_RXD_0_tdata), // input wire [31:0] AXI_STR_RXD_0_tdata
-  .AXI_STR_RXD_0_tlast(AXI_STR_RXD_0_tlast), // input wire AXI_STR_RXD_0_tlast
-  .AXI_STR_RXD_0_tready(AXI_STR_RXD_0_tready), // output wire AXI_STR_RXD_0_tready
-  .AXI_STR_RXD_0_tvalid(AXI_STR_RXD_0_tvalid), // input wire AXI_STR_RXD_0_tvalid
+  .spi0_miso(spi0_miso), // input wire spi0_miso
+  .spi0_mosi(spi0_mosi), // output wire spi0_mosi
+  .spi0_sck(spi0_sck), // output wire spi0_sck
+  .spi0_cs(spi0_cs), // output wire [0:0] spi0_cs
   .AXI_STR_TXD_0_tdata(AXI_STR_TXD_0_tdata), // output wire [31:0] AXI_STR_TXD_0_tdata
   .AXI_STR_TXD_0_tlast(AXI_STR_TXD_0_tlast), // output wire AXI_STR_TXD_0_tlast
   .AXI_STR_TXD_0_tready(AXI_STR_TXD_0_tready), // input wire AXI_STR_TXD_0_tready
   .AXI_STR_TXD_0_tvalid(AXI_STR_TXD_0_tvalid), // output wire AXI_STR_TXD_0_tvalid
-  .reset_rtl_0(reset_rtl_0), // input wire reset_rtl_0
-  .spi0_mosi(spi0_mosi), // output wire spi0_mosi
-  .spi0_miso(spi0_miso), // input wire spi0_miso
-  .spi0_sck(spi0_sck), // output wire spi0_sck
-  .spi0_cs(spi0_cs), // output wire [0:0] spi0_cs
-  .clk_100MHz(clk_100MHz) // input wire clk_100MHz
+  .AXI_STR_RXD_0_tdata(AXI_STR_RXD_0_tdata), // input wire [31:0] AXI_STR_RXD_0_tdata
+  .AXI_STR_RXD_0_tlast(AXI_STR_RXD_0_tlast), // input wire AXI_STR_RXD_0_tlast
+  .AXI_STR_RXD_0_tready(AXI_STR_RXD_0_tready), // output wire AXI_STR_RXD_0_tready
+  .AXI_STR_RXD_0_tvalid(AXI_STR_RXD_0_tvalid) // input wire AXI_STR_RXD_0_tvalid
 );
 // INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

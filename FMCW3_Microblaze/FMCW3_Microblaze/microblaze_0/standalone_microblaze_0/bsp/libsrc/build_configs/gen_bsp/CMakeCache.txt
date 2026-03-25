@@ -400,10 +400,10 @@ standalone_profile_timer:STRING=None
 standalone_sleep_timer:STRING=None
 
 //stdin peripheral
-standalone_stdin:STRING=axi_uartlite_0
+standalone_stdin:STRING=mdm_1
 
 //stdout peripheral
-standalone_stdout:STRING=axi_uartlite_0
+standalone_stdout:STRING=mdm_1
 
 //Deprecated in favor of xiltimer
 standalone_ttc_select_cntr:STRING=None
@@ -613,9 +613,9 @@ standalone_profile_timer-STRINGS:INTERNAL=None
 //STRINGS property for variable: standalone_sleep_timer
 standalone_sleep_timer-STRINGS:INTERNAL=None
 //STRINGS property for variable: standalone_stdin
-standalone_stdin-STRINGS:INTERNAL=None;axi_uartlite_0
+standalone_stdin-STRINGS:INTERNAL=None;mdm_1
 //STRINGS property for variable: standalone_stdout
-standalone_stdout-STRINGS:INTERNAL=None;axi_uartlite_0
+standalone_stdout-STRINGS:INTERNAL=None;mdm_1
 //STRINGS property for variable: standalone_ttc_select_cntr
 standalone_ttc_select_cntr-STRINGS:INTERNAL=None
 

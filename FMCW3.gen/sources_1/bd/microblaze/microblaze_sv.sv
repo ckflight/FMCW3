@@ -53,32 +53,28 @@
 `include "vivado_interfaces.svh"
 
 module microblaze_sv (
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXI_STR_RXD_0" *)
-  (* X_INTERFACE_MODE = "slave AXI_STR_RXD_0" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_STR_RXD_0, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN microblaze_clk_100MHz, LAYERED_METADATA undef, INSERT_VIP 0" *)
-  vivado_axis_v1_0.slave AXI_STR_RXD_0,
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXI_STR_TXD_0" *)
   (* X_INTERFACE_MODE = "master AXI_STR_TXD_0" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_STR_TXD_0, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN microblaze_clk_100MHz, LAYERED_METADATA undef, INSERT_VIP 0" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_STR_TXD_0, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN microblaze_Clk, LAYERED_METADATA undef, INSERT_VIP 0" *)
   vivado_axis_v1_0.master AXI_STR_TXD_0,
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 AXI_STR_RXD_0" *)
+  (* X_INTERFACE_MODE = "slave AXI_STR_RXD_0" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_STR_RXD_0, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN microblaze_Clk, LAYERED_METADATA undef, INSERT_VIP 0" *)
+  vivado_axis_v1_0.slave AXI_STR_RXD_0,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [15:0] gpio_rtl_0_tri_o,
-  (* X_INTERFACE_IGNORE = "true" *)
-  input wire uart_rtl_0_rxd,
-  (* X_INTERFACE_IGNORE = "true" *)
-  output wire uart_rtl_0_txd,
+  input wire Clk,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire reset_rtl_0,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire spi0_mosi,
+  output wire [15:0] gpio_rtl_0_tri_o,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire spi0_miso,
   (* X_INTERFACE_IGNORE = "true" *)
+  output wire spi0_mosi,
+  (* X_INTERFACE_IGNORE = "true" *)
   output wire spi0_sck,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [0:0] spi0_cs,
-  (* X_INTERFACE_IGNORE = "true" *)
-  input wire clk_100MHz
+  output wire [0:0] spi0_cs
 );
 
   // interface wire assignments
@@ -89,23 +85,21 @@ module microblaze_sv (
   assign AXI_STR_TXD_0.TUSER = 0;
 
   microblaze inst (
+    .Clk(Clk),
+    .reset_rtl_0(reset_rtl_0),
     .gpio_rtl_0_tri_o(gpio_rtl_0_tri_o),
-    .uart_rtl_0_rxd(uart_rtl_0_rxd),
-    .uart_rtl_0_txd(uart_rtl_0_txd),
-    .AXI_STR_RXD_0_tdata(AXI_STR_RXD_0.TDATA),
-    .AXI_STR_RXD_0_tlast(AXI_STR_RXD_0.TLAST),
-    .AXI_STR_RXD_0_tready(AXI_STR_RXD_0.TREADY),
-    .AXI_STR_RXD_0_tvalid(AXI_STR_RXD_0.TVALID),
+    .spi0_miso(spi0_miso),
+    .spi0_mosi(spi0_mosi),
+    .spi0_sck(spi0_sck),
+    .spi0_cs(spi0_cs),
     .AXI_STR_TXD_0_tdata(AXI_STR_TXD_0.TDATA),
     .AXI_STR_TXD_0_tlast(AXI_STR_TXD_0.TLAST),
     .AXI_STR_TXD_0_tready(AXI_STR_TXD_0.TREADY),
     .AXI_STR_TXD_0_tvalid(AXI_STR_TXD_0.TVALID),
-    .reset_rtl_0(reset_rtl_0),
-    .spi0_mosi(spi0_mosi),
-    .spi0_miso(spi0_miso),
-    .spi0_sck(spi0_sck),
-    .spi0_cs(spi0_cs),
-    .clk_100MHz(clk_100MHz)
+    .AXI_STR_RXD_0_tdata(AXI_STR_RXD_0.TDATA),
+    .AXI_STR_RXD_0_tlast(AXI_STR_RXD_0.TLAST),
+    .AXI_STR_RXD_0_tready(AXI_STR_RXD_0.TREADY),
+    .AXI_STR_RXD_0_tvalid(AXI_STR_RXD_0.TVALID)
   );
 
 endmodule

@@ -4,18 +4,18 @@ axi_fifo_mm_s_0:
 axi_gpio_0:
 - axi_gpio
 - gpio
-axi_intc_0:
-- axi_intc
-- intc
 axi_quad_spi_0:
 - axi_quad_spi
 - spi
 axi_timer_0:
 - axi_timer
 - tmrctr
-axi_uartlite_0:
-- axi_uartlite
+mdm_1:
+- mdm
 - uartlite
+microblaze_0_axi_intc:
+- axi_intc
+- intc
 microblaze_0_local_memory_dlmb_bram_if_cntlr:
 - lmb_bram_if_cntlr
 - bram

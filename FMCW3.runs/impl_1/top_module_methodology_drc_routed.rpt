@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Wed Mar 25 09:49:58 2026
+| Date         : Wed Mar 25 13:47:14 2026
 | Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_module_methodology_drc_routed.rpt -pb top_module_methodology_drc_routed.pb -rpx top_module_methodology_drc_routed.rpx
 | Design       : top_module
@@ -23,14 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 53
+             Checks found: 45
 +-----------+----------+--------------------------------------------------------+--------+
 | Rule      | Severity | Description                                            | Checks |
 +-----------+----------+--------------------------------------------------------+--------+
-| LUTAR-1   | Warning  | LUT drives async reset alert                           | 8      |
+| LUTAR-1   | Warning  | LUT drives async reset alert                           | 9      |
 | TIMING-9  | Warning  | Unknown CDC Logic                                      | 1      |
-| TIMING-18 | Warning  | Missing input or output delay                          | 40     |
-| ULMTCS-1  | Warning  | Control Sets use limits recommend reduction            | 1      |
+| TIMING-18 | Warning  | Missing input or output delay                          | 32     |
 | XDCB-5    | Warning  | Runtime inefficient way to find pin objects            | 2      |
 | XDCC-1    | Warning  | Scoped Clock constraint overwritten with the same name | 1      |
 +-----------+----------+--------------------------------------------------------+--------+
@@ -67,7 +66,7 @@ Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell microblaze_i/FSM_onehot_fifo_st[2]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) control_i/adc_oe_reg[1]_lopt_replica/PRE,
+LUT cell microblaze_i/FSM_sequential_state[2]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) control_i/adc_oe_reg[1]_lopt_replica/PRE,
 control_i/adc_oe_reg[1]_lopt_replica_2/PRE,
 control_i/adc_oe_reg[1]_lopt_replica_3/PRE, control_i/usb_idx_reg[7]/CLR,
 control_i/usb_idx_reg[8]/CLR, control_i/usb_idx_reg[9]/CLR,
@@ -75,20 +74,25 @@ control_i/usb_write_n_reg/PRE, control_i/usb_writedata_reg[0]/CLR,
 control_i/usb_writedata_reg[1]/CLR, control_i/usb_writedata_reg[2]/CLR,
 control_i/usb_writedata_reg[3]/CLR, control_i/usb_writedata_reg[4]/CLR,
 control_i/usb_writedata_reg[5]/CLR, control_i/usb_writedata_reg[6]/CLR,
-control_i/usb_writedata_reg[7]/CLR (the first 15 of 2261 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+control_i/usb_writedata_reg[7]/CLR (the first 15 of 151 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
 LUT drives async reset alert  
-LUT cell microblaze_i/microblaze_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/sel_n_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) microblaze_i/microblaze_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/sel_n_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell microblaze_i/microblaze_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Use_BSCAN.FDC_I/Use_UART.execute_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) microblaze_i/microblaze_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Use_UART.execute_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#7 Warning
 LUT drives async reset alert  
-LUT cell microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Implement_Debug_Logic.Master_Core.Debug_Area/Serial_Dbg_Intf.force_stop_cmd_rst_i_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Implement_Debug_Logic.Master_Core.Debug_Area/Serial_Dbg_Intf.force_stop_TClk_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell microblaze_i/microblaze_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/sel_n_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) microblaze_i/microblaze_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/sel_n_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#8 Warning
+LUT drives async reset alert  
+LUT cell microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Implement_Debug_Logic.Master_Core.Debug_Area/Serial_Dbg_Intf.force_stop_cmd_rst_i_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Implement_Debug_Logic.Master_Core.Debug_Area/Serial_Dbg_Intf.force_stop_TClk_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#9 Warning
 LUT drives async reset alert  
 LUT cell microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Implement_Debug_Logic.Master_Core.Debug_Area/Serial_Dbg_Intf.normal_stop_cmd_rst_i_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) microblaze_i/microblaze_i/microblaze_0/U0/MicroBlaze_Core_I/Area.Core/Implement_Debug_Logic.Master_Core.Debug_Area/Serial_Dbg_Intf.normal_stop_TClk_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
@@ -170,148 +174,103 @@ Related violations: <none>
 
 TIMING-18#15 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[0] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An input delay is missing on usb_rxf relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#16 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[1] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An input delay is missing on usb_txe relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#17 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[2] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on adc_oe[0] relative to the rising and/or falling clock edge(s) of sysclk.
 Related violations: <none>
 
 TIMING-18#18 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[3] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on adc_oe[1] relative to the rising and/or falling clock edge(s) of sysclk.
 Related violations: <none>
 
 TIMING-18#19 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[4] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on adc_shdn[0] relative to the rising and/or falling clock edge(s) of sysclk.
 Related violations: <none>
 
 TIMING-18#20 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[5] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on adc_shdn[1] relative to the rising and/or falling clock edge(s) of sysclk.
 Related violations: <none>
 
 TIMING-18#21 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[6] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on pa_en relative to the rising and/or falling clock edge(s) of sysclk.
 Related violations: <none>
 
 TIMING-18#22 Warning
 Missing input or output delay  
-An input delay is missing on usb_data[7] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on usb_data[0] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#23 Warning
 Missing input or output delay  
-An input delay is missing on usb_rxf relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on usb_data[1] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#24 Warning
 Missing input or output delay  
-An input delay is missing on usb_txe relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on usb_data[2] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#25 Warning
 Missing input or output delay  
-An output delay is missing on adc_oe[0] relative to the rising and/or falling clock edge(s) of sysclk.
+An output delay is missing on usb_data[3] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#26 Warning
 Missing input or output delay  
-An output delay is missing on adc_oe[1] relative to the rising and/or falling clock edge(s) of sysclk.
+An output delay is missing on usb_data[4] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#27 Warning
 Missing input or output delay  
-An output delay is missing on adc_shdn[0] relative to the rising and/or falling clock edge(s) of sysclk.
+An output delay is missing on usb_data[5] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#28 Warning
 Missing input or output delay  
-An output delay is missing on adc_shdn[1] relative to the rising and/or falling clock edge(s) of sysclk.
+An output delay is missing on usb_data[6] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#29 Warning
 Missing input or output delay  
-An output delay is missing on pa_en relative to the rising and/or falling clock edge(s) of sysclk.
+An output delay is missing on usb_data[7] relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#30 Warning
 Missing input or output delay  
-An output delay is missing on usb_data[0] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on usb_oe relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#31 Warning
 Missing input or output delay  
-An output delay is missing on usb_data[1] relative to the rising and/or falling clock edge(s) of usb_clkout.
+An output delay is missing on usb_rd relative to the rising and/or falling clock edge(s) of usb_clkout.
 Related violations: <none>
 
 TIMING-18#32 Warning
 Missing input or output delay  
-An output delay is missing on usb_data[2] relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#33 Warning
-Missing input or output delay  
-An output delay is missing on usb_data[3] relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#34 Warning
-Missing input or output delay  
-An output delay is missing on usb_data[4] relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#35 Warning
-Missing input or output delay  
-An output delay is missing on usb_data[5] relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#36 Warning
-Missing input or output delay  
-An output delay is missing on usb_data[6] relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#37 Warning
-Missing input or output delay  
-An output delay is missing on usb_data[7] relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#38 Warning
-Missing input or output delay  
-An output delay is missing on usb_oe relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#39 Warning
-Missing input or output delay  
-An output delay is missing on usb_rd relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-TIMING-18#40 Warning
-Missing input or output delay  
 An output delay is missing on usb_wr relative to the rising and/or falling clock edge(s) of usb_clkout.
-Related violations: <none>
-
-ULMTCS-1#1 Warning
-Control Sets use limits recommend reduction  
-This design uses 743 control sets (vs. available limit of 8150, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
-The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '46' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-from : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/allx_typeA_match_detection.ltlib_v1_0_3_allx_typeA_inst/DUT/u_srl_drive/CLK}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '45' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 
 XDCB-5#2 Warning
 Runtime inefficient way to find pin objects  
-The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '46' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-to : [get_pins -hierarchical -filter {NAME =~ *ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[*].U_TC/yes_output_reg.dout_reg_reg/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '45' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc (Line: 72)
 Related violations: <none>
 

@@ -1,0 +1,1036 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "microblaze_axi_fifo_mm_s_0_2",
+    "cell_name": "axi_fifo_mm_s_0",
+    "component_reference": "xilinx.com:ip:axi_fifo_mm_s:4.3",
+    "ip_revision": "7",
+    "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2",
+    "parameters": {
+      "component_parameters": {
+        "C_S_AXI_PROTOCOL": [ { "value": "AXI4LITE", "resolve_type": "user", "usage": "all" } ],
+        "C_AXI_STR_TXC_PROTOCOL": [ { "value": "XIL_AXI_STREAM_ETH_CTRL", "resolve_type": "user", "usage": "all" } ],
+        "C_AXI_STR_TXD_PROTOCOL": [ { "value": "XIL_AXI_STREAM_ETH_DATA", "resolve_type": "user", "usage": "all" } ],
+        "C_AXI_STR_RXD_PROTOCOL": [ { "value": "XIL_AXI_STREAM_ETH_DATA", "resolve_type": "user", "usage": "all" } ],
+        "Component_Name": [ { "value": "microblaze_axi_fifo_mm_s_0_2", "resolve_type": "user", "usage": "all" } ],
+        "C_S_AXI_ID_WIDTH": [ { "value": "4", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_BASEADDR": [ { "value": "0x44A10000", "value_src": "propagated", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "C_USE_TX_CUT_THROUGH": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_DATA_INTERFACE_TYPE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_HIGHADDR": [ { "value": "0x44A1FFFF", "value_src": "propagated", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_S_AXI4_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AXI4_BASEADDR": [ { "value": "0x80001000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "C_AXI4_HIGHADDR": [ { "value": "0x80002FFF", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "C_S_AXI_ADDR_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AXI_STR_TXC_TDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AXI_STR_TXD_TDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AXI_STR_RXD_TDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_HAS_AXIS_TUSER": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_HAS_AXIS_TID": [ { "value": "false", "value_permission": "bd", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_HAS_AXIS_TDEST": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_HAS_AXIS_TSTRB": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_HAS_AXIS_TKEEP": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_AXIS_TUSER_WIDTH": [ { "value": "4", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AXIS_TDEST_WIDTH": [ { "value": "4", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AXIS_TID_WIDTH": [ { "value": "4", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_RX_CUT_THROUGH": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "C_USE_TX_DATA": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_RX_DATA": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_TX_CTRL": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_SELECT_XPM": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_TX_CASCADE_HEIGHT": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_RX_CASCADE_HEIGHT": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "TX_ENABLE_ECC": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "TX_HAS_ECC_ERR_INJECT": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "RX_ENABLE_ECC": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "RX_HAS_ECC_ERR_INJECT": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "C_FAMILY": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
+        "C_S_AXI_ID_WIDTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_S_AXI_ADDR_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_S_AXI4_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_DEPTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_CASCADE_HEIGHT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_RX_CASCADE_HEIGHT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_PF_THRESHOLD": [ { "value": "507", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_RX_FIFO_PE_THRESHOLD": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_USE_TX_CUT_THROUGH": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_DATA_INTERFACE_TYPE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_ENABLE_ECC": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_RX_ENABLE_ECC": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_TX_HAS_ECC_ERR_INJECT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_RX_HAS_ECC_ERR_INJECT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_BASEADDR": [ { "value": "0x44A10000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_HIGHADDR": [ { "value": "0x44A1FFFF", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_AXI4_BASEADDR": [ { "value": "0x80001000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_AXI4_HIGHADDR": [ { "value": "0x80002FFF", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "C_HAS_AXIS_TID": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_HAS_AXIS_TDEST": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_HAS_AXIS_TUSER": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_HAS_AXIS_TSTRB": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_HAS_AXIS_TKEEP": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_AXIS_TID_WIDTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_AXIS_TDEST_WIDTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_AXIS_TUSER_WIDTH": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_USE_RX_CUT_THROUGH": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_USE_TX_DATA": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_USE_TX_CTRL": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_USE_RX_DATA": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
+        "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
+        "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
+        "PREFHDL": [ { "value": "VHDL", "resolve_type": "generated", "usage": "all" } ],
+        "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED", "resolve_type": "generated", "usage": "all" } ],
+        "SPEEDGRADE": [ { "value": "-1", "resolve_type": "generated", "usage": "all" } ],
+        "STATIC_POWER": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
+        "TEMPERATURE_GRADE": [ { "value": "", "resolve_type": "generated", "usage": "all" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "7" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2025.2" } ],
+        "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "interrupt": [ { "direction": "out", "driver_value": "0x0" } ],
+        "s_axi_aclk": [ { "direction": "in", "driver_value": "0" } ],
+        "s_axi_aresetn": [ { "direction": "in", "driver_value": "0" } ],
+        "s_axi_awaddr": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_awvalid": [ { "direction": "in", "driver_value": "0" } ],
+        "s_axi_awready": [ { "direction": "out", "driver_value": "0x0" } ],
+        "s_axi_wdata": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_wstrb": [ { "direction": "in", "size_left": "3", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_wvalid": [ { "direction": "in", "driver_value": "0" } ],
+        "s_axi_wready": [ { "direction": "out", "driver_value": "0x0" } ],
+        "s_axi_bresp": [ { "direction": "out", "size_left": "1", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_bvalid": [ { "direction": "out", "driver_value": "0x0" } ],
+        "s_axi_bready": [ { "direction": "in", "driver_value": "0" } ],
+        "s_axi_araddr": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_arvalid": [ { "direction": "in", "driver_value": "0" } ],
+        "s_axi_arready": [ { "direction": "out", "driver_value": "0x0" } ],
+        "s_axi_rdata": [ { "direction": "out", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_rresp": [ { "direction": "out", "size_left": "1", "size_right": "0", "driver_value": "0" } ],
+        "s_axi_rvalid": [ { "direction": "out", "driver_value": "0x0" } ],
+        "s_axi_rready": [ { "direction": "in", "driver_value": "0" } ],
+        "mm2s_prmry_reset_out_n": [ { "direction": "out", "driver_value": "0x0" } ],
+        "axi_str_txd_tvalid": [ { "direction": "out", "driver_value": "0" } ],
+        "axi_str_txd_tready": [ { "direction": "in", "driver_value": "0" } ],
+        "axi_str_txd_tlast": [ { "direction": "out", "driver_value": "0" } ],
+        "axi_str_txd_tdata": [ { "direction": "out", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
+        "mm2s_cntrl_reset_out_n": [ { "direction": "out", "driver_value": "0x0" } ],
+        "axi_str_txc_tvalid": [ { "direction": "out", "driver_value": "0" } ],
+        "axi_str_txc_tready": [ { "direction": "in", "driver_value": "0" } ],
+        "axi_str_txc_tlast": [ { "direction": "out", "driver_value": "0" } ],
+        "axi_str_txc_tdata": [ { "direction": "out", "size_left": "31", "size_right": "0", "driver_value": "0" } ],
+        "s2mm_prmry_reset_out_n": [ { "direction": "out", "driver_value": "0x0" } ],
+        "axi_str_rxd_tvalid": [ { "direction": "in", "driver_value": "0" } ],
+        "axi_str_rxd_tready": [ { "direction": "out", "driver_value": "0" } ],
+        "axi_str_rxd_tlast": [ { "direction": "in", "driver_value": "0x0" } ],
+        "axi_str_rxd_tdata": [ { "direction": "in", "size_left": "31", "size_right": "0", "driver_value": "0" } ]
+      },
+      "interfaces": {
+        "S_AXI": {
+          "vlnv": "xilinx.com:interface:aximm:1.0",
+          "abstraction_type": "xilinx.com:interface:aximm_rtl:1.0",
+          "mode": "slave",
+          "memory_map_ref": "S_AXI",
+          "parameters": {
+            "DATA_WIDTH": [ { "value": "32", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PROTOCOL": [ { "value": "AXI4LITE", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ADDR_WIDTH": [ { "value": "32", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "AWUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ARUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "WUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "RUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "BUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BURST": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_LOCK": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_PROT": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_CACHE": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_QOS": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_REGION": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_WSTRB": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BRESP": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_RRESP": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "SUPPORTS_NARROW_BURST": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_OUTSTANDING": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_OUTSTANDING": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "microblaze_Clk", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_THREADS": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_THREADS": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "RUSER_BITS_PER_BYTE": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "WUSER_BITS_PER_BYTE": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "ARADDR": [ { "physical_name": "s_axi_araddr" } ],
+            "ARREADY": [ { "physical_name": "s_axi_arready" } ],
+            "ARVALID": [ { "physical_name": "s_axi_arvalid" } ],
+            "AWADDR": [ { "physical_name": "s_axi_awaddr" } ],
+            "AWREADY": [ { "physical_name": "s_axi_awready" } ],
+            "AWVALID": [ { "physical_name": "s_axi_awvalid" } ],
+            "BREADY": [ { "physical_name": "s_axi_bready" } ],
+            "BRESP": [ { "physical_name": "s_axi_bresp" } ],
+            "BVALID": [ { "physical_name": "s_axi_bvalid" } ],
+            "RDATA": [ { "physical_name": "s_axi_rdata" } ],
+            "RREADY": [ { "physical_name": "s_axi_rready" } ],
+            "RRESP": [ { "physical_name": "s_axi_rresp" } ],
+            "RVALID": [ { "physical_name": "s_axi_rvalid" } ],
+            "WDATA": [ { "physical_name": "s_axi_wdata" } ],
+            "WREADY": [ { "physical_name": "s_axi_wready" } ],
+            "WSTRB": [ { "physical_name": "s_axi_wstrb" } ],
+            "WVALID": [ { "physical_name": "s_axi_wvalid" } ]
+          }
+        },
+        "AXI_STR_TXD": {
+          "vlnv": "xilinx.com:interface:axis:1.0",
+          "abstraction_type": "xilinx.com:interface:axis_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "TDATA_NUM_BYTES": [ { "value": "4", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TDEST_WIDTH": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TID_WIDTH": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TUSER_WIDTH": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TREADY": [ { "value": "1", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TSTRB": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TKEEP": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TLAST": [ { "value": "1", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "microblaze_Clk", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "LAYERED_METADATA": [ { "value": "undef", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "TDATA": [ { "physical_name": "axi_str_txd_tdata" } ],
+            "TLAST": [ { "physical_name": "axi_str_txd_tlast" } ],
+            "TREADY": [ { "physical_name": "axi_str_txd_tready" } ],
+            "TVALID": [ { "physical_name": "axi_str_txd_tvalid" } ]
+          }
+        },
+        "AXI_STR_TXC": {
+          "vlnv": "xilinx.com:interface:axis:1.0",
+          "abstraction_type": "xilinx.com:interface:axis_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "TDATA_NUM_BYTES": [ { "value": "4", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TDEST_WIDTH": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TID_WIDTH": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TUSER_WIDTH": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TREADY": [ { "value": "1", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TSTRB": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TKEEP": [ { "value": "0", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TLAST": [ { "value": "1", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "microblaze_Clk", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "LAYERED_METADATA": [ { "value": "undef", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "TDATA": [ { "physical_name": "axi_str_txc_tdata" } ],
+            "TLAST": [ { "physical_name": "axi_str_txc_tlast" } ],
+            "TREADY": [ { "physical_name": "axi_str_txc_tready" } ],
+            "TVALID": [ { "physical_name": "axi_str_txc_tvalid" } ]
+          }
+        },
+        "AXI_STR_RXD": {
+          "vlnv": "xilinx.com:interface:axis:1.0",
+          "abstraction_type": "xilinx.com:interface:axis_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "TDATA_NUM_BYTES": [ { "value": "4", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TDEST_WIDTH": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TID_WIDTH": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "TUSER_WIDTH": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TREADY": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TSTRB": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TKEEP": [ { "value": "0", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_TLAST": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "microblaze_Clk", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "LAYERED_METADATA": [ { "value": "undef", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "TDATA": [ { "physical_name": "axi_str_rxd_tdata" } ],
+            "TLAST": [ { "physical_name": "axi_str_rxd_tlast" } ],
+            "TREADY": [ { "physical_name": "axi_str_rxd_tready" } ],
+            "TVALID": [ { "physical_name": "axi_str_rxd_tvalid" } ]
+          }
+        },
+        "aclk_s_axi": {
+          "vlnv": "xilinx.com:signal:clock:1.0",
+          "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "ASSOCIATED_BUSIF": [ { "value": "S_AXI:S_AXI_FULL:AXI_STR_TXD:AXI_STR_TXC:AXI_STR_RXD", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "ASSOCIATED_RESET": [ { "value": "s_axi_aresetn:mm2s_prmry_reset_out_n:mm2s_cntrl_reset_out_n:s2mm_prmry_reset_out_n", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ],
+            "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "microblaze_Clk", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "ASSOCIATED_PORT": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "CLK": [ { "physical_name": "s_axi_aclk" } ]
+          }
+        },
+        "rst_s_axi": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "slave",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "s_axi_aresetn" } ]
+          }
+        },
+        "rst_axi_str_txd": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "mm2s_prmry_reset_out_n" } ]
+          }
+        },
+        "rst_axi_str_txc": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "mm2s_cntrl_reset_out_n" } ]
+          }
+        },
+        "rst_axi_str_rxd": {
+          "vlnv": "xilinx.com:signal:reset:1.0",
+          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "RST": [ { "physical_name": "s2mm_prmry_reset_out_n" } ]
+          }
+        },
+        "interrupt_intf": {
+          "vlnv": "xilinx.com:signal:interrupt:1.0",
+          "abstraction_type": "xilinx.com:signal:interrupt_rtl:1.0",
+          "mode": "master",
+          "parameters": {
+            "SENSITIVITY": [ { "value": "LEVEL_HIGH", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "PortWidth": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ]
+          },
+          "port_maps": {
+            "INTERRUPT": [ { "physical_name": "interrupt" } ]
+          }
+        }
+      },
+      "memory_maps": {
+        "S_AXI": {
+          "display_name": "S_AXI",
+          "description": "Memory Map for S_AXI",
+          "address_blocks": {
+            "Mem0": {
+              "base_address": "0",
+              "range": "4096",
+              "display_name": "Mem0",
+              "description": "Register Block",
+              "usage": "register",
+              "access": "read-write",
+              "parameters": {
+                "OFFSET_BASE_PARAM": [ { "value": "C_BASEADDR" } ],
+                "OFFSET_HIGH_PARAM": [ { "value": "C_HIGHADDR" } ]
+              },
+              "registers": {
+                "ISR": {
+                  "address_offset": "0x0",
+                  "size": 32,
+                  "display_name": "Interrupt_Status_Register",
+                  "description": "Interrupt Status Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x1D00000",
+                  "fields": {
+                    "RFE1BE": {
+                      "bit_offset": 15,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO ECC 1 Bit Error",
+                      "description": "This interrupt is generated when the ECC decoder detected and fixed a single-bit error on Receive FIFO.    0 - No interrupt pending    1 - Interrupt pending \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RFE2BE": {
+                      "bit_offset": 16,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO ECC 2 Bit Error",
+                      "description": "This interrupt is generated when the ECC decoder detect a double-bit error and data in the  Receive FIFO is corrupted.   0 - No interrupt pending   1 - Interrupt pending \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFE1BE": {
+                      "bit_offset": 17,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO ECC 1 Bit Error",
+                      "description": "This interrupt is generated when the ECC decoder detected and fixed a single-bit error on Transmit FIFO.    0 - No interrupt pending    1 - Interrupt pending \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFE2BE": {
+                      "bit_offset": 18,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO ECC 2 Bit Error",
+                      "description": "This interrupt is generated when the ECC decoder detect a double-bit error and data in the Transmit FIFO is corrupted.    0 - No interrupt pending    1 - Interrupt pending \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RFPE": {
+                      "bit_offset": 19,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO Programmable Empty",
+                      "description": "Generated when the difference between the read and write pointers of the receive FIFO reaches the programmable EMPTY threshold value when the FIFO is being emptied.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RFPF": {
+                      "bit_offset": 20,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO Programmable Full",
+                      "description": "This interrupt is generated when the difference between the read and write pointers of the receive FIFO reaches the programmable FULL threshold value.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFPE": {
+                      "bit_offset": 21,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO Programmable Empty",
+                      "description": "This interrupt is generated when the difference between the read and write pointers of the transmit FIFO reaches the programmable EMPTY threshold value when the FIFO is being emptied.   0 - No interrupt pending   1 - Interrupt pending For lower values of programmable threshold, this flag may toggle during the initial writes because of First Word Fall Through (FWFT) behavior of FIFO. This flag may toggle even though there are no external reads.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFPF": {
+                      "bit_offset": 22,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO Programmable Full",
+                      "description": "This interrupt is generated when the difference between the read and write pointers of the transmit FIFO reaches the programmable FULL threshold value.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RRC": {
+                      "bit_offset": 23,
+                      "bit_width": 1,
+                      "display_name": "Receive Reset Complete",
+                      "description": "This interrupt indicates that a reset of the receive logic has completed.\n  0 - No interrupt pending\n  1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TRC": {
+                      "bit_offset": 24,
+                      "bit_width": 1,
+                      "display_name": "Transmit Reset Complete",
+                      "description": "This interrupt indicates that a reset of the transmit logic has completed\n  0 - No interrupt pending\n  1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TSE": {
+                      "bit_offset": 25,
+                      "bit_width": 1,
+                      "display_name": "Transmit Size Error",
+                      "description": "This interrupt is generated if the number of words (including partial words in the count) written to the transmit data FIFO does not match the value written to the transmit length register (bytes) divided by 4/8 and rounded up to the higher integer value for trailing byte fractions. Interrupts occur only for mismatch of word count (including partial words). Interrupts do not occur due to mismatch of byte count.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RC": {
+                      "bit_offset": 26,
+                      "bit_width": 1,
+                      "display_name": "Receive Complete",
+                      "description": "Indicates that at least one successful receive has completed and that the receive packet data and packet data length is available. This signal is not set for unsuccessful receives. This interrupt can represent more than one packet received, so it is important to check the receive data FIFO occupancy value to determine if additional receive packets are ready to be processed.  0 - No interrupt pending  1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TC": {
+                      "bit_offset": 27,
+                      "bit_width": 1,
+                      "display_name": "Transmit Complete",
+                      "description": "Indicates that at least one transmit has completed\n  0 - No interrupt pending\n  1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TPOE": {
+                      "bit_offset": 28,
+                      "bit_width": 1,
+                      "display_name": "Transmit Packet Overrun Error",
+                      "description": "This interrupt is generated if an attempt is made to write to the transmit data FIFO when it is full. A reset of the transmit logic is required to recover.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RPUE": {
+                      "bit_offset": 29,
+                      "bit_width": 1,
+                      "display_name": "Receive Packet Underrun Error",
+                      "description": "This interrupt occurs when an attempt is made to read the receive FIFO when it is empty. The data read is not valid. A reset of the receive logic is required to recover.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RPORE": {
+                      "bit_offset": 30,
+                      "bit_width": 1,
+                      "display_name": "Receive Packet Overrun Read Error",
+                      "description": "This interrupt occurs when more words are read from the receive data FIFO than are in the packet being processed. Even though the FIFO is not empty, the read has gone beyond the current packet and removed the data from the next packet. A reset of the receive logic is required to recover  0 - No interrupt pending  1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RPURE": {
+                      "bit_offset": 31,
+                      "bit_width": 1,
+                      "display_name": "Receive Packet Underrun Read Error",
+                      "description": "This interrupt occurs when an attempt is made to read the receive length register when it is empty. The data read is not valid. A reset of the receive logic is required to recover.   0 - No interrupt pending   1 - Interrupt pending\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "IER": {
+                  "address_offset": "0x4",
+                  "size": 32,
+                  "display_name": "Interrupt_Enable_Register",
+                  "description": "Interrupt Enable Register",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "RFE1BEE": {
+                      "bit_offset": 15,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO ECC 1 Bit Error Enable",
+                      "description": "Enable interrupt generation for ECC 1 bit error on Receive FIFO.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RFE2BEE": {
+                      "bit_offset": 16,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO ECC 2 Bit Error Enable",
+                      "description": "Enable interrupt generation for ECC 2 bit error on Receive FIFO.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFE1BEE": {
+                      "bit_offset": 17,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO ECC 1 Bit Error Enable",
+                      "description": "Enable interrupt generation for ECC 1 bit error on Transmit FIFO\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFE2BEE": {
+                      "bit_offset": 18,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO ECC 2 Bit Error Enable",
+                      "description": "Enable interrupt generation for ECC 2 bit error on Transmit FIFO.\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RFPEE": {
+                      "bit_offset": 19,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO Programmable Empty Enable",
+                      "description": "Receive FIFO Programmable Empty Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RFPFE": {
+                      "bit_offset": 20,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO Programmable Full Enable",
+                      "description": "Receive FIFO Programmable Full Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFPEE": {
+                      "bit_offset": 21,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO Programmable Empty Enable",
+                      "description": "Transmit FIFO Programmable Empty Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TFPFE": {
+                      "bit_offset": 22,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO Programmable Full Enable",
+                      "description": "Transmit FIFO Programmable Full Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RRCE": {
+                      "bit_offset": 23,
+                      "bit_width": 1,
+                      "display_name": "Receive Reset Complete Enable",
+                      "description": "Receive Reset Complete Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TRCE": {
+                      "bit_offset": 24,
+                      "bit_width": 1,
+                      "display_name": "Transmit Reset Complete Enable",
+                      "description": "Transmit Reset Complete Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TSEE": {
+                      "bit_offset": 25,
+                      "bit_width": 1,
+                      "display_name": "Transmit Size Error Enable",
+                      "description": "Transmit Size Error Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RCE": {
+                      "bit_offset": 26,
+                      "bit_width": 1,
+                      "display_name": "Receive Complete Enable",
+                      "description": "Receive Complete Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TCE": {
+                      "bit_offset": 27,
+                      "bit_width": 1,
+                      "display_name": "Transmit Complete Enable",
+                      "description": "Transmit Complete Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "TPOEE": {
+                      "bit_offset": 28,
+                      "bit_width": 1,
+                      "display_name": "Transmit Packet Overrun Error Enable",
+                      "description": "Transmit Packet Overrun Error Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RPUEE": {
+                      "bit_offset": 29,
+                      "bit_width": 1,
+                      "display_name": "Receive Packet Underrun Error Enable",
+                      "description": "Receive Packet Underrun Error Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RPOREE": {
+                      "bit_offset": 30,
+                      "bit_width": 1,
+                      "display_name": "Receive Packet Overrun Read Error Enable",
+                      "description": "Receive Packet Overrun Read Error Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "RPUREE": {
+                      "bit_offset": 31,
+                      "bit_width": 1,
+                      "display_name": "Receive Packet Underrun Read Error Enable",
+                      "description": "Receive Packet Underrun Read Error Enable\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "TDFR": {
+                  "address_offset": "0x8",
+                  "size": 32,
+                  "display_name": "Transmit_Data_FIFO_Reset",
+                  "description": "Transmit Data FIFO Reset Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Reset_Key": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Reset Write Value",
+                      "description": "Reset Write Value.\n  \"0x000000A5\" - Generate a reset.\n  Others - No effect.\n",
+                      "is_volatile": true,
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "TDFV": {
+                  "address_offset": "0xC",
+                  "size": 32,
+                  "display_name": "Transmit_Data_FIFO_Vacancy",
+                  "description": "Transmit Data FIFO Vacancy Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Vacancy": {
+                      "bit_offset": 0,
+                      "bit_width": 17,
+                      "display_name": "Vacancy",
+                      "description": "Vacancy status of the Transmit Data FIFO.\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "TDFD": {
+                  "address_offset": "0x10",
+                  "size": 32,
+                  "display_name": "Transmit_Data_FIFO_32bit_Wide_Data_Write_Port",
+                  "description": "Transmit Data FIFO 32bit Wide Data Write Port Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Write_Data_Value": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Write Data Value",
+                      "description": "Transmit Data FIFO Write Value\n",
+                      "is_volatile": true,
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "TLR": {
+                  "address_offset": "0x14",
+                  "size": 32,
+                  "display_name": "Transmit_Length_Register",
+                  "description": "Transmit Length Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "TXL": {
+                      "bit_offset": 0,
+                      "bit_width": 23,
+                      "display_name": "Transmit Length",
+                      "description": "The number of bytes of the corresponding transmit packet stored in the transmit data FIFO.\n",
+                      "is_volatile": true,
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "RDFR": {
+                  "address_offset": "0x18",
+                  "size": 32,
+                  "display_name": "Receive_Data_FIFO_reset",
+                  "description": "Receive Data FIFO reset Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Reset_Key": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Reset Write Value",
+                      "description": "Reset Write Value.\n  \"0x000000A5\" - Generate a reset.\n  Others - No effect.\n",
+                      "is_volatile": true,
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "RDFO": {
+                  "address_offset": "0x1C",
+                  "size": 32,
+                  "display_name": "Receive_Data_FIFO_Occupancy",
+                  "description": "Receive Data FIFO Occupancy Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Occupancy": {
+                      "bit_offset": 0,
+                      "bit_width": 17,
+                      "display_name": "Receive Data FIFO Occupancy",
+                      "description": "This is the unsigned value reflecting a current snapshot of the number of locations in use for data storage in the receive Data FIFO memory core in the most recent transaction. This value is only updated after a packet is successfully received, and therefore can be used to determine if a receive packet is ready to be processed when a non-0 value is read.\nIf the number of packets received is one, then this register returns the value of the locations occupied. After the FIFO is read, any subsequent read to this register returns the value of 0. If more than one packet is received, a read to this register returns the number of locations occupied by the latest received packet\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "RDFD": {
+                  "address_offset": "0x20",
+                  "size": 32,
+                  "display_name": "Receive_Data_FIFO_32bit_Wide_Data_Read_Port",
+                  "description": "Receive Data FIFO 32-bit Wide Data Read Port Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Read_Data_Value": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Read Data Value",
+                      "description": "Receive Data FIFO Read Value\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "RLR": {
+                  "address_offset": "0x24",
+                  "size": 32,
+                  "display_name": "Receive_Length_Register",
+                  "description": "Receive Length Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "RXL": {
+                      "bit_offset": 0,
+                      "bit_width": 23,
+                      "display_name": "Receive Length",
+                      "description": "The number of bytes of the corresponding receive data stored in the receive data FIFO\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "SRR": {
+                  "address_offset": "0x28",
+                  "size": 32,
+                  "display_name": "AXI4_Stream_Reset",
+                  "description": "AXI4-Stream Reset Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "Reset_Key": {
+                      "bit_offset": 0,
+                      "bit_width": 32,
+                      "display_name": "Reset Write Value",
+                      "description": "Reset Write Value.\n  \"0x000000A5\" - Generate a reset.\n  Others - No effect.\n",
+                      "is_volatile": true,
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "TDR": {
+                  "address_offset": "0x2C",
+                  "size": 32,
+                  "display_name": "Transmit_Destination_Register",
+                  "description": "Transmit Destination Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "TDEST": {
+                      "bit_offset": 0,
+                      "bit_width": 4,
+                      "display_name": "Transmit Destination",
+                      "description": "The destination address of the transmit packet stored in the transmit data FIFO\n",
+                      "is_volatile": true,
+                      "access": "write-only"
+                    }
+                  }
+                },
+                "RDR": {
+                  "address_offset": "0x30",
+                  "size": 32,
+                  "display_name": "Receive_Destination_Register",
+                  "description": "Receive Destination Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "RDEST": {
+                      "bit_offset": 0,
+                      "bit_width": 4,
+                      "display_name": "Receive Destination",
+                      "description": "The destination address of the receive packet stored in the receive data FIFO.\n",
+                      "is_volatile": true,
+                      "access": "read-only"
+                    }
+                  }
+                },
+                "Transmit_ID_Register": {
+                  "address_offset": "0x34",
+                  "size": 32,
+                  "display_name": "Transmit_ID_Register",
+                  "description": "Transmit ID Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0"
+                },
+                "Transmit_User_Register": {
+                  "address_offset": "0x38",
+                  "size": 32,
+                  "display_name": "Transmit_User_Register",
+                  "description": "Transmit User Register",
+                  "is_volatile": true,
+                  "access": "write-only",
+                  "reset_value": "0x0"
+                },
+                "Receive_ID_Register": {
+                  "address_offset": "0x3C",
+                  "size": 32,
+                  "display_name": "Receive_ID_Register",
+                  "description": "Receive ID Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0"
+                },
+                "Receive_User_Register": {
+                  "address_offset": "0x40",
+                  "size": 32,
+                  "display_name": "Receive_User_Register",
+                  "description": "Receive User Register",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0"
+                },
+                "TFEC": {
+                  "address_offset": "0x44",
+                  "size": 32,
+                  "display_name": "Transmit FIFO ECC Configuration register",
+                  "description": "Configure ECC options for Transmit FIFO",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "TFREEC": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "display_name": "Transmit FIFO Reset ECC Error Counter",
+                      "description": "TRansmit FIFO Reset ECC Error Counter when the bit is set\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "I1BETF": {
+                      "bit_offset": 1,
+                      "bit_width": 1,
+                      "display_name": "Inject 1bit error in Transmit FIFO",
+                      "description": "Until the bit is 1, single bit error injection will be active. Default 0. \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "I2BETF": {
+                      "bit_offset": 2,
+                      "bit_width": 1,
+                      "display_name": "Inject 2bit error in Transmit FIFO",
+                      "description": "Until the bit is 1, double bit error injection will be active. Default 0. \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "TFEEC": {
+                  "address_offset": "0x48",
+                  "size": 32,
+                  "display_name": "Transmit FIFO ECC Error Counter",
+                  "description": "Transmit FIFO ECC 2Bit Error Counter (TFE2BEC 31:16) and Transmit FIFO ECC 1Bit Error Counter(TFE1BEC 15:0)",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0"
+                },
+                "RFEC": {
+                  "address_offset": "0x4C",
+                  "size": 32,
+                  "display_name": "Receive FIFO ECC Configuration",
+                  "description": "Configure ECC options for Receive FIFO",
+                  "is_volatile": true,
+                  "access": "read-write",
+                  "reset_value": "0x0",
+                  "fields": {
+                    "RFREEC": {
+                      "bit_offset": 0,
+                      "bit_width": 1,
+                      "display_name": "Receive FIFO Reset ECC Error Counter",
+                      "description": "Receive FIFO Reset ECC Error Counter when the bit is set\n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "I1BERF": {
+                      "bit_offset": 1,
+                      "bit_width": 1,
+                      "display_name": "Inject 1bit error in Received FIFO",
+                      "description": "Until the bit is 1, single bit error injection will be active. Default 0. \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    },
+                    "I2BERF": {
+                      "bit_offset": 2,
+                      "bit_width": 1,
+                      "display_name": "Inject 2bit error in Received FIFO",
+                      "description": "Until the bit is 1, double bit error injection will be active. Default 0. \n",
+                      "is_volatile": true,
+                      "access": "read-write"
+                    }
+                  }
+                },
+                "RFEEC": {
+                  "address_offset": "0x50",
+                  "size": 32,
+                  "display_name": "Receive FIFO ECC Error Counter",
+                  "description": "Receive FIFO ECC 2Bit Error Counter (RFE2BEC 31:16) and Receive FIFO ECC 1Bit Error Counter(RFE1BEC 15:0)",
+                  "is_volatile": true,
+                  "access": "read-only",
+                  "reset_value": "0x0"
+                }
+              }
+            }
+          }
+        },
+        "S_AXI_FULL": {
+          "address_blocks": {
+            "Mem1": {
+              "base_address": "0",
+              "range": "4096",
+              "usage": "register",
+              "access": "read-write",
+              "parameters": {
+                "OFFSET_BASE_PARAM": [ { "value": "C_AXI4_BASEADDR" } ],
+                "OFFSET_HIGH_PARAM": [ { "value": "C_AXI4_HIGHADDR" } ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "checksum": "763e1b2d"
+}

@@ -1,4 +1,4 @@
-# 2026-03-25T09:52:17.440987700
+# 2026-03-25T13:13:23.950313400
 import vitis
 
 client = vitis.create_client()
@@ -22,7 +22,26 @@ status = platform.build()
 comp = client.get_component(name="FMCW3")
 comp.build()
 
+comp = client.create_app_component(name="FMCW3_App",platform = "$COMPONENT_LOCATION/../FMCW3_Microblaze/export/FMCW3_Microblaze/FMCW3_Microblaze.xpfm",domain = "standalone_microblaze_0",template = "hello_world")
+
+status = platform.build()
+
+comp = client.get_component(name="FMCW3_App")
+comp.build()
+
+comp = client.get_component(name="FMCW3_App")
+comp.set_app_config(key = "USER_COMPILE_SOURCES", values = ["spi.c", "adf4158.c", "helloworld.c", "platform.c", "gpio.c"])
+
+status = platform.build()
+
+comp = client.get_component(name="FMCW3_App")
+comp.build()
+
 status = platform.build()
 
 comp.build()
+
+client.delete_component(name="FMCW3")
+
+client.delete_component(name="componentName")
 
