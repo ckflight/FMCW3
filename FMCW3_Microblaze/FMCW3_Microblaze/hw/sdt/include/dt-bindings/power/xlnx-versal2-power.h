@@ -38,6 +38,7 @@
 #define PM_DEV_MMI_DC				(0x18224137U)
 #define PM_DEV_MMI_HDCP				(0x18224138U)
 #define PM_DEV_MMI_DP				(0x18224139U)
+#define PM_DEV_MMI_GEM				(0x1822413AU)
 
 #define PM_DEV_TCM_A_0A				(0x183180CBU)
 #define PM_DEV_TCM_A_0B				(0x183180CCU)

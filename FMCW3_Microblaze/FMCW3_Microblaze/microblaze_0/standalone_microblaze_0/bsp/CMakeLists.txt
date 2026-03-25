@@ -19,7 +19,6 @@ if (EXISTS ${metal_BINARY_DIR})
 include_directories(${metal_BINARY_DIR}/lib/include)
 endif()
 set (BSP_LIBSRC_SUBDIRS libsrc standalone xiltimer)
-
 if (SUBDIR_LIST STREQUAL "ALL")
     set (SUBDIR_LIST ${BSP_LIBSRC_SUBDIRS})
 endif()
@@ -38,4 +37,21 @@ cmake_language(DEFER DIRECTORY ${CMAKE_SOURCE_DIR} CALL _my_hook_end_of_configur
 function(_my_hook_end_of_configure)
     set(SUBDIR_LIST "ALL" CACHE STRING "sub dir list" FORCE)
 endfunction(_my_hook_end_of_configure)
+
+        if(COMMAND split_string_by_length)
+            split_string_by_length("Compiler FLAGS: ${CMAKE_C_FLAGS} ${proc_extra_compiler_flags} ${CMAKE_C_FLAGS_RELEASE}" 100 CHUNKS)
+        else()
+            set(CHUNKS "Compiler FLAGS: ${CMAKE_C_FLAGS} ${proc_extra_compiler_flags} ${CMAKE_C_FLAGS_RELEASE}")
+        endif()
+        add_custom_target(print_compiler ALL
+            COMMAND ${CMAKE_COMMAND} -E echo ""
+            COMMAND ${CMAKE_COMMAND} -E echo "Compiler PATH: ${CMAKE_C_COMPILER}"
+            COMMAND ${CMAKE_COMMAND} -E echo ""
+            COMMAND ${CMAKE_COMMAND} -E cmake_echo_color ${CHUNKS}
+            COMMAND ${CMAKE_COMMAND} -E echo ""
+            COMMAND ${CMAKE_COMMAND} -E echo "==========================================="
+            COMMAND ${CMAKE_COMMAND} -E echo "** The above flags are BSP level flags. Increase verbosity to see component specific flags **"
+            COMMAND ${CMAKE_COMMAND} -E echo "==========================================="
+            COMMENT "========== BSP Build Information =========="
+        )
     

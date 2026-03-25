@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2023 - 2024 Advanced Micro Devices, Inc. All Rights Reserved.
+* Copyright (c) 2023 - 2025 Advanced Micro Devices, Inc. All Rights Reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 #ifndef BSPCONFIG_H
@@ -10,7 +10,8 @@
 @XPAR_PS_INCLUDE@
 @FREERTOS_UARTCONFIG_INCLUDE@
 
-#if (defined (__aarch64__) || defined (ARMA53_32)) && !defined (FREERTOS_BSP)
+/* FIXME: Remove dependency with YOCTO_FLOW variable */
+#if (defined (__aarch64__) || defined (ARMA53_32)) && (defined (YOCTO_FLOW) || !defined (FREERTOS_BSP))
 #cmakedefine01 EL3 @EL3@
 #cmakedefine01 EL1_NONSECURE @EL1_NONSECURE@
 #cmakedefine01 HYP_GUEST @HYP_GUEST@
@@ -24,13 +25,16 @@
 #cmakedefine SPARTANUP @SPARTANUP@
 #cmakedefine PSU_PMU @PSU_PMU@
 #cmakedefine PLATFORM_ZYNQMP @PLATFORM_ZYNQMP@
+#cmakedefine XCLOCKING @XCLOCKING@
 #cmakedefine PLATFORM_ZYNQ @PLATFORM_ZYNQ@
 #cmakedefine VERSAL_PLM @VERSAL_PLM@
 #cmakedefine VERSALNET_PLM @VERSALNET_PLM@
-#cmakedefine SPARTANUP_PLM @SPARTANUP_PLM@
 #cmakedefine PLATFORM_MB @PLATFORM_MB@
+#cmakedefine ASUFW @ASUFW@
 #define XPAR_CPU_ID ${CPU_ID_VAL}
 #cmakedefine XIL_INTERRUPT @XIL_INTERRUPT@
+#cmakedefine XPM_SUPPORT @XPM_SUPPORT@
+#cmakedefine ENABLE_4K_PAGES_OCM_TCM @ENABLE_4K_PAGES_OCM_TCM@
 #cmakedefine XPAR_STDIN_IS_UARTLITE @XPAR_STDIN_IS_UARTLITE@
 #cmakedefine XPAR_STDIN_IS_UARTNS550 @XPAR_STDIN_IS_UARTNS550@
 #cmakedefine XPAR_STDIN_IS_UARTPS @XPAR_STDIN_IS_UARTPS@
@@ -39,5 +43,7 @@
 #cmakedefine XPAR_STDIN_IS_IOMODULE @XPAR_STDIN_IS_IOMODULE@
 #cmakedefine STDIN_BASEADDRESS @STDIN_BASEADDRESS@
 #cmakedefine STDOUT_BASEADDRESS @STDOUT_BASEADDRESS@
+
+@VARIANT_DEFINES@
 
 #endif /* BSPCONFIG_H */

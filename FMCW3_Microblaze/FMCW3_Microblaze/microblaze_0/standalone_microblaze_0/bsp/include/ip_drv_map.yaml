@@ -1,6 +1,12 @@
+axi_fifo_mm_s_0:
+- axi_fifo_mm_s
+- llfifo
 axi_gpio_0:
 - axi_gpio
 - gpio
+axi_intc_0:
+- axi_intc
+- intc
 axi_quad_spi_0:
 - axi_quad_spi
 - spi

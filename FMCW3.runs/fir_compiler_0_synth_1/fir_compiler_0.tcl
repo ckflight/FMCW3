@@ -57,7 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "fir_compiler_0_synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }

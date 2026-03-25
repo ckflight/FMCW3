@@ -1,11 +1,11 @@
 sdt: hw_artifacts/microblaze_0_baremetal.dts
 family: artix7
-path: /home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp
+path: C:\Users\CK\Desktop\Vivado\FMCW3\FMCW3_Microblaze\FMCW3_Microblaze\microblaze_0\standalone_microblaze_0\bsp
 config: None
 os: standalone
 os_info:
   standalone:
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/lib/bsp/standalone_v9_3
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\bsp\standalone_v9_4
 os_config:
   standalone:
     standalone_enable_sw_intrusive_profiling:
@@ -87,13 +87,13 @@ os_config:
     standalone_xpm_support:
       name: standalone_xpm_support
       permission: read_write
-      type: string
-      value: None
-      default: None
+      type: boolean
+      value: 'false'
+      default: 'false'
       options:
-      - None
-      description: This option is not supported in the Unified Vitis IDE in this version.
-        Change to the classic IDE if you want to use this option.
+      - 'true'
+      - 'false'
+      description: Enable xpm support
 toolchain_file: microblaze_toolchain.cmake
 specs_file: Xilinx.spec
 proc: microblaze_0
@@ -103,8 +103,8 @@ proc_config:
       name: proc_archiver
       permission: readonly
       type: string
-      value: mb-gcc-ar
-      default: mb-gcc-ar
+      value: mb-gcc-ar.exe
+      default: mb-gcc-ar.exe
       options: []
       description: Archiver used to archive libraries for both BSP generation as well
         as applications.
@@ -120,8 +120,8 @@ proc_config:
       name: proc_compiler
       permission: readonly
       type: string
-      value: mb-gcc
-      default: mb-gcc
+      value: mb-gcc.exe
+      default: mb-gcc.exe
       options: []
       description: Compiler used to compile both BSP/libraries and applications.
     proc_compiler_flags:
@@ -129,9 +129,9 @@ proc_config:
       permission: readonly
       type: string
       value: '  -mxl-barrel-shift -mlittle-endian -mxl-pattern-compare -mno-xl-reorder
-        -mno-xl-soft-mul -mcpu=v11.0 -DSDT;-c'
+        -mno-xl-soft-mul -mno-xl-soft-div -mhard-float -mcpu=v11.0 -DSDT;-c'
       default: '  -mxl-barrel-shift -mlittle-endian -mxl-pattern-compare -mno-xl-reorder
-        -mno-xl-soft-mul -mcpu=v11.0 -DSDT;-c'
+        -mno-xl-soft-mul -mno-xl-soft-div -mhard-float -mcpu=v11.0 -DSDT;-c'
       options: []
       description: Compiler Flags used in BSP and library generation.'-c'flag stands
         for 'compile and assemble, but do not link'.Without this flag, gcc tries to
@@ -152,36 +152,77 @@ include_folder: include
 lib_folder: lib
 libsrc_folder: libsrc
 drv_info:
+  axi_fifo_mm_s_0:
+    driver: llfifo
+    ip_name: axi_fifo_mm_s
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\llfifo_v6_0
+    examples:
+      xllfifo_interrupt_example.c: []
+      xllfifo_polling_example.c: []
   axi_gpio_0:
     driver: gpio
     ip_name: axi_gpio
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_12
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\gpio_v4_12
+    examples:
+      xgpio_example.c: []
+      xgpio_low_level_example.c: []
+      xgpio_tapp_example.c: []
+  axi_intc_0:
+    driver: intc
+    ip_name: axi_intc
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\intc_v3_21
+    examples:
+      xintc_example.c: []
+      xintc_low_level_example.c: []
+      xintc_tapp_example.c: []
   axi_quad_spi_0:
     driver: spi
     ip_name: axi_quad_spi
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/spi_v4_14
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\spi_v4_15
+    examples:
+      xspi_polled_example.c: []
+      xspi_slave_polled_example.c: []
+      xspi_low_level_example.c: []
+      xspi_winbond_flash_xip_example.c: []
+      xspi_selftest_example.c: []
+      xspi_stm_flash_example.c: []
   axi_timer_0:
     driver: tmrctr
     ip_name: axi_timer
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/tmrctr_v4_13
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\tmrctr_v4_14
+    examples:
+      xtmrctr_selftest_example.c: []
+      xtmrctr_polled_example.c: []
+      xtmrctr_low_level_example.c: []
+      xtmrctr_intr_example.c: []
+      xtmrctr_fast_intr_example.c: []
+      xtmrctr_intr_64bit_example.c: []
+      xtmrctr_pwm_example.c: []
   axi_uartlite_0:
     driver: uartlite
     ip_name: axi_uartlite
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/uartlite_v3_11
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\uartlite_v3_12
+    examples:
+      xuartlite_low_level_example.c: []
+      xuartlite_polled_example.c: []
+      xuartlite_selftest_example.c: []
   microblaze_0_local_memory_dlmb_bram_if_cntlr:
     driver: bram
     ip_name: lmb_bram_if_cntlr
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_12
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\bram_v4_13
+    examples:
+      xbram_example.c: []
 lib_info:
   xiltimer:
-    path: /tools/Xilinx/2025.1/Vitis/data/embeddedsw/lib/sw_services/xiltimer_v2_2
+    path: C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xiltimer_v2_3
+    examples: {}
 lib_config:
   xiltimer:
     XILTIMER_en_interval_timer:
       name: XILTIMER_en_interval_timer
       permission: read_write
       type: boolean
-      value: 'false'
+      value: 'true'
       default: 'false'
       options:
       - 'true'

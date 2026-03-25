@@ -1,0 +1,7 @@
+#ifndef XINTC_DRV_CONFIG_H_
+#define XINTC_DRV_CONFIG_H_
+
+#define XPAR_INTC_MAX_NUM_INTR_INPUTS 0x2
+#define XPAR_INTC_NUM_DRV_INSTANCES 1
+
+#endif

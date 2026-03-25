@@ -51,7 +51,7 @@ XMicroblaze_Config XMicroblaze_ConfigTable[] __attribute__ ((section (".drvcfg_s
 		0x1,  /* xlnx,mmu-itlb-size */
 		0x3,  /* xlnx,mmu-tlb-access */
 		0x2,  /* xlnx,mmu-zones */
-		0x1,  /* xlnx,number-of-pc-brk */
+		0x8,  /* xlnx,number-of-pc-brk */
 		0x0,  /* xlnx,number-of-rd-addr-brk */
 		0x0,  /* xlnx,number-of-wr-addr-brk */
 		0x0,  /* xlnx,opcode-0x0-illegal */
@@ -62,14 +62,14 @@ XMicroblaze_Config XMicroblaze_ConfigTable[] __attribute__ ((section (".drvcfg_s
 		0x0,  /* xlnx,sco */
 		0x1,  /* xlnx,use-barrel */
 		0x0,  /* xlnx,use-dcache */
-		0x0,  /* xlnx,use-div */
+		0x1,  /* xlnx,use-div */
 		0x0,  /* xlnx,use-ext-brk */
 		0x0,  /* xlnx,use-ext-nm-brk */
 		0x0,  /* xlnx,use-extended-fsl-instr */
-		0x0,  /* xlnx,use-fpu */
+		0x1,  /* xlnx,use-fpu */
 		0x1,  /* xlnx,use-hw-mul */
 		0x0,  /* xlnx,use-icache */
-		0x0,  /* xlnx,use-interrupt */
+		0x1,  /* xlnx,use-interrupt */
 		0x0,  /* xlnx,use-mmu */
 		0x1,  /* xlnx,use-pcmp-instr */
 		0x0,  /* d-cache-baseaddr */

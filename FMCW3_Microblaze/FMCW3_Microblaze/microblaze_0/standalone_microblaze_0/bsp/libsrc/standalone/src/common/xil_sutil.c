@@ -29,6 +29,10 @@
 *       ng       03/25/25 Prevent compiler optimization by using volatile for status variable,
 *                         add checks for RISC-V MB proc and zeroize memory before return
 *       ng       04/07/25 Prevent overwriting of the status variable in Xil_SReverseData
+* 9.4   ml       09/01/25 Fix MISRA-C violation for Rule 17.7
+* 9.4   vmt      24/09/25 Added extended address support for RISC-V
+*       har      10/10/25 Updated datatype of Len in Xil_ConvertStringToHex
+*       hj       14/10/25 Remove zero address check in Xil_SMemCpy
 *
 * </pre>
 *
@@ -129,15 +133,16 @@ u32 Xil_ConvertCharToNibble(u8 InChar, u8 *Num)
  *
  * @return
  *          XST_SUCCESS - Input string is converted to hex
- *          XST_FAILURE - Invalid character in inpit string
+ *          XST_FAILURE - Invalid character in input string
  *
  * @note    None.
  *
  *****************************************************************************/
-u32 Xil_ConvertStringToHex(const char *Str, u32 *buf, u8 Len)
+u32 Xil_ConvertStringToHex(const char *Str, u32 *buf, u32 Len)
 {
 	u32 Status = XST_FAILURE;
-	u8 ConvertedLen = 0U, index = 0U;
+	u32 ConvertedLen = 0U;
+	u32 index = 0U;
 	u8 Nibble[MAX_NIBBLES] = {0U};
 	u8 i;
 
@@ -535,7 +540,8 @@ s32 Xil_SMemCmp_CT(const void *Src1, const u32 Src1Size,
 /**
  * @brief	This is wrapper function to memcpy function. This function
  *		takes size of two memory regions to make sure not read from
- *		or write to out of bound memory region.
+ *		or write to out of bound memory region. Since 0 is valid address,
+*		Src and Dest paramemter are not checked for NULL
  *
  * @param	Dest      - Pointer to destination memory
  * @param	DestSize  - Memory available at destination
@@ -557,9 +563,7 @@ s32 Xil_SMemCpy(void *Dest, const u32 DestSize,
 	void *volatile DestTemp = Dest;
 	const void *volatile SrcTemp = Src;
 
-	if ((Dest == NULL) || (Src == NULL)) {
-		Status =  XST_INVALID_PARAM;
-	} else if ((CopyLen == 0U) || (DestSize < CopyLen) || (SrcSize < CopyLen)) {
+	if ((CopyLen == 0U) || (DestSize < CopyLen) || (SrcSize < CopyLen)) {
 		Status =  XST_INVALID_PARAM;
 	}
 	/* Return error for overlap string */
@@ -971,9 +975,9 @@ void Xil_MemCpy64(u64 DstAddr, u64 SrcAddr, u32 Cnt)
 	/* Checking for overlap */
 	if (((SrcAddr < DstAddr) && ((SrcAddr + Cnt) <= DstAddr)) ||
 	    ((DstAddr < SrcAddr) && ((DstAddr + Cnt) <= SrcAddr))) {
-#if defined(VERSAL_PLM) || ((defined(__MICROBLAZE__) || defined(__riscv)) &&\
-			    (XPAR_MICROBLAZE_ADDR_SIZE > 32) &&\
-			    (XPAR_MICROBLAZE_DATA_SIZE == 32))
+#if (defined(__riscv) && (__riscv_xlen == 32) && (XPAR_MICROBLAZE_RISCV_ADDR_SIZE > 32)) || \
+    (defined(__MICROBLAZE__) && (XPAR_MICROBLAZE_ADDR_SIZE > 32) && (XPAR_MICROBLAZE_DATA_SIZE == 32)) || \
+    defined(VERSAL_PLM)
 			u64 Dst = DstAddr;
 			u64 Src = SrcAddr;
 			u32 Count = Cnt;
@@ -994,7 +998,7 @@ void Xil_MemCpy64(u64 DstAddr, u64 SrcAddr, u32 Cnt)
 			}
 		}
 #else
-		memcpy((void *)(UINTPTR)DstAddr, (void *)(UINTPTR)SrcAddr, Cnt);
+		(void)memcpy((void *)(UINTPTR)DstAddr, (void *)(UINTPTR)SrcAddr, Cnt);
 	}
 #endif
 }

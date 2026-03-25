@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Wed Dec 17 15:27:08 2025
+| Date         : Wed Mar 25 09:40:47 2026
 | Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
 | Design       : top_module
@@ -97,7 +97,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   56 |     0 |          0 |       170 | 32.94 |
+| Bonded IOB                  |   54 |     0 |          0 |       170 | 31.76 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         5 |  0.00 |
@@ -160,13 +160,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT5     |  310 |                 LUT |
 | MUXF8    |  192 |               MuxFx |
 | FDRE     |  106 |        Flop & Latch |
-| LUT2     |  105 |                 LUT |
+| LUT2     |  104 |                 LUT |
 | LUT3     |   89 |                 LUT |
 | LUT4     |   75 |                 LUT |
 | LUT1     |   63 |                 LUT |
 | OBUF     |   27 |                  IO |
 | IBUF     |   25 |                  IO |
-| OBUFT    |   12 |                  IO |
+| OBUFT    |   10 |                  IO |
 | CARRY4   |    8 |          CarryLogic |
 | FDPE     |    4 |        Flop & Latch |
 | BUFG     |    1 |               Clock |

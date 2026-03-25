@@ -3,7 +3,7 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "/home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/top_module.xsa",
+    "xsa": "C:/Users/CK/Desktop/Vivado/FMCW3/top_module.xsa",
     "xsaPathInPlatform": "FMCW3_Microblaze/hw/top_module.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
@@ -36,6 +36,10 @@
       {
         "key": "-dt_overlay",
         "value": "0"
+      },
+      {
+        "key": "custom_dtsi",
+        "value": ""
       }
     ],
     "componentType": "PLATFORM",

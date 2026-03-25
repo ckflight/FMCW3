@@ -42,7 +42,12 @@ typedef struct params_s {
 #define MICROBLAZE32
 #endif
 
-#if (!defined(MICROBLAZE32)) && (!defined(ZYNQMP_R5_FSBL_BSP))  && (!defined(DISABLE_64BIT_PRINT))
+#if (defined(__riscv) && (__riscv_xlen == 32))
+#define RISCV32
+#endif
+
+#if (!defined(MICROBLAZE32)) && (!defined(RISCV32)) && \
+	(!defined(ZYNQMP_R5_FSBL_BSP))  && (!defined(DISABLE_64BIT_PRINT))
 #define SUPPORT_64BIT_PRINT
 #endif
 
@@ -68,7 +73,7 @@ static void padding( const s32 l_flag, const struct params_s *par)
 	if ((par->do_padding != 0) && (l_flag != 0) && (par->len < par->num1)) {
 		i = (par->len);
 		for (; i < (par->num1); i++) {
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 			outbyte( par->pad_character);
 #endif
 		}
@@ -92,7 +97,7 @@ static void outs(const charptr lp, struct params_s *par)
 		/* Move string to the buffer                     */
 		while (((*LocalPtr) != (char8)0) && ((par->num2) != 0)) {
 			(par->num2)--;
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 			outbyte(*LocalPtr);
 #endif
 			LocalPtr += 1;
@@ -152,7 +157,7 @@ static void outnum( const s32 n, const s32 base, struct params_s *par)
 	par->len = (s32)strlen(outbuf);
 	padding( !(par->left_flag), par);
 	while (&outbuf[i] >= outbuf) {
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 		outbyte( outbuf[i] );
 #endif
 		i--;
@@ -191,8 +196,8 @@ static void outnum1( const s64 n, const s32 base, params_t *par)
 	do {
 		outbuf[i] = digits[(num % base)];
 		i++;
-		num /= base;
-	} while (num > 0);
+		num /= (u64)base;
+	} while (num > 0U);
 
 	if (negative != 0) {
 		outbuf[i] = '-';
@@ -278,7 +283,7 @@ void xil_printf( const char8 *ctrl1, ...)
 ******************************************************************************/
 void xil_vprintf(const char8 *ctrl1, va_list argp)
 {
-	s32 Check;
+	s32 Check = 0;
 #if defined (SUPPORT_64BIT_PRINT)
 	s32 long_flag;
 #endif
@@ -295,7 +300,7 @@ void xil_vprintf(const char8 *ctrl1, va_list argp)
 		/* move format string chars to buffer until a  */
 		/* format control is found.                    */
 		if (*ctrl != '%') {
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 			outbyte(*ctrl);
 #endif
 			ctrl += 1;
@@ -335,7 +340,7 @@ try_next:
 
 		switch (tolower(ch)) {
 			case '%':
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 				outbyte( '%');
 #endif
 				Check = 1;
@@ -350,7 +355,7 @@ try_next:
 				if ((*(ctrl + 1) == '*') && (*(ctrl + 2) == 's')) {
 					width = va_arg(argp, u32);
 					string = va_arg(argp, const char *);
-					for (index = 0; index < width && string[index] != '\0' ; index++) {
+					for (index = 0; (index < width) && (string[index] != '\0') ; index++) {
 						outbyte(string[index]);
 					}
 					ctrl += 2;
@@ -418,7 +423,7 @@ try_next:
 				break;
 
 			case 'c':
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 				outbyte( (char8)va_arg( argp, s32));
 #endif
 				Check = 1;
@@ -428,28 +433,28 @@ try_next:
 				ctrl += 1;
 				switch (*ctrl) {
 					case 'a':
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 						outbyte( ((char8)0x07));
 #endif
 						break;
 					case 'h':
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 						outbyte( ((char8)0x08));
 #endif
 						break;
 					case 'r':
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 						outbyte( ((char8)0x0D));
 #endif
 						break;
 					case 'n':
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 						outbyte( ((char8)0x0D));
 						outbyte( ((char8)0x0A));
 #endif
 						break;
 					default:
-#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM)
+#if defined(STDOUT_BASEADDRESS) || defined(VERSAL_PLM) || defined(SDT) || defined(SPARTANUP_PLM) || defined(ASUFW)
 						outbyte( *ctrl);
 #endif
 						break;

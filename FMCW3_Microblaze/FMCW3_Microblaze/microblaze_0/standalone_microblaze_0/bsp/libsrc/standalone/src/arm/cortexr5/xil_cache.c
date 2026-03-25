@@ -1,6 +1,6 @@
 /******************************************************************************
 * Copyright (c) 2014 - 2022 Xilinx, Inc.  All rights reserved.
-* Copyright (c) 2022 - 2024 Advanced Micro Devices, Inc. All rights reserved.
+* Copyright (c) 2022 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 * SPDX-License-Identifier: MIT
 ******************************************************************************/
 
@@ -45,7 +45,7 @@
 *                     The changes are made to fix the same.
 * 9.1   asa  31/01/24 Fix overflow issues under corner cases for various
 *                     cache maintenance APIs.
-*
+* 9.4   ml   01/09/25 Fix MISRA-C violations for Rules 10.4 and 12.1
 * </pre>
 *
 ******************************************************************************/
@@ -281,7 +281,7 @@ void Xil_DCacheInvalidateRange(INTPTR adr, u32 len)
 
 	if (len != 0U) {
 		tempadr = adr & (~(cacheline - 1U));
-		((MAX_ADDR - (u32)adr) < len) ? (end = MAX_ADDR) : (end = adr + len);
+		((MAX_ADDR - (u32)adr) < len) ? (end = MAX_ADDR) : (end = (u32)adr + len);
 		tempend = end & (~(cacheline - 1U));
 
 		/* Select L1 Data cache in CSSR */
@@ -290,17 +290,17 @@ void Xil_DCacheInvalidateRange(INTPTR adr, u32 len)
 		if (tempadr != (u32)adr) {
 			unalignedstart = 1;
 			Xil_DCacheFlushLine(tempadr);
-			tempadr >= LAST_CACHELINE_START ? (adr = end) : (adr = tempadr + cacheline);
+			(tempadr >= LAST_CACHELINE_START) ? (adr = end) : (adr = tempadr + cacheline);
 		}
 		if ((tempend != end) && ((tempend != tempadr) || (unalignedstart == 0x0U))) {
 			Xil_DCacheFlushLine(tempend);
-			end >= cacheline ? (end -= cacheline) : (end = 0);
+			(end >= cacheline) ? (end -= cacheline) : (end = 0);
 		}
 
 		while (adr < (INTPTR)end) {
 			/* Invalidate Data cache line */
 			asm_inval_dc_line_mva_poc(adr);
-			((MAX_ADDR - (u32)adr) < cacheline) ? (adr = MAX_ADDR) : (adr += cacheline);
+			((MAX_ADDR - (u32)adr) < cacheline) ? (adr = MAX_ADDR) : (adr += (s32)cacheline);
 		}
 	}
 

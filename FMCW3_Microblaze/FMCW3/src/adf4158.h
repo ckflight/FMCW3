@@ -1,7 +1,6 @@
 #ifndef ADF4158_H
 #define ADF4158_H
 
-#include "xspi.h"
 #include "xgpio.h"
 #include "xil_types.h"
 
@@ -24,9 +23,6 @@ typedef struct config_parameters_s{
 } config_parameters_t;
 
 extern config_parameters_t config_parameters;
-
-// External SPI instance (from spi.c)
-extern XSpi SPI0;
 
 #define FREQ_PFD       30000000U
 
