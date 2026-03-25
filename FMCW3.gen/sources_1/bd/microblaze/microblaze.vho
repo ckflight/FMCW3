@@ -53,13 +53,7 @@
 -- COMP_TAG     ------ Begin cut for COMPONENT Declaration ------
 COMPONENT microblaze
   PORT (
-    Clk : IN STD_LOGIC;
-    reset_rtl_0 : IN STD_LOGIC;
     gpio_rtl_0_tri_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-    spi0_miso : IN STD_LOGIC;
-    spi0_mosi : OUT STD_LOGIC;
-    spi0_sck : OUT STD_LOGIC;
-    spi0_cs : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     AXI_STR_TXD_0_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     AXI_STR_TXD_0_tlast : OUT STD_LOGIC;
     AXI_STR_TXD_0_tready : IN STD_LOGIC;
@@ -67,7 +61,13 @@ COMPONENT microblaze
     AXI_STR_RXD_0_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     AXI_STR_RXD_0_tlast : IN STD_LOGIC;
     AXI_STR_RXD_0_tready : OUT STD_LOGIC;
-    AXI_STR_RXD_0_tvalid : IN STD_LOGIC
+    AXI_STR_RXD_0_tvalid : IN STD_LOGIC;
+    Clk : IN STD_LOGIC;
+    reset_rtl_0 : IN STD_LOGIC;
+    spi0_miso : IN STD_LOGIC;
+    spi0_mosi : OUT STD_LOGIC;
+    spi0_sck : OUT STD_LOGIC;
+    spi0_cs : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -78,13 +78,7 @@ END COMPONENT;
 -- INST_TAG     ------ Begin cut for INSTANTIATION Template ------
 your_instance_name : microblaze
   PORT MAP (
-    Clk => Clk,
-    reset_rtl_0 => reset_rtl_0,
     gpio_rtl_0_tri_o => gpio_rtl_0_tri_o,
-    spi0_miso => spi0_miso,
-    spi0_mosi => spi0_mosi,
-    spi0_sck => spi0_sck,
-    spi0_cs => spi0_cs,
     AXI_STR_TXD_0_tdata => AXI_STR_TXD_0_tdata,
     AXI_STR_TXD_0_tlast => AXI_STR_TXD_0_tlast,
     AXI_STR_TXD_0_tready => AXI_STR_TXD_0_tready,
@@ -92,7 +86,13 @@ your_instance_name : microblaze
     AXI_STR_RXD_0_tdata => AXI_STR_RXD_0_tdata,
     AXI_STR_RXD_0_tlast => AXI_STR_RXD_0_tlast,
     AXI_STR_RXD_0_tready => AXI_STR_RXD_0_tready,
-    AXI_STR_RXD_0_tvalid => AXI_STR_RXD_0_tvalid
+    AXI_STR_RXD_0_tvalid => AXI_STR_RXD_0_tvalid,
+    Clk => Clk,
+    reset_rtl_0 => reset_rtl_0,
+    spi0_miso => spi0_miso,
+    spi0_mosi => spi0_mosi,
+    spi0_sck => spi0_sck,
+    spi0_cs => spi0_cs
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

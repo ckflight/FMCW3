@@ -69,9 +69,9 @@ vivado_axis_v1_0 #(.TDATA_NUM_BYTES(4), .TDEST_WIDTH(0), .TID_WIDTH(0), .TUSER_W
 microblaze_sv your_instance_name (
   .AXI_STR_TXD_0(AXI_STR_TXD_0.master), // vivado_axis_v1_0.master AXI_STR_TXD_0
   .AXI_STR_RXD_0(AXI_STR_RXD_0.slave), // vivado_axis_v1_0.slave AXI_STR_RXD_0
+  .gpio_rtl_0_tri_o(gpio_rtl_0_tri_o), // output wire [15:0] gpio_rtl_0_tri_o
   .Clk(Clk), // input wire Clk
   .reset_rtl_0(reset_rtl_0), // input wire reset_rtl_0
-  .gpio_rtl_0_tri_o(gpio_rtl_0_tri_o), // output wire [15:0] gpio_rtl_0_tri_o
   .spi0_miso(spi0_miso), // input wire spi0_miso
   .spi0_mosi(spi0_mosi), // output wire spi0_mosi
   .spi0_sck(spi0_sck), // output wire spi0_sck

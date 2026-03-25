@@ -20,12 +20,12 @@
         "Output_Depth": [ { "value": "1024", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "Enable_ECC": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Use_Embedded_Registers": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
-        "Reset_Pin": [ { "value": "false", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
-        "Enable_Reset_Synchronization": [ { "value": "true", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
+        "Reset_Pin": [ { "value": "true", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "Enable_Reset_Synchronization": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Reset_Type": [ { "value": "Asynchronous_Reset", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "Full_Flags_Reset_Value": [ { "value": "0", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "Use_Dout_Reset": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
-        "Dout_Reset_Value": [ { "value": "0", "resolve_type": "user", "enabled": false, "usage": "all" } ],
+        "Full_Flags_Reset_Value": [ { "value": "1", "resolve_type": "user", "usage": "all" } ],
+        "Use_Dout_Reset": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
+        "Dout_Reset_Value": [ { "value": "0", "resolve_type": "user", "usage": "all" } ],
         "dynamic_power_saving": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
         "Almost_Full_Flag": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Almost_Empty_Flag": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
@@ -172,7 +172,7 @@
         "Master_interface_Clock_enable_memory_mapped": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
         "Slave_interface_Clock_enable_memory_mapped": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
         "Output_Register_Type": [ { "value": "Embedded_Reg", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "Enable_Safety_Circuit": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
+        "Enable_Safety_Circuit": [ { "value": "false", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Enable_ECC_Type": [ { "value": "Hard_ECC", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "C_SELECT_XPM": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ]
       },
@@ -187,7 +187,7 @@
         "C_DOUT_WIDTH": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ENABLE_RLOCS": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_FAMILY": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
-        "C_FULL_FLAGS_RST_VAL": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_FULL_FLAGS_RST_VAL": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_ALMOST_EMPTY": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_ALMOST_FULL": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_BACKUP": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -197,7 +197,7 @@
         "C_HAS_OVERFLOW": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_RD_DATA_COUNT": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_RD_RST": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_HAS_RST": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_HAS_RST": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_SRST": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_UNDERFLOW": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_VALID": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -224,7 +224,7 @@
         "C_RD_FREQ": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_RD_PNTR_WIDTH": [ { "value": "10", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_UNDERFLOW_LOW": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_USE_DOUT_RST": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_USE_DOUT_RST": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_USE_ECC": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_USE_EMBEDDED_REG": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_USE_PIPELINE_REG": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -406,6 +406,7 @@
     },
     "boundary": {
       "ports": {
+        "rst": [ { "direction": "in", "driver_value": "0" } ],
         "wr_clk": [ { "direction": "in", "driver_value": "0" } ],
         "rd_clk": [ { "direction": "in", "driver_value": "0" } ],
         "din": [ { "direction": "in", "size_left": "7", "size_right": "0", "driver_value": "0" } ],
@@ -475,5 +476,5 @@
       }
     }
   },
-  "checksum": "d37bb043"
+  "checksum": "03420f99"
 }

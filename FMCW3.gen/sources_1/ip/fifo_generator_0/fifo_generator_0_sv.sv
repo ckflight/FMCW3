@@ -1,5 +1,5 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+// Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 // -------------------------------------------------------------------------------
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -54,6 +54,8 @@
 
 module fifo_generator_0_sv (
   (* X_INTERFACE_IGNORE = "true" *)
+  input wire rst,
+  (* X_INTERFACE_IGNORE = "true" *)
   input wire wr_clk,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire rd_clk,
@@ -72,6 +74,7 @@ module fifo_generator_0_sv (
 );
 
   fifo_generator_0 inst (
+    .rst(rst),
     .wr_clk(wr_clk),
     .rd_clk(rd_clk),
     .din(din),

@@ -57,7 +57,6 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
-set_param chipscope.maxJobs 2
 set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tftg256-1
@@ -84,6 +83,11 @@ read_vhdl -library xil_defaultlib {
   C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/new/usb_sync.vhd
   C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/new/top_module.vhd
 }
+read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
+
 add_files C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/bd/microblaze/microblaze.bd
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5_ooc_debug.xdc]
@@ -187,10 +191,10 @@ set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vi
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
-read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
+read_ip -quiet c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
+set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -84,10 +84,12 @@ architecture rtl of usb_sync is
 	signal ft2232_rx_fifo_write            : std_logic;
 	signal ft2232_tx_please                : std_logic;
 	signal ft2232_rx_please                : std_logic;
- 
+    
+    signal reset                           : std_logic;
  
     COMPONENT fifo_generator_0
           PORT (
+            rst         : IN STD_LOGIC;
             wr_clk      : IN STD_LOGIC;
             rd_clk      : IN STD_LOGIC;
             din         : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -103,6 +105,7 @@ architecture rtl of usb_sync is
  
     rx_dcfifo : fifo_generator_0
     PORT MAP (
+        rst     => reset,
         wr_clk  => rx_fifo_wrclk,
         rd_clk  => rx_fifo_rdclk,
         din     => rx_fifo_data,
@@ -116,6 +119,7 @@ architecture rtl of usb_sync is
 
     tx_dcfifo : fifo_generator_0
     PORT MAP (
+        rst     => reset,
         wr_clk  => tx_fifo_wrclk,
         rd_clk  => tx_fifo_rdclk,
         din     => tx_fifo_data,
@@ -125,6 +129,8 @@ architecture rtl of usb_sync is
         full    => tx_fifo_wrfull,
         empty   => tx_fifo_rdempty
     );
+ 
+    reset <= not reset_n;
  
     tx_full <= tx_fifo_wrfull;
  

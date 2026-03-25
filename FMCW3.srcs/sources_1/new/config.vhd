@@ -48,8 +48,46 @@ architecture Behavioral of config is
     signal config_ready_sync, config_ready_d : std_logic := '0';
     
     signal fifo_byte_index              : integer range 0 to PACKET_SIZE-1 := 0;
+    
+    component fifo_generator_1
+    PORT (
+        rst : IN STD_LOGIC;
+        wr_clk : IN STD_LOGIC;
+        rd_clk : IN STD_LOGIC;
+        din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        wr_en : IN STD_LOGIC;
+        rd_en : IN STD_LOGIC;
+        dout : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        full : OUT STD_LOGIC;
+        empty : OUT STD_LOGIC
+    );
+    end component;
+    
+    signal s_din        : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_dout       : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_wr_en      : std_logic := '0';
+    signal s_rd_en      : std_logic := '0';
+    signal s_fifo_full  : std_logic := '0';
+    signal s_fifo_empty : std_logic := '0';
+    
+    signal reset        : std_logic;
+    
 begin
 
+    config_fifo : fifo_generator_1
+    PORT MAP(        
+        rst         => reset,         
+        wr_clk      => clk_40mhz,
+        rd_clk      => clk_100mhz,
+        din         => s_din,
+        wr_en       => s_wr_en,
+        rd_en       => s_rd_en,
+        dout        => s_dout,
+        full        => s_fifo_full,
+        empty       => s_fifo_empty
+    );
+    
+    reset <= not reset_n;
 
     -- mb to vhdl part not used for now. vhdl will be seen ready but logic to read data is not implemented yet. 
     fifotx_tready <= '1';

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 25 12:26:19 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 25 15:58:50 2026" VIVADOVERSION="2025.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="microblaze" PACKAGE="ftg256" SPEEDGRADE="-1"/>
 
@@ -8600,7 +8600,7 @@
         <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
         <PARAMETER NAME="dout_width" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="microblaze_microblaze_0_xlconcat_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="microblaze_microblaze_0_xlconcat_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
