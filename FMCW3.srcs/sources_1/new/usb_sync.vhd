@@ -32,6 +32,7 @@ entity usb_sync is
 		-- Bus signals
 		clk           : in std_logic;
 		reset_n       : in std_logic;
+		soft_reset_n  : in std_logic;
 		read_n        : in std_logic;
 		write_n       : in std_logic;
 		chipselect    : in std_logic;
@@ -130,7 +131,7 @@ architecture rtl of usb_sync is
         empty   => tx_fifo_rdempty
     );
  
-    reset <= not reset_n;
+    reset <= (not reset_n) or (not soft_reset_n);
  
     tx_full <= tx_fifo_wrfull;
  
@@ -197,10 +198,10 @@ architecture rtl of usb_sync is
 	rd_sig <= '1' when chipselect = '1' and read_n = '0' else '0';
  
 	-- Handle FIFOs to Bus
-	process (clk, reset_n)
+	process (clk, reset_n, soft_reset_n)
 	begin
  
-		if reset_n = '0' then
+		if reset_n = '0' or soft_reset_n = '0' then
  
 			rx_fifo_rddone <= '0';
  

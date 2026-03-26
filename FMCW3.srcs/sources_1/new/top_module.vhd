@@ -115,6 +115,7 @@ architecture Behavioral of top_module is
         -- Bus signals
         clk         : in std_logic;
         reset_n     : in std_logic; -- active low
+        soft_reset_n : in std_logic; -- active low
         read_n      : in std_logic;
         write_n     : in std_logic;
         chipselect  : in std_logic;
@@ -385,6 +386,7 @@ begin
     port map (
         clk         => clk_40mhz,
         reset_n     => reset_n,
+        soft_reset_n=> s_soft_reset_n,
         
         read_n      => s_config_usb_read_n,     -- 0 to read from rx fifo of usb_sync (config reads usb to get python script's setup parameters)
         write_n     => s_control_usb_write_n,   -- 0 to write to tx fifo of usb_sync (control writes usb to send adc data to python)
