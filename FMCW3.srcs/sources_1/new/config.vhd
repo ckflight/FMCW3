@@ -34,7 +34,7 @@ end config;
 architecture Behavioral of config is
 
     -- State machine
-    type config_state_type is (st_idle, st_read, st_wait, st_store, st_done);
+    type config_state_type is (st_idle, st_read, st_wait, st_trig_write, st_store, st_done);
     signal config_st : config_state_type := st_idle;
     
     type fifo_state_type is (st_idle, st_send, st_done);
@@ -42,7 +42,6 @@ architecture Behavioral of config is
 
     -- Counter and storage
     signal byte_counter                 : integer range 0 to PACKET_SIZE-1 := 0;
-    signal configuration_bytes          : std_logic_vector(PACKET_SIZE*8-1 downto 0) := (others => '0');
     
     signal config_bytes_ready           : std_logic := '0';    
     signal config_ready_sync, config_ready_d : std_logic := '0';
@@ -51,15 +50,15 @@ architecture Behavioral of config is
     
     component fifo_generator_1
     PORT (
-        rst : IN STD_LOGIC;
-        wr_clk : IN STD_LOGIC;
-        rd_clk : IN STD_LOGIC;
-        din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        wr_en : IN STD_LOGIC;
-        rd_en : IN STD_LOGIC;
-        dout : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-        full : OUT STD_LOGIC;
-        empty : OUT STD_LOGIC
+        rst         : IN STD_LOGIC;
+        wr_clk      : IN STD_LOGIC;
+        rd_clk      : IN STD_LOGIC;
+        din         : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        wr_en       : IN STD_LOGIC;
+        rd_en       : IN STD_LOGIC;
+        dout        : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        full        : OUT STD_LOGIC;
+        empty       : OUT STD_LOGIC
     );
     end component;
     
@@ -87,7 +86,7 @@ begin
         empty       => s_fifo_empty
     );
     
-    reset <= not reset_n;
+    reset <= (not reset_n) or (not soft_reset_n);
 
     -- mb to vhdl part not used for now. vhdl will be seen ready but logic to read data is not implemented yet. 
     fifotx_tready <= '1';
@@ -99,11 +98,15 @@ begin
         if reset_n = '0' or soft_reset_n = '0' then
             config_st                   <= st_idle;
             byte_counter                <= 0;
-            configuration_bytes         <= (others => '0');
             chipselect                  <= '0'; -- 1 active, 0 not
             read_n                      <= '1'; -- 0 active, 1 not
             config_done                 <= '0'; -- not done
             config_bytes_ready          <= '0'; 
+            
+            s_wr_en                     <= '0';
+            s_rd_en                     <= '0';
+            s_din                       <= (others => '0');
+            
         elsif rising_edge(clk_40mhz) then
             
             case config_st is
@@ -112,7 +115,11 @@ begin
                     
                     config_done  <= '0';
                     chipselect   <= '1';
-                    read_n       <= '1';
+                    read_n       <= '1'; 
+                    
+                    s_wr_en      <= '0';
+                    s_rd_en      <= '0';
+                    s_din        <= (others => '0');
                     
                     if usb_rx_empty = '0' then -- not empty so read
                         config_st <= st_read;
@@ -124,13 +131,24 @@ begin
 
                 when st_wait =>
                     read_n <= '1';   -- deassert read
-                    config_st <= st_store;  -- now data is valid next clock
+                    config_st <= st_trig_write;                 
 
+                when st_trig_write =>
+                    
+                    -- prepare data and trigger fifo write
+                    if s_fifo_full = '0' then
+                        s_wr_en <= '1';
+                        s_din <= usb_readdata; 
+                        config_st <= st_store;
+                    else
+                        s_wr_en <= '0';
+                        config_st <= st_trig_write;                                   
+                    end if;
+                    
                 when st_store =>
                     
-                    -- store valid byte
-                    configuration_bytes((byte_counter*8+7) downto (byte_counter*8)) <= usb_readdata;
-
+                    s_wr_en <= '0';
+                    
                     if byte_counter = PACKET_SIZE-1 then                        
                         config_st <= st_done;
                     else
@@ -149,6 +167,11 @@ begin
                     read_n      <= '1';
                     config_done <= '1';
                     config_bytes_ready <= '1';
+                    
+                    s_wr_en      <= '0';
+                    s_rd_en      <= '0';
+                    s_din        <= (others => '0');
+                    
                     config_st <= st_done; -- from here the received packet will be sent
                     
                 when others =>
