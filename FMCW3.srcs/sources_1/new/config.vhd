@@ -37,7 +37,7 @@ architecture Behavioral of config is
     type config_state_type is (st_idle, st_read, st_wait, st_trig_write, st_store, st_done);
     signal config_st : config_state_type := st_idle;
     
-    type fifo_state_type is (st_idle, st_trig_read, st_send, st_done);
+    type fifo_state_type is (st_idle, st_trig_read, st_wait_data, st_send, st_done);
     signal fifo_st : fifo_state_type := st_idle;
 
     -- Counter and storage
@@ -117,7 +117,6 @@ begin
                     read_n       <= '1'; 
                     
                     s_wr_en      <= '0';
-                    s_rd_en      <= '0';
                     s_din        <= (others => '0');
                     
                     if usb_rx_empty = '0' then -- not empty so read
@@ -203,24 +202,35 @@ begin
             case fifo_st is
                 
                 when st_idle =>
+                    s_rd_en         <= '0';
+                    fiforx_tlast    <= '0';
+                    fiforx_tvalid   <= '0';
+                    
                     if config_ready_sync = '1' then
-                        fiforx_tlast    <= '0';
-                        fiforx_tvalid   <= '0';
                         fifo_byte_index <= 0;
                         fifo_st         <= st_trig_read;                                                
                     end if;
                 
                 when st_trig_read =>
+                    s_rd_en       <= '0';
+                    fiforx_tvalid <= '0';
+                    fiforx_tlast  <= '0';
+                
                     if s_fifo_empty = '0' then
                         s_rd_en <= '1';
-                        fifo_st <= st_send;
+                        fifo_st <= st_wait_data;
                     end if;
+                
+                -- one more cycle to be sure
+                when st_wait_data =>
+                    s_rd_en       <= '0';
+                    fiforx_tvalid <= '0';
+                    fifo_st       <= st_send;
                 
                 when st_send =>
                     fiforx_tvalid <= '1';  -- keep asserted
                     
-                    s_rd_en <= '0';
-                    fiforx_tdata  <= s_dout;
+                    fiforx_tdata  <= (31 downto 8 => '0') & s_dout;
                     
                     -- Tlast check
                     if fifo_byte_index = PACKET_SIZE - 1 then
