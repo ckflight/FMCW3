@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 2
 set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tftg256-1
@@ -75,6 +76,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/CK/Desktop/Vivado/FMCW3/fir20.coe
+add_files C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf
+set_property SCOPED_TO_REF microblaze [get_files -all C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf]
+set_property SCOPED_TO_CELLS microblaze_0 [get_files -all C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf]
 read_vhdl -library xil_defaultlib {
   C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/new/adc.vhd
   C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/new/config.vhd
@@ -191,7 +195,7 @@ set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vi
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
 
-read_ip -quiet c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
+read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1_ooc.xdc]

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="fir_compiler_0_synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1774420656">
+<GenRun Id="fir_compiler_0_synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1774865436">
+  <File Type="PA-TCL" Name="fir_compiler_0.tcl"/>
   <File Type="REPORTS-TCL" Name="fir_compiler_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="fir_compiler_0.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="fir_compiler_0_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="fir_compiler_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="fir_compiler_0_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="fir_compiler_0.tcl"/>
-  <File Type="RDS-RDS" Name="fir_compiler_0.vds"/>
   <File Type="RDS-DCP" Name="fir_compiler_0.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="fir_compiler_0_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="fir_compiler_0_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fir_compiler_0" RelGenDir="$PGENDIR/fir_compiler_0">
     <File Path="$PSRCDIR/sources_1/ip/fir_compiler_0/fir_compiler_0.xci">
       <FileInfo>

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Wed Mar 25 16:05:32 2026
+| Date         : Mon Mar 30 13:41:32 2026
 | Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
 | Design       : top_module
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 2316 |     0 |          0 |     20800 | 11.13 |
-|   LUT as Logic             |  644 |     0 |          0 |     20800 |  3.10 |
+| Slice LUTs*                | 2345 |     0 |          0 |     20800 | 11.27 |
+|   LUT as Logic             |  673 |     0 |          0 |     20800 |  3.24 |
 |   LUT as Memory            | 1672 |     0 |          0 |      9600 | 17.42 |
 |     LUT as Distributed RAM | 1672 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            |  252 |     0 |          0 |     41600 |  0.61 |
-|   Register as Flip Flop    |  252 |     0 |          0 |     41600 |  0.61 |
+| Slice Registers            |  286 |     0 |          0 |     41600 |  0.69 |
+|   Register as Flip Flop    |  286 |     0 |          0 |     41600 |  0.69 |
 |   Register as Latch        |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                   |  128 |     0 |          0 |     16300 |  0.79 |
 | F8 Muxes                   |   64 |     0 |          0 |      8150 |  0.79 |
-| Unique Control Sets        |   50 |       |          0 |      8150 |  0.61 |
+| Unique Control Sets        |   55 |       |          0 |      8150 |  0.67 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -62,9 +62,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 3     |          Yes |           - |          Set |
-| 145   |          Yes |           - |        Reset |
+| 177   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 104   |          Yes |       Reset |            - |
+| 106   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -154,16 +154,16 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | RAMD64E  | 1672 |  Distributed Memory |
-| LUT6     |  376 |                 LUT |
-| FDCE     |  145 |        Flop & Latch |
+| LUT6     |  384 |                 LUT |
+| FDCE     |  177 |        Flop & Latch |
 | MUXF7    |  128 |               MuxFx |
-| FDRE     |  104 |        Flop & Latch |
-| LUT3     |   81 |                 LUT |
-| LUT4     |   68 |                 LUT |
+| FDRE     |  106 |        Flop & Latch |
+| LUT3     |   95 |                 LUT |
+| LUT4     |   70 |                 LUT |
 | MUXF8    |   64 |               MuxFx |
-| LUT1     |   64 |                 LUT |
-| LUT2     |   51 |                 LUT |
-| LUT5     |   45 |                 LUT |
+| LUT1     |   63 |                 LUT |
+| LUT2     |   62 |                 LUT |
+| LUT5     |   52 |                 LUT |
 | OBUF     |   27 |                  IO |
 | IBUF     |   25 |                  IO |
 | OBUFT    |   10 |                  IO |

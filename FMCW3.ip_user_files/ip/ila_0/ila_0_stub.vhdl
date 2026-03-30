@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
--- Date        : Wed Dec 17 14:23:47 2025
+-- Date        : Wed Dec 17 14:23:42 2025
 -- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top ila_0 -prefix
+--               ila_0_ ila_0_stub.vhdl
 -- Design      : ila_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tftg256-1

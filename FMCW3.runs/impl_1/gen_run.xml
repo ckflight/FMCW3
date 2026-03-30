@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1774443818">
+<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1774867185">
   <File Type="PA-TCL" Name="top_module.tcl"/>
   <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
   <File Type="INIT-TIMING" Name="top_module_timing_summary_init.rpt"/>
@@ -128,6 +128,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/build/FMCW3_App.elf">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf"/>
+        <Attr Name="ImportTime" Val="1774866954"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="ScopedToRef" Val="microblaze"/>
+        <Attr Name="ScopedToCell" Val="microblaze_0"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/ip/fifo_generator_0/fifo_generator_0.xci">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci"/>
@@ -222,7 +232,9 @@
     <Step Id="phys_opt_design"/>
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
-    <Step Id="write_bitstream"/>
+    <Step Id="write_bitstream">
+      <Option Id="BinFile">1</Option>
+    </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>

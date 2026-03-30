@@ -62,6 +62,7 @@ entity top_module is
     );
 end top_module;
 
+
 architecture Behavioral of top_module is
     
     component clk_wiz_0

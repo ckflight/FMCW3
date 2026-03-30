@@ -1219,6 +1219,34 @@
           }
         }
       }
+    },
+    "elf_association": {
+      "file": {
+        "name": "..\\..\\imports\\build\\FMCW3_App.elf",
+        "type": "ELF",
+        "checksum": "1121098023",
+        "IsVisible": "1",
+        "ScopedToRef": "microblaze",
+        "ScopedToCell": [
+          "microblaze_0"
+        ],
+        "UsedIn": [
+          "implementation"
+        ]
+      },
+      "file": {
+        "name": "..\\..\\..\\sim_1\\imports\\build\\FMCW3_App.elf",
+        "type": "ELF",
+        "checksum": "1121098023",
+        "IsVisible": "1",
+        "ScopedToRef": "microblaze",
+        "ScopedToCell": [
+          "microblaze_0"
+        ],
+        "UsedIn": [
+          "simulation"
+        ]
+      }
     }
   }
 }
