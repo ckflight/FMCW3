@@ -1,3 +1,27 @@
+
+<img width="3877" height="4323" alt="Image" src="https://github.com/user-attachments/assets/b057349b-30fe-44ee-a7ce-f4409edc3e3c" />
+
+**JTAG Programming Note with FT2232H:**
+
+FT2232H Channel A is set for SYNC FIFO 245 with D2XX driver
+FT2232H Channel B is for JTAG and left as Virtual Com Port
+
+1. Build ELF  
+   Compile the MicroBlaze application to generate the .elf file.
+
+2. Associate ELF in Vivado  
+   Open the block design.  
+   Right-click the MicroBlaze core → Associate ELF Files.  
+   Select the compiled .elf from your application build directory.
+
+3. Update After Code Changes  
+   Rebuild the application to update the .elf.  
+   Re-run Synthesis → Implementation → Generate Bitstream.  
+   (If Vivado doesn’t detect changes, make a trivial edit in the top module to force refresh.)
+
+4. Program FPGA  
+   Run: openFPGALoader -c ft2232_b <path_to_bitfile>.bit
+
 **⚡ FMCW Radar Control and Data Acquisition on FPGA**
 
 This project implements the complete digital backend of an FMCW radar system using VHDL and Xilinx MicroBlaze, integrating ramp control, ADC sampling, FIR decimation, and high-speed USB 2.0 streaming to a PC.
