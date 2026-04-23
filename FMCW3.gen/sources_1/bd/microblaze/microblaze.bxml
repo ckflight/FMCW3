@@ -8,13 +8,13 @@
     <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1774443530"/>
     <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1774443530"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="synth\microblaze.vhd" Type="VHDL">
+      <File Name="synth/microblaze.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="sim\microblaze.vhd" Type="VHDL">
+      <File Name="sim/microblaze.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
@@ -35,7 +35,7 @@
         <UsedIn Val="OUT_OF_CONTEXT"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="hw_handoff\microblaze.hwh" Type="HwHandoff">
+      <File Name="hw_handoff/microblaze.hwh" Type="HwHandoff">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
@@ -47,13 +47,13 @@
         <UsedIn Val="HW_HANDOFF"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="synth\microblaze.hwdef">
+      <File Name="synth/microblaze.hwdef">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="sim\microblaze.protoinst">
+      <File Name="sim/microblaze.protoinst">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>

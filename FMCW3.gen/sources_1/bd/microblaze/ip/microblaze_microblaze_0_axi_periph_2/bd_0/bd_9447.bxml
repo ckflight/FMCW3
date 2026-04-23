@@ -8,32 +8,32 @@
     <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1774443527"/>
     <Generation Name="INSTANTIATION_TEMPLATE" State="GENERATED" Timestamp="1774443527"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="synth\bd_9447.v" Type="Verilog">
+      <File Name="synth/bd_9447.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="sim\bd_9447.v" Type="Verilog">
+      <File Name="sim/bd_9447.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="hw_handoff\microblaze_microblaze_0_axi_periph_2.hwh" Type="HwHandoff">
+      <File Name="hw_handoff/microblaze_microblaze_0_axi_periph_2.hwh" Type="HwHandoff">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="synth\microblaze_microblaze_0_axi_periph_2.hwdef">
+      <File Name="synth/microblaze_microblaze_0_axi_periph_2.hwdef">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
         <ProcessingOrder Val="NORMAL"/>
       </File>
-      <File Name="sim\bd_9447.protoinst">
+      <File Name="sim/bd_9447.protoinst">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>

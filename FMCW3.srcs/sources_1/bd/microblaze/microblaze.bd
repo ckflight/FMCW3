@@ -1224,7 +1224,7 @@
       "file": {
         "name": "../../../../FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
         "type": "ELF",
-        "checksum": "3476373833",
+        "checksum": "3971541211",
         "IsVisible": "1",
         "ScopedToRef": "microblaze",
         "ScopedToCell": [
@@ -1232,19 +1232,6 @@
         ],
         "UsedIn": [
           "implementation"
-        ]
-      },
-      "file": {
-        "name": "../../../../FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
-        "type": "ELF",
-        "checksum": "3476373833",
-        "IsVisible": "1",
-        "ScopedToRef": "microblaze",
-        "ScopedToCell": [
-          "microblaze_0"
-        ],
-        "UsedIn": [
-          "simulation"
         ]
       }
     }

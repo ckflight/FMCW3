@@ -1,40 +1,5 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="110428" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="170605" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="230322" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="238415" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="298162" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="300000" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="361114" HostCore="32" HostMemory="62262236">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="422501" HostCore="32" HostMemory="62262236">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="500704" HostCore="32" HostMemory="62262236">
     </Process>
 </ProcessHandle>

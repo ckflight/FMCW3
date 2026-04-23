@@ -124,7 +124,7 @@ int main(void){
 
             GPIO_TogglePin(LED);
             // wait ~100ms (adjust depending on timer freq)
-            while ((read_timer() - t0) < 100000);
+            while ((read_timer() - t0) < 10000);
         }
         word = XLlFifo_RxGetWord(&Fifo);
         buffer[i] = (uint8_t)(word & 0xFF);
