@@ -21,6 +21,7 @@ entity control is
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
         pa_en                       : out std_logic;
+        mixer_en                    : out std_logic;
         config_done                 : in std_logic;
 
         -- USB interface
@@ -78,6 +79,7 @@ begin
             adc_oe          <= "11";
             adc_shdn        <= "11";
             pa_en           <= '0';
+            mixer_en        <= '1'; -- active low
             usb_chipselect  <= '0';
             usb_write_n     <= '1';
             usb_writedata   <= (others => '0');
@@ -93,6 +95,7 @@ begin
                     adc_oe          <= "11";
                     adc_shdn        <= "11";
                     pa_en           <= '0';
+                    mixer_en        <= '1';
                     usb_chipselect  <= '0';
                     usb_write_n     <= '1';
                     sample_idx      <= 0;
@@ -116,7 +119,8 @@ begin
                 
                     adc_oe          <= "00";
                     adc_shdn        <= "00";
-                    pa_en           <= '1';
+                    pa_en           <= '1'; -- active high
+                    mixer_en        <= '0'; -- active low
                     usb_chipselect  <= '0';
                     usb_write_n     <= '1';
                 
@@ -135,6 +139,7 @@ begin
                     adc_oe          <= "11";
                     adc_shdn        <= "11";
                     pa_en           <= '0';
+                    mixer_en        <= '1';
                     usb_chipselect  <= '0';
                     usb_write_n     <= '1';
                     usb_idx         <= 0;
@@ -195,6 +200,7 @@ begin
                     adc_oe          <= "11";
                     adc_shdn        <= "11";
                     pa_en           <= '0';
+                    mixer_en        <= '1';
                     usb_chipselect  <= '0';
                     usb_write_n     <= '1';
                     usb_writedata   <= (others => '0');

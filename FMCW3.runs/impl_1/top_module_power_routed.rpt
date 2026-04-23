@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Mon Mar 30 13:48:50 2026
-| Host             : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date             : Thu Apr 23 19:52:02 2026
+| Host             : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command          : report_power -file top_module_power_routed.rpt -pb top_module_power_summary_routed.pb -rpx top_module_power_routed.rpx
 | Design           : top_module
 | Device           : xc7a35tftg256-1
@@ -52,16 +52,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.028 |       10 |       --- |             --- |
-| Slice Logic              |     0.013 |    20538 |       --- |             --- |
-|   LUT as Logic           |     0.011 |     6124 |     20800 |           29.44 |
-|   Register               |    <0.001 |     7838 |     41600 |           18.84 |
+| Clocks                   |     0.027 |       10 |       --- |             --- |
+| Slice Logic              |     0.013 |    20539 |       --- |             --- |
+|   LUT as Logic           |     0.011 |     6130 |     20800 |           29.47 |
+|   Register               |    <0.001 |     7839 |     41600 |           18.84 |
 |   LUT as Distributed RAM |    <0.001 |     1968 |      9600 |           20.50 |
 |   CARRY4                 |    <0.001 |      321 |      8150 |            3.94 |
-|   LUT as Shift Register  |    <0.001 |      458 |      9600 |            4.77 |
+|   LUT as Shift Register  |    <0.001 |      459 |      9600 |            4.78 |
 |   F7/F8 Muxes            |    <0.001 |      266 |     32600 |            0.82 |
 |   Others                 |     0.000 |     1853 |       --- |             --- |
-| Signals                  |     0.017 |    14134 |       --- |             --- |
+| Signals                  |     0.017 |    14132 |       --- |             --- |
 | Block RAM                |     0.005 |     26.5 |        50 |           53.00 |
 | MMCM                     |     0.105 |        1 |         5 |           20.00 |
 | DSPs                     |     0.004 |       13 |        90 |           14.44 |
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.078 |       0.068 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.078 |       0.067 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |

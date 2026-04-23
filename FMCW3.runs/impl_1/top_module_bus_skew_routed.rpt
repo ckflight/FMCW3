@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Mon Mar 30 13:48:51 2026
-| Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Apr 23 19:52:01 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command      : report_bus_skew -warn_on_violation -file top_module_bus_skew_routed.rpt -pb top_module_bus_skew_routed.pb -rpx top_module_bus_skew_routed.rpx
 | Design       : top_module
 | Device       : 7a35t-ftg256
@@ -24,34 +24,34 @@ Id  Position  From                            To                              Co
 --  --------  ------------------------------  ------------------------------  ------  ---------------  ----------  ---------
 1   167       [get_cells [list {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[0]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[1]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[2]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[3]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[4]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[5]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[6]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[7]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[8]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[9]}]]
                                               [get_cells [list {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][0]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][1]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][2]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][3]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][4]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][5]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][6]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][7]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][8]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][9]}]]
-                                                                              Slow             16.667       0.949     15.718
+                                                                              Slow             16.667       0.819     15.848
 2   169       [get_cells [list {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[0]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[1]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[2]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[3]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[4]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[5]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[6]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[7]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[8]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[9]}]]
                                               [get_cells [list {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][0]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][1]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][2]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][3]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][4]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][5]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][6]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][7]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][8]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][9]}]]
-                                                                              Slow             16.667       0.878     15.789
+                                                                              Slow             16.667       0.968     15.699
 3   171       [get_cells [list {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[0]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[1]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[2]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[3]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[4]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[5]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[6]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[7]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[8]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[9]}]]
                                               [get_cells [list {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][0]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][5]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][6]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][7]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][8]} {usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]}]]
-                                                                              Slow             16.667       0.990     15.677
+                                                                              Slow             16.667       0.817     15.850
 4   173       [get_cells [list {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[0]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[1]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[2]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[3]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[4]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[5]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[6]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[7]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[8]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[9]}]]
                                               [get_cells [list {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][0]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][5]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][6]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][7]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][8]} {usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]}]]
-                                                                              Slow             16.667       0.881     15.786
+                                                                              Slow             16.667       1.084     15.583
 5   175       [get_cells [list {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[0]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[1]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[2]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[3]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[4]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[5]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[6]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[7]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[8]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/src_gray_ff_reg[9]}]]
                                               [get_cells [list {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][0]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][1]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][2]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][3]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][4]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][5]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][6]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][7]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][8]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][9]}]]
-                                                                              Slow             10.000       1.088      8.912
+                                                                              Slow             10.000       0.974      9.026
 6   177       [get_cells [list {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[0]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[1]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[2]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[3]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[4]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[5]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[6]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[7]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[8]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/src_gray_ff_reg[9]}]]
                                               [get_cells [list {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][0]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][5]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][6]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][7]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][8]} {config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]}]]
-                                                                              Slow             10.000       1.203      8.797
+                                                                              Slow             10.000       1.215      8.785
 7   204       [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]}]]
                                               [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             25.000       0.624     24.376
+                                                                              Slow             25.000       1.185     23.815
 8   206       [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]}]]
                                               [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             25.000       0.726     24.274
+                                                                              Slow             25.000       0.790     24.210
 9   209       [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]}]]
                                               [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             25.000       0.703     24.297
+                                                                              Slow             25.000       0.590     24.410
 10  211       [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]}]]
                                               [get_cells [list {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]} {dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]}]]
-                                                                              Slow             25.000       0.751     24.249
+                                                                              Slow             25.000       1.088     23.912
 
 
 2. Bus Skew Report Per Constraint
@@ -64,12 +64,12 @@ Endpoints: 10
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-usb_clkout            clk_out1_clk_wiz_0    usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][7]/D
-                                                                            usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][8]/D
-                                                                                                            Slow         0.949     15.718
+usb_clkout            clk_out1_clk_wiz_0    usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][0]/D
+                                                                            usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][9]/D
+                                                                                                            Slow         0.819     15.848
 
 
-Slack (MET) :             15.718ns  (requirement - actual skew)
+Slack (MET) :             15.848ns  (requirement - actual skew)
   Endpoint Source:        top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                             (rising edge-triggered cell FDRE clocked by usb_clkout)
   Endpoint Destination:   top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
@@ -80,10 +80,10 @@ Slack (MET) :             15.718ns  (requirement - actual skew)
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            16.667ns
-  Endpoint Relative Delay:    8.203ns
-  Reference Relative Delay:   6.406ns
-  Relative CRPR:              0.849ns
-  Actual Bus Skew:            0.949ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    8.031ns
+  Reference Relative Delay:   6.364ns
+  Relative CRPR:              0.848ns
+  Actual Bus Skew:            0.819ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -95,12 +95,12 @@ Endpoint path:
     D13                  IBUF (Prop_ibuf_I_O)         1.494     1.494 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.972     3.466    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.562 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.552     5.114    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X41Y55         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.551     5.113    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X41Y57         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y55         FDRE (Prop_fdre_C_Q)         0.419     5.533 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.906     6.439    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X39Y55         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X41Y57         FDRE (Prop_fdre_C_Q)         0.456     5.569 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.869     6.438    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X40Y57         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -113,15 +113,15 @@ Endpoint path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.435    -1.499    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X39Y55         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000    -1.499    
-    SLICE_X39Y55         FDRE (Setup_fdre_C_D)       -0.266    -1.765    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.436    -1.498    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X40Y57         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    -1.498    
+    SLICE_X40Y57         FDRE (Setup_fdre_C_D)       -0.095    -1.593    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           6.439    
-                         clock arrival                         -1.765    
+                         data arrival                           6.438    
+                         clock arrival                         -1.593    
   -------------------------------------------------------------------
-                         relative delay                         8.203    
+                         relative delay                         8.031    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -133,12 +133,12 @@ Reference path:
     D13                  IBUF (Prop_ibuf_I_O)         1.424     1.424 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.868     3.292    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     3.383 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.434     4.816    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X40Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.432     4.814    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X40Y60         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y56         FDRE (Prop_fdre_C_Q)         0.367     5.183 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.494     5.677    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X37Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X40Y60         FDRE (Prop_fdre_C_Q)         0.367     5.181 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.455     5.636    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X40Y59         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -151,15 +151,15 @@ Reference path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.553    -0.897    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X37Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000    -0.897    
-    SLICE_X37Y56         FDRE (Hold_fdre_C_D)         0.169    -0.728    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.552    -0.898    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X40Y59         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    -0.898    
+    SLICE_X40Y59         FDRE (Hold_fdre_C_D)         0.170    -0.728    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           5.677    
+                         data arrival                           5.636    
                          clock arrival                         -0.728    
   -------------------------------------------------------------------
-                         relative delay                         6.406    
+                         relative delay                         6.364    
 
 
 
@@ -171,11 +171,11 @@ Endpoints: 10
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 clk_out1_clk_wiz_0    usb_clkout            usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][5]/D
-                                                                            usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][8]/D
-                                                                                                            Slow         0.878     15.789
+                                                                            usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][9]/D
+                                                                                                            Slow         0.968     15.699
 
 
-Slack (MET) :             15.789ns  (requirement - actual skew)
+Slack (MET) :             15.699ns  (requirement - actual skew)
   Endpoint Source:        top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0)
   Endpoint Destination:   top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
@@ -186,10 +186,10 @@ Slack (MET) :             15.789ns  (requirement - actual skew)
                             (rising edge-triggered cell FDRE clocked by usb_clkout)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            16.667ns
-  Endpoint Relative Delay:   -4.280ns
-  Reference Relative Delay:  -6.032ns
-  Relative CRPR:              0.874ns
-  Actual Bus Skew:            0.878ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -4.239ns
+  Reference Relative Delay:  -6.043ns
+  Relative CRPR:              0.835ns
+  Actual Bus Skew:            0.968ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -204,12 +204,12 @@ Endpoint path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.637    -0.813    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X62Y8          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.630    -0.820    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X61Y15         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X62Y8          FDRE (Prop_fdre_C_Q)         0.419    -0.394 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.750     0.356    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y8          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X61Y15         FDRE (Prop_fdre_C_Q)         0.419    -0.401 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.793     0.392    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X63Y15         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock usb_clkout rise edge)
@@ -219,15 +219,15 @@ Endpoint path:
     D13                  IBUF (Prop_ibuf_I_O)         1.424     1.424 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.868     3.292    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     3.383 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.521     4.904    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y8          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000     4.904    
-    SLICE_X63Y8          FDRE (Setup_fdre_C_D)       -0.268     4.636    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.516     4.899    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X63Y15         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000     4.899    
+    SLICE_X63Y15         FDRE (Setup_fdre_C_D)       -0.268     4.631    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           0.356    
-                         clock arrival                          4.636    
+                         data arrival                           0.392    
+                         clock arrival                          4.631    
   -------------------------------------------------------------------
-                         relative delay                        -4.280    
+                         relative delay                        -4.239    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -242,12 +242,12 @@ Reference path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.517    -1.416    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y9          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.511    -1.422    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y17         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y9          FDRE (Prop_fdre_C_Q)         0.367    -1.049 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.388    -0.661    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y8          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y17         FDRE (Prop_fdre_C_Q)         0.367    -1.055 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.376    -0.680    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y16         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock usb_clkout rise edge)
@@ -257,15 +257,15 @@ Reference path:
     D13                  IBUF (Prop_ibuf_I_O)         1.494     1.494 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.972     3.466    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.562 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.639     5.201    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y8          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000     5.201    
-    SLICE_X63Y8          FDRE (Hold_fdre_C_D)         0.170     5.371    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.632     5.194    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y16         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000     5.194    
+    SLICE_X62Y16         FDRE (Hold_fdre_C_D)         0.169     5.363    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                          -0.661    
-                         clock arrival                          5.371    
+                         data arrival                          -0.680    
+                         clock arrival                          5.363    
   -------------------------------------------------------------------
-                         relative delay                        -6.032    
+                         relative delay                        -6.043    
 
 
 
@@ -276,12 +276,12 @@ Endpoints: 10
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-clk_out1_clk_wiz_0    usb_clkout            usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]/D
-                                                                            usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]/D
-                                                                                                            Slow         0.990     15.677
+clk_out1_clk_wiz_0    usb_clkout            usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]/D
+                                                                            usb_sync_i/tx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]/D
+                                                                                                            Slow         0.817     15.850
 
 
-Slack (MET) :             15.677ns  (requirement - actual skew)
+Slack (MET) :             15.850ns  (requirement - actual skew)
   Endpoint Source:        top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0)
   Endpoint Destination:   top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
@@ -292,10 +292,10 @@ Slack (MET) :             15.677ns  (requirement - actual skew)
                             (rising edge-triggered cell FDRE clocked by usb_clkout)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            16.667ns
-  Endpoint Relative Delay:   -4.247ns
-  Reference Relative Delay:  -5.986ns
-  Relative CRPR:              0.749ns
-  Actual Bus Skew:            0.990ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -4.380ns
+  Reference Relative Delay:  -6.017ns
+  Relative CRPR:              0.820ns
+  Actual Bus Skew:            0.817ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -310,12 +310,12 @@ Endpoint path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.554    -0.896    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X45Y57         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.553    -0.897    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X38Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X45Y57         FDRE (Prop_fdre_C_Q)         0.419    -0.477 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.770     0.292    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X47Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X38Y56         FDRE (Prop_fdre_C_Q)         0.518    -0.379 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.719     0.340    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X39Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock usb_clkout rise edge)
@@ -325,15 +325,15 @@ Endpoint path:
     D13                  IBUF (Prop_ibuf_I_O)         1.424     1.424 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.868     3.292    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     3.383 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.435     4.817    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X47Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000     4.817    
-    SLICE_X47Y56         FDRE (Setup_fdre_C_D)       -0.278     4.539    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.432     4.814    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X39Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000     4.814    
+    SLICE_X39Y56         FDRE (Setup_fdre_C_D)       -0.095     4.719    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           0.292    
-                         clock arrival                          4.539    
+                         data arrival                           0.340    
+                         clock arrival                          4.719    
   -------------------------------------------------------------------
-                         relative delay                        -4.247    
+                         relative delay                        -4.380    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -348,12 +348,12 @@ Reference path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.435    -1.499    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X33Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.436    -1.498    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X43Y58         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X33Y56         FDRE (Prop_fdre_C_Q)         0.367    -1.132 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.429    -0.703    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X40Y55         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X43Y58         FDRE (Prop_fdre_C_Q)         0.367    -1.131 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.398    -0.733    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X43Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock usb_clkout rise edge)
@@ -364,14 +364,14 @@ Reference path:
                          net (fo=1, routed)           1.972     3.466    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.562 r  usb_clkout_IBUF_BUFG_inst/O
                          net (fo=163, routed)         1.552     5.114    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X40Y55         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X43Y56         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                          clock pessimism              0.000     5.114    
-    SLICE_X40Y55         FDRE (Hold_fdre_C_D)         0.169     5.283    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X43Y56         FDRE (Hold_fdre_C_D)         0.170     5.284    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                          -0.703    
-                         clock arrival                          5.283    
+                         data arrival                          -0.733    
+                         clock arrival                          5.284    
   -------------------------------------------------------------------
-                         relative delay                        -5.986    
+                         relative delay                        -6.017    
 
 
 
@@ -382,12 +382,12 @@ Endpoints: 10
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-usb_clkout            clk_out1_clk_wiz_0    usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]/D
-                                                                            usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][8]/D
-                                                                                                            Slow         0.881     15.786
+usb_clkout            clk_out1_clk_wiz_0    usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][8]/D
+                                                                            usb_sync_i/rx_dcfifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]/D
+                                                                                                            Slow         1.084     15.583
 
 
-Slack (MET) :             15.786ns  (requirement - actual skew)
+Slack (MET) :             15.583ns  (requirement - actual skew)
   Endpoint Source:        top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                             (rising edge-triggered cell FDRE clocked by usb_clkout)
   Endpoint Destination:   top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
@@ -398,10 +398,10 @@ Slack (MET) :             15.786ns  (requirement - actual skew)
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            16.667ns
-  Endpoint Relative Delay:    7.919ns
-  Reference Relative Delay:   6.217ns
-  Relative CRPR:              0.821ns
-  Actual Bus Skew:            0.881ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    8.331ns
+  Reference Relative Delay:   6.411ns
+  Relative CRPR:              0.835ns
+  Actual Bus Skew:            1.084ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -413,12 +413,12 @@ Endpoint path:
     D13                  IBUF (Prop_ibuf_I_O)         1.494     1.494 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.972     3.466    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.562 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.640     5.202    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y6          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.628     5.190    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y19         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y6          FDRE (Prop_fdre_C_Q)         0.456     5.658 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.754     6.412    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X62Y6          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y19         FDRE (Prop_fdre_C_Q)         0.456     5.646 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           1.167     6.814    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y18         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -431,15 +431,15 @@ Endpoint path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.519    -1.414    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X62Y6          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000    -1.414    
-    SLICE_X62Y6          FDRE (Setup_fdre_C_D)       -0.093    -1.507    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.509    -1.424    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y18         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    -1.424    
+    SLICE_X62Y18         FDRE (Setup_fdre_C_D)       -0.093    -1.517    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           6.412    
-                         clock arrival                         -1.507    
+                         data arrival                           6.814    
+                         clock arrival                         -1.517    
   -------------------------------------------------------------------
-                         relative delay                         7.919    
+                         relative delay                         8.331    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -451,12 +451,12 @@ Reference path:
     D13                  IBUF (Prop_ibuf_I_O)         1.424     1.424 r  usb_clkout_IBUF_inst/O
                          net (fo=1, routed)           1.868     3.292    usb_clkout_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     3.383 r  usb_clkout_IBUF_BUFG_inst/O
-                         net (fo=163, routed)         1.521     4.904    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X59Y5          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=163, routed)         1.515     4.898    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y16         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y5          FDRE (Prop_fdre_C_Q)         0.367     5.271 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.366     5.637    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X60Y5          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X62Y16         FDRE (Prop_fdre_C_Q)         0.367     5.265 r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.495     5.760    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X61Y16         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -469,15 +469,15 @@ Reference path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.637    -0.813    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X60Y5          FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.000    -0.813    
-    SLICE_X60Y5          FDRE (Hold_fdre_C_D)         0.233    -0.580    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.629    -0.821    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X61Y16         FDRE                                         r  top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.000    -0.821    
+    SLICE_X61Y16         FDRE (Hold_fdre_C_D)         0.170    -0.651    top_module/usb_sync/fifo_generator_0/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           5.637    
-                         clock arrival                         -0.580    
+                         data arrival                           5.760    
+                         clock arrival                         -0.651    
   -------------------------------------------------------------------
-                         relative delay                         6.217    
+                         relative delay                         6.411    
 
 
 
@@ -488,12 +488,12 @@ Endpoints: 10
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-clk_out2_clk_wiz_0    clk_out1_clk_wiz_0    config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][5]/D
-                                                                            config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][2]/D
-                                                                                                            Slow         1.088      8.912
+clk_out2_clk_wiz_0    clk_out1_clk_wiz_0    config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][3]/D
+                                                                            config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_graysync_ff_reg[0][6]/D
+                                                                                                            Slow         0.974      9.026
 
 
-Slack (MET) :             8.912ns  (requirement - actual skew)
+Slack (MET) :             9.026ns  (requirement - actual skew)
   Endpoint Source:        top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                             (rising edge-triggered cell FDRE clocked by clk_out2_clk_wiz_0)
   Endpoint Destination:   top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
@@ -504,10 +504,10 @@ Slack (MET) :             8.912ns  (requirement - actual skew)
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            10.000ns
-  Endpoint Relative Delay:    1.767ns
-  Reference Relative Delay:   0.299ns
-  Relative CRPR:              0.381ns
-  Actual Bus Skew:            1.088ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    1.736ns
+  Reference Relative Delay:   0.420ns
+  Relative CRPR:              0.343ns
+  Actual Bus Skew:            0.974ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -522,12 +522,12 @@ Endpoint path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout2_buf/O
-                         net (fo=4234, routed)        1.630    -0.820    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y16         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=4235, routed)        1.624    -0.826    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y20         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y16         FDRE (Prop_fdre_C_Q)         0.419    -0.401 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.878     0.477    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y17         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y20         FDRE (Prop_fdre_C_Q)         0.419    -0.407 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.775     0.368    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X57Y25         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -540,15 +540,15 @@ Endpoint path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.511    -1.422    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y17         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.399    -1.023    
-    SLICE_X63Y17         FDRE (Setup_fdre_C_D)       -0.267    -1.290    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.436    -1.497    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X57Y25         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.399    -1.098    
+    SLICE_X57Y25         FDRE (Setup_fdre_C_D)       -0.270    -1.368    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           0.477    
-                         clock arrival                         -1.290    
+                         data arrival                           0.368    
+                         clock arrival                         -1.368    
   -------------------------------------------------------------------
-                         relative delay                         1.767    
+                         relative delay                         1.736    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -563,12 +563,12 @@ Reference path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout2_buf/O
-                         net (fo=4234, routed)        1.512    -1.421    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y16         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=4235, routed)        1.501    -1.432    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y24         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y16         FDRE (Prop_fdre_C_Q)         0.367    -1.054 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.365    -0.689    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X64Y16         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y24         FDRE (Prop_fdre_C_Q)         0.367    -1.065 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.423    -0.642    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X61Y24         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -581,15 +581,15 @@ Reference path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.630    -0.820    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X64Y16         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism             -0.399    -1.219    
-    SLICE_X64Y16         FDRE (Hold_fdre_C_D)         0.231    -0.988    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.617    -0.833    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X61Y24         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism             -0.399    -1.232    
+    SLICE_X61Y24         FDRE (Hold_fdre_C_D)         0.170    -1.062    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                          -0.689    
-                         clock arrival                         -0.988    
+                         data arrival                          -0.642    
+                         clock arrival                         -1.062    
   -------------------------------------------------------------------
-                         relative delay                         0.299    
+                         relative delay                         0.420    
 
 
 
@@ -600,12 +600,12 @@ Endpoints: 10
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-clk_out1_clk_wiz_0    clk_out2_clk_wiz_0    config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]/D
-                                                                            config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][6]/D
-                                                                                                            Slow         1.203      8.797
+clk_out1_clk_wiz_0    clk_out2_clk_wiz_0    config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][9]/D
+                                                                            config_i/config_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]/D
+                                                                                                            Slow         1.215      8.785
 
 
-Slack (MET) :             8.797ns  (requirement - actual skew)
+Slack (MET) :             8.785ns  (requirement - actual skew)
   Endpoint Source:        top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
                             (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0)
   Endpoint Destination:   top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
@@ -616,10 +616,10 @@ Slack (MET) :             8.797ns  (requirement - actual skew)
                             (rising edge-triggered cell FDRE clocked by clk_out2_clk_wiz_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            10.000ns
-  Endpoint Relative Delay:    1.883ns
-  Reference Relative Delay:   0.299ns
-  Relative CRPR:              0.382ns
-  Actual Bus Skew:            1.203ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    1.944ns
+  Reference Relative Delay:   0.372ns
+  Relative CRPR:              0.357ns
+  Actual Bus Skew:            1.215ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -634,12 +634,12 @@ Endpoint path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.633    -0.817    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y13         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.623    -0.827    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X59Y21         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y13         FDRE (Prop_fdre_C_Q)         0.419    -0.398 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.998     0.600    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X62Y12         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X59Y21         FDRE (Prop_fdre_C_Q)         0.419    -0.408 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           1.059     0.651    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y21         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out2_clk_wiz_0 rise edge)
@@ -652,15 +652,15 @@ Endpoint path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout2_buf/O
-                         net (fo=4234, routed)        1.515    -1.418    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X62Y12         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism              0.399    -1.019    
-    SLICE_X62Y12         FDRE (Setup_fdre_C_D)       -0.264    -1.283    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=4235, routed)        1.506    -1.427    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y21         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism              0.399    -1.028    
+    SLICE_X58Y21         FDRE (Setup_fdre_C_D)       -0.265    -1.293    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                           0.600    
-                         clock arrival                         -1.283    
+                         data arrival                           0.651    
+                         clock arrival                         -1.293    
   -------------------------------------------------------------------
-                         relative delay                         1.883    
+                         relative delay                         1.944    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -675,12 +675,12 @@ Reference path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.514    -1.419    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X63Y13         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=5377, routed)        1.503    -1.430    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y23         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y13         FDRE (Prop_fdre_C_Q)         0.367    -1.052 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         net (fo=1, routed)           0.368    -0.684    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X64Y13         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y23         FDRE (Prop_fdre_C_Q)         0.367    -1.063 r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.376    -0.688    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y22         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out2_clk_wiz_0 rise edge)
@@ -693,15 +693,15 @@ Reference path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT1
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out2_clk_wiz_0
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout2_buf/O
-                         net (fo=4234, routed)        1.633    -0.817    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-    SLICE_X64Y13         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
-                         clock pessimism             -0.399    -1.216    
-    SLICE_X64Y13         FDRE (Hold_fdre_C_D)         0.233    -0.983    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=4235, routed)        1.620    -0.830    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    SLICE_X58Y22         FDRE                                         r  top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         clock pessimism             -0.399    -1.229    
+    SLICE_X58Y22         FDRE (Hold_fdre_C_D)         0.169    -1.060    top_module/config/fifo_generator_1/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
   -------------------------------------------------------------------
-                         data arrival                          -0.684    
-                         clock arrival                         -0.983    
+                         data arrival                          -0.688    
+                         clock arrival                         -1.060    
   -------------------------------------------------------------------
-                         relative delay                         0.299    
+                         relative delay                         0.372    
 
 
 
@@ -713,15 +713,15 @@ Endpoints: 4
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                      clk_out1_clk_wiz_0    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+                      clk_out1_clk_wiz_0    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
                                                                             dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/D
-                                                                                                            Slow         0.624     24.376
+                                                                                                            Slow         1.185     23.815
 
 
-Slack (MET) :             24.376ns  (requirement - actual skew)
-  Endpoint Source:        dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
+Slack (MET) :             23.815ns  (requirement - actual skew)
+  Endpoint Source:        dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
-  Endpoint Destination:   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+  Endpoint Destination:   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
   Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/C
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
@@ -729,10 +729,10 @@ Slack (MET) :             24.376ns  (requirement - actual skew)
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            25.000ns
-  Endpoint Relative Delay:    6.338ns
-  Reference Relative Delay:   4.805ns
-  Relative CRPR:              0.909ns
-  Actual Bus Skew:            0.624ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    6.782ns
+  Reference Relative Delay:   4.634ns
+  Relative CRPR:              0.962ns
+  Actual Bus Skew:            1.185ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -740,14 +740,14 @@ Endpoint path:
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.855     1.855    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.951 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.570     3.521    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X55Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
+                         net (fo=1, routed)           1.854     1.854    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.950 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.636     3.586    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X64Y9          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X55Y8          FDCE (Prop_fdce_C_Q)         0.456     3.977 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/Q
-                         net (fo=1, routed)           0.821     4.798    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[1]
-    SLICE_X54Y7          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+    SLICE_X64Y9          FDCE (Prop_fdce_C_Q)         0.518     4.104 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/Q
+                         net (fo=1, routed)           1.170     5.274    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[2]
+    SLICE_X65Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -760,15 +760,15 @@ Endpoint path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.451    -1.482    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X54Y7          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/C
-                         clock pessimism              0.000    -1.482    
-    SLICE_X54Y7          FDCE (Setup_fdce_C_D)       -0.058    -1.540    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]
+                         net (fo=5377, routed)        1.518    -1.415    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X65Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/C
+                         clock pessimism              0.000    -1.415    
+    SLICE_X65Y8          FDCE (Setup_fdce_C_D)       -0.093    -1.508    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]
   -------------------------------------------------------------------
-                         data arrival                           4.798    
-                         clock arrival                         -1.540    
+                         data arrival                           5.274    
+                         clock arrival                         -1.508    
   -------------------------------------------------------------------
-                         relative delay                         6.338    
+                         relative delay                         6.782    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -776,14 +776,14 @@ Reference path:
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.594     1.594    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.685 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.453     3.138    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X57Y5          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/C
+                         net (fo=1, routed)           1.593     1.593    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.684 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.517     3.201    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X64Y9          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X57Y5          FDCE (Prop_fdce_C_Q)         0.367     3.505 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/Q
-                         net (fo=1, routed)           0.590     4.095    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[3]
-    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/D
+    SLICE_X64Y9          FDCE (Prop_fdce_C_Q)         0.418     3.619 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[3]/Q
+                         net (fo=1, routed)           0.370     3.989    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[3]
+    SLICE_X63Y9          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -796,15 +796,15 @@ Reference path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.571    -0.879    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/C
-                         clock pessimism              0.000    -0.879    
-    SLICE_X57Y6          FDCE (Hold_fdce_C_D)         0.169    -0.710    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]
+                         net (fo=5377, routed)        1.636    -0.814    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X63Y9          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]/C
+                         clock pessimism              0.000    -0.814    
+    SLICE_X63Y9          FDCE (Hold_fdce_C_D)         0.169    -0.645    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[3]
   -------------------------------------------------------------------
-                         data arrival                           4.095    
-                         clock arrival                         -0.710    
+                         data arrival                           3.989    
+                         clock arrival                         -0.645    
   -------------------------------------------------------------------
-                         relative delay                         4.805    
+                         relative delay                         4.634    
 
 
 
@@ -817,25 +817,25 @@ From Clock            To Clock              Endpoint Pin                    Refe
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 clk_out1_clk_wiz_0    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
                                             dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
-                                                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
-                                                                                                            Slow         0.726     24.274
+                                                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
+                                                                                                            Slow         0.790     24.210
 
 
-Slack (MET) :             24.274ns  (requirement - actual skew)
+Slack (MET) :             24.210ns  (requirement - actual skew)
   Endpoint Source:        dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
   Endpoint Destination:   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
-  Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
+  Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
-  Reference Destination:  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+  Reference Destination:  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            25.000ns
-  Endpoint Relative Delay:   -2.585ns
-  Reference Relative Delay:  -4.220ns
-  Relative CRPR:              0.909ns
-  Actual Bus Skew:            0.726ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -2.626ns
+  Reference Relative Delay:  -4.403ns
+  Relative CRPR:              0.987ns
+  Actual Bus Skew:            0.790ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -850,28 +850,28 @@ Endpoint path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.571    -0.879    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
+                         net (fo=5377, routed)        1.636    -0.814    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X63Y9          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X57Y6          FDCE (Prop_fdce_C_Q)         0.456    -0.423 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/Q
-                         net (fo=1, routed)           0.881     0.458    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[3]
-    SLICE_X57Y5          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
+    SLICE_X63Y9          FDCE (Prop_fdce_C_Q)         0.419    -0.395 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/Q
+                         net (fo=1, routed)           0.706     0.311    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[3]
+    SLICE_X63Y10         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.594     1.594    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.685 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.453     3.138    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X57Y5          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/C
-                         clock pessimism              0.000     3.138    
-    SLICE_X57Y5          FDCE (Setup_fdce_C_D)       -0.095     3.043    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]
+                         net (fo=1, routed)           1.593     1.593    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.684 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.517     3.201    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X63Y10         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/C
+                         clock pessimism              0.000     3.201    
+    SLICE_X63Y10         FDCE (Setup_fdce_C_D)       -0.265     2.936    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]
   -------------------------------------------------------------------
-                         data arrival                           0.458    
-                         clock arrival                          3.043    
+                         data arrival                           0.311    
+                         clock arrival                          2.936    
   -------------------------------------------------------------------
-                         relative delay                        -2.585    
+                         relative delay                        -2.626    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -886,28 +886,28 @@ Reference path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.451    -1.482    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X54Y7          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
+                         net (fo=5377, routed)        1.517    -1.416    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X63Y9          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X54Y7          FDCE (Prop_fdce_C_Q)         0.418    -1.064 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/Q
-                         net (fo=1, routed)           0.534    -0.530    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[0]
-    SLICE_X55Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+    SLICE_X63Y9          FDCE (Prop_fdce_C_Q)         0.367    -1.049 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/Q
+                         net (fo=1, routed)           0.402    -0.647    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[2]
+    SLICE_X63Y10         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.855     1.855    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.951 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.570     3.521    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X55Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/C
-                         clock pessimism              0.000     3.521    
-    SLICE_X55Y8          FDCE (Hold_fdce_C_D)         0.169     3.690    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]
+                         net (fo=1, routed)           1.854     1.854    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.950 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.636     3.586    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X63Y10         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/C
+                         clock pessimism              0.000     3.586    
+    SLICE_X63Y10         FDCE (Hold_fdce_C_D)         0.169     3.755    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]
   -------------------------------------------------------------------
-                         data arrival                          -0.530    
-                         clock arrival                          3.690    
+                         data arrival                          -0.647    
+                         clock arrival                          3.755    
   -------------------------------------------------------------------
-                         relative delay                        -4.220    
+                         relative delay                        -4.403    
 
 
 
@@ -919,26 +919,26 @@ Endpoints: 4
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 clk_out1_clk_wiz_0    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
-                                                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
-                                                                                                            Slow         0.703     24.297
+                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+                                                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
+                                                                                                            Slow         0.590     24.410
 
 
-Slack (MET) :             24.297ns  (requirement - actual skew)
-  Endpoint Source:        dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
+Slack (MET) :             24.410ns  (requirement - actual skew)
+  Endpoint Source:        dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
-  Endpoint Destination:   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
+  Endpoint Destination:   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
-  Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
+  Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
-  Reference Destination:  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+  Reference Destination:  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            25.000ns
-  Endpoint Relative Delay:   -2.796ns
-  Reference Relative Delay:  -4.409ns
-  Relative CRPR:              0.909ns
-  Actual Bus Skew:            0.703ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -2.874ns
+  Reference Relative Delay:  -4.411ns
+  Relative CRPR:              0.947ns
+  Actual Bus Skew:            0.590ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -953,28 +953,28 @@ Endpoint path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.568    -0.882    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X53Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
+                         net (fo=5377, routed)        1.570    -0.880    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X57Y7          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X53Y11         FDCE (Prop_fdce_C_Q)         0.456    -0.426 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/Q
-                         net (fo=1, routed)           0.668     0.242    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[2]
-    SLICE_X53Y12         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
+    SLICE_X57Y7          FDCE (Prop_fdce_C_Q)         0.456    -0.424 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/Q
+                         net (fo=1, routed)           0.592     0.168    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[1]
+    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.594     1.594    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.685 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.448     3.133    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X53Y12         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/C
-                         clock pessimism              0.000     3.133    
-    SLICE_X53Y12         FDCE (Setup_fdce_C_D)       -0.095     3.038    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]
+                         net (fo=1, routed)           1.593     1.593    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.684 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.453     3.137    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/C
+                         clock pessimism              0.000     3.137    
+    SLICE_X57Y6          FDCE (Setup_fdce_C_D)       -0.095     3.042    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]
   -------------------------------------------------------------------
-                         data arrival                           0.242    
-                         clock arrival                          3.038    
+                         data arrival                           0.168    
+                         clock arrival                          3.042    
   -------------------------------------------------------------------
-                         relative delay                        -2.796    
+                         relative delay                        -2.874    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -989,28 +989,28 @@ Reference path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.450    -1.483    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
-    SLICE_X54Y10         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/C
+                         net (fo=5377, routed)        1.452    -1.481    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_clk
+    SLICE_X57Y7          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X54Y10         FDCE (Prop_fdce_C_Q)         0.418    -1.065 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[1]/Q
-                         net (fo=1, routed)           0.409    -0.656    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[1]
-    SLICE_X54Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/D
+    SLICE_X57Y7          FDCE (Prop_fdce_C_Q)         0.367    -1.114 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.rd_pntr_gc_reg[2]/Q
+                         net (fo=1, routed)           0.461    -0.653    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q[2]
+    SLICE_X58Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.855     1.855    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.951 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.568     3.519    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
-    SLICE_X54Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]/C
-                         clock pessimism              0.000     3.519    
-    SLICE_X54Y11         FDCE (Hold_fdce_C_D)         0.233     3.752    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[1]
+                         net (fo=1, routed)           1.854     1.854    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.950 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.637     3.587    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/wr_clk
+    SLICE_X58Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]/C
+                         clock pessimism              0.000     3.587    
+    SLICE_X58Y6          FDCE (Hold_fdce_C_D)         0.170     3.757    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].wr_stg_inst/Q_reg_reg[2]
   -------------------------------------------------------------------
-                         data arrival                          -0.656    
-                         clock arrival                          3.752    
+                         data arrival                          -0.653    
+                         clock arrival                          3.757    
   -------------------------------------------------------------------
-                         relative delay                        -4.409    
+                         relative delay                        -4.411    
 
 
 
@@ -1023,25 +1023,25 @@ From Clock            To Clock              Endpoint Pin                    Refe
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
                       clk_out1_clk_wiz_0    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/D
-                                                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
-                                                                                                            Slow         0.751     24.249
+                                                                            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
+                                                                                                            Slow         1.088     23.912
 
 
-Slack (MET) :             24.249ns  (requirement - actual skew)
+Slack (MET) :             23.912ns  (requirement - actual skew)
   Endpoint Source:        dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
   Endpoint Destination:   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
-  Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
+  Reference Source:       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK)
-  Reference Destination:  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+  Reference Destination:  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            25.000ns
-  Endpoint Relative Delay:    6.496ns
-  Reference Relative Delay:   4.758ns
-  Relative CRPR:              0.987ns
-  Actual Bus Skew:            0.751ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    6.678ns
+  Reference Relative Delay:   4.627ns
+  Relative CRPR:              0.963ns
+  Actual Bus Skew:            1.088ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1049,14 +1049,14 @@ Endpoint path:
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.855     1.855    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.951 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.568     3.519    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X54Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/C
+                         net (fo=1, routed)           1.854     1.854    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.096     1.950 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.571     3.521    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X54Y11         FDCE (Prop_fdce_C_Q)         0.478     3.997 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/Q
-                         net (fo=1, routed)           0.750     4.747    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[1]
-    SLICE_X55Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/D
+    SLICE_X57Y6          FDCE (Prop_fdce_C_Q)         0.419     3.940 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/Q
+                         net (fo=1, routed)           1.042     4.982    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[1]
+    SLICE_X56Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -1069,15 +1069,15 @@ Endpoint path:
                                                      -7.221    -4.612 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.587    -3.025    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    -2.934 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.449    -1.484    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X55Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/C
-                         clock pessimism              0.000    -1.484    
-    SLICE_X55Y11         FDCE (Setup_fdce_C_D)       -0.265    -1.749    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]
+                         net (fo=5377, routed)        1.452    -1.481    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X56Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/C
+                         clock pessimism              0.000    -1.481    
+    SLICE_X56Y8          FDCE (Setup_fdce_C_D)       -0.215    -1.696    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]
   -------------------------------------------------------------------
-                         data arrival                           4.747    
-                         clock arrival                         -1.749    
+                         data arrival                           4.982    
+                         clock arrival                         -1.696    
   -------------------------------------------------------------------
-                         relative delay                         6.496    
+                         relative delay                         6.678    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1085,14 +1085,14 @@ Reference path:
                          (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK rise edge)
                                                       0.000     0.000 r  
     BSCAN_X0Y0           BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
-                         net (fo=1, routed)           1.594     1.594    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
-    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.685 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
-                         net (fo=482, routed)         1.449     3.134    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
-    SLICE_X54Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/C
+                         net (fo=1, routed)           1.593     1.593    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCTRL_X0Y2        BUFG (Prop_bufg_I_O)         0.091     1.684 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+                         net (fo=482, routed)         1.453     3.137    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_clk
+    SLICE_X57Y6          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X54Y11         FDCE (Prop_fdce_C_Q)         0.418     3.552 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[0]/Q
-                         net (fo=1, routed)           0.493     4.045    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[0]
-    SLICE_X55Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/D
+    SLICE_X57Y6          FDCE (Prop_fdce_C_Q)         0.367     3.504 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[2]/Q
+                         net (fo=1, routed)           0.412     3.916    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[2]
+    SLICE_X57Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -1105,15 +1105,15 @@ Reference path:
                                                      -6.965    -4.213 r  clk_wiz_0_inst/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.666    -2.546    clk_wiz_0_inst/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.450 r  clk_wiz_0_inst/inst/clkout1_buf/O
-                         net (fo=5377, routed)        1.568    -0.882    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
-    SLICE_X55Y11         FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]/C
-                         clock pessimism              0.000    -0.882    
-    SLICE_X55Y11         FDCE (Hold_fdce_C_D)         0.169    -0.713    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[0]
+                         net (fo=5377, routed)        1.570    -0.880    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/rd_clk
+    SLICE_X57Y8          FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]/C
+                         clock pessimism              0.000    -0.880    
+    SLICE_X57Y8          FDCE (Hold_fdce_C_D)         0.169    -0.711    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_5_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[2]
   -------------------------------------------------------------------
-                         data arrival                           4.045    
-                         clock arrival                         -0.713    
+                         data arrival                           3.916    
+                         clock arrival                         -0.711    
   -------------------------------------------------------------------
-                         relative delay                         4.758    
+                         relative delay                         4.627    
 
 
 

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Mon Mar 30 13:41:32 2026
-| Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Apr 23 19:51:08 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command      : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
 | Design       : top_module
 | Device       : xc7a35tftg256-1
@@ -164,9 +164,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT1     |   63 |                 LUT |
 | LUT2     |   62 |                 LUT |
 | LUT5     |   52 |                 LUT |
-| OBUF     |   27 |                  IO |
+| OBUF     |   28 |                  IO |
 | IBUF     |   25 |                  IO |
-| OBUFT    |   10 |                  IO |
+| OBUFT    |    9 |                  IO |
 | CARRY4   |    8 |          CarryLogic |
 | FDPE     |    3 |        Flop & Latch |
 | BUFG     |    1 |               Clock |

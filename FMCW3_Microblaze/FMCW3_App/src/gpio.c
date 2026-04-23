@@ -44,3 +44,12 @@ void GPIO_ClearPin(u8 pin)
     u16 mask = 1 << pin;
     GPIO_WritePins(mask, 0x0);
 }
+
+// Toggle a single pin
+void GPIO_TogglePin(u8 pin)
+{
+    u16 mask = 1 << pin;
+    u16 current = XGpio_DiscreteRead(&Gpio, 1);
+    current ^= mask;   // XOR flips the bit
+    XGpio_DiscreteWrite(&Gpio, 1, current);
+}

@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule C_COMPILER__bram_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -33,7 +33,7 @@ rule C_COMPILER__bram_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__bram_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -44,7 +44,7 @@ rule C_STATIC_LIBRARY_LINKER__bram_
 rule C_COMPILER__gpio_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -52,7 +52,7 @@ rule C_COMPILER__gpio_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__gpio_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -63,7 +63,7 @@ rule C_STATIC_LIBRARY_LINKER__gpio_
 rule C_COMPILER__intc_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -71,7 +71,7 @@ rule C_COMPILER__intc_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__intc_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -82,7 +82,7 @@ rule C_STATIC_LIBRARY_LINKER__intc_
 rule C_COMPILER__llfifo_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -90,7 +90,7 @@ rule C_COMPILER__llfifo_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__llfifo_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -101,7 +101,7 @@ rule C_STATIC_LIBRARY_LINKER__llfifo_
 rule C_COMPILER__spi_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -109,7 +109,7 @@ rule C_COMPILER__spi_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__spi_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -120,7 +120,7 @@ rule C_STATIC_LIBRARY_LINKER__spi_
 rule C_COMPILER__tmrctr_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -128,7 +128,7 @@ rule C_COMPILER__tmrctr_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__tmrctr_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -139,7 +139,7 @@ rule C_STATIC_LIBRARY_LINKER__tmrctr_
 rule C_COMPILER__uartlite_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -147,7 +147,7 @@ rule C_COMPILER__uartlite_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__uartlite_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -158,7 +158,7 @@ rule C_STATIC_LIBRARY_LINKER__uartlite_
 rule ASM_COMPILER__xilstandalone_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building ASM object $out
 
 
@@ -168,7 +168,7 @@ rule ASM_COMPILER__xilstandalone_
 rule C_COMPILER__xilstandalone_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -176,7 +176,7 @@ rule C_COMPILER__xilstandalone_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__xilstandalone_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -187,7 +187,7 @@ rule C_STATIC_LIBRARY_LINKER__xilstandalone_
 rule C_COMPILER__xiltimer_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -195,7 +195,7 @@ rule C_COMPILER__xiltimer_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__xiltimer_
-  command = cmd.exe /C "$PRE_LINK && C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && C:\Xilinx\2025.2\Vitis\gnu\microblaze\nt\bin\mb-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = $PRE_LINK && /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -E rm -f $TARGET_FILE && mb-ar qc $TARGET_FILE $LINK_FLAGS $in && /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -204,7 +204,7 @@ rule C_STATIC_LIBRARY_LINKER__xiltimer_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\CK\Desktop\Vivado\FMCW3\FMCW3_Microblaze\FMCW3_Microblaze\microblaze_0\standalone_microblaze_0\bsp -BC:\Users\CK\Desktop\Vivado\FMCW3\FMCW3_Microblaze\FMCW3_Microblaze\microblaze_0\standalone_microblaze_0\bsp\libsrc\build_configs\gen_bsp
+  command = /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake --regenerate-during-build -S/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp -B/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp
   description = Re-running CMake...
   generator = 1
 
@@ -213,7 +213,7 @@ rule RERUN_CMAKE
 # Rule for cleaning additional files.
 
 rule CLEAN_ADDITIONAL
-  command = C:\Xilinx\2025.2\tps\win64\cmake-3.24.2\bin\cmake.exe -DCONFIG=$CONFIG -P CMakeFiles\clean_additional.cmake
+  command = /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake -DCONFIG=$CONFIG -P CMakeFiles/clean_additional.cmake
   description = Cleaning additional files...
 
 
@@ -221,7 +221,7 @@ rule CLEAN_ADDITIONAL
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = C:\Xilinx\2025.2\Vitis\bin\ninja.exe $FILE_ARG -t clean $TARGETS
+  command = /tools/2025.2/Vitis/bin/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -229,6 +229,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = C:\Xilinx\2025.2\Vitis\bin\ninja.exe -t targets
+  command = /tools/2025.2/Vitis/bin/ninja -t targets
   description = All primary targets available:
 

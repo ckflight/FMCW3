@@ -1,25 +1,40 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="CK" Host="DESKTOP-BEUFM6D" Pid="7700" HostCore="8" HostMemory="017083637760">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="110428" HostCore="32" HostMemory="62262236">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="CK" Host="DESKTOP-BEUFM6D" Pid="3288" HostCore="8" HostMemory="017083637760">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="170605" HostCore="32" HostMemory="62262236">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="CK" Host="DESKTOP-BEUFM6D" Pid="11816" HostCore="8" HostMemory="017083637760">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="230322" HostCore="32" HostMemory="62262236">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="CK" Host="DESKTOP-BEUFM6D" Pid="12476" HostCore="8" HostMemory="017083637760">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="238415" HostCore="32" HostMemory="62262236">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="CK" Host="DESKTOP-BEUFM6D" Pid="14328" HostCore="8" HostMemory="017083637760">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="298162" HostCore="32" HostMemory="62262236">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="300000" HostCore="32" HostMemory="62262236">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="361114" HostCore="32" HostMemory="62262236">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="ck" Host="ck-MS-7E62" Pid="422501" HostCore="32" HostMemory="62262236">
     </Process>
 </ProcessHandle>

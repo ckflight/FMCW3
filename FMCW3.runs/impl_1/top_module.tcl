@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.tcl"
+  variable script "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,6 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -104,38 +105,38 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param chipscope.maxJobs 8
   set_param general.usePosixSpawnForFork 1
-  set_param chipscope.maxJobs 2
   set_param bd.open.in_stealth_mode 1
-  set_param runs.launchOptions { -jobs 8  }
+  set_param runs.launchOptions { -jobs 16  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tftg256-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.cache/wt [current_project]
-  set_property parent.project_path C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.xpr [current_project]
-  set_property ip_output_repo C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.cache/wt [current_project]
+  set_property parent.project_path /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.xpr [current_project]
+  set_property ip_output_repo /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.runs/synth_1/top_module.dcp
+  add_files -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/synth_1/top_module.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
-  add_files C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/bd/microblaze/microblaze.bd
-  read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
-  read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
-  read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_0/ila_0.xci
-  read_ip -quiet C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+  add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/bd/microblaze/microblaze.bd
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
   set_param project.isImplRun false
-  add_files C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf
-  set_property SCOPED_TO_REF microblaze [get_files -all C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf]
-  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf]
+  add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf
+  set_property SCOPED_TO_REF microblaze [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
+  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc
+  read_xdc /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

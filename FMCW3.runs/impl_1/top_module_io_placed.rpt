@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date                      : Mon Mar 30 13:46:29 2026
-| Host                      : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+| Tool Version              : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date                      : Thu Apr 23 19:51:44 2026
+| Host                      : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command                   : report_io -file top_module_io_placed.rpt
 | Design                    : top_module
 | Device                    : xc7a35t
@@ -83,7 +83,7 @@ Table of Contents
 | C14        |                | High Range | IO_L8P_T1_AD10P_15           | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | C15        |                |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | C16        | usb_suspend    | High Range | IO_L10P_T1_AD11P_15          | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| D1         | led1           | High Range | IO_L10N_T1_AD15N_35          | TRISTATE    | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| D1         | led1           | High Range | IO_L10N_T1_AD15N_35          | OUTPUT      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | D2         |                |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | D3         |                | High Range | IO_L11N_T1_SRCC_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | D4         |                | High Range | IO_L12P_T1_MRCC_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

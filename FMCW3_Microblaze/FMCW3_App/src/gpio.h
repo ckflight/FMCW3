@@ -16,5 +16,6 @@ void GPIO_WritePins(u16 mask, u16 value);
 // Convenience functions for single pins
 void GPIO_SetPin(u8 pin);   // set pin high
 void GPIO_ClearPin(u8 pin); // set pin low
+void GPIO_TogglePin(u8 pin);
 
 #endif // GPIO_H

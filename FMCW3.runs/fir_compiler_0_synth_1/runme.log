@@ -3,16 +3,14 @@
     with args -log fir_compiler_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fir_compiler_0.tcl
 
 
-
 ****** Vivado v2025.2 (64-bit)
-  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Mon Mar 30 13:10:41 2026
+  **** Start of session at: Thu Apr 23 19:37:31 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source fir_compiler_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:20 . Memory (MB): peak = 576.242 ; gain = 222.492
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP fir_compiler_0, cache-ID = a26e1a89aee581ab.
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 30 13:11:17 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 23 19:37:33 2026...

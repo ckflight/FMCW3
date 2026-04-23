@@ -62,7 +62,6 @@ entity top_module is
     );
 end top_module;
 
-
 architecture Behavioral of top_module is
     
     component clk_wiz_0
@@ -182,6 +181,8 @@ architecture Behavioral of top_module is
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
         pa_en                       : out std_logic;
+        mixer_en                    : out std_logic;
+
         config_done                 : in std_logic;
 
         -- USB interface
@@ -294,10 +295,7 @@ begin
     -- Drive ADC OE/SHDN pins for normal operation
     -- ADC_OE   <= "00"; -- both channels enabled
     -- ADC_SHDN <= "00"; -- normal operation
- 
- 
-    mix_en <= '1';
-    
+     
     -- Not used for now
     ext1 <= (others => '0');
     ext2 <= (others => '0');
@@ -309,7 +307,7 @@ begin
     s_microblaze_done           <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
     s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
     s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
-    
+    led1                        <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working
     
     -- connect chipselect according to if config is done or not.
     -- if config is done then usb control can start using usb
@@ -454,6 +452,7 @@ begin
         adc_shdn                    => adc_shdn,
         
         pa_en                       => pa_en,
+        mixer_en                    => mix_en,
         config_done                 => s_config_done,   -- input from config module to start sampling
         
         usb_write_n                 => s_control_usb_write_n,

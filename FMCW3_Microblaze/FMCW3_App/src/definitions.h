@@ -11,5 +11,7 @@
 #define RAMP_CONFIGURED     3   // GPIO[3] -> Ramp is configured --> to FPGA
 #define SOFTWARE_RESET      4   // GPIO[4] -> Software reset for next config and radar op --> to FPGA
 
+#define LED                 5   // GPIO[5] -> On board led to check microblaze is working
+
 #endif // DEFINITIONS_H
 

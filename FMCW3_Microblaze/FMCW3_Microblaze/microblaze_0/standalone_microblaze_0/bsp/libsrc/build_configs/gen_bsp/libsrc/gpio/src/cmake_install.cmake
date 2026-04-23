@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/CK/Desktop/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/gpio/src
+# Install script for directory: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/gpio/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/bsp")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Xilinx/2025.2/Vitis/gnu/microblaze/nt/bin/mb-objdump.exe")
+  set(CMAKE_OBJDUMP "/tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-objdump")
 endif()
 

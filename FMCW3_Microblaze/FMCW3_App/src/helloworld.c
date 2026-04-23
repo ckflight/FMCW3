@@ -97,6 +97,7 @@ int main(void){
     GPIO_ClearPin(SAMPLING_DONE);
     GPIO_ClearPin(RAMP_CONFIGURED);
     GPIO_ClearPin(SOFTWARE_RESET);
+    GPIO_ClearPin(LED);
     
     // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
     // Make sure CE low, LE high
@@ -118,7 +119,13 @@ int main(void){
     // 128x 32 bit data will be received but for the ease of use 8 bit of it is used as data
     // so last 8 bit is taken
     for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
-        while (XLlFifo_iRxOccupancy(&Fifo) == 0);
+        while (XLlFifo_iRxOccupancy(&Fifo) == 0){
+            uint32_t t0 = read_timer();
+
+            GPIO_TogglePin(LED);
+            // wait ~100ms (adjust depending on timer freq)
+            while ((read_timer() - t0) < 100000);
+        }
         word = XLlFifo_RxGetWord(&Fifo);
         buffer[i] = (uint8_t)(word & 0xFF);
     }
