@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 8
 set_param general.usePosixSpawnForFork 1
 set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }

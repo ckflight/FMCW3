@@ -96,7 +96,7 @@ int main(void){
     // Software reset is the resetting mechanism for the whole vhdl logic.
     GPIO_ClearPin(SAMPLING_DONE);
     GPIO_ClearPin(RAMP_CONFIGURED);
-    GPIO_ClearPin(SOFTWARE_RESET);
+    GPIO_SetPin(SOFTWARE_RESET);
     GPIO_ClearPin(LED);
     
     // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
@@ -118,19 +118,41 @@ int main(void){
     // READ FIFO
     // 128x 32 bit data will be received but for the ease of use 8 bit of it is used as data
     // so last 8 bit is taken
+
+    // Test why led is gone is it timer related issue
+    // 32 Timer overflows after 42 seconds that is the problem.
+    while (1) {
+        //uint32_t t0 = read_timer();
+        GPIO_TogglePin(LED);
+        
+        volatile uint32_t i;
+        for (i = 0; i < 1000000; i++) {
+            asm("nop");
+        }
+        //while ((uint32_t)(read_timer() - t0) < 10000000U) ;
+    }
+
     for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
         while (XLlFifo_iRxOccupancy(&Fifo) == 0){
             uint32_t t0 = read_timer();
 
             GPIO_TogglePin(LED);
-            // wait ~100ms (adjust depending on timer freq)
-            while ((read_timer() - t0) < 10000);
+            // wait ~250ms (adjust depending on timer freq)
+            while ((read_timer() - t0) < 100000000);
         }
         word = XLlFifo_RxGetWord(&Fifo);
         buffer[i] = (uint8_t)(word & 0xFF);
     }
 
+    // Test if exits led blink
+    for (int i = 0; i < 30; i++) {
+        uint32_t t0 = read_timer();
 
+        GPIO_TogglePin(LED);
+        // wait ~100ms (adjust depending on timer freq)
+        while ((read_timer() - t0) < 25000000);
+    }
+    
     // PARSE RECEIVED BYTES HERE: It will be added to a struct pointer
     config_parameters.check_mode = buffer[0]; // example
     config_parameters.sweep_start_frequency = buffer[1] << 8 | buffer[2]; // example
@@ -150,6 +172,8 @@ int main(void){
 
     start_time = read_timer();
     
+
+
     // Once configuration done and ramp is configured control.vhd module starts its fsm for sampling 
     // in ramp and transferring data during gaps.(Initially, i will not record multi chirp x64 x128 etc.)
     // So this part should just count the end time for example if user demanded 10 second record,
@@ -179,6 +203,13 @@ int main(void){
                 // Decide what to do here. Reset hardware and return to idle for example
                 GPIO_SetPin(SAMPLING_DONE);
                 GPIO_SetPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
+
+                uint32_t t0 = read_timer();
+
+                GPIO_TogglePin(LED);
+                // wait ~1000ms (adjust depending on timer freq)
+                while ((read_timer() - t0) < 100000000);
+                
                 break;
    
         }
