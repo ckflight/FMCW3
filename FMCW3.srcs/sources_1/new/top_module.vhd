@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity top_module is        
     
     generic (
-        CONFIG_PACKET_SIZE  : integer := 256;    -- Used by config
+        CONFIG_PACKET_SIZE  : integer := 42;    -- Used by config
         MAX_ADC_SAMPLES     : integer := 2400    -- Used by control
     );
     
@@ -13,7 +13,7 @@ entity top_module is
         -- Clocks & Reset
         sysclk          : in std_logic; -- ECS-TXO-3225MV 40 MHz
         usb_clkout      : in std_logic; -- 60 mhz clock from ft2232h to drive logic
-        reset_n           : in std_logic; -- idle high, active low
+        reset_n         : in std_logic; -- idle high, active low
 
         -- ADF4158
         adf_ce          : out std_logic;   -- Controlled by pin0 of 16 bit gpio out of microblaze and written 1 in microblaze to enable device once
@@ -267,6 +267,11 @@ architecture Behavioral of top_module is
     signal muxout_sync : std_logic := '0';
     signal muxout_sync_d : std_logic := '0';
     
+    -- I have added these internal signals to be able to probe. I cannot probe output directly
+    signal s_usb_rd : std_logic := '1';
+    signal s_usb_wr : std_logic := '1';
+    signal s_usb_oe : std_logic := '1';
+
 begin 
 
     -- GENERAL CODE FLOW UPTO NOW:
@@ -306,13 +311,31 @@ begin
     adf_le                      <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
     s_microblaze_done           <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
     s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
-    s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
+    s_soft_reset_n              <= '1';--s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
     led1                        <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working
     
     -- connect chipselect according to if config is done or not.
     -- if config is done then usb control can start using usb
     s_chipselect <= s_config_usb_chipselect when s_config_done = '0' else s_control_usb_chipselect;
-           
+    
+    -- ILA probe assignments for FTDI RX/config debug
+    s_probe0 <= s_config_usb_readdata;
+    
+    s_probe1 <=
+        usb_rxf &
+        s_rx_empty &
+        s_config_usb_read_n &
+        s_config_usb_chipselect &
+        s_config_done &
+        "0000000";
+    
+    s_probe2 <= (others => '0');
+    s_probe3 <= (others => '0');
+
+    usb_rd <= s_usb_rd;
+    usb_wr <= s_usb_wr;
+    usb_oe <= s_usb_oe;
+    
     -- Component instantiation
     clk_wiz_0_inst : clk_wiz_0
       port map (
@@ -398,9 +421,9 @@ begin
         -- FT2232 Bus Signals
         usb_clock   => usb_clkout,
         usb_data    => usb_data,
-        usb_rd_n    => usb_rd,
-        usb_wr_n    => usb_wr,
-        usb_oe_n    => usb_oe,
+        usb_rd_n    => s_usb_rd,
+        usb_wr_n    => s_usb_wr,
+        usb_oe_n    => s_usb_oe,
         usb_rxf_n   => usb_rxf,         -- input signal to indicate rx data over usb
         usb_txe_n   => usb_txe          -- input signal to indicate usb is available for tx
     );
