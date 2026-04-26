@@ -19,7 +19,7 @@
 #include "spi.h"
 
 #define FIFO_BASEADDR       XPAR_XLLFIFO_0_BASEADDR
-#define CONFIG_PACKET_SIZE  128
+#define CONFIG_PACKET_SIZE  42
 
 XLlFifo Fifo;
 XTmrCtr TimerInstance;
@@ -110,48 +110,52 @@ int main(void){
 
     uint32_t word;
     uint8_t buffer[CONFIG_PACKET_SIZE];
+    for(int i = 0; i < CONFIG_PACKET_SIZE; i++){
+        buffer[i] = 0;
+    }
 
     // Init fifo. VHDL sends python's configuration data to this fifo.
     // Microblaze reads this to configure ADF4158 over spi.
     status = initFifo();
 
-    // READ FIFO
-    // 128x 32 bit data will be received but for the ease of use 8 bit of it is used as data
-    // so last 8 bit is taken
+    // IMPORTANT NOTE: Timer wraps around after 42 second so find a 64 bit solution to that if timer is used as counter to check time etc.
 
-    // Test why led is gone is it timer related issue
-    // 32 Timer overflows after 42 seconds that is the problem.
-    while (1) {
-        //uint32_t t0 = read_timer();
-        GPIO_TogglePin(LED);
-        
-        volatile uint32_t i;
-        for (i = 0; i < 1000000; i++) {
-            asm("nop");
-        }
-        //while ((uint32_t)(read_timer() - t0) < 10000000U) ;
-    }
-
-    for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
-        while (XLlFifo_iRxOccupancy(&Fifo) == 0){
-            uint32_t t0 = read_timer();
-
-            GPIO_TogglePin(LED);
-            // wait ~250ms (adjust depending on timer freq)
-            while ((read_timer() - t0) < 100000000);
-        }
-        word = XLlFifo_RxGetWord(&Fifo);
-        buffer[i] = (uint8_t)(word & 0xFF);
-    }
-
-    // Test if exits led blink
+    // Fifo read enter indicator led blink   
     for (int i = 0; i < 30; i++) {
         uint32_t t0 = read_timer();
 
         GPIO_TogglePin(LED);
         // wait ~100ms (adjust depending on timer freq)
-        while ((read_timer() - t0) < 25000000);
+        while ((read_timer() - t0) < 2500000);
     }
+    
+    // READ FIFO
+    // 128x32 bit data will be received but for the ease of use 8 bit of it is used as data
+    // so last 8 bit is taken
+
+    for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
+        while (XLlFifo_iRxOccupancy(&Fifo) == 0);
+        word = XLlFifo_RxGetWord(&Fifo);
+        buffer[i] = (uint8_t)(word & 0xFF);
+    }
+
+    // print AFTER reception
+    xil_printf("RX:\r\n");
+    for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
+        xil_printf("%c", buffer[i]);
+    }
+    xil_printf("\r\n");
+
+    // Fifo read exit indicator led blink   
+    for (int i = 0; i < 30; i++) {
+        uint32_t t0 = read_timer();
+
+        GPIO_TogglePin(LED);
+        // wait ~100ms (adjust depending on timer freq)
+        while ((read_timer() - t0) < 2500000);
+    }
+    
+    while(1);
     
     // PARSE RECEIVED BYTES HERE: It will be added to a struct pointer
     config_parameters.check_mode = buffer[0]; // example
