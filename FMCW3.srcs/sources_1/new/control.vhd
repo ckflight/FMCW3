@@ -25,9 +25,8 @@ entity control is
         config_done                 : in std_logic;
 
         -- USB interface
-        usb_chipselect              : out std_logic;
-        usb_write_n                 : out std_logic;
-        usb_writedata               : out std_logic_vector(7 downto 0);
+        usb_tx_write_en             : out std_logic;
+        usb_tx_writedata            : out std_logic_vector(7 downto 0);
         usb_tx_full                 : in  std_logic;
         
         microblaze_ramp_configured  : in std_logic;
@@ -80,9 +79,8 @@ begin
             adc_shdn        <= "11";
             pa_en           <= '0';
             mixer_en        <= '1'; -- active low
-            usb_chipselect  <= '0';
-            usb_write_n     <= '1';
-            usb_writedata   <= (others => '0');
+            usb_tx_write_en   <= '1';
+            usb_tx_writedata <= (others => '0');
             ramp_done       <= '0';
             s_usb_tx_done   <= '0';
 
@@ -96,8 +94,7 @@ begin
                     adc_shdn        <= "11";
                     pa_en           <= '0';
                     mixer_en        <= '1';
-                    usb_chipselect  <= '0';
-                    usb_write_n     <= '1';
+                    usb_tx_write_en     <= '1';
                     sample_idx      <= 0;
                     usb_idx         <= 0;
                     byte_sel        <= 0;
@@ -121,8 +118,7 @@ begin
                     adc_shdn        <= "00";
                     pa_en           <= '1'; -- active high
                     mixer_en        <= '0'; -- active low
-                    usb_chipselect  <= '0';
-                    usb_write_n     <= '1';
+                    usb_tx_write_en     <= '1';
                 
                     if adc_valid = '1' and sample_idx < MAX_SAMPLES then
                         mem(sample_idx) <= adc_latched;
@@ -140,8 +136,7 @@ begin
                     adc_shdn        <= "11";
                     pa_en           <= '0';
                     mixer_en        <= '1';
-                    usb_chipselect  <= '0';
-                    usb_write_n     <= '1';
+                    usb_tx_write_en     <= '1';
                     usb_idx         <= 0;
                     byte_sel        <= 0;
                     state           <= USB_TX_IDLE;
@@ -151,8 +146,7 @@ begin
                 when USB_TX_IDLE =>
                     
                     -- usb tx needs one clock write_n 0 1 0 transition
-                    usb_chipselect  <= '1';
-                    usb_write_n     <= '1';
+                    usb_tx_write_en     <= '1';
                     
                     -- Send current byte while usb's tx buffer is not full else it will wait in this state
                     if usb_idx < sample_count and usb_tx_full = '0' then
@@ -160,11 +154,11 @@ begin
                         -- drive data for next byte
                         -- adc stores 2 channel 16 bit data as concatenated 32 bit so select each byte
                         case byte_sel is
-                            when 0      => usb_writedata <= mem(usb_idx)(31 downto 24);
-                            when 1      => usb_writedata <= mem(usb_idx)(23 downto 16);
-                            when 2      => usb_writedata <= mem(usb_idx)(15 downto 8);
-                            when 3      => usb_writedata <= mem(usb_idx)(7 downto 0);
-                            when others => usb_writedata <= (others => '0');
+                            when 0      => usb_tx_writedata <= mem(usb_idx)(31 downto 24);
+                            when 1      => usb_tx_writedata <= mem(usb_idx)(23 downto 16);
+                            when 2      => usb_tx_writedata <= mem(usb_idx)(15 downto 8);
+                            when 3      => usb_tx_writedata <= mem(usb_idx)(7 downto 0);
+                            when others => usb_tx_writedata <= (others => '0');
                         end case;
                     
                         state <= USB_TX_PULSE;
@@ -175,7 +169,7 @@ begin
                         -- usb transfer send all bytes before gap is finished, return to idle for resampling
                         state <= IDLE;
                         s_usb_tx_done <= '1';      -- <-- Latch USB transfer done here          
-                        usb_writedata <= (others => '0');
+                        usb_tx_writedata <= (others => '0');
                     
                     end if;
 
@@ -183,8 +177,7 @@ begin
                 -- send data with write_n = 0                
                 when USB_TX_PULSE =>
                    
-                    usb_chipselect  <= '1';
-                    usb_write_n     <= '0';                    
+                    usb_tx_write_en     <= '0';                    
 
                     if byte_sel = 3 then
                         byte_sel    <= 0;
@@ -201,9 +194,9 @@ begin
                     adc_shdn        <= "11";
                     pa_en           <= '0';
                     mixer_en        <= '1';
-                    usb_chipselect  <= '0';
-                    usb_write_n     <= '1';
-                    usb_writedata   <= (others => '0');
+                    
+                    usb_tx_write_en     <= '1';
+                    usb_tx_writedata   <= (others => '0');
                     ramp_done       <= '1';
                     
                     state <= WAIT_SOFT_RESET; -- soft reset clears for new radar op
