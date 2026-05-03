@@ -1,8 +1,8 @@
 set_property -dict { PACKAGE_PIN N11   IOSTANDARD LVCMOS33 } [get_ports { sysclk }];
 create_clock -add -name sysclk -period 25.00 -waveform {0 12.5} [get_ports {sysclk}]; # 40 MHz main clock
 
-set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { usb_clkout }]; # clock capable pin p not n
-create_clock -add -name usb_clkout -period 16.667 -waveform {0.000 8.333} [get_ports {usb_clkout}]; # 60 MHz main clock
+set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { usb_clk }]; # clock capable pin p not n
+create_clock -add -name usb_clk -period 16.667 -waveform {0.000 8.333} [get_ports {usb_clk}]; # 60 MHz main clock
 
 set_property -dict { PACKAGE_PIN B4   IOSTANDARD LVCMOS33 } [get_ports { reset_n }]; # rightmost button
 
@@ -52,7 +52,10 @@ set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { usb_tx
 set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { usb_rd }];
 set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { usb_wr }];
 set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33 } [get_ports { usb_siwua }];
-set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }];
+
+#set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }]; # BURNED PIN
+set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }]; # CONNECTED EXT1 TO OE
+
 set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { usb_suspend }];
 
 # ONBOARD LED
@@ -67,12 +70,12 @@ set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en 
 
 # External Connector
 
-set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
-set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
-set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[2] }];
-set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[3] }];
-set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }];
-set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[5] }];
+##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
+#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
+#set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[2] }];
+#set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[3] }];
+#set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }];
+#set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[5] }];
 
 set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { ext2[0] }];
 set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { ext2[1] }];

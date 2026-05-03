@@ -9,12 +9,14 @@ entity config is
     port (
         clk_40mhz        : in  std_logic;
         clk_100mhz       : in  std_logic;
+        
         reset_n          : in  std_logic; -- active low
         soft_reset_n     : in  std_logic;     
+        
         usb_rx_empty     : in  std_logic;
-        usb_readdata     : in  std_logic_vector(7 downto 0);
-        chipselect       : out std_logic;
-        read_n           : out std_logic;
+        usb_rx_readdata  : in  std_logic_vector(7 downto 0); 
+        usb_rx_read_en   : out std_logic;
+        
         config_done      : out std_logic;
         
         -- AXI-Stream TX (MicroBlaze → VHDL)
@@ -97,9 +99,8 @@ begin
         -- Instead of handshaking microlbaze issues a soft reset to reset config and control so it starts again for new radar op
         if reset_n = '0' or soft_reset_n = '0' then
             config_st                   <= st_idle;
-            byte_counter                <= 0;
-            chipselect                  <= '0'; -- 1 active, 0 not
-            read_n                      <= '1'; -- 0 active, 1 not
+            byte_counter                <=  0;
+            usb_rx_read_en              <= '0'; -- 1 is active 0 is not
             config_done                 <= '0'; -- not done
             config_bytes_ready          <= '0'; 
             
@@ -112,9 +113,8 @@ begin
 
                 when st_idle =>
                     
-                    config_done  <= '0';
-                    chipselect   <= '1';
-                    read_n       <= '1'; 
+                    config_done    <= '0';
+                    usb_rx_read_en <= '0'; 
                     
                     s_wr_en      <= '0';
                     s_din        <= (others => '0');
@@ -124,11 +124,11 @@ begin
                     end if;
 
                 when st_read =>
-                    read_n <= '0';   -- assert read for one clock
+                    usb_rx_read_en <= '1';   -- assert read for one clock
                     config_st <= st_wait;
 
                 when st_wait =>
-                    read_n <= '1';   -- deassert read
+                    usb_rx_read_en <= '0';   -- deassert read
                     config_st <= st_trig_write;                 
 
                 when st_trig_write =>
@@ -136,7 +136,7 @@ begin
                     -- prepare data and trigger fifo write
                     if s_fifo_full = '0' then
                         s_wr_en <= '1';
-                        s_din <= usb_readdata; 
+                        s_din <= usb_rx_readdata; 
                         config_st <= st_store;
                     else
                         s_wr_en <= '0';
@@ -161,8 +161,7 @@ begin
                 
                 when st_done =>                                        
                     byte_counter <= 0;
-                    chipselect  <= '0';
-                    read_n      <= '1';
+                    usb_rx_read_en <= '0';
                     config_done <= '1';
                     config_bytes_ready <= '1';
                     
