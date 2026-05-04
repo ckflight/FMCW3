@@ -41,7 +41,6 @@ architecture rtl of usb_sync is
     type rx_states_t is (
         RX_IDLE,
         RX_ASSERT_OE,
-        RX_SAMPLE_D0,
         RX_ASSERT_RD,
         RX_SAMPLE_BURST,
         RX_FINISH
@@ -133,32 +132,15 @@ begin
                     usb_oe_n <= '0';
                     usb_rd_n <= '1'; -- rd is for burst read after reading the first byte
                     
-                    rx_state <= RX_SAMPLE_D0;
-                
-                when RX_SAMPLE_D0 =>
-                    
-                    -- keep oe low for burst reading on the next cycles with rd = 0
-                    usb_oe_n <= '0';
-                    usb_rd_n <= '1';
-                    
-                    if usb_rxf_n = '0' and rx_fifo_full = '0' then
-                        
-                        -- Get the first byte and write to fifo
-                        rx_fifo_din     <= usb_data;
-                        rx_fifo_wr_en   <= '1';
-                        
-                        -- rxf = 0 so more data
-                        rx_state <= RX_ASSERT_RD;
-                    else
-                        rx_state <= RX_IDLE;
-                    end if;
+                    --rx_state <= RX_SAMPLE_D0;
+                    rx_state <= RX_ASSERT_RD;                
                 
                 when RX_ASSERT_RD =>
                     
                     usb_oe_n <= '0';
                     usb_rd_n <= '0';
                     
-                    rx_state <= RX_SAMPLE_BURST;               
+                    rx_state <= RX_SAMPLE_BURST;    
                    
                 when RX_SAMPLE_BURST =>
                     

@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity top_module is        
     
     generic (
-        CONFIG_PACKET_SIZE  : integer := 42;    -- Used by config
+        CONFIG_PACKET_SIZE  : integer := 25;    -- Used by config
         MAX_ADC_SAMPLES     : integer := 2400    -- Used by control
     );
     

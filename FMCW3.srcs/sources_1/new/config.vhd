@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity config is
     generic (
-        PACKET_SIZE : integer := 42 -- python script sends 25 byte with hexilfy which makes it ascii like so it is 48 bytes
+        PACKET_SIZE : integer := 25 -- python script sends 25 byte
     );
     port (
         clk_40mhz        : in  std_logic;
