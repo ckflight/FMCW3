@@ -155,29 +155,29 @@ int main(void){
         while ((read_timer() - t0) < 2500000);
     }
     
-    if (buffer[1] != '=' || buffer[2] != '=') {
+    if (buffer[0] != '=' || buffer[1] != '=') {
         xil_printf("CONFIG HEADER ERROR\r\n");
         while (1);
     }
 
-    config_parameters.sweep_time              = get_u16_be(buffer, 3);
-    config_parameters.sweep_delay             = get_u16_be(buffer, 5);
-    config_parameters.record_time             = buffer[7];
-    config_parameters.sampling_frequency      = get_u16_be(buffer, 8);   // kHz
-    config_parameters.number_of_samples       = get_u16_be(buffer, 10);
-    config_parameters.sweep_start_frequency   = get_u16_be(buffer, 12);
-    config_parameters.sweep_bandwidth         = get_u16_be(buffer, 14);
+    config_parameters.sweep_time              = get_u16_be(buffer, 2);
+    config_parameters.sweep_delay             = get_u16_be(buffer, 4);
+    config_parameters.record_time             = buffer[6];
+    config_parameters.sampling_frequency      = get_u16_be(buffer, 7);   // kHz
+    config_parameters.number_of_samples       = get_u16_be(buffer, 9);
+    config_parameters.sweep_start_frequency   = get_u16_be(buffer, 11);
+    config_parameters.sweep_bandwidth         = get_u16_be(buffer, 13);
 
-    config_parameters.tx_mode                 = buffer[16];
-    config_parameters.gain                    = buffer[17];
-    config_parameters.sweep_type              = buffer[18];
-    config_parameters.data_log                = buffer[19];
-    config_parameters.adc_select              = buffer[20];
-    config_parameters.use_pll                 = buffer[21];
-    config_parameters.check_mode              = buffer[22];
-    config_parameters.usb_data_type           = buffer[23];
-    config_parameters.adc_resolution          = buffer[24];
-    config_parameters.sample_averaging        = buffer[25];
+    config_parameters.tx_mode                 = buffer[15];
+    config_parameters.gain                    = buffer[16];
+    config_parameters.sweep_type              = buffer[17];
+    config_parameters.data_log                = buffer[18];
+    config_parameters.adc_select              = buffer[19];
+    config_parameters.use_pll                 = buffer[20];
+    config_parameters.check_mode              = buffer[21];
+    config_parameters.usb_data_type           = buffer[22];
+    config_parameters.adc_resolution          = buffer[23];
+    config_parameters.sample_averaging        = buffer[24];
 
     while(1);
     
