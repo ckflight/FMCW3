@@ -19,7 +19,7 @@
 #include "spi.h"
 
 #define FIFO_BASEADDR       XPAR_XLLFIFO_0_BASEADDR
-#define CONFIG_PACKET_SIZE  42
+#define CONFIG_PACKET_SIZE  25
 
 XLlFifo Fifo;
 XTmrCtr TimerInstance;
@@ -60,6 +60,11 @@ uint32_t read_timer()
     return XTmrCtr_GetValue(&TimerInstance, 0);
 }
 
+uint16_t get_u16_be(uint8_t *buf, int index)
+{
+    return ((uint16_t)buf[index] << 8) | buf[index + 1];
+}
+
 typedef enum{
     IDLE,
     CHECK_TIME,
@@ -67,6 +72,8 @@ typedef enum{
 }SAMPLING_STATES_e;
 
 SAMPLING_STATES_e sampling_state = IDLE;
+
+
 
 int main(void){
 
@@ -139,13 +146,6 @@ int main(void){
         buffer[i] = (uint8_t)(word & 0xFF);
     }
 
-    // print AFTER reception
-    xil_printf("RX:\r\n");
-    for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
-        xil_printf("%c", buffer[i]);
-    }
-    xil_printf("\r\n");
-
     // Fifo read exit indicator led blink   
     for (int i = 0; i < 30; i++) {
         uint32_t t0 = read_timer();
@@ -155,20 +155,32 @@ int main(void){
         while ((read_timer() - t0) < 2500000);
     }
     
+    if (buffer[1] != '=' || buffer[2] != '=') {
+        xil_printf("CONFIG HEADER ERROR\r\n");
+        while (1);
+    }
+
+    config_parameters.sweep_time              = get_u16_be(buffer, 3);
+    config_parameters.sweep_delay             = get_u16_be(buffer, 5);
+    config_parameters.record_time             = buffer[7];
+    config_parameters.sampling_frequency      = get_u16_be(buffer, 8);   // kHz
+    config_parameters.number_of_samples       = get_u16_be(buffer, 10);
+    config_parameters.sweep_start_frequency   = get_u16_be(buffer, 12);
+    config_parameters.sweep_bandwidth         = get_u16_be(buffer, 14);
+
+    config_parameters.tx_mode                 = buffer[16];
+    config_parameters.gain                    = buffer[17];
+    config_parameters.sweep_type              = buffer[18];
+    config_parameters.data_log                = buffer[19];
+    config_parameters.adc_select              = buffer[20];
+    config_parameters.use_pll                 = buffer[21];
+    config_parameters.check_mode              = buffer[22];
+    config_parameters.usb_data_type           = buffer[23];
+    config_parameters.adc_resolution          = buffer[24];
+    config_parameters.sample_averaging        = buffer[25];
+
     while(1);
     
-    // PARSE RECEIVED BYTES HERE: It will be added to a struct pointer
-    config_parameters.check_mode = buffer[0]; // example
-    config_parameters.sweep_start_frequency = buffer[1] << 8 | buffer[2]; // example
-
-    // total radar operation time will be calculated with parameters here.
-    config_parameters.record_time = buffer[10]; 
-    uint32_t sweep_p_microsec = config_parameters.sweep_time + config_parameters.sweep_delay;
-
-    // I might not need record counter since i will basically count for timer seconds
-    uint32_t record_time_counter = (config_parameters.record_time * 1000.0f) / ((float)sweep_p_microsec / 1000.0f);
-
-
     // Init rf sythnesizer according to the received parameters
     ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters);
 

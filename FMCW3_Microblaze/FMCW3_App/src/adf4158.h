@@ -8,18 +8,28 @@
 
 typedef struct config_parameters_s{
 
-    uint32_t sweep_time;
-    uint32_t sweep_delay;
-    uint32_t record_time;
-    
-    uint32_t sweep_start_frequency;
-    uint32_t sweep_bandwidth;
-    
-    uint8_t tx_mode;
-    uint8_t sweep_type;
-    uint8_t data_log;
-    uint8_t check_mode;
-        
+    // uint16 fields (from packet)
+    uint16_t sweep_time;             // [2,3]
+    uint16_t sweep_delay;            // [4,5]
+    uint16_t sampling_frequency;     // [7,8]  (kHz)
+    uint16_t number_of_samples;      // [9,10]
+    uint16_t sweep_start_frequency;  // [11,12]
+    uint16_t sweep_bandwidth;        // [13,14]
+
+    // uint8 fields
+    uint8_t record_time;             // [6]
+
+    uint8_t tx_mode;                 // [15]
+    uint8_t gain;                    // [16]
+    uint8_t sweep_type;              // [17]
+    uint8_t data_log;                // [18]
+    uint8_t adc_select;              // [19]
+    uint8_t use_pll;                 // [20]
+    uint8_t check_mode;              // [21]
+    uint8_t usb_data_type;           // [22]
+    uint8_t adc_resolution;          // [23]
+    uint8_t sample_averaging;        // [24]
+
 } config_parameters_t;
 
 extern config_parameters_t config_parameters;
