@@ -224,6 +224,19 @@ architecture Behavioral of top_module is
     );
     end component;
     
+    component ila_2
+    PORT (
+        clk     : in std_logic;
+        probe0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe4 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe5 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe6 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
+    );
+    end component;
+    
     signal clk_40mhz    : std_logic;
     signal clk_100mhz   : std_logic;
     
@@ -279,6 +292,14 @@ architecture Behavioral of top_module is
     signal s_ila1_probe2 : std_logic_vector(0 downto 0) := (others => '0');
     signal s_ila1_probe3 : std_logic_vector(0 downto 0) := (others => '0');
 
+    signal s_ila2_probe0 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe1 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe2 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe3 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe4 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe5 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe6 : std_logic_vector(0 downto 0) := (others => '0');
+
     signal muxout_sync      : std_logic := '0';
     signal muxout_sync_d    : std_logic := '0';
     
@@ -295,6 +316,10 @@ architecture Behavioral of top_module is
     signal s_usb_data_out   : std_logic_vector(7 downto 0);
     signal s_is_usb_tx      : std_logic; -- 1 FPGA drives data line, 0 High Z
     
+    signal s_adf_ce         : std_logic;
+    signal s_adf_le         : std_logic;
+    signal s_adf_clk        : std_logic;
+    signal s_adf_data       : std_logic;
     
 begin 
 
@@ -340,16 +365,30 @@ begin
  
     -- Not used for now
     --ext1 <= (others => '0');
-    ext2 <= (others => '0');
+    --ext2 <= (others => '0');
+    
+    ext2(0) <= s_adf_ce;
+    ext2(1) <= s_adf_le;
+    ext2(2) <= s_adf_clk;
+    ext2(3) <= s_adf_data;
+    ext2(4) <= '0';
+    ext2(5) <= '0';
         
-    adf_txdata <= '0'; -- not used. this is for data modulation
+    adf_txdata          <= '0'; -- not used. this is for data modulation
         
-    adf_ce                      <= '0';--s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
-    adf_le                      <= '1';--s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
-    s_microblaze_done           <= '0';--s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
-    s_ramp_configured           <= '0';--s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
-    s_soft_reset_n              <= '1';--s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
-    led1                        <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working    
+    s_adf_ce            <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
+    adf_ce              <= s_adf_ce;
+    
+    s_adf_le            <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
+    adf_le              <= s_adf_le;
+    
+    adf_data            <= s_adf_data;
+    adf_clk             <= s_adf_clk;
+    
+    s_microblaze_done   <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
+    s_ramp_configured   <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
+    s_soft_reset_n      <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
+    led1                <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working    
     
     -- ILA probe assignments for FTDI RX/config debug
     s_ila0_probe0       <= s_config_usb_rx_readdata;
@@ -360,8 +399,15 @@ begin
     s_ila1_probe1(0)    <= s_usb_rxf;
     s_ila1_probe2(0)    <= s_usb_oe;
     s_ila1_probe3(0)    <= s_usb_rd;
-
-
+    
+    -- spi is working on ila so hardware issue again. i will route to ext2 to check with scope
+    s_ila2_probe0(0)    <= s_adf_ce;
+    s_ila2_probe1(0)    <= s_adf_le;
+    s_ila2_probe2(0)    <= s_adf_clk;
+    s_ila2_probe3(0)    <= s_adf_data;
+    s_ila2_probe4(0)    <= muxout_sync;
+    s_ila2_probe5(0)    <= s_microblaze_done;
+    s_ila2_probe6(0)    <= s_ramp_configured;
     
     -- Component instantiation
     clk_wiz_0_inst : clk_wiz_0
@@ -387,8 +433,8 @@ begin
         reset_rtl_0                     => reset_n,         -- Board's reset is active low
         spi0_cs(0)                      => s_spi0_cs,       -- spi cs not used, gpio is used to drive cs pin
         spi0_miso                       => s_spi0_miso,     -- spi miso not used adf does not have output
-        spi0_mosi                       => adf_data,        -- spi mosi
-        spi0_sck                        => adf_clk,         -- spi clk
+        spi0_mosi                       => s_adf_data,      -- spi mosi
+        spi0_sck                        => s_adf_clk,       -- spi clk
         --uart_rtl_0_rxd                  => s_uart_rtl_0_rxd,
         --uart_rtl_0_txd                  => s_uart_rtl_0_txd,
         
@@ -534,6 +580,18 @@ begin
         probe1 => s_ila1_probe1,
         probe2 => s_ila1_probe2,
         probe3 => s_ila1_probe3
+    );
+
+    ila_2_i : ila_2
+    port map (
+        clk    => clk_40mhz,
+        probe0 => s_ila2_probe0,
+        probe1 => s_ila2_probe1,
+        probe2 => s_ila2_probe2,
+        probe3 => s_ila2_probe3,
+        probe4 => s_ila2_probe4,
+        probe5 => s_ila2_probe5,
+        probe6 => s_ila2_probe6
     );
 
 end Behavioral;
