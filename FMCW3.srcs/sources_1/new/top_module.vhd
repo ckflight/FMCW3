@@ -31,7 +31,7 @@ entity top_module is
         adc_shdn        : out std_logic_vector(1 downto 0);
 
         -- FT2232H USB
-        usb_data        : in std_logic_vector(7 downto 0); -- TODO  i will later make it inout!!!!
+        usb_data        : inout std_logic_vector(7 downto 0); -- TODO  i will later make it inout!!!!
         usb_rxf         : in std_logic;
         usb_txe         : in std_logic;
         usb_rd          : out std_logic;
@@ -110,26 +110,35 @@ architecture Behavioral of top_module is
     
     component usb_sync is
     port (
+        -- User/bus side clock
         clk             : in  std_logic;  -- 40 MHz
         reset_n         : in  std_logic;
 
-        -- RX side to your logic
-        rx_data         : out std_logic_vector(7 downto 0);
-        rx_empty        : out std_logic;
-        rx_read_en      : in  std_logic;
+        -- RX side to logic
+        rx_fifo_dout    : out std_logic_vector(7 downto 0);       
+        rx_fifo_rd_en   : in  std_logic;
+        rx_fifo_empty   : out std_logic;
 
+        -- TX side to logic
+        tx_fifo_din     : in std_logic_vector(7 downto 0);
+        tx_fifo_wr_en   : in std_logic;
+        tx_fifo_full    : out std_logic;
+        
         -- FT2232H side
         usb_clk         : in  std_logic;  -- 60 MHz from FT2232H
-        usb_data        : in std_logic_vector(7 downto 0);
-
+        usb_data_in     : in  std_logic_vector(7 downto 0);
+        usb_data_out    : out std_logic_vector(7 downto 0);
+        is_usb_tx       : out std_logic; -- 1 FPGA drives data line, 0 data line High Z for reception
+        
         usb_rxf_n       : in  std_logic;
         usb_txe_n       : in  std_logic;
 
         usb_oe_n        : out std_logic;
         usb_rd_n        : out std_logic;
-        usb_wr_n        : out std_logic        
+        usb_wr_n        : out std_logic   
+           
     );
-    end component usb_sync;
+    end component;
     
     component config is
         generic (
@@ -274,13 +283,18 @@ architecture Behavioral of top_module is
     signal muxout_sync_d    : std_logic := '0';
     
     -- I have added these internal signals to be able to probe. I cannot probe output directly
+    -- usb signals
     signal s_usb_rd     : std_logic := '1';
     signal s_usb_wr     : std_logic := '1';
     signal s_usb_oe     : std_logic := '1';
     signal s_usb_clk    : std_logic;
-    signal s_usb_data   : std_logic_vector(7 downto 0);
     signal s_usb_rxf    : std_logic;
     signal s_usb_txe    : std_logic;
+    
+    signal s_usb_data_in    : std_logic_vector(7 downto 0);
+    signal s_usb_data_out   : std_logic_vector(7 downto 0);
+    signal s_is_usb_tx      : std_logic; -- 1 FPGA drives data line, 0 High Z
+    
     
 begin 
 
@@ -311,8 +325,10 @@ begin
     -- ADC_OE   <= "00"; -- both channels enabled
     -- ADC_SHDN <= "00"; -- normal operation
     
-    s_usb_clk   <= usb_clk;
-    s_usb_data  <= usb_data;
+    s_usb_clk       <= usb_clk;
+    usb_data        <= s_usb_data_out when s_is_usb_tx = '1' else (others => 'Z');
+    s_usb_data_in   <= usb_data;
+
     s_usb_rxf   <= usb_rxf;
     s_usb_txe   <= usb_txe;
     
@@ -340,7 +356,7 @@ begin
     s_ila0_probe1(0)    <= s_config_usb_rx_read_en;
     s_ila0_probe2(0)    <= s_config_usb_rx_empty;
     
-    s_ila1_probe0       <= s_usb_data;
+    s_ila1_probe0       <= s_usb_data_in;
     s_ila1_probe1(0)    <= s_usb_rxf;
     s_ila1_probe2(0)    <= s_usb_oe;
     s_ila1_probe3(0)    <= s_usb_rd;
@@ -415,22 +431,29 @@ begin
         
     usb_sync_i : component usb_sync
     port map (
-        clk         => clk_40mhz,
-        reset_n     => reset_n,
+        clk             => clk_40mhz,
+        reset_n         => reset_n,
 
-        rx_data     => s_config_usb_rx_readdata,
-        rx_empty    => s_config_usb_rx_empty,
-        rx_read_en  => s_config_usb_rx_read_en,
+        rx_fifo_dout   => s_config_usb_rx_readdata,
+        rx_fifo_empty  => s_config_usb_rx_empty,
+        rx_fifo_rd_en  => s_config_usb_rx_read_en,
 
-        usb_clk     => s_usb_clk,
-        usb_data    => s_usb_data,
+        tx_fifo_din    => s_control_usb_tx_writedata,
+        tx_fifo_wr_en  => s_control_usb_tx_write_en,
+        tx_fifo_full   => s_control_usb_tx_full,
 
-        usb_rxf_n   => s_usb_rxf,
-        usb_txe_n   => s_usb_txe,
+        usb_clk         => s_usb_clk,
+        usb_data_in     => s_usb_data_in,
+        usb_data_out    => s_usb_data_out,
+        is_usb_tx       => s_is_usb_tx,
 
-        usb_oe_n    => s_usb_oe,
-        usb_rd_n    => s_usb_rd,
-        usb_wr_n    => s_usb_wr
+        usb_rxf_n       => s_usb_rxf,
+        usb_txe_n       => s_usb_txe,
+
+        usb_oe_n        => s_usb_oe,
+        usb_rd_n        => s_usb_rd,
+        usb_wr_n        => s_usb_wr
+
     );
 
     config_i : component config

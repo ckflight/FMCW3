@@ -8,15 +8,22 @@ entity usb_sync is
         clk             : in  std_logic;  -- 40 MHz
         reset_n         : in  std_logic;
 
-        -- RX side to your logic
-        rx_data         : out std_logic_vector(7 downto 0);
-        rx_empty        : out std_logic;
-        rx_read_en      : in  std_logic;
+        -- RX side to logic
+        rx_fifo_dout    : out std_logic_vector(7 downto 0);       
+        rx_fifo_rd_en   : in  std_logic;
+        rx_fifo_empty   : out std_logic;
 
+        -- TX side to logic
+        tx_fifo_din     : in std_logic_vector(7 downto 0);
+        tx_fifo_wr_en   : in std_logic;
+        tx_fifo_full    : out std_logic;
+        
         -- FT2232H side
         usb_clk         : in  std_logic;  -- 60 MHz from FT2232H
-        usb_data        : in std_logic_vector(7 downto 0);
-
+        usb_data_in     : in  std_logic_vector(7 downto 0);
+        usb_data_out    : out std_logic_vector(7 downto 0);
+        is_usb_tx       : out std_logic; -- 1 FPGA drives data line, 0 data line High Z for reception
+        
         usb_rxf_n       : in  std_logic;
         usb_txe_n       : in  std_logic;
 
@@ -27,6 +34,24 @@ entity usb_sync is
 end usb_sync;
 
 architecture rtl of usb_sync is
+
+    --------------------------------------------------------------------
+    -- Dual-clock FIFO component
+    -- Replace fifo_generator_0 with your Xilinx FIFO IP name.
+    --------------------------------------------------------------------
+    component fifo_generator_0
+        port (
+            rst     : in  std_logic;
+            wr_clk  : in  std_logic;
+            rd_clk  : in  std_logic;
+            din     : in  std_logic_vector(7 downto 0);
+            wr_en   : in  std_logic;
+            rd_en   : in  std_logic;
+            dout    : out std_logic_vector(7 downto 0);
+            full    : out std_logic;
+            empty   : out std_logic
+        );
+    end component;
 
     --------------------------------------------------------------------
     -- RX FIFO signals
@@ -48,33 +73,32 @@ architecture rtl of usb_sync is
     
     signal rx_state : rx_states_t := RX_IDLE;
 
+    --------------------------------------------------------------------
+    -- TX FIFO signals
+    --------------------------------------------------------------------
+    signal tx_fifo_dout   : std_logic_vector(7 downto 0) := (others => '0');
+    signal tx_fifo_rd_en  : std_logic := '0';
+    signal tx_fifo_empty  : std_logic;
 
     --------------------------------------------------------------------
-    -- Dual-clock FIFO component
-    -- Replace fifo_generator_0 with your Xilinx FIFO IP name.
+    -- TX FSM
     --------------------------------------------------------------------
-    component fifo_generator_0
-        port (
-            rst     : in  std_logic;
-            wr_clk  : in  std_logic;
-            rd_clk  : in  std_logic;
-            din     : in  std_logic_vector(7 downto 0);
-            wr_en   : in  std_logic;
-            rd_en   : in  std_logic;
-            dout    : out std_logic_vector(7 downto 0);
-            full    : out std_logic;
-            empty   : out std_logic
-        );
-    end component;
-
+    type tx_states_t is (
+        TX_IDLE,
+        TX_ASSERT_OE,
+        TX_ASSERT_RD,
+        TX_SAMPLE_BURST,
+        TX_FINISH
+    );
+    
+    signal tx_state : tx_states_t := TX_IDLE;
+    
     signal reset : std_logic;
 
 begin
 
     reset <= not reset_n;
-
-    usb_wr_n <= '1'; -- when tx is implemented delete this    
-    
+        
     --------------------------------------------------------------------
     -- RX FIFO: FTDI 60 MHz write, user 40 MHz read
     --------------------------------------------------------------------
@@ -85,10 +109,26 @@ begin
             rd_clk => clk,
             din    => rx_fifo_din,
             wr_en  => rx_fifo_wr_en,
-            rd_en  => rx_read_en,
-            dout   => rx_data,
+            rd_en  => rx_fifo_rd_en,
+            dout   => rx_fifo_dout,
             full   => rx_fifo_full,
-            empty  => rx_empty
+            empty  => rx_fifo_empty
+        );
+        
+    --------------------------------------------------------------------
+    -- TX FIFO: FTDI 40 MHz write, 60 MHz read for usb tx
+    --------------------------------------------------------------------
+    tx_fifo_inst : fifo_generator_0
+        port map (
+            rst    => reset,
+            wr_clk => clk,
+            rd_clk => usb_clk,
+            din    => tx_fifo_din,
+            wr_en  => tx_fifo_wr_en,
+            rd_en  => tx_fifo_rd_en,
+            dout   => tx_fifo_dout,
+            full   => tx_fifo_full,
+            empty  => tx_fifo_empty
         );
     
     --------------------------------------------------------------------
@@ -101,9 +141,9 @@ begin
 
             rx_state <= RX_IDLE;
 
-            usb_oe_n <= '1';
-            usb_rd_n <= '1';
-
+            usb_oe_n    <= '1';
+            usb_rd_n    <= '1';
+            is_usb_tx   <= '0';
 
             rx_fifo_din   <= (others => '0');
             rx_fifo_wr_en <= '0';
@@ -117,11 +157,12 @@ begin
                 
                 -- Wait until byte is on bus
                 when RX_IDLE =>
-                    usb_oe_n <= '1';
-                    usb_rd_n <= '1';
+                    usb_oe_n    <= '1';
+                    usb_rd_n    <= '1';
+                    is_usb_tx   <= '0';
 
                     -- ft2232h drives rxf = 0 to indicate reception
-                    if usb_rxf_n = '0' and rx_fifo_full = '0' then
+                    if usb_rxf_n = '0' and rx_fifo_full = '0' and tx_state = TX_IDLE then
                         rx_state <= RX_ASSERT_OE;
                     end if;
 
@@ -147,8 +188,8 @@ begin
                     usb_oe_n <= '0';
                     usb_rd_n <= '0';
                     
-                    if usb_rxf_n = '0' and rx_fifo_full = '0' then
-                        rx_fifo_din   <= usb_data;
+                    if usb_rxf_n = '0' and rx_fifo_full = '0' and tx_state = TX_IDLE then
+                        rx_fifo_din   <= usb_data_in;
                         rx_fifo_wr_en <= '1';
                     else
                         rx_state <= RX_FINISH;
@@ -159,7 +200,7 @@ begin
                     usb_oe_n <= '1';
                     usb_rd_n <= '1';
                 
-                    if usb_rxf_n = '0' and rx_fifo_full = '0' then
+                    if usb_rxf_n = '0' and rx_fifo_full = '0' and tx_state = TX_IDLE then
                         rx_state <= RX_ASSERT_OE;
                     else
                         rx_state <= RX_IDLE;
@@ -169,24 +210,22 @@ begin
         end if;
     end process;
 
-    --------------------------------------------------------------------
-    -- FT2232H TX FSM
-    -- Sends TX FIFO bytes to FTDI
-    --------------------------------------------------------------------
---    process(usb_clkout, reset_n)
+--    --------------------------------------------------------------------
+--    -- FT2232H TX FSM
+--    -- Sends TX FIFO bytes to FTDI
+--    --------------------------------------------------------------------
+--    process(usb_clk, reset_n)
 --    begin
 --        if reset_n = '0' then
 
 --            tx_state <= TX_IDLE;
 
---            usb_wr_n <= '1';
+--            usb_oe_n        <= '0';
+--            usb_wr_n        <= '1';
+--            tx_fifo_rd_en   <= '0';
+--            usb_data_out    <= (others => '0');                        
 
---            usb_data_out <= (others => '0');
---            usb_data_oe  <= '0';
-
---            tx_fifo_rd_en <= '0';
-
---        elsif rising_edge(usb_clkout) then
+--        elsif rising_edge(usb_clk) then
 
 --            tx_fifo_rd_en <= '0';
 
@@ -194,10 +233,10 @@ begin
 
 --                when TX_IDLE =>
 --                    usb_wr_n <= '1';
---                    usb_data_oe <= '0';
+--                    usb_oe_n <= '0';
 
 --                    -- Only transmit when FTDI can accept data and TX FIFO has data
---                    if usb_txe_n = '0' and tx_fifo_empty = '0' then
+--                    if usb_txe_n = '0' and tx_fifo_empty = '0' and rx_state = RX_IDLE then
 --                        tx_fifo_rd_en <= '1';
 --                        tx_state <= TX_LOAD;
 --                    end if;
@@ -206,7 +245,7 @@ begin
 --                when TX_LOAD =>
 --                    -- FIFO output should now be valid
 --                    usb_data_out <= tx_fifo_dout;
---                    usb_data_oe  <= '1';
+--                    usb_oe_n  <= '1';
 --                    usb_wr_n     <= '1';
 
 --                    tx_state <= TX_ASSERT_WR;
@@ -214,7 +253,7 @@ begin
 
 --                when TX_ASSERT_WR =>
 --                    -- WR# low writes byte into FTDI
---                    usb_data_oe <= '1';
+--                    usb_oe_n <= '1';
 --                    usb_wr_n    <= '0';
 
 --                    tx_state <= TX_DEASSERT_WR;
@@ -222,14 +261,14 @@ begin
 
 --                when TX_DEASSERT_WR =>
 --                    -- Finish write pulse
---                    usb_data_oe <= '1';
+--                    usb_oe_n <= '1';
 --                    usb_wr_n    <= '1';
 
 --                    if usb_txe_n = '0' and tx_fifo_empty = '0' then
 --                        tx_fifo_rd_en <= '1';
 --                        tx_state <= TX_LOAD;
 --                    else
---                        usb_data_oe <= '0';
+--                        usb_oe_n <= '0';
 --                        tx_state <= TX_IDLE;
 --                    end if;
 
