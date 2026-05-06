@@ -178,8 +178,6 @@ int main(void){
     config_parameters.usb_data_type           = buffer[22];
     config_parameters.adc_resolution          = buffer[23];
     config_parameters.sample_averaging        = buffer[24];
-
-    while(1);
     
     // Init rf sythnesizer according to the received parameters
     ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters);
