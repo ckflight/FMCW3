@@ -377,13 +377,13 @@ begin
     adf_txdata          <= '0'; -- not used. this is for data modulation
         
     s_adf_ce            <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
-    --adf_ce              <= s_adf_ce;
+    adf_ce              <= s_adf_ce;
     
     s_adf_le            <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
-    --adf_le              <= s_adf_le;
+    adf_le              <= s_adf_le;
     
-    --adf_data            <= s_adf_data;
-    --adf_clk             <= s_adf_clk;
+    adf_data            <= s_adf_data;
+    adf_clk             <= s_adf_clk;
     
     s_microblaze_done   <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
     s_ramp_configured   <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
