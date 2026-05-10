@@ -123,6 +123,8 @@ architecture Behavioral of top_module is
         tx_fifo_din     : in std_logic_vector(7 downto 0);
         tx_fifo_wr_en   : in std_logic;
         tx_fifo_full    : out std_logic;
+        tx_fifo_wr_ack  : out std_logic;
+        tx_fifo_wr_ovf  : out std_logic;
         
         -- FT2232H side
         usb_clk         : in  std_logic;  -- 60 MHz from FT2232H
@@ -170,40 +172,40 @@ architecture Behavioral of top_module is
         );
     end component;
     
---    component control is
---    generic (
---        MAX_SAMPLES                 : integer := MAX_ADC_SAMPLES -- number of decimated samples per ramp
---    );
---    port (
---        clk                         : in  std_logic; -- system clock
---        reset_n                     : in  std_logic; -- active low reset
---        soft_reset_n                : in  std_logic; -- active low software reset by microblaze to reset modules for next radar op
---        muxout                      : in  std_logic; -- high during ramp
+    component control is
+    generic (
+        MAX_SAMPLES                 : integer := MAX_ADC_SAMPLES -- number of decimated samples per ramp
+    );
+    port (
+        clk                         : in  std_logic; -- system clock
+        reset_n                     : in  std_logic; -- active low reset
+        soft_reset_n                : in  std_logic; -- active low software reset by microblaze to reset modules for next radar op
+        muxout                      : in  std_logic; -- high during ramp
 
---        -- ADC inputs
---        adc_data_a                  : in  std_logic_vector(15 downto 0);
---        adc_data_b                  : in  std_logic_vector(15 downto 0);
---        adc_valid                   : in  std_logic;
+        -- ADC inputs
+        adc_data_a                  : in  std_logic_vector(15 downto 0);
+        adc_data_b                  : in  std_logic_vector(15 downto 0);
+        adc_valid                   : in  std_logic;
 
---        -- ADC control outputs
---        adc_oe                      : out std_logic_vector(1 downto 0);
---        adc_shdn                    : out std_logic_vector(1 downto 0);
---        pa_en                       : out std_logic;
---        mixer_en                    : out std_logic;
+        -- ADC control outputs
+        adc_oe                      : out std_logic_vector(1 downto 0);
+        adc_shdn                    : out std_logic_vector(1 downto 0);
+        pa_en                       : out std_logic;
+        mixer_en                    : out std_logic;
 
---        config_done                 : in std_logic;
+        config_done                 : in std_logic;
 
---        -- USB interface
---        usb_tx_write_en             : out std_logic;
---        usb_tx_writedata            : out std_logic_vector(7 downto 0);
---        usb_tx_full                 : in  std_logic;
+        -- USB interface
+        usb_tx_write_en             : out std_logic;
+        usb_tx_writedata            : out std_logic_vector(7 downto 0);
+        usb_tx_full                 : in  std_logic;
         
---        microblaze_ramp_configured  : in std_logic; -- microblaze sends this signal that ramp is configured radar can start op
---        microblaze_sampling_done    : in std_logic; -- microblaze will calculate total sampling time and tell control module to stop sampling
---        ramp_done                   : out std_logic -- debugging signal
+        microblaze_ramp_configured  : in std_logic; -- microblaze sends this signal that ramp is configured radar can start op
+        microblaze_sampling_done    : in std_logic; -- microblaze will calculate total sampling time and tell control module to stop sampling
+        ramp_done                   : out std_logic -- debugging signal
 
---    );  
---    end component;
+    );  
+    end component;
 
     component ila_0
     PORT (
@@ -311,6 +313,9 @@ architecture Behavioral of top_module is
     signal s_usb_clk    : std_logic;
     signal s_usb_rxf    : std_logic;
     signal s_usb_txe    : std_logic;
+    
+    signal s_tx_fifo_wr_ack : std_logic;
+    signal s_tx_fifo_wr_ovf : std_logic;
     
     signal s_usb_data_in    : std_logic_vector(7 downto 0);
     signal s_usb_data_out   : std_logic_vector(7 downto 0);
@@ -487,6 +492,8 @@ begin
         tx_fifo_din    => s_control_usb_tx_writedata,
         tx_fifo_wr_en  => s_control_usb_tx_write_en,
         tx_fifo_full   => s_control_usb_tx_full,
+        tx_fifo_wr_ack => s_tx_fifo_wr_ack,
+        tx_fifo_wr_ovf => s_tx_fifo_wr_ovf,
 
         usb_clk         => s_usb_clk,
         usb_data_in     => s_usb_data_in,
@@ -534,36 +541,36 @@ begin
     );
     
     -- Control FSM instantiation    
---    control_i : control
---    generic map (
---        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
---    )
---    port map (
---        clk                         => clk_40mhz,
+    control_i : component control
+    generic map (
+        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
+    )
+    port map (
+        clk                         => clk_40mhz,
         
---        reset_n                     => reset_n,
---        soft_reset_n                => s_soft_reset_n,
+        reset_n                     => reset_n,
+        soft_reset_n                => s_soft_reset_n,
         
---        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
+        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
         
---        adc_data_a                  => s_adc_a_out,
---        adc_data_b                  => s_adc_b_out,
---        adc_valid                   => s_adc_valid,
---        adc_oe                      => adc_oe,
---        adc_shdn                    => adc_shdn,
+        adc_data_a                  => s_adc_a_out,
+        adc_data_b                  => s_adc_b_out,
+        adc_valid                   => s_adc_valid,
+        adc_oe                      => adc_oe,
+        adc_shdn                    => adc_shdn,
         
---        pa_en                       => pa_en,
---        mixer_en                    => mix_en,
---        config_done                 => s_config_done,   -- input from config module to start sampling
+        pa_en                       => pa_en,
+        mixer_en                    => mix_en,
+        config_done                 => s_config_done,   -- input from config module to start sampling
         
---        usb_tx_write_en             => s_control_usb_tx_write_en,
---        usb_tx_writedata            => s_control_usb_tx_writedata,
---        usb_tx_full                 => s_control_usb_tx_full,
+        usb_tx_write_en             => s_control_usb_tx_write_en,
+        usb_tx_writedata            => s_control_usb_tx_writedata,
+        usb_tx_full                 => s_control_usb_tx_full,
         
---        microblaze_ramp_configured  => s_ramp_configured,
---        microblaze_sampling_done    => s_microblaze_done,
---        ramp_done                   => s_ramp_done
---    );
+        microblaze_ramp_configured  => s_ramp_configured,
+        microblaze_sampling_done    => s_microblaze_done,
+        ramp_done                   => s_ramp_done
+    );
 
     ila_0_i : ila_0
     port map (
