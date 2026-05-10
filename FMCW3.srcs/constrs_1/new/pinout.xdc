@@ -70,19 +70,19 @@ set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en 
 
 # External Connector
 
-##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
-#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
-#set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[2] }];
-#set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[3] }];
-#set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }];
-#set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[5] }];
+##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; -- oe is using
+set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
+set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
+set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[2] }];
+set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[3] }];
+#set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }]; -- burned
 
 set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { ext2[0] }];
 set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { ext2[1] }];
 set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { ext2[2] }];
-set_property -dict { PACKAGE_PIN A7    IOSTANDARD LVCMOS33 } [get_ports { ext2[3] }];
-set_property -dict { PACKAGE_PIN B5    IOSTANDARD LVCMOS33 } [get_ports { ext2[4] }];
-set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { ext2[5] }];
+#set_property -dict { PACKAGE_PIN A7    IOSTANDARD LVCMOS33 } [get_ports { ext2[3] }]; -- burned
+#set_property -dict { PACKAGE_PIN B5    IOSTANDARD LVCMOS33 } [get_ports { ext2[4] }]; -- burned
+#set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { ext2[5] }]; -- burned
 
 
 # SD CARD

@@ -1,11 +1,11 @@
 {
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
-    "xci_name": "microblaze_axi_quad_spi_0_1",
+    "xci_name": "microblaze_axi_quad_spi_0_2",
     "cell_name": "axi_quad_spi_0",
     "component_reference": "xilinx.com:ip:axi_quad_spi:3.2",
     "ip_revision": "35",
-    "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1",
+    "gen_directory": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2",
     "parameters": {
       "component_parameters": {
         "C_SPI_MEMORY": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -15,7 +15,7 @@
         "C_NUM_TRANSFER_BITS": [ { "value": "8", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_DUAL_QUAD_MODE": [ { "value": "0", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "C_NUM_SS_BITS": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_SCK_RATIO": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_SCK_RATIO": [ { "value": "16", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_FIFO_DEPTH": [ { "value": "16", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_XIP_MODE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_BYTE_LEVEL_INTERRUPT_EN": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -27,10 +27,10 @@
         "C_SUB_FAMILY": [ { "value": "artix7", "resolve_type": "user", "usage": "all" } ],
         "C_TYPE_OF_AXI4_INTERFACE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_INSTANCE": [ { "value": "axi_quad_spi_inst", "resolve_type": "user", "usage": "all" } ],
-        "Component_Name": [ { "value": "microblaze_axi_quad_spi_0_1", "resolve_type": "user", "usage": "all" } ],
+        "Component_Name": [ { "value": "microblaze_axi_quad_spi_0_2", "resolve_type": "user", "usage": "all" } ],
         "Master_mode": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "FIFO_INCLUDED": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "Multiples16": [ { "value": "1", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
+        "Multiples16": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_SCK_RATIO1": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Async_Clk": [ { "value": "0", "value_src": "propagated", "value_permission": "bd_and_user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_S_AXI4_BASEADDR": [ { "value": "0xFFFFFFFF", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
@@ -53,7 +53,7 @@
         "C_BYTE_LEVEL_INTERRUPT_EN": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_UC_FAMILY": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_FIFO_DEPTH": [ { "value": "16", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_SCK_RATIO": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_SCK_RATIO": [ { "value": "16", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_DUAL_QUAD_MODE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_NUM_SS_BITS": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_NUM_TRANSFER_BITS": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -89,7 +89,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "35" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2025.2" } ],
@@ -184,7 +184,7 @@
             "SUPPORTS_NARROW_BURST": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_READ_OUTSTANDING": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_WRITE_OUTSTANDING": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MAX_BURST_LENGTH": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "microblaze_Clk", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "NUM_READ_THREADS": [ { "value": "1", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
@@ -867,5 +867,5 @@
       }
     }
   },
-  "checksum": "3c8474ea"
+  "checksum": "d1f4b5b7"
 }

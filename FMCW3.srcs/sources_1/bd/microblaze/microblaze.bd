@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x27DD829365A309F7",
+      "boundary_crc": "0xBAC12DD4BF136D48",
       "device": "xc7a35tftg256-1",
       "gen_directory": "../../../../FMCW3.gen/sources_1/bd/microblaze",
       "name": "microblaze",
@@ -25,9 +25,9 @@
       "mdm_1": "",
       "rst_Clk_100M": "",
       "axi_gpio_0": "",
-      "axi_quad_spi_0": "",
       "axi_timer_0": "",
-      "axi_fifo_mm_s_0": ""
+      "axi_fifo_mm_s_0": "",
+      "axi_quad_spi_0": ""
     },
     "interface_ports": {
       "gpio_rtl_0": {
@@ -254,19 +254,59 @@
           }
         }
       },
-      "spi0_miso": {
-        "direction": "I"
+      "SPI0_MOSI": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
-      "spi0_mosi": {
-        "direction": "O"
+      "SPI0_MISO": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       },
-      "spi0_sck": {
-        "direction": "O"
+      "SPI0_CLK": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
       },
-      "spi0_cs": {
+      "SPI0_CS": {
+        "type": "data",
         "direction": "O",
         "left": "0",
-        "right": "0"
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -274,7 +314,7 @@
         "vlnv": "xilinx.com:ip:microblaze:11.0",
         "ip_revision": "16",
         "xci_name": "microblaze_microblaze_0_5",
-        "xci_path": "ip\\microblaze_microblaze_0_5\\microblaze_microblaze_0_5.xci",
+        "xci_path": "ip/microblaze_microblaze_0_5/microblaze_microblaze_0_5.xci",
         "inst_hier_path": "microblaze_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -294,7 +334,7 @@
             "value": "1"
           },
           "C_NUMBER_OF_PC_BRK": {
-            "value": "4"
+            "value": "8"
           },
           "C_USE_DIV": {
             "value": "1"
@@ -431,7 +471,7 @@
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "16",
             "xci_name": "microblaze_dlmb_v10_5",
-            "xci_path": "ip\\microblaze_dlmb_v10_5\\microblaze_dlmb_v10_5.xci",
+            "xci_path": "ip/microblaze_dlmb_v10_5/microblaze_dlmb_v10_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/dlmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -466,7 +506,7 @@
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "16",
             "xci_name": "microblaze_ilmb_v10_5",
-            "xci_path": "ip\\microblaze_ilmb_v10_5\\microblaze_ilmb_v10_5.xci",
+            "xci_path": "ip/microblaze_ilmb_v10_5/microblaze_ilmb_v10_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/ilmb_v10",
             "has_run_ip_tcl": "true",
             "interface_ports": {
@@ -501,7 +541,7 @@
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "27",
             "xci_name": "microblaze_dlmb_bram_if_cntlr_5",
-            "xci_path": "ip\\microblaze_dlmb_bram_if_cntlr_5\\microblaze_dlmb_bram_if_cntlr_5.xci",
+            "xci_path": "ip/microblaze_dlmb_bram_if_cntlr_5/microblaze_dlmb_bram_if_cntlr_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/dlmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -534,7 +574,7 @@
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "27",
             "xci_name": "microblaze_ilmb_bram_if_cntlr_5",
-            "xci_path": "ip\\microblaze_ilmb_bram_if_cntlr_5\\microblaze_ilmb_bram_if_cntlr_5.xci",
+            "xci_path": "ip/microblaze_ilmb_bram_if_cntlr_5/microblaze_ilmb_bram_if_cntlr_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/ilmb_bram_if_cntlr",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -557,7 +597,7 @@
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
             "ip_revision": "12",
             "xci_name": "microblaze_lmb_bram_5",
-            "xci_path": "ip\\microblaze_lmb_bram_5\\microblaze_lmb_bram_5.xci",
+            "xci_path": "ip/microblaze_lmb_bram_5/microblaze_lmb_bram_5.xci",
             "inst_hier_path": "microblaze_0_local_memory/lmb_bram",
             "has_run_ip_tcl": "true",
             "parameters": {
@@ -633,7 +673,7 @@
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "28",
         "xci_name": "microblaze_microblaze_0_axi_periph_2",
-        "xci_path": "ip\\microblaze_microblaze_0_axi_periph_2\\microblaze_microblaze_0_axi_periph_2.xci",
+        "xci_path": "ip/microblaze_microblaze_0_axi_periph_2/microblaze_microblaze_0_axi_periph_2.xci",
         "inst_hier_path": "microblaze_0_axi_periph",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -868,7 +908,7 @@
         "vlnv": "xilinx.com:ip:axi_intc:4.1",
         "ip_revision": "22",
         "xci_name": "microblaze_microblaze_0_axi_intc_2",
-        "xci_path": "ip\\microblaze_microblaze_0_axi_intc_2\\microblaze_microblaze_0_axi_intc_2.xci",
+        "xci_path": "ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2.xci",
         "inst_hier_path": "microblaze_0_axi_intc",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -906,7 +946,7 @@
         "vlnv": "xilinx.com:ip:mdm:3.2",
         "ip_revision": "29",
         "xci_name": "microblaze_mdm_1_4",
-        "xci_path": "ip\\microblaze_mdm_1_4\\microblaze_mdm_1_4.xci",
+        "xci_path": "ip/microblaze_mdm_1_4/microblaze_mdm_1_4.xci",
         "inst_hier_path": "mdm_1",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -925,7 +965,7 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "ip_revision": "17",
         "xci_name": "microblaze_rst_Clk_100M_0",
-        "xci_path": "ip\\microblaze_rst_Clk_100M_0\\microblaze_rst_Clk_100M_0.xci",
+        "xci_path": "ip/microblaze_rst_Clk_100M_0/microblaze_rst_Clk_100M_0.xci",
         "inst_hier_path": "rst_Clk_100M",
         "has_run_ip_tcl": "true"
       },
@@ -933,7 +973,7 @@
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "37",
         "xci_name": "microblaze_axi_gpio_0_2",
-        "xci_path": "ip\\microblaze_axi_gpio_0_2\\microblaze_axi_gpio_0_2.xci",
+        "xci_path": "ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2.xci",
         "inst_hier_path": "axi_gpio_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -945,27 +985,11 @@
           }
         }
       },
-      "axi_quad_spi_0": {
-        "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
-        "ip_revision": "35",
-        "xci_name": "microblaze_axi_quad_spi_0_1",
-        "xci_path": "ip\\microblaze_axi_quad_spi_0_1\\microblaze_axi_quad_spi_0_1.xci",
-        "inst_hier_path": "axi_quad_spi_0",
-        "has_run_ip_tcl": "true",
-        "parameters": {
-          "C_SCK_RATIO": {
-            "value": "8"
-          },
-          "C_USE_STARTUP": {
-            "value": "0"
-          }
-        }
-      },
       "axi_timer_0": {
         "vlnv": "xilinx.com:ip:axi_timer:2.0",
         "ip_revision": "37",
         "xci_name": "microblaze_axi_timer_0_1",
-        "xci_path": "ip\\microblaze_axi_timer_0_1\\microblaze_axi_timer_0_1.xci",
+        "xci_path": "ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1.xci",
         "inst_hier_path": "axi_timer_0",
         "has_run_ip_tcl": "true"
       },
@@ -973,9 +997,25 @@
         "vlnv": "xilinx.com:ip:axi_fifo_mm_s:4.3",
         "ip_revision": "7",
         "xci_name": "microblaze_axi_fifo_mm_s_0_2",
-        "xci_path": "ip\\microblaze_axi_fifo_mm_s_0_2\\microblaze_axi_fifo_mm_s_0_2.xci",
+        "xci_path": "ip/microblaze_axi_fifo_mm_s_0_2/microblaze_axi_fifo_mm_s_0_2.xci",
         "inst_hier_path": "axi_fifo_mm_s_0",
         "has_run_ip_tcl": "true"
+      },
+      "axi_quad_spi_0": {
+        "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
+        "ip_revision": "35",
+        "xci_name": "microblaze_axi_quad_spi_0_2",
+        "xci_path": "ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2.xci",
+        "inst_hier_path": "axi_quad_spi_0",
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "C_SCK_RATIO": {
+            "value": "16"
+          },
+          "C_USE_STARTUP": {
+            "value": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1065,6 +1105,12 @@
       }
     },
     "nets": {
+      "SPI0_MISO_1": {
+        "ports": [
+          "SPI0_MISO",
+          "axi_quad_spi_0/io1_i"
+        ]
+      },
       "axi_fifo_mm_s_0_interrupt": {
         "ports": [
           "axi_fifo_mm_s_0/interrupt",
@@ -1074,31 +1120,25 @@
       "axi_quad_spi_0_io0_o": {
         "ports": [
           "axi_quad_spi_0/io0_o",
-          "spi0_mosi"
+          "SPI0_MOSI"
         ]
       },
       "axi_quad_spi_0_sck_o": {
         "ports": [
           "axi_quad_spi_0/sck_o",
-          "spi0_sck"
+          "SPI0_CLK"
         ]
       },
       "axi_quad_spi_0_ss_o": {
         "ports": [
           "axi_quad_spi_0/ss_o",
-          "spi0_cs"
+          "SPI0_CS"
         ]
       },
       "axi_timer_0_interrupt": {
         "ports": [
           "axi_timer_0/interrupt",
           "microblaze_0_xlconcat/In1"
-        ]
-      },
-      "io1_i_0_1": {
-        "ports": [
-          "spi0_miso",
-          "axi_quad_spi_0/io1_i"
         ]
       },
       "mdm_1_debug_sys_rst": {
@@ -1118,10 +1158,10 @@
           "mdm_1/S_AXI_ACLK",
           "rst_Clk_100M/slowest_sync_clk",
           "axi_gpio_0/s_axi_aclk",
-          "axi_quad_spi_0/s_axi_aclk",
           "axi_timer_0/s_axi_aclk",
-          "axi_quad_spi_0/ext_spi_clk",
-          "axi_fifo_mm_s_0/s_axi_aclk"
+          "axi_fifo_mm_s_0/s_axi_aclk",
+          "axi_quad_spi_0/s_axi_aclk",
+          "axi_quad_spi_0/ext_spi_clk"
         ]
       },
       "microblaze_0_intr": {
@@ -1156,9 +1196,9 @@
           "mdm_1/S_AXI_ARESETN",
           "microblaze_0_axi_intc/s_axi_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "axi_quad_spi_0/s_axi_aresetn",
           "axi_timer_0/s_axi_aresetn",
-          "axi_fifo_mm_s_0/s_axi_aresetn"
+          "axi_fifo_mm_s_0/s_axi_aresetn",
+          "axi_quad_spi_0/s_axi_aresetn"
         ]
       }
     },
@@ -1224,7 +1264,7 @@
       "file": {
         "name": "../../../../FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
         "type": "ELF",
-        "checksum": "3291049081",
+        "checksum": "1809907885",
         "IsVisible": "1",
         "ScopedToRef": "microblaze",
         "ScopedToCell": [

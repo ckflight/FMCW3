@@ -82,7 +82,7 @@
         "C_PVR_USER2": [ { "value": "0x00000000", "resolve_type": "user", "format": "bitString", "enabled": false, "usage": "all" } ],
         "C_DEBUG_ENABLED": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_DEBUG_INTERFACE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_NUMBER_OF_PC_BRK": [ { "value": "4", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_NUMBER_OF_PC_BRK": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_NUMBER_OF_RD_ADDR_BRK": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_NUMBER_OF_WR_ADDR_BRK": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_DEBUG_EVENT_COUNTERS": [ { "value": "5", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
@@ -309,7 +309,7 @@
         "C_OPCODE_0x0_ILLEGAL": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_DEBUG_ENABLED": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_DEBUG_INTERFACE": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_NUMBER_OF_PC_BRK": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_NUMBER_OF_PC_BRK": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_NUMBER_OF_RD_ADDR_BRK": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_NUMBER_OF_WR_ADDR_BRK": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_DEBUG_EVENT_COUNTERS": [ { "value": "5", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -692,5 +692,5 @@
       }
     }
   },
-  "checksum": "89ef49d0"
+  "checksum": "8b67ca62"
 }

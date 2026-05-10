@@ -50,8 +50,8 @@ entity top_module is
         mix_en          : out std_logic;
 
         -- External Connectors
-        --ext1            : out std_logic_vector(5 downto 0);
-        ext2            : out std_logic_vector(5 downto 0);
+        ext1            : out std_logic_vector(3 downto 0);
+        ext2            : out std_logic_vector(2 downto 0);
 
         -- SD Card
         SD_DATA         : inout std_logic_vector(3 downto 0);
@@ -78,23 +78,21 @@ architecture Behavioral of top_module is
     -- Then vhdl code will run logic according to the state of muxout pulse (READBACK TO MUXOUT is set on spi config for this)
     component microblaze_wrapper is
     port (
-        gpio_rtl_0_tri_o        : out STD_LOGIC_VECTOR ( 15 downto 0 );
-        reset_rtl_0             : in STD_LOGIC;
-        spi0_mosi               : out STD_LOGIC;
-        spi0_miso               : in STD_LOGIC;
-        spi0_sck                : out STD_LOGIC;
-        spi0_cs                 : out STD_LOGIC_VECTOR ( 0 to 0 );
-        Clk                     : in STD_LOGIC;        
-        
+        AXI_STR_RXD_0_tdata     : in STD_LOGIC_VECTOR ( 31 downto 0 );
+        AXI_STR_RXD_0_tlast     : in STD_LOGIC;
+        AXI_STR_RXD_0_tready    : out STD_LOGIC;
+        AXI_STR_RXD_0_tvalid    : in STD_LOGIC;
         AXI_STR_TXD_0_tdata     : out STD_LOGIC_VECTOR ( 31 downto 0 );
         AXI_STR_TXD_0_tlast     : out STD_LOGIC;
         AXI_STR_TXD_0_tready    : in STD_LOGIC;
         AXI_STR_TXD_0_tvalid    : out STD_LOGIC;
-        
-        AXI_STR_RXD_0_tdata     : in STD_LOGIC_VECTOR ( 31 downto 0 );
-        AXI_STR_RXD_0_tlast     : in STD_LOGIC;
-        AXI_STR_RXD_0_tready    : out STD_LOGIC;
-        AXI_STR_RXD_0_tvalid    : in STD_LOGIC
+        Clk                     : in STD_LOGIC;
+        SPI0_CLK                : out STD_LOGIC;
+        SPI0_CS                 : out STD_LOGIC_VECTOR ( 0 to 0 );
+        SPI0_MISO               : in STD_LOGIC;
+        SPI0_MOSI               : out STD_LOGIC;
+        gpio_rtl_0_tri_o        : out STD_LOGIC_VECTOR ( 15 downto 0 );
+        reset_rtl_0             : in STD_LOGIC
     );
     end component microblaze_wrapper;
     
@@ -248,8 +246,8 @@ architecture Behavioral of top_module is
     signal s_uart_rtl_0_txd         : std_logic := '1';
     
     signal s_spi0_miso              : std_logic := 'Z';  -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
-    signal s_spi0_cs                : std_logic := '1';  -- LE pin will be controlled with gpio so this spi's cs will only be connected to internal signal for now
-   
+    signal s_spi0_cs                : std_logic_vector(0 downto 0);
+       
     -- AXI-Stream RX (VHDL → MicroBlaze)
     signal s_AXI_STR_RXD_0_tdata    : std_logic_vector(31 downto 0);
     signal s_AXI_STR_RXD_0_tvalid   : std_logic;
@@ -325,7 +323,7 @@ architecture Behavioral of top_module is
     signal s_adf_le         : std_logic;
     signal s_adf_clk        : std_logic;
     signal s_adf_data       : std_logic;
-    
+
 begin 
 
     -- GENERAL CODE FLOW UPTO NOW:
@@ -369,15 +367,12 @@ begin
     usb_siwua <= '1'; -- when 1 not used
  
     -- Not used for now
-    --ext1 <= (others => '0');
-    --ext2 <= (others => '0');
     
-    ext2(0) <= s_adf_ce;
-    ext2(1) <= s_adf_le;
-    ext2(2) <= s_adf_clk;
-    ext2(3) <= s_adf_data;
-    ext2(4) <= '0';
-    ext2(5) <= '0';
+    --ext1(0) <= s_adf_data; -- ext1(0) is oe now so ext1(1) became etx1(0)
+    
+    --ext2(0) <= s_adf_ce;
+    --ext2(1) <= s_adf_le;
+    --ext2(2) <= s_adf_clk;
                 
     adf_txdata          <= '0'; -- not used. this is for data modulation
         
@@ -433,16 +428,6 @@ begin
        
     microblaze_i: component microblaze_wrapper
     port map (
-        Clk                             => clk_100mhz,
-        gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
-        reset_rtl_0                     => reset_n,         -- Board's reset is active low
-        spi0_cs(0)                      => s_spi0_cs,       -- spi cs not used, gpio is used to drive cs pin
-        spi0_miso                       => s_spi0_miso,     -- spi miso not used adf does not have output
-        spi0_mosi                       => s_adf_data,      -- spi mosi
-        spi0_sck                        => s_adf_clk,       -- spi clk
-        --uart_rtl_0_rxd                  => s_uart_rtl_0_rxd,
-        --uart_rtl_0_txd                  => s_uart_rtl_0_txd,
-        
         -- VHDL --> Microblaze data transfer. Radar's configuration data is received by FT2232H's rx which is controlled by config.vhd
         -- Received config data is transferred to microblaze for it to configure ADF4158 over spi.
         AXI_STR_RXD_0_tdata(31 downto 0)=> s_AXI_STR_RXD_0_tdata(31 downto 0),
@@ -454,7 +439,18 @@ begin
         AXI_STR_TXD_0_tdata(31 downto 0)=> s_AXI_STR_TXD_0_tdata(31 downto 0),
         AXI_STR_TXD_0_tlast             => s_AXI_STR_TXD_0_tlast,
         AXI_STR_TXD_0_tready            => s_AXI_STR_TXD_0_tready,
-        AXI_STR_TXD_0_tvalid            => s_AXI_STR_TXD_0_tvalid
+        AXI_STR_TXD_0_tvalid            => s_AXI_STR_TXD_0_tvalid,
+
+        Clk                             => clk_100mhz,
+
+        SPI0_CLK                        => s_adf_clk,       -- spi clk
+        SPI0_CS                         => s_spi0_cs,       -- spi cs not used, gpio is used to drive cs pin
+        SPI0_MISO                       => s_spi0_miso,     -- spi miso not used adf does not have output
+        SPI0_MOSI                       => s_adf_data,      -- spi mosi
+
+        gpio_rtl_0_tri_o(15 downto 0)   => s_gpio_rtl_0_tri_o(15 downto 0),
+        reset_rtl_0                     => reset_n         -- Board's reset is active low  
+
     );
     
     -- Only DATA_A 12 bit line is connected to fpga
@@ -541,36 +537,36 @@ begin
     );
     
     -- Control FSM instantiation    
-    control_i : component control
-    generic map (
-        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
-    )
-    port map (
-        clk                         => clk_40mhz,
+--    control_i : component control
+--    generic map (
+--        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
+--    )
+--    port map (
+--        clk                         => clk_40mhz,
         
-        reset_n                     => reset_n,
-        soft_reset_n                => s_soft_reset_n,
+--        reset_n                     => reset_n,
+--        soft_reset_n                => s_soft_reset_n,
         
-        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
+--        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
         
-        adc_data_a                  => s_adc_a_out,
-        adc_data_b                  => s_adc_b_out,
-        adc_valid                   => s_adc_valid,
-        adc_oe                      => adc_oe,
-        adc_shdn                    => adc_shdn,
+--        adc_data_a                  => s_adc_a_out,
+--        adc_data_b                  => s_adc_b_out,
+--        adc_valid                   => s_adc_valid,
+--        adc_oe                      => adc_oe,
+--        adc_shdn                    => adc_shdn,
         
-        pa_en                       => pa_en,
-        mixer_en                    => mix_en,
-        config_done                 => s_config_done,   -- input from config module to start sampling
+--        pa_en                       => pa_en,
+--        mixer_en                    => mix_en,
+--        config_done                 => s_config_done,   -- input from config module to start sampling
         
-        usb_tx_write_en             => s_control_usb_tx_write_en,
-        usb_tx_writedata            => s_control_usb_tx_writedata,
-        usb_tx_full                 => s_control_usb_tx_full,
+--        usb_tx_write_en             => s_control_usb_tx_write_en,
+--        usb_tx_writedata            => s_control_usb_tx_writedata,
+--        usb_tx_full                 => s_control_usb_tx_full,
         
-        microblaze_ramp_configured  => s_ramp_configured,
-        microblaze_sampling_done    => s_microblaze_done,
-        ramp_done                   => s_ramp_done
-    );
+--        microblaze_ramp_configured  => s_ramp_configured,
+--        microblaze_sampling_done    => s_microblaze_done,
+--        ramp_done                   => s_ramp_done
+--    );
 
     ila_0_i : ila_0
     port map (
