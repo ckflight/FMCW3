@@ -60,6 +60,13 @@ uint32_t read_timer()
     return XTmrCtr_GetValue(&TimerInstance, 0);
 }
 
+uint32_t read_timer_us()
+{
+    uint32_t ticks = XTmrCtr_GetValue(&TimerInstance, 0);
+
+    return (ticks * 1000000ULL) / XPAR_AXI_TIMER_0_CLOCK_FREQUENCY;
+}
+
 uint16_t get_u16_be(uint8_t *buf, int index)
 {
     return ((uint16_t)buf[index] << 8) | buf[index + 1];
@@ -162,32 +169,32 @@ int main(void){
 
     config_parameters.sweep_time              = get_u16_be(buffer, 2);
     config_parameters.sweep_delay             = get_u16_be(buffer, 4);
-    config_parameters.record_time             = buffer[6];
+    config_parameters.record_time             = (uint8_t)buffer[6];
+    uint32_t time_counter = config_parameters.record_time * 1000000;
+
     config_parameters.sampling_frequency      = get_u16_be(buffer, 7);   // kHz
     config_parameters.number_of_samples       = get_u16_be(buffer, 9);
     config_parameters.sweep_start_frequency   = get_u16_be(buffer, 11);
     config_parameters.sweep_bandwidth         = get_u16_be(buffer, 13);
 
-    config_parameters.tx_mode                 = buffer[15];
-    config_parameters.gain                    = buffer[16];
-    config_parameters.sweep_type              = buffer[17];
-    config_parameters.data_log                = buffer[18];
-    config_parameters.adc_select              = buffer[19];
-    config_parameters.use_pll                 = buffer[20];
-    config_parameters.check_mode              = buffer[21];
-    config_parameters.usb_data_type           = buffer[22];
-    config_parameters.adc_resolution          = buffer[23];
-    config_parameters.sample_averaging        = buffer[24];
+    config_parameters.tx_mode                 = (uint8_t)buffer[15];
+    config_parameters.gain                    = (uint8_t)buffer[16];
+    config_parameters.sweep_type              = (uint8_t)buffer[17];
+    config_parameters.data_log                = (uint8_t)buffer[18];
+    config_parameters.adc_select              = (uint8_t)buffer[19];
+    config_parameters.use_pll                 = (uint8_t)buffer[20];
+    config_parameters.check_mode              = (uint8_t)buffer[21];
+    config_parameters.usb_data_type           = (uint8_t)buffer[22];
+    config_parameters.adc_resolution          = (uint8_t)buffer[23];
+    config_parameters.sample_averaging        = (uint8_t)buffer[24];
     
     // Init rf sythnesizer according to the received parameters
     ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters);
 
     GPIO_SetPin(RAMP_CONFIGURED);
 
-    start_time = read_timer();
+    start_time = read_timer_us();
     
-
-
     // Once configuration done and ramp is configured control.vhd module starts its fsm for sampling 
     // in ramp and transferring data during gaps.(Initially, i will not record multi chirp x64 x128 etc.)
     // So this part should just count the end time for example if user demanded 10 second record,
@@ -202,9 +209,9 @@ int main(void){
 
             case CHECK_TIME:    
 
-                current_time = read_timer() - start_time;
+                current_time = read_timer_us() - start_time;
 
-                if(current_time >= config_parameters.record_time * 1000000.0f){
+                if(current_time >= time_counter){
 
                     // record is done
                     sampling_state = FINISH_SAMPLING;
@@ -218,11 +225,11 @@ int main(void){
                 GPIO_SetPin(SAMPLING_DONE);
                 GPIO_SetPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
 
-                uint32_t t0 = read_timer();
+                uint32_t t0 = read_timer_us();
 
                 GPIO_TogglePin(LED);
                 // wait ~1000ms (adjust depending on timer freq)
-                while ((read_timer() - t0) < 100000000);
+                while ((read_timer_us() - t0) < 100000);
                 
                 break;
    
