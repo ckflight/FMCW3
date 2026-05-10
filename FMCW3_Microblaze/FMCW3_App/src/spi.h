@@ -13,7 +13,4 @@ int SPI_Init(void);
 // Write N bytes to SPI (generic)
 int SPI_WriteBytes(u8 *data, int length);
 
-// Convenience function: write 24-bit register (for ADF4158)
-void SPI_WriteReg24(u32 regValue);
-
 #endif // SPI_H
