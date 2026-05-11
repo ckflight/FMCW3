@@ -27,7 +27,9 @@ entity control is
         -- USB interface
         usb_tx_write_en             : out std_logic;
         usb_tx_writedata            : out std_logic_vector(7 downto 0);
-        usb_tx_full                 : in  std_logic;
+        usb_tx_full                 : in std_logic;
+        usb_tx_wr_ack               : in std_logic;
+        usb_tx_wr_ovf               : in std_logic;
         
         microblaze_ramp_configured  : in std_logic;
         microblaze_sampling_done    : in std_logic;

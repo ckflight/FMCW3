@@ -276,6 +276,8 @@ architecture Behavioral of top_module is
     signal s_control_usb_tx_write_en    : std_logic := '1';
     signal s_control_usb_tx_writedata   : std_logic_vector(7 downto 0) := (others => '0');
     signal s_control_usb_tx_full        : std_logic := '0';
+    signal s_control_tx_fifo_wr_ack     : std_logic;
+    signal s_control_tx_fifo_wr_ovf     : std_logic;
 
     signal s_microblaze_done         : std_logic := '0';
     signal s_soft_reset_n            : std_logic := '1';
@@ -312,8 +314,7 @@ architecture Behavioral of top_module is
     signal s_usb_rxf    : std_logic;
     signal s_usb_txe    : std_logic;
     
-    signal s_tx_fifo_wr_ack : std_logic;
-    signal s_tx_fifo_wr_ovf : std_logic;
+
     
     signal s_usb_data_in    : std_logic_vector(7 downto 0);
     signal s_usb_data_out   : std_logic_vector(7 downto 0);
@@ -488,8 +489,8 @@ begin
         tx_fifo_din    => s_control_usb_tx_writedata,
         tx_fifo_wr_en  => s_control_usb_tx_write_en,
         tx_fifo_full   => s_control_usb_tx_full,
-        tx_fifo_wr_ack => s_tx_fifo_wr_ack,
-        tx_fifo_wr_ovf => s_tx_fifo_wr_ovf,
+        tx_fifo_wr_ack => s_control_tx_fifo_wr_ack,
+        tx_fifo_wr_ovf => s_control_tx_fifo_wr_ovf,
 
         usb_clk         => s_usb_clk,
         usb_data_in     => s_usb_data_in,

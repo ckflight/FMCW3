@@ -42,9 +42,7 @@ architecture Behavioral of adc is
     
     signal fir1_data_in, fir1_data_out   : std_logic_vector(15 downto 0);
     signal fir2_data_in, fir2_data_out   : std_logic_vector(15 downto 0);
-    
-    signal fir_a, fir_b                  : std_logic_vector(15 downto 0);
-    
+        
     signal fir1_valid                    : std_logic;
     signal fir2_valid                    : std_logic;
     signal nofir_valid                   : std_logic;
@@ -72,23 +70,24 @@ begin
     output : process(clk)
     begin    
         if rising_edge(clk) then
-            data_a <= fir_a;
-            data_b <= fir_b;
+            data_a <= fir1_data_out;
+            data_b <= fir2_data_out;
+            
+            -- If fir is true: fir1 and fir2 result should be both 1
+            -- If fir is false: nofir result will be assigned to valid.
+            if generate_fir then
+                valid <= fir1_valid and fir2_valid;
+            else
+                valid <= nofir_valid;
+            end if;
+            
         end if;        
     end process;    
     
     -- Sampled data is registered to these signals and concatanated with 4 zeros to make it 16 bit simultaneously
-    fir1_data_in <= "0000"&data_a_buffer;
-    fir2_data_in <= "0000"&data_b_buffer;
-        
-    fir_a <= fir1_data_out;
-    fir_b <= fir2_data_out;
-    
-    -- Assign valid signal
-    -- If fir is true: fir1 and fir2 result should be both 1
-    -- If fir is false: nofir result will be assigned to valid.
-    valid <= fir1_valid and fir2_valid when generate_fir else nofir_valid;
-    
+    fir1_data_in <= "0000" & data_a_buffer;
+    fir2_data_in <= "0000" & data_b_buffer;
+
     -- If fir filter is selected.
     g_fir : if generate_fir generate               
     
