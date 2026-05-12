@@ -10,7 +10,10 @@ set_property -dict { PACKAGE_PIN B4   IOSTANDARD LVCMOS33 } [get_ports { reset_n
 set_property -dict { PACKAGE_PIN R3   IOSTANDARD LVCMOS33 } [get_ports { adf_ce }];     # (low disables, high enables adf4158 chip)
 set_property -dict { PACKAGE_PIN P3   IOSTANDARD LVCMOS33 } [get_ports { adf_txdata }];
 set_property -dict { PACKAGE_PIN R1   IOSTANDARD LVCMOS33 } [get_ports { adf_clk }];    # SPI CLK
-set_property -dict { PACKAGE_PIN M2   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI
+
+#set_property -dict { PACKAGE_PIN M2   IOSTANDARD LVCMOS33 } [get_ports { adf_data }]; burned pin  # SPI MOSI
+set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI ext1_2 pin
+
 set_property -dict { PACKAGE_PIN T4   IOSTANDARD LVCMOS33 } [get_ports { adf_done }];   # Mosfet connected to adf_muxout. Not populated
 set_property -dict { PACKAGE_PIN N1   IOSTANDARD LVCMOS33 } [get_ports { adf_le }];     # low before write register and high after write, make it high before read
 set_property -dict { PACKAGE_PIN K3   IOSTANDARD LVCMOS33 } [get_ports { adf_muxout }]; # ramp indicator high low according to ramp start and gap
@@ -71,10 +74,10 @@ set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en 
 # External Connector
 
 ##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; -- oe is using
-set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
-set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
-set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[2] }];
-set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[3] }];
+#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; -- adf data is using
+set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
+set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
+set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[2] }];
 #set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }]; -- burned
 
 set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { ext2[0] }];

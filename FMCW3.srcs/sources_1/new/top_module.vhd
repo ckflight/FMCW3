@@ -50,7 +50,7 @@ entity top_module is
         mix_en          : out std_logic;
 
         -- External Connectors
-        ext1            : out std_logic_vector(3 downto 0);
+        ext1            : out std_logic_vector(2 downto 0);
         ext2            : out std_logic_vector(2 downto 0);
 
         -- SD Card
@@ -370,10 +370,8 @@ begin
     usb_siwua <= '1'; -- when 1 not used
  
     -- Not used for now
-    
-    --ext1(0) <= s_adf_data; -- ext1(0) is oe now so ext1(1) became etx1(0)
-    
-    --ext2(0) <= s_adf_ce;
+        
+    ext2(0) <= muxout_sync;
     --ext2(1) <= s_adf_le;
     --ext2(2) <= s_adf_clk;
                 
