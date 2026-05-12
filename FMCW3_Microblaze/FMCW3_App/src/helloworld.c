@@ -109,7 +109,7 @@ typedef struct config_parameters_s{
 
 config_parameters_t config_parameters;
 
-#define FREQ_PFD       30000000U
+#define FREQ_PFD       40000000U
 
 typedef enum {
     SAWTOOTH_WAVEFORM = 0,
@@ -157,11 +157,10 @@ int main(void){
     // Init timer
     status = initTimer();
 
-
     // Init SPI (already in spi.c)
     SPI_Init();
 
-
+    
     uint32_t word;
     uint8_t buffer[CONFIG_PACKET_SIZE];
     for(int i = 0; i < CONFIG_PACKET_SIZE; i++){
