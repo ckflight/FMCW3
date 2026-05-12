@@ -51,21 +51,10 @@ architecture Behavioral of control is
     signal usb_idx    : integer range 0 to MAX_SAMPLES-1 := 0; -- used during usb transmission
         
     signal sample_count : integer range 0 to MAX_SAMPLES-1 := 0;    
-    signal adc_latched: std_logic_vector(31 downto 0);        
     
     signal s_usb_tx_done : std_logic := '0'; -- to prevent stopping and sending control done before sending last ramps all bytes.
 
 begin
-
-    -- Latch ADC data when valid
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            if adc_valid = '1' then
-                adc_latched <= adc_data_a & adc_data_b;
-            end if;
-        end if;
-    end process;   
 
     -- FSM sequential
     process(clk, reset_n, soft_reset_n)    
@@ -116,14 +105,14 @@ begin
                 
                 when RAMP =>
                 
-                    adc_oe          <= "00";
-                    adc_shdn        <= "00";
-                    pa_en           <= '1'; -- active high
-                    mixer_en        <= '0'; -- active low
+                    adc_oe              <= "00";
+                    adc_shdn            <= "00";
+                    pa_en               <= '1'; -- active high
+                    mixer_en            <= '0'; -- active low
                     usb_tx_write_en     <= '1';
                 
                     if adc_valid = '1' and sample_idx < MAX_SAMPLES then
-                        mem(sample_idx) <= adc_latched;
+                        mem(sample_idx) <= adc_data_a & adc_data_b;--adc_latched;
                         sample_idx      <= sample_idx + 1;
                     end if;
 
@@ -134,14 +123,14 @@ begin
 
                 when GAP_WAIT =>
                 
-                    adc_oe          <= "11";
-                    adc_shdn        <= "11";
-                    pa_en           <= '0';
-                    mixer_en        <= '1';
+                    adc_oe              <= "11";
+                    adc_shdn            <= "11";
+                    pa_en               <= '0';
+                    mixer_en            <= '1';
                     usb_tx_write_en     <= '1';
-                    usb_idx         <= 0;
-                    byte_sel        <= 0;
-                    state           <= USB_TX_IDLE;
+                    usb_idx             <= 0;
+                    byte_sel            <= 0;
+                    state               <= USB_TX_IDLE;
 
                 -- USB_TX_IDLE: setup next byte, write_n high
                 -- this stage selects byte from current memory 32 bit data (8 bit tx per write)
