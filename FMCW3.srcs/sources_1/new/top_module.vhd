@@ -194,9 +194,11 @@ architecture Behavioral of top_module is
         config_done                 : in std_logic;
 
         -- USB interface
-        usb_tx_write_en             : out std_logic;
-        usb_tx_writedata            : out std_logic_vector(7 downto 0);
-        usb_tx_full                 : in  std_logic;
+        usb_tx_wr_en                : out std_logic;
+        usb_tx_wr_data              : out std_logic_vector(7 downto 0);
+        usb_tx_wr_full              : in std_logic;
+        usb_tx_wr_ack               : in std_logic;
+        usb_tx_wr_ovf               : in std_logic;
         
         microblaze_ramp_configured  : in std_logic; -- microblaze sends this signal that ramp is configured radar can start op
         microblaze_sampling_done    : in std_logic; -- microblaze will calculate total sampling time and tell control module to stop sampling
@@ -241,29 +243,29 @@ architecture Behavioral of top_module is
     signal clk_100mhz   : std_logic;
     
     -- Microblaze signals
-    signal s_gpio_rtl_0_tri_o       : std_logic_vector ( 15 downto 0 ) := (others => '0');
-    signal s_uart_rtl_0_rxd         : std_logic := '1';
-    signal s_uart_rtl_0_txd         : std_logic := '1';
+    signal s_gpio_rtl_0_tri_o           : std_logic_vector ( 15 downto 0 ) := (others => '0');
+    signal s_uart_rtl_0_rxd             : std_logic := '1';
+    signal s_uart_rtl_0_txd             : std_logic := '1';
     
-    signal s_spi0_miso              : std_logic := 'Z';  -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
-    signal s_spi0_cs                : std_logic_vector(0 downto 0);
+    signal s_spi0_miso                  : std_logic := 'Z';  -- ADF4158 does not have spi miso line so microblaze is connected to this internal signal
+    signal s_spi0_cs                    : std_logic_vector(0 downto 0);
        
     -- AXI-Stream RX (VHDL → MicroBlaze)
-    signal s_AXI_STR_RXD_0_tdata    : std_logic_vector(31 downto 0);
-    signal s_AXI_STR_RXD_0_tvalid   : std_logic;
-    signal s_AXI_STR_RXD_0_tready   : std_logic;
-    signal s_AXI_STR_RXD_0_tlast    : std_logic;
+    signal s_AXI_STR_RXD_0_tdata        : std_logic_vector(31 downto 0);
+    signal s_AXI_STR_RXD_0_tvalid       : std_logic;
+    signal s_AXI_STR_RXD_0_tready       : std_logic;
+    signal s_AXI_STR_RXD_0_tlast        : std_logic;
     
     -- AXI-Stream TX (MicroBlaze → VHDL)
-    signal s_AXI_STR_TXD_0_tdata    : std_logic_vector(31 downto 0);
-    signal s_AXI_STR_TXD_0_tvalid   : std_logic;
-    signal s_AXI_STR_TXD_0_tready   : std_logic;
-    signal s_AXI_STR_TXD_0_tlast    : std_logic;
+    signal s_AXI_STR_TXD_0_tdata        : std_logic_vector(31 downto 0);
+    signal s_AXI_STR_TXD_0_tvalid       : std_logic;
+    signal s_AXI_STR_TXD_0_tready       : std_logic;
+    signal s_AXI_STR_TXD_0_tlast        : std_logic;
    
     -- ADC signals
-    signal s_adc_a_out              : std_logic_vector(15 downto 0) := (others => '0');         -- channel A data
-    signal s_adc_b_out              : std_logic_vector(15 downto 0) := (others => '0');         -- channel B data
-    signal s_adc_valid              : std_logic := '0';        -- FIR output valid pulse
+    signal s_adc_a_out                  : std_logic_vector(15 downto 0) := (others => '0');         -- channel A data
+    signal s_adc_b_out                  : std_logic_vector(15 downto 0) := (others => '0');         -- channel B data
+    signal s_adc_valid                  : std_logic := '0';        -- FIR output valid pulse
 
     -- CONFIG signals
     signal s_config_usb_rx_readdata     : std_logic_vector(7 downto 0) := (others => '0');
@@ -273,57 +275,57 @@ architecture Behavioral of top_module is
     signal s_config_done                : std_logic := '0';   
 
     -- Signals for control
-    signal s_control_usb_tx_write_en    : std_logic := '1';
-    signal s_control_usb_tx_writedata   : std_logic_vector(7 downto 0) := (others => '0');
-    signal s_control_usb_tx_full        : std_logic := '0';
-    signal s_control_tx_fifo_wr_ack     : std_logic;
-    signal s_control_tx_fifo_wr_ovf     : std_logic;
+    signal s_control_usb_tx_wr_en       : std_logic := '1';
+    signal s_control_usb_tx_wr_data     : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_control_usb_tx_wr_full     : std_logic := '0';
+    signal s_control_usb_tx_wr_ack      : std_logic;
+    signal s_control_usb_tx_wr_ovf      : std_logic;
 
-    signal s_microblaze_done         : std_logic := '0';
-    signal s_soft_reset_n            : std_logic := '1';
-    signal s_ramp_done               : std_logic := '0';
-    signal s_ramp_configured         : std_logic := '0';
+    signal s_microblaze_done            : std_logic := '0';
+    signal s_soft_reset_n               : std_logic := '1';
+    signal s_ramp_done                  : std_logic := '0';
+    signal s_ramp_configured            : std_logic := '0';
     
     -- ILA Probe signals
-    signal s_ila0_probe0 : std_logic_vector(7 downto 0) := (others => '0');
-    signal s_ila0_probe1 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila0_probe2 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila0_probe0                : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_ila0_probe1                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila0_probe2                : std_logic_vector(0 downto 0) := (others => '0');
     
-    signal s_ila1_probe0 : std_logic_vector(7 downto 0) := (others => '0');
-    signal s_ila1_probe1 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila1_probe2 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila1_probe3 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila1_probe0                : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_ila1_probe1                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila1_probe2                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila1_probe3                : std_logic_vector(0 downto 0) := (others => '0');
 
-    signal s_ila2_probe0 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe1 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe2 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe3 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe4 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe5 : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe6 : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe0                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe1                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe2                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe3                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe4                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe5                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe6                : std_logic_vector(0 downto 0) := (others => '0');
 
-    signal muxout_sync      : std_logic := '0';
-    signal muxout_sync_d    : std_logic := '0';
+    signal muxout_sync                  : std_logic := '0';
+    signal muxout_sync_d                : std_logic := '0';
     
     -- I have added these internal signals to be able to probe. I cannot probe output directly
     -- usb signals
-    signal s_usb_rd     : std_logic := '1';
-    signal s_usb_wr     : std_logic := '1';
-    signal s_usb_oe     : std_logic := '1';
-    signal s_usb_clk    : std_logic;
-    signal s_usb_rxf    : std_logic;
-    signal s_usb_txe    : std_logic;
+    signal s_usb_rd                     : std_logic := '1';
+    signal s_usb_wr                     : std_logic := '1';
+    signal s_usb_oe                     : std_logic := '1';
+    signal s_usb_clk                    : std_logic;
+    signal s_usb_rxf                    : std_logic;
+    signal s_usb_txe                    : std_logic;
     
 
     
-    signal s_usb_data_in    : std_logic_vector(7 downto 0);
-    signal s_usb_data_out   : std_logic_vector(7 downto 0);
-    signal s_is_usb_tx      : std_logic; -- 1 FPGA drives data line, 0 High Z
+    signal s_usb_data_in                : std_logic_vector(7 downto 0);
+    signal s_usb_data_out               : std_logic_vector(7 downto 0);
+    signal s_is_usb_tx                  : std_logic; -- 1 FPGA drives data line, 0 High Z
     
-    signal s_adf_ce         : std_logic;
-    signal s_adf_le         : std_logic;
-    signal s_adf_clk        : std_logic;
-    signal s_adf_data       : std_logic;
+    signal s_adf_ce                     : std_logic;
+    signal s_adf_le                     : std_logic;
+    signal s_adf_clk                    : std_logic;
+    signal s_adf_data                   : std_logic;
 
 begin 
 
@@ -486,11 +488,11 @@ begin
         rx_fifo_empty  => s_config_usb_rx_empty,
         rx_fifo_rd_en  => s_config_usb_rx_read_en,
 
-        tx_fifo_din    => s_control_usb_tx_writedata,
-        tx_fifo_wr_en  => s_control_usb_tx_write_en,
-        tx_fifo_full   => s_control_usb_tx_full,
-        tx_fifo_wr_ack => s_control_tx_fifo_wr_ack,
-        tx_fifo_wr_ovf => s_control_tx_fifo_wr_ovf,
+        tx_fifo_din    => s_control_usb_tx_wr_data,
+        tx_fifo_wr_en  => s_control_usb_tx_wr_en,
+        tx_fifo_full   => s_control_usb_tx_wr_full,
+        tx_fifo_wr_ack => s_control_usb_tx_wr_ack,
+        tx_fifo_wr_ovf => s_control_usb_tx_wr_ovf,
 
         usb_clk         => s_usb_clk,
         usb_data_in     => s_usb_data_in,
@@ -560,9 +562,11 @@ begin
 --        mixer_en                    => mix_en,
 --        config_done                 => s_config_done,   -- input from config module to start sampling
         
---        usb_tx_write_en             => s_control_usb_tx_write_en,
---        usb_tx_writedata            => s_control_usb_tx_writedata,
---        usb_tx_full                 => s_control_usb_tx_full,
+--        usb_tx_wr_en              => s_control_usb_tx_wr_en,
+--        usb_tx_wr_data            => s_control_usb_tx_wr_data,
+--        usb_tx_wr_full            => s_control_usb_tx_wr_full,
+--        usb_tx_wr_ack             => s_control_usb_tx_wr_ack
+--        usb_tx_wr_ovf             => s_control_usb_tx_wr_ovf
         
 --        microblaze_ramp_configured  => s_ramp_configured,
 --        microblaze_sampling_done    => s_microblaze_done,
