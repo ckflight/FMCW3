@@ -200,6 +200,10 @@ architecture Behavioral of top_module is
         usb_tx_wr_ack               : in std_logic;
         usb_tx_wr_ovf               : in std_logic;
         
+        usb_rx_rd_empty             : in  std_logic;
+        usb_rx_rd_data              : in  std_logic_vector(7 downto 0); 
+        usb_rx_rd_en                : out std_logic;
+        
         microblaze_ramp_configured  : in std_logic; -- microblaze sends this signal that ramp is configured radar can start op
         microblaze_sampling_done    : in std_logic; -- microblaze will calculate total sampling time and tell control module to stop sampling
         ramp_done                   : out std_logic -- debugging signal
@@ -268,9 +272,9 @@ architecture Behavioral of top_module is
     signal s_adc_valid                  : std_logic := '0';        -- FIR output valid pulse
 
     -- CONFIG signals
-    signal s_config_usb_rx_readdata     : std_logic_vector(7 downto 0) := (others => '0');
-    signal s_config_usb_rx_read_en      : std_logic := '1';
-    signal s_config_usb_rx_empty        : std_logic := '1';
+    signal s_config_usb_rx_rd_data      : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_config_usb_rx_rd_en        : std_logic := '0';
+    signal s_config_usb_rx_rd_empty     : std_logic := '0';
 
     signal s_config_done                : std_logic := '0';   
 
@@ -280,6 +284,10 @@ architecture Behavioral of top_module is
     signal s_control_usb_tx_wr_full     : std_logic := '0';
     signal s_control_usb_tx_wr_ack      : std_logic;
     signal s_control_usb_tx_wr_ovf      : std_logic;
+    
+    signal s_control_usb_rx_rd_data     : std_logic_vector(7 downto 0) := (others => '0');
+    signal s_control_usb_rx_rd_en       : std_logic := '0';
+    signal s_control_usb_rx_rd_empty    : std_logic := '0';
 
     signal s_microblaze_done            : std_logic := '0';
     signal s_soft_reset_n               : std_logic := '1';
@@ -315,12 +323,14 @@ architecture Behavioral of top_module is
     signal s_usb_clk                    : std_logic;
     signal s_usb_rxf                    : std_logic;
     signal s_usb_txe                    : std_logic;
-    
-
-    
+        
     signal s_usb_data_in                : std_logic_vector(7 downto 0);
     signal s_usb_data_out               : std_logic_vector(7 downto 0);
     signal s_is_usb_tx                  : std_logic; -- 1 FPGA drives data line, 0 High Z
+    
+    signal s_usb_rx_fifo_dout           : std_logic_vector(7 downto 0);
+    signal s_usb_rx_fifo_empty          : std_logic;
+    signal s_usb_rx_fifo_rd_en          : std_logic;
     
     signal s_adf_ce                     : std_logic;
     signal s_adf_le                     : std_logic;
@@ -392,9 +402,9 @@ begin
     led1                <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working    
     
     -- ILA probe assignments for FTDI RX/config debug
-    s_ila0_probe0       <= s_config_usb_rx_readdata;
-    s_ila0_probe1(0)    <= s_config_usb_rx_read_en;
-    s_ila0_probe2(0)    <= s_config_usb_rx_empty;
+    s_ila0_probe0       <= s_config_usb_rx_rd_data;
+    s_ila0_probe1(0)    <= s_config_usb_rx_rd_en;
+    s_ila0_probe2(0)    <= s_config_usb_rx_rd_empty;
     
     s_ila1_probe0       <= s_usb_data_in;
     s_ila1_probe1(0)    <= s_usb_rxf;
@@ -410,6 +420,14 @@ begin
     s_ila2_probe5(0)    <= s_microblaze_done;
     s_ila2_probe6(0)    <= s_ramp_configured;
     
+    s_config_usb_rx_rd_data     <= s_usb_rx_fifo_dout;
+    s_control_usb_rx_rd_data    <= s_usb_rx_fifo_dout;
+    
+    s_config_usb_rx_rd_empty    <= s_usb_rx_fifo_empty when s_config_done = '0' else '1';
+    s_control_usb_rx_rd_empty   <= s_usb_rx_fifo_empty when s_config_done = '1' else '1';
+
+    s_usb_rx_fifo_rd_en         <= s_config_usb_rx_rd_en when s_config_done = '0' else s_control_usb_rx_rd_en;
+        
     -- Component instantiation
     clk_wiz_0_inst : clk_wiz_0
       port map (
@@ -482,9 +500,9 @@ begin
         clk             => clk_40mhz,
         reset_n         => reset_n,
 
-        rx_fifo_dout   => s_config_usb_rx_readdata,
-        rx_fifo_empty  => s_config_usb_rx_empty,
-        rx_fifo_rd_en  => s_config_usb_rx_read_en,
+        rx_fifo_dout   => s_usb_rx_fifo_dout,
+        rx_fifo_empty  => s_usb_rx_fifo_empty,
+        rx_fifo_rd_en  => s_usb_rx_fifo_rd_en,
 
         tx_fifo_din    => s_control_usb_tx_wr_data,
         tx_fifo_wr_en  => s_control_usb_tx_wr_en,
@@ -517,9 +535,9 @@ begin
         reset_n          => reset_n,        -- top-level reset signal
         soft_reset_n     => s_soft_reset_n,
         
-        usb_rx_empty     => s_config_usb_rx_empty,
-        usb_rx_readdata  => s_config_usb_rx_readdata,
-        usb_rx_read_en   => s_config_usb_rx_read_en,
+        usb_rx_empty     => s_config_usb_rx_rd_empty,
+        usb_rx_readdata  => s_config_usb_rx_rd_data,
+        usb_rx_read_en   => s_config_usb_rx_rd_en,
         
         config_done      => s_config_done,
         
@@ -538,38 +556,42 @@ begin
     );
     
     -- Control FSM instantiation    
---    control_i : component control
---    generic map (
---        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
---    )
---    port map (
---        clk                         => clk_40mhz,
+    control_i : component control
+    generic map (
+        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
+    )
+    port map (
+        clk                         => clk_40mhz,
         
---        reset_n                     => reset_n,
---        soft_reset_n                => s_soft_reset_n,
+        reset_n                     => reset_n,
+        soft_reset_n                => s_soft_reset_n,
         
---        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
+        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
         
---        adc_data_a                  => s_adc_a_out,
---        adc_data_b                  => s_adc_b_out,
---        adc_valid                   => s_adc_valid,
---        adc_oe                      => adc_oe,
---        adc_shdn                    => adc_shdn,
+        adc_data_a                  => s_adc_a_out,
+        adc_data_b                  => s_adc_b_out,
+        adc_valid                   => s_adc_valid,
+        adc_oe                      => adc_oe,
+        adc_shdn                    => adc_shdn,
         
---        pa_en                       => pa_en,
---        mixer_en                    => mix_en,
---        config_done                 => s_config_done,   -- input from config module to start sampling
+        pa_en                       => pa_en,
+        mixer_en                    => mix_en,
+        config_done                 => s_config_done,   -- input from config module to start sampling
         
---        usb_tx_wr_en              => s_control_usb_tx_wr_en,
---        usb_tx_wr_data            => s_control_usb_tx_wr_data,
---        usb_tx_wr_full            => s_control_usb_tx_wr_full,
---        usb_tx_wr_ack             => s_control_usb_tx_wr_ack
---        usb_tx_wr_ovf             => s_control_usb_tx_wr_ovf
+        usb_tx_wr_en                => s_control_usb_tx_wr_en,
+        usb_tx_wr_data              => s_control_usb_tx_wr_data,
+        usb_tx_wr_full              => s_control_usb_tx_wr_full,
+        usb_tx_wr_ack               => s_control_usb_tx_wr_ack,
+        usb_tx_wr_ovf              => s_control_usb_tx_wr_ovf,
         
---        microblaze_ramp_configured  => s_ramp_configured,
---        microblaze_sampling_done    => s_microblaze_done,
---        ramp_done                   => s_ramp_done
---    );
+        usb_rx_rd_empty             => s_control_usb_rx_rd_empty,
+        usb_rx_rd_data              => s_control_usb_rx_rd_data,
+        usb_rx_rd_en                => s_control_usb_rx_rd_en,
+
+        microblaze_ramp_configured  => s_ramp_configured,
+        microblaze_sampling_done    => s_microblaze_done,
+        ramp_done                   => s_ramp_done
+    );
 
     ila_0_i : ila_0
     port map (
