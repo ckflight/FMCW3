@@ -167,7 +167,7 @@ begin
             adc_oe    <= "11";
             adc_shdn  <= "11";
             pa_en     <= '0';
-            mixer_en  <= '1';
+            mixer_en  <= '0';
             ramp_done <= '0';
 
             s_fifo_overflow_flag <= '0';

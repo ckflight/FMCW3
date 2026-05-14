@@ -68,7 +68,7 @@ set_property -dict { PACKAGE_PIN D1   IOSTANDARD LVCMOS33 } [get_ports { led1 }]
 set_property -dict { PACKAGE_PIN T2   IOSTANDARD LVCMOS33 } [get_ports { pa_en }];
 
 #ADL5802 MIXER
-#set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en }]; # BURNED
+#set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en }];
 set_property -dict { PACKAGE_PIN A9   IOSTANDARD LVCMOS33 } [get_ports { mix_en }];
 
 
