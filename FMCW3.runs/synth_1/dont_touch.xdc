@@ -42,13 +42,13 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_
 # IP: bd/microblaze/ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_gpio_0_2 || ORIG_REF_NAME==microblaze_axi_gpio_0_2} -quiet] -quiet
 
-# IP: bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_quad_spi_0_1 || ORIG_REF_NAME==microblaze_axi_quad_spi_0_1} -quiet] -quiet
-
 # IP: bd/microblaze/ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_timer_0_1 || ORIG_REF_NAME==microblaze_axi_timer_0_1} -quiet] -quiet
 
 # IP: bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2/microblaze_axi_fifo_mm_s_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_fifo_mm_s_0_2 || ORIG_REF_NAME==microblaze_axi_fifo_mm_s_0_2} -quiet] -quiet
+
+# IP: bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_quad_spi_0_2 || ORIG_REF_NAME==microblaze_axi_quad_spi_0_2} -quiet] -quiet
 
 # XDC: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/microblaze_ooc.xdc

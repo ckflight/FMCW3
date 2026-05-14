@@ -70,7 +70,13 @@ module fifo_generator_1_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire full,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire empty
+  output wire wr_ack,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire overflow,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire empty,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire valid
 );
 
   fifo_generator_1 inst (
@@ -82,7 +88,10 @@ module fifo_generator_1_sv (
     .rd_en(rd_en),
     .dout(dout),
     .full(full),
-    .empty(empty)
+    .wr_ack(wr_ack),
+    .overflow(overflow),
+    .empty(empty),
+    .valid(valid)
   );
 
 endmodule

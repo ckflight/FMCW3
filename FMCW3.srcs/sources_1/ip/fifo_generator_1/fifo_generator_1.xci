@@ -16,14 +16,14 @@
         "asymmetric_port_width": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
         "Input_Data_Width": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Input_Depth": [ { "value": "16384", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
-        "Output_Data_Width": [ { "value": "8", "resolve_type": "user", "usage": "all" } ],
+        "Output_Data_Width": [ { "value": "8", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "Output_Depth": [ { "value": "16384", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "Enable_ECC": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Use_Embedded_Registers": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Reset_Pin": [ { "value": "true", "value_src": "user", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Enable_Reset_Synchronization": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Reset_Type": [ { "value": "Asynchronous_Reset", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "Full_Flags_Reset_Value": [ { "value": "1", "resolve_type": "user", "usage": "all" } ],
+        "Full_Flags_Reset_Value": [ { "value": "1", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "Use_Dout_Reset": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "Dout_Reset_Value": [ { "value": "0", "resolve_type": "user", "usage": "all" } ],
         "dynamic_power_saving": [ { "value": "false", "resolve_type": "user", "format": "bool", "enabled": false, "usage": "all" } ],
@@ -479,5 +479,5 @@
       }
     }
   },
-  "checksum": "5dbbffc6"
+  "checksum": "eccca074"
 }

@@ -1,4 +1,8 @@
-verilog xil_defaultlib -i "../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef" --include "C:/Xilinx/2025.2/Vivado/data/xilinx_vip/include" \
+verilog fifo_generator_v13_2_14 -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" \
+"../../../ipstatic/simulation/fifo_generator_vlog_beh.v" \
+"../../../ipstatic/hdl/fifo_generator_v13_2_rfs.v" \
+
+verilog xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" \
 "../../../../FMCW3.gen/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 
 verilog xil_defaultlib "glbl.v"

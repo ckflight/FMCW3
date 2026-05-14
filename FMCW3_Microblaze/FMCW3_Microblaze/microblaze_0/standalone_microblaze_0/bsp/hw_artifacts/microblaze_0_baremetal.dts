@@ -169,7 +169,7 @@
                         xlnx,unaligned-exceptions = <0x0>;
                         xlnx,lockstep-master = <0x0>;
                         xlnx,freq = <0x5f5e100>;
-                        xlnx,number-of-pc-brk = <0x4>;
+                        xlnx,number-of-pc-brk = <0x8>;
                         xlnx,mmu-itlb-size = <0x1>;
                         xlnx,imprecise-exceptions = <0x0>;
                         xlnx,use-msr-instr = <0x1>;
@@ -341,7 +341,7 @@
                         xlnx,byte-level-interrupt-en = <0x0>;
                         num-cs = <0x1>;
                         xlnx,xip-perf-mode = <0x1>;
-                        xlnx,sck-ratio = <0x8>;
+                        xlnx,sck-ratio = <0x10>;
                         xlnx,s-axi4-id-width = <0x4>;
                         fifo-size = <0x10>;
                         xlnx,multiples16 = <0x1>;

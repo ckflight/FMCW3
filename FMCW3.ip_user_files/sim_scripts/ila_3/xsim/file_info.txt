@@ -1,0 +1,2 @@
+ila_3.vhd,vhdl,xil_defaultlib,../../../../FMCW3.gen/sources_1/ip/ila_3/sim/ila_3.vhd,incdir="../../../../../../../../../../../tools/2025.2/data/rsb/busdef"incdir="../../../../FMCW3.gen/sources_1/ip/ila_3/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

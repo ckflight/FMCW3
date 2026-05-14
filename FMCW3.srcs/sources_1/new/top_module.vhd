@@ -336,6 +336,8 @@ architecture Behavioral of top_module is
     signal s_adf_le                     : std_logic;
     signal s_adf_clk                    : std_logic;
     signal s_adf_data                   : std_logic;
+    
+    signal s_pa_en                      : std_logic := '0';
 
 begin 
 
@@ -384,6 +386,9 @@ begin
     ext2(0) <= muxout_sync;
     --ext2(1) <= s_adf_le;
     --ext2(2) <= s_adf_clk;
+    
+    s_pa_en <= '0'; -- force pa for now
+    pa_en <= s_pa_en;
                 
     adf_txdata          <= '0'; -- not used. this is for data modulation
         
@@ -574,7 +579,7 @@ begin
         adc_oe                      => adc_oe,
         adc_shdn                    => adc_shdn,
         
-        pa_en                       => pa_en,
+        pa_en                       => s_pa_en,
         mixer_en                    => mix_en,
         config_done                 => s_config_done,   -- input from config module to start sampling
         

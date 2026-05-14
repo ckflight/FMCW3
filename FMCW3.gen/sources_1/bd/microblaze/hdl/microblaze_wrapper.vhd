@@ -1,9 +1,9 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
---Date        : Wed Mar 25 15:58:28 2026
---Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+--Date        : Thu May 14 20:20:44 2026
+--Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
 --Command     : generate_target microblaze_wrapper.bd
 --Design      : microblaze_wrapper
 --Purpose     : IP block netlist
@@ -23,12 +23,12 @@ entity microblaze_wrapper is
     AXI_STR_TXD_0_tready : in STD_LOGIC;
     AXI_STR_TXD_0_tvalid : out STD_LOGIC;
     Clk : in STD_LOGIC;
+    SPI0_CLK : out STD_LOGIC;
+    SPI0_CS : out STD_LOGIC_VECTOR ( 0 to 0 );
+    SPI0_MISO : in STD_LOGIC;
+    SPI0_MOSI : out STD_LOGIC;
     gpio_rtl_0_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    reset_rtl_0 : in STD_LOGIC;
-    spi0_cs : out STD_LOGIC_VECTOR ( 0 to 0 );
-    spi0_miso : in STD_LOGIC;
-    spi0_mosi : out STD_LOGIC;
-    spi0_sck : out STD_LOGIC
+    reset_rtl_0 : in STD_LOGIC
   );
 end microblaze_wrapper;
 
@@ -46,10 +46,10 @@ architecture STRUCTURE of microblaze_wrapper is
     AXI_STR_RXD_0_tvalid : in STD_LOGIC;
     Clk : in STD_LOGIC;
     reset_rtl_0 : in STD_LOGIC;
-    spi0_miso : in STD_LOGIC;
-    spi0_mosi : out STD_LOGIC;
-    spi0_sck : out STD_LOGIC;
-    spi0_cs : out STD_LOGIC_VECTOR ( 0 to 0 )
+    SPI0_MOSI : out STD_LOGIC;
+    SPI0_MISO : in STD_LOGIC;
+    SPI0_CLK : out STD_LOGIC;
+    SPI0_CS : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component microblaze;
 begin
@@ -64,11 +64,11 @@ microblaze_i: component microblaze
       AXI_STR_TXD_0_tready => AXI_STR_TXD_0_tready,
       AXI_STR_TXD_0_tvalid => AXI_STR_TXD_0_tvalid,
       Clk => Clk,
+      SPI0_CLK => SPI0_CLK,
+      SPI0_CS(0) => SPI0_CS(0),
+      SPI0_MISO => SPI0_MISO,
+      SPI0_MOSI => SPI0_MOSI,
       gpio_rtl_0_tri_o(15 downto 0) => gpio_rtl_0_tri_o(15 downto 0),
-      reset_rtl_0 => reset_rtl_0,
-      spi0_cs(0) => spi0_cs(0),
-      spi0_miso => spi0_miso,
-      spi0_mosi => spi0_mosi,
-      spi0_sck => spi0_sck
+      reset_rtl_0 => reset_rtl_0
     );
 end STRUCTURE;

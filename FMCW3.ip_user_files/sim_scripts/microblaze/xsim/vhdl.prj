@@ -9,9 +9,9 @@ vhdl xil_defaultlib  \
 "../../../bd/microblaze/ip/microblaze_mdm_1_4/sim/microblaze_mdm_1_4.vhd" \
 "../../../bd/microblaze/ip/microblaze_rst_Clk_100M_0/sim/microblaze_rst_Clk_100M_0.vhd" \
 "../../../bd/microblaze/ip/microblaze_axi_gpio_0_2/sim/microblaze_axi_gpio_0_2.vhd" \
-"../../../bd/microblaze/ip/microblaze_axi_quad_spi_0_1/sim/microblaze_axi_quad_spi_0_1.vhd" \
 "../../../bd/microblaze/ip/microblaze_axi_timer_0_1/sim/microblaze_axi_timer_0_1.vhd" \
 "../../../bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2/sim/microblaze_axi_fifo_mm_s_0_2.vhd" \
+"../../../bd/microblaze/ip/microblaze_axi_quad_spi_0_2/sim/microblaze_axi_quad_spi_0_2.vhd" \
 "../../../bd/microblaze/sim/microblaze.vhd" \
 
 # Do not sort compile order

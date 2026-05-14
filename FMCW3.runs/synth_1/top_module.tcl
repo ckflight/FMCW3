@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 8
+set_param xicom.use_bs_reader 1
 set_param general.usePosixSpawnForFork 1
 set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
@@ -76,7 +77,6 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/fir20.coe
-add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/imports/build/FMCW3_App.elf
 add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf
 set_property SCOPED_TO_REF microblaze [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
 set_property SCOPED_TO_CELLS microblaze_0 [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
@@ -172,12 +172,12 @@ set_property used_in_implementation false [get_files -all /home/ck/Desktop/Works
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_Clk_100M_0/microblaze_rst_Clk_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2_board.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_2/microblaze_axi_gpio_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_1/microblaze_axi_quad_spi_0_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2/microblaze_axi_fifo_mm_s_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/microblaze_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_5/data/mb_bootloop_le.elf]
 
@@ -190,6 +190,22 @@ set_property used_in_implementation false [get_files -all /home/ck/Desktop/Works
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
 
+read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_1_1/ila_1.xci
+set_property used_in_synthesis false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_1_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_1_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_1_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_1_1/ila_1_ooc.xdc]
+
+read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_2_1/ila_2.xci
+set_property used_in_synthesis false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/ila_2_ooc.xdc]
+
+read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_2_1/fifo_generator_2.xci
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_2_1/fifo_generator_2.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_2_1/fifo_generator_2_ooc.xdc]
+
 read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
@@ -200,6 +216,12 @@ read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_1/fifo_generator_1_ooc.xdc]
+
+read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_3/ila_3.xci
+set_property used_in_synthesis false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

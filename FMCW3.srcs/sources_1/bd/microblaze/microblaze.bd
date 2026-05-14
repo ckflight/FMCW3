@@ -318,6 +318,9 @@
         "inst_hier_path": "microblaze_0",
         "has_run_ip_tcl": "true",
         "parameters": {
+          "C_AREA_OPTIMIZED": {
+            "value": "1"
+          },
           "C_DEBUG_ENABLED": {
             "value": "1"
           },
@@ -336,11 +339,26 @@
           "C_NUMBER_OF_PC_BRK": {
             "value": "8"
           },
+          "C_USE_BARREL": {
+            "value": "1"
+          },
           "C_USE_DIV": {
             "value": "1"
           },
           "C_USE_FPU": {
             "value": "1"
+          },
+          "C_USE_HW_MUL": {
+            "value": "1"
+          },
+          "C_USE_MSR_INSTR": {
+            "value": "1"
+          },
+          "C_USE_PCMP_INSTR": {
+            "value": "1"
+          },
+          "C_USE_REORDER_INSTR": {
+            "value": "0"
           },
           "G_TEMPLATE_LIST": {
             "value": "8"
@@ -1150,7 +1168,6 @@
       "microblaze_0_Clk": {
         "ports": [
           "Clk",
-          "microblaze_0/Clk",
           "microblaze_0_axi_periph/aclk",
           "microblaze_0_axi_intc/s_axi_aclk",
           "microblaze_0_axi_intc/processor_clk",
@@ -1161,7 +1178,8 @@
           "axi_timer_0/s_axi_aclk",
           "axi_fifo_mm_s_0/s_axi_aclk",
           "axi_quad_spi_0/s_axi_aclk",
-          "axi_quad_spi_0/ext_spi_clk"
+          "axi_quad_spi_0/ext_spi_clk",
+          "microblaze_0/Clk"
         ]
       },
       "microblaze_0_intr": {
@@ -1185,8 +1203,8 @@
       "rst_Clk_100M_mb_reset": {
         "ports": [
           "rst_Clk_100M/mb_reset",
-          "microblaze_0/Reset",
-          "microblaze_0_axi_intc/processor_rst"
+          "microblaze_0_axi_intc/processor_rst",
+          "microblaze_0/Reset"
         ]
       },
       "rst_Clk_100M_peripheral_aresetn": {
@@ -1264,7 +1282,7 @@
       "file": {
         "name": "../../../../FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
         "type": "ELF",
-        "checksum": "3711090009",
+        "checksum": "3320201126",
         "IsVisible": "1",
         "ScopedToRef": "microblaze",
         "ScopedToCell": [

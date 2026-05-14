@@ -1,5 +1,98 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu May 14 20:18:49 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_microblaze_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_microblaze_0_5 (xilinx.com:ip:microblaze:11.0 (Rev. 16)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_BASE_VECTORS to value 0x0000000000000000 (source 'default')
+Set parameter C_M_AXI_DP_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_DC_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_IP_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_IC_ADDR_WIDTH to value 32 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu May 14 19:51:45 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fifo_generator_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of fifo_generator_1 (xilinx.com:ip:fifo_generator:13.2 (Rev. 14)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu May 14 19:51:36 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fifo_generator_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of fifo_generator_0 (xilinx.com:ip:fifo_generator:13.2 (Rev. 14)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu May 14 19:45:19 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_0 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
 | Date         : Wed Dec 17 14:07:35 2025
 | Host         : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)

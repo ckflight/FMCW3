@@ -70,7 +70,11 @@ module fifo_generator_0_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire full,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire empty
+  output wire empty,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire wr_rst_busy,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire rd_rst_busy
 );
 
   fifo_generator_0 inst (
@@ -82,7 +86,9 @@ module fifo_generator_0_sv (
     .rd_en(rd_en),
     .dout(dout),
     .full(full),
-    .empty(empty)
+    .empty(empty),
+    .wr_rst_busy(wr_rst_busy),
+    .rd_rst_busy(rd_rst_busy)
   );
 
 endmodule

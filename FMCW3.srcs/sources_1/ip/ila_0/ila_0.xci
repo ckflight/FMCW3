@@ -2054,7 +2054,7 @@
         "C_PROBE2_WIDTH": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_PROBE1_WIDTH": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_PROBE0_WIDTH": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_DATA_DEPTH": [ { "value": "4096", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_DATA_DEPTH": [ { "value": "1024", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_NUM_OF_PROBES": [ { "value": "3", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_XLNX_HW_PROBE_INFO": [ { "value": "DEFAULT", "resolve_type": "user", "usage": "all" } ],
         "Component_Name": [ { "value": "ila_0", "resolve_type": "user", "usage": "all" } ],
@@ -3135,7 +3135,7 @@
         "C_NUM_MONITOR_SLOTS": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_ENABLE_ILA_AXI_MON": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_NUM_OF_PROBES": [ { "value": "3", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_DATA_DEPTH": [ { "value": "4096", "resolve_type": "generated", "format": "long", "usage": "all" } ],
+        "C_DATA_DEPTH": [ { "value": "1024", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_MAJOR_VERSION": [ { "value": "2025", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_MINOR_VERSION": [ { "value": "2", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_BUILD_REVISION": [ { "value": "0", "format": "long", "usage": "all" } ],
@@ -6297,5 +6297,5 @@
       }
     }
   },
-  "checksum": "380976a9"
+  "checksum": "cc21ed12"
 }

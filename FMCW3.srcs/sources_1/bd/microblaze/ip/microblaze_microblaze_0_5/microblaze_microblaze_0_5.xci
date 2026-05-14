@@ -22,7 +22,7 @@
         "C_LOCKSTEP_SLAVE": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_TEMPORAL_DEPTH": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_ENDIANNESS": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_AREA_OPTIMIZED": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_AREA_OPTIMIZED": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_OPTIMIZATION": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_INTERCONNECT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_BASE_VECTORS": [ { "value": "0x0000000000000000", "value_src": "propagated", "value_permission": "bd_and_user", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
@@ -61,12 +61,12 @@
         "C_M_AXI_IC_USER_SIGNALS": [ { "value": "0", "value_src": "propagated", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "G_TEMPLATE_LIST": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "G_USE_EXCEPTIONS": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_USE_MSR_INSTR": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_USE_PCMP_INSTR": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_USE_REORDER_INSTR": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_USE_BARREL": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_MSR_INSTR": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_PCMP_INSTR": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_REORDER_INSTR": [ { "value": "0", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_BARREL": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_USE_DIV": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_USE_HW_MUL": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_USE_HW_MUL": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_USE_FPU": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_UNALIGNED_EXCEPTIONS": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_ILL_OPCODE_EXCEPTION": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -692,5 +692,5 @@
       }
     }
   },
-  "checksum": "8b67ca62"
+  "checksum": "78b25009"
 }

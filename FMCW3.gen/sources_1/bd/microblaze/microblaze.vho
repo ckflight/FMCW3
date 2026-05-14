@@ -64,10 +64,10 @@ COMPONENT microblaze
     AXI_STR_RXD_0_tvalid : IN STD_LOGIC;
     Clk : IN STD_LOGIC;
     reset_rtl_0 : IN STD_LOGIC;
-    spi0_miso : IN STD_LOGIC;
-    spi0_mosi : OUT STD_LOGIC;
-    spi0_sck : OUT STD_LOGIC;
-    spi0_cs : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    SPI0_MOSI : OUT STD_LOGIC;
+    SPI0_MISO : IN STD_LOGIC;
+    SPI0_CLK : OUT STD_LOGIC;
+    SPI0_CS : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -89,10 +89,10 @@ your_instance_name : microblaze
     AXI_STR_RXD_0_tvalid => AXI_STR_RXD_0_tvalid,
     Clk => Clk,
     reset_rtl_0 => reset_rtl_0,
-    spi0_miso => spi0_miso,
-    spi0_mosi => spi0_mosi,
-    spi0_sck => spi0_sck,
-    spi0_cs => spi0_cs
+    SPI0_MOSI => SPI0_MOSI,
+    SPI0_MISO => SPI0_MISO,
+    SPI0_CLK => SPI0_CLK,
+    SPI0_CS => SPI0_CS
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

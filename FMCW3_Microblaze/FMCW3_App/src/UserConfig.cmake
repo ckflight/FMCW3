@@ -36,7 +36,6 @@ set(USER_INCLUDE_DIRECTORIES
 set(USER_COMPILE_SOURCES
 "helloworld.c"
 "spi.c"
-"adf4158.c"
 "platform.c"
 "gpio.c"
 )

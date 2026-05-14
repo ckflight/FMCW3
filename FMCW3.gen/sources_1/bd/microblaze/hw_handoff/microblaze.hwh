@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 25 15:58:50 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May 14 20:20:46 2026" VIVADOVERSION="2025.2">
 
   <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="microblaze" PACKAGE="ftg256" SPEEDGRADE="-1"/>
 
@@ -46,7 +46,6 @@
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="microblaze_0" PORT="Clk"/>
         <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="aclk"/>
         <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aclk"/>
         <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_clk"/>
@@ -57,10 +56,31 @@
         <CONNECTION INSTANCE="mdm_1" PORT="S_AXI_ACLK"/>
         <CONNECTION INSTANCE="rst_Clk_100M" PORT="slowest_sync_clk"/>
         <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
         <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
         <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
+        <CONNECTION INSTANCE="microblaze_0" PORT="Clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="SPI0_CLK" SIGIS="clk" SIGNAME="axi_quad_spi_0_sck_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="sck_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="SPI0_CS" RIGHT="0" SIGIS="data" SIGNAME="axi_quad_spi_0_ss_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ss_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="SPI0_MISO" SIGIS="data" SIGNAME="External_Ports_SPI0_MISO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="SPI0_MOSI" SIGIS="data" SIGNAME="axi_quad_spi_0_io0_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_o"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="15" NAME="gpio_rtl_0_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
@@ -71,26 +91,6 @@
     <PORT DIR="I" NAME="reset_rtl_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="rst_Clk_100M" PORT="ext_reset_in"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="0" NAME="spi0_cs" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ss_o"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="spi0_miso" SIGIS="undef" SIGNAME="External_Ports_spi0_miso">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io1_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="spi0_mosi" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_o"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="spi0_sck" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="sck_o"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -2319,7 +2319,7 @@
         <PARAMETER NAME="C_NEW_SEQ_EN" VALUE="1"/>
         <PARAMETER NAME="C_NUM_SS_BITS" VALUE="1"/>
         <PARAMETER NAME="C_NUM_TRANSFER_BITS" VALUE="8"/>
-        <PARAMETER NAME="C_SCK_RATIO" VALUE="8"/>
+        <PARAMETER NAME="C_SCK_RATIO" VALUE="16"/>
         <PARAMETER NAME="C_SELECT_XPM" VALUE="0"/>
         <PARAMETER NAME="C_SHARED_STARTUP" VALUE="0"/>
         <PARAMETER NAME="C_SPI_MEMORY" VALUE="1"/>
@@ -2339,7 +2339,7 @@
         <PARAMETER NAME="C_XIP_PERF_MODE" VALUE="1"/>
         <PARAMETER NAME="C_SCK_RATIO1" VALUE="1"/>
         <PARAMETER NAME="C_USE_STARTUP_INT" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="microblaze_axi_quad_spi_0_1"/>
+        <PARAMETER NAME="Component_Name" VALUE="microblaze_axi_quad_spi_0_2"/>
         <PARAMETER NAME="FIFO_INCLUDED" VALUE="1"/>
         <PARAMETER NAME="Master_mode" VALUE="1"/>
         <PARAMETER NAME="Multiples16" VALUE="1"/>
@@ -2359,13 +2359,13 @@
         <PORT DIR="I" NAME="io0_i" SIGIS="undef"/>
         <PORT DIR="O" NAME="io0_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi0_mosi"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="SPI0_MOSI"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="io0_t" SIGIS="undef"/>
-        <PORT DIR="I" NAME="io1_i" SIGIS="undef" SIGNAME="External_Ports_spi0_miso">
+        <PORT DIR="I" NAME="io1_i" SIGIS="undef" SIGNAME="External_Ports_SPI0_MISO">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi0_miso"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="SPI0_MISO"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="io1_o" SIGIS="undef"/>
@@ -2469,14 +2469,14 @@
         <PORT DIR="I" NAME="sck_i" SIGIS="undef"/>
         <PORT DIR="O" NAME="sck_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi0_sck"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="SPI0_CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="sck_t" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="ss_i" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="ss_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi0_cs"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="SPI0_CS"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ss_t" SIGIS="undef"/>
@@ -4231,7 +4231,7 @@
         <PARAMETER NAME="C_M_AXI_IP_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_M_AXI_IP_THREAD_ID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_M_AXI_I_BUS_EXCEPTION" VALUE="0"/>
-        <PARAMETER NAME="C_NUMBER_OF_PC_BRK" VALUE="4"/>
+        <PARAMETER NAME="C_NUMBER_OF_PC_BRK" VALUE="8"/>
         <PARAMETER NAME="C_NUMBER_OF_RD_ADDR_BRK" VALUE="0"/>
         <PARAMETER NAME="C_NUMBER_OF_WR_ADDR_BRK" VALUE="0"/>
         <PARAMETER NAME="C_NUM_SYNC_FF_CLK" VALUE="2"/>
@@ -8665,8 +8665,8 @@
         </PORT>
         <PORT DIR="O" NAME="mb_reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="rst_Clk_100M_mb_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="microblaze_0" PORT="Reset"/>
             <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_rst"/>
+            <CONNECTION INSTANCE="microblaze_0" PORT="Reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_Clk_100M_peripheral_aresetn">
@@ -8675,9 +8675,9 @@
             <CONNECTION INSTANCE="mdm_1" PORT="S_AXI_ARESETN"/>
             <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

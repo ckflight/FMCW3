@@ -1,0 +1,7 @@
+verilog xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" \
+"../../../../FMCW3.gen/sources_1/ip/fifo_generator_2_1/sim/fifo_generator_2.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

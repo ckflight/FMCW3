@@ -65,10 +65,10 @@ microblaze your_instance_name (
   .AXI_STR_RXD_0_tvalid(AXI_STR_RXD_0_tvalid), // input wire AXI_STR_RXD_0_tvalid
   .Clk(Clk), // input wire Clk
   .reset_rtl_0(reset_rtl_0), // input wire reset_rtl_0
-  .spi0_miso(spi0_miso), // input wire spi0_miso
-  .spi0_mosi(spi0_mosi), // output wire spi0_mosi
-  .spi0_sck(spi0_sck), // output wire spi0_sck
-  .spi0_cs(spi0_cs) // output wire [0:0] spi0_cs
+  .SPI0_MOSI(SPI0_MOSI), // output wire SPI0_MOSI
+  .SPI0_MISO(SPI0_MISO), // input wire SPI0_MISO
+  .SPI0_CLK(SPI0_CLK), // output wire SPI0_CLK
+  .SPI0_CS(SPI0_CS) // output wire [0:0] SPI0_CS
 );
 // INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 
