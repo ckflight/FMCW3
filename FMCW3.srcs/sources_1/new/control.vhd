@@ -187,7 +187,8 @@ begin
                     adc_oe    <= "11";
                     adc_shdn  <= "11";
                     pa_en     <= '0';
-                    mixer_en  <= '1';
+                    --mixer_en  <= '1';
+                    mixer_en  <= '0';
                     ramp_done <= '0';
 
                     if microblaze_ramp_configured = '1' and config_done = '1' and muxout = '1' and microblaze_sampling_done = '0' then
@@ -230,7 +231,7 @@ begin
                     adc_oe   <= "11";
                     adc_shdn <= "11";
                     pa_en    <= '0';
-                    mixer_en <= '1';
+                    --mixer_en <= '1';
 
                     if microblaze_sampling_done = '1' then
 
@@ -252,7 +253,7 @@ begin
                     adc_oe    <= "11";
                     adc_shdn  <= "11";
                     pa_en     <= '0';
-                    mixer_en  <= '1';
+                    --mixer_en  <= '1';
                     ramp_done <= '1';
 
                     control_state <= CTRL_WAIT_SOFT_RESET;

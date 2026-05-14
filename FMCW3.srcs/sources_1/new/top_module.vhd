@@ -50,7 +50,7 @@ entity top_module is
         mix_en          : out std_logic;
 
         -- External Connectors
-        ext1            : out std_logic_vector(2 downto 0);
+        ext1            : out std_logic_vector(1 downto 0);
         ext2            : out std_logic_vector(2 downto 0);
 
         -- SD Card
@@ -387,7 +387,7 @@ begin
     --ext2(1) <= s_adf_le;
     --ext2(2) <= s_adf_clk;
     
-    s_pa_en <= '0'; -- force pa for now
+    --s_pa_en <= '0'; -- force pa for now
     pa_en <= s_pa_en;
                 
     adf_txdata          <= '0'; -- not used. this is for data modulation
@@ -587,7 +587,7 @@ begin
         usb_tx_wr_data              => s_control_usb_tx_wr_data,
         usb_tx_wr_full              => s_control_usb_tx_wr_full,
         usb_tx_wr_ack               => s_control_usb_tx_wr_ack,
-        usb_tx_wr_ovf              => s_control_usb_tx_wr_ovf,
+        usb_tx_wr_ovf               => s_control_usb_tx_wr_ovf,
         
         usb_rx_rd_empty             => s_control_usb_rx_rd_empty,
         usb_rx_rd_data              => s_control_usb_rx_rd_data,
