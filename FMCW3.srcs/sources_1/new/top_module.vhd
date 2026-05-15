@@ -239,7 +239,8 @@ architecture Behavioral of top_module is
         probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe4 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe5 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe6 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
+        probe6 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe7 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
     );
     end component;
     
@@ -311,6 +312,7 @@ architecture Behavioral of top_module is
     signal s_ila2_probe4                : std_logic_vector(0 downto 0) := (others => '0');
     signal s_ila2_probe5                : std_logic_vector(0 downto 0) := (others => '0');
     signal s_ila2_probe6                : std_logic_vector(0 downto 0) := (others => '0');
+    signal s_ila2_probe7                : std_logic_vector(0 downto 0) := (others => '0');
 
     signal muxout_sync                  : std_logic := '0';
     signal muxout_sync_d                : std_logic := '0';
@@ -344,7 +346,7 @@ begin
     -- GENERAL CODE FLOW UPTO NOW:
     
     -- IMPORTANT NOTE: The radar is not specifically designed to work for high prf which requires ram usage for 256 chirps in cpi.
-    -- Therefore i will first use the radar in normal 1 chirp 1 usb transfer firt. Then i will implement range doppler mode.
+    -- Therefore i will first use the radar in normal 1 chirp 1 usb transfer. Then i will implement range doppler mode.
     -- For 4 khz prf it can measure 180 km/h max speed and with 2MHz range it can see 700 meters with 100 MHz chirp bandwidth.
     -- This creates 256.000 x 32 bit data per cpi for 2 channels for 256 chirps.
     -- 256 chirp makes 8 km/h velocity resolution, 128 makes 16 km/h resolution 
@@ -424,6 +426,7 @@ begin
     s_ila2_probe4(0)    <= muxout_sync;
     s_ila2_probe5(0)    <= s_microblaze_done;
     s_ila2_probe6(0)    <= s_ramp_configured;
+    s_ila2_probe7(0)    <= s_config_done; ---- CHECK THIS if byte_counter = PACKET_SIZE-1 then might be the reason
     
     s_config_usb_rx_rd_data     <= s_usb_rx_fifo_dout;
     s_control_usb_rx_rd_data    <= s_usb_rx_fifo_dout;
@@ -624,7 +627,8 @@ begin
         probe3 => s_ila2_probe3,
         probe4 => s_ila2_probe4,
         probe5 => s_ila2_probe5,
-        probe6 => s_ila2_probe6
+        probe6 => s_ila2_probe6,
+        probe7 => s_ila2_probe7
     );
 
 end Behavioral;

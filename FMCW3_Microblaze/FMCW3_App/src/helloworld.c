@@ -71,14 +71,6 @@ uint16_t get_u16_be(uint8_t *buf, int index)
     return ((uint16_t)buf[index] << 8) | buf[index + 1];
 }
 
-typedef enum{
-    IDLE,
-    CHECK_TIME,
-    FINISH_SAMPLING
-}SAMPLING_STATES_e;
-
-SAMPLING_STATES_e sampling_state = IDLE;
-
 //********************************************
 
 typedef struct config_parameters_s{
@@ -117,123 +109,33 @@ typedef enum {
 } WAVEFORM_TYPE;
 
 void ADF4158_Init(WAVEFORM_TYPE wf, config_parameters_t* parameters);
+void ADF4158_Reset(void);
 void ADF4158_Configure_Sweep(WAVEFORM_TYPE wf, double startFreq, double bw, double rampTime, double rampDelay);
 void ADF4158_DeviceEnable(void);
 int ADF4158_WriteRegister(u32 data);
 
+typedef enum{
+    INIT_HARDWARE,
+    INIT_CODE,
+    LED_INDICATOR,
+    READ_FIFO,
+    CONFIGURE_ADF4158,
+    CONFIGURATION_LED_INDICATOR,
+    CHECK_TIME,
+    DONE_LED_INDICATOR,
+    FINISH_SAMPLING
+}STATES_e;
+
+STATES_e state = INIT_HARDWARE;
+
+int status = 0;
+
+uint32_t word;
+uint8_t buffer[CONFIG_PACKET_SIZE];
+
 int main(void){
 
-    int status = 0;
-    
-    init_platform();
-
-    // ***************************
-    // Important NOTE: A delay counter with a start signal can be added to top module(EACH MODULE WILL WAIT THIS SIGNAL TO START) 
-    // if gpio init time creates problem to vhdl logic,
-    // if std_logic_vector = (others = '0') is not enough as idle value for sampling done and ramp configured.
-    // ***************************
-    
-    // Init GPIO pins
-    // 16 bit output gpio is used to set these pins
-    // adf_ce                      <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
-    // adf_le                      <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
-    // s_microblaze_done           <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
-    // s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
-    // s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
-    GPIO_Init();
-    
-    // Control.vhd module uses sampling done and ramp configured signals. They need 1 not a pulse.
-    // Software reset is the resetting mechanism for the whole vhdl logic.
-    GPIO_ClearPin(SAMPLING_DONE);
-    GPIO_ClearPin(RAMP_CONFIGURED);
-    GPIO_SetPin(SOFTWARE_RESET);
-    GPIO_ClearPin(LED);
-    
-    // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
-    // Make sure CE low, LE high
-    GPIO_ClearPin(ADF_CE_PIN);
-    GPIO_SetPin(ADF_LE_PIN);
-
-    // Init timer
-    status = initTimer();
-
-    // Init SPI (already in spi.c)
-    SPI_Init();
-
-    
-    uint32_t word;
-    uint8_t buffer[CONFIG_PACKET_SIZE];
-    for(int i = 0; i < CONFIG_PACKET_SIZE; i++){
-        buffer[i] = 0;
-    }
-
-    // Init fifo. VHDL sends python's configuration data to this fifo.
-    // Microblaze reads this to configure ADF4158 over spi.
-    status = initFifo();
-
     // IMPORTANT NOTE: Timer wraps around after 42 second so find a 64 bit solution to that if timer is used as counter to check time etc.
-
-    // Fifo read enter indicator led blink   
-    for (int i = 0; i < 30; i++) {
-        uint32_t t0 = read_timer();
-
-        GPIO_TogglePin(LED);
-        // wait ~100ms (adjust depending on timer freq)
-        while ((read_timer() - t0) < 2500000);
-    }
-    
-    // READ FIFO
-    // 128x32 bit data will be received but for the ease of use 8 bit of it is used as data
-    // so last 8 bit is taken
-
-    for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
-        while (XLlFifo_iRxOccupancy(&Fifo) == 0);
-        word = XLlFifo_RxGetWord(&Fifo);
-        buffer[i] = (uint8_t)(word & 0xFF);
-    }
-
-    // Fifo read exit indicator led blink   
-    for (int i = 0; i < 30; i++) {
-        uint32_t t0 = read_timer();
-
-        GPIO_TogglePin(LED);
-        // wait ~100ms (adjust depending on timer freq)
-        while ((read_timer() - t0) < 2500000);
-    }
-    
-    if (buffer[0] != '=' || buffer[1] != '=') {
-        xil_printf("CONFIG HEADER ERROR\r\n");
-        while (1);
-    }
-
-    config_parameters.sweep_time              = get_u16_be(buffer, 2);
-    config_parameters.sweep_delay             = get_u16_be(buffer, 4);
-    config_parameters.record_time             = (uint8_t)buffer[6];
-    uint32_t time_counter = config_parameters.record_time * 1000000;
-
-    config_parameters.sampling_frequency      = get_u16_be(buffer, 7);   // kHz
-    config_parameters.number_of_samples       = get_u16_be(buffer, 9);
-    config_parameters.sweep_start_frequency   = get_u16_be(buffer, 11);
-    config_parameters.sweep_bandwidth         = get_u16_be(buffer, 13);
-
-    config_parameters.tx_mode                 = (uint8_t)buffer[15];
-    config_parameters.gain                    = (uint8_t)buffer[16];
-    config_parameters.sweep_type              = (uint8_t)buffer[17];
-    config_parameters.data_log                = (uint8_t)buffer[18];
-    config_parameters.adc_select              = (uint8_t)buffer[19];
-    config_parameters.use_pll                 = (uint8_t)buffer[20];
-    config_parameters.check_mode              = (uint8_t)buffer[21];
-    config_parameters.usb_data_type           = (uint8_t)buffer[22];
-    config_parameters.adc_resolution          = (uint8_t)buffer[23];
-    config_parameters.sample_averaging        = (uint8_t)buffer[24];
-
-
-    // Init rf sythnesizer according to the received parameters
-    ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters); // spi is working in main.
-
-    // TODO: Check signals going to adf4158 with while(1) spi transfer to see if fpga pins are ok
-
-    GPIO_SetPin(RAMP_CONFIGURED);
 
     start_time = read_timer_us();
     
@@ -243,10 +145,132 @@ int main(void){
     // This while loop should count 10 sec and then should send micrblaze done signal and soft reset.
     while (1) {
 
-        switch(sampling_state){
-            case IDLE:
+        switch(state){
+            
+            case INIT_HARDWARE:
+            
+                init_platform();
                 
-                sampling_state = CHECK_TIME;
+                // Init GPIO pins
+                // 16 bit output gpio is used to set these pins
+                // adf_ce                      <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
+                // adf_le                      <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
+                // s_microblaze_done           <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
+                // s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
+                // s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
+                GPIO_Init();
+
+                // Init timer
+                status = initTimer();
+
+                // Init SPI (already in spi.c)
+                SPI_Init();
+
+                // Init fifo. VHDL sends python's configuration data to this fifo.
+                // Microblaze reads this to configure ADF4158 over spi.
+                status = initFifo();
+                
+                state = INIT_CODE;
+                break;
+                
+            case INIT_CODE:
+                                
+                // Control.vhd module uses sampling done and ramp configured signals. They need 1 not a pulse.
+                // Software reset is the resetting mechanism for the whole vhdl logic.
+                GPIO_ClearPin(SAMPLING_DONE);
+                GPIO_ClearPin(RAMP_CONFIGURED);
+                GPIO_SetPin(SOFTWARE_RESET);
+                GPIO_ClearPin(LED);
+                
+                // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
+                // Make sure CE low, LE high
+                GPIO_ClearPin(ADF_CE_PIN);
+                GPIO_SetPin(ADF_LE_PIN);
+
+                for(int i = 0; i < CONFIG_PACKET_SIZE; i++){
+                    buffer[i] = 0;
+                }
+
+                state = LED_INDICATOR;
+                break;
+
+            case LED_INDICATOR:
+            
+                // Fifo read enter indicator led blink   
+                for (int i = 0; i < 30; i++) {
+                    uint32_t t0 = read_timer();
+
+                    GPIO_TogglePin(LED);
+                    // wait ~100ms (adjust depending on timer freq)
+                    while ((read_timer() - t0) < 2500000);
+                }
+
+                state = READ_FIFO;    
+                break;            
+
+            case READ_FIFO:
+
+                // READ FIFO
+                // 128x32 bit data will be received but for the ease of use 8 bit of it is used as data
+                // so last 8 bit is taken
+
+                for (int i = 0; i < CONFIG_PACKET_SIZE; i++) {
+                    while (XLlFifo_iRxOccupancy(&Fifo) == 0);
+                    word = XLlFifo_RxGetWord(&Fifo);
+                    buffer[i] = (uint8_t)(word & 0xFF);
+                }
+                
+                if (buffer[0] != '=' || buffer[1] != '=') {
+                    xil_printf("CONFIG HEADER ERROR\r\n");
+                    while (1);
+                }
+
+                config_parameters.sweep_time              = get_u16_be(buffer, 2);
+                config_parameters.sweep_delay             = get_u16_be(buffer, 4);
+                config_parameters.record_time             = (uint8_t)buffer[6];
+                uint32_t time_counter = config_parameters.record_time * 1000000;
+
+                config_parameters.sampling_frequency      = get_u16_be(buffer, 7);   // kHz
+                config_parameters.number_of_samples       = get_u16_be(buffer, 9);
+                config_parameters.sweep_start_frequency   = get_u16_be(buffer, 11);
+                config_parameters.sweep_bandwidth         = get_u16_be(buffer, 13);
+
+                config_parameters.tx_mode                 = (uint8_t)buffer[15];
+                config_parameters.gain                    = (uint8_t)buffer[16];
+                config_parameters.sweep_type              = (uint8_t)buffer[17];
+                config_parameters.data_log                = (uint8_t)buffer[18];
+                config_parameters.adc_select              = (uint8_t)buffer[19];
+                config_parameters.use_pll                 = (uint8_t)buffer[20];
+                config_parameters.check_mode              = (uint8_t)buffer[21];
+                config_parameters.usb_data_type           = (uint8_t)buffer[22];
+                config_parameters.adc_resolution          = (uint8_t)buffer[23];
+                config_parameters.sample_averaging        = (uint8_t)buffer[24];
+
+                state = CONFIGURE_ADF4158;                
+                break;
+                
+            case CONFIGURE_ADF4158:
+                            
+                // Init rf sythnesizer according to the received parameters
+                ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters); // spi is working in main.
+
+                state = CONFIGURATION_LED_INDICATOR;
+                break;
+
+            case CONFIGURATION_LED_INDICATOR:
+            
+                // Fifo read enter indicator led blink   
+                for (int i = 0; i < 50; i++) {
+                    uint32_t t0 = read_timer();
+
+                    GPIO_TogglePin(LED);
+                    // wait ~100ms (adjust depending on timer freq)
+                    while ((read_timer() - t0) < 1000000);
+                }
+
+                GPIO_SetPin(RAMP_CONFIGURED);
+
+                state = CHECK_TIME;
                 break;
 
             case CHECK_TIME:    
@@ -256,23 +280,39 @@ int main(void){
                 if(current_time >= time_counter){
 
                     // record is done
-                    sampling_state = FINISH_SAMPLING;
+                    state = DONE_LED_INDICATOR;
                 }
 
                 break;
-                
+            
+            case DONE_LED_INDICATOR:
+            
+                // Fifo read enter indicator led blink   
+                for (int i = 0; i < 10; i++) {
+                    uint32_t t0 = read_timer();
+
+                    GPIO_TogglePin(LED);
+                    
+                    // wait ~100ms (adjust depending on timer freq)
+                    while ((read_timer() - t0) < 10000000);
+                }
+
+                state = FINISH_SAMPLING;
+                break;
+
             case FINISH_SAMPLING:
 
                 // Decide what to do here. Reset hardware and return to idle for example
                 GPIO_SetPin(SAMPLING_DONE);
-                GPIO_SetPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
-
-                uint32_t t0 = read_timer_us();
-
-                GPIO_TogglePin(LED);
-                // wait ~1000ms (adjust depending on timer freq)
-                while ((read_timer_us() - t0) < 100000);
+                GPIO_ClearPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
                 
+                usleep(100);
+
+                ADF4158_Reset();
+                
+                uint32_t t0 = read_timer_us();
+                
+                state = INIT_CODE;
                 break;
    
         }
@@ -304,6 +344,18 @@ void ADF4158_Init(WAVEFORM_TYPE wf, config_parameters_t* parameters){
 
     ADF4158_Configure_Sweep(wf, sweep_start_freq, sweep_bw, sweep_time, sweep_delay);
 	
+}
+
+void ADF4158_Reset(void)
+{
+    GPIO_ClearPin(ADF_LE_PIN);
+    GPIO_ClearPin(ADF_CE_PIN);
+
+    usleep(1000);
+
+    GPIO_SetPin(ADF_CE_PIN);
+
+    usleep(1000);
 }
 
 void ADF4158_Configure_Sweep(WAVEFORM_TYPE wf, double startFreq, double bw, double rampTime, double rampDelay){
