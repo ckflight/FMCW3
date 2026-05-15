@@ -132,12 +132,11 @@ int status = 0;
 
 uint32_t word;
 uint8_t buffer[CONFIG_PACKET_SIZE];
+uint32_t time_counter;
 
 int main(void){
 
     // IMPORTANT NOTE: Timer wraps around after 42 second so find a 64 bit solution to that if timer is used as counter to check time etc.
-
-    start_time = read_timer_us();
     
     // Once configuration done and ramp is configured control.vhd module starts its fsm for sampling 
     // in ramp and transferring data during gaps.(Initially, i will not record multi chirp x64 x128 etc.)
@@ -228,7 +227,7 @@ int main(void){
                 config_parameters.sweep_time              = get_u16_be(buffer, 2);
                 config_parameters.sweep_delay             = get_u16_be(buffer, 4);
                 config_parameters.record_time             = (uint8_t)buffer[6];
-                uint32_t time_counter = config_parameters.record_time * 1000000;
+                time_counter = config_parameters.record_time * 1000000;
 
                 config_parameters.sampling_frequency      = get_u16_be(buffer, 7);   // kHz
                 config_parameters.number_of_samples       = get_u16_be(buffer, 9);
@@ -269,6 +268,8 @@ int main(void){
                 }
 
                 GPIO_SetPin(RAMP_CONFIGURED);
+
+                start_time = read_timer_us();
 
                 state = CHECK_TIME;
                 break;
