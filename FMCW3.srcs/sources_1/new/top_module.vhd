@@ -189,7 +189,6 @@ architecture Behavioral of top_module is
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
         pa_en                       : out std_logic;
-        mixer_en                    : out std_logic;
 
         config_done                 : in std_logic;
 
@@ -382,6 +381,8 @@ begin
     usb_oe <= s_usb_oe;
     
     usb_siwua <= '1'; -- when 1 not used
+ 
+    mix_en <= '0';
  
     -- Not used for now
         
@@ -583,7 +584,6 @@ begin
         adc_shdn                    => adc_shdn,
         
         pa_en                       => s_pa_en,
-        mixer_en                    => mix_en,
         config_done                 => s_config_done,   -- input from config module to start sampling
         
         usb_tx_wr_en                => s_control_usb_tx_wr_en,

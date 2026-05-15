@@ -1009,7 +1009,12 @@
         "xci_name": "microblaze_axi_timer_0_1",
         "xci_path": "ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1.xci",
         "inst_hier_path": "axi_timer_0",
-        "has_run_ip_tcl": "true"
+        "has_run_ip_tcl": "true",
+        "parameters": {
+          "mode_64bit": {
+            "value": "1"
+          }
+        }
       },
       "axi_fifo_mm_s_0": {
         "vlnv": "xilinx.com:ip:axi_fifo_mm_s:4.3",
@@ -1282,7 +1287,7 @@
       "file": {
         "name": "../../../../FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
         "type": "ELF",
-        "checksum": "3320201126",
+        "checksum": "2920857939",
         "IsVisible": "1",
         "ScopedToRef": "microblaze",
         "ScopedToCell": [

@@ -19,7 +19,6 @@ entity control is
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
         pa_en                       : out std_logic;
-        mixer_en                    : out std_logic;
 
         config_done                 : in std_logic;
 
@@ -167,7 +166,6 @@ begin
             adc_oe    <= "11";
             adc_shdn  <= "11";
             pa_en     <= '0';
-            mixer_en  <= '0';
             ramp_done <= '0';
 
             s_fifo_overflow_flag <= '0';
@@ -187,13 +185,11 @@ begin
                     adc_oe    <= "11";
                     adc_shdn  <= "11";
                     pa_en     <= '0';
-                    --mixer_en  <= '1';
-                    mixer_en  <= '0';
                     ramp_done <= '0';
 
-                    if microblaze_ramp_configured = '1' and config_done = '1' and muxout = '1' and microblaze_sampling_done = '0' then
-                        mixer_en      <= '0';
+                    if microblaze_ramp_configured = '1' and config_done = '1' and muxout = '0' and microblaze_sampling_done = '0' then
                         control_state <= CTRL_RAMP;
+                        pa_en    <= '1';
 
                     elsif microblaze_sampling_done = '1' then
                         ramp_done     <= '1';
@@ -206,14 +202,13 @@ begin
                     adc_oe   <= "00";
                     adc_shdn <= "00";
                     pa_en    <= '1';
-                    mixer_en <= '0';
                 
                     if s_adc_fifo_wr_ovf = '1' then
                         s_fifo_overflow_flag <= '1';
                     end if;
                 
                     -- ramp is finished, gap started
-                    if muxout = '0' then                
+                    if muxout = '1' then                
                         control_state <= CTRL_GAP_WAIT;
                 
                     -- sample ADC data when valid during ramp
@@ -231,18 +226,13 @@ begin
                     adc_oe   <= "11";
                     adc_shdn <= "11";
                     pa_en    <= '0';
-                    --mixer_en <= '1';
 
                     if microblaze_sampling_done = '1' then
 
                         ramp_done     <= '1';
                         control_state <= CTRL_WAIT_SOFT_RESET;
 
-                    elsif microblaze_ramp_configured = '1' and
-                          config_done = '1' and
-                          muxout = '1' then
-
-                        mixer_en      <= '0';
+                    elsif microblaze_ramp_configured = '1' and config_done = '1' and muxout = '0' then
                         control_state <= CTRL_RAMP;
 
                     end if;
@@ -253,7 +243,6 @@ begin
                     adc_oe    <= "11";
                     adc_shdn  <= "11";
                     pa_en     <= '0';
-                    --mixer_en  <= '1';
                     ramp_done <= '1';
 
                     control_state <= CTRL_WAIT_SOFT_RESET;

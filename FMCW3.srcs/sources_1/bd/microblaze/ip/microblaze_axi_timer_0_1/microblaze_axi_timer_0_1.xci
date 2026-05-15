@@ -10,12 +10,12 @@
       "component_parameters": {
         "Component_Name": [ { "value": "microblaze_axi_timer_0_1", "resolve_type": "user", "usage": "all" } ],
         "TRIG0_ASSERT": [ { "value": "Active_High", "resolve_type": "user", "usage": "all" } ],
-        "TRIG1_ASSERT": [ { "value": "Active_High", "resolve_type": "user", "usage": "all" } ],
+        "TRIG1_ASSERT": [ { "value": "Active_High", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "GEN0_ASSERT": [ { "value": "Active_High", "resolve_type": "user", "usage": "all" } ],
-        "GEN1_ASSERT": [ { "value": "Active_High", "resolve_type": "user", "usage": "all" } ],
-        "COUNT_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "mode_64bit": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "enable_timer2": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ]
+        "GEN1_ASSERT": [ { "value": "Active_High", "resolve_type": "user", "enabled": false, "usage": "all" } ],
+        "COUNT_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
+        "mode_64bit": [ { "value": "1", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "enable_timer2": [ { "value": "1", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ]
       },
       "model_parameters": {
         "C_FAMILY": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
@@ -485,5 +485,5 @@
       }
     }
   },
-  "checksum": "ac51e47a"
+  "checksum": "abae7a08"
 }
