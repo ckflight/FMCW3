@@ -25,8 +25,6 @@
 XLlFifo Fifo;
 XTmrCtr TimerInstance;
 
-uint32_t start_time = 0, current_time = 0;
-
 int initFifo(void){
 
     xil_printf("FIFO RX test start\r\n");
@@ -37,33 +35,39 @@ int initFifo(void){
     return XST_SUCCESS;
 }
 
-int initTimer(void){
-
-   	// Initialize timer
+int initTimer(void)
+{
     if (XTmrCtr_Initialize(&TimerInstance, XPAR_AXI_TIMER_0_BASEADDR) != XST_SUCCESS) {
-        printf("Timer init failed\r\n");
+        xil_printf("Timer init failed\r\n");
         return XST_FAILURE;
     }
 
-    // Reset both halves 
-	XTmrCtr_Reset(&TimerInstance, 0);  // Reset Timer 0 (low 32 bits)
+    XTmrCtr_Reset(&TimerInstance, 0);
+    XTmrCtr_Reset(&TimerInstance, 1);
 
-    // Start the timer (starting counter 0 will also increment the cascaded 1)
+    XTmrCtr_SetOptions(&TimerInstance, 0, XTC_CASCADE_MODE_OPTION);
+
     XTmrCtr_Start(&TimerInstance, 0);
 
     return XST_SUCCESS;
 }
 
-uint32_t read_timer()
-{
-    return XTmrCtr_GetValue(&TimerInstance, 0);
-}
+#define TIMER_FREQ_HZ  XPAR_AXI_TIMER_0_CLOCK_FREQUENCY
+#define TICKS_PER_SEC  TIMER_FREQ_HZ
 
-uint32_t read_timer_us()
+uint64_t read_timer64_ticks(void)
 {
-    uint32_t ticks = XTmrCtr_GetValue(&TimerInstance, 0);
+    uint32_t high1;
+    uint32_t low;
+    uint32_t high2;
 
-    return (ticks * 1000000ULL) / XPAR_AXI_TIMER_0_CLOCK_FREQUENCY;
+    do {
+        high1 = XTmrCtr_GetValue(&TimerInstance, 1);  // upper 32 bits
+        low   = XTmrCtr_GetValue(&TimerInstance, 0);  // lower 32 bits
+        high2 = XTmrCtr_GetValue(&TimerInstance, 1);  // upper again
+    } while (high1 != high2);
+
+    return ((uint64_t)high2 << 32) | low;
 }
 
 uint16_t get_u16_be(uint8_t *buf, int index)
@@ -109,7 +113,6 @@ typedef enum {
 } WAVEFORM_TYPE;
 
 void ADF4158_Init(WAVEFORM_TYPE wf, config_parameters_t* parameters);
-void ADF4158_Reset(void);
 void ADF4158_Configure_Sweep(WAVEFORM_TYPE wf, double startFreq, double bw, double rampTime, double rampDelay);
 void ADF4158_DeviceEnable(void);
 int ADF4158_WriteRegister(u32 data);
@@ -122,7 +125,6 @@ typedef enum{
     CONFIGURE_ADF4158,
     CONFIGURATION_LED_INDICATOR,
     CHECK_TIME,
-    DONE_LED_INDICATOR,
     FINISH_SAMPLING
 }STATES_e;
 
@@ -132,7 +134,11 @@ int status = 0;
 
 uint32_t word;
 uint8_t buffer[CONFIG_PACKET_SIZE];
-uint32_t time_counter;
+
+uint64_t start_time = 0;
+uint64_t current_time = 0;
+uint64_t time_counter = 0;
+uint64_t sample_led_time = 0;
 
 int main(void){
 
@@ -183,6 +189,7 @@ int main(void){
                 
                 // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
                 // Make sure CE low, LE high
+                // This resets the ramp as well
                 GPIO_ClearPin(ADF_CE_PIN);
                 GPIO_SetPin(ADF_LE_PIN);
 
@@ -196,13 +203,15 @@ int main(void){
             case LED_INDICATOR:
             
                 // Fifo read enter indicator led blink   
-                for (int i = 0; i < 30; i++) {
-                    uint32_t t0 = read_timer();
+                for (int i = 0; i < 60; i++) {
+                    uint64_t t0 = read_timer64_ticks();
 
                     GPIO_TogglePin(LED);
-                    // wait ~100ms (adjust depending on timer freq)
-                    while ((read_timer() - t0) < 2500000);
+
+                    while ((read_timer64_ticks() - t0) < TICKS_PER_SEC/40);
                 }
+                GPIO_ClearPin(LED);
+
 
                 state = READ_FIFO;    
                 break;            
@@ -227,8 +236,8 @@ int main(void){
                 config_parameters.sweep_time              = get_u16_be(buffer, 2);
                 config_parameters.sweep_delay             = get_u16_be(buffer, 4);
                 config_parameters.record_time             = (uint8_t)buffer[6];
-                time_counter = config_parameters.record_time * 1000000;
-
+                time_counter = (uint64_t)config_parameters.record_time * TICKS_PER_SEC;
+                
                 config_parameters.sampling_frequency      = get_u16_be(buffer, 7);   // kHz
                 config_parameters.number_of_samples       = get_u16_be(buffer, 9);
                 config_parameters.sweep_start_frequency   = get_u16_be(buffer, 11);
@@ -259,46 +268,41 @@ int main(void){
             case CONFIGURATION_LED_INDICATOR:
             
                 // Fifo read enter indicator led blink   
-                for (int i = 0; i < 50; i++) {
-                    uint32_t t0 = read_timer();
+                for (int i = 0; i < 10; i++) {
+                    uint64_t t0 = read_timer64_ticks();
 
                     GPIO_TogglePin(LED);
-                    // wait ~100ms (adjust depending on timer freq)
-                    while ((read_timer() - t0) < 1000000);
+                   
+                    while ((read_timer64_ticks() - t0) < TICKS_PER_SEC/10);
                 }
+                GPIO_ClearPin(LED);
 
                 GPIO_SetPin(RAMP_CONFIGURED);
 
-                start_time = read_timer_us();
-
+                start_time = read_timer64_ticks();
+                sample_led_time = start_time;        
+                        
                 state = CHECK_TIME;
                 break;
 
-            case CHECK_TIME:    
+            case CHECK_TIME:
 
-                current_time = read_timer_us() - start_time;
+                current_time = read_timer64_ticks() - start_time;
+
+                // blink LED every 1 second
+                if ((read_timer64_ticks() - sample_led_time) >= TICKS_PER_SEC/2) {
+
+                    GPIO_TogglePin(LED);
+
+                    sample_led_time = read_timer64_ticks();
+                }
 
                 if(current_time >= time_counter){
 
                     // record is done
-                    state = DONE_LED_INDICATOR;
+                    state = FINISH_SAMPLING;
                 }
 
-                break;
-            
-            case DONE_LED_INDICATOR:
-            
-                // Fifo read enter indicator led blink   
-                for (int i = 0; i < 10; i++) {
-                    uint32_t t0 = read_timer();
-
-                    GPIO_TogglePin(LED);
-                    
-                    // wait ~100ms (adjust depending on timer freq)
-                    while ((read_timer() - t0) < 10000000);
-                }
-
-                state = FINISH_SAMPLING;
                 break;
 
             case FINISH_SAMPLING:
@@ -308,11 +312,7 @@ int main(void){
                 GPIO_ClearPin(SOFTWARE_RESET); // Sampling done is not meaningful with this logic!
                 
                 usleep(100);
-
-                ADF4158_Reset();
-                
-                uint32_t t0 = read_timer_us();
-                
+                                
                 state = INIT_CODE;
                 break;
    
@@ -345,18 +345,6 @@ void ADF4158_Init(WAVEFORM_TYPE wf, config_parameters_t* parameters){
 
     ADF4158_Configure_Sweep(wf, sweep_start_freq, sweep_bw, sweep_time, sweep_delay);
 	
-}
-
-void ADF4158_Reset(void)
-{
-    GPIO_ClearPin(ADF_LE_PIN);
-    GPIO_ClearPin(ADF_CE_PIN);
-
-    usleep(1000);
-
-    GPIO_SetPin(ADF_CE_PIN);
-
-    usleep(1000);
 }
 
 void ADF4158_Configure_Sweep(WAVEFORM_TYPE wf, double startFreq, double bw, double rampTime, double rampDelay){
