@@ -79,6 +79,7 @@ architecture Behavioral of control is
     type control_state_t is (
         CTRL_IDLE,
         CTRL_IGNORE_FIRST_RAMP,
+        CTRL_WRITE_HEADER,
         CTRL_RAMP,
         CTRL_GAP_WAIT,
         CTRL_WAIT_SOFT_RESET
@@ -89,9 +90,6 @@ architecture Behavioral of control is
         TX_WAIT_CMD1,
         TX_WAIT_CMD2,
         TX_CHECK_CMD,
-        TX_SEND_HEADER,
-        TX_WRITE_HEADER,
-        TX_WAIT_HEADER_ACK,
         TX_READ_ADC_FIFO,
         TX_WAIT_FIFO_DATA,
         TX_PREP_BYTE,
@@ -113,7 +111,6 @@ architecture Behavioral of control is
 
     signal s_tx_word            : std_logic_vector(31 downto 0) := (others => '0');
     signal byte_sel             : integer range 0 to 3 := 0; -- select each byte of 32 bit 2 ch adc data
-    signal header_sel           : integer range 0 to 3 := 0; -- select 4 byte header of each chirp data
 
     signal s_fifo_overflow_flag : std_logic := '0';
     signal s_usb_overflow_flag  : std_logic := '0';
@@ -207,7 +204,7 @@ begin
 
             s_fifo_overflow_flag <= '0';
             adc_test_counter := (others => '0');
-
+            
         elsif rising_edge(clk) then
 
             s_adc_fifo_wr_en <= '0';
@@ -246,6 +243,15 @@ begin
                     if muxout = '1' then
                         control_state <= CTRL_GAP_WAIT;
                     end if;
+
+                when CTRL_WRITE_HEADER =>
+                    
+                    -- write header to fifo before chirp data for finding chirp data at python
+                    if s_adc_fifo_wr_full = '0' then
+                        s_adc_fifo_din <= x"C8C8C8C8";                         
+                        s_adc_fifo_wr_en <= '1';       
+                        control_state <= CTRL_RAMP;                                                        
+                    end if;                        
 
                 
                 when CTRL_RAMP =>
@@ -292,7 +298,7 @@ begin
                         control_state <= CTRL_WAIT_SOFT_RESET;
 
                     elsif microblaze_ramp_configured = '1' and config_done = '1' and muxout = '0' then
-                        control_state <= CTRL_RAMP;
+                        control_state <= CTRL_WRITE_HEADER;
                         pa_en    <= '1';
 
                     end if;
@@ -335,7 +341,7 @@ begin
 
             s_tx_word <= (others => '0');
             byte_sel  <= 0;
-            header_sel <= 0;
+            
 
             s_usb_overflow_flag <= '0';
 
@@ -360,6 +366,7 @@ begin
                         tx_state     <= TX_WAIT_CMD1;
                     end if;
                 
+                -- first byte read needs extra clock cycle
                 when TX_WAIT_CMD1 =>
                     tx_state <= TX_WAIT_CMD2;
                 
@@ -370,53 +377,11 @@ begin
                 when TX_CHECK_CMD =>
 
                     if usb_rx_rd_data = x"43" then   -- ASCII 'C'
-                        tx_state <= TX_SEND_HEADER;
-                        header_sel <= 0;                      
+                        tx_state <= TX_READ_ADC_FIFO;
                     else
                         tx_state <= TX_IDLE;
                     end if;
 
-                when TX_SEND_HEADER =>
-                
-                    if usb_tx_wr_full = '0' then
-                
-                        case header_sel is
-                            when 0      => usb_tx_wr_data <= x"C7";
-                            when 1      => usb_tx_wr_data <= x"C1";
-                            when 2      => usb_tx_wr_data <= x"11";
-                            when 3      => usb_tx_wr_data <= x"11";
-                            when others => usb_tx_wr_data <= x"00";
-                        end case;
-                
-                        tx_state <= TX_WRITE_HEADER;
-                
-                    end if;
-                
-                
-                when TX_WRITE_HEADER =>
-                
-                    usb_tx_wr_en <= '1';
-                    tx_state     <= TX_WAIT_HEADER_ACK;
-                
-                
-                when TX_WAIT_HEADER_ACK =>
-                
-                    if usb_tx_wr_ack = '1' then
-                
-                        if header_sel = 3 then
-                            header_sel <= 0;
-                            tx_state   <= TX_READ_ADC_FIFO;
-                        else
-                            header_sel <= header_sel + 1;
-                            tx_state   <= TX_SEND_HEADER;
-                        end if;
-                
-                    elsif usb_tx_wr_ovf = '1' then
-                
-                        s_usb_overflow_flag <= '1';
-                        tx_state <= TX_IDLE;
-                
-                    end if;
                 
                 when TX_READ_ADC_FIFO =>
 
