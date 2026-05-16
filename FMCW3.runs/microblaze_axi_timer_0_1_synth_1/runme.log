@@ -1,0 +1,500 @@
+
+*** Running vivado
+    with args -log microblaze_axi_timer_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_axi_timer_0_1.tcl
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Fri May 15 23:58:28 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source microblaze_axi_timer_0_1.tcl -notrace
+Command: synth_design -top microblaze_axi_timer_0_1 -part xc7a35tftg256-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 305509
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2489.207 ; gain = 225.688 ; free physical = 42558 ; free virtual = 57596
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_timer_0_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/synth/microblaze_axi_timer_0_1.vhd:90]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_COUNT_WIDTH bound to: 32 - type: integer 
+	Parameter C_ONE_TIMER_ONLY bound to: 0 - type: integer 
+	Parameter C_TRIG0_ASSERT bound to: 1'b1 
+	Parameter C_TRIG1_ASSERT bound to: 1'b1 
+	Parameter C_GEN0_ASSERT bound to: 1'b1 
+	Parameter C_GEN1_ASSERT bound to: 1'b1 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'axi_timer' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1985' bound to instance 'U0' of component 'axi_timer' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/synth/microblaze_axi_timer_0_1.vhd:173]
+INFO: [Synth 8-638] synthesizing module 'axi_timer' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:2040]
+INFO: [Synth 8-638] synthesizing module 'tc_core' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1599]
+INFO: [Synth 8-638] synthesizing module 'mux_onehot_f' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:267]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-6157] synthesizing module 'MUXCY' [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847]
+INFO: [Synth 8-6155] done synthesizing module 'MUXCY' (0#1) [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-3491] module 'MUXCY' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:104847' bound to instance 'MUXCY_I' of component 'MUXCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:364]
+INFO: [Synth 8-256] done synthesizing module 'mux_onehot_f' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:267]
+INFO: [Synth 8-638] synthesizing module 'count_module' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1331]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-113] binding component instance 'LOAD_REG_I' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1367]
+INFO: [Synth 8-638] synthesizing module 'counter_f' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:102]
+INFO: [Synth 8-256] done synthesizing module 'counter_f' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:102]
+INFO: [Synth 8-256] done synthesizing module 'count_module' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1331]
+INFO: [Synth 8-638] synthesizing module 'timer_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:741]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR0_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:830]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'TCSR1_FF_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:911]
+INFO: [Synth 8-113] binding component instance 'READ_DONE0_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:983]
+INFO: [Synth 8-113] binding component instance 'READ_DONE1_I' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:993]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/tools/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'INPUT_DOUBLE_REGS3' of component 'xpm_cdc_single' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1003]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [/tools/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (0#1) [/tools/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/tools/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'INPUT_DOUBLE_REGS' of component 'xpm_cdc_single' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1070]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'xpm_cdc_single' declared at '/tools/2025.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:152' bound to instance 'INPUT_DOUBLE_REGS2' of component 'xpm_cdc_single' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1085]
+INFO: [Synth 8-256] done synthesizing module 'timer_control' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:741]
+INFO: [Synth 8-113] binding component instance 'PWM_FF_I' to cell 'FDRS' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1805]
+INFO: [Synth 8-256] done synthesizing module 'tc_core' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:1599]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_timer' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ipshared/05e8/hdl/axi_timer_v2_0_vh_rfs.vhd:2040]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_axi_timer_0_1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/synth/microblaze_axi_timer_0_1.vhd:90]
+INFO: [Synth 8-7129] Port Address_In_Erly[3] in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port Address_In_Erly[4] in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus_RNW in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[3] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[2] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[1] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[0] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port src_clk in module xpm_cdc_single is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[0] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[1] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[2] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[3] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[4] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[5] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[6] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[7] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[8] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[9] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[10] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[11] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[12] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[13] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[14] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[15] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[16] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[17] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[18] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_data[19] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port BE[0] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port BE[1] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[0] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[2] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[3] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[4] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[6] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[7] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[2] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[3] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[6] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[7] in module timer_control is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_addr[0] in module tc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_addr[1] in module tc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_addr[2] in module tc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_addr[3] in module tc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_addr[4] in module tc_core is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2589.176 ; gain = 325.656 ; free physical = 42462 ; free virtual = 57505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2604.020 ; gain = 340.500 ; free physical = 42462 ; free virtual = 57505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2604.020 ; gain = 340.500 ; free physical = 42462 ; free virtual = 57505
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2609.957 ; gain = 0.000 ; free physical = 42475 ; free virtual = 57517
+INFO: [Netlist 29-17] Analyzing 90 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_timer_0_1/microblaze_axi_timer_0_1_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/microblaze_axi_timer_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/microblaze_axi_timer_0_1_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/tools/2025.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/microblaze_axi_timer_0_1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/microblaze_axi_timer_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 3 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2713.758 ; gain = 0.000 ; free physical = 42382 ; free virtual = 57417
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 26 instances were transformed.
+  FDRS => FDRS (FDRE, LUT2, VCC): 1 instance 
+  FDRSE => FDRSE (FDRE, LUT4, VCC): 25 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2713.793 ; gain = 0.000 ; free physical = 42374 ; free virtual = 57409
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2713.793 ; gain = 450.273 ; free physical = 42347 ; free virtual = 57379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2721.762 ; gain = 458.242 ; free physical = 42347 ; free virtual = 57379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2721.762 ; gain = 458.242 ; free physical = 42347 ; free virtual = 57379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2721.762 ; gain = 458.242 ; free physical = 42346 ; free virtual = 57379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
++---Registers : 
+	               33 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 29    
++---Muxes : 
+	   3 Input   33 Bit        Muxes := 2     
+	   2 Input   33 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 3     
+	   3 Input    9 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 5     
+	   2 Input    2 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 24    
+	   4 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7129] Port src_clk in module xpm_cdc_single is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wstrb[3] in module axi_timer is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wstrb[2] in module axi_timer is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wstrb[1] in module axi_timer is either unconnected or has no load
+INFO: [Synth 8-7129] Port s_axi_wstrb[0] in module axi_timer is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2721.762 ; gain = 458.242 ; free physical = 42368 ; free virtual = 57401
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2766.762 ; gain = 503.242 ; free physical = 42407 ; free virtual = 57447
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2796.793 ; gain = 533.273 ; free physical = 42376 ; free virtual = 57416
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2804.801 ; gain = 541.281 ; free physical = 42376 ; free virtual = 57416
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    16|
+|2     |LUT1   |     6|
+|3     |LUT2   |    85|
+|4     |LUT3   |   104|
+|5     |LUT4   |    76|
+|6     |LUT5   |    20|
+|7     |LUT6   |    64|
+|8     |MUXCY  |    64|
+|9     |FDRE   |   243|
+|10    |FDSE   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.613 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2971.613 ; gain = 598.320 ; free physical = 42254 ; free virtual = 57287
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2971.621 ; gain = 708.094 ; free physical = 42254 ; free virtual = 57287
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2971.621 ; gain = 0.000 ; free physical = 42403 ; free virtual = 57436
+INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3027.641 ; gain = 0.000 ; free physical = 42432 ; free virtual = 57465
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 32 instances
+
+Synth Design complete | Checksum: e93ee10e
+INFO: [Common 17-83] Releasing license: Synthesis
+238 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 3027.676 ; gain = 1143.430 ; free physical = 42432 ; free virtual = 57465
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2261.130; main = 2101.127; forked = 281.840
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3882.344; main = 3027.645; forked = 996.539
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3051.652 ; gain = 0.000 ; free physical = 42432 ; free virtual = 57465
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/microblaze_axi_timer_0_1_synth_1/microblaze_axi_timer_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP microblaze_axi_timer_0_1, cache-ID = 078e584738ef709e
+INFO: [Coretcl 2-1174] Renamed 20 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3051.652 ; gain = 0.000 ; free physical = 42425 ; free virtual = 57459
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/microblaze_axi_timer_0_1_synth_1/microblaze_axi_timer_0_1.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file microblaze_axi_timer_0_1_utilization_synth.rpt -pb microblaze_axi_timer_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May 15 23:58:42 2026...

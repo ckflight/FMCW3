@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1778781272" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1778938940" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_module.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="top_module_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_module.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="top_module_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="top_module_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_module_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="top_module.vds"/>
   <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="top_module_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="top_module.tcl"/>
-  <File Type="RDS-UTIL" Name="top_module_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="top_module_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/fir20.coe">
@@ -110,12 +113,14 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="microblaze_axi_timer_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_2"/>
   <BlockFileSet Type="BlockSrcs" Name="ila_3"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_1"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_generator_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fir_compiler_0"/>
 </GenRun>

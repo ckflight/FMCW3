@@ -1,4 +1,4 @@
-# 2026-05-14T20:15:20.996079096
+# 2026-05-16T16:12:36.112390633
 import vitis
 
 client = vitis.create_client()
@@ -14,11 +14,7 @@ status = platform.build()
 comp = client.get_component(name="FMCW3_App")
 comp.build()
 
-status = comp.clean()
-
-status = platform.build()
-
-comp.build()
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xsa")
 
 status = platform.build()
 
@@ -26,11 +22,17 @@ status = platform.build()
 
 comp.build()
 
-comp.set_app_config(key = "USER_COMPILE_SOURCES", values = ["helloworld.c", "spi.c", "platform.c", "gpio.c"])
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xsa")
+
+status = platform.build()
 
 status = platform.build()
 
 comp.build()
+
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xsa")
+
+status = platform.build()
 
 status = platform.build()
 

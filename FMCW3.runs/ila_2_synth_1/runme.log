@@ -7,7 +7,7 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Thu May 14 19:46:54 2026
+  **** Start of session at: Fri May 15 18:44:54 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -19,9 +19,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15782
+INFO: [Synth 8-7075] Helper process launched with PID 12108
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2510.051 ; gain = 227.688 ; free physical = 45822 ; free virtual = 61700
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2510.051 ; gain = 226.688 ; free physical = 45319 ; free virtual = 59655
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:30]
 INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/hdl/verilog/xsdbm_v3_0_5_bs_core_ext.vh:32]
@@ -124,7 +124,7 @@ INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:275]
 INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/hdl/verilog/xsdbm_v3_0_5_bs_core_vec.vh:277]
 INFO: [Common 17-14] Message 'Synth 8-11241' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-638] synthesizing module 'ila_2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'ila_2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:69]
 	Parameter C_XLNX_HW_PROBE_INFO bound to: DEFAULT - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_CORE_TYPE bound to: 1 - type: integer 
@@ -133,7 +133,7 @@ INFO: [Synth 8-638] synthesizing module 'ila_2' [/home/ck/Desktop/Workspace/FPGA
 	Parameter C_CAPTURE_TYPE bound to: 0 - type: integer 
 	Parameter C_MU_TYPE bound to: 0 - type: integer 
 	Parameter C_TC_TYPE bound to: 0 - type: integer 
-	Parameter C_NUM_OF_PROBES bound to: 7 - type: integer 
+	Parameter C_NUM_OF_PROBES bound to: 8 - type: integer 
 	Parameter C_DATA_DEPTH bound to: 1024 - type: integer 
 	Parameter C_MAJOR_VERSION bound to: 2025 - type: integer 
 	Parameter C_MINOR_VERSION bound to: 2 - type: integer 
@@ -1186,7 +1186,7 @@ INFO: [Synth 8-638] synthesizing module 'ila_2' [/home/ck/Desktop/Workspace/FPGA
 	Parameter C_PROBE4_MU_CNT bound to: 2 - type: integer 
 	Parameter C_PROBE5_MU_CNT bound to: 2 - type: integer 
 	Parameter C_PROBE6_MU_CNT bound to: 2 - type: integer 
-	Parameter C_PROBE7_MU_CNT bound to: 1 - type: integer 
+	Parameter C_PROBE7_MU_CNT bound to: 2 - type: integer 
 	Parameter C_PROBE8_MU_CNT bound to: 1 - type: integer 
 	Parameter C_PROBE9_MU_CNT bound to: 1 - type: integer 
 	Parameter C_PROBE10_MU_CNT bound to: 1 - type: integer 
@@ -2210,7 +2210,7 @@ INFO: [Synth 8-638] synthesizing module 'ila_2' [/home/ck/Desktop/Workspace/FPGA
 	Parameter C_PROBE4_TYPE bound to: 0 - type: integer 
 	Parameter C_PROBE5_TYPE bound to: 0 - type: integer 
 	Parameter C_PROBE6_TYPE bound to: 0 - type: integer 
-	Parameter C_PROBE7_TYPE bound to: 1 - type: integer 
+	Parameter C_PROBE7_TYPE bound to: 0 - type: integer 
 	Parameter C_PROBE8_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE9_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE10_TYPE bound to: 1 - type: integer 
@@ -3227,7 +3227,7 @@ INFO: [Synth 8-638] synthesizing module 'ila_2' [/home/ck/Desktop/Workspace/FPGA
 	Parameter C_PROBE1021_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE1022_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE1023_TYPE bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'ila_v6_2_19_ila' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/hdl/ila_v6_2_syn_rfs.v:6191' bound to instance 'U0' of component 'ila_v6_2_19_ila' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:4253]
+INFO: [Synth 8-3491] module 'ila_v6_2_19_ila' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/hdl/ila_v6_2_syn_rfs.v:6191' bound to instance 'U0' of component 'ila_v6_2_19_ila' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:4254]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:3131]
 INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (0#1) [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:3131]
 INFO: [Synth 8-6157] synthesizing module 'CARRY4' [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:3094]
@@ -3240,10 +3240,11 @@ INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [/tools/2025.2/Vivado/scripts
 INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (0#1) [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:165423]
 INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49396]
 INFO: [Synth 8-6155] done synthesizing module 'FDRE' (0#1) [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49396]
-INFO: [Synth 8-256] done synthesizing module 'ila_2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:68]
-INFO: [Synth 8-3848] Net sl_iport0 in module/entity ila_2 does not have driver. [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:4250]
+INFO: [Synth 8-256] done synthesizing module 'ila_2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:69]
+INFO: [Synth 8-3848] Net sl_iport0 in module/entity ila_2 does not have driver. [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_2_1/synth/ila_2.vhd:4251]
 INFO: [Synth 8-7129] Port SEL_I[0] in module ltlib_v1_0_3_generic_mux is either unconnected or has no load
 INFO: [Synth 8-7129] Port CLKB in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
+INFO: [Synth 8-7129] Port DOUTA_I[8] in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DOUTA_I[7] in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DOUTA_I[6] in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DOUTA_I[5] in module blk_mem_gen_v8_4_12_blk_mem_output_block is either unconnected or has no load
@@ -3320,6 +3321,7 @@ INFO: [Synth 8-7129] Port REGCEA in module blk_mem_gen_v8_4_12_blk_mem_input_blo
 INFO: [Synth 8-7129] Port RSTB in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port REGCEB in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port WEB[0] in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
+INFO: [Synth 8-7129] Port DINB[8] in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DINB[7] in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DINB[6] in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
 INFO: [Synth 8-7129] Port DINB[5] in module blk_mem_gen_v8_4_12_blk_mem_input_block is either unconnected or has no load
@@ -3340,23 +3342,21 @@ INFO: [Synth 8-7129] Port S_AXI_AWADDR[31] in module blk_mem_gen_v8_4_12_synth i
 INFO: [Synth 8-7129] Port S_AXI_AWADDR[30] in module blk_mem_gen_v8_4_12_synth is either unconnected or has no load
 INFO: [Synth 8-7129] Port S_AXI_AWADDR[29] in module blk_mem_gen_v8_4_12_synth is either unconnected or has no load
 INFO: [Synth 8-7129] Port S_AXI_AWADDR[28] in module blk_mem_gen_v8_4_12_synth is either unconnected or has no load
-INFO: [Synth 8-7129] Port S_AXI_AWADDR[27] in module blk_mem_gen_v8_4_12_synth is either unconnected or has no load
-INFO: [Synth 8-7129] Port S_AXI_AWADDR[26] in module blk_mem_gen_v8_4_12_synth is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2968.066 ; gain = 685.703 ; free physical = 45368 ; free virtual = 61248
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2968.066 ; gain = 684.703 ; free physical = 44860 ; free virtual = 59201
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2968.066 ; gain = 685.703 ; free physical = 45368 ; free virtual = 61248
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2968.066 ; gain = 684.703 ; free physical = 44860 ; free virtual = 59201
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2968.066 ; gain = 685.703 ; free physical = 45368 ; free virtual = 61248
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2968.066 ; gain = 684.703 ; free physical = 44860 ; free virtual = 59201
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2968.066 ; gain = 0.000 ; free physical = 45377 ; free virtual = 61257
-INFO: [Netlist 29-17] Analyzing 159 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2968.066 ; gain = 0.000 ; free physical = 44860 ; free virtual = 59201
+INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -3372,29 +3372,29 @@ Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.r
 Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_2_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3008.086 ; gain = 0.000 ; free physical = 45380 ; free virtual = 61260
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3008.086 ; gain = 0.000 ; free physical = 44861 ; free virtual = 59215
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 115 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 96 instances
-  CFGLUT5 => SRLC32E: 19 instances
+  A total of 125 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 104 instances
+  CFGLUT5 => SRLC32E: 21 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3008.121 ; gain = 0.000 ; free physical = 45380 ; free virtual = 61260
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3008.121 ; gain = 0.000 ; free physical = 44861 ; free virtual = 59216
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3008.121 ; gain = 725.758 ; free physical = 45398 ; free virtual = 61282
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3008.121 ; gain = 724.758 ; free physical = 44925 ; free virtual = 59284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3016.090 ; gain = 733.727 ; free physical = 45398 ; free virtual = 61282
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3016.090 ; gain = 732.727 ; free physical = 44925 ; free virtual = 59284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3016.090 ; gain = 733.727 ; free physical = 45401 ; free virtual = 61284
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 3016.090 ; gain = 732.727 ; free physical = 44925 ; free virtual = 59284
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized0'
@@ -3413,6 +3413,8 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized13'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized14'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized15'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized16'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_5_reg_p2s__parameterized17'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'ltlib_v1_0_3_generic_memrd'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -3570,6 +3572,24 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'xsdbs_v1_0_5_reg_p2s__parameterized16'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'xsdbs_v1_0_5_reg_p2s__parameterized17'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
               RESET_ADDR |                          0000001 |                          0000001
             REQUEST_READ |                          0000010 |                          0000010
            WAIT_READ_ACK |                          0000100 |                          0000100
@@ -3579,7 +3599,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'ltlib_v1_0_3_generic_memrd'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3016.090 ; gain = 733.727 ; free physical = 45418 ; free virtual = 61303
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3016.090 ; gain = 732.727 ; free physical = 44922 ; free virtual = 59282
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -3601,25 +3621,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_current_state_reg[5]) is unused and will be removed from module ltlib_v1_0_3_generic_memrd.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45437 ; free virtual = 61323
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3032.098 ; gain = 748.734 ; free physical = 44911 ; free virtual = 59270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45440 ; free virtual = 61327
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 3032.098 ; gain = 748.734 ; free physical = 44910 ; free virtual = 59279
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3032.098 ; gain = 748.734 ; free physical = 44910 ; free virtual = 59279
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45444 ; free virtual = 61330
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3032.098 ; gain = 748.734 ; free physical = 44911 ; free virtual = 59281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -3637,37 +3657,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44931 ; free virtual = 59300
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44931 ; free virtual = 59300
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44931 ; free virtual = 59300
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44931 ; free virtual = 59300
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44930 ; free virtual = 59299
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44930 ; free virtual = 59299
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -3683,52 +3703,53 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |    43|
-|2     |CFGLUT5  |   115|
-|3     |LUT1     |    41|
-|4     |LUT2     |   122|
-|5     |LUT3     |   124|
-|6     |LUT4     |   364|
-|7     |LUT5     |   156|
-|8     |LUT6     |   383|
-|9     |MUXF7    |    19|
-|10    |RAMB18E1 |     1|
-|11    |SRL16E   |    11|
-|12    |SRLC16E  |     2|
-|13    |SRLC32E  |    17|
-|14    |FDRE     |  1772|
-|15    |FDSE     |    10|
+|1     |CARRY4   |    47|
+|2     |CFGLUT5  |   125|
+|3     |LUT1     |    43|
+|4     |LUT2     |   112|
+|5     |LUT3     |   135|
+|6     |LUT4     |   402|
+|7     |LUT5     |   186|
+|8     |LUT6     |   374|
+|9     |MUXF7    |    65|
+|10    |MUXF8    |    16|
+|11    |RAMB18E1 |     1|
+|12    |SRL16E   |    12|
+|13    |SRLC16E  |     2|
+|14    |SRLC32E  |    17|
+|15    |FDRE     |  1873|
+|16    |FDSE     |    10|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3048.105 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3035.066 ; gain = 751.703 ; free physical = 44930 ; free virtual = 59299
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3048.105 ; gain = 725.688 ; free physical = 45441 ; free virtual = 61327
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3048.113 ; gain = 765.742 ; free physical = 45441 ; free virtual = 61327
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3035.066 ; gain = 711.648 ; free physical = 44930 ; free virtual = 59299
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3035.074 ; gain = 751.703 ; free physical = 44930 ; free virtual = 59299
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3048.113 ; gain = 0.000 ; free physical = 45614 ; free virtual = 61500
-INFO: [Netlist 29-17] Analyzing 178 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3035.074 ; gain = 0.000 ; free physical = 45101 ; free virtual = 59470
+INFO: [Netlist 29-17] Analyzing 254 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3104.133 ; gain = 0.000 ; free physical = 45615 ; free virtual = 61501
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3091.094 ; gain = 0.000 ; free physical = 45108 ; free virtual = 59478
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 115 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 96 instances
-  CFGLUT5 => SRLC32E: 19 instances
+  A total of 125 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 104 instances
+  CFGLUT5 => SRLC32E: 21 instances
 
-Synth Design complete | Checksum: e1bb0d4
+Synth Design complete | Checksum: ef0d92b9
 INFO: [Common 17-83] Releasing license: Synthesis
-272 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+276 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:23 . Memory (MB): peak = 3104.168 ; gain = 1219.922 ; free physical = 45614 ; free virtual = 61500
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2422.404; main = 2198.508; forked = 281.719
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4044.648; main = 3104.137; forked = 996.539
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3128.145 ; gain = 0.000 ; free physical = 45614 ; free virtual = 61500
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:23 . Memory (MB): peak = 3091.129 ; gain = 1206.883 ; free physical = 45108 ; free virtual = 59477
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2408.026; main = 2187.315; forked = 281.603
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4028.641; main = 3091.098; forked = 996.539
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3115.105 ; gain = 0.000 ; free physical = 45107 ; free virtual = 59477
 INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_2_synth_1/ila_2.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ila_2, cache-ID = 38555f0a51da0047
-INFO: [Coretcl 2-1174] Renamed 175 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3128.145 ; gain = 0.000 ; free physical = 45625 ; free virtual = 61517
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ila_2, cache-ID = 200bf724a8b054f8
+INFO: [Coretcl 2-1174] Renamed 185 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3115.105 ; gain = 0.000 ; free physical = 45100 ; free virtual = 59475
 INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_2_synth_1/ila_2.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file ila_2_utilization_synth.rpt -pb ila_2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May 14 19:47:21 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri May 15 18:45:21 2026...

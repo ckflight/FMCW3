@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu May 14 20:54:50 2026
+| Date         : Sat May 16 16:42:39 2026
 | Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command      : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
 | Design       : top_module
@@ -31,15 +31,15 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |   79 |     0 |          0 |     20800 |  0.38 |
-|   LUT as Logic          |   79 |     0 |          0 |     20800 |  0.38 |
+| Slice LUTs*             |  120 |     0 |          0 |     20800 |  0.58 |
+|   LUT as Logic          |  120 |     0 |          0 |     20800 |  0.58 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  215 |     0 |          0 |     41600 |  0.52 |
-|   Register as Flip Flop |  215 |     0 |          0 |     41600 |  0.52 |
+| Slice Registers         |  207 |     0 |          0 |     41600 |  0.50 |
+|   Register as Flip Flop |  207 |     0 |          0 |     41600 |  0.50 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
-| Unique Control Sets     |   17 |       |          0 |      8150 |  0.21 |
+| Unique Control Sets     |   20 |       |          0 |      8150 |  0.25 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -60,9 +60,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 6     |          Yes |           - |          Set |
-| 148   |          Yes |           - |        Reset |
+| 155   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 61    |          Yes |       Reset |            - |
+| 46    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -95,7 +95,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   48 |     0 |          0 |       170 | 28.24 |
+| Bonded IOB                  |   35 |     0 |          0 |       170 | 20.59 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         5 |  0.00 |
@@ -151,18 +151,19 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |  148 |        Flop & Latch |
-| FDRE     |   61 |        Flop & Latch |
-| LUT6     |   26 |                 LUT |
-| IBUF     |   25 |                  IO |
-| LUT4     |   22 |                 LUT |
-| LUT2     |   21 |                 LUT |
-| LUT3     |   20 |                 LUT |
+| FDCE     |  155 |        Flop & Latch |
+| LUT2     |   55 |                 LUT |
+| FDRE     |   46 |        Flop & Latch |
+| LUT6     |   28 |                 LUT |
+| LUT4     |   25 |                 LUT |
+| LUT3     |   18 |                 LUT |
 | OBUF     |   17 |                  IO |
-| OBUFT    |   14 |                  IO |
-| LUT5     |   12 |                 LUT |
+| LUT5     |   16 |                 LUT |
+| OBUFT    |   13 |                  IO |
+| IBUF     |   13 |                  IO |
+| CARRY4   |    8 |          CarryLogic |
 | FDPE     |    6 |        Flop & Latch |
-| LUT1     |    3 |                 LUT |
+| LUT1     |    5 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -187,14 +188,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | microblaze_axi_quad_spi_0_2          |    1 |
 | microblaze_axi_gpio_0_2              |    1 |
 | microblaze_axi_fifo_mm_s_0_2         |    1 |
+| ila_4                                |    1 |
 | ila_3                                |    1 |
 | ila_2                                |    1 |
 | ila_1                                |    1 |
 | ila_0                                |    1 |
-| fir_compiler_0_HD11                  |    1 |
-| fir_compiler_0                       |    1 |
 | fifo_generator_2                     |    1 |
-| fifo_generator_1_HD10                |    1 |
+| fifo_generator_1_HD9                 |    1 |
 | fifo_generator_1                     |    1 |
 | fifo_generator_0                     |    1 |
 | clk_wiz_0                            |    1 |

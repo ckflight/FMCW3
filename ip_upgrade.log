@@ -1,6 +1,27 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Fri May 15 18:37:43 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a35tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_2 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
 | Date         : Thu May 14 20:18:49 2026
 | Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command      : upgrade_ip

@@ -389,7 +389,7 @@
                         reg = <0x41c00000 0x10000>;
                         clocks = <&clk_bus_0>;
                         xlnx,gen0-assert = <0x1>;
-                        xlnx,mode-64bit = <0x0>;
+                        xlnx,mode-64bit = <0x1>;
                         xlnx,edk-iptype = "PERIPHERAL";
                         status = "okay";
                         xlnx,trig1-assert = <0x1>;

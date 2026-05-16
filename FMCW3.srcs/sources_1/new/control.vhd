@@ -80,6 +80,7 @@ architecture Behavioral of control is
 
     type control_state_t is (
         CTRL_IDLE,
+        CTRL_IGNORE_FIRST_RAMP,
         CTRL_RAMP,
         CTRL_GAP_WAIT,
         CTRL_WAIT_SOFT_RESET
@@ -181,9 +182,9 @@ begin
     s_ila4_probe4(0)    <= s_adc_fifo_rd_en;
     s_ila4_probe5(0)    <= s_adc_fifo_rd_empty;
 
-    --- IMPLEMENT FSM TO IGNORE FIRST RAMP SINCE WE ARE CATCHING IT FROM MIDDLE OF IT!!!
-    --- ADD SAMPLE COUNTER TO ILA TO SEE NUMBER OF SAMPLES WRITTEN WITHIN RAMP
-
+    --- Send ramp test data and check with python. For both fir and nofir it is tested and working!
+    --- Send data with start bytes to get correct frame for chirp at python code
+        
     --------------------------------------------------------------------
     -- CONTROL FSM: ADC writes into FIFO
     --------------------------------------------------------------------
@@ -222,15 +223,28 @@ begin
                     ramp_done <= '0';
 
                     if microblaze_ramp_configured = '1' and config_done = '1' and muxout = '0' and microblaze_sampling_done = '0' then
-                        control_state <= CTRL_RAMP;
-                        pa_en    <= '1';
+                        control_state <= CTRL_IGNORE_FIRST_RAMP;
+                        pa_en    <= '0';
 
                     elsif microblaze_sampling_done = '1' then
                         ramp_done     <= '1';
                         control_state <= CTRL_WAIT_SOFT_RESET;
 
                     end if;
+                
+                when CTRL_IGNORE_FIRST_RAMP =>
+                
+                    -- First ramp may already be in the middle, so do not write ADC data
+                    adc_oe   <= "11";
+                    adc_shdn <= "11";
+                    pa_en    <= '0';
+                    
+                    -- wait until current ramp finishes and gap starts
+                    if muxout = '1' then
+                        control_state <= CTRL_GAP_WAIT;
+                    end if;
 
+                
                 when CTRL_RAMP =>
                 
                     adc_oe   <= "00";
@@ -244,14 +258,15 @@ begin
                     -- ramp is finished, gap started
                     if muxout = '1' then                
                         control_state <= CTRL_GAP_WAIT;
+                        adc_test_counter := (others => '0');
                 
                     -- sample ADC data when valid during ramp
                     elsif adc_valid = '1' then                
                         if s_adc_fifo_wr_full = '0' then      
                                                           
-                            s_adc_fifo_din   <= adc_data_a & adc_data_b;
-                            --s_adc_fifo_din <= std_logic_vector(adc_test_counter);
-                            --adc_test_counter := adc_test_counter + 1;
+                            --s_adc_fifo_din   <= adc_data_a & adc_data_b;
+                            s_adc_fifo_din <= std_logic_vector(adc_test_counter);
+                            adc_test_counter := adc_test_counter + 1;
                                                    
                             s_adc_fifo_wr_en <= '1';                
                         else                
@@ -272,6 +287,7 @@ begin
 
                     elsif microblaze_ramp_configured = '1' and config_done = '1' and muxout = '0' then
                         control_state <= CTRL_RAMP;
+                        pa_en    <= '1';
 
                     end if;
 

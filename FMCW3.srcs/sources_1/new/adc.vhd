@@ -19,7 +19,7 @@ end adc;
 
 architecture Behavioral of adc is
 
-    constant generate_fir : boolean := true;
+    constant generate_fir : boolean := false;
     signal data_a_buffer, data_b_buffer : std_logic_vector(11 downto 0);
 
     COMPONENT fir_compiler_0
@@ -113,8 +113,8 @@ begin
     
     end generate;
     
-    -- If fir is not selected then valid pulse is generated at every 41 cycles
-    -- ADC is still sampled with 40msps but 1msps valid is generated
+    -- If fir is not selected then valid pulse is generated at every 21 cycles
+    -- ADC is still sampled with 40msps but 2msps valid is generated
     g_not_fir : if not generate_fir generate
     
         fir1_data_out <= fir1_data_in;
@@ -124,7 +124,7 @@ begin
         variable count : unsigned(7 downto 0) := (others => '0');
         begin        
             if rising_edge(clk) then
-                if count = to_unsigned(40, 8) then
+                if count = to_unsigned(20, 8) then
                     count := (others => '0');
                     nofir_valid <= '1';
                 else
