@@ -3,18 +3,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity control is
-    generic (
-        MAX_SAMPLES : integer := 8192
-    );
     Port (
-        clk                         : in  std_logic;
-        reset_n                     : in  std_logic;
-        soft_reset_n                : in  std_logic;
-        muxout                      : in  std_logic;
+        clk                         : in std_logic;
+        reset_n                     : in std_logic;
+        soft_reset_n                : in std_logic;
+        muxout                      : in std_logic;
 
-        adc_data_a                  : in  std_logic_vector(15 downto 0);
-        adc_data_b                  : in  std_logic_vector(15 downto 0);
-        adc_valid                   : in  std_logic;
+        adc_data_a                  : in std_logic_vector(15 downto 0);
+        adc_data_b                  : in std_logic_vector(15 downto 0);
+        adc_valid                   : in std_logic;
+        send_data_type              : in std_logic;
 
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
@@ -28,8 +26,8 @@ entity control is
         usb_tx_wr_ack               : in std_logic;
         usb_tx_wr_ovf               : in std_logic;
 
-        usb_rx_rd_empty             : in  std_logic;
-        usb_rx_rd_data              : in  std_logic_vector(7 downto 0);
+        usb_rx_rd_empty             : in std_logic;
+        usb_rx_rd_data              : in std_logic_vector(7 downto 0);
         usb_rx_rd_en                : out std_logic;
 
         microblaze_ramp_configured  : in std_logic;
@@ -91,6 +89,9 @@ architecture Behavioral of control is
         TX_WAIT_CMD1,
         TX_WAIT_CMD2,
         TX_CHECK_CMD,
+        TX_SEND_HEADER,
+        TX_WRITE_HEADER,
+        TX_WAIT_HEADER_ACK,
         TX_READ_ADC_FIFO,
         TX_WAIT_FIFO_DATA,
         TX_PREP_BYTE,
@@ -111,7 +112,8 @@ architecture Behavioral of control is
     signal s_adc_fifo_rd_empty  : std_logic := '1';
 
     signal s_tx_word            : std_logic_vector(31 downto 0) := (others => '0');
-    signal byte_sel             : integer range 0 to 3 := 0;
+    signal byte_sel             : integer range 0 to 3 := 0; -- select each byte of 32 bit 2 ch adc data
+    signal header_sel           : integer range 0 to 3 := 0; -- select 4 byte header of each chirp data
 
     signal s_fifo_overflow_flag : std_logic := '0';
     signal s_usb_overflow_flag  : std_logic := '0';
@@ -204,6 +206,7 @@ begin
             ramp_done <= '0';
 
             s_fifo_overflow_flag <= '0';
+            adc_test_counter := (others => '0');
 
         elsif rising_edge(clk) then
 
@@ -263,10 +266,13 @@ begin
                     -- sample ADC data when valid during ramp
                     elsif adc_valid = '1' then                
                         if s_adc_fifo_wr_full = '0' then      
-                                                          
-                            --s_adc_fifo_din   <= adc_data_a & adc_data_b;
-                            s_adc_fifo_din <= std_logic_vector(adc_test_counter);
-                            adc_test_counter := adc_test_counter + 1;
+                            
+                            if send_data_type = '1' then                                                          
+                                s_adc_fifo_din   <= adc_data_a & adc_data_b;
+                            else
+                                s_adc_fifo_din <= std_logic_vector(adc_test_counter);
+                                adc_test_counter := adc_test_counter + 1;
+                            end if;
                                                    
                             s_adc_fifo_wr_en <= '1';                
                         else                
@@ -298,7 +304,8 @@ begin
                     adc_shdn  <= "11";
                     pa_en     <= '0';
                     ramp_done <= '1';
-
+                    adc_test_counter := (others => '0');
+                    
                     control_state <= CTRL_WAIT_SOFT_RESET;
 
 
@@ -328,6 +335,7 @@ begin
 
             s_tx_word <= (others => '0');
             byte_sel  <= 0;
+            header_sel <= 0;
 
             s_usb_overflow_flag <= '0';
 
@@ -362,12 +370,54 @@ begin
                 when TX_CHECK_CMD =>
 
                     if usb_rx_rd_data = x"43" then   -- ASCII 'C'
-                        tx_state <= TX_READ_ADC_FIFO;
+                        tx_state <= TX_SEND_HEADER;
+                        header_sel <= 0;                      
                     else
                         tx_state <= TX_IDLE;
                     end if;
 
-
+                when TX_SEND_HEADER =>
+                
+                    if usb_tx_wr_full = '0' then
+                
+                        case header_sel is
+                            when 0      => usb_tx_wr_data <= x"C7";
+                            when 1      => usb_tx_wr_data <= x"C1";
+                            when 2      => usb_tx_wr_data <= x"11";
+                            when 3      => usb_tx_wr_data <= x"11";
+                            when others => usb_tx_wr_data <= x"00";
+                        end case;
+                
+                        tx_state <= TX_WRITE_HEADER;
+                
+                    end if;
+                
+                
+                when TX_WRITE_HEADER =>
+                
+                    usb_tx_wr_en <= '1';
+                    tx_state     <= TX_WAIT_HEADER_ACK;
+                
+                
+                when TX_WAIT_HEADER_ACK =>
+                
+                    if usb_tx_wr_ack = '1' then
+                
+                        if header_sel = 3 then
+                            header_sel <= 0;
+                            tx_state   <= TX_READ_ADC_FIFO;
+                        else
+                            header_sel <= header_sel + 1;
+                            tx_state   <= TX_SEND_HEADER;
+                        end if;
+                
+                    elsif usb_tx_wr_ovf = '1' then
+                
+                        s_usb_overflow_flag <= '1';
+                        tx_state <= TX_IDLE;
+                
+                    end if;
+                
                 when TX_READ_ADC_FIFO =>
 
                     if s_adc_fifo_rd_empty = '0' then

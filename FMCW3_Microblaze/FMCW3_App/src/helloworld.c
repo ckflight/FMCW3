@@ -96,8 +96,8 @@ typedef struct config_parameters_s{
     uint8_t data_log;                // [18]
     uint8_t adc_select;              // [19]
     uint8_t use_pll;                 // [20]
-    uint8_t check_mode;              // [21]
-    uint8_t usb_data_type;           // [22]
+    uint8_t fir_enable;              // [21]
+    uint8_t send_data_type;          // [22]
     uint8_t adc_resolution;          // [23]
     uint8_t sample_averaging;        // [24]
 
@@ -163,6 +163,10 @@ int main(void){
                 // s_microblaze_done           <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
                 // s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
                 // s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
+                // led                         <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is led pin
+                // s_fir_enable                <= s_gpio_rtl_0_tri_o(6); -- microblaze 16 bit gpio's bit 6 is fir enable signal
+                // s_test_data_enable          <= s_gpio_rtl_0_tri_o(7); -- microblaze 16 bit gpio's bit 7 is fir enable signal
+                
                 GPIO_Init();
 
                 // Init timer
@@ -186,6 +190,8 @@ int main(void){
                 GPIO_ClearPin(RAMP_CONFIGURED);
                 GPIO_SetPin(SOFTWARE_RESET);
                 GPIO_ClearPin(LED);
+                GPIO_ClearPin(FIR_ENABLE);
+                GPIO_ClearPin(SEND_DATA_TYPE);
                 
                 // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
                 // Make sure CE low, LE high
@@ -249,8 +255,24 @@ int main(void){
                 config_parameters.data_log                = (uint8_t)buffer[18];
                 config_parameters.adc_select              = (uint8_t)buffer[19];
                 config_parameters.use_pll                 = (uint8_t)buffer[20];
-                config_parameters.check_mode              = (uint8_t)buffer[21];
-                config_parameters.usb_data_type           = (uint8_t)buffer[22];
+                config_parameters.fir_enable              = (uint8_t)buffer[21];
+                if(config_parameters.send_data_type == 1){
+                    GPIO_SetPin(FIR_ENABLE); // enable fir
+
+                }
+                else {
+                    GPIO_ClearPin(FIR_ENABLE); // no fir
+                }
+                
+                config_parameters.send_data_type           = (uint8_t)buffer[22];
+                if(config_parameters.send_data_type == 1){
+                    GPIO_SetPin(SEND_DATA_TYPE); // send adc data
+
+                }
+                else{
+                    GPIO_ClearPin(SEND_DATA_TYPE); // send test data 0 to number of sample per chirp 500 for 250 us ramp
+                }
+                
                 config_parameters.adc_resolution          = (uint8_t)buffer[23];
                 config_parameters.sample_averaging        = (uint8_t)buffer[24];
 
@@ -290,7 +312,7 @@ int main(void){
                 current_time = read_timer64_ticks() - start_time;
 
                 // blink LED every 1 second
-                if ((read_timer64_ticks() - sample_led_time) >= TICKS_PER_SEC/2) {
+                if ((read_timer64_ticks() - sample_led_time) >= TICKS_PER_SEC/25) {
 
                     GPIO_TogglePin(LED);
 

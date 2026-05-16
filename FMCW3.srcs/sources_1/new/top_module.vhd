@@ -5,8 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity top_module is        
     
     generic (
-        CONFIG_PACKET_SIZE  : integer := 25;    -- Used by config
-        MAX_ADC_SAMPLES     : integer := 2400    -- Used by control
+        CONFIG_PACKET_SIZE  : integer := 25    -- Used by config
     );
     
     Port ( 
@@ -78,31 +77,32 @@ architecture Behavioral of top_module is
     -- Then vhdl code will run logic according to the state of muxout pulse (READBACK TO MUXOUT is set on spi config for this)
     component microblaze_wrapper is
     port (
-        AXI_STR_RXD_0_tdata     : in STD_LOGIC_VECTOR ( 31 downto 0 );
-        AXI_STR_RXD_0_tlast     : in STD_LOGIC;
-        AXI_STR_RXD_0_tready    : out STD_LOGIC;
-        AXI_STR_RXD_0_tvalid    : in STD_LOGIC;
-        AXI_STR_TXD_0_tdata     : out STD_LOGIC_VECTOR ( 31 downto 0 );
-        AXI_STR_TXD_0_tlast     : out STD_LOGIC;
-        AXI_STR_TXD_0_tready    : in STD_LOGIC;
-        AXI_STR_TXD_0_tvalid    : out STD_LOGIC;
-        Clk                     : in STD_LOGIC;
-        SPI0_CLK                : out STD_LOGIC;
-        SPI0_CS                 : out STD_LOGIC_VECTOR ( 0 to 0 );
-        SPI0_MISO               : in STD_LOGIC;
-        SPI0_MOSI               : out STD_LOGIC;
-        gpio_rtl_0_tri_o        : out STD_LOGIC_VECTOR ( 15 downto 0 );
-        reset_rtl_0             : in STD_LOGIC
+        AXI_STR_RXD_0_tdata     : in std_logic_vector ( 31 downto 0 );
+        AXI_STR_RXD_0_tlast     : in std_logic;
+        AXI_STR_RXD_0_tready    : out std_logic;
+        AXI_STR_RXD_0_tvalid    : in std_logic;
+        AXI_STR_TXD_0_tdata     : out std_logic_vector ( 31 downto 0 );
+        AXI_STR_TXD_0_tlast     : out std_logic;
+        AXI_STR_TXD_0_tready    : in std_logic;
+        AXI_STR_TXD_0_tvalid    : out std_logic;
+        Clk                     : in std_logic;
+        SPI0_CLK                : out std_logic;
+        SPI0_CS                 : out std_logic_vector ( 0 to 0 );
+        SPI0_MISO               : in std_logic;
+        SPI0_MOSI               : out std_logic;
+        gpio_rtl_0_tri_o        : out std_logic_vector ( 15 downto 0 );
+        reset_rtl_0             : in std_logic
     );
     end component microblaze_wrapper;
     
     component adc is
     Port( 
-        clk         : in STD_LOGIC;
-        adc_data    : in STD_LOGIC_VECTOR (11 downto 0);
-        data_a      : out STD_LOGIC_VECTOR (15 downto 0);
-        data_b      : out STD_LOGIC_VECTOR (15 downto 0);
-        valid       : out STD_LOGIC
+        clk         : in std_logic;
+        adc_data    : in std_logic_vector (11 downto 0);
+        data_a      : out std_logic_vector (15 downto 0);
+        data_b      : out std_logic_vector (15 downto 0);
+        valid       : out std_logic;
+        fir_enable  : in std_logic
     );
     end component adc;
     
@@ -158,32 +158,30 @@ architecture Behavioral of top_module is
             config_done      : out std_logic;
             
             -- Microblaze interfaces
-            fifotx_tdata     : in STD_LOGIC_VECTOR ( 31 downto 0 );
-            fifotx_tlast     : in STD_LOGIC;
-            fifotx_tready    : out STD_LOGIC;
-            fifotx_tvalid    : in STD_LOGIC;
+            fifotx_tdata     : in std_logic_vector ( 31 downto 0 );
+            fifotx_tlast     : in std_logic;
+            fifotx_tready    : out std_logic;
+            fifotx_tvalid    : in std_logic;
                     
-            fiforx_tdata     : out STD_LOGIC_VECTOR ( 31 downto 0 );
-            fiforx_tlast     : out STD_LOGIC;
-            fiforx_tready    : in STD_LOGIC;
-            fiforx_tvalid    : out STD_LOGIC
+            fiforx_tdata     : out std_logic_vector ( 31 downto 0 );
+            fiforx_tlast     : out std_logic;
+            fiforx_tready    : in std_logic;
+            fiforx_tvalid    : out std_logic
         );
     end component;
     
     component control is
-    generic (
-        MAX_SAMPLES                 : integer := MAX_ADC_SAMPLES -- number of decimated samples per ramp
-    );
     port (
-        clk                         : in  std_logic; -- system clock
-        reset_n                     : in  std_logic; -- active low reset
-        soft_reset_n                : in  std_logic; -- active low software reset by microblaze to reset modules for next radar op
-        muxout                      : in  std_logic; -- high during ramp
+        clk                         : in std_logic; -- system clock
+        reset_n                     : in std_logic; -- active low reset
+        soft_reset_n                : in std_logic; -- active low software reset by microblaze to reset modules for next radar op
+        muxout                      : in std_logic; -- high during ramp
 
         -- ADC inputs
-        adc_data_a                  : in  std_logic_vector(15 downto 0);
-        adc_data_b                  : in  std_logic_vector(15 downto 0);
-        adc_valid                   : in  std_logic;
+        adc_data_a                  : in std_logic_vector(15 downto 0);
+        adc_data_b                  : in std_logic_vector(15 downto 0);
+        adc_valid                   : in std_logic;
+        send_data_type              : in std_logic;
 
         -- ADC control outputs
         adc_oe                      : out std_logic_vector(1 downto 0);
@@ -199,8 +197,8 @@ architecture Behavioral of top_module is
         usb_tx_wr_ack               : in std_logic;
         usb_tx_wr_ovf               : in std_logic;
         
-        usb_rx_rd_empty             : in  std_logic;
-        usb_rx_rd_data              : in  std_logic_vector(7 downto 0); 
+        usb_rx_rd_empty             : in std_logic;
+        usb_rx_rd_data              : in std_logic_vector(7 downto 0); 
         usb_rx_rd_en                : out std_logic;
         
         microblaze_ramp_configured  : in std_logic; -- microblaze sends this signal that ramp is configured radar can start op
@@ -232,14 +230,14 @@ architecture Behavioral of top_module is
     component ila_2
     PORT (
         clk     : in std_logic;
-        probe0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe4 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe5 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe6 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe7 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)
+        probe0 : IN std_logic_vector(0 DOWNTO 0);
+        probe1 : IN std_logic_vector(0 DOWNTO 0);
+        probe2 : IN std_logic_vector(0 DOWNTO 0);
+        probe3 : IN std_logic_vector(0 DOWNTO 0);
+        probe4 : IN std_logic_vector(0 DOWNTO 0);
+        probe5 : IN std_logic_vector(0 DOWNTO 0);
+        probe6 : IN std_logic_vector(0 DOWNTO 0);
+        probe7 : IN std_logic_vector(0 DOWNTO 0)
     );
     end component;
     
@@ -270,6 +268,7 @@ architecture Behavioral of top_module is
     signal s_adc_a_out                  : std_logic_vector(15 downto 0) := (others => '0');         -- channel A data
     signal s_adc_b_out                  : std_logic_vector(15 downto 0) := (others => '0');         -- channel B data
     signal s_adc_valid                  : std_logic := '0';        -- FIR output valid pulse
+    signal s_adc_fir_enable             : std_logic := '1';        -- FIR enable set by microblaze
 
     -- CONFIG signals
     signal s_config_usb_rx_rd_data      : std_logic_vector(7 downto 0) := (others => '0');
@@ -288,6 +287,8 @@ architecture Behavioral of top_module is
     signal s_control_usb_rx_rd_data     : std_logic_vector(7 downto 0) := (others => '0');
     signal s_control_usb_rx_rd_en       : std_logic := '0';
     signal s_control_usb_rx_rd_empty    : std_logic := '0';
+    
+    signal s_control_send_data_type     : std_logic := '1'; -- adc = 1, test data = 0
 
     signal s_microblaze_done            : std_logic := '0';
     signal s_soft_reset_n               : std_logic := '1';
@@ -390,24 +391,25 @@ begin
     --ext2(1) <= s_adf_le;
     --ext2(2) <= s_adf_clk;
     
-    --s_pa_en <= '0'; -- force pa for now
-    pa_en <= s_pa_en;
+    pa_en                       <= s_pa_en;
                 
-    adf_txdata          <= '0'; -- not used. this is for data modulation
+    adf_txdata                  <= '0'; -- not used. this is for data modulation
         
-    s_adf_ce            <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
-    adf_ce              <= s_adf_ce;
+    s_adf_ce                    <= s_gpio_rtl_0_tri_o(0); -- microblaze 16 bit gpio's bit 0 is controlling this. It will be written 1 to power device
+    adf_ce                      <= s_adf_ce;
     
-    s_adf_le            <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
-    adf_le              <= s_adf_le;
+    s_adf_le                    <= s_gpio_rtl_0_tri_o(1); -- microblaze 16 bit gpio's bit 1 is spi_cs of adf4158
+    adf_le                      <= s_adf_le;
     
-    adf_data            <= s_adf_data;
-    adf_clk             <= s_adf_clk;
+    adf_data                    <= s_adf_data;
+    adf_clk                     <= s_adf_clk;
     
-    s_microblaze_done   <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
-    s_ramp_configured   <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
-    s_soft_reset_n      <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
-    led1                <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working    
+    s_microblaze_done           <= s_gpio_rtl_0_tri_o(2); -- microblaze 16 bit gpio's bit 2 is microblaze's done signal to finish sampling
+    s_ramp_configured           <= s_gpio_rtl_0_tri_o(3); -- microblaze 16 bit gpio's bit 3 is ramp configured signal
+    s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
+    led1                        <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working    
+    s_adc_fir_enable            <= s_gpio_rtl_0_tri_o(6); -- microblaze 16 bit gpio's bit 6 is for fir enable
+    s_control_send_data_type    <= s_gpio_rtl_0_tri_o(7); -- microblaze 16 bit gpio's bit 6 is for send data type (adc or test data)
     
     -- ILA probe assignments for FTDI RX/config debug
     s_ila0_probe0       <= s_config_usb_rx_rd_data;
@@ -497,11 +499,12 @@ begin
     -- ADC instantiation
     adc_i : component adc
     port map (
-        clk      => clk_40mhz,
-        adc_data => adc_data,
-        data_a   => s_adc_a_out,
-        data_b   => s_adc_b_out,
-        valid    => s_adc_valid
+        clk         => clk_40mhz,
+        adc_data    => adc_data,
+        data_a      => s_adc_a_out,
+        data_b      => s_adc_b_out,
+        valid       => s_adc_valid,
+        fir_enable  => s_adc_fir_enable
     );
         
     usb_sync_i : component usb_sync
@@ -566,9 +569,6 @@ begin
     
     -- Control FSM instantiation    
     control_i : component control
-    generic map (
-        MAX_SAMPLES => MAX_ADC_SAMPLES  -- adjust according to ramp length
-    )
     port map (
         clk                         => clk_40mhz,
         
@@ -580,10 +580,12 @@ begin
         adc_data_a                  => s_adc_a_out,
         adc_data_b                  => s_adc_b_out,
         adc_valid                   => s_adc_valid,
+        send_data_type              => s_control_send_data_type,
+         
         adc_oe                      => adc_oe,
-        adc_shdn                    => adc_shdn,
-        
+        adc_shdn                    => adc_shdn,        
         pa_en                       => s_pa_en,
+        
         config_done                 => s_config_done,   -- input from config module to start sampling
         
         usb_tx_wr_en                => s_control_usb_tx_wr_en,
