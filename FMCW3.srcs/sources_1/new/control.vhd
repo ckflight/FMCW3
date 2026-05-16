@@ -57,11 +57,22 @@ architecture Behavioral of control is
     component ila_3
     port(
         clk : IN STD_LOGIC;                
+        probe0 : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+        probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)  
+    );
+    end component;
+    
+    component ila_4
+    port(
+        clk : IN STD_LOGIC;                
         probe0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe3 : IN STD_LOGIC_VECTOR(2 DOWNTO 0)
-    
+        probe3 : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+        probe4 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        probe5 : IN STD_LOGIC_VECTOR(0 DOWNTO 0) 
     );
     end component;
 
@@ -76,7 +87,9 @@ architecture Behavioral of control is
 
     type tx_state_t is (
         TX_IDLE,
-        TX_READ_CMD_WAIT,
+        TX_WAIT_CMD1,
+        TX_WAIT_CMD2,
+        TX_CHECK_CMD,
         TX_READ_ADC_FIFO,
         TX_WAIT_FIFO_DATA,
         TX_PREP_BYTE,
@@ -104,30 +117,20 @@ architecture Behavioral of control is
     
     signal s_usb_rx_rd_en       : std_logic := '0';
     
-    signal s_ila3_probe0        : std_logic_vector(7 downto 0);
+    signal s_ila3_probe0        : std_logic_vector(11 downto 0);
     signal s_ila3_probe1        : std_logic_vector(0 downto 0);
     signal s_ila3_probe2        : std_logic_vector(0 downto 0);
-    signal s_ila3_probe3        : std_logic_vector(2 downto 0);
+    signal s_ila3_probe3        : std_logic_vector(0 downto 0);
+
+    signal s_ila4_probe0        : std_logic_vector(7 downto 0);
+    signal s_ila4_probe1        : std_logic_vector(0 downto 0);
+    signal s_ila4_probe2        : std_logic_vector(0 downto 0);
+    signal s_ila4_probe3        : std_logic_vector(11 downto 0);
+    signal s_ila4_probe4        : std_logic_vector(0 downto 0);
+    signal s_ila4_probe5        : std_logic_vector(0 downto 0);
+    
 
 begin
-
-    reset <= not reset_n;
-    
-    usb_rx_rd_en <= s_usb_rx_rd_en;
-    
-    s_ila3_probe0       <= usb_rx_rd_data;
-    s_ila3_probe1(0)    <= usb_rx_rd_empty;
-    s_ila3_probe2(0)    <= s_usb_rx_rd_en;
-    
-    with tx_state select
-    s_ila3_probe3 <= "000" when TX_IDLE,
-                     "001" when TX_READ_CMD_WAIT,
-                     "010" when TX_READ_ADC_FIFO,
-                     "011" when TX_WAIT_FIFO_DATA,
-                     "100" when TX_PREP_BYTE,
-                     "101" when TX_WRITE_BYTE,
-                     "110" when TX_WAIT_USB_ACK,
-                     "111" when others;
 
     ila3_inst : ila_3
     port map(    
@@ -135,7 +138,18 @@ begin
         probe0  => s_ila3_probe0,
         probe1  => s_ila3_probe1,
         probe2  => s_ila3_probe2,
-        probe3  => s_ila3_probe3    
+        probe3  => s_ila3_probe3
+    );
+    
+    ila4_inst : ila_4
+    port map(    
+        clk     => clk,                
+        probe0  => s_ila4_probe0,
+        probe1  => s_ila4_probe1,
+        probe2  => s_ila4_probe2,
+        probe3  => s_ila4_probe3,
+        probe4  => s_ila4_probe4,
+        probe5  => s_ila4_probe5
     );
 
     adc_fifo_inst : fifo_generator_2
@@ -151,10 +165,30 @@ begin
         empty    => s_adc_fifo_rd_empty
     );
 
+    reset <= not reset_n;
+    
+    usb_rx_rd_en <= s_usb_rx_rd_en;    
+
+    s_ila3_probe0       <= s_adc_fifo_din(11 downto 0);
+    s_ila3_probe1(0)    <= s_adc_fifo_wr_en;
+    s_ila3_probe2(0)    <= s_adc_fifo_wr_full;
+    s_ila3_probe3(0)    <= muxout;
+    
+    s_ila4_probe0       <= usb_rx_rd_data;
+    s_ila4_probe1(0)    <= usb_rx_rd_empty;
+    s_ila4_probe2(0)    <= s_usb_rx_rd_en;
+    s_ila4_probe3       <= s_adc_fifo_dout(11 downto 0);
+    s_ila4_probe4(0)    <= s_adc_fifo_rd_en;
+    s_ila4_probe5(0)    <= s_adc_fifo_rd_empty;
+
+    --- IMPLEMENT FSM TO IGNORE FIRST RAMP SINCE WE ARE CATCHING IT FROM MIDDLE OF IT!!!
+    --- ADD SAMPLE COUNTER TO ILA TO SEE NUMBER OF SAMPLES WRITTEN WITHIN RAMP
+
     --------------------------------------------------------------------
     -- CONTROL FSM: ADC writes into FIFO
     --------------------------------------------------------------------
     process(clk, reset_n, soft_reset_n)
+    variable adc_test_counter : unsigned(31 downto 0) := (others => '0');
     begin
         if reset_n = '0' or soft_reset_n = '0' then
 
@@ -213,8 +247,12 @@ begin
                 
                     -- sample ADC data when valid during ramp
                     elsif adc_valid = '1' then                
-                        if s_adc_fifo_wr_full = '0' then                
+                        if s_adc_fifo_wr_full = '0' then      
+                                                          
                             s_adc_fifo_din   <= adc_data_a & adc_data_b;
+                            --s_adc_fifo_din <= std_logic_vector(adc_test_counter);
+                            --adc_test_counter := adc_test_counter + 1;
+                                                   
                             s_adc_fifo_wr_en <= '1';                
                         else                
                             s_fifo_overflow_flag <= '1';                
@@ -295,12 +333,17 @@ begin
 
                     if usb_rx_rd_empty = '0' then
                         s_usb_rx_rd_en <= '1';
-                        tx_state     <= TX_READ_CMD_WAIT;
+                        tx_state     <= TX_WAIT_CMD1;
                     end if;
-
+                
+                when TX_WAIT_CMD1 =>
+                    tx_state <= TX_WAIT_CMD2;
+                
+                when TX_WAIT_CMD2 =>
+                    tx_state <= TX_CHECK_CMD;
 
                 -- assumes usb_rx_rd_data is valid one clock after usb_rx_rd_en
-                when TX_READ_CMD_WAIT =>
+                when TX_CHECK_CMD =>
 
                     if usb_rx_rd_data = x"43" then   -- ASCII 'C'
                         tx_state <= TX_READ_ADC_FIFO;
