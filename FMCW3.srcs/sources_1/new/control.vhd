@@ -17,6 +17,7 @@ entity control is
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
         pa_en                       : out std_logic;
+        pa_mode                     : in std_logic;
 
         config_done                 : in std_logic;
 
@@ -250,7 +251,9 @@ begin
                     if s_adc_fifo_wr_full = '0' then
                         s_adc_fifo_din <= x"C8C8C8C8";                         
                         s_adc_fifo_wr_en <= '1';       
-                        control_state <= CTRL_RAMP;                                                        
+                        
+                        pa_en    <= '1';
+                        control_state <= CTRL_RAMP;                                                                                
                     end if;                        
 
                 
@@ -290,7 +293,11 @@ begin
 
                     adc_oe   <= "11";
                     adc_shdn <= "11";
-                    pa_en    <= '0';
+                    if pa_mode = '1' then
+                        pa_en    <= '0';
+                    else
+                        pa_en   <= '1';
+                    end if;
 
                     if microblaze_sampling_done = '1' then
 
@@ -299,8 +306,6 @@ begin
 
                     elsif microblaze_ramp_configured = '1' and config_done = '1' and muxout = '0' then
                         control_state <= CTRL_WRITE_HEADER;
-                        pa_en    <= '1';
-
                     end if;
 
 

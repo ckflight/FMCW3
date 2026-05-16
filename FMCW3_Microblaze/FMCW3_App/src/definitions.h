@@ -15,6 +15,7 @@
 
 #define FIR_ENABLE          6   // GPIO[6] -> Enable fir filter module in adc.vhd
 #define SEND_DATA_TYPE      7   // GPIO[7] -> Send test data from 0 to number of samples in chirp (500 for 250microsec ramp etc.)
+#define PA_MODE             8   // GPIO[8] -> PA on off control type
 
 #endif // DEFINITIONS_H
 

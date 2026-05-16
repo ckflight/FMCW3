@@ -95,7 +95,7 @@ typedef struct config_parameters_s{
     uint8_t sweep_type;              // [17]
     uint8_t data_log;                // [18]
     uint8_t adc_select;              // [19]
-    uint8_t use_pll;                 // [20]
+    uint8_t pa_mode;                 // [20]
     uint8_t fir_enable;              // [21]
     uint8_t send_data_type;          // [22]
     uint8_t adc_resolution;          // [23]
@@ -190,8 +190,9 @@ int main(void){
                 GPIO_ClearPin(RAMP_CONFIGURED);
                 GPIO_SetPin(SOFTWARE_RESET);
                 GPIO_ClearPin(LED);
-                GPIO_ClearPin(FIR_ENABLE);
-                GPIO_ClearPin(SEND_DATA_TYPE);
+                GPIO_SetPin(FIR_ENABLE);
+                GPIO_SetPin(SEND_DATA_TYPE);
+                GPIO_SetPin(PA_MODE);
                 
                 // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
                 // Make sure CE low, LE high
@@ -254,7 +255,14 @@ int main(void){
                 config_parameters.sweep_type              = (uint8_t)buffer[17];
                 config_parameters.data_log                = (uint8_t)buffer[18];
                 config_parameters.adc_select              = (uint8_t)buffer[19];
-                config_parameters.use_pll                 = (uint8_t)buffer[20];
+                config_parameters.pa_mode                 = (uint8_t)buffer[20];
+                if(config_parameters.pa_mode == 1){
+                    GPIO_SetPin(PA_MODE); // on off control
+                }
+                else {
+                    GPIO_ClearPin(PA_MODE); // on during ramp
+                }
+
                 config_parameters.fir_enable              = (uint8_t)buffer[21];
                 if(config_parameters.send_data_type == 1){
                     GPIO_SetPin(FIR_ENABLE); // enable fir

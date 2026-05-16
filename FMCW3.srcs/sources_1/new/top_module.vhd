@@ -187,6 +187,7 @@ architecture Behavioral of top_module is
         adc_oe                      : out std_logic_vector(1 downto 0);
         adc_shdn                    : out std_logic_vector(1 downto 0);
         pa_en                       : out std_logic;
+        pa_mode                     : in std_logic;
 
         config_done                 : in std_logic;
 
@@ -289,6 +290,7 @@ architecture Behavioral of top_module is
     signal s_control_usb_rx_rd_empty    : std_logic := '0';
     
     signal s_control_send_data_type     : std_logic := '1'; -- adc = 1, test data = 0
+    signal s_control_pa_mode            : std_logic := '1'; -- pa on off = 1
 
     signal s_microblaze_done            : std_logic := '0';
     signal s_soft_reset_n               : std_logic := '1';
@@ -409,7 +411,8 @@ begin
     s_soft_reset_n              <= s_gpio_rtl_0_tri_o(4); -- microblaze 16 bit gpio's bit 4 is software reset to reset everything instead of handshake singals between modules.
     led1                        <= s_gpio_rtl_0_tri_o(5); -- microblaze 16 bit gpio's bit 5 is for led to check microblaze is working    
     s_adc_fir_enable            <= s_gpio_rtl_0_tri_o(6); -- microblaze 16 bit gpio's bit 6 is for fir enable
-    s_control_send_data_type    <= s_gpio_rtl_0_tri_o(7); -- microblaze 16 bit gpio's bit 6 is for send data type (adc or test data)
+    s_control_send_data_type    <= s_gpio_rtl_0_tri_o(7); -- microblaze 16 bit gpio's bit 7 is for send data type (adc or test data)
+    s_control_pa_mode           <= s_gpio_rtl_0_tri_o(8); -- microblaze 16 bit gpio's bit 8 is for pa control
     
     -- ILA probe assignments for FTDI RX/config debug
     s_ila0_probe0       <= s_config_usb_rx_rd_data;
@@ -585,6 +588,7 @@ begin
         adc_oe                      => adc_oe,
         adc_shdn                    => adc_shdn,        
         pa_en                       => s_pa_en,
+        pa_mode                     => s_control_pa_mode,
         
         config_done                 => s_config_done,   -- input from config module to start sampling
         
