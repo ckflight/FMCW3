@@ -343,6 +343,12 @@ architecture Behavioral of top_module is
     
     signal s_pa_en                      : std_logic := '0';
 
+    -- When adf4158 is not working test mux can be generated to test the code.
+    constant TEST_MUX_LOW_CYCLES  : integer := 10000; -- 250 us
+    constant TEST_MUX_HIGH_CYCLES : integer := 400;   -- 10 us
+    signal test_mux_counter : integer range 0 to TEST_MUX_LOW_CYCLES + TEST_MUX_HIGH_CYCLES - 1 := 0;
+    signal s_test_mux                   : std_logic := '0';
+
 begin 
 
     -- GENERAL CODE FLOW UPTO NOW:
@@ -413,6 +419,7 @@ begin
     s_adc_fir_enable            <= s_gpio_rtl_0_tri_o(6); -- microblaze 16 bit gpio's bit 6 is for fir enable
     s_control_send_data_type    <= s_gpio_rtl_0_tri_o(7); -- microblaze 16 bit gpio's bit 7 is for send data type (adc or test data)
     s_control_pa_mode           <= s_gpio_rtl_0_tri_o(8); -- microblaze 16 bit gpio's bit 8 is for pa control
+    s_test_mux                  <= s_gpio_rtl_0_tri_o(9); -- microblaze 16 bit gpio's bit 9 is test mux generate
     
     -- ILA probe assignments for FTDI RX/config debug
     s_ila0_probe0       <= s_config_usb_rx_rd_data;
@@ -454,8 +461,40 @@ begin
     process(clk_40mhz)
     begin
         if rising_edge(clk_40mhz) then
-            muxout_sync_d <= adf_muxout;
-            muxout_sync <= muxout_sync_d;
+        
+            if reset_n = '0' or s_soft_reset_n = '0' then
+    
+                muxout_sync      <= '0';
+                muxout_sync_d    <= '0';
+                test_mux_counter <= 0;
+            
+            -- test mux mode
+            -- generate 250 micro low ramp, 10 micro high gap    
+            elsif s_test_mux = '1' then
+
+                -- 250 us LOW
+                -- 10 us HIGH
+    
+                if test_mux_counter < TEST_MUX_LOW_CYCLES then
+                    muxout_sync <= '0';
+                else
+                    muxout_sync <= '1';
+                end if;
+    
+                if test_mux_counter = TEST_MUX_LOW_CYCLES + TEST_MUX_HIGH_CYCLES - 1 then
+                    test_mux_counter <= 0;
+                else
+                    test_mux_counter <= test_mux_counter + 1;
+                end if;
+            
+            -- metastability for adf4158 generated muxout    
+            else
+                muxout_sync_d <= adf_muxout;
+                muxout_sync <= muxout_sync_d;    
+                
+                test_mux_counter <= 0;        
+            end if;  
+                  
         end if;
     end process;    
        
