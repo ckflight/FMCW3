@@ -90,7 +90,7 @@ typedef struct config_parameters_s{
     // uint8 fields
     uint8_t record_time;             // [6]
 
-    uint8_t tx_mode;                 // [15]
+    uint8_t test_mux;                // [15]
     uint8_t gain;                    // [16]
     uint8_t sweep_type;              // [17]
     uint8_t data_log;                // [18]
@@ -193,6 +193,7 @@ int main(void){
                 GPIO_SetPin(FIR_ENABLE);
                 GPIO_SetPin(SEND_DATA_TYPE);
                 GPIO_SetPin(PA_MODE);
+                GPIO_ClearPin(TEST_MUX);
                 
                 // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
                 // Make sure CE low, LE high
@@ -250,7 +251,15 @@ int main(void){
                 config_parameters.sweep_start_frequency   = get_u16_be(buffer, 11);
                 config_parameters.sweep_bandwidth         = get_u16_be(buffer, 13);
 
-                config_parameters.tx_mode                 = (uint8_t)buffer[15];
+                config_parameters.test_mux                = (uint8_t)buffer[15];
+                if(config_parameters.test_mux == 1){
+                    GPIO_SetPin(TEST_MUX); // fpga generates mux to test the concept
+                }
+                else {
+                    GPIO_ClearPin(TEST_MUX); // adf mux generation
+                }
+
+
                 config_parameters.gain                    = (uint8_t)buffer[16];
                 config_parameters.sweep_type              = (uint8_t)buffer[17];
                 config_parameters.data_log                = (uint8_t)buffer[18];
@@ -290,8 +299,10 @@ int main(void){
             case CONFIGURE_ADF4158:
                             
                 // Init rf sythnesizer according to the received parameters
-                ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters); // spi is working in main.
-
+                if(config_parameters.test_mux == 0){
+                    ADF4158_Init(SAWTOOTH_WAVEFORM, &config_parameters); // spi is working in main.
+                }
+                
                 state = CONFIGURATION_LED_INDICATOR;
                 break;
 
@@ -307,6 +318,7 @@ int main(void){
                 }
                 GPIO_ClearPin(LED);
 
+                xil_printf("RAMP CONFIGURED SIGNAL IS SENT TO VHDL\r\n");
                 GPIO_SetPin(RAMP_CONFIGURED);
 
                 start_time = read_timer64_ticks();
@@ -336,6 +348,8 @@ int main(void){
                 break;
 
             case FINISH_SAMPLING:
+
+                xil_printf("FINISH SAMPLING, SOFTWARE RESET IS SET\r\n");
 
                 // Decide what to do here. Reset hardware and return to idle for example
                 GPIO_SetPin(SAMPLING_DONE);
