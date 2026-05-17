@@ -20,16 +20,16 @@ entity config is
         config_done      : out std_logic;
         
         -- AXI-Stream TX (MicroBlaze → VHDL)
-        fifotx_tdata     : in STD_LOGIC_VECTOR(31 downto 0);
-        fifotx_tlast     : in STD_LOGIC;
-        fifotx_tready    : out STD_LOGIC;
-        fifotx_tvalid    : in STD_LOGIC;
+        fifotx_tdata     : in std_logic_vector(31 downto 0);
+        fifotx_tlast     : in std_logic;
+        fifotx_tready    : out std_logic;
+        fifotx_tvalid    : in std_logic;
         
         -- AXI-Stream RX (VHDL → MicroBlaze)
-        fiforx_tdata     : out STD_LOGIC_VECTOR(31 downto 0);
-        fiforx_tlast     : out STD_LOGIC;
-        fiforx_tready    : in STD_LOGIC;
-        fiforx_tvalid    : out STD_LOGIC
+        fiforx_tdata     : out std_logic_vector(31 downto 0);
+        fiforx_tlast     : out std_logic;
+        fiforx_tready    : in std_logic;
+        fiforx_tvalid    : out std_logic
     );
 end config;
 
@@ -43,12 +43,13 @@ architecture Behavioral of config is
     signal fifo_st : fifo_state_type := st_idle;
 
     -- Counter and storage
-    signal byte_counter                 : integer range 0 to PACKET_SIZE-1 := 0;
+    signal byte_counter                         : integer range 0 to PACKET_SIZE-1 := 0;    
+    signal config_bytes_ready                   : std_logic := '0';    
+    signal config_ready_sync, config_ready_d    : std_logic := '0';
     
-    signal config_bytes_ready           : std_logic := '0';    
-    signal config_ready_sync, config_ready_d : std_logic := '0';
+    signal fifo_byte_index                      : integer range 0 to PACKET_SIZE-1 := 0;
     
-    signal fifo_byte_index              : integer range 0 to PACKET_SIZE-1 := 0;
+    signal s_config_done                        : std_logic := '0';
     
     component fifo_generator_1
     PORT (
@@ -93,6 +94,8 @@ begin
     -- mb to vhdl part not used for now. vhdl will be seen ready but logic to read data is not implemented yet. 
     fifotx_tready <= '1';
     
+    config_done <= s_config_done;
+    
     process(clk_40mhz, reset_n, soft_reset_n)
     begin
         
@@ -101,7 +104,7 @@ begin
             config_st                   <= st_idle;
             byte_counter                <=  0;
             usb_rx_read_en              <= '0'; -- 1 is active 0 is not
-            config_done                 <= '0'; -- not done
+            s_config_done               <= '0'; -- not done
             config_bytes_ready          <= '0'; 
             
             s_wr_en                     <= '0';
@@ -113,7 +116,7 @@ begin
 
                 when st_idle =>
                     
-                    config_done    <= '0';
+                    s_config_done    <= '0';
                     usb_rx_read_en <= '0'; 
                     
                     s_wr_en      <= '0';
@@ -162,7 +165,7 @@ begin
                 when st_done =>                                        
                     byte_counter <= 0;
                     usb_rx_read_en <= '0';
-                    config_done <= '1';
+                    s_config_done <= '1';
                     config_bytes_ready <= '1';
                     
                     s_wr_en      <= '0';

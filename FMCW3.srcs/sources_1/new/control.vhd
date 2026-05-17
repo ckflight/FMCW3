@@ -170,7 +170,7 @@ begin
     
     usb_rx_rd_en <= s_usb_rx_rd_en;    
 
-    s_ila3_probe0       <= s_adc_fifo_din(11 downto 0);
+    s_ila3_probe0       <= s_adc_fifo_din(27 downto 16);
     s_ila3_probe1(0)    <= s_adc_fifo_wr_en;
     s_ila3_probe2(0)    <= s_adc_fifo_wr_full;
     s_ila3_probe3(0)    <= muxout;
@@ -178,7 +178,7 @@ begin
     s_ila4_probe0       <= usb_rx_rd_data;
     s_ila4_probe1(0)    <= usb_rx_rd_empty;
     s_ila4_probe2(0)    <= s_usb_rx_rd_en;
-    s_ila4_probe3       <= s_adc_fifo_dout(11 downto 0);
+    s_ila4_probe3       <= s_adc_fifo_dout(27 downto 16);
     s_ila4_probe4(0)    <= s_adc_fifo_rd_en;
     s_ila4_probe5(0)    <= s_adc_fifo_rd_empty;
 
@@ -189,7 +189,8 @@ begin
     -- CONTROL FSM: ADC writes into FIFO
     --------------------------------------------------------------------
     process(clk, reset_n, soft_reset_n)
-    variable adc_test_counter : unsigned(31 downto 0) := (others => '0');
+    variable adc_test_counter_a : unsigned(15 downto 0) := (others => '0');
+    variable adc_test_counter_b : unsigned(15 downto 0) := (others => '0');
     begin
         if reset_n = '0' or soft_reset_n = '0' then
 
@@ -204,7 +205,8 @@ begin
             ramp_done <= '0';
 
             s_fifo_overflow_flag <= '0';
-            adc_test_counter := (others => '0');
+            adc_test_counter_a := (others => '0');
+            adc_test_counter_b := (others => '0');
             
         elsif rising_edge(clk) then
 
@@ -270,7 +272,8 @@ begin
                     -- ramp is finished, gap started
                     if muxout = '1' then                
                         control_state <= CTRL_GAP_WAIT;
-                        adc_test_counter := (others => '0');
+                        adc_test_counter_a := (others => '0');-- channel a
+                        adc_test_counter_b := (others => '0');-- channel b                       
                 
                     -- sample ADC data when valid during ramp
                     elsif adc_valid = '1' then                
@@ -279,8 +282,9 @@ begin
                             if send_data_type = '1' then                                                          
                                 s_adc_fifo_din   <= adc_data_a & adc_data_b;
                             else
-                                s_adc_fifo_din <= std_logic_vector(adc_test_counter);
-                                adc_test_counter := adc_test_counter + 1;
+                                s_adc_fifo_din <= std_logic_vector(adc_test_counter_a) & std_logic_vector(adc_test_counter_b);
+                                adc_test_counter_a := adc_test_counter_a + 1;
+                                adc_test_counter_b := adc_test_counter_b + 1;
                             end if;
                                                    
                             s_adc_fifo_wr_en <= '1';                
@@ -315,7 +319,8 @@ begin
                     adc_shdn  <= "11";
                     pa_en     <= '0';
                     ramp_done <= '1';
-                    adc_test_counter := (others => '0');
+                    adc_test_counter_a := (others => '0');-- channel a
+                    adc_test_counter_b := (others => '0');-- channel b 
                     
                     control_state <= CTRL_WAIT_SOFT_RESET;
 

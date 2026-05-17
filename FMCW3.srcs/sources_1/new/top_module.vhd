@@ -578,7 +578,7 @@ begin
         reset_n                     => reset_n,
         soft_reset_n                => s_soft_reset_n,
         
-        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input high pulse during ramp
+        muxout                      => muxout_sync,     -- ADF4158 MUXOUT input low pulse during ramp
         
         adc_data_a                  => s_adc_a_out,
         adc_data_b                  => s_adc_b_out,

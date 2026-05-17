@@ -264,7 +264,7 @@ int main(void){
                 }
 
                 config_parameters.fir_enable              = (uint8_t)buffer[21];
-                if(config_parameters.send_data_type == 1){
+                if(config_parameters.fir_enable == 1){
                     GPIO_SetPin(FIR_ENABLE); // enable fir
 
                 }
@@ -357,6 +357,8 @@ int main(void){
 void ADF4158_Init(WAVEFORM_TYPE wf, config_parameters_t* parameters){
 	
     ADF4158_DeviceEnable();
+    usleep(1000);
+
 
     float sweep_time  = (float)parameters->sweep_time  / 1000000.0f;
     float sweep_delay = (float)parameters->sweep_delay / 1000000.0f;
@@ -628,7 +630,7 @@ int ADF4158_WriteRegister(uint32_t data)
 {
     u8 txBuf[4];
     int stat = 0;
-    
+
     txBuf[0] = (data >> 24) & 0xFF;
     txBuf[1] = (data >> 16) & 0xFF;
     txBuf[2] = (data >> 8)  & 0xFF;

@@ -50,7 +50,7 @@ architecture Behavioral of adc is
 begin
     
     -- ADC Channel 1 sample on rising edge
-    rising : process(clk, adc_data)    
+    rising : process(clk)    
     begin
         if rising_edge(clk) then
             data_a_buffer <= adc_data;
