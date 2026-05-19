@@ -28,6 +28,8 @@ entity top_module is
         adc_of          : in std_logic_vector(1 downto 0); -- adc outputs 1 when overflow underflow (saturation) occurs.
         adc_oe          : out std_logic_vector(1 downto 0);
         adc_shdn        : out std_logic_vector(1 downto 0);
+        
+        --burned_adc_input : in std_logic_vector(3 downto 0);
 
         -- FT2232H USB
         usb_data        : inout std_logic_vector(7 downto 0); -- TODO  i will later make it inout!!!!
@@ -49,8 +51,8 @@ entity top_module is
         mix_en          : out std_logic;
 
         -- External Connectors
-        ext1            : out std_logic_vector(1 downto 0);
-        ext2            : out std_logic_vector(2 downto 0);
+        --ext1            : out std_logic_vector(1 downto 0);
+        --ext2            : out std_logic;
 
         -- SD Card
         SD_DATA         : inout std_logic_vector(3 downto 0);
@@ -209,38 +211,38 @@ architecture Behavioral of top_module is
     );  
     end component;
 
-    component ila_0
-    PORT (
-        clk    : in std_logic;                
-        probe0 : in std_logic_vector(7 DOWNTO 0);
-        probe1 : in std_logic_vector(0 DOWNTO 0);
-        probe2 : in std_logic_vector(0 DOWNTO 0)
-    );
-    end component;
+--    component ila_0
+--    PORT (
+--        clk    : in std_logic;                
+--        probe0 : in std_logic_vector(7 DOWNTO 0);
+--        probe1 : in std_logic_vector(0 DOWNTO 0);
+--        probe2 : in std_logic_vector(0 DOWNTO 0)
+--    );
+--    end component;
     
-    component ila_1
-    PORT (
-        clk     : in std_logic;
-        probe0  : in std_logic_vector(7 DOWNTO 0);
-        probe1  : in std_logic_vector(0 DOWNTO 0);
-        probe2  : in std_logic_vector(0 DOWNTO 0);
-        probe3  : in std_logic_vector(0 DOWNTO 0)
-    );
-    end component;
+--    component ila_1
+--    PORT (
+--        clk     : in std_logic;
+--        probe0  : in std_logic_vector(7 DOWNTO 0);
+--        probe1  : in std_logic_vector(0 DOWNTO 0);
+--        probe2  : in std_logic_vector(0 DOWNTO 0);
+--        probe3  : in std_logic_vector(0 DOWNTO 0)
+--    );
+--    end component;
     
-    component ila_2
-    PORT (
-        clk     : in std_logic;
-        probe0 : IN std_logic_vector(0 DOWNTO 0);
-        probe1 : IN std_logic_vector(0 DOWNTO 0);
-        probe2 : IN std_logic_vector(0 DOWNTO 0);
-        probe3 : IN std_logic_vector(0 DOWNTO 0);
-        probe4 : IN std_logic_vector(0 DOWNTO 0);
-        probe5 : IN std_logic_vector(0 DOWNTO 0);
-        probe6 : IN std_logic_vector(0 DOWNTO 0);
-        probe7 : IN std_logic_vector(0 DOWNTO 0)
-    );
-    end component;
+--    component ila_2
+--    PORT (
+--        clk     : in std_logic;
+--        probe0 : IN std_logic_vector(0 DOWNTO 0);
+--        probe1 : IN std_logic_vector(0 DOWNTO 0);
+--        probe2 : IN std_logic_vector(0 DOWNTO 0);
+--        probe3 : IN std_logic_vector(0 DOWNTO 0);
+--        probe4 : IN std_logic_vector(0 DOWNTO 0);
+--        probe5 : IN std_logic_vector(0 DOWNTO 0);
+--        probe6 : IN std_logic_vector(0 DOWNTO 0);
+--        probe7 : IN std_logic_vector(0 DOWNTO 0)
+--    );
+--    end component;
     
     signal clk_40mhz    : std_logic;
     signal clk_100mhz   : std_logic;
@@ -298,23 +300,23 @@ architecture Behavioral of top_module is
     signal s_ramp_configured            : std_logic := '0';
     
     -- ILA Probe signals
-    signal s_ila0_probe0                : std_logic_vector(7 downto 0) := (others => '0');
-    signal s_ila0_probe1                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila0_probe2                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila0_probe0                : std_logic_vector(7 downto 0) := (others => '0');
+--    signal s_ila0_probe1                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila0_probe2                : std_logic_vector(0 downto 0) := (others => '0');
     
-    signal s_ila1_probe0                : std_logic_vector(7 downto 0) := (others => '0');
-    signal s_ila1_probe1                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila1_probe2                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila1_probe3                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila1_probe0                : std_logic_vector(7 downto 0) := (others => '0');
+--    signal s_ila1_probe1                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila1_probe2                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila1_probe3                : std_logic_vector(0 downto 0) := (others => '0');
 
-    signal s_ila2_probe0                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe1                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe2                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe3                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe4                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe5                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe6                : std_logic_vector(0 downto 0) := (others => '0');
-    signal s_ila2_probe7                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe0                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe1                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe2                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe3                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe4                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe5                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe6                : std_logic_vector(0 downto 0) := (others => '0');
+--    signal s_ila2_probe7                : std_logic_vector(0 downto 0) := (others => '0');
 
     signal muxout_sync                  : std_logic := '0';
     signal muxout_sync_d                : std_logic := '0';
@@ -395,7 +397,7 @@ begin
  
     -- Not used for now
         
-    ext2(0) <= muxout_sync;
+    --ext2 <= muxout_sync;
     --ext2(1) <= s_adf_le;
     --ext2(2) <= s_adf_clk;
     
@@ -422,24 +424,24 @@ begin
     s_test_mux                  <= s_gpio_rtl_0_tri_o(9); -- microblaze 16 bit gpio's bit 9 is test mux generate
     
     -- ILA probe assignments for FTDI RX/config debug
-    s_ila0_probe0       <= s_config_usb_rx_rd_data;
-    s_ila0_probe1(0)    <= s_config_usb_rx_rd_en;
-    s_ila0_probe2(0)    <= s_config_usb_rx_rd_empty;
+--    s_ila0_probe0       <= s_config_usb_rx_rd_data;
+--    s_ila0_probe1(0)    <= s_config_usb_rx_rd_en;
+--    s_ila0_probe2(0)    <= s_config_usb_rx_rd_empty;
     
-    s_ila1_probe0       <= s_usb_data_in;
-    s_ila1_probe1(0)    <= s_usb_rxf;
-    s_ila1_probe2(0)    <= s_usb_oe;
-    s_ila1_probe3(0)    <= s_usb_rd;
+--    s_ila1_probe0       <= s_usb_data_in;
+--    s_ila1_probe1(0)    <= s_usb_rxf;
+--    s_ila1_probe2(0)    <= s_usb_oe;
+--    s_ila1_probe3(0)    <= s_usb_rd;
     
-    -- spi is working on ila so hardware issue again. i will route to ext2 to check with scope
-    s_ila2_probe0(0)    <= s_adf_ce;
-    s_ila2_probe1(0)    <= s_adf_le;
-    s_ila2_probe2(0)    <= s_adf_clk;
-    s_ila2_probe3(0)    <= s_adf_data;
-    s_ila2_probe4(0)    <= muxout_sync;
-    s_ila2_probe5(0)    <= s_microblaze_done;
-    s_ila2_probe6(0)    <= s_ramp_configured;
-    s_ila2_probe7(0)    <= s_config_done; ---- CHECK THIS if byte_counter = PACKET_SIZE-1 then might be the reason
+--    -- spi is working on ila so hardware issue again. i will route to ext2 to check with scope
+--    s_ila2_probe0(0)    <= s_adf_ce;
+--    s_ila2_probe1(0)    <= s_adf_le;
+--    s_ila2_probe2(0)    <= s_adf_clk;
+--    s_ila2_probe3(0)    <= s_adf_data;
+--    s_ila2_probe4(0)    <= muxout_sync;
+--    s_ila2_probe5(0)    <= s_microblaze_done;
+--    s_ila2_probe6(0)    <= s_ramp_configured;
+--    s_ila2_probe7(0)    <= s_config_done; ---- CHECK THIS if byte_counter = PACKET_SIZE-1 then might be the reason
     
     s_config_usb_rx_rd_data     <= s_usb_rx_fifo_dout;
     s_control_usb_rx_rd_data    <= s_usb_rx_fifo_dout;
@@ -646,34 +648,34 @@ begin
         ramp_done                   => s_ramp_done
     );
 
-    ila_0_i : ila_0
-    port map (
-        clk    => clk_40mhz,
-        probe0 => s_ila0_probe0,
-        probe1 => s_ila0_probe1,
-        probe2 => s_ila0_probe2
-    );
+--    ila_0_i : ila_0
+--    port map (
+--        clk    => clk_40mhz,
+--        probe0 => s_ila0_probe0,
+--        probe1 => s_ila0_probe1,
+--        probe2 => s_ila0_probe2
+--    );
     
-    ila_1_i : ila_1
-    port map (
-        clk    => s_usb_clk,
-        probe0 => s_ila1_probe0,
-        probe1 => s_ila1_probe1,
-        probe2 => s_ila1_probe2,
-        probe3 => s_ila1_probe3
-    );
+--    ila_1_i : ila_1
+--    port map (
+--        clk    => s_usb_clk,
+--        probe0 => s_ila1_probe0,
+--        probe1 => s_ila1_probe1,
+--        probe2 => s_ila1_probe2,
+--        probe3 => s_ila1_probe3
+--    );
 
-    ila_2_i : ila_2
-    port map (
-        clk    => clk_40mhz,
-        probe0 => s_ila2_probe0,
-        probe1 => s_ila2_probe1,
-        probe2 => s_ila2_probe2,
-        probe3 => s_ila2_probe3,
-        probe4 => s_ila2_probe4,
-        probe5 => s_ila2_probe5,
-        probe6 => s_ila2_probe6,
-        probe7 => s_ila2_probe7
-    );
+--    ila_2_i : ila_2
+--    port map (
+--        clk    => clk_40mhz,
+--        probe0 => s_ila2_probe0,
+--        probe1 => s_ila2_probe1,
+--        probe2 => s_ila2_probe2,
+--        probe3 => s_ila2_probe3,
+--        probe4 => s_ila2_probe4,
+--        probe5 => s_ila2_probe5,
+--        probe6 => s_ila2_probe6,
+--        probe7 => s_ila2_probe7
+--    );
 
 end Behavioral;

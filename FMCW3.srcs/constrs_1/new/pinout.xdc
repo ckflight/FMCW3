@@ -12,7 +12,8 @@ set_property -dict { PACKAGE_PIN P3   IOSTANDARD LVCMOS33 } [get_ports { adf_txd
 set_property -dict { PACKAGE_PIN R1   IOSTANDARD LVCMOS33 } [get_ports { adf_clk }];    # SPI CLK
 
 #set_property -dict { PACKAGE_PIN M2   IOSTANDARD LVCMOS33 } [get_ports { adf_data }]; burned pin  # SPI MOSI
-set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI ext1_2 pin
+#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI ext1_2 pin
+set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { adf_data }];  # ext2_1 pin
 
 set_property -dict { PACKAGE_PIN T4   IOSTANDARD LVCMOS33 } [get_ports { adf_done }];   # Mosfet connected to adf_muxout. Not populated
 set_property -dict { PACKAGE_PIN N1   IOSTANDARD LVCMOS33 } [get_ports { adf_le }];     # low before write register and high after write, make it high before read
@@ -25,13 +26,33 @@ set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports { adc_dat
 set_property -dict { PACKAGE_PIN K1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }];
 set_property -dict { PACKAGE_PIN J3   IOSTANDARD LVCMOS33 } [get_ports { adc_data[3] }];
 set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[4] }];
-set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[5] }];
-set_property -dict { PACKAGE_PIN H3   IOSTANDARD LVCMOS33 } [get_ports { adc_data[6] }];
-set_property -dict { PACKAGE_PIN G2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[7] }];
+set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[5] }]; # burned
+set_property -dict { PACKAGE_PIN H3   IOSTANDARD LVCMOS33 } [get_ports { adc_data[6] }]; # burned
+set_property -dict { PACKAGE_PIN G2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[7] }]; # burned
 set_property -dict { PACKAGE_PIN G1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[8] }];
-set_property -dict { PACKAGE_PIN F2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[9] }];
+set_property -dict { PACKAGE_PIN F2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[9] }]; # burned
 set_property -dict { PACKAGE_PIN E1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[10] }];
 set_property -dict { PACKAGE_PIN E2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[11] }];
+
+# external pins are used instead of burned ones
+#set_property -dict { PACKAGE_PIN L2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[0] }];
+#set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[1] }];
+#set_property -dict { PACKAGE_PIN K1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }];
+#set_property -dict { PACKAGE_PIN J3   IOSTANDARD LVCMOS33 } [get_ports { adc_data[3] }];
+#set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[4] }];
+#set_property -dict { PACKAGE_PIN C12  IOSTANDARD LVCMOS33 } [get_ports { adc_data[5] }];
+#set_property -dict { PACKAGE_PIN B9   IOSTANDARD LVCMOS33 } [get_ports { adc_data[6] }];
+#set_property -dict { PACKAGE_PIN A4   IOSTANDARD LVCMOS33 } [get_ports { adc_data[7] }];
+#set_property -dict { PACKAGE_PIN G1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[8] }];
+#set_property -dict { PACKAGE_PIN A5   IOSTANDARD LVCMOS33 } [get_ports { adc_data[9] }];
+#set_property -dict { PACKAGE_PIN E1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[10] }];
+#set_property -dict { PACKAGE_PIN E2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[11] }];
+
+#set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports { burned_adc_input[0] }]; # burned adc_data[5]
+#set_property -dict { PACKAGE_PIN H3   IOSTANDARD LVCMOS33 } [get_ports { burned_adc_input[1] }]; # burned adc_data[6]
+#set_property -dict { PACKAGE_PIN G2   IOSTANDARD LVCMOS33 } [get_ports { burned_adc_input[2] }]; # burned adc_data[7]
+#set_property -dict { PACKAGE_PIN F2   IOSTANDARD LVCMOS33 } [get_ports { burned_adc_input[3] }]; # burned adc_data[9]
+
 
 set_property -dict { PACKAGE_PIN C2   IOSTANDARD LVCMOS33 } [get_ports { adc_of[0] }];
 set_property -dict { PACKAGE_PIN M1   IOSTANDARD LVCMOS33 } [get_ports { adc_of[1] }];
@@ -77,13 +98,13 @@ set_property -dict { PACKAGE_PIN A9   IOSTANDARD LVCMOS33 } [get_ports { mix_en 
 ##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; -- oe is using
 #set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; -- adf data is using
 #set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
-set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
-set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
+#set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
+#set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
 #set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }]; -- burned
 
-set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { ext2[0] }];
-set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { ext2[1] }];
-set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { ext2[2] }];
+#set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { ext2 }];
+#set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { ext2[1] }];
+#set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { ext2[2] }];
 #set_property -dict { PACKAGE_PIN A7    IOSTANDARD LVCMOS33 } [get_ports { ext2[3] }]; -- burned
 #set_property -dict { PACKAGE_PIN B5    IOSTANDARD LVCMOS33 } [get_ports { ext2[4] }]; -- burned
 #set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { ext2[5] }]; -- burned

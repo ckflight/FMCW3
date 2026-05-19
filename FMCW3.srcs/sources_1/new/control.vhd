@@ -56,7 +56,7 @@ architecture Behavioral of control is
     component ila_3
     port(
         clk : IN STD_LOGIC;                
-        probe0 : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+        probe0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe3 : IN STD_LOGIC_VECTOR(0 DOWNTO 0)  
@@ -69,7 +69,7 @@ architecture Behavioral of control is
         probe0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         probe1 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe2 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        probe3 : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+        probe3 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         probe4 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         probe5 : IN STD_LOGIC_VECTOR(0 DOWNTO 0) 
     );
@@ -118,7 +118,7 @@ architecture Behavioral of control is
     
     signal s_usb_rx_rd_en       : std_logic := '0';
     
-    signal s_ila3_probe0        : std_logic_vector(11 downto 0);
+    signal s_ila3_probe0        : std_logic_vector(31 downto 0);
     signal s_ila3_probe1        : std_logic_vector(0 downto 0);
     signal s_ila3_probe2        : std_logic_vector(0 downto 0);
     signal s_ila3_probe3        : std_logic_vector(0 downto 0);
@@ -126,7 +126,7 @@ architecture Behavioral of control is
     signal s_ila4_probe0        : std_logic_vector(7 downto 0);
     signal s_ila4_probe1        : std_logic_vector(0 downto 0);
     signal s_ila4_probe2        : std_logic_vector(0 downto 0);
-    signal s_ila4_probe3        : std_logic_vector(11 downto 0);
+    signal s_ila4_probe3        : std_logic_vector(31 downto 0);
     signal s_ila4_probe4        : std_logic_vector(0 downto 0);
     signal s_ila4_probe5        : std_logic_vector(0 downto 0);
     
@@ -170,7 +170,7 @@ begin
     
     usb_rx_rd_en <= s_usb_rx_rd_en;    
 
-    s_ila3_probe0       <= s_adc_fifo_din(27 downto 16);
+    s_ila3_probe0       <= s_adc_fifo_din;
     s_ila3_probe1(0)    <= s_adc_fifo_wr_en;
     s_ila3_probe2(0)    <= s_adc_fifo_wr_full;
     s_ila3_probe3(0)    <= muxout;
@@ -178,7 +178,7 @@ begin
     s_ila4_probe0       <= usb_rx_rd_data;
     s_ila4_probe1(0)    <= usb_rx_rd_empty;
     s_ila4_probe2(0)    <= s_usb_rx_rd_en;
-    s_ila4_probe3       <= s_adc_fifo_dout(27 downto 16);
+    s_ila4_probe3       <= s_adc_fifo_dout;
     s_ila4_probe4(0)    <= s_adc_fifo_rd_en;
     s_ila4_probe5(0)    <= s_adc_fifo_rd_empty;
 
@@ -261,7 +261,7 @@ begin
                 
                 when CTRL_RAMP =>
                 
-                    adc_oe   <= "00";
+                    adc_oe   <= "10"; -- mux mode both channel data is on d0-11 of A, d0-11 B is off
                     adc_shdn <= "00";
                     pa_en    <= '1';
                 
