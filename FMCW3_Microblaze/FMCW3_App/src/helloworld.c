@@ -186,14 +186,14 @@ int main(void){
                                 
                 // Control.vhd module uses sampling done and ramp configured signals. They need 1 not a pulse.
                 // Software reset is the resetting mechanism for the whole vhdl logic.
-                GPIO_ClearPin(SAMPLING_DONE);
-                GPIO_ClearPin(RAMP_CONFIGURED);
-                GPIO_SetPin(SOFTWARE_RESET);
-                GPIO_ClearPin(LED);
-                GPIO_SetPin(FIR_ENABLE);
-                GPIO_SetPin(SEND_DATA_TYPE);
-                GPIO_SetPin(PA_MODE);
-                GPIO_ClearPin(TEST_MUX);
+                GPIO_ClearPin(SAMPLING_DONE);   // sampling is not done yet
+                GPIO_ClearPin(RAMP_CONFIGURED); // ramp not configured yet
+                GPIO_SetPin(SOFTWARE_RESET);    // soft reset active low
+                GPIO_ClearPin(LED); 
+                GPIO_SetPin(FIR_ENABLE);        // default enabled
+                GPIO_SetPin(SEND_DATA_TYPE);    // default adc data
+                GPIO_SetPin(PA_MODE);           // default on off
+                GPIO_ClearPin(TEST_MUX);        // default adf4158
                 
                 // These 2 gpios are directly connected to the fpga's io which is controlling ce and le pins of adf4158.
                 // Make sure CE low, LE high
