@@ -33,7 +33,7 @@ Vivado will recognize the device.
 
 **⚡ FMCW Radar Control and Data Acquisition on FPGA**
 
-<img width="2709" height="2136" alt="Image" src="https://github.com/user-attachments/assets/d6e4c6fd-f50c-4747-91e8-064f77eb1e6c" />
+<img width="1815" height="1177" alt="Image" src="https://github.com/user-attachments/assets/5805f015-6490-4987-900f-1ca80b03710d" />
 
 This project implements the complete digital backend of an FMCW radar system using VHDL and Xilinx MicroBlaze, integrating ramp control, ADC sampling, FIR decimation, and high-speed USB 2.0 streaming to a PC.
 
@@ -52,22 +52,21 @@ Generates control signals such as ramp start, ramp configured, and sampling done
 **FPGA Logic Subsystem:**
 Dedicated to high-speed ADC data acquisition and USB 2.0 data transfer to the host PC using an FT2232H in synchronous FIFO mode. Main modules of fpga design are:
 
-**microblaze_wrapper.vhd** — Soft CPU subsystem with AXI peripherals for SPI, GPIO, and UART. Handles configuration of the ADF4158 PLL, ADC, and peripheral devices.
+**Microblaze.vhd** — Soft CPU subsystem with AXI peripherals for SPI, GPIO. Handles configuration of the ADF4158 PLL and controls VHDL logic with GPIO pins.
 
-**config.vhd** — Receives radar configuration packets from the host PC over USB; verifies framing and transfers parameters to MicroBlaze; asserts config_done when complete.
+**Config.vhd** — Receives radar configuration packets from the host PC over USB; Verifies framing and transfers parameters to MicroBlaze over axi interface; Asserts config_done when complete.
 
-**control.vhd** — Main FSM that coordinates ADC sampling during ramp (MUXOUT = 1), USB transmission during gap, and controls PA enable and ADC OE/SHDN lines.
+**Control.vhd** — Main FSM that coordinates ADC sampling during ramp (MUXOUT = 0), USB transmission, and controls PA enable and ADC OE/SHDN lines.
 
-**adc.vhd** — Dual-phase ADC interface performing interleaved capture of two channels. Includes fir_compiler_0 IP cores (g_fir.fir1, g_fir.fir2) for low-pass filtering and ×20 decimation, generating synchronized data_a / data_b outputs.
+**Adc.vhd** — Dual-phase ADC interface performing interleaved capture of two channels. Includes fir_compiler_0 IP cores (g_fir.fir1, g_fir.fir2) for high pass range compensation filtering and ×20 decimation, generating synchronized data_a / data_b outputs.
 
-**usb_sync.vhd** — Implements the FT2232H synchronous FIFO interface for USB 2.0 data transfer.
+**Usb_sync.vhd** — Implements the FT2232H synchronous FIFO interface for USB 2.0 data transfer achieving around 11 MB/sec speed.
 
 Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration data from PC (RX path). tx_dcfifo – Buffers outgoing ADC samples to USB (TX path).
 
 **clk_wiz_0** — MMCM generating both 40 MHz (logic) and 100 MHz (MicroBlaze) clock domains with phase alignment.
 
-**ila_0** — Integrated Logic Analyzer core used for hardware-level probing of control FSM states, ADC valid pulses, and USB FIFO activity.
-
+**ila_probes** — Integrated Logic Analyzer core used for hardware-level probing of control FSM states, ADC valid pulses, and USB FIFO activity.
 
 **Coe file analyzer python script:**
 
