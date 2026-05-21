@@ -1,7 +1,5 @@
 <img width="3877" height="4323" alt="Image" src="https://github.com/user-attachments/assets/b057349b-30fe-44ee-a7ce-f4409edc3e3c" />
 
-<img width="763" height="853" alt="Image" src="https://github.com/user-attachments/assets/5b431754-d049-44d8-aa6a-8ae7191d2724" />
-
 <img width="765" height="965" alt="Image" src="https://github.com/user-attachments/assets/5638f28c-1a3f-4499-b84c-655ae3176829" />
 
 **JTAG Programming Note with FT2232H:**
