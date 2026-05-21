@@ -35,25 +35,25 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 **⚡ FMCW Radar Control and Data Acquisition on FPGA**
 
-<img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
-
 This project implements the complete digital backend of an FMCW radar system using VHDL and Xilinx MicroBlaze, integrating ramp control, ADC sampling, FIR decimation, and high-speed USB 2.0 streaming to a PC.
 
-
+<img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
 
 **🔧 System Architecture**
 
 The design separates slow-control and high-speed signal processing into two domains:
 
-** 1. MicroBlaze Subsystem:**
-Handles low-speed configuration of on-board ICs (ADF4158 PLL, amplifier) through GPIO, SPI, and UART interfaces.
+### 1. MicroBlaze Subsystem
+
+Handles low-speed configuration of on-board ICs (ADF4158 PLL, amplifier) through SPI and GPIO interfaces.
 Generates control signals such as ramp start, ramp configured, and sampling done flags.
 
 <img width="2455" height="1361" alt="Image" src="https://github.com/user-attachments/assets/97c1fb37-c0f2-4179-9d8f-e6b94bec952f" />
 
 **Microblaze.vhd** — Soft CPU subsystem with AXI peripherals for SPI, GPIO. Handles configuration of the ADF4158 PLL and controls VHDL logic with GPIO pins.
 
-** 2. FPGA Logic Subsystem:**
+### 2. FPGA Logic Subsystem:
+
 Dedicated to high-speed ADC data acquisition and USB 2.0 data transfer to the host PC using an FT2232H in synchronous FIFO mode. Main modules of fpga design are:
 
 **Config.vhd** — Receives radar configuration packets from the host PC over USB; Verifies framing and transfers parameters to MicroBlaze over axi interface; Asserts config_done when complete.
