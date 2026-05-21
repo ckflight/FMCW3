@@ -2,9 +2,9 @@
 
 <img width="762" height="1077" alt="Image" src="https://github.com/user-attachments/assets/e1caf807-6a9b-46bc-819f-320c57762e42" />
 
-**JTAG Programming Notes:**
+## JTAG Programming Notes:
 
-*Programming with on-board FT2232H:*
+### Programming with on-board FT2232H:
 
 FT2232H Channel A is set for SYNC FIFO 245 with D2XX driver
 FT2232H Channel B is for JTAG and left as Virtual Com Port
@@ -25,7 +25,7 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 4. Program FPGA  
    Run: openFPGALoader -c ft2232_b <path_to_bitfile>.bit
 
-*Programming with Xilinx DLC10 Debugger:*
+### Programming with Xilinx DLC10 Debugger:
 
 1. Unsolder 3 resistors R84 R85 R88 from FT2232H to JTAG line to isolate it.
 
@@ -33,13 +33,11 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 3. Vivado will recognize the device.
 
-**⚡ FMCW Radar Control and Data Acquisition on FPGA**
-
-This project implements the complete digital backend of an FMCW radar system using VHDL and Xilinx MicroBlaze, integrating ramp control, ADC sampling, FIR decimation, and high-speed USB 2.0 streaming to a PC.
+## ⚡ FMCW Radar Control and Data Acquisition Flow Chart on FPGA
 
 <img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
 
-**🔧 System Architecture**
+## 🔧 System Architecture
 
 The design separates slow-control and high-speed signal processing into two domains:
 
@@ -54,7 +52,7 @@ Generates control signals such as ramp start, ramp configured, and sampling done
 
 ### 2. FPGA Logic Subsystem:
 
-Dedicated to high-speed ADC data acquisition and USB 2.0 data transfer to the host PC using an FT2232H in synchronous FIFO mode. Main modules of fpga design are:
+Implements the real-time FMCW radar data path, from radar configuration and ramp synchronization to high-speed ADC acquisition, FIR filtering, decimation, buffering, and USB 2.0 streaming to the host PC using an FT2232H in synchronous FIFO mode.
 
 **Config.vhd** — Receives radar configuration packets from the host PC over USB; Verifies framing and transfers parameters to MicroBlaze over axi interface; Asserts config_done when complete.
 
