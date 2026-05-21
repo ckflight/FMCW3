@@ -68,7 +68,7 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 **ila_probes** — Integrated Logic Analyzer core used for hardware-level probing of control FSM states, ADC valid pulses, and USB FIFO activity.
 
 
-## 🧩 Simulation and Probe Results**
+## 🧩 Simulation and Probe Results
 
 
 ### Configuration Path:
@@ -93,8 +93,21 @@ FIR-filtered and decimated dual-channel outputs synchronized with valid pulses.
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/addd7541-d3f9-4c5a-bd35-dd87aca477c6" />
 
 
-## Coe file analyzer python script:
+## 🧮 COE File Analyzer and FIR Generator Scripts
 
+This project includes Python helper scripts for designing and verifying FIR filter coefficients used by the Vivado FIR Compiler IP.
+
+- **coe_analyze.py** — Loads an existing `.coe` coefficient file and plots the FIR impulse response, magnitude response, and phase response. This is useful for verifying the filter behavior before using it in the FPGA design.
+
+- **fir_generator.py** — Generates FIR filter coefficients using `scipy.signal.firwin`, applies optional gain scaling, exports the coefficients in Vivado `.coe` format, and plots the designed filter response.
+
+These scripts make it easier to tune the high-pass FIR filter used in the ADC signal path for range compensation, DC/low-frequency suppression, and decimation support.
+
+###  FIR Compiler IP Settings:
+<img width="1806" height="1257" alt="Image" src="https://github.com/user-attachments/assets/7e27453b-4022-4a9d-91b3-edf7237f1a74" />
+<img width="1806" height="1257" alt="Image" src="https://github.com/user-attachments/assets/c53b0355-60f3-4d05-b8a7-8f85bf4f811b" />
+
+### COE File:
 <img width="998" height="1075" alt="Image" src="https://github.com/user-attachments/assets/94ce4b34-3ade-46f6-b227-c4c8b7270276" />
 <img width="3657" height="1925" alt="Image" src="https://github.com/user-attachments/assets/11672161-dc26-4822-9536-ca332e899273" />
 
