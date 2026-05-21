@@ -1,8 +1,7 @@
-<img width="1191" height="820" alt="Image" src="https://github.com/user-attachments/assets/c15240c6-0b76-46b2-9d54-5b04e4fd514a" />
-
-<img width="768" height="1196" alt="Image" src="https://github.com/user-attachments/assets/0cbc7f4e-1024-47af-aa0d-9918fede0675" />
-
+<img width="3877" height="4323" alt="Image" src="https://github.com/user-attachments/assets/b057349b-30fe-44ee-a7ce-f4409edc3e3c" />
 <img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/c35e2532-4b34-426a-81f5-9b211604b31f" />
+
+<img width="765" height="965" alt="Image" src="https://github.com/user-attachments/assets/5638f28c-1a3f-4499-b84c-655ae3176829" />
 
 **JTAG Programming Note with FT2232H:**
 
