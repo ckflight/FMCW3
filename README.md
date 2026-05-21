@@ -43,12 +43,11 @@ The design separates slow-control and high-speed signal processing into two doma
 
 ### 1. MicroBlaze Subsystem
 
-Handles low-speed configuration of on-board ICs (ADF4158 PLL, amplifier) through SPI and GPIO interfaces.
-Generates control signals such as ramp start, ramp configured, and sampling done flags.
+The MicroBlaze subsystem handles radar control, peripheral configuration and FPGA logic. It is responsible for configuring the ADF4158 PLL and external RF front-end components through AXI-based SPI and GPIO peripherals. The subsystem also manages radar operation states by generating and monitoring control signals such as ramp start, configuration complete, and acquisition status flags.
 
 <img width="2203" height="1089" alt="Image" src="https://github.com/user-attachments/assets/e006aeda-6d44-48e4-a493-0dd887b48eb1" />
 
-**Microblaze.vhd** — Soft CPU subsystem with AXI peripherals for SPI, GPIO. Handles configuration of the ADF4158 PLL and controls VHDL logic with GPIO pins.
+**Microblaze.vhd** — Top-level MicroBlaze integration containing AXI SPI, GPIO, clocking, and control interfaces used for radar configuration and coordination with the high-speed VHDL acquisition logic.
 
 ### 2. FPGA Logic Subsystem:
 
