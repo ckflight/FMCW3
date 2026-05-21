@@ -5,7 +5,8 @@ from scipy.signal import freqz
 # -----------------------------
 # CONFIG
 # -----------------------------
-coe_file = "/home/ck/Desktop/Workspace/FPGA_Workspace/VIVADO_PROJECTS/FMCW3/fir20.coe"
+coe_file = "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/fir_downsampler.coe"
+
 Fs = 40e6  # Sampling rate (Hz)
 
 # -----------------------------
