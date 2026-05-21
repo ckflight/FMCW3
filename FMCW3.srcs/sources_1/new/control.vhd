@@ -118,6 +118,9 @@ architecture Behavioral of control is
     
     signal s_usb_rx_rd_en       : std_logic := '0';
     
+    signal s_adc_oe             : std_logic_vector(1 downto 0) := "10"; -- enable a data line, b is data line is not used in mux mode
+    signal s_adc_shdn           : std_logic_vector(1 downto 0) := "00";
+    
     signal s_ila3_probe0        : std_logic_vector(31 downto 0);
     signal s_ila3_probe1        : std_logic_vector(0 downto 0);
     signal s_ila3_probe2        : std_logic_vector(0 downto 0);
@@ -185,6 +188,11 @@ begin
     --- Send ramp test data and check with python. For both fir and nofir it is tested and working!
     --- Send data with start bytes to get correct frame for chirp at python code
         
+        
+    -- Continuous ADC control
+    adc_oe   <= s_adc_oe;
+    adc_shdn <= s_adc_shdn;
+
     --------------------------------------------------------------------
     -- CONTROL FSM: ADC writes into FIFO
     --------------------------------------------------------------------
@@ -199,8 +207,9 @@ begin
             s_adc_fifo_wr_en <= '0';
             s_adc_fifo_din   <= (others => '0');
 
-            adc_oe    <= "11";
-            adc_shdn  <= "11";
+            --adc_oe    <= "11";
+            --adc_shdn  <= "11";
+            
             pa_en     <= '0';
             ramp_done <= '0';
 
@@ -220,8 +229,9 @@ begin
 
                 when CTRL_IDLE =>
 
-                    adc_oe    <= "11";
-                    adc_shdn  <= "11";
+                    --adc_oe    <= "11";
+                    --adc_shdn  <= "11";
+                    
                     pa_en     <= '0';
                     ramp_done <= '0';
 
@@ -238,8 +248,9 @@ begin
                 when CTRL_IGNORE_FIRST_RAMP =>
                 
                     -- First ramp may already be in the middle, so do not write ADC data
-                    adc_oe   <= "11";
-                    adc_shdn <= "11";
+                    --adc_oe   <= "11";
+                    --adc_shdn <= "11";
+                    
                     pa_en    <= '0';
                     
                     -- wait until current ramp finishes and gap starts
@@ -261,8 +272,9 @@ begin
                 
                 when CTRL_RAMP =>
                 
-                    adc_oe   <= "10"; -- mux mode both channel data is on d0-11 of A, d0-11 B is off
-                    adc_shdn <= "00";
+                    --adc_oe   <= "10"; -- mux mode both channel data is on d0-11 of A, d0-11 B is off
+                    --adc_shdn <= "00";
+                    
                     pa_en    <= '1';
                 
                     if s_adc_fifo_wr_ovf = '1' then
@@ -295,8 +307,9 @@ begin
 
                 when CTRL_GAP_WAIT =>
 
-                    adc_oe   <= "11";
-                    adc_shdn <= "11";
+                    --adc_oe   <= "11";
+                    --adc_shdn <= "11";
+                    
                     if pa_mode = '1' then
                         pa_en    <= '0';
                     else
@@ -315,8 +328,9 @@ begin
 
                 when CTRL_WAIT_SOFT_RESET =>
 
-                    adc_oe    <= "11";
-                    adc_shdn  <= "11";
+                    --adc_oe    <= "11";
+                    --adc_shdn  <= "11";
+                    
                     pa_en     <= '0';
                     ramp_done <= '1';
                     adc_test_counter_a := (others => '0');-- channel a

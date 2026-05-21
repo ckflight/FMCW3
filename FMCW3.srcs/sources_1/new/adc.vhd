@@ -92,8 +92,12 @@ begin
     
     
     -- Sampled data is registered to these signals and concatanated with 4 zeros to make it 16 bit simultaneously
-    fir1_data_in <= "0000" & data_a_buffer;
-    fir2_data_in <= "0000" & data_b_buffer;
+    --fir1_data_in <= "0000" & data_a_buffer;
+    --fir2_data_in <= "0000" & data_b_buffer;
+    
+    -- adc is 2s complement signed 12 bit resize it to 16 bit signed. Fir input is signed 16
+    fir1_data_in <= std_logic_vector(resize(signed(data_b_buffer), 16));
+    fir2_data_in <= std_logic_vector(resize(signed(data_a_buffer), 16));
           
     
     fir1 : fir_compiler_0

@@ -29,8 +29,6 @@ entity top_module is
         adc_oe          : out std_logic_vector(1 downto 0);
         adc_shdn        : out std_logic_vector(1 downto 0);
         
-        --burned_adc_input : in std_logic_vector(3 downto 0);
-
         -- FT2232H USB
         usb_data        : inout std_logic_vector(7 downto 0); -- TODO  i will later make it inout!!!!
         usb_rxf         : in std_logic;
