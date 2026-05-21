@@ -1,5 +1,8 @@
+<img width="1191" height="820" alt="Image" src="https://github.com/user-attachments/assets/c15240c6-0b76-46b2-9d54-5b04e4fd514a" />
 
-<img width="3877" height="4323" alt="Image" src="https://github.com/user-attachments/assets/b057349b-30fe-44ee-a7ce-f4409edc3e3c" />
+<img width="768" height="1196" alt="Image" src="https://github.com/user-attachments/assets/0cbc7f4e-1024-47af-aa0d-9918fede0675" />
+
+<img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/c35e2532-4b34-426a-81f5-9b211604b31f" />
 
 **JTAG Programming Note with FT2232H:**
 
@@ -58,6 +61,7 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 **Coe file analyzer python script:**
 
+<img width="998" height="1075" alt="Image" src="https://github.com/user-attachments/assets/94ce4b34-3ade-46f6-b227-c4c8b7270276" />
 <img width="3657" height="1925" alt="Image" src="https://github.com/user-attachments/assets/11672161-dc26-4822-9536-ca332e899273" />
 
 
