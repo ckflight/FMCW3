@@ -1,8 +1,10 @@
 <img width="3877" height="4323" alt="Image" src="https://github.com/user-attachments/assets/b057349b-30fe-44ee-a7ce-f4409edc3e3c" />
 
-<img width="765" height="965" alt="Image" src="https://github.com/user-attachments/assets/5638f28c-1a3f-4499-b84c-655ae3176829" />
+<img width="762" height="1077" alt="Image" src="https://github.com/user-attachments/assets/e1caf807-6a9b-46bc-819f-320c57762e42" />
 
-**JTAG Programming Note with FT2232H:**
+**JTAG Programming Notes:**
+
+*With onboard FT2232H:*
 
 FT2232H Channel A is set for SYNC FIFO 245 with D2XX driver
 FT2232H Channel B is for JTAG and left as Virtual Com Port
@@ -22,6 +24,12 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 4. Program FPGA  
    Run: openFPGALoader -c ft2232_b <path_to_bitfile>.bit
+
+*With Xilinx DLC10 Debugger: *
+
+Unsolder 3 resistor from FT2232H to jtag line to isolate.
+Solder Xilinx JTAG TMS TCK TDI TDO VREF GND to solder pads.
+Vivado will recognize device.
 
 **⚡ FMCW Radar Control and Data Acquisition on FPGA**
 
