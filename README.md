@@ -4,7 +4,7 @@
 
 **JTAG Programming Notes:**
 
-*With onboard FT2232H:*
+*Programming with on-board FT2232H:*
 
 FT2232H Channel A is set for SYNC FIFO 245 with D2XX driver
 FT2232H Channel B is for JTAG and left as Virtual Com Port
@@ -25,15 +25,19 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 4. Program FPGA  
    Run: openFPGALoader -c ft2232_b <path_to_bitfile>.bit
 
-*With Xilinx DLC10 Debugger: *
+*Programming with Xilinx DLC10 Debugger:*
 
-Unsolder 3 resistor from FT2232H to jtag line to isolate.
-Solder Xilinx JTAG TMS TCK TDI TDO VREF GND to solder pads.
-Vivado will recognize device.
+Unsolder 3 resistor from FT2232H to jtag line to isolate it.
+Solder Xilinx JTAG's TMS TCK TDI TDO VREF GND to pcb pads.
+Vivado will recognize the device.
 
 **⚡ FMCW Radar Control and Data Acquisition on FPGA**
 
+<img width="2709" height="2136" alt="Image" src="https://github.com/user-attachments/assets/d6e4c6fd-f50c-4747-91e8-064f77eb1e6c" />
+
 This project implements the complete digital backend of an FMCW radar system using VHDL and Xilinx MicroBlaze, integrating ramp control, ADC sampling, FIR decimation, and high-speed USB 2.0 streaming to a PC.
+
+
 
 **🔧 System Architecture**
 
