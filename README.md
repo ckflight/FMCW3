@@ -22,8 +22,12 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
    Re-run Synthesis → Implementation → Generate Bitstream.  
    (If Vivado doesn’t detect changes, make a trivial edit in the top module to force refresh.)
 
-4. Program FPGA  
+4. Program FPGA (M[2:0]: 101 JTAG Mode)
    Run: openFPGALoader -c ft2232_b <path_to_bitfile>.bit
+
+5. Flash FPGA (M[2:0]: 001 SPI Flah Mode)
+   Run: openFPGALoader -c ft2232_b --fpga-part xc7a35tftg256 -f top_module.bin
+
 
 ### Programming with Xilinx DLC10 Debugger:
 
