@@ -2,6 +2,8 @@
 
 <img width="762" height="1077" alt="Image" src="https://github.com/user-attachments/assets/e1caf807-6a9b-46bc-819f-320c57762e42" />
 
+<img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
+
 ## JTAG Programming Notes:
 
 ### Programming with on-board FT2232H:
@@ -67,6 +69,14 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 **ila_probes** — Integrated Logic Analyzer core used for hardware-level probing of control FSM states, ADC valid pulses, and USB FIFO activity.
 
+## 📡 Real Radar Results
+
+### Range Doppler Map
+<img width="1195" height="1176" alt="Image" src="https://github.com/user-attachments/assets/2c4e949a-6bc9-4e0b-bd3d-595a83cb25aa" />
+
+### Noise Floor:
+For 400 KHz cutoff FIR HPF, the noise floor is around -110 dBFS/bin. Higher cutoff cretes lower noise floor (-120 dBFS/bin 600 KHz) but higher output power is needed!
+<img width="1197" height="975" alt="Image" src="https://github.com/user-attachments/assets/8a7ac21b-e04c-48d0-8e6c-92c823c0e291" />
 
 ## 🧩 Simulation and Probe Results
 
