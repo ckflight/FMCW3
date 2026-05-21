@@ -74,7 +74,7 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 ### Noise Floor:
 For 400 KHz cutoff FIR HPF, the noise floor is around -110 dBFS/bin. Higher cutoff cretes lower noise floor (-120 dBFS/bin 600 KHz) but higher output power is needed!
-<img width="1197" height="975" alt="Image" src="https://github.com/user-attachments/assets/8a7ac21b-e04c-48d0-8e6c-92c823c0e291" />
+<img width="1195" height="896" alt="Image" src="https://github.com/user-attachments/assets/1029cd31-db38-4f8b-9d56-459da68f6728" />
 
 ## 🧩 Simulation and Probe Results
 
