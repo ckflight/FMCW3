@@ -71,8 +71,8 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 ## 📡 Real Radar Results
 
-### Range Doppler Map
-<img width="1195" height="1176" alt="Image" src="https://github.com/user-attachments/assets/2c4e949a-6bc9-4e0b-bd3d-595a83cb25aa" />
+### FFT Range Doppler Map:
+<img width="1191" height="1095" alt="Image" src="https://github.com/user-attachments/assets/2f5556ed-1255-4db8-ab22-da29fb5e7a08" />
 
 ### Noise Floor:
 For 400 KHz cutoff FIR HPF, the noise floor is around -110 dBFS/bin. Higher cutoff cretes lower noise floor (-120 dBFS/bin 600 KHz) but higher output power is needed!
