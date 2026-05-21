@@ -46,7 +46,7 @@ The design separates slow-control and high-speed signal processing into two doma
 Handles low-speed configuration of on-board ICs (ADF4158 PLL, amplifier) through SPI and GPIO interfaces.
 Generates control signals such as ramp start, ramp configured, and sampling done flags.
 
-<img width="2455" height="1361" alt="Image" src="https://github.com/user-attachments/assets/97c1fb37-c0f2-4179-9d8f-e6b94bec952f" />
+<img width="2203" height="1089" alt="Image" src="https://github.com/user-attachments/assets/e006aeda-6d44-48e4-a493-0dd887b48eb1" />
 
 **Microblaze.vhd** — Soft CPU subsystem with AXI peripherals for SPI, GPIO. Handles configuration of the ADF4158 PLL and controls VHDL logic with GPIO pins.
 
@@ -68,32 +68,36 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 **ila_probes** — Integrated Logic Analyzer core used for hardware-level probing of control FSM states, ADC valid pulses, and USB FIFO activity.
 
-**Coe file analyzer python script:**
 
-<img width="998" height="1075" alt="Image" src="https://github.com/user-attachments/assets/94ce4b34-3ade-46f6-b227-c4c8b7270276" />
-<img width="3657" height="1925" alt="Image" src="https://github.com/user-attachments/assets/11672161-dc26-4822-9536-ca332e899273" />
+## 🧩 Simulation and Probe Results**
 
 
-**🧩 Simulation Results**
-
-
-**Configuration Path:** Sequential byte reception over USB (config.vhd) forming correct 64-bit packets.
+### Configuration Path:
+Sequential byte reception over USB (config.vhd) forming correct 64-bit packets.
 
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/ecc14d3f-d771-4332-979e-05445e62164b" />
 
 
-**Sampling & Control:** Proper sequencing of ADC sampling during ramp (MUXOUT = 1) and data upload during gap.
+### Sampling & Control:
+Proper sequencing of ADC sampling during ramp (MUXOUT = 0) and data upload during gap.
 
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/6f54ff55-025c-480d-ae85-85af0a34b7c0" />
 
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/60c4a199-748d-4475-af2e-11a2b4144a63" />
 
 
-**ADC Behavior:** FIR-filtered and decimated dual-channel outputs synchronized with valid pulses.
+### ADC Behavior:
+FIR-filtered and decimated dual-channel outputs synchronized with valid pulses.
 
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/dc2684fb-aff9-48e1-9ecc-e25510b73626" />
 
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/addd7541-d3f9-4c5a-bd35-dd87aca477c6" />
+
+
+## Coe file analyzer python script:
+
+<img width="998" height="1075" alt="Image" src="https://github.com/user-attachments/assets/94ce4b34-3ade-46f6-b227-c4c8b7270276" />
+<img width="3657" height="1925" alt="Image" src="https://github.com/user-attachments/assets/11672161-dc26-4822-9536-ca332e899273" />
 
 
 **🚀 Key Features**
