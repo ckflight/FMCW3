@@ -1,4 +1,4 @@
-## Dual Receiver Radar Design:
+# FMCW3 Dual-Receiver FPGA Radar Platform:
 
 All RF, FPGA, PCB, VHDL, DSP, and Python software in this project were designed and developed by myself as a complete custom FMCW radar platform.
 
@@ -8,7 +8,7 @@ All RF, FPGA, PCB, VHDL, DSP, and Python software in this project were designed 
 
 ## 6 Layer KiCAD PCB Design:
 
-6 Layer pcb design is open-source available at my repo below:
+6-layer PCB design is available as open-source hardware:
 
 Repository:
 https://github.com/ckflight/Radar3
@@ -53,86 +53,6 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 ## ⚡ FMCW Radar Control and Data Acquisition Flow Chart on FPGA:
 
 <img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
-
-## FMCW Noise Floor Calculation:
-
-### RF/IF Chain Noise Floor Calculation
-
-For a 250 µs FMCW chirp:
-
-$$
-B_{bin}=\frac{1}{T_{chirp}}=4\ kHz
-$$
-
-Thermal noise per FFT bin:
-
-$$
-P_{n,in}=-174+10\log_{10}(4000)\approx-138\ dBm/bin
-$$
-
-Receiver chain:
-
-| Stage | Gain | NF |
-|---|---:|---:|
-| SKY65404-31 | 13 dB | 1 dB |
-| TRF37A73 | 12 dB | 4.5 dB |
-| ADL5802 | 7.6 dB | Conversion |
-
-Total gain:
-
-$$
-G_{total}=13+12+7.6=32.6\ dB
-$$
-
-Including LNA noise figure:
-
-$$
-P_{n,IF}=-138+1+32.6\approx-104.4\ dBm/bin
-$$
-
-For 1.5 Vpp differential full-scale into 200Ω:
-
-$$
-P_{FS}\approx1.5\ dBm
-$$
-
-Expected RF/IF noise floor:
-
-$$
-P_{noise,dBFS/bin}=-104.4-1.5\approx-106\ dBFS/bin
-$$
-
-The LTC2292 ADC has approximately 71.3 dB SNR.
-
-For 40 MHz sampling and 250 µs chirps:
-
-$$
-N=40MHz\cdot250\mu s=10000
-$$
-
-$$
-G_{FFT}=10\log_{10}(10000)=40\ dB
-$$
-
-$$
-P_{ADC,bin}=-71.3-40\approx-111.3\ dBFS/bin
-$$
-
-For 1 ms chirps:
-
-$$
-N=40MHz\cdot1ms=40000
-$$
-
-$$
-G_{FFT}=10\log_{10}(40000)\approx46\ dB
-$$
-
-$$
-P_{ADC,bin}=-71.3-46\approx-117.3\ dBFS/bin
-$$
-
-Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Since the RF/IF chain noise floor is around **-106 dBFS/bin**, the system is mainly limited by the RF/IF receiver chain rather than the LTC2292 ADC.
 
 ## 🔧 System Architecture
 
@@ -198,11 +118,90 @@ The radar demonstrated displacement sensitivity from centimeter-level breathing 
 <img width="2048" height="1098" alt="Image" src="https://github.com/user-attachments/assets/458af1db-ce7c-41d5-904e-1bab8cf9a594" />
 
 ### Noise Floor:
-For 400 KHz cutoff FIR HPF, the noise floor is around -110 dBFS/bin. Higher cutoff cretes lower noise floor (-120 dBFS/bin 600 KHz) but higher output power is needed!
+For 400 KHz cutoff FIR HPF, the noise floor is around -110 dBFS/bin. Higher cutoff frequencies (-120 dBFS/bin FIR 600 KHz) reduce the visible noise floor but require higher received signal power so higher output power is needed!
 <img width="1195" height="896" alt="Image" src="https://github.com/user-attachments/assets/1029cd31-db38-4f8b-9d56-459da68f6728" />
 
-## 🧩 Simulation and Probe Results
+## RF/IF Chain Noise Floor Calculation:
 
+The following estimation compares RF/IF receiver noise against the theoretical ADC FFT-bin noise floor.
+
+For a 250 µs FMCW chirp:
+
+$$
+B_{bin}=\frac{1}{T_{chirp}}=4\ kHz
+$$
+
+Thermal noise per FFT bin:
+
+$$
+P_{n,in}=-174+10\log_{10}(4000)\approx-138\ dBm/bin
+$$
+
+Receiver chain:
+
+| Stage | Gain | NF |
+|---|---:|---:|
+| SKY65404-31 | 13 dB | 1 dB |
+| TRF37A73 | 12 dB | 4.5 dB |
+| ADL5802 | 7.6 dB voltage conversion gain | 11 dB |
+
+Total gain:
+
+$$
+G_{total}=13+12+7.6=32.6\ dB
+$$
+
+Including LNA noise figure:
+
+$$
+P_{n,IF}=-138+1+32.6\approx-104.4\ dBm/bin
+$$
+
+For 1.5 Vpp differential full-scale into 200Ω:
+
+$$
+P_{FS}\approx1.5\ dBm
+$$
+
+Expected RF/IF noise floor:
+
+$$
+P_{noise,dBFS/bin}=-104.4-1.5\approx-106\ dBFS/bin
+$$
+
+The LTC2292 ADC has approximately 71.3 dB SNR.
+
+For 40 MHz sampling and 250 µs chirps:
+
+$$
+N=40MHz\cdot250\mu s=10000
+$$
+
+$$
+G_{FFT}=10\log_{10}(10000)=40\ dB
+$$
+
+$$
+P_{ADC,bin}=-71.3-40\approx-111.3\ dBFS/bin
+$$
+
+For 1 ms chirps:
+
+$$
+N=40MHz\cdot1ms=40000
+$$
+
+$$
+G_{FFT}=10\log_{10}(40000)\approx46\ dB
+$$
+
+$$
+P_{ADC,bin}=-71.3-46\approx-117.3\ dBFS/bin
+$$
+
+Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Since the RF/IF chain noise floor is around **-106 dBFS/bin**, the system is mainly limited by the RF/IF receiver chain rather than the LTC2292 ADC.
+
+## 🧩 Simulation and Probe Results
 
 ### Configuration Path:
 Sequential byte reception over USB (config.vhd) forming correct 64-bit packets.
@@ -233,7 +232,7 @@ The TX path includes a directional coupler for continuous FMCW operation, coupli
 
 Unlike Wilkinson power splitters, which dissipate roughly half of the transmit power internally, the directional coupler preserves TX efficiency while still providing LO drive for the mixer.
 
-SMA connectors in pcb requires cutout to match 50 ohm. It is simulated with CST.
+SMA launch transitions require PCB cutouts for proper 50Ω impedance matching. It is simulated with CST.
 
 All of the mentioned simulations and designs are in my open source repo below:
 
