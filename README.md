@@ -1,11 +1,14 @@
 <img width="762" height="1077" alt="Image" src="https://github.com/user-attachments/assets/e1caf807-6a9b-46bc-819f-320c57762e42" />
 <img width="1114" height="926" alt="Image" src="https://github.com/user-attachments/assets/3c51f631-6152-40ff-b9f9-fef74b0440d4" />
-<img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
+
 
 ## 6 Layer KiCAD PCB Design:
 
+6 Layer pcb design is open-source available at my repo below:
+
 https://github.com/ckflight/Radar3
 
+<img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
 
 ## JTAG Programming Notes:
 
