@@ -92,15 +92,15 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 FMCW radar can detect very small target movements using phase changes of the received signal:
 
-\[
+$$
 \Delta d = \frac{\lambda \Delta \phi}{4\pi}
-\]
+$$
 
 where:
 
-- \( \Delta d \) = displacement
-- \( \lambda \) = wavelength
-- \( \Delta \phi \) = phase change
+- `Δd` = displacement
+- `λ` = wavelength
+- `Δφ` = phase change
 
 At 5.8 GHz, the system was able to observe:
 
