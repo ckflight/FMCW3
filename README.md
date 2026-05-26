@@ -54,7 +54,7 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 <img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
 
-## FMCW MATH:
+## FMCW Noise Floor Calculation:
 
 ### RF/IF Chain Noise Floor Calculation
 
