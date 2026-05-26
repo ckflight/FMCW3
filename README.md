@@ -184,24 +184,19 @@ These scripts make it easier to tune the high-pass FIR filter used in the ADC si
 <img width="3657" height="1925" alt="Image" src="https://github.com/user-attachments/assets/11672161-dc26-4822-9536-ca332e899273" />
 
 
-**🚀 Key Features**
+# License
 
-Dual-clock architecture: 40 MHz sampling / 100 MHz MicroBlaze control
+This project is licensed under the GNU General Public License v3.0 (GPLv3).
 
-USB 2.0 synchronous FIFO communication to PC
+You are free to use, modify, and distribute this software under the terms of the GPLv3 license. Any distributed modifications or derivative works must also be released under the same license and include source code.
 
-FIR low-pass filtering and decimation integrated in the ADC chain
+For full license text:
+https://www.gnu.org/licenses/gpl-3.0.html
 
-Real-time ramp/gap control via ADF4158 MUXOUT
 
-Software reset and handshake signals between VHDL logic and MicroBlaze firmware
+# Author
 
-Extendable for BRAM-based data exchange or AXI-DMA streaming
+Cenk Keskin
 
-**🧠 Next Steps**
-
-Implement shared dual-port BRAM for configuration data exchange with MicroBlaze
-
-Integrate FFT/range-Doppler preprocessing
-
-Add Python GUI for runtime control and data visualization
+GitHub:
+https://github.com/ckflight/FMCW3
