@@ -32,8 +32,8 @@ https://github.com/ckflight/CST_ADS_MODELS_SIMULATIONS
 
 <img width="2380" height="1110" alt="Image" src="https://github.com/user-attachments/assets/5b39a7a4-7f79-4f6f-8da1-534c526e23f1" />
 <img width="2380" height="1137" alt="Image" src="https://github.com/user-attachments/assets/2ca6d335-5580-472a-bd9b-5ad62e2b9007" />
-![sma_connector](https://user-images.githubusercontent.com/61315249/82730757-d363fa80-9d0a-11ea-9adc-0c520f208fa2.png)
-![photo-grid](https://github.com/ckflight/CST_ADS_MODELS_SIMULATIONS/assets/61315249/6f7d1fce-2878-4eda-8e79-be9e0c434dc8)
+<img width="4770" height="1566" alt="Image" src="https://github.com/user-attachments/assets/ea2fd1d7-00f2-4b3a-929e-fab6ae77e261" />
+<img width="2400" height="2400" alt="Image" src="https://github.com/user-attachments/assets/a3d3fb16-9d6d-4d5e-943b-fde4adbb1bb3" />
 
 ## JTAG Programming Notes:
 
