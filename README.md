@@ -84,39 +84,6 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 
 **ila_probes** — Integrated Logic Analyzer core used for hardware-level probing of control FSM states, ADC valid pulses, and USB FIFO activity.
 
-## 📡 Real Radar Results
-
-### FFT Range Doppler Map:
-<img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/1cf31d79-5845-483a-84d9-bae745000e7b" />
-<img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/419cf99c-60ec-4474-b80c-2169f96ab062" />
-<img width="991" height="905" alt="Image" src="https://github.com/user-attachments/assets/bb00f391-63bf-4b53-a2ca-cd97da831953" />
-<img width="2048" height="1712" alt="Image" src="https://github.com/user-attachments/assets/58a32fe0-b599-417d-b7ea-41744127d972" />
-<img width="992" height="935" alt="Image" src="https://github.com/user-attachments/assets/ba075ff8-9d15-493a-8c90-02796d9c49e8" />
-
-## Phase-Based Micromotion Measurement
-
-FMCW radar can detect very small target movements using phase changes of the received signal:
-
-$$
-\Delta d = \frac{\lambda \Delta \phi}{4\pi}
-$$
-
-where:
-
-- `Δd` = displacement
-- `λ` = wavelength
-- `Δφ` = phase change
-
-At 5.8 GHz, the system was able to observe:
-
-- Slow breathing motion
-- Fast breathing motion
-- Heartbeat-induced chest vibration
-
-The radar demonstrated displacement sensitivity from centimeter-level breathing motion down to approximately **75 µm** phase-based movement detection.
-
-<img width="2048" height="1098" alt="Image" src="https://github.com/user-attachments/assets/458af1db-ce7c-41d5-904e-1bab8cf9a594" />
-
 ### Noise Floor:
 For 400 KHz cutoff FIR HPF, the noise floor is around -110 dBFS/bin. Higher cutoff frequencies (-120 dBFS/bin FIR 600 KHz) reduce the visible noise floor but require higher received signal power so higher output power is needed!
 <img width="1195" height="896" alt="Image" src="https://github.com/user-attachments/assets/1029cd31-db38-4f8b-9d56-459da68f6728" />
@@ -200,6 +167,39 @@ P_{ADC,bin}=-71.3-46\approx-117.3\ dBFS/bin
 $$
 
 Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Since the RF/IF chain noise floor is around **-106 dBFS/bin**, the system is mainly limited by the RF/IF receiver chain rather than the LTC2292 ADC.
+
+## 📡 Real Radar Results
+
+### FFT Range Doppler Map:
+<img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/1cf31d79-5845-483a-84d9-bae745000e7b" />
+<img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/419cf99c-60ec-4474-b80c-2169f96ab062" />
+<img width="991" height="905" alt="Image" src="https://github.com/user-attachments/assets/bb00f391-63bf-4b53-a2ca-cd97da831953" />
+<img width="2048" height="1712" alt="Image" src="https://github.com/user-attachments/assets/58a32fe0-b599-417d-b7ea-41744127d972" />
+<img width="992" height="935" alt="Image" src="https://github.com/user-attachments/assets/ba075ff8-9d15-493a-8c90-02796d9c49e8" />
+
+## Phase-Based Micromotion Measurement
+
+FMCW radar can detect very small target movements using phase changes of the received signal:
+
+$$
+\Delta d = \frac{\lambda \Delta \phi}{4\pi}
+$$
+
+where:
+
+- `Δd` = displacement
+- `λ` = wavelength
+- `Δφ` = phase change
+
+At 5.8 GHz, the system was able to observe:
+
+- Slow breathing motion
+- Fast breathing motion
+- Heartbeat-induced chest vibration
+
+The radar demonstrated displacement sensitivity from centimeter-level breathing motion down to approximately **75 µm** phase-based movement detection.
+
+<img width="2048" height="1098" alt="Image" src="https://github.com/user-attachments/assets/458af1db-ce7c-41d5-904e-1bab8cf9a594" />
 
 ## 🧩 Simulation and Probe Results
 
