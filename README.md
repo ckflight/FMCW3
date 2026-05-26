@@ -1,3 +1,5 @@
+## FMCW3 RADAR DESIGN
+
 <img width="762" height="1077" alt="Image" src="https://github.com/user-attachments/assets/e1caf807-6a9b-46bc-819f-320c57762e42" />
 <img width="1114" height="926" alt="Image" src="https://github.com/user-attachments/assets/3c51f631-6152-40ff-b9f9-fef74b0440d4" />
 
@@ -9,6 +11,12 @@
 https://github.com/ckflight/Radar3
 
 <img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
+
+## Horn Antenna, Coupler and Transmission Line Design and Simulation Files:
+
+Antenna details along with the rf design simulations used during the design of this radar is open-source available at my repo below:
+
+https://github.com/ckflight/CST_ADS_MODELS_SIMULATIONS
 
 ## JTAG Programming Notes:
 
