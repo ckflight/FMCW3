@@ -56,83 +56,131 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 ## FMCW MATH:
 
-## Receiver Noise Floor Calculation
+### RF/IF Chain Noise Floor Calculation
 
-The receiver noise floor can be estimated from thermal noise and the receiver gain chain.
+The expected radar noise floor can be estimated from the receiver RF/IF chain.
 
-For one FMCW sweep, the FFT bin bandwidth is approximately:
-
-$$
-B_{bin} = \frac{1}{t_s}
-$$
-
-where \(t_s\) is the sweep time. The input-referred RF thermal noise power is:
+For one FMCW chirp, the FFT bin bandwidth is approximately:
 
 $$
-P_n = k T F B_{bin}
+B_{bin} = \frac{1}{T_{chirp}}
 $$
 
-or:
+For a 250 µs chirp:
 
 $$
-P_n = \frac{k T F}{t_s}
+B_{bin} = \frac{1}{250\ \mu s} = 4\ kHz
 $$
 
-where:
-
-- \(k\) = Boltzmann constant
-- \(T\) = noise temperature
-- \(F\) = receiver noise factor
-- \(t_s\) = sweep time
-
-After the LNA and mixer, the noise power becomes:
+Thermal noise density at room temperature is:
 
 $$
-P_{IF} = G_{LNA}G_{mixer}\frac{kTF}{t_s}
+N_0 = -174\ dBm/Hz
 $$
 
-The RMS voltage at the mixer output is:
+Input thermal noise per FFT bin:
 
 $$
-V_{rms} = \sqrt{Z_{load}P_{IF}}
+P_{n,in} = -174 + 10\log_{10}(4000)
 $$
 
-After IF gain:
-
 $$
-V_{IF,rms} = G_{IF}\sqrt{Z_{load}G_{LNA}G_{mixer}\frac{kTF}{t_s}}
+P_{n,in} \approx -138\ dBm/bin
 $$
 
-Converting RMS voltage to peak-to-peak and referencing it to the ADC full-scale input gives the receiver noise floor in dBFS:
+The receiver chain is approximately:
+
+| Stage | Gain | Noise Figure |
+|---|---:|---:|
+| SKY65404-31 LNA | 13 dB | 1 dB |
+| TRF37A73 Gain Block | 12 dB | 4.5 dB |
+| ADL5802 Mixer | 7.6 dB | RF/IF conversion stage |
+
+Total voltage/power gain to the mixer IF output:
 
 $$
-P_{noise,dBFS} =
-20\log_{10}
-\left(
-\frac{
-2\sqrt{2}G_{IF}
-\sqrt{
-G_{LNA}G_{mixer}kTFZ_{load}/t_s
-}
-}{
-V_{ref}
-}
-\right)
+G_{total} = 13 + 12 + 7.6 = 32.6\ dB
 $$
 
-This shows that longer sweep time reduces FFT bin bandwidth and lowers the noise power per bin. In the FPGA, the ADC samples at 40 MHz, then FIR filtering and decimation reduce the useful bandwidth to 2 MHz. The FIR removes out-of-band noise before decimation, preserving the oversampling SNR benefit while keeping the USB data rate manageable.
-
-The ADC-side FFT processing gain can be estimated as:
+Using the first LNA noise figure as the dominant receiver noise contribution:
 
 $$
-G_{FFT} = 10\log_{10}(f_s t_s)
+P_{n,in,NF} = -138 + 1 = -137\ dBm/bin
 $$
 
-so the effective ADC dynamic range becomes:
+After the RF/IF gain chain:
 
 $$
-DR_{ADC} = SNR_{ADC} + 10\log_{10}(f_s t_s)
+P_{n,IF} = -137 + 32.6
 $$
+
+$$
+P_{n,IF} \approx -104.4\ dBm/bin
+$$
+
+The ADL5802 IF output and ADC input are referenced to approximately 200Ω differential load. For a 1.5 Vpp ADC full-scale input:
+
+$$
+V_{rms} = \frac{V_{pp}}{2\sqrt{2}}
+$$
+
+$$
+V_{rms} = \frac{1.5}{2\sqrt{2}} \approx 0.53\ V
+$$
+
+Full-scale power into 200Ω:
+
+$$
+P_{FS} = 10\log_{10}\left(\frac{V_{rms}^{2}}{200 \cdot 1mW}\right)
+$$
+
+$$
+P_{FS} \approx 1.5\ dBm
+$$
+
+Therefore, the expected ADC-referred RF/IF noise floor is:
+
+$$
+P_{noise,dBFS/bin} = P_{n,IF} - P_{FS}
+$$
+
+$$
+P_{noise,dBFS/bin} = -104.4 - 1.5
+$$
+
+$$
+P_{noise,dBFS/bin} \approx -106\ dBFS/bin
+$$
+
+This result is close to **-105 dBFS/bin**, showing that the receiver noise floor is mainly determined by the RF/IF chain gain and noise figure.
+
+The ADC is not the limiting noise source. The LTC2292 has approximately 71.3 dB SNR. With 40 MHz sampling and 250 µs chirps:
+
+$$
+N = f_s T_{chirp}
+$$
+
+$$
+N = 40MHz \cdot 250\mu s = 10000
+$$
+
+FFT processing gain:
+
+$$
+G_{FFT} = 10\log_{10}(10000) = 40\ dB
+$$
+
+ADC-limited FFT-bin noise floor:
+
+$$
+P_{ADC,bin} = -71.3 - 40
+$$
+
+$$
+P_{ADC,bin} \approx -111.3\ dBFS/bin
+$$
+
+Since the RF/IF noise calculation gives approximately **-105 to -106 dBFS/bin**, while the ADC limit is approximately **-111 dBFS/bin**, the noise floor is expected to be limited by the RF/IF receiver chain rather than the LTC2292 ADC.
 
 ## 🔧 System Architecture
 
