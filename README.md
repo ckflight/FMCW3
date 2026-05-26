@@ -87,6 +87,29 @@ Contains two fifo_generator_0 IP cores: rx_dcfifo – Receives configuration dat
 <img width="991" height="905" alt="Image" src="https://github.com/user-attachments/assets/bb00f391-63bf-4b53-a2ca-cd97da831953" />
 <img width="2048" height="1712" alt="Image" src="https://github.com/user-attachments/assets/58a32fe0-b599-417d-b7ea-41744127d972" />
 <img width="992" height="935" alt="Image" src="https://github.com/user-attachments/assets/ba075ff8-9d15-493a-8c90-02796d9c49e8" />
+
+## Phase-Based Micromotion Measurement
+
+FMCW radar can detect very small target movements using phase changes of the received signal:
+
+\[
+\Delta d = \frac{\lambda \Delta \phi}{4\pi}
+\]
+
+where:
+
+- \( \Delta d \) = displacement
+- \( \lambda \) = wavelength
+- \( \Delta \phi \) = phase change
+
+At 5.8 GHz, the system was able to observe:
+
+- Slow breathing motion
+- Fast breathing motion
+- Heartbeat-induced chest vibration
+
+The radar demonstrated displacement sensitivity from centimeter-level breathing motion down to approximately **75 µm** phase-based movement detection.
+
 <img width="2048" height="1098" alt="Image" src="https://github.com/user-attachments/assets/458af1db-ce7c-41d5-904e-1bab8cf9a594" />
 
 ### Noise Floor:
