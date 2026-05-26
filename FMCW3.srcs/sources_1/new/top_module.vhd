@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity top_module is        
     
     generic (
-        CONFIG_PACKET_SIZE  : integer := 25    -- Used by config
+        CONFIG_PACKET_SIZE  : integer := 24    -- Used by config
     );
     
     Port ( 

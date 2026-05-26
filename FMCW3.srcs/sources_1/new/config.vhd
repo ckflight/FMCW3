@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity config is
     generic (
-        PACKET_SIZE : integer := 25 -- python script sends 25 byte
+        PACKET_SIZE : integer := 24 -- python script sends 24 byte
     );
     port (
         clk_40mhz        : in  std_logic;

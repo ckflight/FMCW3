@@ -2,6 +2,11 @@
 <img width="1114" height="926" alt="Image" src="https://github.com/user-attachments/assets/3c51f631-6152-40ff-b9f9-fef74b0440d4" />
 <img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
 
+## 6 Layer KiCAD PCB Design:
+
+https://github.com/ckflight/Radar3
+
+
 ## JTAG Programming Notes:
 
 ### Programming with on-board FT2232H:

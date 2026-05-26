@@ -20,7 +20,7 @@
 #include "spi.h"
 
 #define FIFO_BASEADDR       XPAR_XLLFIFO_0_BASEADDR
-#define CONFIG_PACKET_SIZE  25
+#define CONFIG_PACKET_SIZE  24
 
 XLlFifo Fifo;
 XTmrCtr TimerInstance;
@@ -94,12 +94,11 @@ typedef struct config_parameters_s{
     uint8_t gain;                    // [16]
     uint8_t sweep_type;              // [17]
     uint8_t data_log;                // [18]
-    uint8_t adc_select;              // [19]
-    uint8_t pa_mode;                 // [20]
-    uint8_t fir_enable;              // [21]
-    uint8_t send_data_type;          // [22]
-    uint8_t adc_resolution;          // [23]
-    uint8_t sample_averaging;        // [24]
+    uint8_t pa_mode;                 // [19]
+    uint8_t fir_enable;              // [20]
+    uint8_t send_data_type;          // [21]
+    uint8_t adc_resolution;          // [22]
+    uint8_t sample_averaging;        // [23]
 
 } config_parameters_t;
 
@@ -263,8 +262,7 @@ int main(void){
                 config_parameters.gain                    = (uint8_t)buffer[16];
                 config_parameters.sweep_type              = (uint8_t)buffer[17];
                 config_parameters.data_log                = (uint8_t)buffer[18];
-                config_parameters.adc_select              = (uint8_t)buffer[19];
-                config_parameters.pa_mode                 = (uint8_t)buffer[20];
+                config_parameters.pa_mode                 = (uint8_t)buffer[19];
                 if(config_parameters.pa_mode == 1){
                     GPIO_SetPin(PA_MODE); // on off control
                 }
@@ -272,7 +270,7 @@ int main(void){
                     GPIO_ClearPin(PA_MODE); // on during ramp
                 }
 
-                config_parameters.fir_enable              = (uint8_t)buffer[21];
+                config_parameters.fir_enable              = (uint8_t)buffer[20];
                 if(config_parameters.fir_enable == 1){
                     GPIO_SetPin(FIR_ENABLE); // enable fir
 
@@ -281,7 +279,7 @@ int main(void){
                     GPIO_ClearPin(FIR_ENABLE); // no fir
                 }
                 
-                config_parameters.send_data_type           = (uint8_t)buffer[22];
+                config_parameters.send_data_type           = (uint8_t)buffer[21];
                 if(config_parameters.send_data_type == 1){
                     GPIO_SetPin(SEND_DATA_TYPE); // send adc data
 
@@ -290,8 +288,8 @@ int main(void){
                     GPIO_ClearPin(SEND_DATA_TYPE); // send test data 0 to number of sample per chirp 500 for 250 us ramp
                 }
                 
-                config_parameters.adc_resolution          = (uint8_t)buffer[23];
-                config_parameters.sample_averaging        = (uint8_t)buffer[24];
+                config_parameters.adc_resolution          = (uint8_t)buffer[22];
+                config_parameters.sample_averaging        = (uint8_t)buffer[23];
 
                 state = CONFIGURE_ADF4158;                
                 break;
