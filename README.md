@@ -1,4 +1,4 @@
-## FMCW3 RADAR DESIGN
+## FMCW3 Dual Receiver RADAR DESIGN:
 
 All RF, FPGA, PCB, VHDL, DSP, and Python software in this project were designed and developed by myself as a complete custom FMCW radar platform.
 
@@ -50,9 +50,89 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 3. Vivado will recognize the device.
 
-## ⚡ FMCW Radar Control and Data Acquisition Flow Chart on FPGA
+## ⚡ FMCW Radar Control and Data Acquisition Flow Chart on FPGA:
 
 <img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
+
+## FMCW MATH:
+
+## Receiver Noise Floor Calculation
+
+The receiver noise floor can be estimated from thermal noise and the receiver gain chain.
+
+For one FMCW sweep, the FFT bin bandwidth is approximately:
+
+$$
+B_{bin} = \frac{1}{t_s}
+$$
+
+where \(t_s\) is the sweep time. The input-referred RF thermal noise power is:
+
+$$
+P_n = k T F B_{bin}
+$$
+
+or:
+
+$$
+P_n = \frac{k T F}{t_s}
+$$
+
+where:
+
+- \(k\) = Boltzmann constant
+- \(T\) = noise temperature
+- \(F\) = receiver noise factor
+- \(t_s\) = sweep time
+
+After the LNA and mixer, the noise power becomes:
+
+$$
+P_{IF} = G_{LNA}G_{mixer}\frac{kTF}{t_s}
+$$
+
+The RMS voltage at the mixer output is:
+
+$$
+V_{rms} = \sqrt{Z_{load}P_{IF}}
+$$
+
+After IF gain:
+
+$$
+V_{IF,rms} = G_{IF}\sqrt{Z_{load}G_{LNA}G_{mixer}\frac{kTF}{t_s}}
+$$
+
+Converting RMS voltage to peak-to-peak and referencing it to the ADC full-scale input gives the receiver noise floor in dBFS:
+
+$$
+P_{noise,dBFS} =
+20\log_{10}
+\left(
+\frac{
+2\sqrt{2}G_{IF}
+\sqrt{
+G_{LNA}G_{mixer}kTFZ_{load}/t_s
+}
+}{
+V_{ref}
+}
+\right)
+$$
+
+This shows that longer sweep time reduces FFT bin bandwidth and lowers the noise power per bin. In the FPGA, the ADC samples at 40 MHz, then FIR filtering and decimation reduce the useful bandwidth to 2 MHz. The FIR removes out-of-band noise before decimation, preserving the oversampling SNR benefit while keeping the USB data rate manageable.
+
+The ADC-side FFT processing gain can be estimated as:
+
+$$
+G_{FFT} = 10\log_{10}(f_s t_s)
+$$
+
+so the effective ADC dynamic range becomes:
+
+$$
+DR_{ADC} = SNR_{ADC} + 10\log_{10}(f_s t_s)
+$$
 
 ## 🔧 System Architecture
 
