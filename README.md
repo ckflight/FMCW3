@@ -1,4 +1,4 @@
-## FMCW3 Dual Receiver RADAR DESIGN:
+## Dual Receiver Radar Design:
 
 All RF, FPGA, PCB, VHDL, DSP, and Python software in this project were designed and developed by myself as a complete custom FMCW radar platform.
 
