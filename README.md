@@ -15,26 +15,6 @@ https://github.com/ckflight/Radar3
 
 <img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
 
-## Horn Antenna, Directional Coupler and RF Simulation Files
-
-The radar uses custom-designed horn antennas, transmission lines, and RF structures developed and simulated in CST, ADS and MATLAB.
-
-The TX path includes a directional coupler for continuous FMCW operation, coupling approximately 16 dB of the transmitted signal into the mixer path with only ~0.25 dB insertion loss on the main RF path.
-
-Unlike Wilkinson power splitters, which dissipate roughly half of the transmit power internally, the directional coupler preserves TX efficiency while still providing LO drive for the mixer.
-
-SMA connectors in pcb requires cutout to match 50 ohm. It is simulated with CST.
-
-All of the mentioned simulations and designs are in my open source repo below:
-
-Repository:
-https://github.com/ckflight/CST_ADS_MODELS_SIMULATIONS
-
-<img width="2380" height="1110" alt="Image" src="https://github.com/user-attachments/assets/5b39a7a4-7f79-4f6f-8da1-534c526e23f1" />
-<img width="2380" height="1137" alt="Image" src="https://github.com/user-attachments/assets/2ca6d335-5580-472a-bd9b-5ad62e2b9007" />
-<img width="4770" height="1566" alt="Image" src="https://github.com/user-attachments/assets/ea2fd1d7-00f2-4b3a-929e-fab6ae77e261" />
-<img width="2400" height="2400" alt="Image" src="https://github.com/user-attachments/assets/a3d3fb16-9d6d-4d5e-943b-fde4adbb1bb3" />
-
 ## JTAG Programming Notes:
 
 ### Programming with on-board FT2232H:
@@ -165,6 +145,25 @@ FIR-filtered and decimated dual-channel outputs synchronized with valid pulses.
 
 <img width="3247" height="1763" alt="Image" src="https://github.com/user-attachments/assets/addd7541-d3f9-4c5a-bd35-dd87aca477c6" />
 
+## Horn Antenna, Directional Coupler and RF Simulation Files
+
+The radar uses custom-designed horn antennas, transmission lines, and RF structures developed and simulated in CST, ADS and MATLAB.
+
+The TX path includes a directional coupler for continuous FMCW operation, coupling approximately 16 dB of the transmitted signal into the mixer path with only ~0.25 dB insertion loss on the main RF path.
+
+Unlike Wilkinson power splitters, which dissipate roughly half of the transmit power internally, the directional coupler preserves TX efficiency while still providing LO drive for the mixer.
+
+SMA connectors in pcb requires cutout to match 50 ohm. It is simulated with CST.
+
+All of the mentioned simulations and designs are in my open source repo below:
+
+Repository:
+https://github.com/ckflight/CST_ADS_MODELS_SIMULATIONS
+
+<img width="2380" height="1110" alt="Image" src="https://github.com/user-attachments/assets/5b39a7a4-7f79-4f6f-8da1-534c526e23f1" />
+<img width="2380" height="1137" alt="Image" src="https://github.com/user-attachments/assets/2ca6d335-5580-472a-bd9b-5ad62e2b9007" />
+<img width="4770" height="1566" alt="Image" src="https://github.com/user-attachments/assets/ea2fd1d7-00f2-4b3a-929e-fab6ae77e261" />
+<img width="2400" height="2400" alt="Image" src="https://github.com/user-attachments/assets/a3d3fb16-9d6d-4d5e-943b-fde4adbb1bb3" />
 
 ## 🧮 COE File Analyzer and FIR Generator Scripts
 
