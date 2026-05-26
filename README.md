@@ -61,82 +61,78 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 For a 250 µs FMCW chirp:
 
 $$
-B_{bin} = \frac{1}{T_{chirp}} = 4\ kHz
+B_{bin}=\frac{1}{T_{chirp}}=4\ kHz
 $$
 
 Thermal noise per FFT bin:
 
 $$
-P_{n,in} = -174 + 10\log_{10}(4000)
-$$
-
-$$
-P_{n,in} \approx -138\ dBm/bin
+P_{n,in}=-174+10\log_{10}(4000)\approx-138\ dBm/bin
 $$
 
 Receiver chain:
 
 | Stage | Gain | NF |
 |---|---:|---:|
-| SKY65404-31 LNA | 13 dB | 1 dB |
-| TRF37A73 Gain Block | 12 dB | 4.5 dB |
-| ADL5802 Mixer | 7.6 dB | Conversion |
+| SKY65404-31 | 13 dB | 1 dB |
+| TRF37A73 | 12 dB | 4.5 dB |
+| ADL5802 | 7.6 dB | Conversion |
 
 Total gain:
 
 $$
-G_{total} = 13 + 12 + 7.6 = 32.6\ dB
+G_{total}=13+12+7.6=32.6\ dB
 $$
 
 Including LNA noise figure:
 
 $$
-P_{n,IF} = -138 + 1 + 32.6
+P_{n,IF}=-138+1+32.6\approx-104.4\ dBm/bin
+$$
+
+For 1.5 Vpp differential full-scale into 200Ω:
+
+$$
+P_{FS}\approx1.5\ dBm
+$$
+
+Expected RF/IF noise floor:
+
+$$
+P_{noise,dBFS/bin}=-104.4-1.5\approx-106\ dBFS/bin
+$$
+
+The LTC2292 ADC has approximately 71.3 dB SNR.
+
+For 40 MHz sampling and 250 µs chirps:
+
+$$
+N=40MHz\cdot250\mu s=10000
 $$
 
 $$
-P_{n,IF} \approx -104.4\ dBm/bin
-$$
-
-For a 1.5 Vpp differential ADC full-scale into 200Ω:
-
-$$
-P_{FS} \approx 1.5\ dBm
-$$
-
-Expected ADC-referred RF/IF noise floor:
-
-$$
-P_{noise,dBFS/bin} = -104.4 - 1.5
+G_{FFT}=10\log_{10}(10000)=40\ dB
 $$
 
 $$
-P_{noise,dBFS/bin} \approx -106\ dBFS/bin
+P_{ADC,bin}=-71.3-40\approx-111.3\ dBFS/bin
 $$
 
-The LTC2292 ADC has approximately 71.3 dB SNR. With 40 MHz sampling and 250 µs chirps:
+For 1 ms chirps:
 
 $$
-N = 40MHz \cdot 250\mu s = 10000
-$$
-
-FFT processing gain:
-
-$$
-G_{FFT} = 10\log_{10}(10000) = 40\ dB
-$$
-
-ADC FFT-bin limit:
-
-$$
-P_{ADC,bin} = -71.3 - 40
+N=40MHz\cdot1ms=40000
 $$
 
 $$
-P_{ADC,bin} \approx -111.3\ dBFS/bin
+G_{FFT}=10\log_{10}(40000)\approx46\ dB
 $$
 
-Since the RF/IF chain gives approximately **-106 dBFS/bin**, while the ADC limit is approximately **-111 dBFS/bin**, the receiver noise floor is dominated by the RF/IF chain rather than the LTC2292 ADC.
+$$
+P_{ADC,bin}=-71.3-46\approx-117.3\ dBFS/bin
+$$
+
+Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Since the RF/IF chain noise floor is around **-106 dBFS/bin**, the system is mainly limited by the RF/IF receiver chain rather than the LTC2292 ADC.
 
 ## 🔧 System Architecture
 
