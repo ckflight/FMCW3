@@ -193,6 +193,7 @@ Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Si
 <img width="991" height="905" alt="Image" src="https://github.com/user-attachments/assets/bb00f391-63bf-4b53-a2ca-cd97da831953" />
 <img width="2048" height="1712" alt="Image" src="https://github.com/user-attachments/assets/58a32fe0-b599-417d-b7ea-41744127d972" />
 <img width="992" height="935" alt="Image" src="https://github.com/user-attachments/assets/ba075ff8-9d15-493a-8c90-02796d9c49e8" />
+<img width="1057" height="574" alt="Image" src="https://github.com/user-attachments/assets/3fef4907-246d-4346-965c-9740aa9d1f68" />
 
 ## Phase-Based Micromotion Measurement
 
