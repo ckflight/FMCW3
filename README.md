@@ -58,27 +58,13 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 ### RF/IF Chain Noise Floor Calculation
 
-The expected radar noise floor can be estimated from the receiver RF/IF chain.
-
-For one FMCW chirp, the FFT bin bandwidth is approximately:
+For a 250 µs FMCW chirp:
 
 $$
-B_{bin} = \frac{1}{T_{chirp}}
+B_{bin} = \frac{1}{T_{chirp}} = 4\ kHz
 $$
 
-For a 250 µs chirp:
-
-$$
-B_{bin} = \frac{1}{250\ \mu s} = 4\ kHz
-$$
-
-Thermal noise density at room temperature is:
-
-$$
-N_0 = -174\ dBm/Hz
-$$
-
-Input thermal noise per FFT bin:
+Thermal noise per FFT bin:
 
 $$
 P_{n,in} = -174 + 10\log_{10}(4000)
@@ -88,61 +74,37 @@ $$
 P_{n,in} \approx -138\ dBm/bin
 $$
 
-The receiver chain is approximately:
+Receiver chain:
 
-| Stage | Gain | Noise Figure |
+| Stage | Gain | NF |
 |---|---:|---:|
 | SKY65404-31 LNA | 13 dB | 1 dB |
 | TRF37A73 Gain Block | 12 dB | 4.5 dB |
-| ADL5802 Mixer | 7.6 dB | RF/IF conversion stage |
+| ADL5802 Mixer | 7.6 dB | Conversion |
 
-Total voltage/power gain to the mixer IF output:
+Total gain:
 
 $$
 G_{total} = 13 + 12 + 7.6 = 32.6\ dB
 $$
 
-Using the first LNA noise figure as the dominant receiver noise contribution:
+Including LNA noise figure:
 
 $$
-P_{n,in,NF} = -138 + 1 = -137\ dBm/bin
-$$
-
-After the RF/IF gain chain:
-
-$$
-P_{n,IF} = -137 + 32.6
+P_{n,IF} = -138 + 1 + 32.6
 $$
 
 $$
 P_{n,IF} \approx -104.4\ dBm/bin
 $$
 
-The ADL5802 IF output and ADC input are referenced to approximately 200Ω differential load. For a 1.5 Vpp ADC full-scale input:
-
-$$
-V_{rms} = \frac{V_{pp}}{2\sqrt{2}}
-$$
-
-$$
-V_{rms} = \frac{1.5}{2\sqrt{2}} \approx 0.53\ V
-$$
-
-Full-scale power into 200Ω:
-
-$$
-P_{FS} = 10\log_{10}\left(\frac{V_{rms}^{2}}{200 \cdot 1mW}\right)
-$$
+For a 1.5 Vpp differential ADC full-scale into 200Ω:
 
 $$
 P_{FS} \approx 1.5\ dBm
 $$
 
-Therefore, the expected ADC-referred RF/IF noise floor is:
-
-$$
-P_{noise,dBFS/bin} = P_{n,IF} - P_{FS}
-$$
+Expected ADC-referred RF/IF noise floor:
 
 $$
 P_{noise,dBFS/bin} = -104.4 - 1.5
@@ -152,13 +114,7 @@ $$
 P_{noise,dBFS/bin} \approx -106\ dBFS/bin
 $$
 
-This result is close to **-105 dBFS/bin**, showing that the receiver noise floor is mainly determined by the RF/IF chain gain and noise figure.
-
-The ADC is not the limiting noise source. The LTC2292 has approximately 71.3 dB SNR. With 40 MHz sampling and 250 µs chirps:
-
-$$
-N = f_s T_{chirp}
-$$
+The LTC2292 ADC has approximately 71.3 dB SNR. With 40 MHz sampling and 250 µs chirps:
 
 $$
 N = 40MHz \cdot 250\mu s = 10000
@@ -170,7 +126,7 @@ $$
 G_{FFT} = 10\log_{10}(10000) = 40\ dB
 $$
 
-ADC-limited FFT-bin noise floor:
+ADC FFT-bin limit:
 
 $$
 P_{ADC,bin} = -71.3 - 40
@@ -180,7 +136,7 @@ $$
 P_{ADC,bin} \approx -111.3\ dBFS/bin
 $$
 
-Since the RF/IF noise calculation gives approximately **-105 to -106 dBFS/bin**, while the ADC limit is approximately **-111 dBFS/bin**, the noise floor is expected to be limited by the RF/IF receiver chain rather than the LTC2292 ADC.
+Since the RF/IF chain gives approximately **-106 dBFS/bin**, while the ADC limit is approximately **-111 dBFS/bin**, the receiver noise floor is dominated by the RF/IF chain rather than the LTC2292 ADC.
 
 ## 🔧 System Architecture
 
