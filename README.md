@@ -1,6 +1,6 @@
 # FMCW3 Dual-Receiver FPGA Radar Platform
 
-All RF, FPGA, PCB, VHDL, DSP, and Python software in this project were designed and developed by myself as a complete custom FMCW radar platform.
+All RF, FPGA, PCB, VHDL, DSP, Antenna Design, RF Simulations and Python software in this project were designed and developed by myself as a complete custom FMCW radar platform.
 
 The system supports:
 
@@ -189,6 +189,7 @@ Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Si
 ### FFT Range Doppler Map:
 <img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/1cf31d79-5845-483a-84d9-bae745000e7b" />
 <img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/419cf99c-60ec-4474-b80c-2169f96ab062" />
+<img width="1312" height="1199" alt="Image" src="https://github.com/user-attachments/assets/1819a4ce-aea6-44b5-9aa3-46346d492b4b" />
 <img width="991" height="905" alt="Image" src="https://github.com/user-attachments/assets/bb00f391-63bf-4b53-a2ca-cd97da831953" />
 <img width="2048" height="1712" alt="Image" src="https://github.com/user-attachments/assets/58a32fe0-b599-417d-b7ea-41744127d972" />
 <img width="992" height="935" alt="Image" src="https://github.com/user-attachments/assets/ba075ff8-9d15-493a-8c90-02796d9c49e8" />
