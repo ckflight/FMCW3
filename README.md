@@ -184,7 +184,20 @@ $$
 
 Longer chirps reduce FFT bin bandwidth and lower the ADC FFT-bin noise floor. Since the RF/IF chain noise floor is around **-106 dBFS/bin**, the system is mainly limited by the RF/IF receiver chain rather than the LTC2292 ADC.
 
-## 📡 Real Radar Results
+## 📡 Real Radar Results with Python Scripts
+
+This section presents real FMCW radar measurements processed with custom Python tools, including range FFT, range-Doppler maps, waterfall plots, coherent chirp integration, and phase analysis. The results demonstrate practical target detection, motion estimation, phase stability, and micro-motion measurement using recorded radar data from the custom FMCW3 hardware.
+
+The following scripts are used to acquire, process, and visualize FMCW radar data:
+
+- `FMCW3_record.py` — Radar configuration, acquisition, and binary data recording
+- `FMCW3_adc_plot.py` — Real-time ADC waveform and FFT visualization
+- `FMCW3_chirp_integration_waterfall.py` — Coherent chirp integration and waterfall/range visualization
+- `FMCW3_noise_floor.py` — FFT-bin noise floor and receiver sensitivity analysis
+- `FMCW3_phase_analysis.py` — Chirp-to-chirp and CPI-to-CPI coherent phase stability analysis
+
+Repository:
+https://github.com/ckflight/FMCW_RADAR_2v2
 
 ### FFT Range Doppler Map:
 <img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/1cf31d79-5845-483a-84d9-bae745000e7b" />
