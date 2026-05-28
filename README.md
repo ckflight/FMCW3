@@ -66,9 +66,10 @@ FT2232H Channel B is for JTAG and left as Virtual Com Port
 
 3. Vivado will recognize the device.
 
-## ⚡ FMCW Radar Control and Data Acquisition Flow Chart on FPGA:
+## ⚡ FMCW Radar Control, Data Acquisition and Schematic Flow Chart on FPGA:
 
 <img width="1693" height="929" alt="Image" src="https://github.com/user-attachments/assets/638ad404-c555-430b-8f82-d61743031a05" />
+<img width="1528" height="1022" alt="Image" src="https://github.com/user-attachments/assets/9c6716ff-fd5b-4093-aa39-329b3118035a" />
 
 ## 🔧 System Architecture
 
