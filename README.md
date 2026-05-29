@@ -5,7 +5,7 @@ All RF, FPGA, PCB, VHDL, DSP, Antenna Design, RF Simulations and Python software
 I used pcb layout and schematic of this project as a starting point of my project.
 https://github.com/Ttl/fmcw3
 
-However this design's hardware has different 6 layer PCB design with different RF characteristics, receiver chain, amplifier, coupler design, copper pour and signal layering in the case of hardware design. Software is entirely unique and written by me.
+However my design compared to the reference has different PCB design (with 6 layers) with different RF characteristics, receiver chain, amplifier, coupler design, copper pour and signal layering in the case of hardware design. Software is entirely unique and written by me.
 
 The system supports:
 
