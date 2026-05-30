@@ -27,7 +27,7 @@ The platform combines custom RF hardware, FPGA firmware, DSP algorithms, CST/ADS
 6-layer PCB design is available as open-source hardware:
 
 ### Important Note: 
-I keep updating the hardware desgin so these images might be different than the original post. Once the new hardware is produced i will update other images as well
+I keep updating the hardware design so these images might be different than the original post. Once the new hardware is produced i will update other images as well
 
 Repository:
 https://github.com/ckflight/Radar3
