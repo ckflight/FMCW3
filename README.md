@@ -29,7 +29,7 @@ The platform combines custom RF hardware, FPGA firmware, DSP algorithms, CST/ADS
 Repository:
 https://github.com/ckflight/Radar3
 
-<img width="1965" height="1053" alt="Image" src="https://github.com/user-attachments/assets/11a9e6bf-fdd8-42be-b9f6-64cc2b13965d" />
+<img width="2017" height="1039" alt="Image" src="https://github.com/user-attachments/assets/9d192d24-a084-4770-912a-be3e354d8ac5" />
 
 ## JTAG Programming Notes:
 
