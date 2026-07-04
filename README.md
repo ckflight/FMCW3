@@ -204,6 +204,7 @@ Repository:
 https://github.com/ckflight/FMCW_RADAR_2v2
 
 ### FFT Range Doppler Map:
+<img width="720" height="406" alt="Image" src="https://github.com/user-attachments/assets/0d0e95dd-ff7b-493c-b147-7f216cb9a61e" />
 <img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/1cf31d79-5845-483a-84d9-bae745000e7b" />
 <img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/419cf99c-60ec-4474-b80c-2169f96ab062" />
 <img width="1312" height="1199" alt="Image" src="https://github.com/user-attachments/assets/1819a4ce-aea6-44b5-9aa3-46346d492b4b" />
