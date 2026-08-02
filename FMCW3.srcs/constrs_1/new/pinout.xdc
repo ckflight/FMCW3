@@ -4,27 +4,21 @@ create_clock -add -name sysclk -period 25.00 -waveform {0 12.5} [get_ports {sysc
 set_property -dict { PACKAGE_PIN D13   IOSTANDARD LVCMOS33 } [get_ports { usb_clk }]; # clock capable pin p not n
 create_clock -add -name usb_clk -period 16.667 -waveform {0.000 8.333} [get_ports {usb_clk}]; # 60 MHz main clock
 
-set_property -dict { PACKAGE_PIN B4   IOSTANDARD LVCMOS33 } [get_ports { reset_n }]; # rightmost button
+set_property -dict { PACKAGE_PIN B4   IOSTANDARD LVCMOS33 } [get_ports { reset_n }];
 
 # ADF4158
 set_property -dict { PACKAGE_PIN R3   IOSTANDARD LVCMOS33 } [get_ports { adf_ce }];     # (low disables, high enables adf4158 chip)
 set_property -dict { PACKAGE_PIN P3   IOSTANDARD LVCMOS33 } [get_ports { adf_txdata }];
 set_property -dict { PACKAGE_PIN R1   IOSTANDARD LVCMOS33 } [get_ports { adf_clk }];    # SPI CLK
-
-#set_property -dict { PACKAGE_PIN M2   IOSTANDARD LVCMOS33 } [get_ports { adf_data }]; burned pin  # SPI MOSI
-#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI ext1_2 pin
-set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { adf_data }];  # ext2_1 pin
-
-set_property -dict { PACKAGE_PIN T4   IOSTANDARD LVCMOS33 } [get_ports { adf_done }];   # Mosfet connected to adf_muxout. Not populated
+set_property -dict { PACKAGE_PIN M2   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI
+#set_property -dict { PACKAGE_PIN T4   IOSTANDARD LVCMOS33 } [get_ports { adf_done }];  #  DELETED FROM NEW PCB DESIGN Mosfet connected to adf_muxout. Not populated
 set_property -dict { PACKAGE_PIN N1   IOSTANDARD LVCMOS33 } [get_ports { adf_le }];     # low before write register and high after write, make it high before read
 set_property -dict { PACKAGE_PIN K3   IOSTANDARD LVCMOS33 } [get_ports { adf_muxout }]; # ramp indicator high low according to ramp start and gap
-
 
 # LTC2292 - Clock is same for fpga, adc and adf ref in
 set_property -dict { PACKAGE_PIN L2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[0] }];
 set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[1] }];
-#set_property -dict { PACKAGE_PIN K1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }]; # burned
-set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }]; # ext1_2
+set_property -dict { PACKAGE_PIN K1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }]; # burned
 set_property -dict { PACKAGE_PIN J3   IOSTANDARD LVCMOS33 } [get_ports { adc_data[3] }];
 set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[4] }];
 set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[5] }]; 
@@ -58,25 +52,19 @@ set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { usb_tx
 set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { usb_rd }];
 set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { usb_wr }];
 set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33 } [get_ports { usb_siwua }];
-
-#set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }]; # BURNED PIN
-set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }]; # CONNECTED EXT1 TO OE
-
+set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }]; # BURNED PIN
 set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { usb_suspend }];
 
 # ONBOARD LED
-set_property -dict { PACKAGE_PIN D1   IOSTANDARD LVCMOS33 } [get_ports { led1 }];
+set_property -dict { PACKAGE_PIN B12   IOSTANDARD LVCMOS33 } [get_ports { led1 }];
 
 # TQP5525 PA 
 set_property -dict { PACKAGE_PIN T2   IOSTANDARD LVCMOS33 } [get_ports { pa_en }];
 
 #ADL5802 MIXER
-#set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en }];
-set_property -dict { PACKAGE_PIN A9   IOSTANDARD LVCMOS33 } [get_ports { mix_en }];
-
+set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en }];
 
 # External Connector
-
 ##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; # oe is using
 #set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; # adc_data[2] is using
 #set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];

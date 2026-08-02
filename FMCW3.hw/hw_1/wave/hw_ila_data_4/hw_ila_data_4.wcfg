@@ -15,7 +15,7 @@
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="208"></NameColumnWidth>
-      <ValueColumnWidth column_width="168"></ValueColumnWidth>
+      <ValueColumnWidth column_width="148"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="0" />
 </wave_config>

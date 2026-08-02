@@ -1,4 +1,4 @@
-# 2026-05-16T16:12:36.112390633
+# 2026-08-02T14:29:05.156127778
 import vitis
 
 client = vitis.create_client()
@@ -9,14 +9,8 @@ status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xs
 
 status = platform.build()
 
-status = platform.build()
-
 comp = client.get_component(name="FMCW3_App")
-comp.build()
-
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xsa")
-
-status = platform.build()
+status = comp.clean()
 
 status = platform.build()
 
@@ -26,21 +20,13 @@ status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xs
 
 status = platform.build()
 
-status = platform.build()
-
-comp.build()
-
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xsa")
-
-status = platform.build()
+status = comp.clean()
 
 status = platform.build()
 
 comp.build()
 
-status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../top_module.xsa")
-
-status = platform.build()
+status = comp.clean()
 
 status = platform.build()
 

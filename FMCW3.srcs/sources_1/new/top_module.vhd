@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity top_module is        
+entity top_module is            
     
     generic (
         CONFIG_PACKET_SIZE  : integer := 24    -- Used by config
@@ -19,7 +19,7 @@ entity top_module is
         adf_txdata      : out std_logic;   -- not used = 0
         adf_clk         : out std_logic;   -- SPI CLK
         adf_data        : out std_logic;   -- SPI MOSI
-        adf_done        : in std_logic;    -- DNP Mosfet connection. Not used
+        --adf_done        : in std_logic;  -- DELETED FROM NEW PCB BRANCH DNP Mosfet connection. Not used
         adf_le          : out std_logic;   -- Chip Enable / Select for SPI device 
         adf_muxout      : in std_logic;    -- Read rampDel length high pulse on this pin to know ramp start and end
 

@@ -6,6 +6,9 @@
 # IP: ip/fifo_generator_0/fifo_generator_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fifo_generator_0 || ORIG_REF_NAME==fifo_generator_0} -quiet] -quiet
 
+# IP: ip/fir_compiler_0/fir_compiler_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_0 || ORIG_REF_NAME==fir_compiler_0} -quiet] -quiet
+
 # Block Designs: bd/microblaze/microblaze.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze || ORIG_REF_NAME==microblaze} -quiet] -quiet
 

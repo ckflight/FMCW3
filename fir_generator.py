@@ -13,7 +13,7 @@ NUM_TAPS = 121      # odd number recommended for HPF
 FILTER_TYPE = "highpass"
 # Options: "lowpass", "highpass", "bandpass", "bandstop"
 
-GAIN = 16.0
+GAIN =  16.0
 
 # Cutoff settings
 CUTOFF_HZ = 400e3              # set for lowpass/highpass 

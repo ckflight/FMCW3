@@ -89,6 +89,7 @@ vlog -work blk_mem_gen_v8_4_12 -64 -incr -mfcu  "+incdir+../../../../FMCW3.gen/s
 
 vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../tools/2025.2/data/rsb/busdef" "+incdir+/tools/2025.2/data/xilinx_vip/include" \
 "../../../bd/microblaze/ip/microblaze_lmb_bram_5/sim/microblaze_lmb_bram_5.v" \
+"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/sim/bd_9447.v" \
 
 vcom -work proc_sys_reset_v5_0_17 -64 -93  \
 "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
@@ -202,9 +203,6 @@ vlog -work xil_defaultlib -64 -incr -mfcu  -sv -L smartconnect_v1_0 -L axi_vip_v
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_65/sim/bd_9447_m05wn_0.sv" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_66/sim/bd_9447_m05bn_0.sv" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_67/sim/bd_9447_m05e_0.sv" \
-
-vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../tools/2025.2/data/rsb/busdef" "+incdir+/tools/2025.2/data/xilinx_vip/include" \
-"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/sim/bd_9447.v" \
 
 vcom -work smartconnect_v1_0 -64 -93  \
 "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/cb42/hdl/sc_ultralite_v1_0_rfs.vhd" \

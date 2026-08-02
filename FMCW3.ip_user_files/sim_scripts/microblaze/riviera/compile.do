@@ -92,6 +92,7 @@ vlog -work blk_mem_gen_v8_4_12  -incr -v2k5 "+incdir+../../../../FMCW3.gen/sourc
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../tools/2025.2/data/rsb/busdef" "+incdir+/tools/2025.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_36 -l axi_vip_v1_1_22 -l axi_lite_ipif_v3_0_4 -l axi_intc_v4_1_22 -l mdm_v3_2_29 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_timer_v2_0_37 -l axi_fifo_mm_s_v4_3_7 -l dist_mem_gen_v8_0_17 -l axi_quad_spi_v3_2_35 \
 "../../../bd/microblaze/ip/microblaze_lmb_bram_5/sim/microblaze_lmb_bram_5.v" \
+"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/sim/bd_9447.v" \
 
 vcom -work proc_sys_reset_v5_0_17 -93  -incr \
 "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/9438/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
@@ -205,9 +206,6 @@ vlog -work xil_defaultlib  -incr "+incdir+../../../../FMCW3.gen/sources_1/bd/mic
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_65/sim/bd_9447_m05wn_0.sv" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_66/sim/bd_9447_m05bn_0.sv" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_67/sim/bd_9447_m05e_0.sv" \
-
-vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" "+incdir+../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" "+incdir+../../../../../../../../../../../tools/2025.2/data/rsb/busdef" "+incdir+/tools/2025.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l microblaze_v11_0_16 -l xil_defaultlib -l lmb_v10_v3_0_16 -l lmb_bram_if_cntlr_v4_0_27 -l blk_mem_gen_v8_4_12 -l proc_sys_reset_v5_0_17 -l smartconnect_v1_0 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_36 -l axi_vip_v1_1_22 -l axi_lite_ipif_v3_0_4 -l axi_intc_v4_1_22 -l mdm_v3_2_29 -l interrupt_control_v3_1_5 -l axi_gpio_v2_0_37 -l axi_timer_v2_0_37 -l axi_fifo_mm_s_v4_3_7 -l dist_mem_gen_v8_0_17 -l axi_quad_spi_v3_2_35 \
-"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/sim/bd_9447.v" \
 
 vcom -work smartconnect_v1_0 -93  -incr \
 "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/cb42/hdl/sc_ultralite_v1_0_rfs.vhd" \

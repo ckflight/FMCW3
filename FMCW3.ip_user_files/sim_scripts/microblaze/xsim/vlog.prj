@@ -1,5 +1,6 @@
 verilog xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" \
 "../../../bd/microblaze/ip/microblaze_lmb_bram_5/sim/microblaze_lmb_bram_5.v" \
+"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/sim/bd_9447.v" \
 
 sv xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_2/sim/bd_9447_arinsw_0.sv" \
@@ -68,11 +69,6 @@ sv xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/bus
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_65/sim/bd_9447_m05wn_0.sv" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_66/sim/bd_9447_m05bn_0.sv" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/ip/ip_67/sim/bd_9447_m05e_0.sv" \
-
-verilog xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" \
-"../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/bd_0/sim/bd_9447.v" \
-
-sv xil_defaultlib -i "../../../../../../../../../../../tools/2025.2/data/rsb/busdef" --include "/tools/2025.2/data/xilinx_vip/include" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/f0b6/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/00fe/hdl/verilog" --include "../../../../FMCW3.gen/sources_1/bd/microblaze/ipshared/ec67/hdl" \
 "../../../bd/microblaze/ip/microblaze_microblaze_0_axi_periph_2/sim/microblaze_microblaze_0_axi_periph_2.sv" \
 
 verilog xil_defaultlib "glbl.v"
