@@ -29,7 +29,7 @@ The platform combines custom RF hardware, FPGA firmware, DSP algorithms, CST/ADS
 ### Important Note: 
 I keep updating the hardware design so these images might be different than the original post. Once the new hardware is produced i will update other images as well
 
-The tested version of this design upto now is the branch named as: jlcpcb_version whihc uses XC7A35T fpga!!!
+The tested version of this design upto now is the branch named as: jlcpcb_version which uses XC7A35T fpga!!!
 
 Repository:
 https://github.com/ckflight/Radar3
