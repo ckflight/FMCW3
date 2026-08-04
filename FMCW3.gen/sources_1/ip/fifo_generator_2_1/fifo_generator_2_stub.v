@@ -2,13 +2,13 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Thu May 14 20:02:48 2026
+// Date        : Mon Aug  3 14:48:32 2026
 // Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
-// Command     : write_verilog -force -mode synth_stub
-//               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/fifo_generator_2_1/fifo_generator_2_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top fifo_generator_2 -prefix
+//               fifo_generator_2_ fifo_generator_2_stub.v
 // Design      : fifo_generator_2
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7a35tftg256-1
+// Device      : xc7a100tftg256-1
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

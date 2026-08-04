@@ -18,7 +18,8 @@ The system supports:
 
 The platform combines custom RF hardware, FPGA firmware, DSP algorithms, CST/ADS simulations, and Python radar processing tools into a fully integrated radar development system.
 
-<img width="762" height="1077" alt="Image" src="https://github.com/user-attachments/assets/e1caf807-6a9b-46bc-819f-320c57762e42" />
+<img width="3213" height="5712" alt="Image" src="https://github.com/user-attachments/assets/ab893c9d-a40d-483f-96b9-9a0571b3d1e8" />
+<img width="3213" height="5712" alt="Image" src="https://github.com/user-attachments/assets/cca5c343-80f6-4c3c-a806-a19392fbfd5a" />
 <img width="1114" height="926" alt="Image" src="https://github.com/user-attachments/assets/3c51f631-6152-40ff-b9f9-fef74b0440d4" />
 
 

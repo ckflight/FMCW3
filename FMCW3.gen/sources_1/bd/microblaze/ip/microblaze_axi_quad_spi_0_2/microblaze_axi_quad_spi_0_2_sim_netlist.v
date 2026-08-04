@@ -2,17 +2,290 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Thu May 14 20:19:14 2026
+// Date        : Mon Aug  3 14:48:33 2026
 // Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
-// Command     : write_verilog -force -mode funcsim -rename_top microblaze_axi_quad_spi_0_2 -prefix
-//               microblaze_axi_quad_spi_0_2_ microblaze_axi_quad_spi_0_2_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2_sim_netlist.v
 // Design      : microblaze_axi_quad_spi_0_2
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7a35tftg256-1
+// Device      : xc7a100tftg256-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "microblaze_axi_quad_spi_0_2,axi_quad_spi,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_quad_spi,Vivado 2025.2" *) 
+(* NotValidForBitStream *)
+module microblaze_axi_quad_spi_0_2
+   (ext_spi_clk,
+    s_axi_aclk,
+    s_axi_aresetn,
+    s_axi_awaddr,
+    s_axi_awvalid,
+    s_axi_awready,
+    s_axi_wdata,
+    s_axi_wstrb,
+    s_axi_wvalid,
+    s_axi_wready,
+    s_axi_bresp,
+    s_axi_bvalid,
+    s_axi_bready,
+    s_axi_araddr,
+    s_axi_arvalid,
+    s_axi_arready,
+    s_axi_rdata,
+    s_axi_rresp,
+    s_axi_rvalid,
+    s_axi_rready,
+    io0_i,
+    io0_o,
+    io0_t,
+    io1_i,
+    io1_o,
+    io1_t,
+    sck_i,
+    sck_o,
+    sck_t,
+    ss_i,
+    ss_o,
+    ss_t,
+    ip2intc_irpt);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 spi_clk CLK" *) (* x_interface_mode = "slave spi_clk" *) (* x_interface_parameter = "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_Clk, INSERT_VIP 0" *) input ext_spi_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 lite_clk CLK" *) (* x_interface_mode = "slave lite_clk" *) (* x_interface_parameter = "XIL_INTERFACENAME lite_clk, ASSOCIATED_BUSIF AXI_LITE, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_Clk, INSERT_VIP 0" *) input s_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 lite_reset RST" *) (* x_interface_mode = "slave lite_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME lite_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE AWADDR" *) (* x_interface_mode = "slave AXI_LITE" *) (* x_interface_parameter = "XIL_INTERFACENAME AXI_LITE, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN microblaze_Clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [6:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE AWVALID" *) input s_axi_awvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE AWREADY" *) output s_axi_awready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WDATA" *) input [31:0]s_axi_wdata;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WSTRB" *) input [3:0]s_axi_wstrb;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WVALID" *) input s_axi_wvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WREADY" *) output s_axi_wready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE BRESP" *) output [1:0]s_axi_bresp;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE BVALID" *) output s_axi_bvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE BREADY" *) input s_axi_bready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE ARADDR" *) input [6:0]s_axi_araddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE ARVALID" *) input s_axi_arvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE ARREADY" *) output s_axi_arready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RDATA" *) output [31:0]s_axi_rdata;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RRESP" *) output [1:0]s_axi_rresp;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RVALID" *) output s_axi_rvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RREADY" *) input s_axi_rready;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO0_I" *) (* x_interface_mode = "master SPI_0" *) (* x_interface_parameter = "XIL_INTERFACENAME SPI_0, BOARD.ASSOCIATED_PARAM QSPI_BOARD_INTERFACE" *) input io0_i;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO0_O" *) output io0_o;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO0_T" *) output io0_t;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO1_I" *) input io1_i;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO1_O" *) output io1_o;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO1_T" *) output io1_t;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_I" *) input sck_i;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_O" *) output sck_o;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_T" *) output sck_t;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input [0:0]ss_i;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output [0:0]ss_o;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_T" *) output ss_t;
+  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_mode = "master interrupt" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
+
+  wire ext_spi_clk;
+  wire io0_i;
+  wire io0_o;
+  wire io0_t;
+  wire io1_i;
+  wire io1_o;
+  wire io1_t;
+  wire ip2intc_irpt;
+  wire s_axi_aclk;
+  wire [6:0]s_axi_araddr;
+  wire s_axi_aresetn;
+  wire s_axi_arready;
+  wire s_axi_arvalid;
+  wire [6:0]s_axi_awaddr;
+  wire s_axi_awready;
+  wire s_axi_awvalid;
+  wire s_axi_bready;
+  wire [1:0]s_axi_bresp;
+  wire s_axi_bvalid;
+  wire [31:0]s_axi_rdata;
+  wire s_axi_rready;
+  wire [1:0]s_axi_rresp;
+  wire s_axi_rvalid;
+  wire [31:0]s_axi_wdata;
+  wire s_axi_wready;
+  wire [3:0]s_axi_wstrb;
+  wire s_axi_wvalid;
+  wire sck_i;
+  wire sck_o;
+  wire sck_t;
+  wire [0:0]ss_i;
+  wire [0:0]ss_o;
+  wire ss_t;
+  wire NLW_U0_cfgclk_UNCONNECTED;
+  wire NLW_U0_cfgmclk_UNCONNECTED;
+  wire NLW_U0_eos_UNCONNECTED;
+  wire NLW_U0_io0_1_o_UNCONNECTED;
+  wire NLW_U0_io0_1_t_UNCONNECTED;
+  wire NLW_U0_io1_1_o_UNCONNECTED;
+  wire NLW_U0_io1_1_t_UNCONNECTED;
+  wire NLW_U0_io2_1_o_UNCONNECTED;
+  wire NLW_U0_io2_1_t_UNCONNECTED;
+  wire NLW_U0_io2_o_UNCONNECTED;
+  wire NLW_U0_io2_t_UNCONNECTED;
+  wire NLW_U0_io3_1_o_UNCONNECTED;
+  wire NLW_U0_io3_1_t_UNCONNECTED;
+  wire NLW_U0_io3_o_UNCONNECTED;
+  wire NLW_U0_io3_t_UNCONNECTED;
+  wire NLW_U0_preq_UNCONNECTED;
+  wire NLW_U0_s_axi4_arready_UNCONNECTED;
+  wire NLW_U0_s_axi4_awready_UNCONNECTED;
+  wire NLW_U0_s_axi4_bvalid_UNCONNECTED;
+  wire NLW_U0_s_axi4_rlast_UNCONNECTED;
+  wire NLW_U0_s_axi4_rvalid_UNCONNECTED;
+  wire NLW_U0_s_axi4_wready_UNCONNECTED;
+  wire NLW_U0_ss_1_o_UNCONNECTED;
+  wire NLW_U0_ss_1_t_UNCONNECTED;
+  wire [3:0]NLW_U0_s_axi4_bid_UNCONNECTED;
+  wire [1:0]NLW_U0_s_axi4_bresp_UNCONNECTED;
+  wire [31:0]NLW_U0_s_axi4_rdata_UNCONNECTED;
+  wire [3:0]NLW_U0_s_axi4_rid_UNCONNECTED;
+  wire [1:0]NLW_U0_s_axi4_rresp_UNCONNECTED;
+
+  (* Async_Clk = "0" *) 
+  (* C_BYTE_LEVEL_INTERRUPT_EN = "0" *) 
+  (* C_DUAL_QUAD_MODE = "0" *) 
+  (* C_FAMILY = "artix7" *) 
+  (* C_FIFO_DEPTH = "16" *) 
+  (* C_INSTANCE = "axi_quad_spi_inst" *) 
+  (* C_LSB_STUP = "0" *) 
+  (* C_NEW_SEQ_EN = "1" *) 
+  (* C_NUM_SS_BITS = "1" *) 
+  (* C_NUM_TRANSFER_BITS = "8" *) 
+  (* C_SCK_RATIO = "16" *) 
+  (* C_SELECT_XPM = "0" *) 
+  (* C_SHARED_STARTUP = "0" *) 
+  (* C_SPI_MEMORY = "1" *) 
+  (* C_SPI_MEM_ADDR_BITS = "24" *) 
+  (* C_SPI_MODE = "0" *) 
+  (* C_SUB_FAMILY = "artix7" *) 
+  (* C_S_AXI4_ADDR_WIDTH = "24" *) 
+  (* C_S_AXI4_BASEADDR = "32'b11111111111111111111111111111111" *) 
+  (* C_S_AXI4_DATA_WIDTH = "32" *) 
+  (* C_S_AXI4_HIGHADDR = "32'b00000000000000000000000000000000" *) 
+  (* C_S_AXI4_ID_WIDTH = "4" *) 
+  (* C_S_AXI_ADDR_WIDTH = "7" *) 
+  (* C_S_AXI_DATA_WIDTH = "32" *) 
+  (* C_TYPE_OF_AXI4_INTERFACE = "0" *) 
+  (* C_UC_FAMILY = "0" *) 
+  (* C_USE_STARTUP = "0" *) 
+  (* C_USE_STARTUP_EXT = "0" *) 
+  (* C_XIP_MODE = "0" *) 
+  (* C_XIP_PERF_MODE = "1" *) 
+  (* DONT_TOUCH *) 
+  (* downgradeipidentifiedwarnings = "yes" *) 
+  microblaze_axi_quad_spi_0_2_axi_quad_spi U0
+       (.cfgclk(NLW_U0_cfgclk_UNCONNECTED),
+        .cfgmclk(NLW_U0_cfgmclk_UNCONNECTED),
+        .clk(1'b0),
+        .eos(NLW_U0_eos_UNCONNECTED),
+        .ext_spi_clk(ext_spi_clk),
+        .gsr(1'b0),
+        .gts(1'b0),
+        .io0_1_i(1'b0),
+        .io0_1_o(NLW_U0_io0_1_o_UNCONNECTED),
+        .io0_1_t(NLW_U0_io0_1_t_UNCONNECTED),
+        .io0_i(io0_i),
+        .io0_o(io0_o),
+        .io0_t(io0_t),
+        .io1_1_i(1'b0),
+        .io1_1_o(NLW_U0_io1_1_o_UNCONNECTED),
+        .io1_1_t(NLW_U0_io1_1_t_UNCONNECTED),
+        .io1_i(io1_i),
+        .io1_o(io1_o),
+        .io1_t(io1_t),
+        .io2_1_i(1'b0),
+        .io2_1_o(NLW_U0_io2_1_o_UNCONNECTED),
+        .io2_1_t(NLW_U0_io2_1_t_UNCONNECTED),
+        .io2_i(1'b0),
+        .io2_o(NLW_U0_io2_o_UNCONNECTED),
+        .io2_t(NLW_U0_io2_t_UNCONNECTED),
+        .io3_1_i(1'b0),
+        .io3_1_o(NLW_U0_io3_1_o_UNCONNECTED),
+        .io3_1_t(NLW_U0_io3_1_t_UNCONNECTED),
+        .io3_i(1'b0),
+        .io3_o(NLW_U0_io3_o_UNCONNECTED),
+        .io3_t(NLW_U0_io3_t_UNCONNECTED),
+        .ip2intc_irpt(ip2intc_irpt),
+        .keyclearb(1'b0),
+        .pack(1'b0),
+        .preq(NLW_U0_preq_UNCONNECTED),
+        .s_axi4_aclk(1'b0),
+        .s_axi4_araddr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_arburst({1'b0,1'b0}),
+        .s_axi4_arcache({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_aresetn(1'b0),
+        .s_axi4_arid({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_arlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_arlock(1'b0),
+        .s_axi4_arprot({1'b0,1'b0,1'b0}),
+        .s_axi4_arready(NLW_U0_s_axi4_arready_UNCONNECTED),
+        .s_axi4_arsize({1'b0,1'b0,1'b0}),
+        .s_axi4_arvalid(1'b0),
+        .s_axi4_awaddr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_awburst({1'b0,1'b0}),
+        .s_axi4_awcache({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_awid({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_awlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_awlock(1'b0),
+        .s_axi4_awprot({1'b0,1'b0,1'b0}),
+        .s_axi4_awready(NLW_U0_s_axi4_awready_UNCONNECTED),
+        .s_axi4_awsize({1'b0,1'b0,1'b0}),
+        .s_axi4_awvalid(1'b0),
+        .s_axi4_bid(NLW_U0_s_axi4_bid_UNCONNECTED[3:0]),
+        .s_axi4_bready(1'b0),
+        .s_axi4_bresp(NLW_U0_s_axi4_bresp_UNCONNECTED[1:0]),
+        .s_axi4_bvalid(NLW_U0_s_axi4_bvalid_UNCONNECTED),
+        .s_axi4_rdata(NLW_U0_s_axi4_rdata_UNCONNECTED[31:0]),
+        .s_axi4_rid(NLW_U0_s_axi4_rid_UNCONNECTED[3:0]),
+        .s_axi4_rlast(NLW_U0_s_axi4_rlast_UNCONNECTED),
+        .s_axi4_rready(1'b0),
+        .s_axi4_rresp(NLW_U0_s_axi4_rresp_UNCONNECTED[1:0]),
+        .s_axi4_rvalid(NLW_U0_s_axi4_rvalid_UNCONNECTED),
+        .s_axi4_wdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_wlast(1'b0),
+        .s_axi4_wready(NLW_U0_s_axi4_wready_UNCONNECTED),
+        .s_axi4_wstrb({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi4_wvalid(1'b0),
+        .s_axi_aclk(s_axi_aclk),
+        .s_axi_araddr(s_axi_araddr),
+        .s_axi_aresetn(s_axi_aresetn),
+        .s_axi_arready(s_axi_arready),
+        .s_axi_arvalid(s_axi_arvalid),
+        .s_axi_awaddr(s_axi_awaddr),
+        .s_axi_awready(s_axi_awready),
+        .s_axi_awvalid(s_axi_awvalid),
+        .s_axi_bready(s_axi_bready),
+        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bvalid(s_axi_bvalid),
+        .s_axi_rdata(s_axi_rdata),
+        .s_axi_rready(s_axi_rready),
+        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rvalid(s_axi_rvalid),
+        .s_axi_wdata(s_axi_wdata),
+        .s_axi_wready(s_axi_wready),
+        .s_axi_wstrb(s_axi_wstrb),
+        .s_axi_wvalid(s_axi_wvalid),
+        .sck_i(sck_i),
+        .sck_o(sck_o),
+        .sck_t(sck_t),
+        .spisel(1'b1),
+        .ss_1_i(1'b0),
+        .ss_1_o(NLW_U0_ss_1_o_UNCONNECTED),
+        .ss_1_t(NLW_U0_ss_1_t_UNCONNECTED),
+        .ss_i(ss_i),
+        .ss_o(ss_o),
+        .ss_t(ss_t),
+        .usrcclkts(1'b0),
+        .usrdoneo(1'b1),
+        .usrdonets(1'b0));
+endmodule
+
+(* ORIG_REF_NAME = "address_decoder" *) 
 module microblaze_axi_quad_spi_0_2_address_decoder
    (p_1_in_0,
     p_2_in,
@@ -1266,6 +1539,7 @@ module microblaze_axi_quad_spi_0_2_address_decoder
         .O(sw_rst_cond));
 endmodule
 
+(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module microblaze_axi_quad_spi_0_2_axi_lite_ipif
    (bus2ip_reset_ipif_inverted,
     p_1_in_0,
@@ -2081,7 +2355,7 @@ endmodule
 (* C_S_AXI4_ID_WIDTH = "4" *) (* C_S_AXI_ADDR_WIDTH = "7" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
 (* C_TYPE_OF_AXI4_INTERFACE = "0" *) (* C_UC_FAMILY = "0" *) (* C_USE_STARTUP = "0" *) 
 (* C_USE_STARTUP_EXT = "0" *) (* C_XIP_MODE = "0" *) (* C_XIP_PERF_MODE = "1" *) 
-(* dont_touch = "yes" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* ORIG_REF_NAME = "axi_quad_spi" *) (* dont_touch = "yes" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module microblaze_axi_quad_spi_0_2_axi_quad_spi
    (ext_spi_clk,
     s_axi_aclk,
@@ -2459,6 +2733,7 @@ module microblaze_axi_quad_spi_0_2_axi_quad_spi
        (.P(\<const1> ));
 endmodule
 
+(* ORIG_REF_NAME = "axi_quad_spi_top" *) 
 module microblaze_axi_quad_spi_0_2_axi_quad_spi_top
    (sck_t,
     io0_t,
@@ -2871,6 +3146,7 @@ module microblaze_axi_quad_spi_0_2_axi_quad_spi_top
         .wr_ce_or_reduce_core_cmb(wr_ce_or_reduce_core_cmb));
 endmodule
 
+(* ORIG_REF_NAME = "counter_f" *) 
 module microblaze_axi_quad_spi_0_2_counter_f
    (\icount_out_reg[1]_0 ,
     \FIFO_EXISTS.tx_fifo_count ,
@@ -3017,6 +3293,7 @@ module microblaze_axi_quad_spi_0_2_counter_f
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "cross_clk_sync_fifo_1" *) 
 module microblaze_axi_quad_spi_0_2_cross_clk_sync_fifo_1
    (spisel_d1_reg_to_axi_clk,
     \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 ,
@@ -4269,6 +4546,7 @@ module microblaze_axi_quad_spi_0_2_cross_clk_sync_fifo_1
         .O(tx_occ_msb));
 endmodule
 
+(* ORIG_REF_NAME = "interrupt_control" *) 
 module microblaze_axi_quad_spi_0_2_interrupt_control
    (irpt_wrack_d1,
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ,
@@ -4641,278 +4919,7 @@ module microblaze_axi_quad_spi_0_2_interrupt_control
         .R(reset2ip_reset_int));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "microblaze_axi_quad_spi_0_2,axi_quad_spi,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_quad_spi,Vivado 2025.2" *) 
-(* NotValidForBitStream *)
-module microblaze_axi_quad_spi_0_2
-   (ext_spi_clk,
-    s_axi_aclk,
-    s_axi_aresetn,
-    s_axi_awaddr,
-    s_axi_awvalid,
-    s_axi_awready,
-    s_axi_wdata,
-    s_axi_wstrb,
-    s_axi_wvalid,
-    s_axi_wready,
-    s_axi_bresp,
-    s_axi_bvalid,
-    s_axi_bready,
-    s_axi_araddr,
-    s_axi_arvalid,
-    s_axi_arready,
-    s_axi_rdata,
-    s_axi_rresp,
-    s_axi_rvalid,
-    s_axi_rready,
-    io0_i,
-    io0_o,
-    io0_t,
-    io1_i,
-    io1_o,
-    io1_t,
-    sck_i,
-    sck_o,
-    sck_t,
-    ss_i,
-    ss_o,
-    ss_t,
-    ip2intc_irpt);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 spi_clk CLK" *) (* x_interface_mode = "slave spi_clk" *) (* x_interface_parameter = "XIL_INTERFACENAME spi_clk, ASSOCIATED_BUSIF SPI_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_Clk, INSERT_VIP 0" *) input ext_spi_clk;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 lite_clk CLK" *) (* x_interface_mode = "slave lite_clk" *) (* x_interface_parameter = "XIL_INTERFACENAME lite_clk, ASSOCIATED_BUSIF AXI_LITE, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_Clk, INSERT_VIP 0" *) input s_axi_aclk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 lite_reset RST" *) (* x_interface_mode = "slave lite_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME lite_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE AWADDR" *) (* x_interface_mode = "slave AXI_LITE" *) (* x_interface_parameter = "XIL_INTERFACENAME AXI_LITE, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN microblaze_Clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [6:0]s_axi_awaddr;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE AWVALID" *) input s_axi_awvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE AWREADY" *) output s_axi_awready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WDATA" *) input [31:0]s_axi_wdata;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WSTRB" *) input [3:0]s_axi_wstrb;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WVALID" *) input s_axi_wvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE WREADY" *) output s_axi_wready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE BRESP" *) output [1:0]s_axi_bresp;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE BVALID" *) output s_axi_bvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE BREADY" *) input s_axi_bready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE ARADDR" *) input [6:0]s_axi_araddr;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE ARVALID" *) input s_axi_arvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE ARREADY" *) output s_axi_arready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RDATA" *) output [31:0]s_axi_rdata;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RRESP" *) output [1:0]s_axi_rresp;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RVALID" *) output s_axi_rvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 AXI_LITE RREADY" *) input s_axi_rready;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO0_I" *) (* x_interface_mode = "master SPI_0" *) (* x_interface_parameter = "XIL_INTERFACENAME SPI_0, BOARD.ASSOCIATED_PARAM QSPI_BOARD_INTERFACE" *) input io0_i;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO0_O" *) output io0_o;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO0_T" *) output io0_t;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO1_I" *) input io1_i;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO1_O" *) output io1_o;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 IO1_T" *) output io1_t;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_I" *) input sck_i;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_O" *) output sck_o;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_T" *) output sck_t;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input [0:0]ss_i;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output [0:0]ss_o;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_T" *) output ss_t;
-  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_mode = "master interrupt" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
-
-  wire ext_spi_clk;
-  wire io0_i;
-  wire io0_o;
-  wire io0_t;
-  wire io1_i;
-  wire io1_o;
-  wire io1_t;
-  wire ip2intc_irpt;
-  wire s_axi_aclk;
-  wire [6:0]s_axi_araddr;
-  wire s_axi_aresetn;
-  wire s_axi_arready;
-  wire s_axi_arvalid;
-  wire [6:0]s_axi_awaddr;
-  wire s_axi_awready;
-  wire s_axi_awvalid;
-  wire s_axi_bready;
-  wire [1:0]s_axi_bresp;
-  wire s_axi_bvalid;
-  wire [31:0]s_axi_rdata;
-  wire s_axi_rready;
-  wire [1:0]s_axi_rresp;
-  wire s_axi_rvalid;
-  wire [31:0]s_axi_wdata;
-  wire s_axi_wready;
-  wire [3:0]s_axi_wstrb;
-  wire s_axi_wvalid;
-  wire sck_i;
-  wire sck_o;
-  wire sck_t;
-  wire [0:0]ss_i;
-  wire [0:0]ss_o;
-  wire ss_t;
-  wire NLW_U0_cfgclk_UNCONNECTED;
-  wire NLW_U0_cfgmclk_UNCONNECTED;
-  wire NLW_U0_eos_UNCONNECTED;
-  wire NLW_U0_io0_1_o_UNCONNECTED;
-  wire NLW_U0_io0_1_t_UNCONNECTED;
-  wire NLW_U0_io1_1_o_UNCONNECTED;
-  wire NLW_U0_io1_1_t_UNCONNECTED;
-  wire NLW_U0_io2_1_o_UNCONNECTED;
-  wire NLW_U0_io2_1_t_UNCONNECTED;
-  wire NLW_U0_io2_o_UNCONNECTED;
-  wire NLW_U0_io2_t_UNCONNECTED;
-  wire NLW_U0_io3_1_o_UNCONNECTED;
-  wire NLW_U0_io3_1_t_UNCONNECTED;
-  wire NLW_U0_io3_o_UNCONNECTED;
-  wire NLW_U0_io3_t_UNCONNECTED;
-  wire NLW_U0_preq_UNCONNECTED;
-  wire NLW_U0_s_axi4_arready_UNCONNECTED;
-  wire NLW_U0_s_axi4_awready_UNCONNECTED;
-  wire NLW_U0_s_axi4_bvalid_UNCONNECTED;
-  wire NLW_U0_s_axi4_rlast_UNCONNECTED;
-  wire NLW_U0_s_axi4_rvalid_UNCONNECTED;
-  wire NLW_U0_s_axi4_wready_UNCONNECTED;
-  wire NLW_U0_ss_1_o_UNCONNECTED;
-  wire NLW_U0_ss_1_t_UNCONNECTED;
-  wire [3:0]NLW_U0_s_axi4_bid_UNCONNECTED;
-  wire [1:0]NLW_U0_s_axi4_bresp_UNCONNECTED;
-  wire [31:0]NLW_U0_s_axi4_rdata_UNCONNECTED;
-  wire [3:0]NLW_U0_s_axi4_rid_UNCONNECTED;
-  wire [1:0]NLW_U0_s_axi4_rresp_UNCONNECTED;
-
-  (* Async_Clk = "0" *) 
-  (* C_BYTE_LEVEL_INTERRUPT_EN = "0" *) 
-  (* C_DUAL_QUAD_MODE = "0" *) 
-  (* C_FAMILY = "artix7" *) 
-  (* C_FIFO_DEPTH = "16" *) 
-  (* C_INSTANCE = "axi_quad_spi_inst" *) 
-  (* C_LSB_STUP = "0" *) 
-  (* C_NEW_SEQ_EN = "1" *) 
-  (* C_NUM_SS_BITS = "1" *) 
-  (* C_NUM_TRANSFER_BITS = "8" *) 
-  (* C_SCK_RATIO = "16" *) 
-  (* C_SELECT_XPM = "0" *) 
-  (* C_SHARED_STARTUP = "0" *) 
-  (* C_SPI_MEMORY = "1" *) 
-  (* C_SPI_MEM_ADDR_BITS = "24" *) 
-  (* C_SPI_MODE = "0" *) 
-  (* C_SUB_FAMILY = "artix7" *) 
-  (* C_S_AXI4_ADDR_WIDTH = "24" *) 
-  (* C_S_AXI4_BASEADDR = "32'b11111111111111111111111111111111" *) 
-  (* C_S_AXI4_DATA_WIDTH = "32" *) 
-  (* C_S_AXI4_HIGHADDR = "32'b00000000000000000000000000000000" *) 
-  (* C_S_AXI4_ID_WIDTH = "4" *) 
-  (* C_S_AXI_ADDR_WIDTH = "7" *) 
-  (* C_S_AXI_DATA_WIDTH = "32" *) 
-  (* C_TYPE_OF_AXI4_INTERFACE = "0" *) 
-  (* C_UC_FAMILY = "0" *) 
-  (* C_USE_STARTUP = "0" *) 
-  (* C_USE_STARTUP_EXT = "0" *) 
-  (* C_XIP_MODE = "0" *) 
-  (* C_XIP_PERF_MODE = "1" *) 
-  (* DONT_TOUCH *) 
-  (* downgradeipidentifiedwarnings = "yes" *) 
-  microblaze_axi_quad_spi_0_2_axi_quad_spi U0
-       (.cfgclk(NLW_U0_cfgclk_UNCONNECTED),
-        .cfgmclk(NLW_U0_cfgmclk_UNCONNECTED),
-        .clk(1'b0),
-        .eos(NLW_U0_eos_UNCONNECTED),
-        .ext_spi_clk(ext_spi_clk),
-        .gsr(1'b0),
-        .gts(1'b0),
-        .io0_1_i(1'b0),
-        .io0_1_o(NLW_U0_io0_1_o_UNCONNECTED),
-        .io0_1_t(NLW_U0_io0_1_t_UNCONNECTED),
-        .io0_i(io0_i),
-        .io0_o(io0_o),
-        .io0_t(io0_t),
-        .io1_1_i(1'b0),
-        .io1_1_o(NLW_U0_io1_1_o_UNCONNECTED),
-        .io1_1_t(NLW_U0_io1_1_t_UNCONNECTED),
-        .io1_i(io1_i),
-        .io1_o(io1_o),
-        .io1_t(io1_t),
-        .io2_1_i(1'b0),
-        .io2_1_o(NLW_U0_io2_1_o_UNCONNECTED),
-        .io2_1_t(NLW_U0_io2_1_t_UNCONNECTED),
-        .io2_i(1'b0),
-        .io2_o(NLW_U0_io2_o_UNCONNECTED),
-        .io2_t(NLW_U0_io2_t_UNCONNECTED),
-        .io3_1_i(1'b0),
-        .io3_1_o(NLW_U0_io3_1_o_UNCONNECTED),
-        .io3_1_t(NLW_U0_io3_1_t_UNCONNECTED),
-        .io3_i(1'b0),
-        .io3_o(NLW_U0_io3_o_UNCONNECTED),
-        .io3_t(NLW_U0_io3_t_UNCONNECTED),
-        .ip2intc_irpt(ip2intc_irpt),
-        .keyclearb(1'b0),
-        .pack(1'b0),
-        .preq(NLW_U0_preq_UNCONNECTED),
-        .s_axi4_aclk(1'b0),
-        .s_axi4_araddr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_arburst({1'b0,1'b0}),
-        .s_axi4_arcache({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_aresetn(1'b0),
-        .s_axi4_arid({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_arlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_arlock(1'b0),
-        .s_axi4_arprot({1'b0,1'b0,1'b0}),
-        .s_axi4_arready(NLW_U0_s_axi4_arready_UNCONNECTED),
-        .s_axi4_arsize({1'b0,1'b0,1'b0}),
-        .s_axi4_arvalid(1'b0),
-        .s_axi4_awaddr({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_awburst({1'b0,1'b0}),
-        .s_axi4_awcache({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_awid({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_awlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_awlock(1'b0),
-        .s_axi4_awprot({1'b0,1'b0,1'b0}),
-        .s_axi4_awready(NLW_U0_s_axi4_awready_UNCONNECTED),
-        .s_axi4_awsize({1'b0,1'b0,1'b0}),
-        .s_axi4_awvalid(1'b0),
-        .s_axi4_bid(NLW_U0_s_axi4_bid_UNCONNECTED[3:0]),
-        .s_axi4_bready(1'b0),
-        .s_axi4_bresp(NLW_U0_s_axi4_bresp_UNCONNECTED[1:0]),
-        .s_axi4_bvalid(NLW_U0_s_axi4_bvalid_UNCONNECTED),
-        .s_axi4_rdata(NLW_U0_s_axi4_rdata_UNCONNECTED[31:0]),
-        .s_axi4_rid(NLW_U0_s_axi4_rid_UNCONNECTED[3:0]),
-        .s_axi4_rlast(NLW_U0_s_axi4_rlast_UNCONNECTED),
-        .s_axi4_rready(1'b0),
-        .s_axi4_rresp(NLW_U0_s_axi4_rresp_UNCONNECTED[1:0]),
-        .s_axi4_rvalid(NLW_U0_s_axi4_rvalid_UNCONNECTED),
-        .s_axi4_wdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_wlast(1'b0),
-        .s_axi4_wready(NLW_U0_s_axi4_wready_UNCONNECTED),
-        .s_axi4_wstrb({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi4_wvalid(1'b0),
-        .s_axi_aclk(s_axi_aclk),
-        .s_axi_araddr(s_axi_araddr),
-        .s_axi_aresetn(s_axi_aresetn),
-        .s_axi_arready(s_axi_arready),
-        .s_axi_arvalid(s_axi_arvalid),
-        .s_axi_awaddr(s_axi_awaddr),
-        .s_axi_awready(s_axi_awready),
-        .s_axi_awvalid(s_axi_awvalid),
-        .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
-        .s_axi_bvalid(s_axi_bvalid),
-        .s_axi_rdata(s_axi_rdata),
-        .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
-        .s_axi_rvalid(s_axi_rvalid),
-        .s_axi_wdata(s_axi_wdata),
-        .s_axi_wready(s_axi_wready),
-        .s_axi_wstrb(s_axi_wstrb),
-        .s_axi_wvalid(s_axi_wvalid),
-        .sck_i(sck_i),
-        .sck_o(sck_o),
-        .sck_t(sck_t),
-        .spisel(1'b1),
-        .ss_1_i(1'b0),
-        .ss_1_o(NLW_U0_ss_1_o_UNCONNECTED),
-        .ss_1_t(NLW_U0_ss_1_t_UNCONNECTED),
-        .ss_i(ss_i),
-        .ss_o(ss_o),
-        .ss_t(ss_t),
-        .usrcclkts(1'b0),
-        .usrdoneo(1'b1),
-        .usrdonets(1'b0));
-endmodule
-
+(* ORIG_REF_NAME = "qspi_cntrl_reg" *) 
 module microblaze_axi_quad_spi_0_2_qspi_cntrl_reg
    (spicr_bits_7_8_frm_axi_clk,
     spicr_0_loop_frm_axi_clk,
@@ -5141,6 +5148,7 @@ module microblaze_axi_quad_spi_0_2_qspi_cntrl_reg
         .O(D));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_core_interface" *) 
 module microblaze_axi_quad_spi_0_2_qspi_core_interface
    (spisel_d1_reg_to_axi_clk,
     Tx_FIFO_Empty_SPISR_to_axi_clk,
@@ -6401,6 +6409,7 @@ module microblaze_axi_quad_spi_0_2_qspi_core_interface
         .R(reset2ip_reset_int));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_fifo_ifmodule" *) 
 module microblaze_axi_quad_spi_0_2_qspi_fifo_ifmodule
    (rc_FIFO_Full_d1,
     tx_FIFO_Empty_d1,
@@ -6509,6 +6518,7 @@ module microblaze_axi_quad_spi_0_2_qspi_fifo_ifmodule
         .R(reset2ip_reset_int));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_mode_0_module" *) 
 module microblaze_axi_quad_spi_0_2_qspi_mode_0_module
    (sck_t,
     io0_t,
@@ -8076,6 +8086,7 @@ module microblaze_axi_quad_spi_0_2_qspi_mode_0_module
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_status_slave_sel_reg" *) 
 module microblaze_axi_quad_spi_0_2_qspi_status_slave_sel_reg
    (sr_3_MODF_int,
     SPISSR_frm_axi_clk,
@@ -8132,6 +8143,7 @@ module microblaze_axi_quad_spi_0_2_qspi_status_slave_sel_reg
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "reset_sync_module" *) 
 module microblaze_axi_quad_spi_0_2_reset_sync_module
    (RESET_SYNC_AX2S_2_0,
     Rst_to_spi,
@@ -8197,6 +8209,7 @@ module microblaze_axi_quad_spi_0_2_reset_sync_module
         .O(RESET_SYNC_AX2S_2_0));
 endmodule
 
+(* ORIG_REF_NAME = "slave_attachment" *) 
 module microblaze_axi_quad_spi_0_2_slave_attachment
    (SR,
     p_1_in_0,
@@ -9153,6 +9166,7 @@ module microblaze_axi_quad_spi_0_2_slave_attachment
         .R(SR));
 endmodule
 
+(* ORIG_REF_NAME = "soft_reset" *) 
 module microblaze_axi_quad_spi_0_2_soft_reset
    (sw_rst_cond_d1,
     \RESET_FLOPS[15].RST_FLOPS_0 ,
@@ -9628,10 +9642,10 @@ module microblaze_axi_quad_spi_0_2_soft_reset
         .R(bus2ip_reset_ipif_inverted));
 endmodule
 
-(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "1" *) (* REG_OUTPUT = "0" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) (* VERSION = "0" *) 
-(* WIDTH = "4" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) 
-(* xpm_cdc = "GRAY" *) 
+(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_gray" *) 
+(* REG_OUTPUT = "0" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
+(* VERSION = "0" *) (* WIDTH = "4" *) (* XPM_MODULE = "TRUE" *) 
+(* keep_hierarchy = "soft" *) (* xpm_cdc = "GRAY" *) 
 module microblaze_axi_quad_spi_0_2_xpm_cdc_gray
    (src_clk,
     src_in_bin,
@@ -11288,9 +11302,9 @@ module microblaze_axi_quad_spi_0_2_xpm_cdc_gray__parameterized1__1
         .R(1'b0));
 endmodule
 
-(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "soft" *) (* xpm_cdc = "SINGLE" *) 
+(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
+(* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* xpm_cdc = "SINGLE" *) 
 module microblaze_axi_quad_spi_0_2_xpm_cdc_single
    (src_clk,
     src_in,
@@ -11365,8 +11379,9 @@ module microblaze_axi_quad_spi_0_2_xpm_cdc_single__1
 endmodule
 
 (* DEF_VAL = "1'b0" *) (* DEST_SYNC_FF = "2" *) (* INIT = "0" *) 
-(* INIT_SYNC_FF = "1" *) (* SIM_ASSERT_CHK = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* xpm_cdc = "SYNC_RST" *) 
+(* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_sync_rst" *) (* SIM_ASSERT_CHK = "0" *) 
+(* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) 
+(* xpm_cdc = "SYNC_RST" *) 
 module microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst
    (src_rst,
     dest_clk,
@@ -11527,6 +11542,7 @@ module microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst__3
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_counter_updn" *) 
 module microblaze_axi_quad_spi_0_2_xpm_counter_updn
    (Q,
     wrst_busy,
@@ -13253,13 +13269,13 @@ endmodule
 (* CASCADE_HEIGHT = "0" *) (* CDC_SYNC_STAGES = "2" *) (* DOUT_RESET_VALUE = "0" *) 
 (* ECC_MODE = "no_ecc" *) (* EN_ADV_FEATURE_ASYNC = "16'b0001111100011111" *) (* EN_SIM_ASSERT_ERR = "warning" *) 
 (* FIFO_MEMORY_TYPE = "auto" *) (* FIFO_READ_LATENCY = "0" *) (* FIFO_WRITE_DEPTH = "16" *) 
-(* FULL_RESET_VALUE = "0" *) (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) 
-(* P_COMMON_CLOCK = "0" *) (* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) 
-(* P_READ_MODE = "1" *) (* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "5" *) 
-(* READ_DATA_WIDTH = "8" *) (* READ_MODE = "fwft" *) (* RELATED_CLOCKS = "0" *) 
-(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1f1f" *) (* WAKEUP_TIME = "0" *) 
-(* WRITE_DATA_WIDTH = "8" *) (* WR_DATA_COUNT_WIDTH = "5" *) (* XPM_MODULE = "TRUE" *) 
-(* dont_touch = "true" *) 
+(* FULL_RESET_VALUE = "0" *) (* ORIG_REF_NAME = "xpm_fifo_async" *) (* PROG_EMPTY_THRESH = "10" *) 
+(* PROG_FULL_THRESH = "10" *) (* P_COMMON_CLOCK = "0" *) (* P_ECC_MODE = "0" *) 
+(* P_FIFO_MEMORY_TYPE = "0" *) (* P_READ_MODE = "1" *) (* P_WAKEUP_TIME = "2" *) 
+(* RD_DATA_COUNT_WIDTH = "5" *) (* READ_DATA_WIDTH = "8" *) (* READ_MODE = "fwft" *) 
+(* RELATED_CLOCKS = "0" *) (* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1f1f" *) 
+(* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH = "8" *) (* WR_DATA_COUNT_WIDTH = "5" *) 
+(* XPM_MODULE = "TRUE" *) (* dont_touch = "true" *) 
 module microblaze_axi_quad_spi_0_2_xpm_fifo_async
    (sleep,
     rst,
@@ -13635,18 +13651,19 @@ endmodule
 (* FG_EQ_ASYM_DOUT = "1'b0" *) (* FIFO_MEMORY_TYPE = "0" *) (* FIFO_MEM_TYPE = "0" *) 
 (* FIFO_READ_DEPTH = "16" *) (* FIFO_READ_LATENCY = "0" *) (* FIFO_SIZE = "128" *) 
 (* FIFO_WRITE_DEPTH = "16" *) (* FULL_RESET_VALUE = "0" *) (* FULL_RST_VAL = "1'b0" *) 
-(* PE_THRESH_ADJ = "8" *) (* PE_THRESH_MAX = "11" *) (* PE_THRESH_MIN = "5" *) 
-(* PF_THRESH_ADJ = "8" *) (* PF_THRESH_MAX = "11" *) (* PF_THRESH_MIN = "7" *) 
-(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "5" *) 
-(* RD_DC_WIDTH_EXT = "5" *) (* RD_LATENCY = "2" *) (* RD_MODE = "1" *) 
-(* RD_PNTR_WIDTH = "4" *) (* READ_DATA_WIDTH = "8" *) (* READ_MODE = "1" *) 
-(* READ_MODE_LL = "1" *) (* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
-(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1f1f" *) (* VERSION = "0" *) 
-(* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "8" *) 
-(* WR_DATA_COUNT_WIDTH = "5" *) (* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) 
-(* WR_PNTR_WIDTH = "4" *) (* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) 
-(* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) (* invalid = "0" *) 
-(* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) (* stage2_valid = "1" *) 
+(* ORIG_REF_NAME = "xpm_fifo_base" *) (* PE_THRESH_ADJ = "8" *) (* PE_THRESH_MAX = "11" *) 
+(* PE_THRESH_MIN = "5" *) (* PF_THRESH_ADJ = "8" *) (* PF_THRESH_MAX = "11" *) 
+(* PF_THRESH_MIN = "7" *) (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) 
+(* RD_DATA_COUNT_WIDTH = "5" *) (* RD_DC_WIDTH_EXT = "5" *) (* RD_LATENCY = "2" *) 
+(* RD_MODE = "1" *) (* RD_PNTR_WIDTH = "4" *) (* READ_DATA_WIDTH = "8" *) 
+(* READ_MODE = "1" *) (* READ_MODE_LL = "1" *) (* RELATED_CLOCKS = "0" *) 
+(* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1f1f" *) 
+(* VERSION = "0" *) (* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) 
+(* WRITE_DATA_WIDTH = "8" *) (* WR_DATA_COUNT_WIDTH = "5" *) (* WR_DC_WIDTH_EXT = "5" *) 
+(* WR_DEPTH_LOG = "4" *) (* WR_PNTR_WIDTH = "4" *) (* WR_RD_RATIO = "0" *) 
+(* WR_WIDTH_LOG = "3" *) (* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) 
+(* invalid = "0" *) (* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) 
+(* stage2_valid = "1" *) 
 module microblaze_axi_quad_spi_0_2_xpm_fifo_base
    (sleep,
     rst,
@@ -15118,6 +15135,7 @@ module microblaze_axi_quad_spi_0_2_xpm_fifo_base__parameterized0
         .wrst_busy(wrst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_bit" *) 
 module microblaze_axi_quad_spi_0_2_xpm_fifo_reg_bit
    (rst_d1,
     \gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q_reg[4] ,
@@ -15252,6 +15270,7 @@ module microblaze_axi_quad_spi_0_2_xpm_fifo_reg_bit_12
         .O(overflow_i0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_vec" *) 
 module microblaze_axi_quad_spi_0_2_xpm_fifo_reg_vec
    (\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ,
     diff_pntr_pf_q0,
@@ -16223,6 +16242,7 @@ module microblaze_axi_quad_spi_0_2_xpm_fifo_reg_vec__parameterized0_8
         .R(\reg_out_i_reg[4]_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_rst" *) 
 module microblaze_axi_quad_spi_0_2_xpm_fifo_rst
    (\gen_rst_ic.fifo_rd_rst_ic_reg_0 ,
     wrst_busy,
@@ -17062,27 +17082,28 @@ endmodule
 (* ECC_TYPE = "NONE" *) (* IGNORE_INIT_SYNTH = "0" *) (* MAX_NUM_CHAR = "0" *) 
 (* MEMORY_INIT_FILE = "none" *) (* MEMORY_INIT_PARAM = "" *) (* MEMORY_OPTIMIZATION = "true" *) 
 (* MEMORY_PRIMITIVE = "0" *) (* MEMORY_SIZE = "128" *) (* MEMORY_TYPE = "1" *) 
-(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* P_ECC_MODE = "0" *) 
-(* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) (* P_MAX_DEPTH_DATA = "16" *) 
-(* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) (* P_MIN_WIDTH_DATA = "8" *) 
-(* P_MIN_WIDTH_DATA_A = "8" *) (* P_MIN_WIDTH_DATA_B = "8" *) (* P_MIN_WIDTH_DATA_ECC = "8" *) 
-(* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "8" *) (* P_NUM_COLS_WRITE_A = "1" *) 
-(* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_COL_READ_A = "1" *) (* P_NUM_COL_READ_B = "1" *) 
-(* P_NUM_COL_WRITE_A = "1" *) (* P_NUM_COL_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) 
-(* P_NUM_ROWS_READ_B = "1" *) (* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) 
-(* P_SDP_WRITE_MODE = "yes" *) (* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) 
-(* P_WIDTH_ADDR_LSB_READ_COLL_A = "1" *) (* P_WIDTH_ADDR_LSB_READ_COLL_B = "1" *) (* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) 
-(* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_COLL_A = "1" *) (* P_WIDTH_ADDR_LSB_WRITE_COLL_B = "1" *) 
-(* P_WIDTH_ADDR_READ_A = "4" *) (* P_WIDTH_ADDR_READ_B = "4" *) (* P_WIDTH_ADDR_WRITE_A = "4" *) 
-(* P_WIDTH_ADDR_WRITE_B = "4" *) (* P_WIDTH_COL_WRITE_A = "8" *) (* P_WIDTH_COL_WRITE_B = "8" *) 
-(* RAM_DECOMP = "auto" *) (* READ_DATA_WIDTH_A = "8" *) (* READ_DATA_WIDTH_B = "8" *) 
-(* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "2" *) (* READ_RESET_VALUE_A = "0" *) 
-(* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) (* RST_MODE_B = "SYNC" *) 
-(* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) (* USE_MEM_INIT = "0" *) 
-(* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WRITE_DATA_WIDTH_A = "8" *) (* WRITE_DATA_WIDTH_B = "8" *) (* WRITE_MODE_A = "2" *) 
-(* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "soft" *) (* rsta_loop_iter = "8" *) (* rstb_loop_iter = "8" *) 
+(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* ORIG_REF_NAME = "xpm_memory_base" *) 
+(* P_ECC_MODE = "0" *) (* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) 
+(* P_MAX_DEPTH_DATA = "16" *) (* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) 
+(* P_MIN_WIDTH_DATA = "8" *) (* P_MIN_WIDTH_DATA_A = "8" *) (* P_MIN_WIDTH_DATA_B = "8" *) 
+(* P_MIN_WIDTH_DATA_ECC = "8" *) (* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "8" *) 
+(* P_NUM_COLS_WRITE_A = "1" *) (* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_COL_READ_A = "1" *) 
+(* P_NUM_COL_READ_B = "1" *) (* P_NUM_COL_WRITE_A = "1" *) (* P_NUM_COL_WRITE_B = "1" *) 
+(* P_NUM_ROWS_READ_A = "1" *) (* P_NUM_ROWS_READ_B = "1" *) (* P_NUM_ROWS_WRITE_A = "1" *) 
+(* P_NUM_ROWS_WRITE_B = "1" *) (* P_SDP_WRITE_MODE = "yes" *) (* P_WIDTH_ADDR_LSB_READ_A = "0" *) 
+(* P_WIDTH_ADDR_LSB_READ_B = "0" *) (* P_WIDTH_ADDR_LSB_READ_COLL_A = "1" *) (* P_WIDTH_ADDR_LSB_READ_COLL_B = "1" *) 
+(* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_COLL_A = "1" *) 
+(* P_WIDTH_ADDR_LSB_WRITE_COLL_B = "1" *) (* P_WIDTH_ADDR_READ_A = "4" *) (* P_WIDTH_ADDR_READ_B = "4" *) 
+(* P_WIDTH_ADDR_WRITE_A = "4" *) (* P_WIDTH_ADDR_WRITE_B = "4" *) (* P_WIDTH_COL_WRITE_A = "8" *) 
+(* P_WIDTH_COL_WRITE_B = "8" *) (* RAM_DECOMP = "auto" *) (* READ_DATA_WIDTH_A = "8" *) 
+(* READ_DATA_WIDTH_B = "8" *) (* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "2" *) 
+(* READ_RESET_VALUE_A = "0" *) (* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) 
+(* RST_MODE_B = "SYNC" *) (* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) 
+(* USE_MEM_INIT = "0" *) (* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH_A = "8" *) (* WRITE_DATA_WIDTH_B = "8" *) 
+(* WRITE_MODE_A = "2" *) (* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* rsta_loop_iter = "8" *) 
+(* rstb_loop_iter = "8" *) 
 module microblaze_axi_quad_spi_0_2_xpm_memory_base
    (sleep,
     clka,

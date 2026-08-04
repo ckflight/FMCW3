@@ -833,7 +833,7 @@ BEGIN
       C_TEMPORAL_DEPTH => 0,
       C_ENDIANNESS => 1,
       C_FAMILY => "artix7",
-      C_PART => "xc7a35tftg256-1",
+      C_PART => "xc7a100tftg256-1",
       C_DATA_SIZE => 32,
       C_LMB_DATA_SIZE => 32,
       C_INSTR_SIZE => 32,

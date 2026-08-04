@@ -27,12 +27,12 @@
 					"plDevice": "Auto Detect",
 					"psDevice": "Auto Detect"
 				},
-				"bitstreamFile": "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.bit",
+				"bitstreamFile": "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/impl_1/top_module.bit",
 				"downloadElf": [
 					{
 						"core": "microblaze_0",
 						"resetProcessor": true,
-						"elfFile": "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
+						"elfFile": "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
 						"stopAtEntry": false,
 						"isSelfRelocatingApp": false,
 						"relativeAddress": ""

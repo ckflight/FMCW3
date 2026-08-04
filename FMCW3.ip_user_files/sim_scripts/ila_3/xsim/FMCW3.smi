@@ -23,7 +23,7 @@
     </AddressSpace>
   </Processor>
   <Config>
-    <Option Name="Part" Val="xc7a35tftg256-1"/>
+    <Option Name="Part" Val="xc7a100tftg256-1"/>
   </Config>
   <DRC>
     <Rule Name="RDADDRCHANGE" Val="false"/>

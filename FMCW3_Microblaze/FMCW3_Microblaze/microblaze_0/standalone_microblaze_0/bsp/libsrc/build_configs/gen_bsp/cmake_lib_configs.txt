@@ -14,7 +14,7 @@
 -- Found assembler: /tools/2025.2/Vitis/gnu/microblaze/lin/bin/mb-gcc
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp
+-- Build files have been written to: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp
 -- Cache values
 // Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=
@@ -35,13 +35,13 @@ CMAKE_MACHINE:STRING=artix7
 CMAKE_SIZE:FILEPATH=mb-size
 
 // Specs file path for using CMAKE toolchain files
-CMAKE_SPECS_FILE:STRING=/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/Xilinx.spec
+CMAKE_SPECS_FILE:STRING=/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/Xilinx.spec
 
 // The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/microblaze_toolchain.cmake
+CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/microblaze_toolchain.cmake
 
 // Device Id
-DEVICE_ID:STRING=7a35t
+DEVICE_ID:STRING=7a100t
 
 // Number of slrs
 NUMBER_OF_SLRS:STRING=0x1

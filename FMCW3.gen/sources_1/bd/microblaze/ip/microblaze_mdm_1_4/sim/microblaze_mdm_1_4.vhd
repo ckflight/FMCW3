@@ -1702,7 +1702,7 @@ BEGIN
   U0 : MDM
     GENERIC MAP (
       C_FAMILY => "artix7",
-      C_DEVICE => "xc7a35t",
+      C_DEVICE => "xc7a100t",
       C_JTAG_CHAIN => 2,
       C_USE_BSCAN => 0,
       C_BSCANID => 76547328,

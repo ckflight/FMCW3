@@ -2,7 +2,7 @@
   "design": {
     "design_info": {
       "boundary_crc": "0xBAC12DD4BF136D48",
-      "device": "xc7a35tftg256-1",
+      "device": "xc7a100tftg256-1",
       "gen_directory": "../../../../FMCW3.gen/sources_1/bd/microblaze",
       "name": "microblaze",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -619,8 +619,23 @@
             "inst_hier_path": "microblaze_0_local_memory/lmb_bram",
             "has_run_ip_tcl": "true",
             "parameters": {
+              "Enable_B": {
+                "value": "Use_ENB_Pin"
+              },
               "Memory_Type": {
                 "value": "True_Dual_Port_RAM"
+              },
+              "Port_B_Clock": {
+                "value": "100"
+              },
+              "Port_B_Enable_Rate": {
+                "value": "100"
+              },
+              "Port_B_Write_Rate": {
+                "value": "50"
+              },
+              "Use_RSTB_Pin": {
+                "value": "true"
               },
               "use_bram_block": {
                 "value": "BRAM_Controller"
@@ -670,19 +685,19 @@
           "SYS_Rst_1": {
             "ports": [
               "SYS_Rst",
-              "dlmb_v10/SYS_Rst",
               "dlmb_bram_if_cntlr/LMB_Rst",
-              "ilmb_v10/SYS_Rst",
-              "ilmb_bram_if_cntlr/LMB_Rst"
+              "dlmb_v10/SYS_Rst",
+              "ilmb_bram_if_cntlr/LMB_Rst",
+              "ilmb_v10/SYS_Rst"
             ]
           },
           "microblaze_0_Clk": {
             "ports": [
               "Clk",
-              "dlmb_v10/LMB_Clk",
               "dlmb_bram_if_cntlr/LMB_Clk",
-              "ilmb_v10/LMB_Clk",
-              "ilmb_bram_if_cntlr/LMB_Clk"
+              "dlmb_v10/LMB_Clk",
+              "ilmb_bram_if_cntlr/LMB_Clk",
+              "ilmb_v10/LMB_Clk"
             ]
           }
         }
@@ -1173,18 +1188,18 @@
       "microblaze_0_Clk": {
         "ports": [
           "Clk",
-          "microblaze_0_axi_periph/aclk",
+          "microblaze_0_local_memory/Clk",
+          "axi_fifo_mm_s_0/s_axi_aclk",
+          "axi_gpio_0/s_axi_aclk",
+          "axi_quad_spi_0/ext_spi_clk",
+          "axi_quad_spi_0/s_axi_aclk",
+          "axi_timer_0/s_axi_aclk",
+          "mdm_1/S_AXI_ACLK",
+          "microblaze_0/Clk",
           "microblaze_0_axi_intc/s_axi_aclk",
           "microblaze_0_axi_intc/processor_clk",
-          "microblaze_0_local_memory/Clk",
-          "mdm_1/S_AXI_ACLK",
-          "rst_Clk_100M/slowest_sync_clk",
-          "axi_gpio_0/s_axi_aclk",
-          "axi_timer_0/s_axi_aclk",
-          "axi_fifo_mm_s_0/s_axi_aclk",
-          "axi_quad_spi_0/s_axi_aclk",
-          "axi_quad_spi_0/ext_spi_clk",
-          "microblaze_0/Clk"
+          "microblaze_0_axi_periph/aclk",
+          "rst_Clk_100M/slowest_sync_clk"
         ]
       },
       "microblaze_0_intr": {
@@ -1208,20 +1223,20 @@
       "rst_Clk_100M_mb_reset": {
         "ports": [
           "rst_Clk_100M/mb_reset",
-          "microblaze_0_axi_intc/processor_rst",
-          "microblaze_0/Reset"
+          "microblaze_0/Reset",
+          "microblaze_0_axi_intc/processor_rst"
         ]
       },
       "rst_Clk_100M_peripheral_aresetn": {
         "ports": [
           "rst_Clk_100M/peripheral_aresetn",
-          "microblaze_0_axi_periph/aresetn",
+          "axi_fifo_mm_s_0/s_axi_aresetn",
+          "axi_gpio_0/s_axi_aresetn",
+          "axi_quad_spi_0/s_axi_aresetn",
+          "axi_timer_0/s_axi_aresetn",
           "mdm_1/S_AXI_ARESETN",
           "microblaze_0_axi_intc/s_axi_aresetn",
-          "axi_gpio_0/s_axi_aresetn",
-          "axi_timer_0/s_axi_aresetn",
-          "axi_fifo_mm_s_0/s_axi_aresetn",
-          "axi_quad_spi_0/s_axi_aresetn"
+          "microblaze_0_axi_periph/aresetn"
         ]
       }
     },
@@ -1287,7 +1302,7 @@
       "file": {
         "name": "../../../../FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf",
         "type": "ELF",
-        "checksum": "3815818486",
+        "checksum": "2543280841",
         "IsVisible": "1",
         "ScopedToRef": "microblaze",
         "ScopedToCell": [

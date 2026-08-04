@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/microblaze_axi_timer_0_1_synth_1'
+HD_PWD='/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_axi_timer_0_1_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3.tcl"
+  variable script "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,32 +57,30 @@ if {$::dispatch::connected} {
 
 OPTRACE "ila_3_synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 8
-set_param xicom.use_bs_reader 1
-set_param tcl.collectionResultDisplayLimit 0
 set_param general.usePosixSpawnForFork 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a35tftg256-1
+create_project -in_memory -part xc7a100tftg256-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.cache/wt [current_project]
-set_property parent.project_path /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.xpr [current_project]
+set_property webtalk.parent_dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.cache/wt [current_project]
+set_property parent.project_path /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.cache/ip [current_project]
+set_property ip_output_repo /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_3/ila_3.xci
-set_property used_in_synthesis false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_ooc.xdc]
+read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/ila_3/ila_3.xci
+set_property used_in_synthesis false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -98,14 +96,14 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1 -new_name ila_3 -ip [get_ips ila_3]]
+set cacheID [config_ip_cache -export -no_bom  -dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1 -new_name ila_3 -ip [get_ips ila_3]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ila_3 -part xc7a35tftg256-1 -incremental_mode off -mode out_of_context
+synth_design -top ila_3 -part xc7a100tftg256-1 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 
@@ -153,32 +151,32 @@ generate_parallel_reports -reports { "report_utilization -file ila_3_utilization
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3.dcp /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3.dcp
+  file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3.dcp /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.v
+  write_verilog -force -mode synth_stub /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.v
+  write_verilog -force -mode funcsim /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -188,32 +186,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3.dcp /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3.dcp
+  file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3.dcp /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3_stub.v /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.v
+  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3_stub.v /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3_stub.vhdl /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl
+  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3_stub.vhdl /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3_sim_netlist.v /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.v
+  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3_sim_netlist.v /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/ila_3_synth_1/ila_3_sim_netlist.vhdl /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.vhdl
+  file rename -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/ila_3_synth_1/ila_3_sim_netlist.vhdl /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -221,15 +219,15 @@ if { [catch {
 close [open .end.used_ip_cache.rst w]
 }; # end if cacheID 
 
-if {[file isdir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.ip_user_files/ip/ila_3]} {
+if {[file isdir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.ip_user_files/ip/ila_3]} {
   catch { 
-    file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.v /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.ip_user_files/ip/ila_3
+    file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.v /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.ip_user_files/ip/ila_3
   }
 }
 
-if {[file isdir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.ip_user_files/ip/ila_3]} {
+if {[file isdir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.ip_user_files/ip/ila_3]} {
   catch { 
-    file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.ip_user_files/ip/ila_3
+    file copy -force /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/ip/ila_3/ila_3_stub.vhdl /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.ip_user_files/ip/ila_3
   }
 }
 file delete __synthesis_is_running__

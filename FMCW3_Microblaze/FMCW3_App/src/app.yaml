@@ -1,4 +1,4 @@
-domain_path: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/export/FMCW3_Microblaze/sw/standalone_microblaze_0
+domain_path: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/export/FMCW3_Microblaze/sw/standalone_microblaze_0
 app_src_dir: C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_apps\hello_world
 template: hello_world
 lang: c

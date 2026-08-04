@@ -1,14 +1,14 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
--- Date        : Wed Mar 25 12:35:31 2026
--- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+-- Date        : Mon Aug  3 14:48:51 2026
+-- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
 -- Command     : write_vhdl -force -mode synth_stub -rename_top microblaze_microblaze_0_axi_periph_2 -prefix
 --               microblaze_microblaze_0_axi_periph_2_ microblaze_microblaze_0_axi_periph_2_stub.vhdl
 -- Design      : microblaze_microblaze_0_axi_periph_2
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

@@ -2,14 +2,14 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Thu May 14 20:19:14 2026
+-- Date        : Mon Aug  3 14:48:33 2026
 -- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_axi_quad_spi_0_2 -prefix
---               microblaze_axi_quad_spi_0_2_ microblaze_axi_quad_spi_0_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2_sim_netlist.vhdl
 -- Design      : microblaze_axi_quad_spi_0_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -569,6 +569,8 @@ entity microblaze_axi_quad_spi_0_2_counter_f is
     \icount_out_reg[0]_3\ : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_counter_f : entity is "counter_f";
 end microblaze_axi_quad_spi_0_2_counter_f;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_counter_f is
@@ -820,6 +822,8 @@ entity microblaze_axi_quad_spi_0_2_cross_clk_sync_fifo_1 is
     modf_strobe_int : in STD_LOGIC;
     SPISEL_sync : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_cross_clk_sync_fifo_1 : entity is "cross_clk_sync_fifo_1";
 end microblaze_axi_quad_spi_0_2_cross_clk_sync_fifo_1;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_cross_clk_sync_fifo_1 is
@@ -2053,6 +2057,8 @@ entity microblaze_axi_quad_spi_0_2_interrupt_control is
     bus2ip_wrce_int : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_interrupt_control : entity is "interrupt_control";
 end microblaze_axi_quad_spi_0_2_interrupt_control;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_interrupt_control is
@@ -2426,6 +2432,8 @@ entity microblaze_axi_quad_spi_0_2_qspi_cntrl_reg is
     \FIFO_EXISTS.data_Exists_RcFIFO_int_d1\ : in STD_LOGIC;
     \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_qspi_cntrl_reg : entity is "qspi_cntrl_reg";
 end microblaze_axi_quad_spi_0_2_qspi_cntrl_reg;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_qspi_cntrl_reg is
@@ -2647,6 +2655,8 @@ entity microblaze_axi_quad_spi_0_2_qspi_fifo_ifmodule is
     p_4_in : in STD_LOGIC;
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_qspi_fifo_ifmodule : entity is "qspi_fifo_ifmodule";
 end microblaze_axi_quad_spi_0_2_qspi_fifo_ifmodule;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_qspi_fifo_ifmodule is
@@ -2798,6 +2808,8 @@ entity microblaze_axi_quad_spi_0_2_qspi_mode_0_module is
     D : in STD_LOGIC_VECTOR ( 0 to 0 );
     \OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_qspi_mode_0_module : entity is "qspi_mode_0_module";
 end microblaze_axi_quad_spi_0_2_qspi_mode_0_module;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_qspi_mode_0_module is
@@ -4661,6 +4673,8 @@ entity microblaze_axi_quad_spi_0_2_qspi_status_slave_sel_reg is
     p_3_in : in STD_LOGIC;
     Bus_RNW_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_qspi_status_slave_sel_reg : entity is "qspi_status_slave_sel_reg";
 end microblaze_axi_quad_spi_0_2_qspi_status_slave_sel_reg;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_qspi_status_slave_sel_reg is
@@ -4714,6 +4728,8 @@ entity microblaze_axi_quad_spi_0_2_reset_sync_module is
     reset2ip_reset_int : in STD_LOGIC;
     ext_spi_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_reset_sync_module : entity is "reset_sync_module";
 end microblaze_axi_quad_spi_0_2_reset_sync_module;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_reset_sync_module is
@@ -4800,6 +4816,8 @@ entity microblaze_axi_quad_spi_0_2_soft_reset is
     intr_ip2bus_wrack : in STD_LOGIC;
     ip2Bus_WrAck_intr_reg_hole : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_soft_reset : entity is "soft_reset";
 end microblaze_axi_quad_spi_0_2_soft_reset;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_soft_reset is
@@ -5360,6 +5378,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_cdc_gray is
   attribute DEST_SYNC_FF of microblaze_axi_quad_spi_0_2_xpm_cdc_gray : entity is 2;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_quad_spi_0_2_xpm_cdc_gray : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_cdc_gray : entity is "xpm_cdc_gray";
   attribute REG_OUTPUT : integer;
   attribute REG_OUTPUT of microblaze_axi_quad_spi_0_2_xpm_cdc_gray : entity is 0;
   attribute SIM_ASSERT_CHK : integer;
@@ -7686,6 +7706,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_cdc_single is
   attribute DEST_SYNC_FF of microblaze_axi_quad_spi_0_2_xpm_cdc_single : entity is 2;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_quad_spi_0_2_xpm_cdc_single : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_axi_quad_spi_0_2_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -7817,6 +7839,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst is
   attribute INIT of microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst : entity is "0";
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst : entity is "xpm_cdc_sync_rst";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_axi_quad_spi_0_2_xpm_cdc_sync_rst : entity is 0;
   attribute VERSION : integer;
@@ -8096,6 +8120,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_counter_updn is
     wr_pntr_plus1_pf_carry : in STD_LOGIC;
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_counter_updn : entity is "xpm_counter_updn";
 end microblaze_axi_quad_spi_0_2_xpm_counter_updn;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_xpm_counter_updn is
@@ -10237,6 +10263,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_fifo_reg_bit is
     prog_full : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end microblaze_axi_quad_spi_0_2_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_xpm_fifo_reg_bit is
@@ -10374,6 +10402,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_fifo_reg_vec is
     D : in STD_LOGIC_VECTOR ( 3 downto 0 );
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_fifo_reg_vec : entity is "xpm_fifo_reg_vec";
 end microblaze_axi_quad_spi_0_2_xpm_fifo_reg_vec;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_xpm_fifo_reg_vec is
@@ -11531,6 +11561,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_memory_base is
   attribute MESSAGE_CONTROL of microblaze_axi_quad_spi_0_2_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of microblaze_axi_quad_spi_0_2_xpm_memory_base : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : integer;
   attribute P_ECC_MODE of microblaze_axi_quad_spi_0_2_xpm_memory_base : entity is 0;
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -12588,6 +12620,8 @@ entity microblaze_axi_quad_spi_0_2_address_decoder is
     s_axi_awready : in STD_LOGIC;
     s_axi_awready_0 : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_address_decoder : entity is "address_decoder";
 end microblaze_axi_quad_spi_0_2_address_decoder;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_address_decoder is
@@ -13932,6 +13966,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_fifo_rst is
     \guf.underflow_i_reg\ : in STD_LOGIC;
     rd_en : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end microblaze_axi_quad_spi_0_2_xpm_fifo_rst;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_xpm_fifo_rst is
@@ -15068,6 +15104,8 @@ entity microblaze_axi_quad_spi_0_2_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_slave_attachment : entity is "slave_attachment";
 end microblaze_axi_quad_spi_0_2_slave_attachment;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_slave_attachment is
@@ -16020,6 +16058,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_fifo_base is
   attribute FULL_RESET_VALUE of microblaze_axi_quad_spi_0_2_xpm_fifo_base : entity is 0;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of microblaze_axi_quad_spi_0_2_xpm_fifo_base : entity is "1'b0";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of microblaze_axi_quad_spi_0_2_xpm_fifo_base : entity is 8;
   attribute PE_THRESH_MAX : integer;
@@ -18200,6 +18240,8 @@ entity microblaze_axi_quad_spi_0_2_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_axi_lite_ipif : entity is "axi_lite_ipif";
 end microblaze_axi_quad_spi_0_2_axi_lite_ipif;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_axi_lite_ipif is
@@ -18361,6 +18403,8 @@ entity microblaze_axi_quad_spi_0_2_xpm_fifo_async is
   attribute FIFO_WRITE_DEPTH of microblaze_axi_quad_spi_0_2_xpm_fifo_async : entity is 16;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of microblaze_axi_quad_spi_0_2_xpm_fifo_async : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_xpm_fifo_async : entity is "xpm_fifo_async";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of microblaze_axi_quad_spi_0_2_xpm_fifo_async : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -18901,6 +18945,8 @@ entity microblaze_axi_quad_spi_0_2_qspi_core_interface is
     io1_i_sync : in STD_LOGIC;
     io0_i_sync : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_qspi_core_interface : entity is "qspi_core_interface";
 end microblaze_axi_quad_spi_0_2_qspi_core_interface;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_qspi_core_interface is
@@ -20174,6 +20220,8 @@ entity microblaze_axi_quad_spi_0_2_axi_quad_spi_top is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_axi_quad_spi_top : entity is "axi_quad_spi_top";
 end microblaze_axi_quad_spi_0_2_axi_quad_spi_top;
 
 architecture STRUCTURE of microblaze_axi_quad_spi_0_2_axi_quad_spi_top is
@@ -20746,6 +20794,8 @@ entity microblaze_axi_quad_spi_0_2_axi_quad_spi is
   attribute C_XIP_MODE of microblaze_axi_quad_spi_0_2_axi_quad_spi : entity is 0;
   attribute C_XIP_PERF_MODE : integer;
   attribute C_XIP_PERF_MODE of microblaze_axi_quad_spi_0_2_axi_quad_spi : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_quad_spi_0_2_axi_quad_spi : entity is "axi_quad_spi";
   attribute dont_touch : string;
   attribute dont_touch of microblaze_axi_quad_spi_0_2_axi_quad_spi : entity is "yes";
   attribute downgradeipidentifiedwarnings : string;

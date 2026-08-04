@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/impl_1/top_module.tcl"
+  variable script "/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/impl_1/top_module.tcl"
   variable category "vivado_impl"
 }
 
@@ -109,42 +109,42 @@ set rc [catch {
   set_param bd.open.in_stealth_mode 1
   set_param runs.launchOptions { -jobs 32  }
 OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7a35tftg256-1
+  create_project -in_memory -part xc7a100tftg256-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.cache/wt [current_project]
-  set_property parent.project_path /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.xpr [current_project]
-  set_property ip_output_repo /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.cache/wt [current_project]
+  set_property parent.project_path /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.xpr [current_project]
+  set_property ip_output_repo /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.runs/synth_1/top_module.dcp
+  add_files -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/synth_1/top_module.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
-  add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/bd/microblaze/microblaze.bd
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_2_1/fifo_generator_2.xci
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_3/ila_3.xci
-  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/sources_1/ip/ila_4/ila_4.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
+  add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/bd/microblaze/microblaze.bd
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/ila_3/ila_3.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/ila_4/ila_4.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/fifo_generator_1/fifo_generator_1.xci
+  read_ip -quiet /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/sources_1/ip/fifo_generator_2_1/fifo_generator_2.xci
   set_param project.isImplRun false
-  add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf
-  set_property SCOPED_TO_REF microblaze [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
-  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
+  add_files /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf
+  set_property SCOPED_TO_REF microblaze [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
+  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_App/build/FMCW3_App.elf]
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.srcs/constrs_1/new/pinout.xdc
+  read_xdc /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.srcs/constrs_1/new/pinout.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
   set_param project.isImplRun true
-  link_design -top top_module -part xc7a35tftg256-1 
+  link_design -top top_module -part xc7a100tftg256-1 
 OPTRACE "link_design" END { }
   set_param project.isImplRun false
 OPTRACE "gray box cells" START { }

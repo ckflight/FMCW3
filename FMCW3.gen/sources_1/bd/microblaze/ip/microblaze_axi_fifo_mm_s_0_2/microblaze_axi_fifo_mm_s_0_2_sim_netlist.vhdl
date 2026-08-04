@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
--- Date        : Wed Mar 25 12:31:51 2026
--- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_axi_fifo_mm_s_0_2 -prefix
---               microblaze_axi_fifo_mm_s_0_2_ microblaze_axi_fifo_mm_s_0_2_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+-- Date        : Mon Aug  3 14:48:36 2026
+-- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_fifo_mm_s_0_2/microblaze_axi_fifo_mm_s_0_2_sim_netlist.vhdl
 -- Design      : microblaze_axi_fifo_mm_s_0_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -20,6 +20,8 @@ entity microblaze_axi_fifo_mm_s_0_2_pselect_f is
     ce_expnd_i_20 : out STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_pselect_f : entity is "pselect_f";
 end microblaze_axi_fifo_mm_s_0_2_pselect_f;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_pselect_f is
@@ -587,6 +589,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_cdc_sync_rst is
   attribute INIT of microblaze_axi_fifo_mm_s_0_2_xpm_cdc_sync_rst : entity is "0";
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_axi_fifo_mm_s_0_2_xpm_cdc_sync_rst : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_cdc_sync_rst : entity is "xpm_cdc_sync_rst";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_axi_fifo_mm_s_0_2_xpm_cdc_sync_rst : entity is 0;
   attribute VERSION : integer;
@@ -6329,6 +6333,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_fifo_reg_bit is
     ram_rd_en_pf_q : in STD_LOGIC;
     prog_full : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end microblaze_axi_fifo_mm_s_0_2_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_reg_bit is
@@ -6624,6 +6630,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_fifo_rst is
     \gen_pntr_flags_cc.wrp_eq_rdp_pf_cc.gpe_cc_sym.diff_pntr_pe_reg[3]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end microblaze_axi_fifo_mm_s_0_2_xpm_fifo_rst;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_rst is
@@ -7121,6 +7129,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_memory_base is
   attribute MESSAGE_CONTROL of microblaze_axi_fifo_mm_s_0_2_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of microblaze_axi_fifo_mm_s_0_2_xpm_memory_base : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : integer;
   attribute P_ECC_MODE of microblaze_axi_fifo_mm_s_0_2_xpm_memory_base : entity is 0;
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -9823,6 +9833,8 @@ entity microblaze_axi_fifo_mm_s_0_2_address_decoder is
     \sig_ip2bus_data_reg[16]\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[9].ce_out_i_reg[9]_3\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_address_decoder : entity is "address_decoder";
 end microblaze_axi_fifo_mm_s_0_2_address_decoder;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_address_decoder is
@@ -12568,6 +12580,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_fifo_base is
   attribute FULL_RESET_VALUE of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_base : entity is 1;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_base : entity is "1'b1";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_base : entity is 3;
   attribute PE_THRESH_MAX : integer;
@@ -15770,6 +15784,8 @@ entity microblaze_axi_fifo_mm_s_0_2_slave_attachment is
     \sig_ip2bus_data_reg[16]\ : in STD_LOGIC;
     \s_axi_rdata_i_reg[31]_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_slave_attachment : entity is "slave_attachment";
 end microblaze_axi_fifo_mm_s_0_2_slave_attachment;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_slave_attachment is
@@ -16690,6 +16706,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_fifo_axis is
   attribute FIFO_MEMORY_TYPE of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_axis : entity is "BRAM";
   attribute LOG_DEPTH_AXIS : integer;
   attribute LOG_DEPTH_AXIS of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_axis : entity is 9;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_axis : entity is "xpm_fifo_axis";
   attribute PACKET_FIFO : string;
   attribute PACKET_FIFO of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_axis : entity is "true";
   attribute PKT_SIZE_LT8 : string;
@@ -18908,6 +18926,8 @@ entity microblaze_axi_fifo_mm_s_0_2_xpm_fifo_sync is
   attribute FIFO_WRITE_DEPTH of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_sync : entity is 128;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_sync : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_sync : entity is "xpm_fifo_sync";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of microblaze_axi_fifo_mm_s_0_2_xpm_fifo_sync : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -19267,6 +19287,8 @@ entity microblaze_axi_fifo_mm_s_0_2_axi_lite_ipif is
     \sig_ip2bus_data_reg[16]\ : in STD_LOGIC;
     \s_axi_rdata_i_reg[31]\ : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_axi_lite_ipif : entity is "axi_lite_ipif";
 end microblaze_axi_fifo_mm_s_0_2_axi_lite_ipif;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_axi_lite_ipif is
@@ -19464,6 +19486,8 @@ entity microblaze_axi_fifo_mm_s_0_2_axis_fg is
     axi_str_txc_tvalid : in STD_LOGIC;
     \FSM_onehot_gtxc.TXC_STATE_reg[1]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_axis_fg : entity is "axis_fg";
 end microblaze_axi_fifo_mm_s_0_2_axis_fg;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_axis_fg is
@@ -20813,6 +20837,8 @@ entity microblaze_axi_fifo_mm_s_0_2_fifo is
     axi_str_txc_tvalid : in STD_LOGIC;
     \FSM_onehot_gtxc.TXC_STATE_reg[1]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_fifo : entity is "fifo";
 end microblaze_axi_fifo_mm_s_0_2_fifo;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_fifo is
@@ -21759,6 +21785,8 @@ entity microblaze_axi_fifo_mm_s_0_2_ipic2axi_s is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     \sig_register_array_reg[1][0]_1\ : in STD_LOGIC_VECTOR ( 16 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_ipic2axi_s : entity is "ipic2axi_s";
 end microblaze_axi_fifo_mm_s_0_2_ipic2axi_s;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_ipic2axi_s is
@@ -26007,6 +26035,8 @@ entity microblaze_axi_fifo_mm_s_0_2_axi_fifo_mm_s is
   attribute C_USE_TX_CUT_THROUGH of microblaze_axi_fifo_mm_s_0_2_axi_fifo_mm_s : entity is 0;
   attribute C_USE_TX_DATA : integer;
   attribute C_USE_TX_DATA of microblaze_axi_fifo_mm_s_0_2_axi_fifo_mm_s : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_axi_fifo_mm_s_0_2_axi_fifo_mm_s : entity is "axi_fifo_mm_s";
 end microblaze_axi_fifo_mm_s_0_2_axi_fifo_mm_s;
 
 architecture STRUCTURE of microblaze_axi_fifo_mm_s_0_2_axi_fifo_mm_s is

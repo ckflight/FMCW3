@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Aug  3 14:48:07 2026
+# Process ID         : 67518
+# Current directory  : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_axi_fifo_mm_s_0_2_synth_1
+# Command line       : vivado -log microblaze_axi_fifo_mm_s_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_axi_fifo_mm_s_0_2.tcl
+# Log file           : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_axi_fifo_mm_s_0_2_synth_1/microblaze_axi_fifo_mm_s_0_2.vds
+# Journal file       : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_axi_fifo_mm_s_0_2_synth_1/vivado.jou
+# Running On         : ck-MS-7E62
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 25.04
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor
+# CPU Frequency      : 5194.176 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 63756 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 72346 MB
+# Available Virtual  : 62367 MB
+#-----------------------------------------------------------
+source microblaze_axi_fifo_mm_s_0_2.tcl -notrace

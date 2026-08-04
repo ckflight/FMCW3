@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Aug  2 15:08:36 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Aug  3 16:06:50 2026" VIVADOVERSION="2025.2">
 
-  <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="microblaze" PACKAGE="ftg256" SPEEDGRADE="-1"/>
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a100t" NAME="microblaze" PACKAGE="ftg256" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" LEFT="31" NAME="AXI_STR_RXD_0_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_fifo_mm_s_0_axi_str_rxd_tdata">
@@ -46,21 +46,21 @@
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="External_Ports_Clk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="aclk"/>
+        <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_bram_if_cntlr" PORT="LMB_Clk"/>
+        <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="LMB_Clk"/>
+        <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_bram_if_cntlr" PORT="LMB_Clk"/>
+        <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="LMB_Clk"/>
+        <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aclk"/>
+        <CONNECTION INSTANCE="mdm_1" PORT="S_AXI_ACLK"/>
+        <CONNECTION INSTANCE="microblaze_0" PORT="Clk"/>
         <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aclk"/>
         <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_clk"/>
-        <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="LMB_Clk"/>
-        <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_bram_if_cntlr" PORT="LMB_Clk"/>
-        <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="LMB_Clk"/>
-        <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_bram_if_cntlr" PORT="LMB_Clk"/>
-        <CONNECTION INSTANCE="mdm_1" PORT="S_AXI_ACLK"/>
+        <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="aclk"/>
         <CONNECTION INSTANCE="rst_Clk_100M" PORT="slowest_sync_clk"/>
-        <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
-        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
-        <CONNECTION INSTANCE="microblaze_0" PORT="Clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="O" NAME="SPI0_CLK" SIGIS="clk" SIGNAME="axi_quad_spi_0_sck_o">
@@ -3855,7 +3855,7 @@
         <PARAMETER NAME="C_DBG_MEM_ACCESS" VALUE="0"/>
         <PARAMETER NAME="C_DBG_REG_ACCESS" VALUE="0"/>
         <PARAMETER NAME="C_DEBUG_INTERFACE" VALUE="0"/>
-        <PARAMETER NAME="C_DEVICE" VALUE="xc7a35t"/>
+        <PARAMETER NAME="C_DEVICE" VALUE="xc7a100t"/>
         <PARAMETER NAME="C_EXT_TRIG_RESET_VALUE" VALUE="0xF1234"/>
         <PARAMETER NAME="C_FAMILY" VALUE="artix7"/>
         <PARAMETER NAME="C_INTERCONNECT" VALUE="2"/>
@@ -4241,7 +4241,7 @@
         <PARAMETER NAME="C_NUM_SYNC_FF_DBG_TRACE_CLK" VALUE="2"/>
         <PARAMETER NAME="C_OPCODE_0x0_ILLEGAL" VALUE="0"/>
         <PARAMETER NAME="C_OPTIMIZATION" VALUE="0"/>
-        <PARAMETER NAME="C_PART" VALUE="xc7a35tftg256-1"/>
+        <PARAMETER NAME="C_PART" VALUE="xc7a100tftg256-1"/>
         <PARAMETER NAME="C_PC_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_PIADDR_SIZE" VALUE="32"/>
         <PARAMETER NAME="C_PVR" VALUE="0"/>
@@ -8645,10 +8645,10 @@
         <PORT DIR="I" NAME="aux_reset_in" POLARITY="ACTIVE_LOW" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst" SIGNAME="rst_Clk_100M_bus_struct_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="SYS_Rst"/>
             <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_bram_if_cntlr" PORT="LMB_Rst"/>
-            <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="SYS_Rst"/>
+            <CONNECTION INSTANCE="microblaze_0_local_memory_dlmb_v10" PORT="SYS_Rst"/>
             <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_bram_if_cntlr" PORT="LMB_Rst"/>
+            <CONNECTION INSTANCE="microblaze_0_local_memory_ilmb_v10" PORT="SYS_Rst"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
@@ -8665,19 +8665,19 @@
         </PORT>
         <PORT DIR="O" NAME="mb_reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="rst_Clk_100M_mb_reset">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_rst"/>
             <CONNECTION INSTANCE="microblaze_0" PORT="Reset"/>
+            <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="processor_rst"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_Clk_100M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="aresetn"/>
+            <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="mdm_1" PORT="S_AXI_ARESETN"/>
             <CONNECTION INSTANCE="microblaze_0_axi_intc" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_timer_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_fifo_mm_s_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

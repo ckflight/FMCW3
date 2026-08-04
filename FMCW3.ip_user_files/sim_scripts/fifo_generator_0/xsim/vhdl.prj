@@ -1,5 +1,3 @@
-vhdl fifo_generator_v13_2_14  \
-"../../../ipstatic/hdl/fifo_generator_v13_2_rfs.vhd" \
 
 # Do not sort compile order
 nosort

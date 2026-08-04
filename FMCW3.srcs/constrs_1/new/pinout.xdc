@@ -11,14 +11,13 @@ set_property -dict { PACKAGE_PIN R3   IOSTANDARD LVCMOS33 } [get_ports { adf_ce 
 set_property -dict { PACKAGE_PIN P3   IOSTANDARD LVCMOS33 } [get_ports { adf_txdata }];
 set_property -dict { PACKAGE_PIN R1   IOSTANDARD LVCMOS33 } [get_ports { adf_clk }];    # SPI CLK
 set_property -dict { PACKAGE_PIN M2   IOSTANDARD LVCMOS33 } [get_ports { adf_data }];   # SPI MOSI
-#set_property -dict { PACKAGE_PIN T4   IOSTANDARD LVCMOS33 } [get_ports { adf_done }];  #  DELETED FROM NEW PCB DESIGN Mosfet connected to adf_muxout. Not populated
 set_property -dict { PACKAGE_PIN N1   IOSTANDARD LVCMOS33 } [get_ports { adf_le }];     # low before write register and high after write, make it high before read
 set_property -dict { PACKAGE_PIN K3   IOSTANDARD LVCMOS33 } [get_ports { adf_muxout }]; # ramp indicator high low according to ramp start and gap
 
 # LTC2292 - Clock is same for fpga, adc and adf ref in
 set_property -dict { PACKAGE_PIN L2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[0] }];
 set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[1] }];
-set_property -dict { PACKAGE_PIN K1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }]; # burned
+set_property -dict { PACKAGE_PIN K1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[2] }];
 set_property -dict { PACKAGE_PIN J3   IOSTANDARD LVCMOS33 } [get_ports { adc_data[3] }];
 set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports { adc_data[4] }];
 set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports { adc_data[5] }]; 
@@ -52,7 +51,7 @@ set_property -dict { PACKAGE_PIN B15   IOSTANDARD LVCMOS33 } [get_ports { usb_tx
 set_property -dict { PACKAGE_PIN A15   IOSTANDARD LVCMOS33 } [get_ports { usb_rd }];
 set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports { usb_wr }];
 set_property -dict { PACKAGE_PIN A13   IOSTANDARD LVCMOS33 } [get_ports { usb_siwua }];
-set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }]; # BURNED PIN
+set_property -dict { PACKAGE_PIN A12   IOSTANDARD LVCMOS33 } [get_ports { usb_oe }];
 set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 } [get_ports { usb_suspend }];
 
 # ONBOARD LED
@@ -65,19 +64,19 @@ set_property -dict { PACKAGE_PIN T2   IOSTANDARD LVCMOS33 } [get_ports { pa_en }
 set_property -dict { PACKAGE_PIN J4   IOSTANDARD LVCMOS33 } [get_ports { mix_en }];
 
 # External Connector
-##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; # oe is using
-#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }]; # adc_data[2] is using
+##set_property -dict { PACKAGE_PIN C11   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
+#set_property -dict { PACKAGE_PIN B10   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
 #set_property -dict { PACKAGE_PIN A9    IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
 #set_property -dict { PACKAGE_PIN C12   IOSTANDARD LVCMOS33 } [get_ports { ext1[0] }];
 #set_property -dict { PACKAGE_PIN B9    IOSTANDARD LVCMOS33 } [get_ports { ext1[1] }];
-#set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }]; # burned
+#set_property -dict { PACKAGE_PIN A8    IOSTANDARD LVCMOS33 } [get_ports { ext1[4] }];
 
 #set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { ext2 }];
 #set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { ext2[1] }];
 #set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { ext2[2] }];
-#set_property -dict { PACKAGE_PIN A7    IOSTANDARD LVCMOS33 } [get_ports { ext2[3] }]; # burned
-#set_property -dict { PACKAGE_PIN B5    IOSTANDARD LVCMOS33 } [get_ports { ext2[4] }]; # burned
-#set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { ext2[5] }]; # burned
+#set_property -dict { PACKAGE_PIN A7    IOSTANDARD LVCMOS33 } [get_ports { ext2[3] }];
+#set_property -dict { PACKAGE_PIN B5    IOSTANDARD LVCMOS33 } [get_ports { ext2[4] }];
+#set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { ext2[5] }];
 
 
 # SD CARD

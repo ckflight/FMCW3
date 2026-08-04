@@ -1,0 +1,233 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Aug  3 14:48:07 2026
+# Process ID         : 67504
+# Current directory  : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1
+# Command line       : vivado -log microblaze_ilmb_v10_5.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_ilmb_v10_5.tcl
+# Log file           : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1/microblaze_ilmb_v10_5.vds
+# Journal file       : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1/vivado.jou
+# Running On         : ck-MS-7E62
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 25.04
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor
+# CPU Frequency      : 5271.955 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 63756 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 72346 MB
+# Available Virtual  : 60084 MB
+#-----------------------------------------------------------
+source microblaze_ilmb_v10_5.tcl -notrace
+Command: synth_design -top microblaze_ilmb_v10_5 -part xc7a100tftg256-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 68274
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2511.555 ; gain = 233.688 ; free physical = 16026 ; free virtual = 32601
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_v10_5' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_5/synth/microblaze_ilmb_v10_5.vhd:89]
+	Parameter C_LMB_NUM_SLAVES bound to: 1 - type: integer 
+	Parameter C_LMB_DWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_AWIDTH bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_LMB_HAS_PROT bound to: 0 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lmb_v10' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/dac4/hdl/lmb_v10_v3_0_vh_rfs.vhd:91' bound to instance 'U0' of component 'lmb_v10' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_5/synth/microblaze_ilmb_v10_5.vhd:172]
+INFO: [Synth 8-638] synthesizing module 'lmb_v10' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/dac4/hdl/lmb_v10_v3_0_vh_rfs.vhd:143]
+INFO: [Synth 8-3491] module 'FDS' declared at '/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49519' bound to instance 'POR_FF_I' of component 'FDS' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/dac4/hdl/lmb_v10_v3_0_vh_rfs.vhd:173]
+INFO: [Synth 8-6157] synthesizing module 'FDS' [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49519]
+INFO: [Synth 8-6155] done synthesizing module 'FDS' (0#1) [/tools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:49519]
+INFO: [Synth 8-256] done synthesizing module 'lmb_v10' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/dac4/hdl/lmb_v10_v3_0_vh_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_ilmb_v10_5' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_5/synth/microblaze_ilmb_v10_5.vhd:89]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2602.523 ; gain = 324.656 ; free physical = 14382 ; free virtual = 30959
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2614.398 ; gain = 336.531 ; free physical = 14333 ; free virtual = 30911
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2614.398 ; gain = 336.531 ; free physical = 14333 ; free virtual = 30911
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2620.336 ; gain = 0.000 ; free physical = 14293 ; free virtual = 30872
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_5/microblaze_ilmb_v10_5_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_ilmb_v10_5/microblaze_ilmb_v10_5_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2663.324 ; gain = 0.000 ; free physical = 13389 ; free virtual = 29975
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  FDS => FDSE: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2663.359 ; gain = 0.000 ; free physical = 13356 ; free virtual = 29938
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2663.359 ; gain = 385.492 ; free physical = 11363 ; free virtual = 27966
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.328 ; gain = 393.461 ; free physical = 11363 ; free virtual = 27966
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.328 ; gain = 393.461 ; free physical = 11354 ; free virtual = 27958
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.328 ; gain = 393.461 ; free physical = 11303 ; free virtual = 27910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2671.328 ; gain = 393.461 ; free physical = 11057 ; free virtual = 27674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2753.328 ; gain = 475.461 ; free physical = 9985 ; free virtual = 26601
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2753.328 ; gain = 475.461 ; free physical = 9985 ; free virtual = 26603
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2762.344 ; gain = 484.477 ; free physical = 9973 ; free virtual = 26594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25725
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25725
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25725
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |FDS  |     1|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.156 ; gain = 671.289 ; free physical = 9098 ; free virtual = 25726
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2949.156 ; gain = 622.328 ; free physical = 9067 ; free virtual = 25698
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2949.164 ; gain = 671.289 ; free physical = 9067 ; free virtual = 25698
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2949.164 ; gain = 0.000 ; free physical = 9066 ; free virtual = 25697
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2949.164 ; gain = 0.000 ; free physical = 10622 ; free virtual = 27245
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  FDS => FDSE: 1 instance 
+
+Synth Design complete | Checksum: d593137
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2949.191 ; gain = 1086.441 ; free physical = 10692 ; free virtual = 27317
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1790.156; main = 1790.156; forked = 175.553
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3667.867; main = 2949.160; forked = 996.535
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1/microblaze_ilmb_v10_5.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP microblaze_ilmb_v10_5, cache-ID = 53ccde88aabb9f6e
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_ilmb_v10_5_synth_1/microblaze_ilmb_v10_5.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file microblaze_ilmb_v10_5_utilization_synth.rpt -pb microblaze_ilmb_v10_5_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  3 14:48:30 2026...

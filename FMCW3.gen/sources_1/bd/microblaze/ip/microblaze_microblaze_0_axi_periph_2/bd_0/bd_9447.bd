@@ -3,7 +3,7 @@
     "design_info": {
       "boundary_crc": "0x86B22F3A52C03F94",
       "design_src": "SBD",
-      "device": "xc7a35tftg256-1",
+      "device": "xc7a100tftg256-1",
       "name": "bd_9447",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "scoped": "true",

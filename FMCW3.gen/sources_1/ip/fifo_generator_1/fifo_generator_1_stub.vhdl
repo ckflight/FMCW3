@@ -2,13 +2,13 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Thu May 14 20:12:59 2026
+-- Date        : Mon Aug  3 14:48:34 2026
 -- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
 -- Command     : write_vhdl -force -mode synth_stub -rename_top fifo_generator_1 -prefix
 --               fifo_generator_1_ fifo_generator_1_stub.vhdl
 -- Design      : fifo_generator_1
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

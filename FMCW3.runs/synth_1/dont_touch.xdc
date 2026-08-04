@@ -3,9 +3,6 @@
 
 # XDC: new/pinout.xdc
 
-# IP: ip/fifo_generator_0/fifo_generator_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fifo_generator_0 || ORIG_REF_NAME==fifo_generator_0} -quiet] -quiet
-
 # IP: ip/fir_compiler_0/fir_compiler_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_0 || ORIG_REF_NAME==fir_compiler_0} -quiet] -quiet
 
@@ -54,4 +51,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_
 # IP: bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==microblaze_axi_quad_spi_0_2 || ORIG_REF_NAME==microblaze_axi_quad_spi_0_2} -quiet] -quiet
 
-# XDC: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3.gen/sources_1/bd/microblaze/microblaze_ooc.xdc
+# XDC: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/microblaze_ooc.xdc

@@ -1,0 +1,667 @@
+
+*** Running vivado
+    with args -log microblaze_mdm_1_4.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_mdm_1_4.tcl
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Aug  3 14:48:07 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source microblaze_mdm_1_4.tcl -notrace
+Command: synth_design -top microblaze_mdm_1_4 -part xc7a100tftg256-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 69367
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2517.184 ; gain = 236.688 ; free physical = 14941 ; free virtual = 31516
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'microblaze_mdm_1_4' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/synth/microblaze_mdm_1_4.vhd:94]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_DEVICE bound to: xc7a100t - type: string 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_BSCANID bound to: 76547328 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_AVOID_PRIMITIVES bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 2 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_UART bound to: 1 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
+	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
+	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_TRACE_ID bound to: 110 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_ADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_DATA_SIZE bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:12696' bound to instance 'U0' of component 'MDM' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/synth/microblaze_mdm_1_4.vhd:1709]
+INFO: [Synth 8-638] synthesizing module 'MDM' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:14379]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BSCANE2' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:330' bound to instance 'BSCAN_I' of component 'MB_BSCANE2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:15995]
+INFO: [Synth 8-638] synthesizing module 'MB_BSCANE2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:354]
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-113] binding component instance 'BSCANE2_I' to cell 'BSCANE2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:364]
+INFO: [Synth 8-256] done synthesizing module 'MB_BSCANE2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:354]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-3491] module 'MB_LUT1' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1555' bound to instance 'LUT1_I' of component 'MB_LUT1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:16013]
+INFO: [Synth 8-638] synthesizing module 'MB_LUT1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1569]
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'LUT1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1591]
+INFO: [Synth 8-256] done synthesizing module 'MB_LUT1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1569]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFG' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:392' bound to instance 'BUFG_DRCK' of component 'MB_BUFG' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:16272]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFG' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:405]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFG' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:415]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFG' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:405]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_REG_NUM_CE bound to: 4 - type: integer 
+	Parameter C_REG_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_USE_UART bound to: 1 - type: integer 
+	Parameter C_UART_WIDTH bound to: 8 - type: integer 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
+	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_TRACE_ID bound to: 110 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM_Core' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:5815' bound to instance 'MDM_Core_I1' of component 'MDM_Core' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:16370]
+INFO: [Synth 8-638] synthesizing module 'MDM_Core' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:7052]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:306' bound to instance 'config_scan_reset_i' of component 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:7735]
+INFO: [Synth 8-638] synthesizing module 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:315]
+INFO: [Synth 8-256] done synthesizing module 'xil_scan_reset_control' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:315]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:306' bound to instance 'sel_n_reset_i' of component 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:7745]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:306' bound to instance 'shift_n_reset_i' of component 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:7755]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:587' bound to instance 'TX_Buffer_Empty_FDRE' of component 'MB_FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:7994]
+INFO: [Synth 8-638] synthesizing module 'MB_FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:604]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:633]
+INFO: [Synth 8-256] done synthesizing module 'MB_FDRE' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:604]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_USE_UART bound to: 1 - type: integer 
+	Parameter C_UART_WIDTH bound to: 8 - type: integer 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'JTAG_CONTROL' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3099' bound to instance 'JTAG_CONTROL_I' of component 'JTAG_CONTROL' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:10446]
+INFO: [Synth 8-638] synthesizing module 'JTAG_CONTROL' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3372]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:306' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3681]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:306' bound to instance 'sel_with_scan_reset_i' of component 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3689]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDC_1' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:768' bound to instance 'FDC_I' of component 'MB_FDC_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3746]
+INFO: [Synth 8-638] synthesizing module 'MB_FDC_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:784]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'FDC_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:805]
+INFO: [Synth 8-256] done synthesizing module 'MB_FDC_1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:784]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE_1' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:827' bound to instance 'SYNC_FDRE' of component 'MB_FDRE_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3756]
+INFO: [Synth 8-638] synthesizing module 'MB_FDRE_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:844]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'FDRE_1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:867]
+INFO: [Synth 8-256] done synthesizing module 'MB_FDRE_1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:844]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000101100111 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_1' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3950]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter INIT bound to: 16'b0000000101100111 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:918]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0100001010100111 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_2' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3968]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter INIT bound to: 16'b0100001010100111 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:918]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0100010001000011 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_ID_1' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:4039]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized3' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter INIT bound to: 16'b0100010001000011 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:918]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized3' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0101100001001101 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_ID_2' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:4057]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized5' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter INIT bound to: 16'b0101100001001101 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:918]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized5' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRSE' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:975' bound to instance 'Ext_BRK_FDRSE' of component 'MB_FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:4482]
+INFO: [Synth 8-638] synthesizing module 'MB_FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1001]
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_CE_INVERTED bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter IS_R_INVERTED bound to: 1'b0 
+	Parameter IS_S_INVERTED bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'FDRSE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1057]
+INFO: [Synth 8-256] done synthesizing module 'MB_FDRSE' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1001]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:306' bound to instance 'data_cmd_reset_i' of component 'xil_scan_reset_control' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:4525]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_DATA_BITS bound to: 8 - type: integer 
+	Parameter C_DEPTH bound to: 16 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+INFO: [Synth 8-3491] module 'SRL_FIFO' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1974' bound to instance 'RX_FIFO_I' of component 'SRL_FIFO' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:4626]
+INFO: [Synth 8-638] synthesizing module 'SRL_FIFO' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1994]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_MUXCY_XORCY' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1086' bound to instance 'MUXCY_L_I' of component 'MB_MUXCY_XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2124]
+INFO: [Synth 8-638] synthesizing module 'MB_MUXCY_XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1102]
+INFO: [Synth 8-113] binding component instance 'Native_I1' to cell 'MUXCY_L' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1113]
+INFO: [Synth 8-113] binding component instance 'Native_I2' to cell 'XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1120]
+INFO: [Synth 8-256] done synthesizing module 'MB_MUXCY_XORCY' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1102]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:587' bound to instance 'FDRE_I' of component 'MB_FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2148]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_MUXCY_XORCY' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1086' bound to instance 'MUXCY_L_I' of component 'MB_MUXCY_XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2124]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:587' bound to instance 'FDRE_I' of component 'MB_FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2148]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_MUXCY_XORCY' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1086' bound to instance 'MUXCY_L_I' of component 'MB_MUXCY_XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2124]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:587' bound to instance 'FDRE_I' of component 'MB_FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2148]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_XORCY' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1182' bound to instance 'XORCY_I' of component 'MB_XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2138]
+INFO: [Synth 8-638] synthesizing module 'MB_XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1196]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'XORCY' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1206]
+INFO: [Synth 8-256] done synthesizing module 'MB_XORCY' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1196]
+	Parameter C_TARGET bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:587' bound to instance 'FDRE_I' of component 'MB_FDRE' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2148]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized7' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:918]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized7' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:914]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:890' bound to instance 'SRL16E_I' of component 'MB_SRL16E' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:2165]
+INFO: [Synth 8-256] done synthesizing module 'SRL_FIFO' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1994]
+	Parameter C_TARGET bound to: 2 - type: integer 
+	Parameter C_DATA_BITS bound to: 8 - type: integer 
+	Parameter C_DEPTH bound to: 16 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+INFO: [Synth 8-3491] module 'SRL_FIFO' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:1974' bound to instance 'TX_FIFO_I' of component 'SRL_FIFO' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:4648]
+INFO: [Synth 8-256] done synthesizing module 'JTAG_CONTROL' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:3372]
+INFO: [Synth 8-256] done synthesizing module 'MDM_Core' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:7052]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'MDM' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/1dd0/hdl/mdm_v3_2_vh_rfs.vhd:14379]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_mdm_1_4' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/synth/microblaze_mdm_1_4.vhd:94]
+INFO: [Synth 8-6014] Unused sequential element is_read_reg was removed.  [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2447]
+INFO: [Synth 8-6014] Unused sequential element is_write_reg was removed.  [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2448]
+INFO: [Synth 8-7129] Port Address_In_Erly[2] in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port Address_In_Erly[3] in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus_RNW in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[3] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[2] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[1] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port S_AXI_WSTRB[0] in module slave_attachment is either unconnected or has no load
+INFO: [Synth 8-7129] Port Config_Reset in module MB_SRL16E__parameterized7 is either unconnected or has no load
+INFO: [Synth 8-7129] Port Config_Reset in module MB_SRL16E__parameterized5 is either unconnected or has no load
+INFO: [Synth 8-7129] Port Config_Reset in module MB_SRL16E__parameterized3 is either unconnected or has no load
+INFO: [Synth 8-7129] Port Config_Reset in module MB_SRL16E__parameterized1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port Config_Reset in module MB_SRL16E is either unconnected or has no load
+INFO: [Synth 8-7129] Port Rst in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port DbgReg_DRCK in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port DbgReg_UPDATE in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port DbgReg_Access_Lock in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port DbgReg_Force_Lock in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port DbgReg_Unlocked in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port AXI_Transaction in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port AXI_Instr_Overrun in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port AXI_Data_Overrun in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port RESET in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port M_AXI_ACLK in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port M_AXI_ARESETn in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_rd_idle in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_rd_resp[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_rd_resp[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_wr_idle in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_wr_resp[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_wr_resp[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[31] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[30] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[29] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[28] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[27] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[26] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[25] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[24] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[23] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[22] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[21] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[20] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[19] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[18] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[17] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[16] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[15] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[14] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[13] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[12] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[11] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[10] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[9] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[8] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[7] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[6] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[5] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[4] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[3] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[2] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_out[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_exists in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_data_empty in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_dwr_done in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_dwr_resp[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Master_dwr_resp[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[2] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[3] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[4] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[5] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[6] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_0[7] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[2] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[3] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[4] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[5] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[6] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_1[7] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[2] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[3] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[4] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[5] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[6] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_2[7] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[1] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[2] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[3] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[4] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[5] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[6] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_3[7] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Synth 8-7129] Port Dbg_Trig_In_4[0] in module JTAG_CONTROL is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2631.152 ; gain = 350.656 ; free physical = 13200 ; free virtual = 29784
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2631.152 ; gain = 350.656 ; free physical = 13164 ; free virtual = 29749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2631.152 ; gain = 350.656 ; free physical = 13164 ; free virtual = 29749
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2631.152 ; gain = 0.000 ; free physical = 13033 ; free virtual = 29622
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_mdm_1_4_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_mdm_1_4_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4_ooc_trace.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4_ooc_trace.xdc] for cell 'U0'
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/microblaze_mdm_1_4_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/microblaze_mdm_1_4_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2732.617 ; gain = 0.000 ; free physical = 12513 ; free virtual = 29102
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  FDC_1 => FDCE (inverted pins: C): 1 instance 
+  FDRE_1 => FDRE (inverted pins: C): 1 instance 
+  FDRSE => FDRSE (FDRE, LUT4, VCC): 1 instance 
+  MUXCY_L => MUXCY: 6 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2732.652 ; gain = 0.000 ; free physical = 12497 ; free virtual = 29085
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2732.652 ; gain = 452.156 ; free physical = 11049 ; free virtual = 27666
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2740.621 ; gain = 460.125 ; free physical = 11049 ; free virtual = 27666
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2740.621 ; gain = 460.125 ; free physical = 11041 ; free virtual = 27658
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 sm_idle |                             0010 |                               00
+                 sm_read |                             1000 |                               01
+                sm_write |                             0100 |                               10
+                 sm_resp |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2740.621 ; gain = 460.125 ; free physical = 11025 ; free virtual = 27645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 38    
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 4     
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 4     
+	   3 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 6     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 36    
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2740.621 ; gain = 460.125 ; free physical = 10502 ; free virtual = 27112
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.621 ; gain = 507.125 ; free physical = 9224 ; free virtual = 25847
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2810.652 ; gain = 530.156 ; free physical = 9074 ; free virtual = 25705
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2818.660 ; gain = 538.164 ; free physical = 9141 ; free virtual = 25766
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15838 ; free virtual = 32464
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15830 ; free virtual = 32456
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15828 ; free virtual = 32454
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15828 ; free virtual = 32454
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15828 ; free virtual = 32454
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15828 ; free virtual = 32454
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                 | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|MDM         | MDM_Core_I1/Use_BSCAN.Config_Reg_reg[26] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM         | MDM_Core_I1/Use_BSCAN.Config_Reg_reg[10] | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM         | MDM_Core_I1/Use_BSCAN.Config_Reg_reg[3]  | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BSCANE2 |     1|
+|2     |BUFG    |     1|
+|3     |LUT1    |     7|
+|4     |LUT2    |    20|
+|5     |LUT3    |    26|
+|6     |LUT4    |    31|
+|7     |LUT5    |    33|
+|8     |LUT6    |    58|
+|9     |MUXCY_L |     6|
+|10    |SRL16E  |    23|
+|11    |XORCY   |     8|
+|12    |FDCE    |    31|
+|13    |FDC     |     1|
+|14    |FDPE    |     6|
+|15    |FDRE    |   137|
+|17    |FDSE    |     1|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.473 ; gain = 706.977 ; free physical = 15828 ; free virtual = 32454
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2987.473 ; gain = 605.477 ; free physical = 15687 ; free virtual = 32313
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2987.480 ; gain = 706.977 ; free physical = 15687 ; free virtual = 32313
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2987.480 ; gain = 0.000 ; free physical = 15651 ; free virtual = 32276
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3043.500 ; gain = 0.000 ; free physical = 22396 ; free virtual = 39026
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 2 instances
+  FDC_1 => FDCE (inverted pins: C): 1 instance 
+  FDRE_1 => FDRE (inverted pins: C): 1 instance 
+
+Synth Design complete | Checksum: faf8cc80
+INFO: [Common 17-83] Releasing license: Synthesis
+231 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 3043.535 ; gain = 1147.312 ; free physical = 22497 ; free virtual = 39127
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1847.115; main = 1847.115; forked = 175.538
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3729.156; main = 3043.504; forked = 996.535
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3067.512 ; gain = 0.000 ; free physical = 22497 ; free virtual = 39127
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_mdm_1_4_synth_1/microblaze_mdm_1_4.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP microblaze_mdm_1_4, cache-ID = dd7e4717d6109f67
+INFO: [Coretcl 2-1174] Renamed 52 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3067.512 ; gain = 0.000 ; free physical = 22293 ; free virtual = 38925
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_mdm_1_4_synth_1/microblaze_mdm_1_4.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file microblaze_mdm_1_4_utilization_synth.rpt -pb microblaze_mdm_1_4_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  3 14:48:32 2026...

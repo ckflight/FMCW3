@@ -46,7 +46,7 @@
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a100t", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VHDL", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -359,5 +359,5 @@
       }
     }
   },
-  "checksum": "64ae401c"
+  "checksum": "786d6e50"
 }

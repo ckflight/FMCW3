@@ -204,7 +204,7 @@ rule C_STATIC_LIBRARY_LINKER__xiltimer_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake --regenerate-during-build -S/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp -B/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp
+  command = /tools/2025.2/tps/lnx64/cmake-3.24.2/bin/cmake --regenerate-during-build -S/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp -B/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp
   description = Re-running CMake...
   generator = 1
 

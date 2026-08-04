@@ -241,6 +241,6 @@
 #define NUMBER_OF_SLRS 0x1
 
 /* Device ID */
-#define XPAR_DEVICE_ID "7a35t"
+#define XPAR_DEVICE_ID "7a100t"
 
 #endif  /* end of protection macro */

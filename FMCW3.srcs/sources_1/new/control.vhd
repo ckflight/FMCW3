@@ -118,7 +118,7 @@ architecture Behavioral of control is
     
     signal s_usb_rx_rd_en       : std_logic := '0';
     
-    signal s_adc_oe             : std_logic_vector(1 downto 0) := "10"; -- enable a data line, b is data line is not used in mux mode
+    signal s_adc_oe             : std_logic_vector(1 downto 0) := "00"; -- enable a data line, b is data line is not used in mux mode
     signal s_adc_shdn           : std_logic_vector(1 downto 0) := "00";
     
     signal s_ila3_probe0        : std_logic_vector(31 downto 0);

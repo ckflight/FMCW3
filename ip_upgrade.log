@@ -1,6 +1,552 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_rst_Clk_100M_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_rst_Clk_100M_0 (xilinx.com:ip:proc_sys_reset:5.0 (Rev. 17)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_microblaze_0_axi_periph_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_microblaze_0_axi_periph_2 (xilinx.com:ip:smartconnect:1.0 (Rev. 28)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+microblaze_microblaze_0_axi_periph_2 may have connection or interface changes.
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_microblaze_0_axi_intc_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_microblaze_0_axi_intc_2 (xilinx.com:ip:axi_intc:4.1 (Rev. 22)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_IVAR_RESET_VALUE to value 0x0000000000000010 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_microblaze_0_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_microblaze_0_5 (xilinx.com:ip:microblaze:11.0 (Rev. 16)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_BASE_VECTORS to value 0x0000000000000000 (source 'default')
+Set parameter C_M_AXI_DP_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_DC_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_IP_ADDR_WIDTH to value 32 (source 'default')
+Set parameter C_M_AXI_IC_ADDR_WIDTH to value 32 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_mdm_1_4'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_mdm_1_4 (xilinx.com:ip:mdm:3.2 (Rev. 29)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_M_AXIS_ID_WIDTH to value 7 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_lmb_bram_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_lmb_bram_5 (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 12)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_ilmb_v10_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_ilmb_v10_5 (xilinx.com:ip:lmb_v10:3.0 (Rev. 16)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_ilmb_bram_if_cntlr_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_ilmb_bram_if_cntlr_5 (xilinx.com:ip:lmb_bram_if_cntlr:4.0 (Rev. 27)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_MASK1 to value 0x0000000000800000 (source 'default')
+Set parameter C_MASK2 to value 0x0000000000800000 (source 'default')
+Set parameter C_MASK3 to value 0x0000000000800000 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_dlmb_v10_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_dlmb_v10_5 (xilinx.com:ip:lmb_v10:3.0 (Rev. 16)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_dlmb_bram_if_cntlr_5'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_dlmb_bram_if_cntlr_5 (xilinx.com:ip:lmb_bram_if_cntlr:4.0 (Rev. 27)) to current project options.
+
+2. Upgrade messages
+-------------------
+
+Set parameter C_MASK1 to value 0x0000000000800000 (source 'default')
+Set parameter C_MASK2 to value 0x0000000000800000 (source 'default')
+Set parameter C_MASK3 to value 0x0000000000800000 (source 'default')
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_axi_timer_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_axi_timer_0_1 (xilinx.com:ip:axi_timer:2.0 (Rev. 37)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_axi_quad_spi_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_axi_quad_spi_0_2 (xilinx.com:ip:axi_quad_spi:3.2 (Rev. 35)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_axi_gpio_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_axi_gpio_0_2 (xilinx.com:ip:axi_gpio:2.0 (Rev. 37)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:22 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'microblaze_axi_fifo_mm_s_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of microblaze_axi_fifo_mm_s_0_2 (xilinx.com:ip:axi_fifo_mm_s:4.3 (Rev. 7)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:21 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_4'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_4 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:20 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_3'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_3 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:18 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fir_compiler_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of fir_compiler_0 (xilinx.com:ip:fir_compiler:7.2 (Rev. 26)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:18 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fifo_generator_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of fifo_generator_2 (xilinx.com:ip:fifo_generator:13.2 (Rev. 14)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:18 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fifo_generator_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of fifo_generator_1 (xilinx.com:ip:fifo_generator:13.2 (Rev. 14)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:47:17 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fifo_generator_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of fifo_generator_0 (xilinx.com:ip:fifo_generator:13.2 (Rev. 14)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:44:40 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'clk_wiz_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of clk_wiz_0 (xilinx.com:ip:clk_wiz:6.0 (Rev. 17)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:44:35 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_1 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:44:32 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_0 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Mon Aug  3 14:44:17 2026
+| Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
+| Command      : upgrade_ip
+| Device       : xc7a100tftg256-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ila_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of ila_2 (xilinx.com:ip:ila:6.2 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
 | Date         : Fri May 15 18:37:43 2026
 | Host         : ck-MS-7E62 running 64-bit Ubuntu 25.04
 | Command      : upgrade_ip

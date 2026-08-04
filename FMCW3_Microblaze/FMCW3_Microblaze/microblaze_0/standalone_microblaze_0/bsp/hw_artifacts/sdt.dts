@@ -1,6 +1,6 @@
 /dts-v1/;
 / {
-        device_id = "7a35t";
+        device_id = "7a100t";
         #address-cells = <0x1>;
         variant = "artix7";
         model = "Microblaze";
@@ -59,7 +59,7 @@
                         xlnx,dc-axi-mon = <0x0>;
                         xlnx,debug-trace-async-reset = <0x0>;
                         xlnx,trace = <0x0>;
-                        xlnx,part = "xc7a35tftg256-1";
+                        xlnx,part = "xc7a100tftg256-1";
                         i-cache-baseaddr = <0x0>;
                         xlnx,use-config-reset = <0x0>;
                         xlnx,pvr = <0x0>;
@@ -430,7 +430,7 @@
                         status = "okay";
                         xlnx,use-config-reset = <0x0>;
                         xlnx,trig-out-ports = <0x1>;
-                        xlnx,device = "xc7a35t";
+                        xlnx,device = "xc7a100t";
                         xlnx,dbg-mem-access = <0x0>;
                         xlnx,trace-clk-out-phase = <0x5a>;
                         xlnx,name = "mdm_1";

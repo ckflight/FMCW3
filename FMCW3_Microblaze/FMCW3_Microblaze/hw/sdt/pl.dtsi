@@ -36,7 +36,7 @@
 			xlnx,dc-axi-mon = <0>;
 			xlnx,debug-trace-async-reset = <0>;
 			xlnx,trace = <0>;
-			xlnx,part = "xc7a35tftg256-1";
+			xlnx,part = "xc7a100tftg256-1";
 			i-cache-baseaddr = <0x0>;
 			xlnx,use-config-reset = <0>;
 			xlnx,pvr = <0>;
@@ -387,7 +387,7 @@
 			status = "okay";
 			xlnx,use-config-reset = <0>;
 			xlnx,trig-out-ports = <1>;
-			xlnx,device = "xc7a35t";
+			xlnx,device = "xc7a100t";
 			xlnx,dbg-mem-access = <0>;
 			xlnx,trace-clk-out-phase = <90>;
 			xlnx,name = "mdm_1";

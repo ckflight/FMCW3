@@ -2,13 +2,13 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Thu May 14 20:19:14 2026
+-- Date        : Mon Aug  3 14:48:33 2026
 -- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
--- Command     : write_vhdl -force -mode synth_stub -rename_top microblaze_axi_quad_spi_0_2 -prefix
---               microblaze_axi_quad_spi_0_2_ microblaze_axi_quad_spi_0_2_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_axi_quad_spi_0_2/microblaze_axi_quad_spi_0_2_stub.vhdl
 -- Design      : microblaze_axi_quad_spi_0_2
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

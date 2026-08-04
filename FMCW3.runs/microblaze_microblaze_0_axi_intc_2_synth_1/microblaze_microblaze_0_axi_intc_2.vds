@@ -1,0 +1,484 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Aug  3 14:48:07 2026
+# Process ID         : 67519
+# Current directory  : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1
+# Command line       : vivado -log microblaze_microblaze_0_axi_intc_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_microblaze_0_axi_intc_2.tcl
+# Log file           : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1/microblaze_microblaze_0_axi_intc_2.vds
+# Journal file       : /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1/vivado.jou
+# Running On         : ck-MS-7E62
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 25.04
+# Processor Detail   : AMD Ryzen 9 9950X 16-Core Processor
+# CPU Frequency      : 5108.465 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 63756 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 72346 MB
+# Available Virtual  : 63213 MB
+#-----------------------------------------------------------
+source microblaze_microblaze_0_axi_intc_2.tcl -notrace
+Command: synth_design -top microblaze_microblaze_0_axi_intc_2 -part xc7a100tftg256-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 68088
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2503.902 ; gain = 224.688 ; free physical = 16992 ; free virtual = 33560
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_axi_intc_2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/synth/microblaze_microblaze_0_axi_intc_2.vhd:89]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_INSTANCE bound to: microblaze_microblaze_0_axi_intc_2 - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_NUM_INTR_INPUTS bound to: 2 - type: integer 
+	Parameter C_NUM_SW_INTR bound to: 0 - type: integer 
+	Parameter C_KIND_OF_INTR bound to: 32'b11111111111111111111111111111100 
+	Parameter C_KIND_OF_EDGE bound to: 32'b11111111111111111111111111111111 
+	Parameter C_KIND_OF_LVL bound to: 32'b11111111111111111111111111111111 
+	Parameter C_ASYNC_INTR bound to: 32'b11111111111111111111111111111100 
+	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_IVAR_RESET_VALUE bound to: 64'b0000000000000000000000000000000000000000000000000000000000010000 
+	Parameter C_ENABLE_ASYNC bound to: 0 - type: integer 
+	Parameter C_HAS_IPR bound to: 1 - type: integer 
+	Parameter C_HAS_SIE bound to: 1 - type: integer 
+	Parameter C_HAS_CIE bound to: 1 - type: integer 
+	Parameter C_HAS_IVR bound to: 1 - type: integer 
+	Parameter C_HAS_ILR bound to: 0 - type: integer 
+	Parameter C_IRQ_IS_LEVEL bound to: 1 - type: integer 
+	Parameter C_IRQ_ACTIVE bound to: 1'b1 
+	Parameter C_DISABLE_SYNCHRONIZERS bound to: 1 - type: integer 
+	Parameter C_MB_CLK_NOT_CONNECTED bound to: 1 - type: integer 
+	Parameter C_HAS_FAST bound to: 1 - type: integer 
+	Parameter C_EN_CASCADE_MODE bound to: 0 - type: integer 
+	Parameter C_CASCADE_MASTER bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'axi_intc' declared at '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:3442' bound to instance 'U0' of component 'axi_intc' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/synth/microblaze_microblaze_0_axi_intc_2.vhd:203]
+INFO: [Synth 8-638] synthesizing module 'axi_intc' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:3543]
+INFO: [Synth 8-638] synthesizing module 'intc_core' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:786]
+INFO: [Synth 8-638] synthesizing module 'shared_ram_ivar' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:316]
+INFO: [Synth 8-256] done synthesizing module 'shared_ram_ivar' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:316]
+INFO: [Synth 8-256] done synthesizing module 'intc_core' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:786]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized17' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized17' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized18' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized18' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized19' [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized19' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_intc' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:3543]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_microblaze_0_axi_intc_2' (0#1) [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/synth/microblaze_microblaze_0_axi_intc_2.vhd:89]
+WARNING: [Synth 8-6014] Unused sequential element ACK_EN_SYNC_ON_AXI_CLK_GEN.NO_CASCADE_MASTER.second_ack_sync_d3_reg was removed.  [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ipshared/f258/hdl/axi_intc_v4_1_vh_rfs.vhd:1322]
+INFO: [Synth 8-7129] Port A[1] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[2] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[3] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[4] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[5] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[6] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[7] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[8] in module pselect_f__parameterized17 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[2] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[3] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[4] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[5] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[6] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[7] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[8] in module pselect_f__parameterized16 is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[3] in module pselect_f is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[4] in module pselect_f is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[5] in module pselect_f is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[6] in module pselect_f is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[7] in module pselect_f is either unconnected or has no load
+INFO: [Synth 8-7129] Port A[8] in module pselect_f is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus_RNW in module address_decoder is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[3] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[4] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[5] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[10] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[11] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[12] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[13] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[14] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[15] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[17] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_rdce[18] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[1] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[6] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[9] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[10] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[11] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[12] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[13] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[14] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[15] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[17] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Bus2ip_wrce[18] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Processor_clk in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port processor_rst in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[31] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[30] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[29] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[28] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[27] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[26] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[25] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[24] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[23] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[22] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[21] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[20] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[19] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[18] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[17] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[16] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[15] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[14] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[13] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[12] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[11] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[10] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[9] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[8] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[7] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[6] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[5] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[4] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[3] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[2] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[1] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port Interrupt_address_in[0] in module intc_core is either unconnected or has no load
+INFO: [Synth 8-7129] Port irq_in in module axi_intc is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2600.840 ; gain = 321.625 ; free physical = 14231 ; free virtual = 30811
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2606.777 ; gain = 327.562 ; free physical = 14157 ; free virtual = 30736
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2606.777 ; gain = 327.562 ; free physical = 14157 ; free virtual = 30736
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2606.777 ; gain = 0.000 ; free physical = 14141 ; free virtual = 30720
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2.xdc] for cell 'U0'
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_microblaze_0_axi_intc_2/microblaze_microblaze_0_axi_intc_2_clocks.xdc] for cell 'U0'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2715.242 ; gain = 0.000 ; free physical = 13279 ; free virtual = 29862
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2715.277 ; gain = 0.000 ; free physical = 13264 ; free virtual = 29850
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2715.277 ; gain = 436.062 ; free physical = 11539 ; free virtual = 28133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2723.246 ; gain = 444.031 ; free physical = 11539 ; free virtual = 28133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2723.246 ; gain = 444.031 ; free physical = 11545 ; free virtual = 28140
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg' in module 'intc_core'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+           gen_level_irq |                               01 |                               01
+                wait_ack |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg' using encoding 'sequential' in module 'intc_core'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2723.246 ; gain = 444.031 ; free physical = 11482 ; free virtual = 28079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 61    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 3     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 6     
+	   3 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 10    
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 32    
+	   4 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7129] Port processor_clk in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port processor_rst in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port irq_in in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[31] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[30] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[29] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[28] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[27] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[26] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[25] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[24] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[23] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[22] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[21] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[20] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[19] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[18] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[17] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[16] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[15] in module axi_intc is either unconnected or has no load
+INFO: [Synth 8-7129] Port interrupt_address_in[14] in module axi_intc is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2723.246 ; gain = 444.031 ; free physical = 11303 ; free virtual = 27908
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|Module Name | RTL Object                                                                              | Inference      | Size (Depth x Width) | Primitives     | 
++------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|U0          | INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg | User Attribute | 16 x 32              | RAM16X1D x 32  | 
++------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2777.246 ; gain = 498.031 ; free physical = 10182 ; free virtual = 26795
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2810.293 ; gain = 531.078 ; free physical = 9883 ; free virtual = 26497
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|Module Name | RTL Object                                                                              | Inference      | Size (Depth x Width) | Primitives     | 
++------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+|U0          | INTC_CORE_I/IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I/ram_i[0].ram_reg | User Attribute | 16 x 32              | RAM16X1D x 32  | 
++------------+-----------------------------------------------------------------------------------------+----------------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2811.301 ; gain = 532.086 ; free physical = 9847 ; free virtual = 26461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10644 ; free virtual = 27268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10644 ; free virtual = 27268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10627 ; free virtual = 27251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10627 ; free virtual = 27251
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10625 ; free virtual = 27249
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10625 ; free virtual = 27248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |     2|
+|2     |LUT2     |    20|
+|3     |LUT3     |    20|
+|4     |LUT4     |    60|
+|5     |LUT5     |    26|
+|6     |LUT6     |    27|
+|7     |RAM16X1D |    32|
+|8     |FDRE     |   179|
+|9     |FDSE     |     2|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.113 ; gain = 696.898 ; free physical = 10625 ; free virtual = 27248
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2976.113 ; gain = 588.398 ; free physical = 11933 ; free virtual = 28555
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2976.121 ; gain = 696.898 ; free physical = 11965 ; free virtual = 28587
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2976.121 ; gain = 0.000 ; free physical = 12429 ; free virtual = 29051
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3032.141 ; gain = 0.000 ; free physical = 15890 ; free virtual = 32517
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 32 instances
+
+Synth Design complete | Checksum: a06fc5df
+INFO: [Common 17-83] Releasing license: Synthesis
+178 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 3032.176 ; gain = 1167.047 ; free physical = 15819 ; free virtual = 32446
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1827.766; main = 1827.766; forked = 175.547
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3719.785; main = 3032.145; forked = 996.535
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3056.152 ; gain = 0.000 ; free physical = 15799 ; free virtual = 32425
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1/microblaze_microblaze_0_axi_intc_2.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP microblaze_microblaze_0_axi_intc_2, cache-ID = f808c51d0299611a
+INFO: [Coretcl 2-1174] Renamed 6 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3056.152 ; gain = 0.000 ; free physical = 17199 ; free virtual = 33834
+INFO: [Common 17-1381] The checkpoint '/home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.runs/microblaze_microblaze_0_axi_intc_2_synth_1/microblaze_microblaze_0_axi_intc_2.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file microblaze_microblaze_0_axi_intc_2_utilization_synth.rpt -pb microblaze_microblaze_0_axi_intc_2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  3 14:48:31 2026...

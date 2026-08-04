@@ -4,13 +4,13 @@ microblaze_0:
       description: lwip220 library lwIP (light weight IP) is an open source TCP/IP stack configured for AMD hard and soft Ethernet MACs.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\ThirdParty\sw_services\lwip220_v1_3
+      - /tools/2025.2/Vitis/data/embeddedsw/ThirdParty/sw_services/lwip220_v1_3
       examples: {}
     xilflash:
       description: Xilinx Flash library for Intel/AMD CFI compliant parallel flash.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilflash_v4_12
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilflash_v4_12
       examples:
         xilflash_devicecontrol_example.c: []
         xilflash_platform_flash_example.c: []
@@ -24,7 +24,7 @@ microblaze_0:
       - xilffs
       - xilsecure
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilloader_v2_3
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilloader_v2_3
       examples:
         xilloader_image_store_pdi_client_example.c: []
         xilloader_extract_metaheader_client_example.c: []
@@ -41,25 +41,25 @@ microblaze_0:
       description: Xilinx NVM Library provides interface to accessing eFUSE and BBRAM.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilnvm_v3_6
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilnvm_v3_6
       examples: {}
     xilocp:
       description: Xilinx Open Compute Platform(OCP) support Library. Supported for Versal Net, Versal_2VE_2VM.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilocp_v1_6
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilocp_v1_6
       examples: {}
     xilpdi:
       description: Xilinx Programmable Device Image (PDI) Library.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilpdi_v1_12
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilpdi_v1_12
       examples: {}
     xilplmi:
       description: Xilinx Versal Platform Loader and Manager Interface Library.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilplmi_v2_3
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilplmi_v2_3
       examples:
         xplmi_event_logging_client_example.c: []
         xplmi_get_board_client_example.c: []
@@ -71,25 +71,25 @@ microblaze_0:
       description: Xilinx PUF Library provides interface for registration and regeneration.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilpuf_v2_6
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilpuf_v2_6
       examples: {}
     xilsecure:
       description: Xilinx Secure Library provides interface to AES, RSA and SHA hardware engines on ZynqMP Soc and Versal.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilsecure_v5_6
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilsecure_v5_6
       examples: {}
     xilsfl:
       description: Serial NOR Flash Library.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilsfl_v1_2
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilsfl_v1_2
       examples: {}
     xilskey:
       description: Xilinx Secure Key Library supports programming efuse and bbram.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilskey_v7_8
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilskey_v7_8
       examples:
         xilskey_efuse_example.c:
         - xilskey_input.h
@@ -99,27 +99,27 @@ microblaze_0:
       description: Xiltimer library provides generic timer interface for the timer IP's.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xiltimer_v2_3
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xiltimer_v2_3
       examples: {}
     xiltpm:
       description: Xilinx TPM Library provides interface to external TPM module.
       depends_libs:
       - xilsecure
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xiltpm_v1_1
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xiltpm_v1_1
       examples: {}
   freertos:
     lwip220:
       description: lwip220 library lwIP (light weight IP) is an open source TCP/IP stack configured for AMD hard and soft Ethernet MACs.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\ThirdParty\sw_services\lwip220_v1_3
+      - /tools/2025.2/Vitis/data/embeddedsw/ThirdParty/sw_services/lwip220_v1_3
       examples: {}
     xilflash:
       description: Xilinx Flash library for Intel/AMD CFI compliant parallel flash.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilflash_v4_12
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilflash_v4_12
       examples:
         xilflash_devicecontrol_example.c: []
         xilflash_platform_flash_example.c: []
@@ -133,7 +133,7 @@ microblaze_0:
       - xilffs
       - xilsecure
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilloader_v2_3
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilloader_v2_3
       examples:
         xilloader_image_store_pdi_client_example.c: []
         xilloader_extract_metaheader_client_example.c: []
@@ -150,19 +150,19 @@ microblaze_0:
       description: Xilinx Open Compute Platform(OCP) support Library. Supported for Versal Net, Versal_2VE_2VM.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilocp_v1_6
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilocp_v1_6
       examples: {}
     xilpdi:
       description: Xilinx Programmable Device Image (PDI) Library.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilpdi_v1_12
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilpdi_v1_12
       examples: {}
     xilplmi:
       description: Xilinx Versal Platform Loader and Manager Interface Library.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilplmi_v2_3
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilplmi_v2_3
       examples:
         xplmi_event_logging_client_example.c: []
         xplmi_get_board_client_example.c: []
@@ -174,19 +174,19 @@ microblaze_0:
       description: Xilinx Secure Library provides interface to AES, RSA and SHA hardware engines on ZynqMP Soc and Versal.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilsecure_v5_6
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilsecure_v5_6
       examples: {}
     xilsfl:
       description: Serial NOR Flash Library.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilsfl_v1_2
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilsfl_v1_2
       examples: {}
     xilskey:
       description: Xilinx Secure Key Library supports programming efuse and bbram.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xilskey_v7_8
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xilskey_v7_8
       examples:
         xilskey_efuse_example.c:
         - xilskey_input.h
@@ -196,5 +196,5 @@ microblaze_0:
       description: Xiltimer library provides generic timer interface for the timer IP's.
       depends_libs: []
       path:
-      - C:\Xilinx\2025.2\Vitis\data\embeddedsw\lib\sw_services\xiltimer_v2_3
+      - /tools/2025.2/Vitis/data/embeddedsw/lib/sw_services/xiltimer_v2_3
       examples: {}

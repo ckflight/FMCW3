@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
--- Date        : Wed Mar 25 12:31:39 2026
--- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_mdm_1_4 -prefix
---               microblaze_mdm_1_4_ microblaze_mdm_1_4_sim_netlist.vhdl
+-- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+-- Date        : Mon Aug  3 14:48:32 2026
+-- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_mdm_1_4/microblaze_mdm_1_4_sim_netlist.vhdl
 -- Design      : microblaze_mdm_1_4
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -38,6 +38,8 @@ entity microblaze_mdm_1_4_MB_BSCANE2 is
     \shift_Count_reg[0]\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[15]\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_BSCANE2 : entity is "MB_BSCANE2";
 end microblaze_mdm_1_4_MB_BSCANE2;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_BSCANE2 is
@@ -161,6 +163,8 @@ entity microblaze_mdm_1_4_MB_BUFG is
     Dbg_Clk_0 : out STD_LOGIC;
     DRCK : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_BUFG : entity is "MB_BUFG";
 end microblaze_mdm_1_4_MB_BUFG;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_BUFG is
@@ -244,6 +248,8 @@ entity microblaze_mdm_1_4_MB_FDC_1 is
     Dbg_Rst_0 : in STD_LOGIC;
     Debug_SYS_Rst : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_FDC_1 : entity is "MB_FDC_1";
 end microblaze_mdm_1_4_MB_FDC_1;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_FDC_1 is
@@ -815,6 +821,8 @@ entity microblaze_mdm_1_4_MB_FDRE is
     tx_Buffer_Empty : in STD_LOGIC;
     S_AXI_ACLK : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_FDRE : entity is "MB_FDRE";
 end microblaze_mdm_1_4_MB_FDRE;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_FDRE is
@@ -858,6 +866,8 @@ entity microblaze_mdm_1_4_MB_FDRE_1 is
     \Use_UART.fifo_Din_reg[7]_2\ : in STD_LOGIC;
     command : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_FDRE_1 : entity is "MB_FDRE_1";
 end microblaze_mdm_1_4_MB_FDRE_1;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_FDRE_1 is
@@ -1532,6 +1542,8 @@ entity microblaze_mdm_1_4_MB_LUT1 is
     Dbg_TDI_0 : out STD_LOGIC;
     I0 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_LUT1 : entity is "MB_LUT1";
 end microblaze_mdm_1_4_MB_LUT1;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_LUT1 is
@@ -1573,6 +1585,8 @@ entity microblaze_mdm_1_4_MB_MUXCY_XORCY is
     lopt_8 : out STD_LOGIC;
     lopt_9 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_MUXCY_XORCY : entity is "MB_MUXCY_XORCY";
 end microblaze_mdm_1_4_MB_MUXCY_XORCY;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_MUXCY_XORCY is
@@ -1830,6 +1844,8 @@ entity microblaze_mdm_1_4_MB_SRL16E is
     A3 : in STD_LOGIC;
     \Use_unisim.MB_SRL16E_I1_1\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_SRL16E : entity is "MB_SRL16E";
 end microblaze_mdm_1_4_MB_SRL16E;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_SRL16E is
@@ -2798,6 +2814,8 @@ entity microblaze_mdm_1_4_MB_XORCY is
     LO : in STD_LOGIC;
     lopt : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MB_XORCY : entity is "MB_XORCY";
 end microblaze_mdm_1_4_MB_XORCY;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MB_XORCY is
@@ -2837,6 +2855,8 @@ entity microblaze_mdm_1_4_pselect_f is
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_pselect_f : entity is "pselect_f";
 end microblaze_mdm_1_4_pselect_f;
 
 architecture STRUCTURE of microblaze_mdm_1_4_pselect_f is
@@ -2901,6 +2921,8 @@ entity microblaze_mdm_1_4_SRL_FIFO is
     Bus_RNW_reg : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_SRL_FIFO : entity is "SRL_FIFO";
 end microblaze_mdm_1_4_SRL_FIFO;
 
 architecture STRUCTURE of microblaze_mdm_1_4_SRL_FIFO is
@@ -3514,6 +3536,8 @@ entity microblaze_mdm_1_4_address_decoder is
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_2\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_3\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_address_decoder : entity is "address_decoder";
 end microblaze_mdm_1_4_address_decoder;
 
 architecture STRUCTURE of microblaze_mdm_1_4_address_decoder is
@@ -3949,6 +3973,8 @@ entity microblaze_mdm_1_4_JTAG_CONTROL is
     \Use_Serial_Unified_Completion.completion_status_reg[10]_0\ : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[15]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_JTAG_CONTROL : entity is "JTAG_CONTROL";
 end microblaze_mdm_1_4_JTAG_CONTROL;
 
 architecture STRUCTURE of microblaze_mdm_1_4_JTAG_CONTROL is
@@ -5925,6 +5951,8 @@ entity microblaze_mdm_1_4_slave_attachment is
     S_AXI_ARADDR : in STD_LOGIC_VECTOR ( 1 downto 0 );
     S_AXI_AWADDR : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_slave_attachment : entity is "slave_attachment";
 end microblaze_mdm_1_4_slave_attachment;
 
 architecture STRUCTURE of microblaze_mdm_1_4_slave_attachment is
@@ -6378,6 +6406,8 @@ entity microblaze_mdm_1_4_MDM_Core is
     \Use_Serial_Unified_Completion.completion_status_reg[15]\ : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MDM_Core : entity is "MDM_Core";
 end microblaze_mdm_1_4_MDM_Core;
 
 architecture STRUCTURE of microblaze_mdm_1_4_MDM_Core is
@@ -7039,6 +7069,8 @@ entity microblaze_mdm_1_4_axi_lite_ipif is
     S_AXI_ARADDR : in STD_LOGIC_VECTOR ( 1 downto 0 );
     S_AXI_AWADDR : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_axi_lite_ipif : entity is "axi_lite_ipif";
 end microblaze_mdm_1_4_axi_lite_ipif;
 
 architecture STRUCTURE of microblaze_mdm_1_4_axi_lite_ipif is
@@ -8625,7 +8657,7 @@ entity microblaze_mdm_1_4_MDM is
   attribute C_DEBUG_INTERFACE : integer;
   attribute C_DEBUG_INTERFACE of microblaze_mdm_1_4_MDM : entity is 0;
   attribute C_DEVICE : string;
-  attribute C_DEVICE of microblaze_mdm_1_4_MDM : entity is "xc7a35t";
+  attribute C_DEVICE of microblaze_mdm_1_4_MDM : entity is "xc7a100t";
   attribute C_EXT_TRIG_RESET_VALUE : string;
   attribute C_EXT_TRIG_RESET_VALUE of microblaze_mdm_1_4_MDM : entity is "20'b11110001001000110100";
   attribute C_FAMILY : string;
@@ -8676,6 +8708,8 @@ entity microblaze_mdm_1_4_MDM is
   attribute C_USE_CROSS_TRIGGER of microblaze_mdm_1_4_MDM : entity is 0;
   attribute C_USE_UART : integer;
   attribute C_USE_UART of microblaze_mdm_1_4_MDM : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_mdm_1_4_MDM : entity is "MDM";
   attribute bscan_debug_core : string;
   attribute bscan_debug_core of microblaze_mdm_1_4_MDM : entity is "FALSE";
   attribute dont_touch : string;
@@ -15429,7 +15463,7 @@ architecture STRUCTURE of microblaze_mdm_1_4 is
   attribute C_DEBUG_INTERFACE : integer;
   attribute C_DEBUG_INTERFACE of U0 : label is 0;
   attribute C_DEVICE : string;
-  attribute C_DEVICE of U0 : label is "xc7a35t";
+  attribute C_DEVICE of U0 : label is "xc7a100t";
   attribute C_EXT_TRIG_RESET_VALUE : string;
   attribute C_EXT_TRIG_RESET_VALUE of U0 : label is "20'b11110001001000110100";
   attribute C_FAMILY : string;

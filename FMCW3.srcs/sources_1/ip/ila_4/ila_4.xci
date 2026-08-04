@@ -3091,16 +3091,16 @@
         "C_PROBE8_MU_CNT": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_PROBE7_MU_CNT": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_PROBE6_MU_CNT": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_PROBE5_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_PROBE4_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_PROBE3_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_PROBE2_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_PROBE1_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "C_PROBE0_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_PROBE5_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_PROBE4_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_PROBE3_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_PROBE2_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_PROBE1_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_PROBE0_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_TRIGIN_EN": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "EN_BRAM_DRC": [ { "value": "TRUE", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "ALL_PROBE_SAME_MU": [ { "value": "TRUE", "resolve_type": "user", "format": "bool", "usage": "all" } ],
-        "ALL_PROBE_SAME_MU_CNT": [ { "value": "2", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "ALL_PROBE_SAME_MU_CNT": [ { "value": "2", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_NUM_MONITOR_SLOTS": [ { "value": "1", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "C_SLOT_0_AXI_ARUSER_WIDTH": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_SLOT_0_AXI_RUSER_WIDTH": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -6248,7 +6248,7 @@
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a100t", "resolve_type": "generated", "usage": "all" } ],
         "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VHDL", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
@@ -6300,5 +6300,5 @@
       }
     }
   },
-  "checksum": "1af2c72d"
+  "checksum": "66224ae2"
 }

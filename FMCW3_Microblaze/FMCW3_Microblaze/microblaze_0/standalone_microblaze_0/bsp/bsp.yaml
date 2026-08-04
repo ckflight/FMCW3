@@ -1,6 +1,6 @@
 sdt: hw_artifacts/microblaze_0_baremetal.dts
 family: artix7
-path: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp
+path: /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3_Microblaze/FMCW3_Microblaze/microblaze_0/standalone_microblaze_0/bsp
 config: None
 os: standalone
 os_info:
@@ -103,7 +103,7 @@ proc_config:
       name: proc_archiver
       permission: readonly
       type: string
-      value: mb-gcc-ar.exe
+      value: mb-gcc-ar
       default: mb-gcc-ar
       options: []
       description: Archiver used to archive libraries for both BSP generation as well
@@ -120,7 +120,7 @@ proc_config:
       name: proc_compiler
       permission: readonly
       type: string
-      value: mb-gcc.exe
+      value: mb-gcc
       default: mb-gcc
       options: []
       description: Compiler used to compile both BSP/libraries and applications.
@@ -190,7 +190,7 @@ lib_config:
       name: XILTIMER_en_interval_timer
       permission: read_write
       type: boolean
-      value: 'true'
+      value: 'false'
       default: 'false'
       options:
       - 'true'

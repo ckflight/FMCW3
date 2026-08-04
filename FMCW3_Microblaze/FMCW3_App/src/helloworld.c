@@ -105,7 +105,7 @@ typedef struct config_parameters_s{
 config_parameters_t config_parameters;
 
 #define FREQ_REF       40000000U
-#define FREQ_PFD       FREQ_REF / 2   // intends 20 MHz
+#define FREQ_PFD       FREQ_REF / 1
 
 typedef enum {
     SAWTOOTH_WAVEFORM = 0,
@@ -600,7 +600,7 @@ void ADF4158_Configure_Sweep(WAVEFORM_TYPE wf, double startFreq, double bw, doub
     data |= (1u << 28);
     data |= (14u << 24);
     data |= (1u << 22);
-    data |= (2u << 15); // max pfd is 32mhz 40/2 = 20mhz. max ref in is 260mhz
+    data |= (1u << 15); // max pfd is 32mhz 
     data |= ((uint32_t)clk1 << 3);
     data |= 2u;
     stat = ADF4158_WriteRegister(data);

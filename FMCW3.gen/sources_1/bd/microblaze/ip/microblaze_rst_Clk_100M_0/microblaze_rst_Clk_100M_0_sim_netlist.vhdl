@@ -1,15 +1,15 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
--- Date        : Wed Dec 17 14:14:57 2025
--- Host        : DESKTOP-BEUFM6D running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top microblaze_rst_Clk_100M_0 -prefix
---               microblaze_rst_Clk_100M_0_ microblaze_rst_clk_100MHz_100M_0_sim_netlist.vhdl
--- Design      : microblaze_rst_clk_100MHz_100M_0
+-- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+-- Date        : Mon Aug  3 14:48:29 2026
+-- Host        : ck-MS-7E62 running 64-bit Ubuntu 25.04
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ck/Desktop/Workspace/FPGA_Workspace/Vivado/FMCW3_100T/FMCW3.gen/sources_1/bd/microblaze/ip/microblaze_rst_Clk_100M_0/microblaze_rst_Clk_100M_0_sim_netlist.vhdl
+-- Design      : microblaze_rst_Clk_100M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a35tftg256-1
+-- Device      : xc7a100tftg256-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -22,6 +22,8 @@ entity microblaze_rst_Clk_100M_0_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_rst_Clk_100M_0_upcnt_n : entity is "upcnt_n";
 end microblaze_rst_Clk_100M_0_upcnt_n;
 
 architecture STRUCTURE of microblaze_rst_Clk_100M_0_upcnt_n is
@@ -188,6 +190,8 @@ entity microblaze_rst_Clk_100M_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of microblaze_rst_Clk_100M_0_xpm_cdc_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of microblaze_rst_Clk_100M_0_xpm_cdc_single : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_rst_Clk_100M_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of microblaze_rst_Clk_100M_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -358,6 +362,8 @@ entity microblaze_rst_Clk_100M_0_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_rst_Clk_100M_0_lpf : entity is "lpf";
 end microblaze_rst_Clk_100M_0_lpf;
 
 architecture STRUCTURE of microblaze_rst_Clk_100M_0_lpf is
@@ -601,6 +607,8 @@ entity microblaze_rst_Clk_100M_0_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_rst_Clk_100M_0_sequence_psr : entity is "sequence_psr";
 end microblaze_rst_Clk_100M_0_sequence_psr;
 
 architecture STRUCTURE of microblaze_rst_Clk_100M_0_sequence_psr is
@@ -939,6 +947,8 @@ entity microblaze_rst_Clk_100M_0_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of microblaze_rst_Clk_100M_0_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of microblaze_rst_Clk_100M_0_proc_sys_reset : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of microblaze_rst_Clk_100M_0_proc_sys_reset : entity is "proc_sys_reset";
 end microblaze_rst_Clk_100M_0_proc_sys_reset;
 
 architecture STRUCTURE of microblaze_rst_Clk_100M_0_proc_sys_reset is
@@ -1065,7 +1075,7 @@ entity microblaze_rst_Clk_100M_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of microblaze_rst_Clk_100M_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of microblaze_rst_Clk_100M_0 : entity is "microblaze_rst_clk_100MHz_100M_0,proc_sys_reset,{}";
+  attribute CHECK_LICENSE_TYPE of microblaze_rst_Clk_100M_0 : entity is "microblaze_rst_Clk_100M_0,proc_sys_reset,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_rst_Clk_100M_0 : entity is "yes";
   attribute x_core_info : string;
@@ -1108,7 +1118,7 @@ architecture STRUCTURE of microblaze_rst_Clk_100M_0 is
   attribute x_interface_parameter of mb_reset : signal is "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0";
   attribute x_interface_info of slowest_sync_clk : signal is "xilinx.com:signal:clock:1.0 clock CLK";
   attribute x_interface_mode of slowest_sync_clk : signal is "slave clock";
-  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_clk_100MHz, INSERT_VIP 0";
+  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN microblaze_Clk, INSERT_VIP 0";
   attribute x_interface_info of bus_struct_reset : signal is "xilinx.com:signal:reset:1.0 bus_struct_reset RST";
   attribute x_interface_mode of bus_struct_reset : signal is "master bus_struct_reset";
   attribute x_interface_parameter of bus_struct_reset : signal is "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0";
