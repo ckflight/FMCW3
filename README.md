@@ -19,23 +19,16 @@ The system supports:
 The platform combines custom RF hardware, FPGA firmware, DSP algorithms, CST/ADS simulations, and Python radar processing tools into a fully integrated radar development system.
 
 <img width="3213" height="5712" alt="Image" src="https://github.com/user-attachments/assets/ab893c9d-a40d-483f-96b9-9a0571b3d1e8" />
-<img width="3024" height="4032" alt="Image" src="https://github.com/user-attachments/assets/a2173f78-9284-4591-a9a1-56149732c751" />
-<img width="1114" height="926" alt="Image" src="https://github.com/user-attachments/assets/3c51f631-6152-40ff-b9f9-fef74b0440d4" />
-
+<img width="3024" height="3262" alt="Image" src="https://github.com/user-attachments/assets/973636ee-38c4-4722-b24b-6a6f02f2c5ea" />
 
 ## 6 Layer KiCAD PCB Design:
 
 6-layer PCB design is available as open-source hardware:
 
-### Important Note: 
-I keep updating the hardware design so these images might be different than the original post. Once the new hardware is produced i will update other images as well
-
-The tested version of this design upto now is the branch named as: jlcpcb_version
-
 Repository:
 https://github.com/ckflight/Radar3
 
-<img width="2017" height="1039" alt="Image" src="https://github.com/user-attachments/assets/9d192d24-a084-4770-912a-be3e354d8ac5" />
+<img width="1696" height="858" alt="Image" src="https://github.com/user-attachments/assets/5335b825-3517-4dba-8bd4-ddfef8373c90" />
 
 ## JTAG Programming Notes:
 
