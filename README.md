@@ -30,8 +30,8 @@ https://github.com/ckflight/Radar3
 
 <img width="1696" height="858" alt="Image" src="https://github.com/user-attachments/assets/5335b825-3517-4dba-8bd4-ddfef8373c90" />
 
-## IMPORTANT Notes:
-I have designed several pcb version of this Radar. jlcpcb_version branch uses XC7A35T FPGA and the main branch has XC7A100T FPGA. I have uploaded .ltx .bit .bin files for both FPGAs.
+## Important Notes:
+I have designed several pcb versions of this Radar. jlcpcb_version branch uses XC7A35T FPGA and the main branch has XC7A100T FPGA. I have uploaded .ltx .bit .bin files for both FPGAs.
 
 ## JTAG Programming Notes:
 
