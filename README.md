@@ -30,6 +30,9 @@ https://github.com/ckflight/Radar3
 
 <img width="1696" height="858" alt="Image" src="https://github.com/user-attachments/assets/5335b825-3517-4dba-8bd4-ddfef8373c90" />
 
+## IMPORTANT Notes:
+I have designed several pcb version of this Radar. jlcpcb_version branch uses XC7A35T FPGA and the main branch has XC7A100T FPGA. I have uploaded .ltx .bit .bin files for both FPGAs.
+
 ## JTAG Programming Notes:
 
 ### Programming with on-board FT2232H:
@@ -201,8 +204,7 @@ https://github.com/ckflight/FMCW_RADAR_2v2
 
 ### FFT Range Doppler Map:
 <img width="720" height="406" alt="Image" src="https://github.com/user-attachments/assets/b71b6ef7-48ec-47a3-8244-f8cf0fc10217" />
-<img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/1cf31d79-5845-483a-84d9-bae745000e7b" />
-<img width="1162" height="741" alt="Image" src="https://github.com/user-attachments/assets/419cf99c-60ec-4474-b80c-2169f96ab062" />
+<img width="1143" height="1069" alt="Image" src="https://github.com/user-attachments/assets/868f55ef-ad18-4dfe-9a2d-d6e83c3012fc" />
 <img width="1312" height="1199" alt="Image" src="https://github.com/user-attachments/assets/1819a4ce-aea6-44b5-9aa3-46346d492b4b" />
 <img width="991" height="905" alt="Image" src="https://github.com/user-attachments/assets/bb00f391-63bf-4b53-a2ca-cd97da831953" />
 <img width="992" height="935" alt="Image" src="https://github.com/user-attachments/assets/ba075ff8-9d15-493a-8c90-02796d9c49e8" />
